@@ -1,6 +1,7 @@
 baseURL = "https://www.ourmaninindia.com/"
 languageCode = "en-us"
 title = "Our Man in India"
+timeout = 60000 # was 25000
 # No theme line needed!
 
 [markup]
@@ -9,6 +10,10 @@ title = "Our Man in India"
     lineNos = true
     lineNumbersInTable = true
     noClasses = false
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [taxonomies]
   category = "categories"
@@ -37,6 +42,11 @@ title = "Our Man in India"
     name = "Blog"
     url = "/blog/"
     weight = 2
+  
+  [[menus.main]]
+    name = "Tech"
+    url = "/tech/"
+    weight = 2.5
   
   [[menus.main]]
     name = "About"

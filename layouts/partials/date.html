@@ -1,0 +1,6 @@
+<time>📅 {{ with .Lastmod -}}
+    Modified on {{ . | time.Format (default "2 January 2006" $.Site.Params.date_format) }}
+    {{- else -}}
+    Created on {{ .Date.Format "2 January 2006" }}
+    {{- end }}
+</time>

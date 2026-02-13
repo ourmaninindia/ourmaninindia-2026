@@ -1,22 +1,26 @@
-<footer>
+<footer class="site-footer {{ .Site.Params.background_color_class | default "" }}" role="contentinfo">
+
+    {{ if hugo.IsDevelopment }}
+    <pre id="hugo-debug">
+        Layout: <span id="template-name">
+        {{- if .Layout }}{{ .Layout }}{{ else }}(auto){{ end }},</span> Kind: {{ .Kind }}, Type: {{ .Type }}, Section: {{ .Section }}, File: {{- with .File -}} {{ .Path }}{{ else }} (none – generated page){{ end }}
+    </pre>
+    {{ end }}
+
     <div class="footer">
-        
+
         <!-- Quick Search in Footer -->
         <div class="footer__search">
             <form action="/search" method="get" class="footer__form">
-                <input 
-                    type="text" 
-                    name="q" 
-                    placeholder="Quick search..." 
-                    class="footer__input">
+                <input type="text" name="q" placeholder="Quick search..." class="footer__input">
                 <button type="submit">
                     🔍
                 </button>
             </form>
         </div>
-        
+
         <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
-        
+
         <!-- Footer Links -->
         <div class="footer__links">
             <a href="/privacy">Privacy Policy</a>

@@ -187,7 +187,70 @@
         
         // Close lightbox - ESC key (handled in initEscapeKey)
     }
+
+     // ==========================================
+    // Template Debug Info (Development Only)
+    // ==========================================
+
+function initDebug() {
+    const isDev = window.location.hostname === 'localhost' || 
+                 window.location.hostname === '127.0.0.1' ||
+                 window.location.port === '1313';
     
+    if (!isDev) return;
+    
+    // Parse debug info
+    const source = document.querySelector('.display-template');
+    const target = document.getElementById('template-name');
+    
+    if (source && target) {
+        const debugInfo = source.textContent.trim();
+        const params = {};
+        
+        // Parse "Type=blog Kind=page Layout=none"
+        debugInfo.split(' ').forEach(pair => {
+            const [key, value] = pair.split('=');
+            params[key.toLowerCase()] = value;
+        });
+        
+        // Determine template
+        let template = '';
+        if (params.kind === 'home') {
+            template = 'index.html';
+        } else if (params.kind === 'section') {
+            template = `${params.type}/list.html`;
+        } else if (params.kind === 'page') {
+            const layout = params.layout !== 'none' ? params.layout : 'single';
+            template = `${params.type}/${layout}.html`;
+        } else {
+            template = `${params.type}/${params.kind}.html`;
+        }
+        
+        target.textContent = template;
+    }
+    
+    // Toggle panel on click
+    const toggle = document.querySelector('.debug-panel__toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            this.parentElement.classList.toggle('debug-panel--open');
+        });
+    }
+    
+    // Console output
+    if (source) {
+        console.groupCollapsed('%c🐛 Hugo Debug', 
+            'background: #1e1e1e; color: #00ff00; padding: 6px 12px; border-radius: 4px; font-weight: bold;');
+        console.log('%cTemplate:', 'color: #ffff00; font-weight: bold;', target?.textContent || 'unknown');
+        console.log('%cType:', 'color: #ffff00; font-weight: bold;', document.body.dataset.type);
+        console.log('%cKind:', 'color: #ffff00; font-weight: bold;', document.body.dataset.kind);
+        console.log('%cLayout:', 'color: #ffff00; font-weight: bold;', document.body.dataset.layout);
+        console.log('%cSection:', 'color: #ffff00; font-weight: bold;', document.body.dataset.section);
+        console.log('%cURL:', 'color: #ffff00; font-weight: bold;', window.location.pathname);
+        console.groupEnd();
+    }
+}
+
     // ==========================================
     // Modals
     // ==========================================
@@ -334,7 +397,6 @@ function initEscapeKey() {
       });
     };
 
-
     // ==========================================
     // Initialize All
     // ==========================================
@@ -348,7 +410,8 @@ function initEscapeKey() {
         initModals();
         initAccordions();
         initEscapeKey();
-        initCookie()
+        initCookie();
+        initDebug();
     }
     
     // Run on DOM ready

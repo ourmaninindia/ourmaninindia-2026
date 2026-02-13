@@ -1,17 +1,19 @@
 {{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
+<div class="display-template hidden">
+  _default/list.html
+</div>
+
 <div class="container">
     <div class="blog__grid">
         <div class="blog__posts">
             
-            {{/* Get all pages in the blog section inside the scope */}}
-            {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
+            {{ $paginator := .Paginate .Pages }}
 
-            {{ if gt (len $blogPages) 0 }}
-                {{ $paginator := .Paginate $blogPages }}
-
+            {{ if gt (len .Pages) 0 }}
                 {{ range $paginator.Pages }}
+
                     <article class="blog__post">
                         {{ with .Params.image }}
                             <div class="blog__post-image">
@@ -63,7 +65,7 @@
                 {{ end }}
 
             {{ else }}
-                <p>No blog posts found.</p>
+                <p>No Tech posts found.</p>
             {{ end }}
 
         </div>

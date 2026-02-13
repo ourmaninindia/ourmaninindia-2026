@@ -1,0 +1,19 @@
+{{ $id := .Get 0 }}          <!-- URL for the footnote -->
+{{ $url := .Get 1 }}          <!-- URL for the footnote -->
+{{ $name := .Get 2 }}         <!-- Name references -->
+{{ $source := .Get 3 }}       <!-- Source link -->
+
+{{ $list := .Page.Store.Get "footnotes"}}
+
+<div class="ref">{{ .Get 0 }}:
+<ol>
+{{ range  $key, $value := $list }}
+{{ $values := split $value ","}}
+<li id="ref-{{ (int $key)  }}">
+  <a href="{{ index $values 0 }}" target="_blank">{{ index $values 1 }} in {{ index $values 2 }}</a>
+</li>
+{{end}}
+</ol>
+</div>
+
+{{ .Page.Scratch.Delete "footnotes" }} 

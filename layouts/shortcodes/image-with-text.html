@@ -1,0 +1,14 @@
+    <div class="flex-item">
+      <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+          <img 
+            src="{{ .Get "img" }}" 
+            {{- with .Get "width" }}width="{{ . }}"{{ end }} 
+            {{- with .Get "height" }}height="{{ . }}"{{ end }} 
+            {{- with .Get "alt" }}alt="{{ . }}"{{ end }} 
+            />
+          <figcaption>
+            <p class="i">{{ .Get "caption" }}</p>
+          </figcaption>
+      </figure>
+      <div>{{ .Inner }}</div>
+    </div>

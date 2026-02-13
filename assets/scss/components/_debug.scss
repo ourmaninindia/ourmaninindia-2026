@@ -1,0 +1,124 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// ==========================================
+// DEBUG PANEL (Development Only)
+// ==========================================
+
+.debug-panel {
+    position: fixed;
+    bottom: $spacing-lg;
+    right: $spacing-lg;
+    z-index: 99999;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8125rem;
+    
+    &__toggle {
+        width: 48px;
+        height: 48px;
+        background: #1e1e1e;
+        color: #00ff00;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all $transition-base;
+        
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+    }
+    
+    &__content {
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        width: 320px;
+        max-height: 400px;
+        overflow-y: auto;
+        background: #1e1e1e;
+        color: #00ff00;
+        padding: $spacing-md;
+        border-radius: $border-radius-md;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all $transition-base;
+        
+        h4 {
+            margin: 0 0 $spacing-md 0;
+            color: #00ff00;
+            font-size: 1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: $spacing-xs;
+        }
+        
+        dl {
+            margin: 0;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: $spacing-xs $spacing-sm;
+            
+            dt {
+                font-weight: 700;
+                color: #ffff00;
+            }
+            
+            dd {
+                margin: 0;
+                word-break: break-all;
+            }
+        }
+    }
+    
+    &--open {
+        .debug-panel__content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+    
+    // Mobile
+    @media (max-width: $breakpoint-mobile) {
+        bottom: $spacing-md;
+        right: $spacing-md;
+        
+        &__toggle {
+            width: 40px;
+            height: 40px;
+            font-size: 1.25rem;
+        }
+        
+        &__content {
+            width: 280px;
+            max-height: 300px;
+        }
+    }
+}
+
+// Body class for development mode
+body.dev-mode {
+    // Optional: add a subtle indicator
+    &::before {
+        content: 'Development';
+        position: fixed;
+        top: 0;
+        left: 5%;
+        transform: translateX(-50%);
+        background: #ff6b00;
+        color: white;
+        padding: 2px 12px;
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        z-index: 99998;
+        border-radius: 0 0 4px 4px;
+        opacity: 0.8;
+    }
+}

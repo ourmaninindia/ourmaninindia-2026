@@ -1,0 +1,56 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{- define "main" }}
+ <div class="container">
+  <div class="post__meta">
+      <time>⏱️ {{ .ReadingTime }} min read</time>
+  </div>
+
+  <div class="content-header">
+    <div></div>
+      <div class="content">
+      {{ .Content }}
+      </div>
+      {{ partial "date.html" . }}
+  </div>
+
+  {{- $mainSections := (slice "post") }}
+  {{- $section := where .Site.RegularPages ".Params.featured" true }}
+  {{/* this was $section := where .Site.RegularPages "Section" "in" $mainSections */}}
+  {{- $section_count := len $section -}}
+
+  {{- if ge $section_count 1 }}
+    {{- $section_name := "post" -}}
+
+    <div class="article">
+      {{- with .Site.GetPage "section" $section_name }}
+        <div class="recent-articles">
+        {{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}
+        </div>
+      {{- end }}
+
+      {{- $posts := $.Param "recent_posts_number" | default 3 }}
+      <section>
+        {{- range (first $posts $section) }}
+          <div>
+            {{ .Render "summary-with-image" }}
+          </div>
+        {{- end }}
+      </section>
+    </div>
+
+    {{- if ge $section_count (add $posts 1) }}
+      {{- with .Site.GetPage "section" $section_name }}
+      <div>
+        <a 
+          class="posted"
+          href="{{ .RelPermalink }}">
+          {{ i18n "allTitle" . }}
+        </a>
+      </div>
+      {{- end }}
+    {{- end }}
+
+  {{- end }}
+  </div>
+{{- end }}

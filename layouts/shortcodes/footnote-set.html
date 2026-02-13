@@ -1,0 +1,7 @@
+{{ $id   := .Get 0 }}
+{{ $href := .Get 1 }}
+{{ $name := .Get 2 }}
+{{ $source := .Get 3 }} 
+{{ .Page.Store.SetInMap "footnotes" $id (delimit (slice $href $name $source) ", ") }}
+
+<sup><a href="#ref-{{ $id }}">{{ $id }}</a></sup>
