@@ -1,64 +1,29 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    
-    {{/* Simple debug info - no errors */}}
-    {{ if eq hugo.Environment "development" }}
-    <span class="display-template" style="display:none;">
-        Type={{ .Type }} Kind={{ .Kind }} Layout={{ .Layout | default "none" }}
-    </span>
-    {{ end }}
-    
     {{ partial "site-style.html" . }}
     {{ partial "seo.html" . }}
 </head>
-<body{{ if eq hugo.Environment "development" }} 
-     class="dev-mode"
-     data-type="{{ .Type }}"
-     data-kind="{{ .Kind }}"
-     data-layout="{{ .Layout | default "none" }}"
-     data-section="{{ .Section }}"
-{{ end }}>
+
+<body>
     {{ partial "header.html" . }}
-    
+
     <main>
         {{ block "main" . }}{{ end }}
     </main>
-    
+
     {{ partial "footer.html" . }}
-   
-    
+    {{ partial "site-script.html" . }}
+
     {{ if eq hugo.Environment "development" }}
-    <div id="debug-panel" class="debug-panel">
-        <div class="debug-panel__toggle">🐛</div>
-        <div class="debug-panel__content">
-            <h4>Debug Info</h4>
-            <dl>
-                <dt>Template:</dt>
-                <dd id="template-name">-</dd>
-                
-                <dt>Type:</dt>
-                <dd>{{ .Type }}</dd>
-                
-                <dt>Kind:</dt>
-                <dd>{{ .Kind }}</dd>
-                
-                <dt>Layout:</dt>
-                <dd>{{ .Layout | default "(default)" }}</dd>
-                
-                <dt>URL:</dt>
-                <dd>{{ .RelPermalink }}</dd>
-                
-                {{ with .File }}
-                <dt>Source:</dt>
-                <dd>{{ .Path }}</dd>
-                {{ end }}
-            </dl>
-        </div>
+    <div class="debug-panel">
+        Template: <span id="template-name">-</span>
     </div>
     {{ end }}
 </body>
+
 </html>

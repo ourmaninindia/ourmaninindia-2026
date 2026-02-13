@@ -1,12 +1,4 @@
 <footer class="site-footer {{ .Site.Params.background_color_class | default "" }}" role="contentinfo">
-
-    {{ if hugo.IsDevelopment }}
-    <pre id="hugo-debug">
-        Layout: <span id="template-name">
-        {{- if .Layout }}{{ .Layout }}{{ else }}(auto){{ end }},</span> Kind: {{ .Kind }}, Type: {{ .Type }}, Section: {{ .Section }}, File: {{- with .File -}} {{ .Path }}{{ else }} (none – generated page){{ end }}
-    </pre>
-    {{ end }}
-
     <div class="footer">
 
         <!-- Quick Search in Footer -->

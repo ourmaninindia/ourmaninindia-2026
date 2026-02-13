@@ -1,6 +1,10 @@
-<time>📅 {{ with .Lastmod -}}
-    Modified on {{ . | time.Format (default "2 January 2006" $.Site.Params.date_format) }}
-    {{- else -}}
-    Created on {{ .Date.Format "2 January 2006" }}
-    {{- end }}
+{{- $page := . -}}
+{{- $format := default "January 2, 2006" $page.Site.Params.date_format -}}
+
+<time>
+{{- if ne $page.Date $page.Lastmod -}}
+    📅 Updated {{ $page.Lastmod | time.Format $format }}
+{{- else -}}
+    📅 {{ $page.Date | time.Format $format }} 
+{{- end -}}
 </time>
