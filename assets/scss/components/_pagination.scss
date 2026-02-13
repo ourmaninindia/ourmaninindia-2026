@@ -1,0 +1,76 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// components/_pagination.scss
+// Pagination styles
+
+.pagination {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "prev info next";
+  align-items: center;
+  padding: $spacing-md;
+  background: $color-bg;
+  border-radius: $border-radius-lg;
+  gap: $spacing-sm;
+  
+  a {
+    color: $color-primary;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: $font-size-base;
+
+    @include transition(color);
+    
+    @include hover-state {
+      color: $color-primary-dark;
+    }
+    
+    &:first-child {
+      grid-area: prev;
+    }
+    
+    &:last-of-type {
+      grid-area: next;
+    }
+  }
+}
+
+.pagination-info {
+  grid-area: info;
+  text-align: center;
+  font-size: $font-size-base;
+}
+
+// Post navigation (prev/next post)
+.post-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "prev next";
+  padding-top: $spacing-md;
+  border-top: 1px solid $color-border;
+  gap: $spacing-md;
+}
+
+.post-nav-link {
+  text-decoration: none;
+  color: $color-primary;
+  font-weight: 600;
+  font-size: $font-size-base;
+
+  @include transition(color);
+  
+  @include hover-state {
+    color: $color-primary-dark;
+  }
+  
+  &.prev {
+    grid-area: prev;
+    text-align: left;
+  }
+  
+  &.next {
+    grid-area: next;
+    text-align: right;
+  }
+}

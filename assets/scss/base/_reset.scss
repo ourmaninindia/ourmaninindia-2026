@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+/* ==========================================
+   BASE STYLES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --max-width: 1200px;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: clamp(16px, 3vw, 24px);
+    --spacing-lg: clamp(24px, 4vw, 32px);
+    --spacing-xl: clamp(32px, 6vw, 48px);
+    --color-primary: #2563eb;
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f9fafb;
+    --color-border: #e5e7eb;
+}
+
+body {
+    font-family: $font-family;
+    color: var(--color-text);
+    line-height: 1.6;
+    background: var(--color-bg-secondary);
+}

@@ -1,0 +1,111 @@
+@use "variables" as *;
+
+// ========================================== 
+// Reusable mixins and functions
+// ========================================== 
+
+// Media query mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: $breakpoint-desktop) {
+      @content;
+    }
+  } @else if $breakpoint == wide {
+    @media (min-width: $breakpoint-wide) {
+      @content;
+    }
+  }
+}
+
+// Container query mixin (with fallback)
+@mixin container-query($max-width) {
+  @container (max-width: #{$max-width}) {
+    @content;
+  }
+}
+
+// Container query fallback
+@mixin container-query-fallback($max-width) {
+  @supports not (container-type: inline-size) {
+    @media (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+
+// Flexbox center mixin
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Grid center mixin
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+// Transition mixin
+// $properties... → variadic argument (can take 1 or many properties)
+// $transition-base → duration + timing function
+@mixin transition($properties...) {
+  transition: $transition-base;
+  transition-property: $properties;
+}
+
+// Hover state mixin (with reduced motion support)
+@mixin hover-state {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Multi-line truncate
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Aspect ratio box
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-top: calc(($height / $width) * 100%);
+  }
+}
+
+// Visually hidden (accessible but not visible)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

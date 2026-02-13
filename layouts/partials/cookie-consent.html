@@ -1,0 +1,256 @@
+<!-- Vanilla Cookie Consent CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
+
+<!-- Custom Cookie Consent Styling -->
+<link rel="stylesheet" href="{{ "css/cookie-consent-custom.css" | relURL }}">
+
+<!-- Vanilla Cookie Consent Script -->
+<script type="module">
+import * as CookieConsent from 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js';
+
+CookieConsent.run({
+    guiOptions: {
+        consentModal: {
+            layout: "box inline",
+            position: "bottom right",
+            equalWeightButtons: false,
+            flipButtons: false
+        },
+        preferencesModal: {
+            layout: "box",
+            position: "right",
+            equalWeightButtons: false,
+            flipButtons: false
+        }
+    },
+    
+    categories: {
+        necessary: {
+            readOnly: true,
+            enabled: true
+        },
+        analytics: {
+            autoClear: {
+                cookies: [
+                    { name: /^_ga/ },
+                    { name: '_gid' },
+                    { name: /^_gat/ }
+                ]
+            },
+            services: {
+                ga: {
+                    label: 'Google Analytics',
+                    onAccept: () => {
+                        // Load Google Analytics
+                        {{ if .Site.Params.googleAnalytics }}
+                        console.log('Analytics cookies accepted - Loading Google Analytics');
+                        loadGoogleAnalytics();
+                        {{ end }}
+                    },
+                    onReject: () => {
+                        console.log('Analytics cookies rejected');
+                    }
+                }
+            }
+        },
+        marketing: {
+            autoClear: {
+                cookies: [
+                    { name: /^_fbp/ },
+                    { name: /^fr/ }
+                ]
+            }
+        }
+    },
+
+    language: {
+        default: "{{ .Site.Language.Lang }}",
+        autoDetect: "browser",
+        
+        translations: {
+            en: {
+                consentModal: {
+                    title: "🍪 We value your privacy",
+                    description: "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking 'Accept All', you consent to our use of cookies. You can customize your preferences at any time.",
+                    acceptAllBtn: "Accept all",
+                    acceptNecessaryBtn: "Reject all",
+                    showPreferencesBtn: "Manage preferences",
+                    footer: '<a href="/privacy">Privacy Policy</a>\n<a href="/terms">Terms of Service</a>'
+                },
+                preferencesModal: {
+                    title: "Cookie Preferences Center",
+                    acceptAllBtn: "Accept all",
+                    acceptNecessaryBtn: "Reject all",
+                    savePreferencesBtn: "Save preferences",
+                    closeIconLabel: "Close modal",
+                    serviceCounterLabel: "Service|Services",
+                    sections: [
+                        {
+                            title: "Cookie Usage 📢",
+                            description: "We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href=\"/privacy\" class=\"cc__link\">privacy policy</a>."
+                        },
+                        {
+                            title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
+                            description: "These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly.",
+                            linkedCategory: "necessary"
+                        },
+                        {
+                            title: "Analytics Cookies",
+                            description: "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. We use this data to improve our content and user experience.",
+                            linkedCategory: "analytics",
+                            cookieTable: {
+                                headers: {
+                                    name: "Name",
+                                    domain: "Domain",
+                                    description: "Description",
+                                    expiration: "Expiration"
+                                },
+                                body: [
+                                    {
+                                        name: "_ga",
+                                        domain: location.hostname,
+                                        description: "Google Analytics - Main cookie for distinguishing unique users",
+                                        expiration: "2 years"
+                                    },
+                                    {
+                                        name: "_gid",
+                                        domain: location.hostname,
+                                        description: "Google Analytics - Stores information on how visitors use a website",
+                                        expiration: "24 hours"
+                                    },
+                                    {
+                                        name: "_gat",
+                                        domain: location.hostname,
+                                        description: "Google Analytics - Used to throttle request rate",
+                                        expiration: "1 minute"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            title: "Marketing Cookies",
+                            description: "These cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user.",
+                            linkedCategory: "marketing"
+                        },
+                        {
+                            title: "More information",
+                            description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc__link" href="/contact">contact us</a>.'
+                        }
+                    ]
+                }
+            },
+            fr: {
+                consentModal: {
+                    title: "🍪 Nous respectons votre vie privée",
+                    description: "Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser du contenu personnalisé et analyser notre trafic. En cliquant sur 'Tout accepter', vous consentez à notre utilisation des cookies.",
+                    acceptAllBtn: "Tout accepter",
+                    acceptNecessaryBtn: "Tout rejeter",
+                    showPreferencesBtn: "Gérer les préférences",
+                    footer: '<a href="/privacy">Politique de confidentialité</a>\n<a href="/terms">Conditions d\'utilisation</a>'
+                },
+                preferencesModal: {
+                    title: "Centre de préférences des cookies",
+                    acceptAllBtn: "Tout accepter",
+                    acceptNecessaryBtn: "Tout rejeter",
+                    savePreferencesBtn: "Enregistrer les préférences",
+                    closeIconLabel: "Fermer le modal",
+                    serviceCounterLabel: "Service|Services",
+                    sections: [
+                        {
+                            title: "Utilisation des cookies 📢",
+                            description: "Nous utilisons des cookies pour assurer les fonctionnalités de base du site Web et améliorer votre expérience en ligne. Vous pouvez choisir pour chaque catégorie d'accepter/refuser quand vous le souhaitez."
+                        },
+                        {
+                            title: "Cookies strictement nécessaires <span class=\"pm__badge\">Toujours activés</span>",
+                            description: "Ces cookies sont essentiels au bon fonctionnement de mon site Web. Sans ces cookies, le site Web ne fonctionnerait pas correctement.",
+                            linkedCategory: "necessary"
+                        },
+                        {
+                            title: "Cookies analytiques",
+                            description: "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site Web en collectant et en signalant des informations de manière anonyme.",
+                            linkedCategory: "analytics",
+                            cookieTable: {
+                                headers: {
+                                    name: "Nom",
+                                    domain: "Domaine",
+                                    description: "Description",
+                                    expiration: "Expiration"
+                                },
+                                body: [
+                                    {
+                                        name: "_ga",
+                                        domain: location.hostname,
+                                        description: "Google Analytics - Cookie principal pour distinguer les utilisateurs uniques",
+                                        expiration: "2 ans"
+                                    },
+                                    {
+                                        name: "_gid",
+                                        domain: location.hostname,
+                                        description: "Google Analytics - Stocke des informations sur la façon dont les visiteurs utilisent un site Web",
+                                        expiration: "24 heures"
+                                    },
+                                    {
+                                        name: "_gat",
+                                        domain: location.hostname,
+                                        description: "Google Analytics - Utilisé pour limiter le taux de demande",
+                                        expiration: "1 minute"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            title: "Cookies marketing",
+                            description: "Ces cookies sont utilisés pour suivre les visiteurs sur les sites Web. L'intention est d'afficher des publicités pertinentes et attrayantes pour l'utilisateur individuel.",
+                            linkedCategory: "marketing"
+                        },
+                        {
+                            title: "Plus d'informations",
+                            description: 'Pour toute question concernant notre politique en matière de cookies et vos choix, veuillez <a class="cc__link" href="/contact">nous contacter</a>.'
+                        }
+                    ]
+                }
+            }
+        }
+    }
+});
+
+// Function to load Google Analytics
+{{ if .Site.Params.googleAnalytics }}
+function loadGoogleAnalytics() {
+    // Check if already loaded
+    if (window.gtag) {
+        console.log('Google Analytics already loaded');
+        return;
+    }
+    
+    // Create and append Google Analytics script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}';
+    document.head.appendChild(script);
+    
+    // Initialize Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', '{{ .Site.Params.googleAnalytics }}', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+    });
+    
+    console.log('Google Analytics loaded successfully');
+}
+
+// Load analytics if already accepted
+if (CookieConsent.acceptedCategory('analytics')) {
+    loadGoogleAnalytics();
+}
+{{ end }}
+
+// Make function available globally
+window.loadGoogleAnalytics = loadGoogleAnalytics;
+
+// Expose CookieConsent globally for footer link
+window.cookieconsent = CookieConsent;
+</script>

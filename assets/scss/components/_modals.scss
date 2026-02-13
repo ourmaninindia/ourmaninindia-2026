@@ -1,0 +1,155 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// ==========================================
+// MODAL COMPONENT
+// ==========================================
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    &--open {
+        display: flex;
+        opacity: 1;
+    }
+    
+    &__dialog {
+        background: $color-bg;
+        border-radius: $border-radius-lg;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        animation: modalSlideIn 0.3s ease;
+        
+        @media (max-width: $breakpoint-mobile) {
+            max-width: 95vw;
+        }
+    }
+    
+    &__header {
+        padding: $spacing-lg;
+        border-bottom: 1px solid $color-border;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        background: $color-bg;
+        z-index: 1;
+    }
+    
+    &__title {
+        margin: 0;
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        font-weight: 700;
+        color: $color-text;
+    }
+    
+    &__close {
+        width: 32px;
+        height: 32px;
+        background: $color-bg-secondary;
+        border: 1px solid $color-border;
+        border-radius: $border-radius-md;
+        color: $color-text;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: all $transition-base;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: $spacing-md;
+        
+        &:hover {
+            background: $color-primary;
+            color: white;
+            border-color: $color-primary;
+            transform: rotate(90deg);
+        }
+        
+        &:active {
+            transform: rotate(90deg) scale(0.9);
+        }
+    }
+    
+    &__body {
+        padding: $spacing-lg;
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__footer {
+        padding: $spacing-lg;
+        border-top: 1px solid $color-border;
+        display: flex;
+        gap: $spacing-sm;
+        justify-content: flex-end;
+        position: sticky;
+        bottom: 0;
+        background: $color-bg;
+        
+        @media (max-width: $breakpoint-mobile) {
+            flex-direction: column;
+            
+            .button {
+                width: 100%;
+            }
+        }
+    }
+    
+    // Modal Sizes
+    &--small {
+        .modal__dialog {
+            max-width: 400px;
+        }
+    }
+    
+    &--large {
+        .modal__dialog {
+            max-width: 800px;
+        }
+    }
+    
+    &--full {
+        .modal__dialog {
+            max-width: 95vw;
+            max-height: 95vh;
+        }
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+// Prevent body scroll when modal is open
+body.modal-open {
+    overflow: hidden;
+}

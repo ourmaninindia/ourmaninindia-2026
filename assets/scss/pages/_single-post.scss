@@ -1,0 +1,114 @@
+@use "../abstracts" as *;
+
+// ==========================================
+// Single post page specific styles
+// ==========================================
+
+.single-post {
+  grid-area: article;
+  background: $color-bg;
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "body"
+    "tags"
+    "navigation";
+  gap: $spacing-lg;
+}
+
+// Post header
+.post-header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas:
+    "image"
+    "title"
+    "meta"
+    "categories";
+  gap: $spacing-sm;
+  
+  .post-title {
+    grid-area: title;
+    font-size: $font-size-2xl;
+  }
+  
+  .post-meta {
+    grid-area: meta;
+  }
+}
+
+.post-featured-image {
+  grid-area: image;
+  width: 100%;
+  height: clamp(250px, 40vw, 400px);
+  object-fit: cover;
+  border-radius: $border-radius-lg;
+}
+
+.post-categories {
+  grid-area: categories;
+  display: flex;
+  gap: $spacing-xs;
+  flex-wrap: wrap;
+}
+
+// Post body
+.post-body {
+  grid-area: body;
+  line-height: $line-height-relaxed;
+  font-size: $font-size-md;
+  
+  h2 {
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-xl;
+  }
+  
+  h3 {
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-lg;
+  }
+  
+  p {
+    margin-bottom: $spacing-md;
+  }
+  
+  ul,
+  ol {
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-lg;
+    list-style: disc;
+    
+    li {
+      margin-bottom: $spacing-xs;
+    }
+  }
+  
+  ol {
+    list-style: decimal;
+  }
+  
+  blockquote {
+    margin: $spacing-md 0;
+    padding-left: $spacing-md;
+    border-left: 4px solid $color-primary;
+    font-style: italic;
+    color: $color-text-light;
+  }
+  
+  img {
+    margin: $spacing-md 0;
+    border-radius: $border-radius-md;
+  }
+}
+
+// Post tags
+.post-tags {
+  grid-area: tags;
+  padding-top: $spacing-md;
+  border-top: 1px solid $color-border;
+}

@@ -1,0 +1,31 @@
+{{ $scripts := slice }}
+
+{{ with resources.Get "/js/gallery.js" }}{{ $scripts = $scripts | append . }}{{ end }}
+{{ with resources.Get "/js/main.js" }}{{ $scripts = $scripts | append . }}{{ end }}
+{{ with resources.Get "/js/reading-progress.js" }}{{ $scripts = $scripts | append . }}{{ end }}
+{{ with resources.Get "/js/search.js" }}{{ $scripts = $scripts | append . }}{{ end }}
+{{ with resources.Get "/js/contact.js" }}{{ $scripts = $scripts | append . }}{{ end }}
+
+{{ $js := $scripts | resources.Concat "js/script.js" }}
+
+{{ if eq hugo.Environment "production" }}
+  {{ $js = $js | minify | fingerprint }}
+{{ end }}
+
+{{ if ne hugo.Environment "production" }}
+  {{ with resources.Get "/js/template-debug.js" }}
+    {{ $scripts = $scripts | append . }}
+  {{ end }}
+{{ end }}
+
+<script src="{{ $js.RelPermalink }}"></script>
+
+<script type="module" src="{{ (resources.Get "/js/cookie-consent.js").RelPermalink }}"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+ navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('SW registered:', reg.scope))
+    .catch(err => console.error('SW failed:', err));
+}
+</script>

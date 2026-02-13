@@ -1,0 +1,30 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// ==========================================
+// Section Divider
+// ==========================================
+
+.section-divider {
+    text-align: center;
+    position: relative;
+    margin: $spacing-lg 0;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background: $color-border;
+    }
+    
+    span {
+        background: $color-bg-secondary;
+        padding: 0 $spacing-md;
+        position: relative;
+        color: $color-text-light;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,88 @@
+{{ if not .Params.disable_comments }}
+<section class="comments">
+    <div class="comments__container">
+        <h3 class="comments__title">💬 Comments</h3>
+        <p class="comments__description">
+            {{ if in .Params.categories "Tech" }}
+                Share your technical insights and questions!
+            {{ else if in .Params.categories "Cycling" }}
+                Share your cycling experiences and tips!
+            {{ else }}
+                Share your thoughts below!
+            {{ end }}
+        </p>
+        
+        <div id="cusdis-thread"
+             data-host="{{ .Site.Params.cusdis.host }}"
+             data-app-id="{{ .Site.Params.cusdis.appId }}"
+             data-page-id="{{ .RelPermalink }}"
+             data-page-url="{{ .Permalink }}"
+             data-page-title="{{ .Title }}"
+             data-theme="auto">
+        </div>
+    </div>
+</section>
+
+<script async defer src="{{ .Site.Params.cusdis.host }}/js/cusdis.es.js"></script>
+
+<style>
+/* ==========================================
+   CUSDIS COMMENTS STYLING
+   ========================================== */
+
+.comments {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 2px solid var(--color-border);
+}
+
+.comments__container {
+    max-width: 800px;
+}
+
+.comments__title {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.comments__description {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.6;
+}
+
+/* Cusdis iframe container */
+#cusdis-thread {
+    margin-top: var(--spacing-lg);
+}
+
+/* Style the iframe when it loads */
+#cusdis-thread iframe {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg);
+}
+
+/* Loading state */
+#cusdis-thread:empty::before {
+    content: "Loading comments...";
+    display: block;
+    padding: var(--spacing-lg);
+    text-align: center;
+    color: var(--color-text-light);
+    background: var(--color-bg-secondary);
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .comments {
+        margin-top: var(--spacing-lg);
+        padding-top: var(--spacing-lg);
+    }
+}
+</style>
+{{ end }}

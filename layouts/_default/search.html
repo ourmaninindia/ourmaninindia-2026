@@ -1,0 +1,36 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="container">
+    <div class="search-page">
+        <header class="search-page__header">
+            <h1 class="search-page__title">Search</h1>
+            <p class="search-page__description">Search through all blog posts</p>
+        </header>
+        
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-box__input" 
+                placeholder="Search articles..."
+                autocomplete="off"
+                aria-label="Search">
+            <button id="search-clear" class="search-box__clear" aria-label="Clear search">×</button>
+        </div>
+        
+        <div id="search-stats" class="search-stats"></div>
+        <div id="search-results" class="search-results"></div>
+    </div>
+</div>
+
+{{/* Load Fuse.js */}}
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" 
+        integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I=" 
+        crossorigin="anonymous">
+</script>
+
+{{/* Load Search Script */}}
+{{- $search := resources.Get "js/search.js" | minify | fingerprint -}}
+<script src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
+{{ end }}

@@ -1,0 +1,127 @@
+@use "../abstracts" as *;
+@use "../components/cards"; 
+
+// ==========================================
+// IMAGE GALLERIES
+// ==========================================
+
+.image-gallery {
+    margin: $spacing-xl 0;
+    
+    .post-image {
+        margin-bottom: $spacing-lg;
+        
+        &:not(.post-image--wide) {
+            @media (min-width: $breakpoint-tablet) {
+                width: calc(50% - #{$spacing-md});
+                
+                &.post-image--left {
+                    float: left;
+                    clear: left;
+                    margin-right: $spacing-lg;
+                }
+                
+                &.post-image--right {
+                    float: right;
+                    clear: right;
+                    margin-left: $spacing-lg;
+                }
+            }
+        }
+        
+        &.post-image--wide {
+            width: 100%;
+            clear: both;
+            margin: $spacing-xl 0;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $border-radius-md;
+            box-shadow: $shadow-md;
+            transition: transform $transition-base, box-shadow $transition-base;
+            
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: $shadow-md; // was lg;
+            }
+        }
+    }
+    
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.cycling-gallery {
+    @extend .image-gallery;
+}
+
+// ==========================================
+// RIDE STATISTICS CONTAINER
+// (Individual stats use .stats-card from components)
+// ==========================================
+
+.ride-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: $spacing-md;
+    background: linear-gradient(135deg, rgba($color-primary, 0.1) 0%, rgba($color-primary, 0.05) 100%);
+    padding: $spacing-lg;
+    border-radius: $border-radius-lg;
+    margin: $spacing-xl 0;
+    border: 2px solid $color-border;
+    box-shadow: $shadow-sm;
+    
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-sm;
+        padding: $spacing-md;
+    }
+}
+
+// Use .stats-card from components for individual stats
+.ride-stat {
+    @extend .stats-card;
+}
+
+// ==========================================
+// ELEVATION CHART
+// ==========================================
+
+.elevation-chart-container {
+    @extend .content-card;  // Uses card from components
+    margin: $spacing-xl 0;
+}
+
+.elevation-chart__title {
+    margin: 0 0 $spacing-md 0;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    color: $color-text;
+    text-align: center;
+}
+
+.elevation-chart {
+    position: relative;
+    
+    canvas {
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+// Responsive
+@media (max-width: $breakpoint-mobile) {
+    .image-gallery,
+    .cycling-gallery {
+        .post-image {
+            width: 100% !important;
+            float: none !important;
+            clear: both !important;
+            margin: $spacing-md 0 !important;
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{{/* 
+  Author Bio - Enhanced Version
+  Uses author from front matter, falls back to site default
+*/}}
+
+{{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
+{{ $author := index .Site.Data.authors $authorSlug }}
+
+{{ with $author }}
+{{ $authorPosts := where $.Site.RegularPages "Params.author" ($.Params.author | default $.Site.Params.defaultAuthor) }}
+<aside class="author-bio">
+    <div class="author-bio__card">
+        <div class="author-bio__avatar">
+            <img src="{{ .avatar }}" alt="{{ .name }}" loading="lazy">
+        </div>
+        
+        <div class="author-bio__content">
+            <div class="author-bio__header">
+                <div class="author-bio__header-text">
+                    <h3 class="author-bio__name">{{ .name }}</h3>
+                   {{ with .role }}
+    <span class="author-bio__role {{ if eq . "Guest Contributor" }}author-bio__role--guest{{ end }}">
+        {{ . }}
+    </span>
+{{ end }}
+                </div>
+                {{ with .twitter }}
+                    <a href="https://twitter.com/{{ . }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="button button--small">
+                        Follow
+                    </a>
+                {{ end }}
+            </div>
+            
+            <p class="author-bio__description">{{ .bio }}</p>
+            
+            <div class="author-bio__stats">
+                <div class="stat">
+                    <span class="stat__number">{{ len $authorPosts }}</span>
+                    <span class="stat__label">Articles</span>
+                </div>
+                {{ with .followers }}
+                <div class="stat">
+                    <span class="stat__number">{{ . }}</span>
+                    <span class="stat__label">Followers</span>
+                </div>
+                {{ end }}
+            </div>
+            
+            <div class="author-bio__social">
+                {{ with .twitter }}
+                    <a href="https://twitter.com/{{ . }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="social-icon"
+                       aria-label="Follow on Twitter"
+                       title="Twitter">
+                        🐦
+                    </a>
+                {{ end }}
+                
+                {{ with .github }}
+                    <a href="https://github.com/{{ . }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="social-icon"
+                       aria-label="Follow on GitHub"
+                       title="GitHub">
+                        💻
+                    </a>
+                {{ end }}
+                
+                {{ with .linkedin }}
+                    <a href="https://linkedin.com/in/{{ . }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="social-icon"
+                       aria-label="Connect on LinkedIn"
+                       title="LinkedIn">
+                        💼
+                    </a>
+                {{ end }}
+                
+                {{ with .instagram }}
+                    <a href="https://instagram.com/{{ . }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="social-icon"
+                       aria-label="Follow on Instagram"
+                       title="Instagram">
+                        📷
+                    </a>
+                {{ end }}
+                
+                {{ with .strava }}
+                    <a href="https://www.strava.com/athletes/{{ . }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="social-icon"
+                       aria-label="Follow on Strava"
+                       title="Strava">
+                        🚴
+                    </a>
+                {{ end }}
+                
+                {{ with .website }}
+                    <a href="{{ . }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="social-icon"
+                       aria-label="Visit Website"
+                       title="Website">
+                        🌐
+                    </a>
+                {{ end }}
+                
+                {{ with .email }}
+                    <a href="mailto:{{ . }}" 
+                       class="social-icon"
+                       aria-label="Send Email"
+                       title="Email">
+                        ✉️
+                    </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    
+    <!-- More from this author -->
+    {{ if gt (len $authorPosts) 1 }}
+    <div class="author-bio__more">
+        <h4>More from {{ .name }}</h4>
+        <div class="author-bio__articles">
+            {{ range first 3 (where $authorPosts "Permalink" "!=" $.Permalink) }}
+                <a href="{{ .RelPermalink }}" class="mini-article">
+                    <div class="mini-article__content">
+                        <span class="mini-article__title">{{ .Title }}</span>
+                        <div class="mini-article__meta">
+                            <span class="mini-article__date">{{ .Date.Format "Jan 02, 2006" }}</span>
+                            {{ with .Params.categories }}
+                                <span class="mini-article__category">{{ index . 0 }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <span class="mini-article__arrow">→</span>
+                </a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</aside>
+{{ end }}

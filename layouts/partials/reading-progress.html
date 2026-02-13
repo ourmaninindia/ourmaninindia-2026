@@ -1,0 +1,31 @@
+<div class="reading-progress">
+    <div class="reading-progress__bar"></div>
+</div>
+
+<style>
+.reading-progress {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(0,0,0,0.1);
+    z-index: 99;
+}
+
+.reading-progress__bar {
+    height: 100%;
+    background: var(--color-primary);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+</style>
+
+<script>
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.querySelector('.reading-progress__bar').style.width = scrolled + '%';
+});
+</script>

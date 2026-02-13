@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+// ==========================================
+// Sidebar layout and structure
+// ==========================================
+
+.sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "search"
+    "recent"
+    "categories"
+    "tags"
+    "archive"
+    "newsletter";
+  gap: $spacing-md;
+  
+  // On smaller screens, make sidebar multi-column
+  @include container-query(900px) {
+    position: static;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-areas:
+      "search recent"
+      "categories tags"
+      "archive newsletter";
+  }
+}
+
+// Sidebar widget grid areas
+.widget-search {
+  grid-area: search;
+}
+
+.widget-recent {
+  grid-area: recent;
+}
+
+.widget-categories {
+  grid-area: categories;
+}
+
+.widget-tags {
+  grid-area: tags;
+}
+
+.widget-archive {
+  grid-area: archive;
+}
+
+.widget-newsletter {
+  grid-area: newsletter;
+}

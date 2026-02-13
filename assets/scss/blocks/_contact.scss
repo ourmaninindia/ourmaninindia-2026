@@ -1,0 +1,186 @@
+@use "../abstracts" as *;
+
+// ==========================================
+// CONTACT PAGE BLOCK
+// ==========================================
+
+.contact {
+    &__page {
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas:
+            "subscribe"
+            "divider"
+            "form";
+        gap: $spacing-xl;
+    }
+    
+    &__subscribe {
+        grid-area: subscribe;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: $spacing-xl;
+        border-radius: $border-radius-lg;
+        text-align: center;
+    }
+    
+    &__subscribe-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: $spacing-sm;
+    }
+    
+    &__subscribe-description {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        opacity: 0.9;
+        margin-bottom: $spacing-lg;
+    }
+    
+    &__subscribe-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr auto;
+        gap: $spacing-sm;
+    }
+    
+    &__subscribe-input {
+        padding: $spacing-sm $spacing-md;
+        border: 2px solid rgba(white, 0.3);
+        border-radius: $border-radius-md;
+        background: rgba(white, 0.1);
+        color: white;
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        font-family: inherit;
+        backdrop-filter: blur(10px);
+        
+        &::placeholder {
+            color: rgba(white, 0.7);
+        }
+        
+        &:focus {
+            outline: none;
+            border-color: white;
+            background: rgba(white, 0.2);
+        }
+    }
+    
+    &__subscribe-button {
+        padding: $spacing-sm $spacing-lg;
+        background: white;
+        color: $color-primary;
+        border: none;
+        border-radius: $border-radius-md;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all $transition-base;
+        font-family: inherit;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    
+    &__subscribe-note {
+        font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+        opacity: 0.8;
+        margin-top: $spacing-sm;
+    }
+    
+    &__section {
+        grid-area: form;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-areas: "info form";
+        gap: $spacing-xl;
+    }
+    
+    &__info {
+        grid-area: info;
+    }
+    
+    &__info-title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: $spacing-sm;
+        color: $color-text;
+    }
+    
+    &__info-description {
+        color: $color-text-light;
+        margin-bottom: $spacing-lg;
+        line-height: 1.6;
+    }
+    
+    &__methods {
+        display: grid;
+        gap: $spacing-md;
+    }
+    
+    &__method {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: $spacing-sm;
+        padding: $spacing-md;
+        background: $color-bg;
+        border-radius: $border-radius-md;
+        border: 1px solid $color-border;
+        transition: all $transition-base;
+        text-decoration: none;
+        color: inherit;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+            border-color: $color-primary;
+        }
+    }
+    
+    &__method-icon {
+        font-size: 1.5rem;
+    }
+    
+    &__method-details {
+        h4 {
+            margin: 0 0 4px;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            font-weight: 600;
+            color: $color-text;
+        }
+    }
+    
+    &__method-link {
+        color: $color-primary;
+        text-decoration: none;
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        transition: color $transition-base;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &__form {
+        grid-area: form;
+        background: $color-bg;
+        padding: $spacing-lg;
+        border-radius: $border-radius-lg;
+        border: 1px solid $color-border;
+        box-shadow: $shadow-sm;
+    }
+}
+
+// Responsive
+@media (width <= 900px) {
+    .contact {
+        &__subscribe-form {
+            grid-template-columns: 1fr;
+        }
+        
+        &__section {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "info"
+                "form";
+        }
+    }
+}

@@ -1,0 +1,34 @@
+[readMore]
+other = "Read more →"
+[previous]
+other = "Previous"
+[next]
+other = "Next"
+[page]
+other = "Page"
+[of]
+other = "of"
+[recentPosts]
+other = "Recent Posts"
+[categories]
+other = "Categories"
+[popularTags]
+other = "Popular Tags"
+[tags]
+other = "Tags"
+[archive]
+other = "Archive"
+[search]
+other = "Search"
+[searchPlaceholder]
+other = "Search posts..."
+[newsletter]
+other = "Newsletter"
+[newsletterDescription]
+other = "Subscribe to get our latest articles delivered to your inbox."
+[emailPlaceholder]
+other = "Your email..."
+[subscribe]
+other = "Subscribe"
+[searchResultsCount]
+other = "results found"

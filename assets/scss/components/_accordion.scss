@@ -1,0 +1,162 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// ==========================================
+// ACCORDION COMPONENT
+// ==========================================
+
+.accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    margin: $spacing-xl 0;
+}
+
+.accordion {
+    background: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    transition: all $transition-base;
+    
+    &:hover {
+        border-color: $color-primary;
+    }
+    
+    &__toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacing-md;
+        padding: $spacing-lg;
+        background: $color-bg;
+        border: none;
+        cursor: pointer;
+        transition: background $transition-base;
+        text-align: left;
+        
+        &:hover {
+            background: $color-bg-secondary;
+        }
+        
+        &[aria-expanded="true"] {
+            background: $color-bg-secondary;
+            border-bottom: 1px solid $color-border;
+            
+            .accordion__icon {
+                transform: rotate(45deg);
+            }
+        }
+    }
+    
+    &__title {
+        flex: 1;
+        font-weight: 600;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        color: $color-text;
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+    }
+    
+    &__icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: $color-primary;
+        transition: transform $transition-base;
+        flex-shrink: 0;
+    }
+    
+    &__icon-left {
+        font-size: 1.25rem;
+        flex-shrink: 0;
+    }
+    
+    &__content {
+        display: none;
+        padding: $spacing-lg;
+        animation: slideDown 0.3s ease;
+        
+        p:first-child {
+            margin-top: 0;
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+        
+        ul, ol {
+            margin: $spacing-md 0;
+        }
+        
+        .button {
+            margin-top: $spacing-md;
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Pricing variant
+.accordion-list--pricing {
+    .accordion__title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-xs;
+        
+        strong {
+            font-size: 1.25rem;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            color: $color-primary;
+            font-weight: 700;
+        }
+    }
+}
+
+// FAQ variant
+.faq-page {
+    .accordion {
+        &__toggle {
+            padding: $spacing-md $spacing-lg;
+        }
+        
+        &__title {
+            font-size: 1rem;
+        }
+    }
+}
+
+// Mobile adjustments
+@media (max-width: $breakpoint-mobile) {
+    .accordion {
+        &__toggle {
+            padding: $spacing-md;
+        }
+        
+        &__title {
+            font-size: 0.9375rem;
+        }
+        
+        &__content {
+            padding: $spacing-md;
+        }
+    }
+}

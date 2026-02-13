@@ -1,0 +1,45 @@
+<header class="nav">
+    <div class="nav__container">
+        <!-- Logo -->
+        <div class="nav__logo">
+            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav__menu" id="navMenu">
+            <ul class="nav__list">
+                {{ range .Site.Menus.main }}
+                    <li class="nav__item">
+                        <a href="{{ .URL }}" 
+                           class="nav__link{{ if $.IsMenuCurrent "main" . }} nav__link--active{{ end }}">
+                            {{ .Name }}
+                        </a>
+                    </li>
+                {{ end }}
+                
+                <!-- Language Switcher (if multilingual) -->
+                {{ if .IsTranslated }}
+                    <li class="nav__item nav__item--lang">
+                        {{ range .Translations }}
+                            <a href="{{ .RelPermalink }}" 
+                               lang="{{ .Language.Lang }}"
+                               class="nav__link">
+                                {{ .Language.LanguageName }}
+                            </a>
+                        {{ end }}
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+        
+        <!-- Mobile Toggle Button -->
+        <button class="nav__toggle" 
+                id="navToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+        </button>
+    </div>
+</header>

@@ -1,0 +1,76 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="container">
+    <div class="single-post-grid">
+        <article class="post">
+            <header class="post__header">
+                {{ with .Params.image }}
+                    <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="post__featured-image">
+                {{ end }}
+                
+                <h1 class="post__title">{{ .Title }}</h1>
+                
+                <div class="post__meta">
+                    <span>📅 {{ .Date.Format "January 02, 2006" }}</span>
+                    {{ with .Params.author }}
+                        <span>👤 {{ . }}</span>
+                    {{ end }}
+                    <span>⏱️ {{ .ReadingTime }} min read</span>
+                </div>
+                
+                {{ with .Params.categories }}
+                <div class="post__categories">
+                    {{ range . }}
+                        <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}" class="post__category-badge">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </header>
+            
+            <div class="post__body">
+                {{ .Content }}
+            </div>
+            
+            {{ with .Params.tags }}
+            <div class="post__tags">
+                <strong>{{ i18n "tags" }}:</strong>
+                {{ range . }}
+                    <a href="{{ "tags" | relLangURL }}/{{ . | urlize }}" class="tag">{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <nav class="post__navigation">
+                {{ with .PrevInSection }}
+                    <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--prev">← {{ .Title }}</a>
+                {{ end }}
+                
+                {{ with .NextInSection }}
+                    <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--next">{{ .Title }} →</a>
+                {{ end }}
+            </nav>
+            
+            <!-- Enhanced Author Bio -->
+            {{ partial "author-bio.html" . }}
+        </article>
+
+        {{ partial "sidebar.html" . }}
+    </div>
+
+    <div class="post__meta">
+       <span>📅 {{ .Date.Format "January 02, 2006" }}</span>
+    
+       {{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
+       {{ $author := index .Site.Data.authors $authorSlug }}
+       {{ with $author }}
+           <span>👤 {{ .name }}</span>
+       {{ end }}
+    
+       <span>⏱️ {{ .ReadingTime }} min read</span>
+    </div>
+
+    <!-- Comments Section -->
+    {{ partial "comments-cusdis.html" . }}
+</div>
+{{ end }}

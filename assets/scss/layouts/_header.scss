@@ -1,0 +1,181 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// ==========================================
+// HEADER / NAVIGATION
+// ==========================================
+
+.nav {
+    position: sticky;
+    top: 0;
+    background-image: linear-gradient(110deg,#20123a 20%,#20123a 46%,#e65321 60%);
+    background-color: #20123a;
+    border-bottom: 1px solid $color-border;
+    z-index: $z-sticky;
+    transition: transform $transition-base;
+    
+    &--hidden {
+        transform: translateY(-100%);
+    }
+    
+    &__container {
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 $spacing-md;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 64px;
+    }
+    
+    &__logo {
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        font-weight: 700;
+        z-index: 2;
+        
+        a {
+            color: $color-bg;
+            text-decoration: none;
+            transition: color $transition-base;
+            
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    
+    &__menu {
+        @media (max-width: $breakpoint-tablet) {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: $color-text;
+            border-bottom: 1px solid $color-border;
+            padding: $spacing-md;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all $transition-base;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            
+            &--open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    
+    &__list {
+        display: flex;
+        gap: $spacing-md;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: column;
+            gap: $spacing-sm;
+        }
+    }
+    
+    &__item {
+        &--lang {
+            margin-left: $spacing-sm;
+            padding-left: $spacing-sm;
+            border-left: 1px solid $color-border;
+            
+            @media (max-width: $breakpoint-tablet) {
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none;
+                border-top: 1px solid $color-border;
+                padding-top: $spacing-sm;
+                margin-top: $spacing-sm;
+            }
+        }
+    }
+    
+    &__link {
+        color: $color-bg;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: clamp(0.9375rem, 2vw, 1rem);
+        transition: color $transition-base;
+        display: block;
+        padding: $spacing-xs 0;
+        
+        &:hover {
+            color: $color-primary;
+        }
+        
+        &--active {
+            color: $color-primary;
+            position: relative;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: $color-primary;
+                
+                @media (max-width: $breakpoint-tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    &__toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: $spacing-xs;
+        width: 32px;
+        height: 32px;
+        z-index: 2;
+        
+        @media (max-width: $breakpoint-tablet) {
+            display: flex;
+        }
+        
+        &:hover .nav__toggle-bar {
+            background: $color-primary;
+        }
+    }
+    
+    &__toggle-bar {
+        width: 100%;
+        height: 3px;
+        background: $color-text;
+        border-radius: 2px;
+        transition: all $transition-base;
+        transform-origin: center;
+    }
+    
+    // Hamburger animation when open
+    &__toggle[aria-expanded="true"] {
+        .nav__toggle-bar {
+            &:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            &:nth-child(2) {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            
+            &:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}

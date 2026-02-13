@@ -1,0 +1,21 @@
+<div class="share-buttons">
+    <h4>Share this article</h4>
+    <div class="share-buttons__grid">
+        <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" 
+           target="_blank" class="share-button share-button--twitter">
+            🐦 Twitter
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" 
+           target="_blank" class="share-button share-button--facebook">
+            📘 Facebook
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" 
+           target="_blank" class="share-button share-button--linkedin">
+            💼 LinkedIn
+        </a>
+        <a href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" 
+           class="share-button share-button--email">
+            ✉️ Email
+        </a>
+    </div>
+</div>

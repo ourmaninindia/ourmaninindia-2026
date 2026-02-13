@@ -1,0 +1,27 @@
+{{ if .Site.Params.googleAnalytics }}
+<!-- Google Analytics - Only loads if user accepts analytics cookies -->
+<script>
+window.addEventListener('cc:onConsent', function(event) {
+    if (CookieConsent.acceptedCategory('analytics')) {
+        // Load Google Analytics
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ .Site.Params.googleAnalytics }}');
+        
+        // Load GA script
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}';
+        document.head.appendChild(script);
+    }
+});
+
+// Re-initialize if user changes preferences
+window.addEventListener('cc:onChange', function(event) {
+    if (CookieConsent.acceptedCategory('analytics')) {
+        location.reload(); // Reload to load analytics
+    }
+});
+</script>
+{{ end }}

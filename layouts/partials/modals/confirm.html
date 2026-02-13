@@ -1,0 +1,19 @@
+<!-- Trigger Button -->
+<button class="button" data-modal="confirmModal">Delete Item</button>
+
+<!-- Modal -->
+<div class="modal" id="confirmModal">
+    <div class="modal__dialog">
+        <div class="modal__header">
+            <h3 class="modal__title">Confirm Delete</h3>
+            <button class="modal__close" aria-label="Close modal">×</button>
+        </div>
+        <div class="modal__body">
+            <p>Are you sure you want to delete this item? This action cannot be undone.</p>
+        </div>
+        <div class="modal__footer">
+            <button class="button button--secondary" data-action="close-modal">Cancel</button>
+            <button class="button button--danger">Delete</button>
+        </div>
+    </div>
+</div>

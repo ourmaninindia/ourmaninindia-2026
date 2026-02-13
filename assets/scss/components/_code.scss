@@ -1,0 +1,108 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// ==========================================
+// CODE BLOCKS & COPY BUTTON
+// ==========================================
+
+// Code blocks
+pre {
+    position: relative;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    overflow-x: auto;
+    margin: $spacing-lg 0;
+    
+    code {
+        background: none;
+        padding: 0;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        font-family: 'Courier New', Consolas, Monaco, monospace;
+    }
+}
+
+// Inline code
+code {
+    background: $color-bg-secondary;
+    padding: 2px 6px;
+    border-radius: $border-radius-sm;
+    font-size: 0.875em;
+    font-family: 'Courier New', Consolas, Monaco, monospace;
+    color: $color-primary;
+}
+
+// Copy button
+.code-copy-btn {
+    position: absolute;
+    top: $spacing-xs;
+    right: $spacing-xs;
+    left: auto;
+    padding: $spacing-xs $spacing-sm;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: $border-radius-sm;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all $transition-base;
+    opacity: 0;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    &:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+    
+    &--success {
+        background: #10b981;
+        color: white;
+        border-color: #10b981;
+        opacity: 1;
+    }
+}
+
+
+.code-language-label {
+    position: absolute;
+    top: $spacing-xs;
+    left: $spacing-xs;
+    padding: $spacing-xs $spacing-sm;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: $border-radius-sm;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+// Show button on hover
+pre:hover .code-copy-btn {
+    opacity: 0.7;
+}
+
+// Syntax highlighting adjustments
+.highlight {
+    position: relative;
+    
+    pre {
+        margin: 0;
+    }
+}
+

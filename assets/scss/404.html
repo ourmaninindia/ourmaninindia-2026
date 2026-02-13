@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="container">
+    <div class="error-page">
+        <h1 class="error-page__code">404</h1>
+        <h2 class="error-page__title">Page Not Found</h2>
+        <p class="error-page__description">
+            The page <code>{{ .URL }}</code> doesn't exist or has been moved.
+        </p>
+        
+        <div class="error-page__search">
+            <h3>Search for what you're looking for</h3>
+            <form class="error-search-form" action="/search" method="get">
+                <input 
+                    type="text" 
+                    name="q" 
+                    placeholder="Search..." 
+                    class="error-search-input"
+                    autofocus>
+                <button type="submit" class="button">Search</button>
+            </form>
+        </div>
+        
+        <div class="error-page__suggestions">
+            <h3>Suggested Pages</h3>
+            <div class="error-page__links">
+                <a href="/" class="button">Home</a>
+                <a href="/blog" class="button button--secondary">Blog</a>
+                <a href="/about" class="button button--secondary">About</a>
+                <a href="/contact" class="button button--secondary">Contact</a>
+            </div>
+        </div>
+        
+        <div class="error-page__recent">
+            <h3>Recent Posts</h3>
+            {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
+                <div class="mini-post">
+                    <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                    <p class="mini-post__date">{{ .Date.Format "January 02, 2006" }}</p>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

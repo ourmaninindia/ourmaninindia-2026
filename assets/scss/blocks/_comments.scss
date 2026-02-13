@@ -1,0 +1,144 @@
+@use "../abstracts" as *;
+
+// ==========================================
+// COMMENTS BLOCK (Cusdis/Giscus)
+// ==========================================
+
+.comments {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-xl;
+    border-top: 2px solid $color-border;
+    
+    &__container {
+        max-width: 800px;
+    }
+    
+    &__title {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        margin-bottom: $spacing-sm;
+        color: $color-text;
+    }
+    
+    &__description {
+        color: $color-text-light;
+        margin-bottom: $spacing-lg;
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        line-height: 1.6;
+    }
+}
+
+// Cusdis customization
+#cusdis-thread {
+    margin-top: $spacing-lg;
+    
+    iframe {
+        width: 100%;
+        border: 1px solid $color-border;
+        border-radius: $border-radius-lg;
+        background: $color-bg;
+    }
+    
+    &:empty::before {
+        content: "Loading comments...";
+        display: block;
+        padding: $spacing-lg;
+        text-align: center;
+        color: $color-text-light;
+        background: $color-bg-secondary;
+        border-radius: $border-radius-md;
+    }
+}
+
+// Giscus customization
+#giscus-container {
+    margin-top: $spacing-lg;
+}
+
+.giscus {
+    width: 100%;
+}
+
+.giscus-frame {
+    border-radius: $border-radius-md;
+    border: 1px solid $color-border;
+}
+
+// Isso customization
+#isso-thread {
+    font-family: inherit !important;
+    margin-top: $spacing-lg;
+    
+    .isso-comment {
+        border-radius: $border-radius-md;
+        padding: $spacing-md;
+        background: $color-bg;
+        border: 1px solid $color-border;
+        margin-bottom: $spacing-md;
+    }
+    
+    .isso-comment-header {
+        margin-bottom: $spacing-sm;
+    }
+    
+    .author {
+        font-weight: 600;
+        color: $color-primary;
+    }
+    
+    .isso-postbox {
+        border-radius: $border-radius-md;
+        border: 2px solid $color-border;
+        padding: $spacing-md;
+        margin-bottom: $spacing-lg;
+        background: $color-bg;
+    }
+    
+    textarea {
+        border: 1px solid $color-border;
+        border-radius: $border-radius-sm;
+        padding: $spacing-sm;
+        font-family: inherit;
+        width: 100%;
+        
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+        }
+    }
+    
+    .isso-postbox > .form-wrapper > .auth-section .input-wrapper input {
+        border: 1px solid $color-border;
+        border-radius: $border-radius-sm;
+        padding: $spacing-xs $spacing-sm;
+        font-family: inherit;
+        
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+        }
+    }
+    
+    .isso-postbox > .form-wrapper > .auth-section .post-action input {
+        background: $color-primary;
+        color: white;
+        border: none;
+        border-radius: $border-radius-sm;
+        padding: $spacing-sm $spacing-lg;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background $transition-base;
+        font-family: inherit;
+        
+        &:hover {
+            background: $color-primary-hover;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: $breakpoint-mobile) {
+    .comments {
+        margin-top: $spacing-lg;
+        padding-top: $spacing-lg;
+    }
+}

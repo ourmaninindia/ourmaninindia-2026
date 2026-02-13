@@ -1,0 +1,11 @@
+{{ $tags := .Site.Taxonomies.tags }}
+{{ if $tags }}
+<h3 class="widget-title">{{ i18n "popularTags" }}</h3>
+<div class="widget-content">
+    <div class="tag-cloud">
+        {{ range first 15 $tags.ByCount }}
+            <a href="{{ "tags" | relLangURL }}/{{ .Name | urlize }}" class="tag">{{ .Name }}</a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

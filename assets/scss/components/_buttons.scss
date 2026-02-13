@@ -1,0 +1,177 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// ==========================================
+// BUTTON COMPONENTS
+// ==========================================
+
+button {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    background: $color-primary;
+    color: white;
+    text-decoration: none;
+    border-radius: $border-radius-md;
+    font-weight: 600;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-family: inherit;
+    line-height: 1.5;
+    position: relative;
+    
+    // 3D effect - shadow layers
+    box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    
+    &:hover {
+        background: $color-primary-hover;
+        transform: translateY(-3px);
+        
+        // Enhanced 3D shadow on hover
+        box-shadow: 
+            0 7px 14px rgba(0, 0, 0, 0.15),
+            0 3px 6px rgba(0, 0, 0, 0.10),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 
+            0 3px 7px rgba(0, 0, 0, 0.15),
+            0 1px 3px rgba(0, 0, 0, 0.10);
+    }
+    
+    // Modifiers
+    &--full-width {
+        display: block;
+        width: 100%;
+    }
+    
+    &--secondary {
+        background: $color-bg-secondary;
+        color: $color-text;
+        border-color: $color-border;
+        
+        &:hover {
+            background: color.adjust($color-primary, $lightness: -5%);
+            border-color: $color-text-light;
+        }
+    }
+    
+    &--outline {
+        background: transparent;
+        color: $color-primary;
+        border-color: $color-primary;
+        
+        &:hover {
+            background: $color-primary;
+            color: white;
+        }
+    }
+    
+    &--small {
+        padding: $spacing-xs $spacing-md;
+        font-size: 0.875rem;
+    }
+    
+    &--large {
+        padding: $spacing-md $spacing-xl;
+        font-size: 1.125rem;
+    }
+    
+    &--danger {
+        background: #ef4444;
+        border-color: #ef4444;
+        
+        &:hover {
+            background: #dc2626;
+            border-color: #dc2626;
+        }
+    }
+    
+    &--success {
+        background: #10b981;
+        border-color: #10b981;
+        
+        &:hover {
+            background: #059669;
+            border-color: #059669;
+        }
+    }
+    
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}
+
+// Button Group
+.button-group {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+    
+    &--center {
+        justify-content: center;
+    }
+    
+    &--end {
+        justify-content: flex-end;
+    }
+}
+
+// Icon Button
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: $color-bg-secondary;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: all $transition-base;
+    
+    &:hover {
+        background: $color-primary; 
+        color: white;
+        border-color: $color-primary;
+    }
+    
+    &--small {
+        width: 32px;
+        height: 32px;
+    }
+    
+    &--large {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+// Link Button (looks like link, behaves like button)
+.link-button {
+    background: none;
+    border: none;
+    color: $color-primary;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    
+    &:hover {
+        color: $color-primary-hover;
+    }
+}

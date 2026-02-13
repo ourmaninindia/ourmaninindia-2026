@@ -1,0 +1,11 @@
+  [en]
+    languageName = "English"
+    weight = 1
+    [en.params]
+      description = "A modern tech blog"
+  
+  [nl]
+    languageName = "Dutch"
+    weight = 2
+    [nl.params]
+      description = "Nederlandstalig"

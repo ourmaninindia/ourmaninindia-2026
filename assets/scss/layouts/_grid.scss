@@ -1,0 +1,60 @@
+@use "../abstracts" as *;
+
+// ==========================================
+// Main container and grid layouts
+// ==========================================
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-md;
+  width: 100%;
+}
+
+// Blog grid layout with grid template areas
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-areas: "posts sidebar";
+  gap: $spacing-lg;
+  align-items: start;
+  
+  // Container query for responsive layout
+  @include container-query(900px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "posts"
+      "sidebar";
+  }
+  
+  // Fallback for browsers without container queries
+  @include container-query-fallback(900px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "posts"
+      "sidebar";
+  }
+}
+
+.blog-posts {
+  grid-area: posts;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+// Single post layout with grid areas
+.single-post-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-areas: "article sidebar";
+  gap: $spacing-lg;
+  align-items: start;
+  
+  @include container-query(900px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "article"
+      "sidebar";
+  }
+}

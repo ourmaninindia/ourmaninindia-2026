@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+    {{ partial "site-style.html" . }}
+    {{ partial "seo.html" . }}
+</head>
+<body>
+    {{ partial "header.html" . }}
+    {{ partial "breadcrumbs.html" . }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+    {{/* partial "cookie-consent.html" . */}}
+    {{ partial "site-script.html" . }}
+</body>
+</html>

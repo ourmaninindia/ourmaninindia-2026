@@ -1,0 +1,13 @@
+<h3 class="widget-title">{{ i18n "archive" }}</h3>
+<div class="widget-content">
+    <ul class="archive-list">
+        {{ range (.Site.RegularPages.GroupByDate "2006-01") }}
+            <li class="archive-item">
+                <a href="{{ $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}/blog/{{ .Key }}">
+                    <span>{{ .Key }}</span>
+                    <span class="category-count">{{ len .Pages }}</span>
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</div>

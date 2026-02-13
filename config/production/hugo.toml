@@ -1,0 +1,17 @@
+# Production overrides
+baseURL = "https://www.your-live-site.com/"
+languageCode = "en"
+environment = "production"
+
+# Optional: if using Google Analytics in production only
+googleAnalytics = "G-XXXXXXXXXX"
+
+# Optional: minify assets in production
+[minify]
+  disableXML = false
+  tdewolff = { html = true, css = true, js = true }
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"

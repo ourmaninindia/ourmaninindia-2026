@@ -1,0 +1,34 @@
+[readMore]
+other = "Lire la suite →"
+[previous]
+other = "Précédent"
+[next]
+other = "Suivant"
+[page]
+other = "Page"
+[of]
+other = "de"
+[recentPosts]
+other = "Articles récents"
+[categories]
+other = "Catégories"
+[popularTags]
+other = "Tags populaires"
+[tags]
+other = "Tags"
+[archive]
+other = "Archive"
+[search]
+other = "Rechercher"
+[searchPlaceholder]
+other = "Rechercher des articles..."
+[newsletter]
+other = "Infolettre"
+[newsletterDescription]
+other = "Abonnez-vous pour recevoir nos derniers articles dans votre boîte de réception."
+[emailPlaceholder]
+other = "Votre email..."
+[subscribe]
+other = "S'abonner"
+[searchResultsCount]
+other = "résultats trouvés"

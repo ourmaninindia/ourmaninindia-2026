@@ -1,0 +1,57 @@
+{{/* ========================================== */}}
+{{/* JAVASCRIPT - CORE BUNDLE */}}
+{{/* Always loaded on all pages */}}
+{{/* ========================================== */}}
+
+{{ $mainJS := resources.Get "js/main.js" }}
+
+{{/* Create core bundle */}}
+{{ $coreJS := slice $mainJS | resources.Concat "js/core.js" }}
+
+{{ if hugo.IsProduction }}
+  {{ $coreJS = $coreJS | minify | fingerprint }}
+{{ end }}
+
+<script src="{{ $coreJS.RelPermalink }}"{{ with $coreJS.Data.Integrity }} integrity="{{ . }}"{{ end }}></script>
+
+{{/* Newsletter JavaScript - Load on all pages */}}
+{{ $newsletterJS := resources.Get "js/newsletter.js" }}
+{{ if hugo.IsProduction }}
+  {{ $newsletterJS = $newsletterJS | minify | fingerprint }}
+{{ end }}
+<script src="{{ $newsletterJS.RelPermalink }}"{{ with $newsletterJS.Data.Integrity }} integrity="{{ . }}"{{ end }}></script>
+
+{{/* ========================================== */}}
+{{/* JAVASCRIPT - PAGE-SPECIFIC */}}
+{{/* ========================================== */}}
+
+{{/* Reading Progress - Only on single posts */}}
+{{ if .IsPage }}
+  {{ $readingProgressJS := resources.Get "js/reading-progress.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $readingProgressJS = $readingProgressJS | minify | fingerprint }}
+  {{ end }}
+  <script src="{{ $readingProgressJS.RelPermalink }}"{{ with $readingProgressJS.Data.Integrity }} integrity="{{ . }}"{{ end }} defer></script>
+{{ end }}
+
+{{/* Gallery JS - Only on pages with galleries */}}
+{{ if or (in .Content "image-gallery") (in .Content "cycling-gallery") }}
+  {{ $galleryJS := resources.Get "js/gallery.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $galleryJS = $galleryJS | minify | fingerprint }}
+  {{ end }}
+  <script src="{{ $galleryJS.RelPermalink }}"{{ with $galleryJS.Data.Integrity }} integrity="{{ . }}"{{ end }} defer></script>
+{{ end }}
+
+{{/* Search JS - Only on search page */}}
+{{ if eq .Type "search" }}
+  {{ $searchJS := resources.Get "js/search.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $searchJS = $searchJS | minify | fingerprint }}
+  {{ end }}
+  
+  {{/* Fuse.js for search */}}
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" integrity="sha256-4jTJLBIXbiP4H0hN8y8hqJqAo0OdJiCYLxVy8E/5+qo=" crossorigin="anonymous"></script>
+  
+  <script src="{{ $searchJS.RelPermalink }}"{{ with $searchJS.Data.Integrity }} integrity="{{ . }}"{{ end }} defer></script>
+{{ end }}

@@ -1,0 +1,192 @@
+@use "../abstracts" as *;
+
+// ==========================================
+// ERROR PAGE (404)
+// ==========================================
+
+.error-page {
+    text-align: center;
+    padding: $spacing-xl 0;
+    max-width: 700px;
+    margin: 0 auto;
+    
+    &__code {
+        font-size: clamp(4rem, 15vw, 8rem);
+        color: $color-primary;
+        margin: 0;
+        line-height: 1;
+        font-weight: 700;
+    }
+    
+    &__title {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        margin: $spacing-md 0;
+        color: $color-text;
+    }
+    
+    &__description {
+        color: $color-text-light;
+        margin-bottom: $spacing-xl;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        
+        code {
+            background: $color-bg-secondary;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: $font-family-mono;
+            color: $color-primary;
+        }
+    }
+    
+    &__search {
+        background: $color-bg;
+        padding: $spacing-lg;
+        border-radius: $border-radius-lg;
+        border: 2px solid $color-border;
+        margin-bottom: $spacing-xl;
+        
+        h3 {
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            margin-bottom: $spacing-md;
+            color: $color-text;
+        }
+    }
+    
+    &__suggestions,
+    &__recent {
+        margin-bottom: $spacing-xl;
+        
+        h3 {
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            margin-bottom: $spacing-md;
+            color: $color-text;
+        }
+    }
+    
+    &__links,
+    &__actions {
+        display: flex;
+        gap: $spacing-sm;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    &__recent {
+        text-align: left;
+        background: $color-bg-secondary;
+        padding: $spacing-lg;
+        border-radius: $border-radius-lg;
+    }
+    
+    &__smart {
+        background: $color-bg;
+        padding: $spacing-lg;
+        border-radius: $border-radius-lg;
+        border: 2px solid $color-primary;
+        margin-bottom: $spacing-xl;
+        
+        h3 {
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            margin-bottom: $spacing-md;
+            color: $color-primary;
+        }
+    }
+}
+
+.error-search-form {
+    display: flex;
+    gap: $spacing-sm;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.error-search-input {
+    flex: 1;
+    padding: $spacing-sm $spacing-md;
+    border: 2px solid $color-border;
+    border-radius: $border-radius-md;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
+    font-family: inherit;
+    
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+    }
+}
+
+.suggestion-item {
+    display: block;
+    padding: $spacing-md;
+    margin-bottom: $spacing-sm;
+    background: $color-bg-secondary;
+    border-radius: $border-radius-md;
+    text-decoration: none;
+    color: inherit;
+    transition: all $transition-base;
+    
+    &:hover {
+        background: $color-bg;
+        transform: translateX(4px);
+        box-shadow: $shadow-sm;
+    }
+    
+    h4 {
+        margin: 0 0 $spacing-xs;
+        color: $color-primary;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+    }
+    
+    p {
+        margin: 0;
+        color: $color-text-light;
+        font-size: 0.875rem;
+    }
+}
+
+.mini-post {
+    background: $color-bg;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    border: 1px solid $color-border;
+    margin-bottom: $spacing-sm;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    h4 {
+        margin: 0 0 $spacing-xs;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        
+        a {
+            color: $color-text;
+            text-decoration: none;
+            transition: color $transition-base;
+            
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    
+    &__date {
+        color: $color-text-light;
+        font-size: 0.875rem;
+        margin: 0;
+    }
+}
+
+// Responsive
+@media (max-width: $breakpoint-mobile) {
+    .error-search-form {
+        flex-direction: column;
+    }
+    
+    .error-page {
+        &__links,
+        &__actions {
+            flex-direction: column;
+        }
+    }
+}

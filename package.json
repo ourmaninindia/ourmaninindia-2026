@@ -1,0 +1,37 @@
+{
+  "name": "blog-scss-structure",
+  "version": "1.0.0",
+  "description": "Professional SCSS architecture for blog theme",
+  "main": "scss/main.scss",
+  "type": "module",
+  "scripts": {
+    "lint:scss": "stylelint 'assets/**/*.scss'",
+    "lint:scss:fix": "stylelint 'assets/**/*.scss' --fix",
+    "lint:js": "eslint 'assets/**/*.js'",
+    "lint:js:fix": "eslint 'assets/**/*.js' --fix",
+    "lint": "lint:scss && npm run lint:js",
+    "test": "lint && hugo --gc --minify",
+    "prepare": "mkdir -p static/css",
+    "scss:dev": "prepare && sass assets/scss/main.scss static/css/style.css --style=expanded --source-map",
+    "scss:build": "prepare && sass assets/scss/main.scss static/css/style.css --style=compressed --no-source-map",
+    "scss:watch": "prepare && sass --watch assets/scss/main.scss:static/css/style.css --style=expanded --source-map",
+    "scss:watch:poll": "prepare && sass --watch --poll assets/scss/main.scss:static/css/style.css",
+    "dev": "hugo server -D"
+  },
+  "keywords": [
+    "scss",
+    "sass",
+    "blog",
+    "css",
+    "frontend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "jsdoc": "^4.0.0",
+    "sass": "^1.77.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard-scss": "^13.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+<div class="code-tabs" data-tabs-id="tabs-{{ now.Unix }}">
+    <div class="code-tabs__nav">
+        {{ range $index, $tab := split (.Get "tabs") "," }}
+            <button class="code-tabs__button{{ if eq $index 0 }} active{{ end }}" 
+                    data-tab-index="{{ $index }}">
+                {{ trim $tab " " }}
+            </button>
+        {{ end }}
+    </div>
+    <div class="code-tabs__content">
+        {{ .Inner }}
+    </div>
+</div>

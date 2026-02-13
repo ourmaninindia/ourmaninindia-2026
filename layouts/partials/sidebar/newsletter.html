@@ -1,0 +1,10 @@
+<h3 class="widget-title">{{ i18n "newsletter" }}</h3>
+<div class="widget-content">
+    <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: var(--spacing-sm);">
+        {{ i18n "newsletterDescription" }}
+    </p>
+    <form class="newsletter-form" action="{{ .Site.Params.newsletterAction }}" method="post">
+        <input type="email" name="email" class="newsletter-input" placeholder="{{ i18n "emailPlaceholder" }}" required>
+        <button type="submit" class="newsletter-button">{{ i18n "subscribe" }}</button>
+    </form>
+</div>

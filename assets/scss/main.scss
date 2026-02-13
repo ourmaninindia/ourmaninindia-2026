@@ -1,0 +1,22 @@
+// ==========================================
+// MAIN STYLESHEET
+// Hugo Blog - Modular Sass Architecture
+// ==========================================
+
+// 1. Configuration
+@use "./abstracts" as *;
+
+// 2. Base styles
+@use './base';
+
+// 3. Components (button, cards, forms, etc.)
+@use './components';
+
+// 4. Layouts (header, sidebar, footer)
+@use './layouts';
+
+// 5. Content Blocks (blog, post, galleries, etc.)
+@use './blocks';
+
+// 6. Pages
+@use './pages';

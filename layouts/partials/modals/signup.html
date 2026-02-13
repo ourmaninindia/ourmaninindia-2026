@@ -1,0 +1,39 @@
+<!-- Trigger -->
+<button class="button" data-modal="newsletterModal">Subscribe to Newsletter</button>
+
+<!-- Modal -->
+<div class="modal" id="newsletterModal">
+    <div class="modal__dialog">
+        <div class="modal__header">
+            <h3 class="modal__title">📧 Join Our Newsletter</h3>
+            <button class="modal__close" aria-label="Close modal">×</button>
+        </div>
+        <div class="modal__body">
+            <p>Get weekly insights on tech and cycling delivered to your inbox.</p>
+            
+            <form action="https://your-newsletter-url.com" method="post" class="form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           class="form-input" 
+                           placeholder="you@example.com"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="form-label">First Name (Optional)</label>
+                    <input type="text" 
+                           id="name" 
+                           name="first_name" 
+                           class="form-input" 
+                           placeholder="Your name">
+                </div>
+            </form>
+        </div>
+        <div class="modal__footer">
+            <button class="button button--secondary" data-action="close-modal">Maybe Later</button>
+            <button type="submit" class="button">Subscribe</button>
+        </div>
+    </div>
+</div>

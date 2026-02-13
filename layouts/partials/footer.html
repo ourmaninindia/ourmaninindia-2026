@@ -1,0 +1,29 @@
+<footer>
+    <div class="footer">
+        
+        <!-- Quick Search in Footer -->
+        <div class="footer__search">
+            <form action="/search" method="get" class="footer__form">
+                <input 
+                    type="text" 
+                    name="q" 
+                    placeholder="Quick search..." 
+                    class="footer__input">
+                <button type="submit">
+                    🔍
+                </button>
+            </form>
+        </div>
+        
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+        
+        <!-- Footer Links -->
+        <div class="footer__links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="#" id="cookie-settings-link">🍪 Cookie Settings</a>
+            <a href="/search">🔍 Search</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+</footer>

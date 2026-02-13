@@ -1,0 +1,20 @@
+[build]
+  publish = "public"
+  command = "hugo --gc --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.154.5"
+  HUGO_ENV = "production"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+
+[context.deploy-preview.environment]
+  HUGO_ENV = "production"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  
+  [functions."subscribe"]
+    timeout = 10  # 10 seconds (default)

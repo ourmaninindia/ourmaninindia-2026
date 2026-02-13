@@ -1,0 +1,67 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="faq-page">
+    <div class="faq-page__container">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+        
+        <div class="accordion-list">
+            <!-- Question 1 -->
+            <div class="accordion">
+                <button class="accordion__toggle" aria-expanded="false">
+                    <span class="accordion__title">What is this blog about?</span>
+                    <span class="accordion__icon">+</span>
+                </button>
+                <div class="accordion__content">
+                    <p>This blog covers technology tutorials, cycling adventures, and personal development. We publish new content every week covering everything from web development to long-distance cycling routes.</p>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="accordion">
+                <button class="accordion__toggle" aria-expanded="false">
+                    <span class="accordion__title">How often do you publish new posts?</span>
+                    <span class="accordion__icon">+</span>
+                </button>
+                <div class="accordion__content">
+                    <p>We publish 2-3 new posts per week. Tech posts usually go live on Mondays and Wednesdays, while cycling content is published on Fridays.</p>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="accordion">
+                <button class="accordion__toggle" aria-expanded="false">
+                    <span class="accordion__title">Can I contribute guest posts?</span>
+                    <span class="accordion__icon">+</span>
+                </button>
+                <div class="accordion__content">
+                    <p>Yes! We welcome guest posts on topics related to web development, cycling, and adventure travel. Please <a href="/contact">contact us</a> with your pitch and writing samples.</p>
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="accordion">
+                <button class="accordion__toggle" aria-expanded="false">
+                    <span class="accordion__title">How do I subscribe to the newsletter?</span>
+                    <span class="accordion__icon">+</span>
+                </button>
+                <div class="accordion__content">
+                    <p>You can subscribe using the newsletter form in the sidebar or at the bottom of any post. We send a weekly digest every Sunday with the best content from the week.</p>
+                </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="accordion">
+                <button class="accordion__toggle" aria-expanded="false">
+                    <span class="accordion__title">Do you offer consulting or coaching?</span>
+                    <span class="accordion__icon">+</span>
+                </button>
+                <div class="accordion__content">
+                    <p>Yes, we offer web development consulting and cycling route planning services. <a href="/services">Learn more about our services</a> or <a href="/contact">get in touch</a> to discuss your needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

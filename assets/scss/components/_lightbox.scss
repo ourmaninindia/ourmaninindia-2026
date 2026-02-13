@@ -1,0 +1,108 @@
+@use '../abstracts' as *;
+
+// ==========================================
+// LIGHTBOX COMPONENT
+// ==========================================
+
+/* Add lightbox-trigger class to any non post image manually:
+<img src="photo.jpg" alt="Beautiful sunset" class="lightbox-trigger">
+*/
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    &--open {
+        display: flex;
+        opacity: 1;
+    }
+    
+    &__content {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    &__image {
+        max-width: 100%;
+        max-height: 90vh;
+        height: auto;
+        border-radius: $border-radius-lg;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        animation: lightboxZoomIn 0.3s ease;
+    }
+    
+    &__close {
+        position: fixed;
+        top: $spacing-lg;
+        right: $spacing-lg;
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        color: white;
+        font-size: 2rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: all $transition-base;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg) scale(1.1);
+        }
+        
+        &:active {
+            transform: rotate(90deg) scale(0.95);
+        }
+    }
+}
+
+@keyframes lightboxZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// Mobile adjustments
+@media (max-width: $breakpoint-mobile) {
+    .lightbox {
+        padding: $spacing-md;
+        
+        &__close {
+            width: 40px;
+            height: 40px;
+            top: $spacing-md;
+            right: $spacing-md;
+            font-size: 1.5rem;
+        }
+        
+        &__image {
+            max-height: 80vh;
+        }
+    }
+}

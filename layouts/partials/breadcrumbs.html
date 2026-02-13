@@ -1,0 +1,40 @@
+<div aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <!-- Home link -->
+    <li><a href="{{ "/" | relURL }}">Home</a></li>
+
+    {{/* Skip breadcrumbs entirely on home page */}}
+    {{ if not .IsHome }}
+      
+      {{/* Collect parent sections */}}
+      {{ $parents := slice }}
+      {{ $p := .Parent }}
+      {{ if $p }}
+        {{ range seq 1 10 }}
+          {{/* skip if parent is Home */}}
+          {{ if ne $p.RelPermalink "/" }}
+            {{ $parents = $parents | append $p }}
+          {{ end }}
+
+          {{ if $p.Parent }}
+            {{ $p = $p.Parent }}
+          {{ else }}
+            {{ break }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{/* Output parents in reverse order manually */}}
+      {{ $len := len $parents }}
+      {{ range $i, $v := $parents }}
+        {{ $idx := sub $len (add $i 1) }}
+        {{ $item := index $parents $idx }}
+        <li><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></li>
+      {{ end }}
+
+      <!-- Current page -->
+      <li aria-current="page">{{ .Title }}</li>
+    {{ end }}
+
+  </ol>
+</div>

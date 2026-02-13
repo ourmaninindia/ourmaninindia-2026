@@ -1,0 +1,25 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: $color-bg-secondary;
+    border-radius: $border-radius-full;
+    text-decoration: none;
+    color: $color-text;
+    font-size: clamp(0.8125rem, 2vw, 0.875rem);
+    transition: all $transition-base;
+    
+    &:hover {
+        background: $color-primary;
+        color: white;
+    }
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+}

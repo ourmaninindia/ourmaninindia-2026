@@ -1,0 +1,30 @@
+.
+|____.gitignore
+|____QUICKSTART.md
+|____README.md
+|____STRUCTURE.md
+|____TREE.txt
+|____package.json
+|____scss
+| |____abstracts
+| | |_____mixins.scss
+| | |_____variables.scss
+| |____base
+| | |_____reset.scss
+| | |_____typography.scss
+| |____components
+| | |_____buttons.scss
+| | |_____cards.scss
+| | |_____forms.scss
+| | |_____pagination.scss
+| | |_____widgets.scss
+| |____layout
+| | |_____footer.scss
+| | |_____grid.scss
+| | |_____navigation.scss
+| | |_____sidebar.scss
+| |____main.scss
+| |____pages
+| | |_____blog.scss
+| | |_____single-post.scss
+| |____{abstracts,base,components,layout,pages,themes,vendors}

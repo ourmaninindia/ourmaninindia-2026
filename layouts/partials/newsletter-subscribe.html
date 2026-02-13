@@ -1,0 +1,54 @@
+<div class="newsletter">
+    <h3 class="newsletter__title">{{ .Site.Params.newsletter.title | default "📧 Newsletter" }}</h3>
+    <p class="newsletter__description">
+        {{ .Site.Params.newsletter.description | default "Get weekly updates delivered to your inbox." }}
+    </p>
+    
+    <form id="newsletterForm" class="newsletter-form">
+        <div class="form-group">
+            <input type="email" 
+                   id="newsletter-email"
+                   name="email" 
+                   class="form-input"
+                   placeholder="Your email address"
+                   required>
+            <span class="form-error" id="newsletter-error"></span>
+        </div>
+        
+        <button type="submit" class="button button--full-width" id="newsletter-submit">
+            Subscribe
+        </button>
+    </form>
+</div>
+
+<!-- Success Modal -->
+<div class="modal modal--small" id="successModal">
+    <div class="modal__dialog">
+        <div class="modal__header">
+            <h3 class="modal__title">✅ Success!</h3>
+            <button class="modal__close" aria-label="Close modal">×</button>
+        </div>
+        <div class="modal__body">
+            <p>Thank you for subscribing! Please check your email to confirm your subscription.</p>
+        </div>
+        <div class="modal__footer">
+            <button class="button button--full-width" data-action="close-modal">Got it!</button>
+        </div>
+    </div>
+</div>
+
+<!-- Error Modal -->
+<div class="modal modal--small" id="errorModal">
+    <div class="modal__dialog">
+        <div class="modal__header">
+            <h3 class="modal__title">❌ Oops!</h3>
+            <button class="modal__close" aria-label="Close modal">×</button>
+        </div>
+        <div class="modal__body">
+            <p id="error-message">Something went wrong. Please try again later.</p>
+        </div>
+        <div class="modal__footer">
+            <button class="button button--full-width" data-action="close-modal">Close</button>
+        </div>
+    </div>
+</div>

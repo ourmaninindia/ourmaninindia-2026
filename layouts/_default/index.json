@@ -1,0 +1,27 @@
+{{- $.Scratch.Set "index" (slice) -}}
+
+{{- range where .Site.RegularPages "Section" "blog" -}}
+  {{- $tags := slice -}}
+  {{- with .Params.tags -}}
+    {{- $tags = first 5 . -}}
+  {{- end -}}
+
+  {{- $categories := slice -}}
+  {{- with .Params.categories -}}
+    {{- $categories = . -}}
+  {{- end -}}
+
+  {{- $.Scratch.Add "index" (dict
+    "title" .Title
+    "summary" (.Summary | plainify | truncate 200 "...")
+    "content" (.Plain | truncate 300 "...")
+    "permalink" .RelPermalink
+    "date" (.Date.Format "2006-01-02")
+    "tags" $tags
+    "categories" $categories
+    "author" (.Params.author | default .Site.Params.author)
+    "readingTime" .ReadingTime
+  ) -}}
+{{- end -}}
+
+{{- $.Scratch.Get "index" | jsonify -}}
