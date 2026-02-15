@@ -1,6 +1,10 @@
 {{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
 
 {{- define "main" }}
+<div class="display-template hidden">
+  index.html
+</div>
+
  <div class="container">
   <div class="post__meta">
       <time>⏱️ {{ .ReadingTime }} min read</time>

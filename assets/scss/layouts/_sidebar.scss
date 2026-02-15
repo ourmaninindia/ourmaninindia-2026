@@ -17,7 +17,7 @@
     "tags"
     "archive"
     "newsletter";
-  gap: $spacing-md;
+  gap: var(--spacing-md);
   
   // On smaller screens, make sidebar multi-column
   @include container-query(900px) {

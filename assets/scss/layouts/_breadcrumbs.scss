@@ -5,9 +5,9 @@
 // ==========================================
 
 .breadcrumb {
-  max-width: $max-width;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 $spacing-md;
+  padding: 0 var(--spacing-md);
   width: 100%;
 
   list-style: none;
@@ -28,11 +28,11 @@
 
   & li a {
     text-decoration: none;
-    color: #007BFF;
+    color: var(--color-info);
   }
 
   & li[aria-current="page"] {
     font-weight: bold;
-    color: #333;
+    color: var(--color-text-dark);
   }
 }

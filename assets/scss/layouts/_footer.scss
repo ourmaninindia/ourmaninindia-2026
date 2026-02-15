@@ -5,31 +5,34 @@
 // ==========================================
 
 footer {
-    background: $color-text; 
-    color: white; 
+    background: var(--color-text); 
+    color: var(--color-white); 
+    padding: 2rem; 
     text-align: center; 
-    border-top: 1px solid $color-border;
-    margin: 0 auto;
-    padding: $spacing-xl 0;
-    
-    & #hugo-debug {
-        text-align: left;
-    }
+    margin-top: 4rem;
+    border-top: 1px solid var(--color-border);
+}
 
+.footer {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+    //margin-top: var(--spacing-xl);
+    
     &__container {
-        max-width: $max-width;
+        max-width: var(--max-width);
         margin: 0 auto;
-        padding: 0 $spacing-md;
+        padding: 0 var(--spacing-md);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: $spacing-lg;
+        gap: var(--spacing-lg);
     }
     
     &__section {
         h4 {
             font-size: 1.125rem;
-            margin-bottom: $spacing-md;
-            color: $color-text;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
         }
         
         ul {
@@ -39,24 +42,24 @@ footer {
         }
         
         li {
-            margin-bottom: $spacing-xs;
+            margin-bottom: var(--spacing-xs);
         }
         
         a {
-            color: $color-text-light;
+            color: var(--color-text-light);
             text-decoration: none;
-            transition: color $transition-base;
+            transition: color var(--transition-base);
             
             &:hover {
-                color: $color-primary;
+                color: var(--color-primary);
             }
         }
     }
     
     &__social {
         display: flex;
-        gap: $spacing-sm;
-        margin-top: $spacing-md;
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
         
         a {
             display: inline-flex;
@@ -64,15 +67,15 @@ footer {
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: $color-bg;
-            border: 1px solid $color-border;
-            border-radius: $border-radius-md;
-            transition: all $transition-base;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            transition: all var(--transition-base);
             
             &:hover {
-                background: $color-primary;
-                color: white;
-                border-color: $color-primary;
+                background: var(--color-primary);
+                color: var(--color-white);
+                border-color: var(--color-primary);
             }
         }
     }
@@ -80,10 +83,10 @@ footer {
     &__copyright {
         grid-column: 1 / -1;
         text-align: center;
-        padding-top: $spacing-lg;
-        margin-top: $spacing-lg;
-        border-top: 1px solid $color-border;
-        color: $color-text-light;
+        padding-top: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+        border-top: 1px solid var(--color-border);
+        color: var(--color-text-light);
         font-size: 0.875rem;
     }
     
@@ -96,11 +99,11 @@ footer {
         font-size: 0.875rem;
 
         a {
-            color: lightblue;
+            color: var(--color-lightblue);
             text-decoration: none;
             
             &:hover { 
-                color: $color-primary;
+                color: var(--color-primary);
                 cursor: pointer;
             }
         }
@@ -120,7 +123,7 @@ footer {
     &__input {
         flex: 1; 
         padding: 0.5rem 1rem; 
-        border-radius: $border-radius-md; 
+        border-radius: var(--border-radius-md); 
         border: none;
     }
 

@@ -6,25 +6,25 @@
 // ==========================================
 
 .image-gallery {
-    margin: $spacing-xl 0;
+    margin: var(--spacing-xl) 0;
     
     .post-image {
-        margin-bottom: $spacing-lg;
+        margin-bottom: var(--spacing-lg);
         
         &:not(.post-image--wide) {
             @media (min-width: $breakpoint-tablet) {
-                width: calc(50% - #{$spacing-md});
+                width: calc(50% - #{var(--spacing-md)});
                 
                 &.post-image--left {
                     float: left;
                     clear: left;
-                    margin-right: $spacing-lg;
+                    margin-right: var(--spacing-lg);
                 }
                 
                 &.post-image--right {
                     float: right;
                     clear: right;
-                    margin-left: $spacing-lg;
+                    margin-left: var(--spacing-lg);
                 }
             }
         }
@@ -32,19 +32,19 @@
         &.post-image--wide {
             width: 100%;
             clear: both;
-            margin: $spacing-xl 0;
+            margin: var(--spacing-xl) 0;
         }
         
         img {
             width: 100%;
             height: auto;
-            border-radius: $border-radius-md;
-            box-shadow: $shadow-md;
-            transition: transform $transition-base, box-shadow $transition-base;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
             
             &:hover {
                 transform: translateY(-4px);
-                box-shadow: $shadow-md; // was lg;
+                box-shadow: var(--shadow-md); // was lg;
             }
         }
     }
@@ -68,18 +68,18 @@
 .ride-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: $spacing-md;
-    background: linear-gradient(135deg, rgba($color-primary, 0.1) 0%, rgba($color-primary, 0.05) 100%);
-    padding: $spacing-lg;
-    border-radius: $border-radius-lg;
-    margin: $spacing-xl 0;
-    border: 2px solid $color-border;
-    box-shadow: $shadow-sm;
+    gap: var(--spacing-md);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin: var(--spacing-xl) 0;
+    border: 2px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
     
     @media (max-width: $breakpoint-mobile) {
         grid-template-columns: repeat(2, 1fr);
-        gap: $spacing-sm;
-        padding: $spacing-md;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
     }
 }
 
@@ -94,13 +94,13 @@
 
 .elevation-chart-container {
     @extend .content-card;  // Uses card from components
-    margin: $spacing-xl 0;
+    margin: var(--spacing-xl) 0;
 }
 
 .elevation-chart__title {
-    margin: 0 0 $spacing-md 0;
+    margin: 0 0 var(--spacing-md) 0;
     font-size: clamp(1.125rem, 2.5vw, 1.25rem);
-    color: $color-text;
+    color: var(--color-text);
     text-align: center;
 }
 
@@ -121,7 +121,7 @@
             width: 100% !important;
             float: none !important;
             clear: both !important;
-            margin: $spacing-md 0 !important;
+            margin: var(--spacing-md) 0 !important;
         }
     }
 }

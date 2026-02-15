@@ -7,7 +7,7 @@
 .newspaper-layout {
     @media (min-width: $breakpoint-desktop) {
         column-count: 2;
-        column-gap: $spacing-xl;
+        column-gap: var(--spacing-xl);
 
         // ... rest of styles ...
     }

@@ -9,21 +9,21 @@
   grid-template-columns: auto 1fr auto;
   grid-template-areas: "prev info next";
   align-items: center;
-  padding: $spacing-md;
-  background: $color-bg;
-  border-radius: $border-radius-lg;
-  gap: $spacing-sm;
+  padding: var(--spacing-md);
+  background: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  gap: var(--spacing-sm);
   
   a {
-    color: $color-primary;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
-    font-size: $font-size-base;
+    font-size: var(--font-size-base);
 
     @include transition(color);
     
     @include hover-state {
-      color: $color-primary-dark;
+      color: var(--color-primary-dark);
     }
     
     &:first-child {
@@ -39,7 +39,7 @@
 .pagination-info {
   grid-area: info;
   text-align: center;
-  font-size: $font-size-base;
+  font-size: var(--font-size-base);
 }
 
 // Post navigation (prev/next post)
@@ -47,21 +47,21 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "prev next";
-  padding-top: $spacing-md;
-  border-top: 1px solid $color-border;
-  gap: $spacing-md;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  gap: var(--spacing-md);
 }
 
 .post-nav-link {
   text-decoration: none;
-  color: $color-primary;
+  color: var(--color-primary);
   font-weight: 600;
-  font-size: $font-size-base;
+  font-size: var(--font-size-base);
 
   @include transition(color);
   
   @include hover-state {
-    color: $color-primary-dark;
+    color: var(--color-primary-dark);
   }
   
   &.prev {

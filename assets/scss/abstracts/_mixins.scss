@@ -56,9 +56,9 @@
 
 // Transition mixin
 // $properties... → variadic argument (can take 1 or many properties)
-// $transition-base → duration + timing function
+// var(--transition-base) → duration + timing function
 @mixin transition($properties...) {
-  transition: $transition-base;
+  transition: var(--transition-base);
   transition-property: $properties;
 }
 

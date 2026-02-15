@@ -19,7 +19,7 @@
     display: none;
     align-items: center;
     justify-content: center;
-    padding: $spacing-lg;
+    padding: var(--spacing-lg);
     opacity: 0;
     transition: opacity 0.3s ease;
     
@@ -41,26 +41,26 @@
         max-width: 100%;
         max-height: 90vh;
         height: auto;
-        border-radius: $border-radius-lg;
+        border-radius: var(--border-radius-lg);
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         animation: lightboxZoomIn 0.3s ease;
     }
     
     &__close {
         position: fixed;
-        top: $spacing-lg;
-        right: $spacing-lg;
+        top: var(--spacing-lg);
+        right: var(--spacing-lg);
         width: 48px;
         height: 48px;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border: 2px solid rgba(255, 255, 255, 0.2);
         border-radius: 50%;
-        color: white;
+        color: var(--color-white);
         font-size: 2rem;
         line-height: 1;
         cursor: pointer;
-        transition: all $transition-base;
+        transition: all var(--transition-base);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -91,13 +91,13 @@
 // Mobile adjustments
 @media (max-width: $breakpoint-mobile) {
     .lightbox {
-        padding: $spacing-md;
+        padding: var(--spacing-md);
         
         &__close {
             width: 40px;
             height: 40px;
-            top: $spacing-md;
-            right: $spacing-md;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
             font-size: 1.5rem;
         }
         

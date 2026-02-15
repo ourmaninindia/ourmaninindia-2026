@@ -15,3 +15,17 @@ googleAnalytics = "G-XXXXXXXXXX"
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
+
+[mediaTypes]
+  [mediaTypes."font/woff"]
+    suffixes = ["woff"]
+  [mediaTypes."font/woff2"]
+    suffixes = ["woff2"]
+
+[outputFormats]
+  [outputFormats.WOFF]
+    mediaType = "font/woff"
+    isPlainText = false
+  [outputFormats.WOFF2]
+    mediaType = "font/woff2"
+    isPlainText = false

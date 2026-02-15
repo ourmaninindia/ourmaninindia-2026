@@ -8,19 +8,19 @@
 .accordion-list {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
-    margin: $spacing-xl 0;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
 }
 
 .accordion {
-    background: $color-bg;
-    border: 1px solid $color-border;
-    border-radius: $border-radius-md;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    transition: all $transition-base;
+    transition: all var(--transition-base);
     
     &:hover {
-        border-color: $color-primary;
+        border-color: var(--color-primary);
     }
     
     &__toggle {
@@ -28,21 +28,21 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: $spacing-md;
-        padding: $spacing-lg;
-        background: $color-bg;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+        background: var(--color-bg);
         border: none;
         cursor: pointer;
-        transition: background $transition-base;
+        transition: background var(--transition-base);
         text-align: left;
         
         &:hover {
-            background: $color-bg-secondary;
+            background: var(--color-bg-secondary);
         }
         
         &[aria-expanded="true"] {
-            background: $color-bg-secondary;
-            border-bottom: 1px solid $color-border;
+            background: var(--color-bg-secondary);
+            border-bottom: 1px solid var(--color-border);
             
             .accordion__icon {
                 transform: rotate(45deg);
@@ -54,10 +54,10 @@
         flex: 1;
         font-weight: 600;
         font-size: clamp(1rem, 2vw, 1.125rem);
-        color: $color-text;
+        color: var(--color-text);
         display: flex;
         align-items: center;
-        gap: $spacing-sm;
+        gap: var(--spacing-sm);
     }
     
     &__icon {
@@ -68,8 +68,8 @@
         justify-content: center;
         font-size: 1.5rem;
         font-weight: 300;
-        color: $color-primary;
-        transition: transform $transition-base;
+        color: var(--color-primary);
+        transition: transform var(--transition-base);
         flex-shrink: 0;
     }
     
@@ -80,7 +80,7 @@
     
     &__content {
         display: none;
-        padding: $spacing-lg;
+        padding: var(--spacing-lg);
         animation: slideDown 0.3s ease;
         
         p:first-child {
@@ -92,11 +92,11 @@
         }
         
         ul, ol {
-            margin: $spacing-md 0;
+            margin: var(--spacing-md) 0;
         }
         
         .button {
-            margin-top: $spacing-md;
+            margin-top: var(--spacing-md);
         }
     }
 }
@@ -117,7 +117,7 @@
     .accordion__title {
         flex-direction: column;
         align-items: flex-start;
-        gap: $spacing-xs;
+        gap: var(--spacing-xs);
         
         strong {
             font-size: 1.25rem;
@@ -125,7 +125,7 @@
         
         .price {
             font-size: 1.5rem;
-            color: $color-primary;
+            color: var(--color-primary);
             font-weight: 700;
         }
     }
@@ -135,7 +135,7 @@
 .faq-page {
     .accordion {
         &__toggle {
-            padding: $spacing-md $spacing-lg;
+            padding: var(--spacing-md) var(--spacing-lg);
         }
         
         &__title {
@@ -148,7 +148,7 @@
 @media (max-width: $breakpoint-mobile) {
     .accordion {
         &__toggle {
-            padding: $spacing-md;
+            padding: var(--spacing-md);
         }
         
         &__title {
@@ -156,7 +156,7 @@
         }
         
         &__content {
-            padding: $spacing-md;
+            padding: var(--spacing-md);
         }
     }
 }

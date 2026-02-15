@@ -5,21 +5,21 @@
 .tag {
     display: inline-block;
     padding: 4px 12px;
-    background: $color-bg-secondary;
-    border-radius: $border-radius-full;
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius-full);
     text-decoration: none;
-    color: $color-text;
+    color: var(--color-text);
     font-size: clamp(0.8125rem, 2vw, 0.875rem);
-    transition: all $transition-base;
+    transition: all var(--transition-base);
     
     &:hover {
-        background: $color-primary;
-        color: white;
+        background: var(--color-primary);
+        color: var(--color-white);
     }
 }
 
 .tag-cloud {
     display: flex;
     flex-wrap: wrap;
-    gap: $spacing-xs;
+    gap: var(--spacing-xs);
 }

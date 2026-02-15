@@ -3,6 +3,11 @@
 // Core functionality - all event listeners
 // ==========================================
 
+// Firefox fix: Remove inline width from html element
+if (document.documentElement.hasAttribute('style')) {
+    document.documentElement.removeAttribute('style');
+}
+
 (function () {
     'use strict';
 

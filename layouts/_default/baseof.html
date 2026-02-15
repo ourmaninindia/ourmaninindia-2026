@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+     <!-- Preload critical font -->
+    <link rel="preload" 
+          href="/fonts/halimun/halimun.woff2" 
+          as="font" 
+          type="font/woff2" 
+          crossorigin>
     {{ partial "site-style.html" . }}
     {{ partial "seo.html" . }}
 </head>

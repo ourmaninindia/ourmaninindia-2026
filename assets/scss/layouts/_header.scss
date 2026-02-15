@@ -8,20 +8,20 @@
 .nav {
     position: sticky;
     top: 0;
-    background-image: linear-gradient(110deg,#20123a 20%,#20123a 46%,#e65321 60%);
-    background-color: #20123a;
-    border-bottom: 1px solid $color-border;
+    background-image: linear-gradient(110deg,var(--color-brand-purple) 20%,var(--color-brand-purple) 46%,var(--color-brand-orange) 60%);
+    background-color: var(--color-brand-purple);
+    border-bottom: 1px solid var(--color-border);
     z-index: $z-sticky;
-    transition: transform $transition-base;
+    transition: transform var(--transition-base);
     
     &--hidden {
         transform: translateY(-100%);
     }
     
     &__container {
-        max-width: $max-width;
+        max-width: var(--max-width);
         margin: 0 auto;
-        padding: 0 $spacing-md;
+        padding: 0 var(--spacing-md);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -34,12 +34,12 @@
         z-index: 2;
         
         a {
-            color: $color-bg;
+            color: var(--color-bg);
             text-decoration: none;
-            transition: color $transition-base;
+            transition: color var(--transition-base);
             
             &:hover {
-                color: $color-primary;
+                color: var(--color-primary);
             }
         }
     }
@@ -50,13 +50,13 @@
             top: 64px;
             left: 0;
             right: 0;
-            background: $color-text;
-            border-bottom: 1px solid $color-border;
-            padding: $spacing-md;
+            background: var(--color-text);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-md);
             transform: translateY(-100%);
             opacity: 0;
             visibility: hidden;
-            transition: all $transition-base;
+            transition: all var(--transition-base);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             
             &--open {
@@ -69,49 +69,49 @@
     
     &__list {
         display: flex;
-        gap: $spacing-md;
+        gap: var(--spacing-md);
         list-style: none;
         margin: 0;
         padding: 0;
         
         @media (max-width: $breakpoint-tablet) {
             flex-direction: column;
-            gap: $spacing-sm;
+            gap: var(--spacing-sm);
         }
     }
     
     &__item {
         &--lang {
-            margin-left: $spacing-sm;
-            padding-left: $spacing-sm;
-            border-left: 1px solid $color-border;
+            margin-left: var(--spacing-sm);
+            padding-left: var(--spacing-sm);
+            border-left: 1px solid var(--color-border);
             
             @media (max-width: $breakpoint-tablet) {
                 margin-left: 0;
                 padding-left: 0;
                 border-left: none;
-                border-top: 1px solid $color-border;
-                padding-top: $spacing-sm;
-                margin-top: $spacing-sm;
+                border-top: 1px solid var(--color-border);
+                padding-top: var(--spacing-sm);
+                margin-top: var(--spacing-sm);
             }
         }
     }
     
     &__link {
-        color: $color-bg;
+        color: var(--color-bg);
         text-decoration: none;
         font-weight: 500;
         font-size: clamp(0.9375rem, 2vw, 1rem);
-        transition: color $transition-base;
+        transition: color var(--transition-base);
         display: block;
-        padding: $spacing-xs 0;
+        padding: var(--spacing-xs) 0;
         
         &:hover {
-            color: $color-primary;
+            color: var(--color-primary);
         }
         
         &--active {
-            color: $color-primary;
+            color: var(--color-primary);
             position: relative;
             
             &::after {
@@ -121,7 +121,7 @@
                 left: 0;
                 right: 0;
                 height: 2px;
-                background: $color-primary;
+                background: var(--color-primary);
                 
                 @media (max-width: $breakpoint-tablet) {
                     display: none;
@@ -138,7 +138,7 @@
         background: none;
         border: none;
         cursor: pointer;
-        padding: $spacing-xs;
+        padding: var(--spacing-xs);
         width: 32px;
         height: 32px;
         z-index: 2;
@@ -148,16 +148,16 @@
         }
         
         &:hover .nav__toggle-bar {
-            background: $color-primary;
+            background: var(--color-primary);
         }
     }
     
     &__toggle-bar {
         width: 100%;
         height: 3px;
-        background: $color-text;
+        background: var(--color-text);
         border-radius: 2px;
-        transition: all $transition-base;
+        transition: all var(--transition-base);
         transform-origin: center;
     }
     

@@ -17,7 +17,7 @@
     display: none;
     align-items: center;
     justify-content: center;
-    padding: $spacing-lg;
+    padding: var(--spacing-lg);
     opacity: 0;
     transition: opacity 0.3s ease;
     
@@ -27,8 +27,8 @@
     }
     
     &__dialog {
-        background: $color-bg;
-        border-radius: $border-radius-lg;
+        background: var(--color-bg);
+        border-radius: var(--border-radius-lg);
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         max-width: 600px;
         width: 100%;
@@ -43,14 +43,14 @@
     }
     
     &__header {
-        padding: $spacing-lg;
-        border-bottom: 1px solid $color-border;
+        padding: var(--spacing-lg);
+        border-bottom: 1px solid var(--color-border);
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: sticky;
         top: 0;
-        background: $color-bg;
+        background: var(--color-bg);
         z-index: 1;
     }
     
@@ -58,30 +58,30 @@
         margin: 0;
         font-size: clamp(1.125rem, 2.5vw, 1.5rem);
         font-weight: 700;
-        color: $color-text;
+        color: var(--color-text);
     }
     
     &__close {
         width: 32px;
         height: 32px;
-        background: $color-bg-secondary;
-        border: 1px solid $color-border;
-        border-radius: $border-radius-md;
-        color: $color-text;
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-md);
+        color: var(--color-text);
         font-size: 1.5rem;
         line-height: 1;
         cursor: pointer;
-        transition: all $transition-base;
+        transition: all var(--transition-base);
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        margin-left: $spacing-md;
+        margin-left: var(--spacing-md);
         
         &:hover {
-            background: $color-primary;
-            color: white;
-            border-color: $color-primary;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
             transform: rotate(90deg);
         }
         
@@ -91,7 +91,7 @@
     }
     
     &__body {
-        padding: $spacing-lg;
+        padding: var(--spacing-lg);
         
         p:last-child {
             margin-bottom: 0;
@@ -99,14 +99,14 @@
     }
     
     &__footer {
-        padding: $spacing-lg;
-        border-top: 1px solid $color-border;
+        padding: var(--spacing-lg);
+        border-top: 1px solid var(--color-border);
         display: flex;
-        gap: $spacing-sm;
+        gap: var(--spacing-sm);
         justify-content: flex-end;
         position: sticky;
         bottom: 0;
-        background: $color-bg;
+        background: var(--color-bg);
         
         @media (max-width: $breakpoint-mobile) {
             flex-direction: column;

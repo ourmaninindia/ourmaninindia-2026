@@ -5,10 +5,10 @@
 // ==========================================
 
 .post {
-    background: $color-bg;
-    border-radius: $border-radius-md;
-    padding: $spacing-lg;
-    box-shadow: $shadow-sm;
+    background: var(--color-bg);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
     
     &__header {
         display: grid;
@@ -17,8 +17,8 @@
             "title"
             "meta"
             "categories";
-        gap: $spacing-sm;
-        margin-bottom: $spacing-lg;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
     }
     
     &__featured-image {
@@ -26,8 +26,8 @@
         width: 100%;
         height: clamp(250px, 40vw, 400px);
         object-fit: cover;
-        border-radius: $border-radius-md;
-        margin-bottom: $spacing-md;
+        border-radius: var(--border-radius-md);
+        margin-bottom: var(--spacing-md);
     }
     
     &__title {
@@ -35,14 +35,14 @@
         font-size: clamp(1.75rem, 4vw, 2.5rem);
         line-height: 1.2;
         margin: 0;
-        color: $color-text;
+        color: var(--color-text);
     }
     
     &__meta {
         grid-area: meta;
         display: flex;
-        gap: $spacing-sm;
-        color: $color-text-light;
+        gap: var(--spacing-sm);
+        color: var(--color-text)-light;
         font-size: clamp(0.875rem, 2vw, 1rem);
         flex-wrap: wrap;
         
@@ -56,34 +56,34 @@
     &__categories {
         grid-area: categories;
         display: flex;
-        gap: $spacing-xs;
+        gap: var(--spacing-xs);
         flex-wrap: wrap;
     }
     
     &__category-badge {
         padding: 4px 12px;
-        background: $color-primary;
-        color: white;
-        border-radius: $border-radius-full;
+        background: var(--color-primary);
+        color: var(--color-white);
+        border-radius: var(--border-radius-full);
         text-decoration: none;
         font-size: clamp(0.8125rem, 2vw, 0.875rem);
-        transition: background $transition-base;
+        transition: background var(--transition-base);
         
         &:hover {
-            background: $color-primary-hover;
-            color: white;
+            background: var(--color-primary)-hover;
+            color: var(--color-white);
         }
     }
     
     &__body {
         line-height: 1.8;
         font-size: clamp(0.9375rem, 2vw, 1rem);
-        color: $color-text;
+        color: var(--color-text);
         
         h2, h3, h4 {
-            margin-top: $spacing-lg;
-            margin-bottom: $spacing-sm;
-            color: $color-text;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text);
         }
         
         h2 {
@@ -95,34 +95,34 @@
         }
         
         p {
-            margin-bottom: $spacing-md;
+            margin-bottom: var(--spacing-md);
         }
         
         ul, ol {
-            margin-bottom: $spacing-md;
-            padding-left: $spacing-lg;
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
             
             li {
-                margin-bottom: $spacing-xs;
+                margin-bottom: var(--spacing-xs);
             }
         }
         
         code {
-            background: $color-bg-secondary;
+            background: var(--color-bg)-secondary;
             padding: 2px 6px;
             border-radius: 4px;
             font-family: $font-family-mono;
             font-size: 0.9em;
-            color: $color-primary;
+            color: var(--color-primary);
         }
         
         pre {
-            background: #272822;
-            color: #f8f8f2;
-            padding: $spacing-md;
-            border-radius: $border-radius-md;
+            background: var(--color-code-bg-alt);
+            color: var(--color-code-text-alt);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
             overflow-x: auto;
-            margin-bottom: $spacing-md;
+            margin-bottom: var(--spacing-md);
             
             code {
                 background: none;
@@ -132,56 +132,56 @@
         }
         
         blockquote {
-            border-left: 4px solid $color-primary;
-            padding-left: $spacing-md;
-            margin: $spacing-md 0;
-            color: $color-text-light;
+            border-left: 4px solid var(--color-primary);
+            padding-left: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            color: var(--color-text)-light;
             font-style: italic;
         }
         
         a {
-            color: $color-primary;
+            color: var(--color-primary);
             text-decoration: underline;
             
             &:hover {
-                color: $color-primary-hover;
+                color: var(--color-primary)-hover;
             }
         }
         
         img {
-            border-radius: $border-radius-md;
-            margin: $spacing-md 0;
+            border-radius: var(--border-radius-md);
+            margin: var(--spacing-md) 0;
         }
     }
     
     &__tags {
-        padding-top: $spacing-md;
-        border-top: 1px solid $color-border;
-        margin-top: $spacing-lg;
+        padding-top: var(--spacing-md);
+        border-top: 1px solid var(--color-border);
+        margin-top: var(--spacing-lg);
         
         strong {
-            margin-right: $spacing-xs;
+            margin-right: var(--spacing-xs);
         }
     }
     
     &__navigation {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: $spacing-md;
-        padding-top: $spacing-md;
-        border-top: 1px solid $color-border;
-        margin-top: $spacing-lg;
+        gap: var(--spacing-md);
+        padding-top: var(--spacing-md);
+        border-top: 1px solid var(--color-border);
+        margin-top: var(--spacing-lg);
     }
     
     &__nav-link {
         text-decoration: none;
-        color: $color-primary;
+        color: var(--color-primary);
         font-weight: 600;
-        transition: color $transition-base;
+        transition: color var(--transition-base);
         font-size: clamp(0.875rem, 2vw, 1rem);
         
         &:hover {
-            color: $color-primary-hover;
+            color: var(--color-primary)-hover;
         }
         
         &--prev {
@@ -204,20 +204,20 @@
 
 // Share buttons (if added)
 .share-buttons {
-    margin-top: $spacing-xl;
-    padding: $spacing-lg;
-    background: $color-bg-secondary;
-    border-radius: $border-radius-md;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--color-bg)-secondary;
+    border-radius: var(--border-radius-md);
     
     h4 {
-        margin-bottom: $spacing-md;
-        color: $color-text;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text);
     }
     
     &__grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: $spacing-sm;
+        gap: var(--spacing-sm);
     }
 }
 
@@ -225,21 +225,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: $spacing-xs;
-    padding: $spacing-sm;
-    background: $color-bg;
-    border: 1px solid $color-border;
-    border-radius: $border-radius-md;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
     text-decoration: none;
-    color: $color-text;
+    color: var(--color-text);
     font-weight: 600;
     font-size: 0.875rem;
-    transition: all $transition-base;
+    transition: all var(--transition-base);
     
     &:hover {
-        background: $color-primary;
-        color: white;
-        border-color: $color-primary;
+        background: var(--color-primary);
+        color: var(--color-white);
+        border-color: var(--color-primary);
         transform: translateY(-2px);
     }
 }
@@ -252,23 +252,23 @@
     &__role {
         display: inline-block;
         padding: 4px 12px;
-        background: $color-primary;
-        color: white;
-        border-radius: $border-radius-full;
+        background: var(--color-primary);
+        color: var(--color-white);
+        border-radius: var(--border-radius-full);
         font-size: 0.75rem;
         font-weight: 600;
         letter-spacing: 0.5px;
         text-transform: uppercase;
         
         &--guest {
-            background: #10b981; // Green for guests
+            background: var(--color-success); // Green for guests
         }
     }
     
     &__card {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: $spacing-lg;
+        gap: var(--spacing-lg);
         align-items: start;
     }
     
@@ -278,9 +278,9 @@
         border-radius: 50%;
         overflow: hidden;
         flex-shrink: 0;
-        border: 4px solid white;
-        box-shadow: $shadow-md;
-        background: $color-bg;
+        border: 4px solid var(--color-white);
+        box-shadow: var(--shadow-md);
+        background: var(--color-bg);
         
         img {
             width: 100%;
@@ -297,8 +297,8 @@
         display: flex;
         justify-content: space-between;
         align-items: start;
-        margin-bottom: $spacing-md;
-        gap: $spacing-md;
+        margin-bottom: var(--spacing-md);
+        gap: var(--spacing-md);
         flex-wrap: wrap;
     }
     
@@ -307,45 +307,45 @@
     }
     
     &__name {
-        margin: 0 0 $spacing-xs;
+        margin: 0 0 var(--spacing-xs);
         font-size: clamp(1.25rem, 3vw, 1.5rem);
-        color: $color-text;
+        color: var(--color-text);
         font-weight: 700;
     }
     
   
     
     &__description {
-        color: $color-text;
-        margin-bottom: $spacing-md;
+        color: var(--color-text);
+        margin-bottom: var(--spacing-md);
         line-height: 1.7;
         font-size: clamp(0.9375rem, 2vw, 1rem);
     }
     
     &__stats {
         display: flex;
-        gap: $spacing-xl;
-        margin-bottom: $spacing-md;
-        padding: $spacing-md;
-        background: white;
-        border-radius: $border-radius-md;
-        box-shadow: $shadow-sm;
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-md);
+        padding: var(--spacing-md);
+        background: var(--color-white);
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--shadow-sm);
     }
     
     &__social {
         display: flex;
-        gap: $spacing-sm;
+        gap: var(--spacing-sm);
         flex-wrap: wrap;
     }
     
     &__more {
-        margin-top: $spacing-lg;
-        padding-top: $spacing-lg;
-        border-top: 2px solid $color-border;
+        margin-top: var(--spacing-lg);
+        padding-top: var(--spacing-lg);
+        border-top: 2px solid var(--color-border);
         
         h4 {
-            margin-bottom: $spacing-md;
-            color: $color-text;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
             font-size: clamp(1.125rem, 2.5vw, 1.25rem);
             font-weight: 600;
         }
@@ -353,7 +353,7 @@
     
     &__articles {
         display: grid;
-        gap: $spacing-sm;
+        gap: var(--spacing-sm);
     }
 }
 
@@ -366,13 +366,13 @@
     &__number {
         font-size: clamp(1.5rem, 4vw, 2rem);
         font-weight: 700;
-        color: $color-primary;
+        color: var(--color-primary);
         line-height: 1;
     }
     
     &__label {
         font-size: 0.75rem;
-        color: $color-text-light;
+        color: var(--color-text)-light;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         margin-top: 4px;
@@ -386,19 +386,19 @@
     justify-content: center;
     width: 44px;
     height: 44px;
-    background: white;
-    border: 2px solid $color-border;
+    background: var(--color-white);
+    border: 2px solid var(--color-border);
     border-radius: 50%;
     text-decoration: none;
     font-size: 1.25rem;
-    transition: all $transition-base;
-    box-shadow: $shadow-sm;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
     
     &:hover {
-        background: $color-primary;
-        border-color: $color-primary;
+        background: var(--color-primary);
+        border-color: var(--color-primary);
         transform: translateY(-3px) scale(1.05);
-        box-shadow: $shadow-md;
+        box-shadow: var(--shadow-md);
     }
 }
 
@@ -406,20 +406,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: $spacing-md;
-    padding: $spacing-md;
-    background: white;
-    border-radius: $border-radius-md;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--border-radius-md);
     text-decoration: none;
     color: inherit;
-    transition: all $transition-base;
-    border: 1px solid $color-border;
+    transition: all var(--transition-base);
+    border: 1px solid var(--color-border);
     
     &:hover {
-        background: $color-bg-secondary;
+        background: var(--color-bg)-secondary;
         transform: translateX(8px);
-        box-shadow: $shadow-sm;
-        border-color: $color-primary;
+        box-shadow: var(--shadow-sm);
+        border-color: var(--color-primary);
     }
     
     &__content {
@@ -429,7 +429,7 @@
     
     &__title {
         display: block;
-        color: $color-text;
+        color: var(--color-text);
         font-weight: 600;
         font-size: clamp(0.9375rem, 2vw, 1rem);
         margin-bottom: 4px;
@@ -438,31 +438,31 @@
     
     &__meta {
         display: flex;
-        gap: $spacing-sm;
+        gap: var(--spacing-sm);
         align-items: center;
         flex-wrap: wrap;
     }
     
     &__date {
-        color: $color-text-light;
+        color: var(--color-text)-light;
         font-size: 0.8125rem;
     }
     
     &__category {
         display: inline-block;
         padding: 2px 8px;
-        background: rgba($color-primary, 0.1);
-        color: $color-primary;
-        border-radius: $border-radius-full;
+        background: rgba(var(--color-primary), 0.1);
+        color: var(--color-primary);
+        border-radius: var(--border-radius-full);
         font-size: 0.75rem;
         font-weight: 600;
     }
     
     &__arrow {
-        color: $color-primary;
+        color: var(--color-primary);
         font-size: 1.25rem;
         font-weight: 700;
-        transition: transform $transition-base;
+        transition: transform var(--transition-base);
     }
     
     &:hover &__arrow {
@@ -499,7 +499,7 @@
 
 @media (max-width: $breakpoint-mobile) {
     .author-bio {
-        padding: $spacing-md;
+        padding: var(--spacing-md);
         
         &__avatar {
             width: 80px;
@@ -507,12 +507,12 @@
         }
         
         &__stats {
-            gap: $spacing-lg;
-            padding: $spacing-sm;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-sm);
         }
         
         &__social {
-            gap: $spacing-xs;
+            gap: var(--spacing-xs);
         }
     }
     
@@ -531,26 +531,26 @@
     // Code copy button
 .code-copy-btn {
     position: absolute;
-    top: $spacing-xs;
-    right: $spacing-xs;
-    padding: $spacing-xs $spacing-sm;
-    background: rgba(white, 0.1);
-    color: white;
-    border: 1px solid rgba(white, 0.2);
-    border-radius: $border-radius-sm;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-sm);
     font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all $transition-base;
+    transition: all var(--transition-base);
     font-family: inherit;
     
     &:hover {
-        background: rgba(white, 0.2);
+        background: rgba(255, 255, 255, 0.2);
     }
     
     &--success {
-        background: $color-success;
-        border-color: $color-success;
+        background: var(--color-success);
+        border-color: var(--color-success);
     }
 }
 

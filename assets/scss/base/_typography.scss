@@ -10,38 +10,31 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: $line-height-tight;
+  line-height: var(--line-height-tight);
   font-weight: 600;
 }
 
 p {
-  margin-bottom: $spacing-md;
+  margin-bottom: var(--spacing-md);
 }
 
 code {
-  background: $color-bg-secondary;
+  background: var(--color-bg-secondary);
   padding: 2px 6px;
-  border-radius: $border-radius-sm;
+  border-radius: var(--border-radius-sm);
   font-size: 0.9em;
   font-family: 'Courier New', monospace;
 }
 
 pre {
-  background: $color-bg-secondary;
-  padding: $spacing-md;
-  border-radius: $border-radius-md;
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
   overflow-x: auto;
-  margin-bottom: $spacing-md;
+  margin-bottom: var(--spacing-md);
   
   code {
     background: none;
     padding: 0;
   }
-}
-
-time {
-  font-size: smaller;
-  text-align: right;
-  width: 100%;
-  display: block;
 }

@@ -49,6 +49,11 @@ timeout = 60000 # was 25000
     weight = 2.5
   
   [[menus.main]]
+    name = "Cycling"
+    url = "/cycling/"
+    weight = 2.7
+  
+  [[menus.main]]
     name = "About"
     url = "/about/"
     weight = 3

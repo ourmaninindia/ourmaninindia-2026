@@ -5,9 +5,9 @@
 // ==========================================
 
 .container {
-  max-width: $max-width;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: $spacing-xl $spacing-md;
+  padding: var(--spacing-xl) var(--spacing-md);
   width: 100%;
 }
 
@@ -16,7 +16,7 @@
   display: grid;
   grid-template-columns: 1fr 320px;
   grid-template-areas: "posts sidebar";
-  gap: $spacing-lg;
+  gap: var(--spacing-lg);
   align-items: start;
   
   // Container query for responsive layout
@@ -40,7 +40,7 @@
   grid-area: posts;
   display: flex;
   flex-direction: column;
-  gap: $spacing-lg;
+  gap: var(--spacing-lg);
 }
 
 // Single post layout with grid areas
@@ -48,7 +48,7 @@
   display: grid;
   grid-template-columns: 1fr 320px;
   grid-template-areas: "article sidebar";
-  gap: $spacing-lg;
+  gap: var(--spacing-lg);
   align-items: start;
   
   @include container-query(900px) {

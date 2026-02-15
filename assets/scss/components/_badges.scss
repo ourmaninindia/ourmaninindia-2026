@@ -5,28 +5,27 @@
 // BADGE
 // ==========================================
 
-
 .badge {
     display: inline-block;
     padding: 4px 10px;
-    background: $color-primary;
-    color: white;
-    border-radius: $border-radius-full;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-full);
     font-size: 0.75rem;
     font-weight: 600;
     
     &--secondary {
-        background: $color-bg-secondary;
-        color: $color-text;
+        background: var(--color-bg-secondary);
+        color: var(--color-text);
     }
     
     &--success {
-        background: $color-success;
-        color: white;
+        background: var(--color-success);
+        color: var(--color-white);
     }
     
     &--error {
-        background: $color-error;
-        color: white;
+        background: var(--color-error);
+        color: var(--color-white);
     }
 }

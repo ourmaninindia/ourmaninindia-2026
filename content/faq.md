@@ -1,6 +1,6 @@
 ---
 title: "Frequently Asked Questions"
-layout: faq
+layout: single-no-sidebar
 ---
 
 Common questions about my blog and services.

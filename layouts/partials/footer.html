@@ -1,25 +1,54 @@
-<footer class="site-footer {{ .Site.Params.background_color_class | default "" }}" role="contentinfo">
-    <div class="footer">
-
-        <!-- Quick Search in Footer -->
-        <div class="footer__search">
-            <form action="/search" method="get" class="footer__form">
-                <input type="text" name="q" placeholder="Quick search..." class="footer__input">
-                <button type="submit">
-                    🔍
-                </button>
-            </form>
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__section">
+            <h4>About</h4>
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
         </div>
 
-        <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
-
-        <!-- Footer Links -->
-        <div class="footer__links">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="#" id="cookie-settings-link">🍪 Cookie Settings</a>
-            <a href="/search">🔍 Search</a>
-            <a href="/contact">Contact</a>
+        <div class="footer__section">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="/policies">Policies</a></li>
+                <li><a href="/policies#general-data-protection-regulation-gdpr">Privacy (GDPR)</a></li>
+            </ul>
         </div>
+
+        <div class="footer__section footer__section--copyright">
+            <h4>Content License</h4>
+            <div class="footer__copyright-content">
+                <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
+                    rel="license noopener noreferrer" class="footer__license-badge">
+                    <img src="/images/cc.svg" alt="CC" class="cc-icon">
+                    <img src="/images/by.svg" alt="BY" class="cc-icon">
+                    <img src="/images/sa.svg" alt="SA" class="cc-icon">
+                </a>
+                <p class="footer__license-text">
+                    All original content licensed under
+                    <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license">
+                        CC BY-SA 4.0
+                    </a>
+                </p>
+                <p class="footer__license-summary">
+                    Free to share & adapt with attribution
+                </p>
+            </div>
+        </div>
+
+        <div class="footer__section">
+            <h4>Cookie Settings</h4>
+            <button type="button" id="cookie-settings-btn" class="button button--small button--secondary">
+                🍪 Manage Cookies
+            </button>
+            <p class="footer__help-text">
+                Control cookie preferences
+            </p>
+        </div>
+    </div>
+
+    <div class="footer__container footer__copyright">
+        <p>© 2005-{{ now.Year }} <strong>{{ .Site.Title }}</strong>. All rights reserved.</p>
     </div>
 </footer>
