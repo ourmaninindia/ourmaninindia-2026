@@ -32,3 +32,5 @@ other = "Your email..."
 other = "Subscribe"
 [searchResultsCount]
 other = "results found"
+[selectCategory]
+other = "Select a topic"

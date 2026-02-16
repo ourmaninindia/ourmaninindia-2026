@@ -2,7 +2,7 @@
 
 {{ define "main" }}
 <div class="display-template hidden">
-  _default/single.html
+    _default/single.html
 </div>
 
 <div class="container">
@@ -10,51 +10,84 @@
         <article class="post">
             <header class="post__header">
                 {{ with .Params.image }}
-                    <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="post__featured-image">
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="post__featured-image">
                 {{ end }}
-                
+
                 <h1 class="post__title">{{ .Title }}</h1>
-                
+
                 <div class="post__meta">
                     <span>📅 {{ .Date.Format "January 02, 2006" }}</span>
                     {{ with .Params.author }}
-                        <span>👤 {{ . }}</span>
+                    <span>👤 {{ . }}</span>
                     {{ end }}
                     <span>⏱️ {{ .ReadingTime }} min read</span>
                 </div>
-                
-                {{ with .Params.categories }}
-                <div class="post__categories">
-                    {{ range . }}
-                        <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}" class="post__category-badge">{{ . }}</a>
+
+                <div class="post__categories-tags">
+                    <!-- Categories -->
+                    {{ if .Params.categories }}
+                    {{ $validCategories := slice }}
+                    {{ range .Params.categories }}
+                    {{ if ne . "" }}
+                    {{ $validCategories = $validCategories | append . }}
+                    {{ end }}
+                    {{ end }}
+                    {{ if gt (len $validCategories) 0 }}
+                    <span class="post__categories">
+                        Categories:
+                        {{ range $index, $cat := $validCategories }}
+                        {{ if $index }}, {{ end }}
+                        <a href="{{ " /categories/" | relLangURL }}{{ $cat | urlize }}">{{ $cat }}</a>
+                        {{ end }}
+                    </span>
+                    {{ end }}
+                    {{ end }}
+
+                    <!-- Tags -->
+                    {{ if .Params.tags }}
+                    {{ $validTags := slice }}
+                    {{ range .Params.tags }}
+                    {{ if ne . "" }}
+                    {{ $validTags = $validTags | append . }}
+                    {{ end }}
+                    {{ end }}
+                    {{ if gt (len $validTags) 0 }}
+                    <span class="post__tags">
+                        Tags:
+                        {{ range $index, $tag := $validTags }}
+                        {{ if $index }}, {{ end }}
+                        <a href="{{ " /tags/" | relLangURL }}{{ $tag | urlize }}">{{ $tag }}</a>
+                        {{ end }}
+                    </span>
+                    {{ end }}
                     {{ end }}
                 </div>
-                {{ end }}
+
             </header>
-            
+
             <div class="post__body">
                 {{ .Content }}
             </div>
-            
+
             {{ with .Params.tags }}
             <div class="post__tags">
                 <strong>{{ i18n "tags" }}:</strong>
                 {{ range . }}
-                    <a href="{{ "tags" | relLangURL }}/{{ . | urlize }}" class="tag">{{ . }}</a>
+                <a href="{{ " tags" | relLangURL }}/{{ . | urlize }}" class="tag">{{ . }}</a>
                 {{ end }}
             </div>
             {{ end }}
-            
+
             <nav class="post__navigation">
                 {{ with .PrevInSection }}
-                    <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--prev">← {{ .Title }}</a>
+                <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--prev">← {{ .Title }}</a>
                 {{ end }}
-                
+
                 {{ with .NextInSection }}
-                    <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--next">{{ .Title }} →</a>
+                <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--next">{{ .Title }} →</a>
                 {{ end }}
             </nav>
-            
+
             <!-- Enhanced Author Bio -->
             {{ partial "author-bio.html" . }}
         </article>
@@ -63,15 +96,15 @@
     </div>
 
     <div class="post__meta">
-       <span>📅 {{ .Date.Format "January 02, 2006" }}</span>
-    
-       {{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
-       {{ $author := index .Site.Data.authors $authorSlug }}
-       {{ with $author }}
-           <span>👤 {{ .name }}</span>
-       {{ end }}
-    
-       <span>⏱️ {{ .ReadingTime }} min read</span>
+        <span>📅 {{ .Date.Format "January 02, 2006" }}</span>
+
+        {{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
+        {{ $author := index .Site.Data.authors $authorSlug }}
+        {{ with $author }}
+        <span>👤 {{ .name }}</span>
+        {{ end }}
+
+        <span>⏱️ {{ .ReadingTime }} min read</span>
     </div>
 
     <!-- Comments Section -->

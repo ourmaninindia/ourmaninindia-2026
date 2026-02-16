@@ -71,6 +71,7 @@ $z-tooltip: 1050;
     
     // Colors - Additional
     --color-lightblue: #add8e6;
+    --color-navajowhite: #ffdead;
     
     // Colors - Code Blocks
     --color-code-bg: #1e1e1e;
@@ -119,6 +120,24 @@ $z-tooltip: 1050;
     
     // Gradients
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+   
+  --pagination-bg: rgba(0, 0, 0, 0.05);
+  --pagination-bg-hover: rgba(0, 0, 0, 0.08);
+  --pagination-bg-active: rgba(0, 0, 0, 0.12);
+  --pagination-text: #333;
+  --pagination-text-active: #000;
+  --pagination-shadow-hover: 0 0 6px rgba(0, 0, 0, 0.15);
+
+[data-theme="dark"] {
+  --pagination-bg: rgba(255, 255, 255, 0.05);
+  --pagination-bg-hover: rgba(255, 255, 255, 0.09);
+  --pagination-bg-active: rgba(255, 255, 255, 0.14);
+  --pagination-text: #ccc;
+  --pagination-text-active: #fff;
+  --pagination-shadow-hover: 0 0 6px rgba(255, 255, 255, 0.25);
+}
+
 }
 
 // ==========================================

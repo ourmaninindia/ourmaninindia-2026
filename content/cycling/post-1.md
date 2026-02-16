@@ -1,7 +1,7 @@
 ---
 title: "Building Responsive Layouts with CSS Grid"
 date: 2026-01-25
-author: "John Doe"
+author: 
 categories: ["Web Design", "CSS"]
 tags: ["CSS", "Grid", "Responsive"]
 icon: "📱"

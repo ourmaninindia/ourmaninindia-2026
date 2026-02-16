@@ -60,25 +60,15 @@
         padding: var(--spacing-md);
         display: grid;
         grid-template-areas:
-            "meta"
             "title"
+            "meta"
             "excerpt"
             "readmore";
-        gap: var(--spacing-sm);
-    }
-    
-    &__post-meta {
-        grid-area: meta;
-        display: flex;
-        gap: var(--spacing-sm);
-        color: var(--color-text-light);
-        font-size: clamp(0.75rem, 2vw, 0.875rem);
-        flex-wrap: wrap;
+        gap: 0;  // No gap by default
         
-        span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
+        // Add specific spacing
+        > .blog__post-excerpt {
+            margin-top: var(--spacing-sm);
         }
     }
     
@@ -97,6 +87,21 @@
             &:hover {
                 color: var(--color-primary);
             }
+        }
+    }
+    
+    &__post-meta {
+        grid-area: meta;
+        display: flex;
+        gap: var(--spacing-sm);
+        color: var(--color-text-light);
+        font-size: clamp(0.75rem, 2vw, 0.875rem);
+        flex-wrap: wrap;
+        
+        span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
     }
     

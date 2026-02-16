@@ -18,6 +18,7 @@ timeout = 60000 # was 25000
 [taxonomies]
   category = "categories"
   tag = "tags"
+  archive = "archives"
 
 [minify]
   disableHTML = false
@@ -28,9 +29,19 @@ timeout = 60000 # was 25000
   disableXML = false
   minifyOutput = true
 
-  [outputs]
+[build]
+  [build.buildStats]
+    enable = true
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+[outputs]
   home = ["HTML", "RSS", "JSON"]
   section = ["HTML", "RSS"]
+
+[pagination]
+  pagerSize = 4
 
 [menus]
   [[menus.main]]

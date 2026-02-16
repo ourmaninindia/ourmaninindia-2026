@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="display-template hidden">
+    blog/archive.html
+</div>
+
+<div class="container">
+    <h1 class="archive-title">
+        Archive <span class='date'>: {{ .Date.Format "January 2006" }}</span>
+    </h1>
+    
+    <div class="blog__grid">
+        <div class="blog__posts">
+            {{ $year := .Params.year }}
+            {{ $month := .Params.month }}
+            {{ $targetDate := printf "%s-%s" $year $month }}
+            
+            {{ $posts := where .Site.RegularPages "Section" "blog" }}
+            {{ $matchedPosts := slice }}
+            
+            {{ range $posts }}
+                {{/* Exclude archive pages and posts with invalid dates */}}
+                {{ if and .Date (eq (.Date.Format "2006-01") $targetDate) (not (in .RelPermalink "/archive/")) }}
+                    {{ $matchedPosts = $matchedPosts | append . }}
+                {{ end }}
+            {{ end }}
+            
+            {{ if gt (len $matchedPosts) 0 }}
+                {{ range $matchedPosts }}
+                    <article class="blog__post">
+                        {{ partial "post-image.html" . }}
+                        
+                        <div class="blog__post-content">
+                            <div class="blog__post-title">
+                                <h2>
+                                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                </h2>
+                                <div class="blog__post-meta">
+                                    <time>📅 {{ .Date.Format "Jan 02, 2006" }}</time>
+                                    {{ with .Params.author }}
+                                        <span>👤 {{ . }}</span>
+                                    {{ end }}
+                                </div>
+                            </div>
+
+                            <p class="blog__post-excerpt">
+                                {{ with .Summary }}
+                                    {{ . | plainify | truncate 300 }}
+                                {{ else }}
+                                    {{ .Content | plainify | truncate 300 }}
+                                {{ end }}
+                            </p>
+                            
+                            <a href="{{ .RelPermalink }}" class="blog__read-more">
+                                {{ i18n "readMore" }}
+                            </a>
+                        </div>
+                    </article>
+                {{ end }}
+            {{ else }}
+                <p class="archive__no-posts">No posts found for this period.</p>
+            {{ end }}
+        </div>
+
+        {{ partial "sidebar.html" . }}
+    </div>
+</div>
+{{ end }}

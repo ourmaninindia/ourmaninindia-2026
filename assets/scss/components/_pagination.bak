@@ -1,0 +1,76 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// components/_pagination.scss
+// Pagination styles
+
+.pagination {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "prev info next";
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  gap: var(--spacing-sm);
+  
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+
+    @include transition(color);
+    
+    @include hover-state {
+      color: var(--color-primary-dark);
+    }
+    
+    &:first-child {
+      grid-area: prev;
+    }
+    
+    &:last-of-type {
+      grid-area: next;
+    }
+  }
+}
+
+.pagination-info {
+  grid-area: info;
+  text-align: center;
+  font-size: var(--font-size-base);
+}
+
+// Post navigation (prev/next post)
+.post-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "prev next";
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  gap: var(--spacing-md);
+}
+
+.post-nav-link {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+
+  @include transition(color);
+  
+  @include hover-state {
+    color: var(--color-primary-dark);
+  }
+  
+  &.prev {
+    grid-area: prev;
+    text-align: left;
+  }
+  
+  &.next {
+    grid-area: next;
+    text-align: right;
+  }
+}

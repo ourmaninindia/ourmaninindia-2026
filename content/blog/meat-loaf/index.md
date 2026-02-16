@@ -1,12 +1,12 @@
 ---
 title : "Meat Loaf RIP"
 date : 2022-01-21T22:00:00Z
-categories : ["Music"]
 featured_image : "cover-meat-loaf.jpg"
 cover : "cover-meat-loaf.jpg"
-keywords : ["music"]
-tags : [""]
 featured : false
+categories: 
+tags:
+  - music
 ---
 
 It happens more often that some well known musician passes away and with that part of your own happy childhood too. Today I was extra depressed as Meat Loaf has passed away. He was such a lovely singer and my thoughts are with his wife Deborah and his two daughters. In my humble opinion, to die aged 74 is far too early but then he did have a rough medical history with Asthma, accidentally falling off the stage etc. Whatever the cause of death was, we will miss the wonderful bloke from Dallas, Texas whose music resonated with millions of his generation.

@@ -1,13 +1,14 @@
 ---
-categories : ["Management"]
 date : 2013-11-11T08:34:17Z
 description : "Algorithms and our world picture"
-tags : ["Management"]
 title : "Algorithms and our world picture"
 featured : false
 cover : "cover-think2013.jpg"
 featured_image : ""
 read_more_copy : "Read more about this session"
+categories : 
+tags : 
+  - management
 ---
 
 {{< figure figcaption="Arun Sehrawat" class="left" >}}

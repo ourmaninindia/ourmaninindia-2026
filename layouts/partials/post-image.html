@@ -1,0 +1,13 @@
+{{/* Usage: {{ partial "post-image.html" . }} */}}
+
+{{ $image := "" }}
+
+{{ with .Resources.GetMatch .Params.featured_image }}
+    {{ $image = .RelPermalink }}
+{{ end }}
+
+{{ if $image }}
+    <div class="blog__post-image">
+        <img src="{{ $image }}" alt="{{ .Title }}">
+    </div>
+{{ end }}

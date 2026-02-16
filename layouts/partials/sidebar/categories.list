@@ -1,0 +1,14 @@
+{{ $categories := .Site.Taxonomies.categories }}
+{{ if $categories }}
+<h3 class="widget-title">{{ i18n "categories" }}</h3>
+<div class="widget-content">
+    <ul class="category-list">
+        {{ range $name, $taxonomy := $categories }}
+            <li class="category-item">
+                <a href="{{ "categories" | relLangURL }}/{{ $name | urlize }}">{{ $name }}</a>
+                <span class="category-count">{{ len $taxonomy.Pages }}</span>
+            </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

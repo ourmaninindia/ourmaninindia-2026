@@ -5,6 +5,9 @@
   "main": "scss/main.scss",
   "type": "module",
   "scripts": {
+    "generate-archives": "./scripts/generate-archives.sh",
+    "build": "npm run generate-archives && hugo",
+    "dev": "npm run generate-archives && hugo server",
     "lint:scss": "stylelint 'assets/**/*.scss'",
     "lint:scss:fix": "stylelint 'assets/**/*.scss' --fix",
     "lint:js": "eslint 'assets/**/*.js'",
@@ -15,8 +18,7 @@
     "scss:dev": "prepare && sass assets/scss/main.scss static/css/style.css --style=expanded --source-map",
     "scss:build": "prepare && sass assets/scss/main.scss static/css/style.css --style=compressed --no-source-map",
     "scss:watch": "prepare && sass --watch assets/scss/main.scss:static/css/style.css --style=expanded --source-map",
-    "scss:watch:poll": "prepare && sass --watch --poll assets/scss/main.scss:static/css/style.css",
-    "dev": "hugo server -D"
+    "scss:watch:poll": "prepare && sass --watch --poll assets/scss/main.scss:static/css/style.css"
   },
   "keywords": [
     "scss",

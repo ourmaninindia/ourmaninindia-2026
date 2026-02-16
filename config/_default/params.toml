@@ -11,3 +11,6 @@ googleAnalytics = "G-XXXXXXXXXX"  # Your GA4 ID
 [cusdis]
   host = "https://my-blog-comments.vercel.app"
   appId = "1234abcd-5678-efgh-9012-ijklmnopqrst"  # Replace with YOUR App ID
+
+[assets]
+  js = ["js/main.js"]

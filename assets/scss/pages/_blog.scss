@@ -8,17 +8,21 @@
 // Add any blog-page-specific overrides or additional styles here
 
 .blog-posts {
-  // Additional blog listing specific styles if needed
+    // Additional blog listing specific styles if needed
 }
 
+.archive-title .date {
+        font-size: var(--font-size-xl);
+        font-family: Arapey;
+}
 
-// You can add blog-specific layout adjustments here
+// You can add blog-specific layout adjustments here 
 
 .blog__sidebar {
     background-color: var(--color-gray-300);
     border-left: 2px solid var(--color-border-light);
     padding: 0.5rem;
-    box-shadow: -2px 0 4px rgba(0,0,0,0.05);
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: $breakpoint-tablet) {

@@ -6,7 +6,7 @@
 </div>
 
  <div class="container">
-  <div class="post__meta">
+  <div>
       <time>⏱️ {{ .ReadingTime }} min read</time>
   </div>
 
@@ -15,7 +15,7 @@
       <div class="content">
       {{ .Content }}
       </div>
-      {{ partial "date.html" . }}
+      {{ partial "date.html" . }} 
   </div>
 
   {{- $mainSections := (slice "post") }}

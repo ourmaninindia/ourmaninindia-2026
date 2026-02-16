@@ -2,6 +2,7 @@
 
 {{ define "main" }}
 <div class="container">
+    <h1>{{ .Title }}</h1>
     <div class="blog__grid">
         <div class="blog__posts">
             
@@ -10,14 +11,8 @@
             {{ if gt (len .Pages) 0 }}
                 {{ range $paginator.Pages }}
 
-                    <article class="blog__post">
-                        {{ with .Params.image }}
-                            <div class="blog__post-image">
-                                <img src="{{ . | relURL }}" alt="{{ $.Title }}">
-                            </div>
-                        {{ else }}
-                            <div class="blog__post-image">{{ .Params.icon | default "📝" }}</div>
-                        {{ end }}
+                    <article class="blog__post" data-post-date="{{ .Date.Format "2006-01" }}">
+                      {{ partial "post-image.html" . }}
                         
                         <div class="blog__post-content">
                             <div class="blog__post-meta">

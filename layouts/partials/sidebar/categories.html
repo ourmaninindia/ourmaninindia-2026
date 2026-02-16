@@ -1,14 +1,23 @@
-{{ $categories := .Site.Taxonomies.categories }}
-{{ if $categories }}
 <h3 class="widget-title">{{ i18n "categories" }}</h3>
 <div class="widget-content">
-    <ul class="category-list">
+
+    {{ $categories := .Site.Taxonomies.categories }}
+    {{ if $categories }}
+
+    <!-- Accessible label, visually hidden -->
+    <label for="category-dropdown" class="sr-only">{{ i18n "categories" }}</label>
+
+    <select 
+        id="category-dropdown" 
+        name="category" 
+        class="category__dropdown" 
+        onchange="if(this.value) window.location.href=this.value">
+        <option value="">{{ i18n "selectCategory" }} ({{ len $categories }} categories)</option>
         {{ range $name, $taxonomy := $categories }}
-            <li class="category-item">
-                <a href="{{ "categories" | relLangURL }}/{{ $name | urlize }}">{{ $name }}</a>
-                <span class="category-count">{{ len $taxonomy.Pages }}</span>
-            </li>
+        <option value="{{ " categories" | relLangURL }}/{{ $name | urlize }}">
+            {{ $name }} ({{ len $taxonomy.Pages }})
+        </option>
         {{ end }}
-    </ul>
+    </select>
+    {{ end }}
 </div>
-{{ end }}
