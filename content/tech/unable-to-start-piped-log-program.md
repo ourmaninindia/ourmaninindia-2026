@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - piped
+  - apache
+  - server
+  - logging
 date : 2012-08-07T21:21:16Z
-description : ""
-tags : ["open-source"]
 title : "Unable to start piped log program"
-
 ---
 
 

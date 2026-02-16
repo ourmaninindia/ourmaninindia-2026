@@ -1,5 +1,9 @@
 ---
 title: "Complete Guide to Hugo"
+tags: 
+  - hugo
+categories:
+  - tech
 ---
 
 This guide is comprehensive, so we've organized it into collapsible sections.

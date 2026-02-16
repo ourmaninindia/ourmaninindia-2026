@@ -1,10 +1,13 @@
 ---
-categories : ["Management"]
+categories:
+  - Management
+tags:
+  - Diversity & Inclusion
+  - HR
 date : 2007-08-26T14:29:07Z
-description : ""
-tags : ["Diversity & Inclusion", "HR"]
+  - Diversity & Inclusion
+  - HR
 title : "Diversity & Inclusion"
-
 ---
 
 

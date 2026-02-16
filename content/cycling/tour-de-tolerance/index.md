@@ -1,10 +1,17 @@
 ---
-categories : ["Cycling","Travel"]
 featured_image : "stelvio1.jpg"
 date : 2020-09-08T22:00:00Z
-tags : ["Cycling","Italy"]
 title : "Tour de Tolerance 2020"
 read_more_copy : "Read more about this wonderful ride"
+categories:
+  - Cycling
+tags:
+  - Italy
+  - Travel
+  - dolomites
+  - Stelvio
+  - Gavia
+  - Foscagno
 ---
 
 I had heard of Madonna but never of Madonna del Ghisallo. The little chapel in her honour sits atop a steep hill (532m elevation, 10.6km, avg 5.2%, max 11%) that climbs up from the shores of Lake Como. It had been such a stopping point for cyclists that the local priest had proposed that Madonna del Ghisallo be declared the patroness of cyclists. In 1949 Pope Pius XII, formerly known as Signor Pacelli, himself an Italian and therefore no doubt a keen cyclist, confirmed this. Many years later, Benedict XVI declared Pius XII venerable. Was Benedict, or Herr Ratzinger as he was known before, perhaps also a keen cyclist? 

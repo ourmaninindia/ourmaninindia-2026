@@ -1,8 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - ownership
+  - new user
 date : 2012-12-11T11:42:43Z
-description : ""
-tags : ["open-source"]
 title : "Change ownership among users"
 ---
 

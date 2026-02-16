@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - git
+  - ssh
+  - secure shell
+  - github
 date : 2013-04-11T10:57:41Z
-description : ""
-tags : ["open-source"]
 title : "How to use GIT"
-
 ---
 
 

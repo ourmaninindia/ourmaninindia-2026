@@ -1,8 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - Vanilla Javascript
+  - javascript
 date : 2023-03-21T13:10:55Z
 description : "Highlight JavaScript"
-tags : ["Vanilla Javascript"]
 title : "Using Vanilla JavaScript"
 draft: true
 ---

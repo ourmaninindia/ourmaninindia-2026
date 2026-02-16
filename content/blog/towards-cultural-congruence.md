@@ -1,11 +1,11 @@
 ---
-categories : ["HR"]
+categories:
+  - HR
+tags:
+  - Management
 date : 2006-06-05T00:30:25Z
-description : ""
-tags : ["Management"]
+  - Management
 title : "Indian Management - Towards Cultural Congruence"
-cover : ""
-featured_image : ""
 ---
 
 

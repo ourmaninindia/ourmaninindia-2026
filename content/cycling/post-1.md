@@ -2,10 +2,18 @@
 title: "Building Responsive Layouts with CSS Grid"
 date: 2026-01-25
 author: 
-categories: ["Web Design", "CSS"]
-tags: ["CSS", "Grid", "Responsive"]
 icon: "📱"
 description: "Learn how to create flexible, responsive layouts using modern CSS Grid techniques."
+categories:
+  - tech
+tags:
+  - Web Design
+  - CSS
+  - Grid
+  - Responsive
+  - CSS
+  - Grid
+  - Responsive
 ---
 
 Learn how to create flexible, responsive layouts using modern CSS Grid techniques. We'll cover everything from basic grid concepts to advanced patterns.

@@ -2,6 +2,8 @@
 title: "Privacy Policy"
 date: 2026-01-30
 description: "How we collect, use, and protect your personal information"
+tags:
+draft: true
 ---
 
 Your privacy matters to us. This policy explains what information we collect, how we use it, and your rights.

@@ -1,8 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - chmod
+  - change permissions
 date : 2012-08-07T10:22:57Z
-description : ""
-tags : ["open-source"]
 title : "Change permissions on files only"
 ---
 

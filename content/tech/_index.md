@@ -1,8 +1,10 @@
 ---
-categories : ["Open Source"]
+categories:
+  - tech
+tags:
+  - repository
 date : 2016-11-02T02:30:24Z
 description : "The agility that Open Source produces is tremendous and only as effective as the skills of your top IT person. The learning curve is steep but tremendously rewarding."
-tags : []
 title : "Open Source"
 ---
 

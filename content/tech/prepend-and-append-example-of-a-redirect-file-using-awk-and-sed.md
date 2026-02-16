@@ -1,10 +1,16 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - awk
+  - sed
+  - prepend
+  - append
+  - htaccess
+  - dos2unix
 date : 2015-08-28T13:19:48Z
-description : ""
-tags : ["open-source"]
 title : "Prepend and append example of a redirect file using awk and sed"
-
 ---
 
 

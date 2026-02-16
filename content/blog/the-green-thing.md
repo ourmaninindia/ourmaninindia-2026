@@ -1,11 +1,11 @@
 ---
-categories : ["History"]
+categories:
+  - History
+tags:
+  - Management
 date : 2012-10-06T17:04:37Z
-description : ""
-tags : ["Management"]
+  - Management
 title : "The Green Thing"
-cover : ""
-featured_image : ""
 ---
 
 

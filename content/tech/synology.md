@@ -1,10 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - synology
 date : 2012-08-07T10:54:49Z
-description : ""
-tags : ["open-source"]
 title : "Synology"
-
 ---
 
 

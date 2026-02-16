@@ -1,9 +1,12 @@
 ---
-categories : ["India", "Economy"]
+categories:
+  - India
+  - Economy
+tags:
+  - lokpal
 date : 2011-07-11T16:56:54Z
-description : ""
 slug : "the-lokpal-bill"
-tags : ["lokpal"]
+  - lokpal
 title : "The Lokpal bill"
 cover : "cover-lokpal.jpg"
 read_more_copy : "Read more about this news"

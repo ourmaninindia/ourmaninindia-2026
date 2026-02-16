@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - fedora
+  - time
+  - date
+  - clock
 date : 2012-08-07T10:52:09Z
-description : ""
-tags : ["open-source"]
 title : "Show the date in the clock"
-
 ---
 
 

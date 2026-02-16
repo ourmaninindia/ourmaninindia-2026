@@ -1,10 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - virtualbox
 date : 2012-08-08T13:10:04Z
-description : ""
-tags : ["open-source"]
 title : "Virtualbox"
-
 ---
 
 

@@ -1,11 +1,12 @@
 ---
-categories : ["India", "Business"]
+categories:
+  - India
+  - Business
+tags:
+  - Management
 date : 2007-09-21T14:25:46Z
-description : ""
-tags : ["Management"]
+  - Management
 title : "India Symposium, Amsterdam"
-cover : ""
-imageCover : ""
 ---
 
 

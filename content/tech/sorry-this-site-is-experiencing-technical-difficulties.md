@@ -1,10 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - wiki
+  - mysql
 date : 2012-08-07T21:22:59Z
-description : ""
-tags : ["open-source"]
 title : "Sorry! This site is experiencing technical difficulties."
-
 ---
 
 

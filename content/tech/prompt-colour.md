@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - prompt colour
+  - server
+  - terminal
 date : 2013-03-16T19:22:00Z
-description : ""
-tags : ["open-source"]
 title : "prompt colour"
-
 ---
 
 

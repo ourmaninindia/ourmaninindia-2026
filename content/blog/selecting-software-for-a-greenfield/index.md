@@ -1,12 +1,17 @@
 ---
-categories : ["open-source", "Information Technology", "Strategy"]
 date : 2010-06-27T14:08:27Z
 description : " am writing this using Open Office on a laptop with Ubuntu as it’s operating system, the Open Source equivalent from Oracle of Word and Windows respectively. My exposure to Open Source dates back to the 1990s. At that time I was a Director Finance & IT of Odyssey Tours, the famous travel company."
-tags : ["Management", "Strategy"]
 title : "Selecting software for a greenfield"
 cover : "cover-centos.jpg"
-featured_image : ""
 read_more_copy : "Read more about my article"
+categories:
+  - tech
+tags:
+  - Management
+  - Strategy
+  - open-source
+  - Information Technology
+  - software
 ---
 
 {{< figure figcaption="Centos" class="left" >}}

@@ -2,11 +2,9 @@
 date : 2011-06-15T13:21:10Z
 description : "Who said the world is flat? As a former zoologist it is only natural that I back Galileo."
 title : "Who said the world is flat?"
-cover : ""
-featured_image : ""
 categories : 
-tags : 
   - management
+tags:
 ---
 
 

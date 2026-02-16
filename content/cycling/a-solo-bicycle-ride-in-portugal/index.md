@@ -1,14 +1,18 @@
 ---
-categories : ["Cycling","Travel"]
 date : 2020-01-25T14:59:40Z
 description : "As a last minute decision I decided to go cycling in Portugal escaping the grey wintry conditions. Or so I thought."
 featured : true
 cover : "cover-route-map.png"
-tags : ["Cycling","Portugal"]
 title : "A solo cycle ride in Portugal"
 featured_image : "vila-pouca-de-aguiar.jpg"
 toc : true
 read_more_copy : "Read more about this fabulous ride"
+categories:
+  - Cycling
+tags:
+  - Cycling
+  - Portugal
+  - Travel
 ---
 
 Like so often it seemed like a good idea at the time.

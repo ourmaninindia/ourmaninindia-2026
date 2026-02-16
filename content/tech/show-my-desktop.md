@@ -1,10 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - desktop
+  - file manager
 date : 2012-08-07T10:52:53Z
-description : ""
-tags : ["open-source"]
 title : "Show my desktop"
-
 ---
 
 

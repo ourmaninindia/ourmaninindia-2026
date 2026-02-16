@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - yum
+  - fedora
+  - hp scanner
 date : 2012-08-07T10:54:19Z
-description : ""
-tags : ["open-source"]
 title : "HP printer and scanner"
-
 ---
 
 

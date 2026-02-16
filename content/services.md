@@ -1,5 +1,7 @@
 ---
 title: "Web Development Services"
+categories:
+tags:
 ---
 
 ## What I Offer

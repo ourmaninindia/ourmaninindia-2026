@@ -1,11 +1,11 @@
 ---
-categories : ["HR"]
+categories:
+  - HR
+tags:
+  - Management
 date : 2013-08-08T14:03:59Z
-description : ""
-tags : ["Management"]
+  - Management
 title : "Multicultural managers can make a huge difference"
-cover : ""
-featured_image : ""
 ---
 
 

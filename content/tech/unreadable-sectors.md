@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - server
+  - uneadable
+  - sectors
+  - fedora
 date : 2013-03-17T11:43:28Z
-description : ""
-tags : ["open-source"]
 title : "Currently unreadable (pending) sectors"
-
 ---
 
 

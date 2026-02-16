@@ -1,8 +1,12 @@
 ---
-categories : ["Information Technology"]
+categories:
+  - blog
+  - tech
+tags:
+  - Information Technology
+  - Management
+  - windows 8
 date : 2012-06-05T12:26:24Z
-description : ""
-tags : ["Information Technology", "Management"]
 title : "Window 8? Think again!"
 ---
 

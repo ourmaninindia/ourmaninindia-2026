@@ -1,8 +1,12 @@
 ---
 date : 2017-02-24T02:24:17Z
-description : ""
 title : "PHP 5.6 with Nginx on AWS"
-
+tags:
+  - php 56
+  - nginx
+  - aws
+catagories: 
+  - tech
 ---
 
 

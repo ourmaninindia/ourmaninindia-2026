@@ -1,8 +1,10 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
 date : 2013-08-15T23:39:58Z
 description : "500 error on uploading large images"
-tags : ["open-source"]
 title : "500 error on uploading large images"
 ---
 

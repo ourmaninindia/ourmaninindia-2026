@@ -1,11 +1,12 @@
 ---
-categories : ["Business"]
+categories:
+  - Business
+tags:
+  - Innovation
 date : 2007-02-08T01:32:23Z
 description : "You would find this workshop useful if you are a senior manager of any healthcare related activities with a stakeholder role"
-tags : ["Innovation"]
+  - Innovation
 title : "Leading Innovation"
-cover : ""
-featured_image : ""
 ---
 
 ####Workshop ‘Leading innovation: ensuring patient satisfaction in health care  

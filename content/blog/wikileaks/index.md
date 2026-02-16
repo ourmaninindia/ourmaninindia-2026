@@ -1,11 +1,20 @@
 ---
-categories : ["Management"]
+categories:
+  - Management
+tags:
+  - case study
+  - free press
+  - julian assange
+  - whistleblower
+  - wikileaks
 date : 2010-12-10T22:02:31Z
-description : ""
-tags : ["case study", "julian assange", "whistleblower", "wikileaks", "free press"]
+  - case study
+  - julian assange
+  - whistleblower
+  - wikileaks
+  - free press
 title : "WikiLeaks, a superb case study"
 cover : "cover-wikileaks.jpg"
-featured_image : ""
 ---
 
 Fascinating. Absolutely fascinating. There is no other word to describe how the world is scrambling to deal with the WikiLeaks information and in particular with its founder Julian Assange. There is no cohesive response as everybody is shooting from the hip, often totally ignorant about the legal issues at stake.  

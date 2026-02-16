@@ -1,8 +1,10 @@
 ---
-categories : ["Business"]
+categories:
+  - Business
+tags:
+  - Management
 date : 2012-09-16T14:57:04Z
-description : ""
-tags : ["Management"]
+  - Management
 title : "SpotMe™ at the Strategic Growth Forum™ India"
 cover : "spotme.png"
 featured_image : "chawla.jpg"

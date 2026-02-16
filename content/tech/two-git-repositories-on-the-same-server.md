@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - git
+  - github
+  - ssh
+  - key
 date : 2015-07-19T02:08:54Z
-description : ""
-tags : ["open-source"]
 title : "Two git repositories on the same server for a single user"
-
 ---
 
 

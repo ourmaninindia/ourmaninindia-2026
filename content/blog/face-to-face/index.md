@@ -1,9 +1,14 @@
 ---
-categories : ["Maritime"]
+categories:
+  - Maritime
+tags:
+  - Infrastructure
+  - Ports
 date : 2012-03-19T15:06:39Z
 description : "Face to Face with Alfred Tuinman, an interview with Indian Ports & Infrastructure magazine"
 slug : "face-to-face"
-tags : ["Ports","Infrastructure"]
+  - Ports
+  - Infrastructure
 title : "Face to Face, an interview with Indian Ports & Infrastructure"
 cover : "cover-ports.jpg"
 featured_image : "cover-ports.jpg"

@@ -1,11 +1,11 @@
 ---
-categories : ["HR"]
+categories:
+  - HR
+tags:
+  - Management
 date : 2014-08-31T12:58:31Z
-description : ""
-tags : ["Management"]
+  - Management
 title : "What makes people successful"
-cover : ""
-featured_image : ""
 ---
 
 

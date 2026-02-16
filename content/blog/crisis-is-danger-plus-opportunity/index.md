@@ -1,9 +1,15 @@
 ---
-categories : ["Sustainability"]
-tags : ["circular economy", "sustainable goals"]
+categories:
+  - Sustainability
+tags:
+  - circular economy
+  - covid-19
+  - opportunity
+  - sustainable goals
+  - circular economy
+  - sustainable goals
 featured_image : "sustainable-development-goals.png"
 date : 2020-06-16T22:00:00Z
-keywords : ["sustainable goals", "covid-19", "circular economy","opportunity"]
 cover : "cover-circular-economy.png"
 title : "Crisis : Danger + Opportunity!"
 featured : true

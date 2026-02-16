@@ -1,10 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - pdf
+  - reduce size
+  - pdf2ps
 date : 2015-09-09T15:46:39Z
-description : ""
-tags : ["open-source"]
 title : "Reduce the size of a pdf"
-
 ---
 
 

@@ -1,9 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - services
+  - symlink
+  - samba
 date : 2012-11-15T11:03:03Z
-description : ""
 draft : false
-tags : ["open-source"]
 title : "Adding a service permanently"
 ---
 

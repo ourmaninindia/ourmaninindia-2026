@@ -1,13 +1,24 @@
 ---
-categories : ["Strategy","Maritime"]
+categories:
+  - Strategy
+  - Maritime
+tags:
+  - JIT
+  - india
+  - outsourcing
+  - skill sets
+  - strategy
 date : 2010-12-21T15:02:00Z
 description : "How many staff therefore should be trained in-house to justify an army of contract labour having to struggle to produce lesser quality? The answer to that very question was roaming through my head as the rains became more incessant."
 draft : false
 slug : "not-outsourcing-to-increase-own-skill-sets"
-tags : ["india", "JIT", "outsourcing", "skill sets", "strategy"]
+  - india
+  - JIT
+  - outsourcing
+  - skill sets
+  - strategy
 title : "Not outsourcing to increase own skill sets?"
 cover : "cover-negombo.jpg"
-featured_image : ""
 read_more_copy : "Read more about my journey"
 ---
 

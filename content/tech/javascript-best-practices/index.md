@@ -1,11 +1,16 @@
 ---
-categories : ["Open Source"]
 date : 2023-07-24T01:00:00Z
 title: "Vanilla JavaScript, best practices"
-tags : ["Vanilla JavaScript","JavaScript","Open Source"]
 featured : true
 featured_image :
 read_more_copy : "Read more about Vanilla JS"
+categories:
+  - tech
+tags:
+  - JavaScript
+  - Open Source
+  - Vanilla JavaScript
+  - best preactices
 ---
 
 You start to work on a new project and you are happily coding away and seeing results until the number of functions, event listeners etc become too many and you have to clean up your own mess in a much more organized manner. You scratch yourself behind the ear and wonder why you did not do that right at the start… 

@@ -1,10 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - encryption
+  - ccrypt
 date : 2014-07-13T15:26:58Z
-description : ""
-tags : ["open-source"]
 title : "File encryption with ccrypt"
-
 ---
 
 

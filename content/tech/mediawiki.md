@@ -1,10 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - mediawiki
 date : 2012-08-07T08:27:09Z
-description : ""
-tags : ["open-source"]
 title : "Update a Mediawiki"
-
 ---
 
 

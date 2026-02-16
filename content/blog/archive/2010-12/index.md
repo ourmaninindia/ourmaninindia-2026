@@ -5,4 +5,5 @@ layout: archive
 year: "2010"
 month: "12"
 url: "/blog/archive/2010-12/"
+tags:
 ---

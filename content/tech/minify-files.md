@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - minify
+  - yui
+  - ubuntu
 date : 2015-10-04T17:21:27Z
-description : ""
-tags : ["open-source"]
 title : "Minify files"
-
 ---
 
 

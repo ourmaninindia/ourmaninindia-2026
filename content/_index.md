@@ -2,7 +2,11 @@
 featured_image : "alfred.webp"
 featured_contain: true
 featured: "contain"
-categories: []
+categories: tech
+tags:
+  - issues
+  - events
+  - website
 date: 2015-09-29T13:35:55Z
 description: "Life is like riding a bicycle. To keep your balance you have to keep moving."
 title: "Home"

@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - tape
+  - backup
+  - fedora
 date : 2012-10-23T08:20:36Z
-description : ""
-tags : ["open-source"]
 title : "Tape Backup"
-
 ---
 
 

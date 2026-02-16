@@ -1,12 +1,19 @@
 ---
-categories : ["Travel"]
 date : 2025-07-13T15:00:00Z
 title: "Remember Srebrenice"
-tags : ["Travel"]
 featured : true
 featured_image : "witness.jpg"
 featured_contain : true
 read_more_copy : "Read more about Srebrenica"
+categories:
+  - cycling
+tags:
+  - Travel
+  - srebrenica
+  - montegengro
+  - bosnia
+  - croatia
+  - Potočari
 ---
 
 Today, July 13, marks exactly one month since I was in Srebrenica — a small village in the southeast of Bosnia & Herzegovina, near the Drina River that forms the border with Serbia.

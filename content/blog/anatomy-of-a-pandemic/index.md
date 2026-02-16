@@ -1,10 +1,15 @@
 ---
-categories : ["Management"]
+categories:
+  - Management
+tags:
+  - Covid
+  - Pandemic
 date : 2012-11-04T09:03:48Z
 description : "Anatomy of a Pandemic"
 featured : true
 cover : "cover-lipkin.jpg"
-tags : ["Pandemic","Covid"]
+  - Pandemic
+  - Covid
 title : "Anatomy of a Pandemic"
 featured_image : "cover-lipkin.jpg"
 read_more_copy : "Read more about this session"

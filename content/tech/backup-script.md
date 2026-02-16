@@ -1,9 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - backup
+  - rsync
 date : 2012-08-08T13:54:19Z
-description : ""
 draft : false
-tags : ["open-source"]
 title : "Backup script"
 ---
 

@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - google speed
+  - hugo
+  - seo
+  - static web site
+  - static webpages
 date : 2020-06-16T22:00:00Z
-keywords : ["seo", "google speed", "static web site", "hugo"]
-tags : ["hugo", "static webpages"]
 title : "Static site generators"
-
 ---
 Due to my busy work schedule my personal web site was dated. So much so that it was a few releases behind schedule. I had built it using Ghost (headless Node.js CMS) and by quickly  building some Docker containers I managed to upgrade the database relatively fast.
 

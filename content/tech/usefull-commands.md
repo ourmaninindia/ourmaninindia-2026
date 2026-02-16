@@ -1,8 +1,12 @@
 ---
 date : 2012-08-07T08:21:43Z
-description : ""
 title : "Find and delete files"
-
+categories: 
+  - tech
+tags: 
+  - find files
+  - delete files
+  - fedora
 ---
 
 

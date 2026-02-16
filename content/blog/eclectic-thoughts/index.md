@@ -1,9 +1,12 @@
 ---
-categories : ["Management"]
+categories:
+  - Management
+tags:
+  - Management
 date : 2012-03-07T09:48:42Z
 description : "Eclectic thoughts"
 slug : "eclectic-thoughts"
-tags : ["Management"]
+  - Management
 title : "Eclectic thoughts"
 cover : "cover-havanna.jpg"
 ---

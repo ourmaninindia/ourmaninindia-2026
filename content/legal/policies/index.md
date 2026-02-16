@@ -9,6 +9,14 @@ disable_comments: true
 disableToc: false
 noindex: true
 type: "policies"
+categories:
+tags:
+  - complance
+  - conditions
+  - privacy
+  - cookies
+  - code of conduct
+  - Google Analytics
 ---
 
 {{< table-of-contents >}}

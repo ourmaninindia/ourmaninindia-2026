@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - perlbrew
+  - dancer
+  - plack
+  - template toolkit
 date : 2013-04-11T13:19:55Z
-description : ""
-tags : ["open-source"]
 title : "Set up Perlbrew"
-
 ---
 
 

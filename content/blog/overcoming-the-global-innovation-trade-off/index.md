@@ -1,12 +1,13 @@
 ---
-categories : ["Strategy"]
+categories:
+  - Strategy
+tags:
+  - Innovation
 date : 2013-01-20T16:57:28Z
 description : "Overcoming the Global Innovation Trade-Off"
-tags : ["Innovation"]
+  - Innovation
 title : "Overcoming the Global Innovation Trade-Off"
 cover : "cover-overcoming-global-innovation.gif"
-featured_image : ""
-
 ---
 
 How to maintain creative complexity without the limitations of co-location is an article by Yves Doz, my former professor at INSEAD, and Keeley Wilson.

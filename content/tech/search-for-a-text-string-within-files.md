@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - text string
+  - search
+  - string pattern
 date : 2015-10-04T17:29:25Z
-description : ""
-tags : ["open-source"]
 title : "Search for a text string within files"
-
 ---
 
 

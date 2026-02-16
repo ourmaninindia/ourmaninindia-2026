@@ -1,11 +1,14 @@
 ---
-categories : ["open-source"]
 date : 2012-09-16T09:26:03Z
-description : ""
 draft : false
 slug : "32-or-64-bit-machine"
-tags : ["open-source"]
+  - open-source
 title : "Is it a 32 or 64 bit machine?"
+categories:
+  - tech
+tags:
+  - "open-source"
+  - ubuntu
 ---
 
 

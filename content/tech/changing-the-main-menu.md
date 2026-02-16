@@ -1,8 +1,10 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - mediawiki
+  - sidebar
 date : 2012-08-07T21:23:34Z
-description : ""
-tags : ["mediawiki"]
 title : "Changing the main menu (sidebar)"
 ---
 

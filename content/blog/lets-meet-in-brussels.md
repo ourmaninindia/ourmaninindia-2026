@@ -1,12 +1,14 @@
 ---
-categories : ["India", "Business"]
+categories:
+  - India
+  - Business
+tags:
+  - EU parliament
 date : 2007-08-26T00:37:30Z
 description : "Let's meet in Brussels! A meet of the Europen India Chamber of Commerce at the European parliament"
-tags : ["EU parliament"]
+  - EU parliament
 title : "Let's meet in Brussels!"
 featured : false
-cover : ""
-featured_image : ""
 ---
 
 

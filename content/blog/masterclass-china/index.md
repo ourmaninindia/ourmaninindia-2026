@@ -5,12 +5,11 @@ description : "Bob Geldof and Jonathan Fenby speaking at Think in Goa"
 slug : "masterclass-china"
 title : "Bob Geldof and Jonathan Fenby"
 cover : "cover-fenby.jpg"
-featured_image : ""
 read_more_copy : "Read more about this session"
-tags : 
   - masterclass
   - management
   - china
+tags:
 ---
 
 

@@ -1,8 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - samba
+  - logging
+  - server
 date : 2012-12-10T15:42:37Z
-description : ""
-tags : ["open-source"]
 title : "Samba logging"
 ---
 

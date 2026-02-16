@@ -1,10 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - fedora
+  - handbrake
 date : 2012-10-14T21:26:00Z
-description : ""
-tags : ["fedora"]
 title : "HandBrake"
-
 ---
 
 

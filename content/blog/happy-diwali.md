@@ -1,11 +1,15 @@
 ---
-categories : ["Holidays"]
+categories:
+  - Holidays
+tags:
+  - Diwali
+  - India
+  - Trade Mission
 date : 2007-11-09T15:31:40Z
-description : ""
-tags : ["India","Diwali","Trade Mission"]
+  - India
+  - Diwali
+  - Trade Mission
 title : "Happy Diwali"
-cover : ""
-imageCover : ""
 ---
 
 

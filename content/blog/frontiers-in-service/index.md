@@ -1,11 +1,14 @@
 ---                                                             
-categories : ["Service", "Business"]
+categories:
+  - Service
+  - Business
+tags:
+  - University of Singapore
 date : 2019-07-18T00:00:30Z
 description : "Frontiers in Service"      
-tags : ["University of Singapore"] 
+  - University of Singapore 
 title : "Frontiers in Service 2019"
 featured : true
-cover : ""
 featured_image : "20190718_184343.jpg" 
 ---
 In July 2019 I attended the *Frontiers in Service* conference at the *National University of Singapore*. At the time my role was Director Global Customer Services and I was keen to improve the quality delivered. There were several conferences but this one drew my interest as it was an academic conference and it would be attended by *Ron Kaufman* whose articles in the *HBS Review* and book *UP Your Service!* I had happily read. As it happened, on day one I was almost sitting behind him so we got to talk a bit. 

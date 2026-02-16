@@ -1,13 +1,10 @@
 ---
 autoThumbnailImage : false
-categories : ["Information Technology"]
-featured_image : ""
+categories:
+  - Information Technology
+tags:
 date : 2020-10-06T22:00:00Z
-keywords : []
-metaAlignment : ""
-tags : []
 cover : "https://s3-us-west-2.amazonaws.com/images.ourmaninindia.com/./jamstack.png"
-coverPosition : ""
 title : "The future is highly distributed"
 ---
 

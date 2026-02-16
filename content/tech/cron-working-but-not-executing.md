@@ -1,8 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open-source
+  - cron
+  - cronjob
 date : 2012-08-08T13:08:05Z
-description : ""
-tags : ["open-source"]
 title : "Cron working but not executing?"
 ---
 

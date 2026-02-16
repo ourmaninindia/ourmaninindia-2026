@@ -1,10 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - spamassassin
+  - email
 date : 2012-10-12T18:40:03Z
-description : ""
-tags : ["open-source"]
 title : "how to teach spamassassin"
-
 ---
 
 

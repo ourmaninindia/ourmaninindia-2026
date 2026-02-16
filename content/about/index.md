@@ -1,6 +1,5 @@
 ---
 date : 2020-04-12T19:56:20Z
-tags : ["Directorship","Leadership","Independent director"]
 description : "A Dutch national with a Finance, IT, and Business Development background looking for a new leadership position."
 title : "About"
 featured_image : "alfred2.jpg"
@@ -11,6 +10,11 @@ clearReading : true
 disable_comments : true
 carousel: false
 layout: authors
+categories:
+tags:
+  - Directorship
+  - Leadership
+  - Independent director
 ---
 
 I was born in the sixties, so it’s no surprise that I gravitated toward books like Kerouac’s _On the Road_, Steinbeck’s _Travels with Charley_, Michener’s _The Drifters_, and most of Hemingway’s works. The members of the Beat Generation became known as bohemian hedonists, celebrating non-conformity and spontaneous creativity. I relate to that spirit—though rather than a Dharma Bum, I see myself more as a Happy Warrior.

@@ -1,12 +1,15 @@
 ---
-categories : ["Cycling"]
 date : 2014-11-24T12:29:45Z
 description : "Endurance, the BRM 300"
 slug : "endurance"
-tags : ["Cycling","India"]
 title : "Endurance"
 featured_image : "elevation_profile.jpg"
 cover : "cover-thumbnail.jpg"
+categories:
+  - Cycling
+tags:
+  - India
+  - endurance
 ---
 
 

@@ -1,9 +1,12 @@
 ---
-categories : ["Management"]
+categories:
+  - Management
+tags:
+  - Management
 date : 2012-03-28T11:44:48Z
 description : "KLM customer service off-target"
 slug : "klm-off-target"
-tags : ["Management"]
+  - Management
 title : "KLM off-target"
 featured_image : "klm.jpg"
 cover : "cover-klm2.jpg"

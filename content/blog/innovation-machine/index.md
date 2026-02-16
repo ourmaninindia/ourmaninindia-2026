@@ -1,12 +1,13 @@
 ---
-categories : ["Management"]
+categories:
+  - Management
+tags:
+  - Management
 date : 2009-10-07T00:26:46Z
-description : ""
-tags : ["Management"]
+  - Management
 title : "Is the U.S. Killing Its Innovation Machine?"
 featured : false
 cover : "cover-killing_innovation.jpg"
-featured_image : ""
 ---
 
 

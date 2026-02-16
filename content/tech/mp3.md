@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open-source
+  - fedora
+  - mp3
+  - gstreamer
 date : 2012-08-08T13:43:26Z
-description : ""
-tags : ["open-source"]
 title : "MP3"
-
 ---
 
 

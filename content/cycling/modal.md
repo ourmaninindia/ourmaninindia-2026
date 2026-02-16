@@ -1,6 +1,11 @@
 ---
 title: "Use of Modals"
 draft: false
+categories:
+  - tech
+tags:
+  - modal
+  - coding
 ---
 
 <!-- Create the modal -->

@@ -1,11 +1,18 @@
 ---
-categories : ["India", "Management"]
+
 date : 2017-07-12T20:37:15Z
 description : "Internet neutrality is a big deal. It enables you, or anyone else, to complete at a true level playing field with large corporations."
 cover : "cover-net-neutrality.png"
-tags : ["Management", "Open Source", "India"]
 title : "Support Net Neutrality"
 read_more_copy : "Read more about my concern"
+categories:
+  - tech
+  - Management
+tags:
+  - Management
+  - Open Source
+  - Internet
+  - neutrality
 ---
 
 

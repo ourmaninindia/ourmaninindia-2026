@@ -1,8 +1,15 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open-source
+  - mysql
+  - "debian-sys-maint"
+  - database
+  - maintenance
+  - configuration
+  - access denied
 date : 2012-08-07T21:22:31Z
-description : ""
-tags : ["open-source"]
 title : "Access denied for user ‘debian-sys-maint’@'localhost’"
 ---
 

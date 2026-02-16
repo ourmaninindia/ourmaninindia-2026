@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - login
+  - keyring
+  - password
+  - fedora
 date : 2012-08-07T08:23:20Z
-description : ""
-tags : ["open-source"]
 title : "Enter password to unlock your login keyring"
-
 ---
 
 

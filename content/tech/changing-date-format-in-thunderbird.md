@@ -1,8 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - date format
+  - thunderbird
+  - bash
 date : 2012-08-15T16:52:38Z
-description : ""
-tags : ["open-source"]
 title : "Changing date format in Thunderbird"
 ---
 

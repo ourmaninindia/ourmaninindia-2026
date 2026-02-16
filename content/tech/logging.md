@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - vim
+  - logging
+  - rsyslog
 date : 2012-08-08T13:07:26Z
-description : ""
-tags : ["open-source"]
 title : "Logging"
-
 ---
 
 

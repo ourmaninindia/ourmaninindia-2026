@@ -1,13 +1,11 @@
 ---
 date : 2012-11-03T12:09:14Z
-description : ""
 title : "Modern Druids"
 cover : "cover-steven-cowley.jpg"
-featured_image : ""
 read_more_copy : "Read more about this session"
-tags : 
   - management
   - energy
+tags:
 ---
 
 {{< figure figcaption="Steven Cowley" class="left" >}}

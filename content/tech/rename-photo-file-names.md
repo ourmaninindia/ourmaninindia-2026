@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - rename file
+  - photos
+  - jhead
+  - file name
 date : 2013-03-16T19:36:46Z
-description : ""
-tags : ["open-source"]
 title : "Rename photo file names"
-
 ---
 
 

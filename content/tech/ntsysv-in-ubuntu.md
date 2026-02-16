@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - nysysv
+  - ubuntu
+  - utility
 date : 2012-08-08T13:05:40Z
-description : ""
-tags : ["open-source"]
 title : "ntsysv in Ubuntu"
-
 ---
 
 

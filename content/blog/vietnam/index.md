@@ -1,12 +1,14 @@
 ---
-categories : ["Tourism"]
 date : 2011-03-22T17:01:43Z
 description : "My thigh muscles were aching for days afterwards. I had been crawling for some 100 metres through the Viet Kong tunnels at Củ Chi, north of Saigon. These escape routes from the American soldiers during the Vietnam war had been a bit widened and heightened for the tourists."
-tags : ["Travel, Vietnam"]
 title : "Vietnam"
 cover : "cover-vietnam.jpg"
-featured_image : ""
 read_more_copy : "Read more about my journey"
+categories:
+tags:
+  - Travel
+  - Vietnam
+  - Tourism
 ---
 
 

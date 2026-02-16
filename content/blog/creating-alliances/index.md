@@ -1,9 +1,22 @@
 ---
-categories : ["Alliances"]
+categories:
+  - Alliances
+tags:
+  - JVs
+  - alliances
+  - fair process
+  - partnerships
+  - social capital
+  - strategic alliance
 date : 2010-12-07T13:13:41Z
 description : "Creating strategic alliances and partnerships"
 slug : "creating-alliances"
-tags : ["alliances", "JVs", "fair process", "partnerships", "social capital", "strategic alliance"]
+  - alliances
+  - JVs
+  - fair process
+  - partnerships
+  - social capital
+  - strategic alliance
 title : "Creating strategic alliances and partnerships"
 cover : "cover-doz.jpg"
 ---

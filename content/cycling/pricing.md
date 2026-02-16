@@ -1,3 +1,10 @@
+---
+draft: true
+tags: 
+  - accordion
+  - hugo
+---
+
 <div class="pricing-section">
     <h2>Pricing Plans</h2>
     

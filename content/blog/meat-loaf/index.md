@@ -5,7 +5,6 @@ featured_image : "cover-meat-loaf.jpg"
 cover : "cover-meat-loaf.jpg"
 featured : false
 categories: 
-tags:
   - music
 ---
 

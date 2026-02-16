@@ -1,8 +1,11 @@
 ---
-categories : ["Management"]
+categories:
+  - Management
+tags:
+  - Management
 date : 2020-04-12T11:45:48Z
 featured : false
-tags : ["Management"]
+  - Management
 title : "Articles Posted"
 disable_comments : true
 ---

@@ -1,9 +1,15 @@
 ---
-categories : ["Cycling","Travel"]
+categories:
+  - Cycling
+  - Travel
+tags:
+  - Cycling
+  - Dolomites
+  - Italy
 featured_image : "sella-route.png"
 date : 2021-09-19T22:00:00Z
-keywords : ["Cycling","Italy", "Dolomites"]
-tags : ["Cycling","Italy"]
+  - Cycling
+  - Italy
 featured : true
 cover : "cover-pordoi.jpg"
 title : "Tour de Tolerance 2021"

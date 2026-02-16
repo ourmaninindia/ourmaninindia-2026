@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open-source
+  - postfix
+  - amavisd
 date : 2013-08-28T13:50:57Z
-description : ""
 draft : false
 slug : "amavisd-connection-refused"
-tags : ["open-source"]
 title : "Error: Postfix/amavisd - connect to 127.0.0.1[127.0.0.1]:10024: Connection refused"
 ---
 

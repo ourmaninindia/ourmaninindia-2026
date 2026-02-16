@@ -1,10 +1,13 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - samba
+  - permissions
+  - shared folder
 date : 2012-08-08T13:06:50Z
-description : ""
-tags : ["open-source"]
 title : "Permission on main Samba folders"
-
 ---
 
 

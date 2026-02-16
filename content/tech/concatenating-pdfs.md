@@ -1,8 +1,12 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - contatenate
+  - pdf
+  - Ghostscript
 date : 2012-10-08T15:55:30Z
-description : ""
-tags : ["open-source"]
 title : "Concatenating pdfs"
 ---
 

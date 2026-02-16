@@ -1,10 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - html
+  - perl
 date : 2012-04-22T14:13:00Z
-description : ""
-tags : ["perl", "html"]
 title : "Strip HTML code"
-
 ---
 
 

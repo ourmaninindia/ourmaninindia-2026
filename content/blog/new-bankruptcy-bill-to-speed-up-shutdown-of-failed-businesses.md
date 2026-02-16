@@ -1,12 +1,15 @@
 ---
-categories : ["India", "Economy"]
+categories:
+  - India
+  - Economy
+tags:
+  - economy
+  - india
 date : 2015-11-04T23:13:20Z
 description : "New bankruptcy bill in India to speed up shutdown of failed businesses"
-tags : ["india", "economy"]
+  - india
+  - economy
 title : "New bankruptcy bill to speed up shutdown of failed businesses"
-cover : ""
-featured_image : ""
-
 ---
 
 *by Economic Times of India*

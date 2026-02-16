@@ -6,9 +6,9 @@ draft : false
 title : "Market Entry into India"
 cover : "cover-mca.png"
 featured_image : "mca.jpg"
-tags : 
   - india
   - economy
+tags:
 ---
 
 

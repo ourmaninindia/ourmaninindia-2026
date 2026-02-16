@@ -1,7 +1,11 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open-source
+  - cron
+  - cron job
 date : 2016-04-05T11:59:17Z
-tags : ["open-source"]
 title : "cron errors only"
 ---
 

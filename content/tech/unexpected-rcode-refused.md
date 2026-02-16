@@ -1,10 +1,14 @@
 ---
-categories : ["open-source"]
+categories:
+  - tech
+tags:
+  - open source
+  - rcode
+  - spam
+  - apache
+  - mail server
 date : 2013-08-28T13:47:36Z
-description : ""
-tags : ["open-source"]
 title : "Error: unexpected RCODE REFUSED"
-
 ---
 
 
