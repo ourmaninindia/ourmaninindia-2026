@@ -1,14 +1,11 @@
 ---
 categories:
-  - Holidays
+  - travel
 tags:
   - Diwali
   - India
   - Trade Mission
 date : 2007-11-09T15:31:40Z
-  - India
-  - Diwali
-  - Trade Mission
 title : "Happy Diwali"
 ---
 

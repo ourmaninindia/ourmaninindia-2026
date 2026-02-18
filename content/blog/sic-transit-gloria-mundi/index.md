@@ -1,13 +1,13 @@
 ---
 categories:
-  - Tourism
-  - Music
+  - blog
 tags:
   - Netherlands
+  - Tourism
+  - Music
 date : 2012-04-22T14:57:45Z
 description : "sic-transit-gloria-mundi"
 slug : "sic-transit-gloria-mundi"
-  - Netherlands
 title : "Sic transit gloria mundi"
 cover : "cover-bavo.jpg" 
 featured_image : "bavo2.jpg"

@@ -35,6 +35,8 @@ timeout = 60000 # was 25000
 
 [permalinks]
   blog = "/blog/:slug/"
+  cycling = "cycling/:slug"
+  tech = "tech/:slug"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

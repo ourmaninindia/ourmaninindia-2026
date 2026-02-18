@@ -1,13 +1,28 @@
 <h3 class="widget__title">{{ i18n "recentPosts" }}</h3>
-{{ range first 5 (where .Site.RegularPages "Type" "blog") }}
+
+{{ $posts := slice }}
+{{ range site.Pages }}
+    {{ if eq .Kind "page" }}
+        {{/* Check section filter - only filter if we're on a content section page */}}
+        {{ $include := true }}
+        {{ if and $.Section (in (slice "blog" "cycling" "tech") $.Section) }}
+            {{ $include = eq .Section $.Section }}
+        {{ end }}
+        
+        {{ if $include }}
+            {{ $posts = $posts | append . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ range first 5 $posts }}
     <a href="{{ .RelPermalink }}" class="widget__recent-post">
         <div class="widget__recent-thumb">
-            {{ with .Params.image }}
-                <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+            {{ $image := .Resources.GetMatch (.Params.featured_image | default "featured*") }}
+            {{ if $image }}
+                <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
             {{ else }}
-                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                    {{ .Params.icon | default "📝" }}
-                </div>
+                <div class="widget__recent-post--no-image"></div>
             {{ end }}
         </div>
         <div class="widget__recent-info">

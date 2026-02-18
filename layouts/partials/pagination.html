@@ -1,0 +1,29 @@
+{{/* Usage: {{ partial "pagination.html" .Paginator }} */}}
+{{ $paginator := . }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination">
+    <div class="pagination__info">
+    {{ i18n "page" }} {{ $paginator.PageNumber }} {{ i18n "of" }} {{ $paginator.TotalPages }}
+    </div>
+    <div>
+    {{ if $paginator.HasPrev }}
+        <a class="pagination__prev" href="{{ $paginator.Prev.URL }}">← Newer</a>
+    {{ end }}
+    
+    <div class="pagination__numbers">
+        {{ range $paginator.Pagers }}
+            {{ if eq . $paginator }}
+                <span class="pagination__number active" data-page="{{ .PageNumber }}">{{ .PageNumber }}</span>
+            {{ else }}
+                <a class="pagination__number" href="{{ .URL }}" data-page="{{ .PageNumber }}">{{ .PageNumber }}</a>
+            {{ end }}
+        {{ end }}
+    </div>
+    
+    {{ if $paginator.HasNext }}
+        <a class="pagination__next" href="{{ $paginator.Next.URL }}">Older →</a>
+    {{ end }}
+    </div>
+</nav>
+
+{{ end }}

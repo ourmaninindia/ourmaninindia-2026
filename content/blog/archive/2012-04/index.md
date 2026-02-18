@@ -1,9 +1,9 @@
 ---
-title: "Archive 2012-04"
-date: 2012-04-22T14:57:45Z
+title: "Blog Archive 2012-04"
 layout: archive
 year: "2012"
 month: "04"
 url: "/blog/archive/2012-04/"
-tags:
+posts:
+  - sic-transit-gloria-mundi
 ---

@@ -1,14 +1,11 @@
 ---
 categories:
   - Management
-  - Strategy
 tags:
   - Management
   - strategy
 date : 2007-11-19T15:18:35Z
 description : "High Level Meet at the European Parliament"
-  - Management
-  - strategy
 title : "High Level Meet at the European Parliament"
 ---
 

@@ -1,12 +1,12 @@
 ---                                                             
 categories:
-  - Service
-  - Business
+  - management
 tags:
   - University of Singapore
+  - Service manaagement
+  - Business
 date : 2019-07-18T00:00:30Z
 description : "Frontiers in Service"      
-  - University of Singapore 
 title : "Frontiers in Service 2019"
 featured : true
 featured_image : "20190718_184343.jpg" 

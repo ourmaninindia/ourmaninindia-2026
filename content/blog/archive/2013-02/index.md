@@ -1,9 +1,9 @@
 ---
-title: "Archive 2013-02"
-date: 2013-02-08T13:10:56Z
+title: "Blog Archive 2013-02"
 layout: archive
 year: "2013"
 month: "02"
 url: "/blog/archive/2013-02/"
-tags:
+posts:
+  - microsoft-how-can-we-help-you
 ---

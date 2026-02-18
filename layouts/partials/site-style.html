@@ -10,6 +10,7 @@
 {{ $options := dict 
     "transpiler" "dartsass"
     "targetPath" "css/main.css"
+    "outputStyle" "expanded"
 }}
 
 {{ $style := $mainScss | css.Sass $options }}

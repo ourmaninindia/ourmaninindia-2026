@@ -1,11 +1,11 @@
 ---
 categories:
-  - Strategy
+  - blog
 tags:
   - Innovation
+  - Strategy
 date : 2013-01-20T16:57:28Z
 description : "Overcoming the Global Innovation Trade-Off"
-  - Innovation
 title : "Overcoming the Global Innovation Trade-Off"
 cover : "cover-overcoming-global-innovation.gif"
 ---

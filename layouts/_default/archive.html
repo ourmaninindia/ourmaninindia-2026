@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="display-template hidden">_default/archive.html</div>
+
+<div class="container">
+    {{ $year := .Params.year }}
+    {{ $month := .Params.month }}
+    {{ $archiveDate := printf "%s-%s-01" $year $month }}
+    
+    <h1 class="archive-title">
+        Archive <span class='date'>: {{ time $archiveDate | time.Format "January 2006" }}</span>
+    </h1>
+    
+    <div class="list__grid">
+        <div class="list__posts">
+            {{ $targetDate := printf "%s-%s" $year $month }}
+            
+            {{ $posts := where (where site.Pages "Kind" "page") "Section" .Section }}
+            {{ $matchedPosts := slice }}
+            
+            {{ range $posts }}
+                {{/* Exclude archive pages and posts with invalid dates */}}
+                {{ if and .Date (eq (.Date.Format "2006-01") $targetDate) (not (in .RelPermalink "/archive/")) }}
+                    {{ $matchedPosts = $matchedPosts | append . }}
+                {{ end }}
+            {{ end }}
+            
+            {{ if gt (len $matchedPosts) 0 }}
+                {{ range $matchedPosts }}
+                    <article class="list__post">
+                        {{ partial "post-image.html" . }}
+                        
+                        <div class="list__post-content">
+                            <div class="list__post-title">
+                                <h2>
+                                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                </h2>
+                                <div class="list__post-meta">
+                                    <time>📅 {{ .Date.Format "Jan 02, 2006" }}</time>
+                                    {{ with .Params.author }}
+                                        <span>👤 {{ . }}</span>
+                                    {{ end }}
+                                </div>
+                            </div>
+
+                            <p class="list__post-excerpt">
+                                {{ with .Summary }}
+                                    {{ . | plainify | truncate 300 }}
+                                {{ else }}
+                                    {{ .Content | plainify | truncate 300 }}
+                                {{ end }}
+                            </p>
+                            
+                            <a href="{{ .RelPermalink }}" class="list__read-more">
+                                {{ i18n "readMore" }}
+                            </a>
+                        </div>
+                    </article>
+                {{ end }}
+            {{ else }}
+                <p class="archive__no-posts">No posts found for this period.</p>
+            {{ end }}
+        </div>
+
+        {{ partial "sidebar.html" . }}
+    </div>
+</div>
+{{ end }}

@@ -5,8 +5,6 @@ tags:
   - Diversity & Inclusion
   - HR
 date : 2007-08-26T14:29:07Z
-  - Diversity & Inclusion
-  - HR
 title : "Diversity & Inclusion"
 ---
 

@@ -1,56 +1,37 @@
 @use "../abstracts" as *;
 
-// ==========================================
-// Sidebar layout and structure
-// ==========================================
+/* ==========================================
+   SIDEBAR
+   ========================================== */
 
 .sidebar {
-  grid-area: sidebar;
-  position: sticky;
-  top: 80px;
+  position: static;                    // ← no sticky on mobile
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "search"
-    "recent"
-    "categories"
-    "tags"
-    "archive"
-    "newsletter";
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm); 
+  align-items: start; // important to overide defaults
+  align-content: start;
   
-  // On smaller screens, make sidebar multi-column
-  @include container-query(900px) {
-    position: static;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  @media (min-width: $breakpoint-desktop) {
+    grid-area: sidebar;  // ← only assign when parent grid is active
+    position: sticky;
+    top: 80px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content; // avoid default stretch!
     grid-template-areas:
-      "search recent"
-      "categories tags"
-      "archive newsletter";
+      "search"
+      "recent"
+      "categories"
+      "tags"
+      "archive"
+      "newsletter";
   }
 }
 
-// Sidebar widget grid areas
-.widget-search {
-  grid-area: search;
-}
-
-.widget-recent {
-  grid-area: recent;
-}
-
-.widget-categories {
-  grid-area: categories;
-}
-
-.widget-tags {
-  grid-area: tags;
-}
-
-.widget-archive {
-  grid-area: archive;
-}
-
-.widget-newsletter {
-  grid-area: newsletter;
-}
+.widget-search   { grid-area: search; }
+.widget-recent   { grid-area: recent; }
+.widget-categories { grid-area: categories; }
+.widget-tags     { grid-area: tags; }
+.widget-archive  { grid-area: archive; }
+.widget-newsletter { grid-area: newsletter; }

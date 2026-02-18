@@ -1,9 +1,14 @@
 ---
-title: "Archive 2012-11"
-date: 2012-11-03T09:25:42Z
+title: "Blog Archive 2012-11"
 layout: archive
 year: "2012"
 month: "11"
 url: "/blog/archive/2012-11/"
-tags:
+posts:
+  - modern-druids
+  - the-republic-of-technology
+  - masterclass-china
+  - profit-and-prejudice
+  - anatomy-of-a-pandemic
+  - big-history
 ---

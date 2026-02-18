@@ -1,13 +1,11 @@
 ---
 categories:
-  - Books
+  - blog
 tags:
   - Book
   - International trade
 date : 2007-08-26T00:36:01Z
 description : "The book called Managing International Trade & Investment, the new text book for the MBA course at Erasmus University to which I contributed a small, but I dare hope a valuable part, has been released by McGraw Hill."
-  - International trade
-  - Book
 title : "The book is out!"
 cover : "cover-book.jpg"
 read_more_copy : "Read more about this book"

@@ -1,0 +1,416 @@
+@use "../abstracts" as *;
+
+// ============================================
+// List Layout
+// ============================================
+
+.list {
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: 1fr 320px;
+      grid-template-areas: "posts sidebar";
+    }
+
+    @media (min-width: $breakpoint-wide) {
+      grid-template-columns: 1fr 380px;
+      grid-template-areas: "posts sidebar";
+    }
+  }
+
+  &__posts {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-area: posts; // ← only when parent grid-template-areas is active
+    }
+  }
+
+
+  // ============================================
+  // Post Card
+  // ============================================
+
+  &__post {
+    display: grid;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    grid-template-columns: 1fr;
+
+    @container (min-width: 500px) {
+      grid-template-columns: min(320px, 40%) 1fr;
+    }
+
+    &:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+  }
+
+  // ============================================
+  // Post Image
+  // ============================================
+
+  &__post-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-bg);
+    min-height: 200px;     
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    @media (max-width: $breakpoint-tablet - 1) {
+      padding-top: 56.25%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 100%;
+      min-height: 240px;
+    }
+
+    .list__post:hover & img {
+      transform: scale(1.05);
+    }
+  }
+
+  // ============================================
+  // Post Content
+  // ============================================
+
+  &__post-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding: 2rem;
+    }
+  }
+
+  &__post-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 1.75rem;
+    }
+
+    a {
+      color: var(--color-text-dark);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+
+    span, time {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  &__post-excerpt {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  &__read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+
+    &::after {
+      content: '→';
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      color: var(--color-primary-dark);
+
+      &::after {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  // ============================================
+  // Empty State
+  // ============================================
+
+  &__posts > p {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    padding: 3rem;
+    background: var(--color-bg);
+    border-radius: 12px;
+    border: 1px dashed var(--color-border);
+  }
+
+  
+  &__taxonomy-description {
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* ============================================
+   Pagination
+   ============================================ */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+
+  &__info {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  &__prev,
+  &__next {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__numbers {
+    display: flex;
+    gap: 0.375rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;   // smooth scroll on iOS
+    scrollbar-width: none;               // hide scrollbar on Firefox
+  
+    &::-webkit-scrollbar {
+      display: none;                     // hide scrollbar on Chrome/Safari
+    }
+  }
+
+  &__number,
+  &__ellipsis {
+    min-width: 2.75rem;    // 44px - minimum touch target
+    height: 2.75rem;       // 44px - minimum touch target
+    font-size: var(--font-size-sm);
+  }
+
+  &__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--color-text-dark);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background: #eff6ff;
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &.active {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  &__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-weight: 500;
+    user-select: none;
+  }
+
+  // ============================================
+  // Responsive
+  // ============================================
+
+  @media (max-width: $breakpoint-mobile - 1) {
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+
+    &__prev,
+    &__next {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    &__numbers {
+      gap: 0.25rem;
+    }
+
+    &__number,
+    &__ellipsis {
+      min-width: 2.25rem;
+      height: 2.25rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  // ============================================
+  // Dark Mode
+  // ============================================
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #374151;
+
+    &__prev,
+    &__next {
+      background: #1f2937;
+      border-color: #374151;
+      color: #f9fafb;
+
+      &:hover {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+    }
+
+    &__number {
+      background: #1f2937;
+      border-color: #374151;
+      color: #f9fafb;
+
+      &:hover {
+        background: #1e40af;
+        border-color: var(--color-primary);
+        color: white;
+      }
+
+      &.active {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+    }
+
+    &__ellipsis {
+      color: #9ca3af;
+    }
+  }
+}
+
+// ============================================
+// Dark Mode - List
+// ============================================
+
+@media (prefers-color-scheme: dark) {
+  .list {
+    &__post {
+      background: #1f2937;
+      border-color: #374151;
+
+      &:hover {
+        border-color: #4b5563;
+      }
+    }
+
+    &__post-title a {
+      color: #f9fafb;
+    }
+
+    &__post-excerpt,
+    &__post-meta {
+      color: #9ca3af;
+    }
+
+    &__posts > p {
+      background: #1f2937;
+      color: #9ca3af;
+      border-color: #374151;
+    }
+  }
+}

@@ -4,39 +4,41 @@
         <div class="nav__logo">
             {{ .Site.Title }}
         </div>
-        
+
         <!-- Navigation Menu -->
         <nav class="nav__menu" id="navMenu">
             <ul class="nav__list">
                 {{ range .Site.Menus.main }}
-                    <li class="nav__item">
-                        <a href="{{ .URL }}" 
-                           class="nav__link{{ if $.IsMenuCurrent "main" . }} nav__link--active{{ end }}">
-                            {{ .Name }}
-                        </a>
-                    </li>
+                <li class="nav__item">
+                    <a href="{{ .URL }}" class="nav__link{{ if $.IsMenuCurrent " main" . }} nav__link--active{{ end }}">
+                        {{ .Name }}
+                    </a>
+                </li>
                 {{ end }}
-                
+
                 <!-- Language Switcher (if multilingual) -->
                 {{ if .IsTranslated }}
-                    <li class="nav__item nav__item--lang">
-                        {{ range .Translations }}
-                            <a href="{{ .RelPermalink }}" 
-                               lang="{{ .Language.Lang }}"
-                               class="nav__link">
-                                {{ .Language.LanguageName }}
-                            </a>
-                        {{ end }}
-                    </li>
+                <li class="nav__item nav__item--lang">
+                    {{ range .Translations }}
+                    <a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" class="nav__link">
+                        {{ .Language.LanguageName }}
+                    </a>
+                    {{ end }}
+                </li>
                 {{ end }}
+                <li class="nav__item">
+                    <span class="tooltip__wrapper">
+                        <button id="theme-toggle" aria-label="Toggle dark/light theme" class="nav__theme">
+                            <span class="nav__theme-icon">🌓</span>
+                        </button>
+                        <span class="tooltip__text">Toggle dark/light mode</span>
+                    </span>
+                </li>
             </ul>
         </nav>
-        
+
         <!-- Mobile Toggle Button -->
-        <button class="nav__toggle" 
-                id="navToggle"
-                aria-label="Toggle navigation"
-                aria-expanded="false">
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
             <span class="nav__toggle-bar"></span>
             <span class="nav__toggle-bar"></span>
             <span class="nav__toggle-bar"></span>

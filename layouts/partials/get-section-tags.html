@@ -1,0 +1,8 @@
+{{/* Returns sorted tag counts for a given section */}}
+
+{{ $section := . }}
+{{ $cacheKey := printf "section-tags-%s" $section }}
+
+{{/* Check if already cached */}}
+{{ $cached := partialCached "internal/compute-section-tags" $section $cacheKey }}
+{{ return $cached }}

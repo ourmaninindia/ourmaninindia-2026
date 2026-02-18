@@ -2,7 +2,6 @@
 categories:
   - Management
 tags:
-  - Management
 date : 2020-04-12T11:45:48Z
 featured : false
   - Management

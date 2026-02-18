@@ -1,15 +1,12 @@
 ---
 categories:
-  - Maritime
+  - blog
 tags:
   - inovation
   - large scale integrator
   - maritime industry
 date : 2011-09-16T18:56:31Z
 description : "Move to the role of a large scale integrator"
-  - large scale integrator
-  - inovation
-  - maritime industry
 title : "Move to the role of a large scale integrator"
 cover : "cover-large-scale-integrator.jpg"
 ---

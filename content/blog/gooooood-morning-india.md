@@ -5,7 +5,6 @@ tags:
   - Management
 date : 2008-02-12T01:28:39Z
 description : "I have accepted the offer of a Dutch company to become their CFO for their newly to set up Indian operation near Manipal, Karnataka."
-  - Management
 title : "Gooooood Morning India!"
 ---
 

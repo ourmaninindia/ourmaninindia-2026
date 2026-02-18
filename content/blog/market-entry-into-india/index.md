@@ -1,14 +1,18 @@
 ---
 categories : 
+  - blog
 date : 2014-04-25T08:37:35Z
 description : "India has inched recently from 142 to 130 in the World Bank’s Ease of Doing Business Index but one still needs to realise the complexity and difficulty of doing business. One therefore needs to take a holistic and pragmatic approach to this."
 draft : false
 title : "Market Entry into India"
 cover : "cover-mca.png"
 featured_image : "mca.jpg"
-  - india
-  - economy
 tags:
+  - market entry
+  - india
+  - statutory environment
+  - regulatory environment
+  - Registrar of Companies
 ---
 
 

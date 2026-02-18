@@ -34,7 +34,4 @@
         crossorigin="anonymous">
 </script>
 
-{{/* Load Search Script */}}
-{{- $search := resources.Get "js/search.js" | minify | fingerprint -}}
-<script src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
 {{ end }}

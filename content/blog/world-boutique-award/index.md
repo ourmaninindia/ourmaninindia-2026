@@ -1,12 +1,12 @@
 ---
 categories:
-  - Tourism
-  - India
+  - blog
 tags:
   - travel
+  - Tourism
+  - India
 date : 2016-11-09T00:00:00Z
 description : "Summertime Villa collects the World Boutique Hotel award at the awards night held at the Merchant Taylor's Hall, London on November 9, 2016 "
-  - travel
 title : "World Boutique Hotel award"
 featured_image : "alfred-with-award2.jpg"
 cover : "cover-alfred-with-award2.jpg"

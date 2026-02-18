@@ -1,10 +1,27 @@
-{{ $tags := .Site.Taxonomies.tags }}
-{{ if $tags }}
+{{ $sectionTags := slice }}
+
+{{ if .Section }}
+    {{/* Section page - show tags from current section */}}
+    {{ $sectionTags = partial "get-section-tags" .Section }}
+{{ else }}
+    {{/* Taxonomy/other pages - show all tags */}}
+    {{ $sectionTags = .Site.Taxonomies.tags.ByCount }}
+{{ end }}
+
+{{ if gt (len $sectionTags) 0 }}
 <h3 class="widget-title">{{ i18n "popularTags" }}</h3>
 <div class="widget-content">
     <div class="tag-cloud">
-        {{ range first 15 $tags.ByCount }}
-            <a href="{{ "tags" | relLangURL }}/{{ .Name | urlize }}" class="tag">{{ .Name }}</a>
+        {{ if $.Section }}
+            {{/* Section page - $sectionTags items have .name */}}
+            {{ range first 15 $sectionTags }}
+                <a href="{{ "tags" | relLangURL }}/{{ .name | urlize }}" class="tag">{{ .name }}</a>
+            {{ end }}
+        {{ else }}
+            {{/* Taxonomy page - $sectionTags items have .Name and .Page */}}
+            {{ range first 15 $sectionTags }}
+                <a href="{{ .Page.RelPermalink }}" class="tag">{{ .Name }}</a>
+            {{ end }}
         {{ end }}
     </div>
 </div>

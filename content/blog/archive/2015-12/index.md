@@ -1,9 +1,10 @@
 ---
-title: "Archive 2015-12"
-date: 2015-12-05T09:51:36Z
+title: "Blog Archive 2015-12"
 layout: archive
 year: "2015"
 month: "12"
 url: "/blog/archive/2015-12/"
-tags:
+posts:
+  - assocham-sets-up-european-headquarters-in-amsterdam
+  - india-gdp-accelerates-in-fy16
 ---

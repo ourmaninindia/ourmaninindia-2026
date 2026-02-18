@@ -8,6 +8,7 @@ read_more_copy : "Read more about this session"
 categories : 
   - management
 tags:
+  - algorithms
 ---
 
 {{< figure figcaption="Arun Sehrawat" class="left" >}}

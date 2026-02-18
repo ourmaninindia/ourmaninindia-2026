@@ -18,11 +18,14 @@ import { initLightbox } from './modules/lightbox.js';
 import { initMobileMenu } from './modules/mobile-menu.js';
 import { initModals } from './modules/modals.js';
 import { initNewsletterForm } from './modules/newsletter.js';
-import { initProgressBar } from './reading-progress.js';
+import { initProgressBar } from './modules/reading-progress.js';
+import { initPagination } from './modules/pagination.js';
 import { initSearch } from './modules/search.js';
 import { initSmartHeader } from './modules/smart-header.js';
 import { initSmoothScroll } from './modules/smooth-scroll.js';
+import { initThemeToggle } from './modules/darkmode.js';
 import { initTOC } from './modules/toc.js';
+
 
 
 // Firefox fix
@@ -46,10 +49,12 @@ function init() {
     initMobileMenu();
     initModals();
     initNewsletterForm();
-    // initProgressBar();
-    // initSearch()
+    initPagination();
+    initProgressBar();
+    initSearch()
     initSmartHeader();
     initSmoothScroll();
+    initThemeToggle();
     initTOC();
 }
 

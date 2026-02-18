@@ -1,0 +1,55 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<div class="display-template hidden">_default/taxonomy.html</div>
+
+<div style="background: yellow; padding: 10px;">
+    DEBUG: Page Kind: {{ .Kind }}<br>
+    Title: {{ .Title }}<br>
+    Page count: {{ len .Pages }}<br>
+    Paginator count: {{ len .Paginator.Pages }}
+</div>
+
+<div class="container">
+    <div class="list__taxonomy-description">{{ i18n "postsTagged" }}</div>
+    <h1>{{ .Title }}</h1>
+    
+    <div class="list__grid">
+        <div class="list__posts">
+            {{ $paginator := .Paginate .Pages }}
+            
+            {{ range $paginator.Pages }}
+                <article class="list__post" data-post-date="{{ .Date.Format "2006-01" }}">
+                    {{ partial "post-image.html" . }}
+                    <div class="list__post-content">
+                        <div class="list__post-title">
+                            <h2>
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </h2>
+                            <div class="list__post-meta">
+                                <time>📅 {{ .Date.Format "Jan 02, 2006" }}</time>
+                                {{ with .Params.author }}
+                                <span>👤 {{ . }}</span>
+                                {{ end }}
+                            </div>
+                        </div>
+                        <p class="list__post-excerpt">
+                            {{ with .Summary }}
+                                {{ . | plainify | truncate 300 }}
+                            {{ else }}
+                                {{ .Content | plainify | truncate 300 }}
+                            {{ end }}
+                        </p>
+                        <a href="{{ .RelPermalink }}" class="list__read-more">
+                            {{ i18n "readMore" }}
+                        </a>
+                    </div>
+                </article>
+            {{ end }}
+            
+            {{ partial "pagination.html" $paginator }}
+        </div>
+        
+        {{ partial "sidebar.html" . }}
+    </div>
+</div>
+{{ end }}

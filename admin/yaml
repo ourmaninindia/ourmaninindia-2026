@@ -1,0 +1,6 @@
+# Find all markdown files with potential YAML issues
+find /home/alfred/webapps/ourmaninindia-2026/content -name "*.md" -exec sh -c '
+  if grep -q "^  -" "$1" | head -20 | grep -A1 "^  -" | grep -q "^[a-zA-Z]"; then
+    echo "Potential issue in: $1"
+  fi
+' _ {} \;

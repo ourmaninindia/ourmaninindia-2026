@@ -5,7 +5,6 @@ categories :
 date : 2020-07-09T22:00:00Z
 description : "Always use npm without sudo but how to achieve that if you get a message that access to certain root files are required?"
 title : "npm install -g without sudo"
-categories: tech
 tags:
   - npm
   - sudo

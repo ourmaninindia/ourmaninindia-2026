@@ -1,13 +1,14 @@
-{{/** The key insight: Group first, filter second - don't break the Pages collection with slice/append before using .GroupByDate! 🎯/}}
+{{/* Only show archive on section pages, not on taxonomy pages */}}
+{{ if .Section }}
 
 <h3 class="widget-title">{{ i18n "archive" }}</h3>
 <div class="widget-content">
-    {{/* Get all blog posts */}}
-    {{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+    {{/* Get posts from current section */}}
+    {{ $sectionPosts := where .Site.RegularPages "Section" .Section }}
     
     {{/* Count non-archive posts for display */}}
     {{ $postCount := 0 }}
-    {{ range $blogPosts }}
+    {{ range $sectionPosts }}
         {{ if not (in .RelPermalink "/archive/") }}
             {{ $postCount = add $postCount 1 }}
         {{ end }}
@@ -17,7 +18,7 @@
         <option value="">Select a month ({{ $postCount }} posts)</option>
         
         {{/* Group by date FIRST, then filter archives from each group */}}
-        {{ range $blogPosts.GroupByDate "2006-01" }}
+        {{ range $sectionPosts.GroupByDate "2006-01" }}
             {{/* Count posts in this month that aren't archive pages */}}
             {{ $monthPosts := 0 }}
             {{ range .Pages }}
@@ -30,10 +31,12 @@
             {{ if gt $monthPosts 0 }}
                 {{ $firstPost := index .Pages 0 }}
                 {{ $archiveKey := $firstPost.Date.Format "2006-01" }}
-                <option value="/blog/archive/{{ $archiveKey }}/">
+                <option value="/{{ $.Section }}/archive/{{ $archiveKey }}/">
                     {{ $firstPost.Date.Format "January 2006" }} ({{ $monthPosts }})
                 </option>
             {{ end }}
         {{ end }}
     </select>
 </div>
+
+{{ end }}

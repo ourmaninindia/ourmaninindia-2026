@@ -240,58 +240,58 @@ export function initSearch() {
    * @returns {string} HTML string with highlighted matches
    */
   function highlightMatches(text, matches, ...keys) {
-    if (!matches) {
-      return escapeHtml(text);
-    }
-
-    // Filter matches to only include relevant keys
-    const relevantMatches = matches.filter(m => keys.includes(m.key));
-    if (relevantMatches.length === 0) {
-      return escapeHtml(text);
-    }
-
-    let highlightedText = text;
-    const ranges = [];
-
-    // Collect all match ranges
-    relevantMatches.forEach(match => {
-      match.indices.forEach((index) => {
-        const [start, end] = index;
-        ranges.push({ start, end });
-      });
-    });
-
-    // Sort and merge overlapping ranges to avoid nested <mark> tags
-    ranges.sort((a, b) => a.start - b.start);
-    const mergedRanges = [];
-    let current = ranges[0];
-
-    for (let i = 1; i < ranges.length; i++) {
-      if (ranges[i].start <= current.end + 1) {
-        // Overlapping or adjacent - merge
-        current.end = Math.max(current.end, ranges[i].end);
-      } else {
-        // Non-overlapping - save current and start new
-        mergedRanges.push(current);
-        current = ranges[i];
-      }
-    }
-    if (current) {
-      mergedRanges.push(current);
-    }
-
-    // Apply highlights from end to start (to preserve indices)
-    for (let i = mergedRanges.length - 1; i >= 0; i--) {
-      const range = mergedRanges[i];
-      const { start, end } = range;
-      const before = escapeHtml(highlightedText.substring(0, start));
-      const match = escapeHtml(highlightedText.substring(start, end + 1));
-      const after = escapeHtml(highlightedText.substring(end + 1));
-      highlightedText = `${before}<mark>${match}</mark>${after}`;
-    }
-
-    return highlightedText;
+  if (!matches) {
+    return escapeHtml(text);
   }
+
+  // Filter matches to only include relevant keys
+  const relevantMatches = matches.filter(m => keys.includes(m.key));
+  if (relevantMatches.length === 0) {
+    return escapeHtml(text);
+  }
+
+  // Escape the entire text ONCE at the start
+  let highlightedText = escapeHtml(text);
+  const ranges = [];
+
+  // Collect all match ranges
+  relevantMatches.forEach(match => {
+    match.indices.forEach((index) => {
+      const [start, end] = index;
+      ranges.push({ start, end });
+    });
+  });
+
+  // Sort and merge overlapping ranges
+  ranges.sort((a, b) => a.start - b.start);
+  const mergedRanges = [];
+  let current = ranges[0];
+
+  for (let i = 1; i < ranges.length; i++) {
+    if (ranges[i].start <= current.end + 1) {
+      current.end = Math.max(current.end, ranges[i].end);
+    } else {
+      mergedRanges.push(current);
+      current = ranges[i];
+    }
+  }
+  if (current) {
+    mergedRanges.push(current);
+  }
+
+  // Apply highlights from end to start
+  // Work with escaped text, extract portions, wrap matched text in <mark>
+  for (let i = mergedRanges.length - 1; i >= 0; i--) {
+    const range = mergedRanges[i];
+    const { start, end } = range;
+    const before = highlightedText.substring(0, start);
+    const match = highlightedText.substring(start, end + 1);
+    const after = highlightedText.substring(end + 1);
+    highlightedText = `${before}<mark>${match}</mark>${after}`;
+  }
+
+  return highlightedText;
+}
 
   /**
    * Clears search results and stats

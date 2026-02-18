@@ -5,6 +5,8 @@ title : "Vietnam"
 cover : "cover-vietnam.jpg"
 read_more_copy : "Read more about my journey"
 categories:
+  - blog
+  - travel
 tags:
   - Travel
   - Vietnam

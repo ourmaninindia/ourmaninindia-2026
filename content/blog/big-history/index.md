@@ -1,13 +1,12 @@
 ---
 categories:
-  - Education
+  - blog
 tags:
+  - Education
   - Big History
   - Management
 date : 2012-11-03T09:25:42Z
 description : "Big History"
-  - Management
-  - Big History
 title : "Big History"
 cover : "cover-christian.jpg"
 read_more_copy : "Read more about this session"

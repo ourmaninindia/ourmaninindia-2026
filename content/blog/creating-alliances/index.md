@@ -1,6 +1,6 @@
 ---
 categories:
-  - Alliances
+  - management  
 tags:
   - JVs
   - alliances
@@ -11,12 +11,6 @@ tags:
 date : 2010-12-07T13:13:41Z
 description : "Creating strategic alliances and partnerships"
 slug : "creating-alliances"
-  - alliances
-  - JVs
-  - fair process
-  - partnerships
-  - social capital
-  - strategic alliance
 title : "Creating strategic alliances and partnerships"
 cover : "cover-doz.jpg"
 ---

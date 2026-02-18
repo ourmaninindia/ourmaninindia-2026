@@ -56,8 +56,6 @@
  */
 export function initLightbox() {
     const triggers = document.querySelectorAll('.lightbox-trigger');
-    
-    // Early exit if no lightbox triggers found
     if (triggers.length === 0) return;
 
     // Create lightbox element dynamically (only once)

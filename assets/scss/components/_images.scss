@@ -1,3 +1,10 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+/* ==========================================
+   IMAGES
+   ==========================================*/
+   
 .image-with-text .image {
     max-width: 200px;  /* control size */
 

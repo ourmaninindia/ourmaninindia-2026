@@ -1,10 +1,10 @@
 ---
 categories:
-  - HR
+  - blog
 tags:
+  - hr
   - Management
 date : 2013-08-08T14:03:59Z
-  - Management
 title : "Multicultural managers can make a huge difference"
 ---
 

@@ -1,13 +1,13 @@
 @use "sass:color";
  @use "../abstracts" as *;
 
-// ==========================================
-// CARD COMPONENTS
-// ==========================================
+/* ==========================================
+   CARD COMPONENTS
+   ==========================================*/
 
 // Base Card
 .card {
-    background: var(--color-bg);
+    background-color: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-lg);

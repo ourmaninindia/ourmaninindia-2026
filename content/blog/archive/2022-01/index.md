@@ -1,9 +1,9 @@
 ---
-title: "Archive 2022-01"
-date: 2022-01-21T22:00:00Z
+title: "Blog Archive 2022-01"
 layout: archive
 year: "2022"
 month: "01"
 url: "/blog/archive/2022-01/"
-tags:
+posts:
+  - meat-loaf
 ---

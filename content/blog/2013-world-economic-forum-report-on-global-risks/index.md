@@ -1,11 +1,12 @@
 ---
 categories:
-  - Management
+  - blog
 tags:
   - Management
+  - risk management
+  - economic forum
 date : 2013-01-20T17:07:33Z
 description : "2013 World Economic Forum Report on Global Risk"
-  - Management
 title : "2013 World Economic Forum Report on Global Risks"
 cover : "cover-world-economic-forum.jpg" 
 read_more_copy : "Read more about this news"

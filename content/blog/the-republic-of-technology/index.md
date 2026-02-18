@@ -1,11 +1,11 @@
 ---
 categories:
-  - HR
+  - management
 tags:
+  - HR
   - Management
 date : 2012-11-04T15:00:15Z
 description : "Sherry Turkle spoke on the social network: why are robots are becoming human and men machines. As a psychologist, over the years she became more concerned with the change to a virtual reality in that we become social robots. "
-  - Management
 title : "The Republic of Technology"
 cover : "cover-sherry-turkle.jpg"
 read_more_copy : "Read more about this session"

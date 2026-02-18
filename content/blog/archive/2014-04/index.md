@@ -1,9 +1,10 @@
 ---
-title: "Archive 2014-04"
-date: 2014-04-14T11:04:04Z
+title: "Blog Archive 2014-04"
 layout: archive
 year: "2014"
 month: "04"
 url: "/blog/archive/2014-04/"
-tags:
+posts:
+  - market-entry-into-india
+  - to-quit-or-not-to-quit
 ---

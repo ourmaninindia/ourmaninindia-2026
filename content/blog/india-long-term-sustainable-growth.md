@@ -1,13 +1,10 @@
 ---
 categories:
-  - India
-  - Economy
+  - mangement
 tags:
   - India
   - Strategy
 date : 2005-10-24T00:07:53Z
-  - India
-  - Strategy
 title : "India, long-term sustainable growth?"
 ---
 

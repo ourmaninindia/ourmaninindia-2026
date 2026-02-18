@@ -1,10 +1,11 @@
 ---
 categories:
-  - HR
+  - blog
 tags:
   - Management
+  - hr
+  - KIT
 date : 2006-06-05T00:30:25Z
-  - Management
 title : "Indian Management - Towards Cultural Congruence"
 ---
 

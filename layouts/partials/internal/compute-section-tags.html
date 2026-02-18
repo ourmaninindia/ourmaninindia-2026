@@ -1,0 +1,31 @@
+{{/* layouts/partials/internal/compute-section-tags.html */}}
+{{ $section := . }}
+{{ $sectionTags := slice }}
+
+{{/* Collect all tags from section */}}
+{{ range where site.RegularPages "Section" $section }}
+    {{ range .Params.tags }}
+        {{ $sectionTags = $sectionTags | append . }}
+    {{ end }}
+{{ end }}
+
+{{/* Count occurrences - build a slice of dicts instead */}}
+{{ $tagList := slice }}
+{{ $counted := dict }}
+
+{{ range $sectionTags }}
+    {{ if not (isset $counted .) }}
+        {{ $count := 0 }}
+        {{ range $sectionTags }}
+            {{ if eq . $ }}
+                {{ $count = add $count 1 }}
+            {{ end }}
+        {{ end }}
+        {{ $tagList = $tagList | append (dict "name" . "count" $count) }}
+        {{ $counted = merge $counted (dict . true) }}
+    {{ end }}
+{{ end }}
+
+{{/* Sort by count descending */}}
+{{ $sorted := sort $tagList "count" "desc" }}
+{{ return $sorted }}

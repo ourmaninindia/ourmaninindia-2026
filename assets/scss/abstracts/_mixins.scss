@@ -1,8 +1,8 @@
 @use "variables" as *;
 
-// ========================================== 
-// Reusable mixins and functions
-// ========================================== 
+/* ========================================== 
+   Reusable mixins and functions
+   ========================================== */
 
 // Media query mixin
 @mixin respond-to($breakpoint) {

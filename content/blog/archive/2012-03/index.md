@@ -1,9 +1,11 @@
 ---
-title: "Archive 2012-03"
-date: 2012-03-19T15:06:39Z
+title: "Blog Archive 2012-03"
 layout: archive
 year: "2012"
 month: "03"
 url: "/blog/archive/2012-03/"
-tags:
+posts:
+  - klm-off-target
+  - eclectic-thoughts
+  - face-to-face
 ---

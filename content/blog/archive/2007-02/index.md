@@ -1,9 +1,9 @@
 ---
-title: "Archive 2007-02"
-date: 2007-02-08T01:32:23Z
+title: "Blog Archive 2007-02"
 layout: archive
 year: "2007"
 month: "02"
 url: "/blog/archive/2007-02/"
-tags:
+posts:
+  - blog
 ---

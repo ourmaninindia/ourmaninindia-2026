@@ -2,7 +2,6 @@
 date : 2012-09-16T09:26:03Z
 draft : false
 slug : "32-or-64-bit-machine"
-  - open-source
 title : "Is it a 32 or 64 bit machine?"
 categories:
   - tech

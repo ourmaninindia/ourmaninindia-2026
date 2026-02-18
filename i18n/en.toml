@@ -10,6 +10,8 @@ other = "Page"
 other = "of"
 [recentPosts]
 other = "Recent Posts"
+[postsTagged]
+other = "Posts tagged with"
 [categories]
 other = "Categories"
 [popularTags]
@@ -25,7 +27,7 @@ other = "Search posts..."
 [newsletter]
 other = "Newsletter"
 [newsletterDescription]
-other = "Subscribe to get our latest articles delivered to your inbox."
+other = "Subscribe to get my latest article delivered to your inbox."
 [emailPlaceholder]
 other = "Your email..."
 [subscribe]

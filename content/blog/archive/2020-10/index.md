@@ -1,9 +1,10 @@
 ---
-title: "Archive 2020-10"
-date: 2020-10-06T22:00:00Z
+title: "Blog Archive 2020-10"
 layout: archive
 year: "2020"
 month: "10"
 url: "/blog/archive/2020-10/"
-tags:
+posts:
+  - the-future-is-highly-distributed
+  - blog
 ---

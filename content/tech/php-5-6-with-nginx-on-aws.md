@@ -6,7 +6,7 @@ tags:
   - nginx
   - aws
 catagories: 
-  - tech
+    - tech
 ---
 
 

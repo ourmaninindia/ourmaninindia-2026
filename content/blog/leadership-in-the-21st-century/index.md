@@ -3,8 +3,9 @@ categories:
   - Management
 tags:
   - Management
+  - Leadership
 date : 2010-12-22T19:13:55Z
-  - Management
+
 title : "Leadership in the 21st Century"
 cover : "cover-ilian_mihov.jpg"
 read_more_copy : "Read more about this session"

@@ -1,10 +1,10 @@
 ---
 categories:
-  - History
+  - blog
 tags:
   - Management
+  - History
 date : 2012-10-06T17:04:37Z
-  - Management
 title : "The Green Thing"
 ---
 

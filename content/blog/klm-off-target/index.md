@@ -1,12 +1,13 @@
 ---
 categories:
-  - Management
+  - blog
 tags:
   - Management
+  - klm
+  - luggage
 date : 2012-03-28T11:44:48Z
 description : "KLM customer service off-target"
 slug : "klm-off-target"
-  - Management
 title : "KLM off-target"
 featured_image : "klm.jpg"
 cover : "cover-klm2.jpg"

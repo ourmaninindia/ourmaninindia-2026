@@ -1,12 +1,12 @@
 ---
 categories:
-  - India
-  - Economy
+  - blog
 tags:
   - emerging economy
+  - India
+  - Economy
 date : 2010-07-23T17:37:48Z
 description : "Hans Rosling: Asia's Rise -- How and When"
-  - emerging economy
 title : "Hans Rosling: Asia's Rise -- How and When"
 featured : false
 cover : "cover-hans-rosling.jpg"
