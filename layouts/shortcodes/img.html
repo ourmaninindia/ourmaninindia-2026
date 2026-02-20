@@ -4,6 +4,7 @@
 {{ $alt := .Get "alt" }}
 {{ $caption := .Get "caption" }}
 {{ $wide := .Get "wide" }}
+{{ $class := .Get "class" | default "left" }}
 
 {{ $image := $.Page.Resources.GetMatch $src }}
 
@@ -12,31 +13,27 @@
     {{ if eq $wide "true" }}
         {{ $widthClass = "post-image post-image--wide" }}
     {{ end }}
-    
-    <figure class="{{ $widthClass }}">
-        {{ $img400 := $image.Resize "400x webp q85" }}
-        {{ $img800 := $image.Resize "800x webp q85" }}
-        {{ $img1200 := $image.Resize "1200x webp q85" }}
-        
-        <picture>
-            <source type="image/webp" 
-                    srcset="{{ $img400.RelPermalink }} 400w,
+    {{ with $class }}
+        {{ $widthClass = printf "%s %s" $widthClass . }}
+    {{ end }}
+
+<figure class="{{ $widthClass }}">
+    {{ $img400 := $image.Resize "400x webp q85" }}
+    {{ $img800 := $image.Resize "800x webp q85" }}
+    {{ $img1200 := $image.Resize "1200x webp q85" }}
+
+    <picture>
+        <source type="image/webp" srcset="{{ $img400.RelPermalink }} 400w,
                             {{ $img800.RelPermalink }} 800w,
-                            {{ $img1200.RelPermalink }} 1200w"
-                    sizes="(max-width: 768px) 100vw, 800px">
-            <img src="{{ $img800.RelPermalink }}" 
-                 alt="{{ $alt }}"
-                 class="lightbox-trigger"
-                 loading="lazy"
-                 decoding="async"
-                 width="{{ $img800.Width }}"
-                 height="{{ $img800.Height }}">
-        </picture>
-        
-        {{ with $caption }}
-            <figcaption>{{ . }}</figcaption>
-        {{ end }}
-    </figure>
+                            {{ $img1200.RelPermalink }} 1200w" sizes="(max-width: 768px) 100vw, 800px">
+        <img src="{{ $img800.RelPermalink }}" alt="{{ $alt }}" class="lightbox-trigger" loading="lazy" decoding="async"
+            width="{{ $img800.Width }}" height="{{ $img800.Height }}">
+    </picture>
+
+    {{ with $caption }}
+    <figcaption>{{ . }}</figcaption>
+    {{ end }}
+</figure>
 {{ else }}
-    <p><strong>Error:</strong> Image "{{ $src }}" not found</p>
+<p><strong>Error:</strong> Image "{{ $src }}" not found</p>
 {{ end }}

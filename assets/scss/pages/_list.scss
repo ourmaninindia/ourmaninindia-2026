@@ -23,72 +23,76 @@
   }
 
   &__posts {
-    container-type: inline-size;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
 
     @media (min-width: $breakpoint-desktop) {
-      grid-area: posts; // ← only when parent grid-template-areas is active
+      grid-area: posts;
     }
   }
 
 
   // ============================================
-  // Post Card
+  // Post Card - Text Wrapping Around Image
   // ============================================
 
   &__post {
-    display: grid;
-    background: var(--color-white);
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    overflow: hidden;
+    padding: 1.5rem;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
-    grid-template-columns: 1fr;
+    overflow: auto; // Clearfix for floats
 
-    @container (min-width: 500px) {
-      grid-template-columns: min(320px, 40%) 1fr;
+    @media (min-width: $breakpoint-tablet) {
+      padding: 2rem;
     }
 
     &:hover {
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-md);
       transform: translateY(-4px);
+    }
+
+    // Clear floats after the article
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
     }
   }
 
   // ============================================
-  // Post Image
+  // Post Image - Floating with Text Wrap
   // ============================================
 
   &__post-image {
-    position: relative;
+    width: 300px;
+    max-width: 45%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
     overflow: hidden;
-    background: var(--color-bg);
-    min-height: 200px;     
+    background: var(--color-bg-secondary);
+    
+    // Default: Float left
+    float: left;
+    margin-right: 1.5rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      max-width: 100%;
+      float: none;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
 
     img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       display: block;
       transition: transform 0.3s ease;
-    }
-
-    @media (max-width: $breakpoint-tablet - 1) {
-      padding-top: 56.25%;
-
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    }
-
-    @media (min-width: $breakpoint-tablet) {
-      height: 100%;
-      min-height: 240px;
     }
 
     .list__post:hover & img {
@@ -96,29 +100,34 @@
     }
   }
 
-  // ============================================
-  // Post Content
-  // ============================================
+  // Alternate: Float right
+  &__post--image-right &__post-image {
+    float: right;
+    margin-right: 0;
+    margin-left: 1.5rem;
 
-  &__post-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    @media (min-width: $breakpoint-tablet) {
-      padding: 2rem;
+    @media (max-width: $breakpoint-mobile) {
+      float: none;
+      margin-left: 0;
     }
   }
 
-  &__post-title {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.3;
+  // ============================================
+  // Post Content - Wraps Around Image
+  // ============================================
 
-    @media (min-width: $breakpoint-tablet) {
-      font-size: 1.75rem;
+  &__post-title {
+    margin-bottom: 0.75rem;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0 0 0.5rem 0;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 1.75rem;
+      }
     }
 
     a {
@@ -138,6 +147,7 @@
     gap: 1rem;
     font-size: 0.875rem;
     color: var(--color-text-light);
+    margin-bottom: 0.5rem;
 
     span, time {
       display: flex;
@@ -147,11 +157,10 @@
   }
 
   &__post-excerpt {
-    color: var(--color-text-light);
+    color: var(--color-text);
     font-size: 1rem;
     line-height: 1.6;
-    margin: 0;
-    flex-grow: 1;
+    margin: 0 0 1rem 0;
   }
 
   &__read-more {
@@ -163,7 +172,7 @@
     text-decoration: none;
     font-size: 0.9375rem;
     transition: all 0.2s ease;
-    align-self: flex-start;
+    clear: both; // Ensure it appears below floated image
 
     &::after {
       content: '→';
@@ -227,7 +236,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.625rem 1.25rem;
-    background: var(--color-white);
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     color: var(--color-text-dark);
@@ -239,7 +248,7 @@
 
     &:hover {
       background: var(--color-primary);
-      color: white;
+      color: var(--color-white);
       border-color: var(--color-primary);
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
@@ -257,18 +266,18 @@
     flex-wrap: nowrap;
     justify-content: center;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;   // smooth scroll on iOS
-    scrollbar-width: none;               // hide scrollbar on Firefox
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   
     &::-webkit-scrollbar {
-      display: none;                     // hide scrollbar on Chrome/Safari
+      display: none;
     }
   }
 
   &__number,
   &__ellipsis {
-    min-width: 2.75rem;    // 44px - minimum touch target
-    height: 2.75rem;       // 44px - minimum touch target
+    min-width: 2.75rem;
+    height: 2.75rem;
     font-size: var(--font-size-sm);
   }
 
@@ -279,14 +288,14 @@
     border-radius: 6px;
     font-weight: 500;
     border: 1px solid var(--color-border);
-    background: var(--color-white);
+    background: var(--color-bg);
     color: var(--color-text-dark);
     text-decoration: none;
     transition: all 0.2s ease;
     box-shadow: var(--shadow-sm);
 
     &:hover {
-      background: #eff6ff;
+      background: var(--color-bg-secondary);
       border-color: var(--color-primary);
       color: var(--color-primary);
       transform: translateY(-1px);
@@ -298,7 +307,7 @@
 
     &.active {
       background: var(--color-primary);
-      color: white;
+      color: var(--color-white);
       border-color: var(--color-primary);
       box-shadow: var(--shadow-md);
       cursor: default;
@@ -338,79 +347,6 @@
       min-width: 2.25rem;
       height: 2.25rem;
       font-size: 0.875rem;
-    }
-  }
-
-  // ============================================
-  // Dark Mode
-  // ============================================
-
-  @media (prefers-color-scheme: dark) {
-    border-color: #374151;
-
-    &__prev,
-    &__next {
-      background: #1f2937;
-      border-color: #374151;
-      color: #f9fafb;
-
-      &:hover {
-        background: var(--color-primary);
-        border-color: var(--color-primary);
-      }
-    }
-
-    &__number {
-      background: #1f2937;
-      border-color: #374151;
-      color: #f9fafb;
-
-      &:hover {
-        background: #1e40af;
-        border-color: var(--color-primary);
-        color: white;
-      }
-
-      &.active {
-        background: var(--color-primary);
-        border-color: var(--color-primary);
-      }
-    }
-
-    &__ellipsis {
-      color: #9ca3af;
-    }
-  }
-}
-
-// ============================================
-// Dark Mode - List
-// ============================================
-
-@media (prefers-color-scheme: dark) {
-  .list {
-    &__post {
-      background: #1f2937;
-      border-color: #374151;
-
-      &:hover {
-        border-color: #4b5563;
-      }
-    }
-
-    &__post-title a {
-      color: #f9fafb;
-    }
-
-    &__post-excerpt,
-    &__post-meta {
-      color: #9ca3af;
-    }
-
-    &__posts > p {
-      background: #1f2937;
-      color: #9ca3af;
-      border-color: #374151;
     }
   }
 }

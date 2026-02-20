@@ -6,108 +6,99 @@
 </div>
 
 <div class="container">
-    <div class="single-post-grid">
-        <article class="post">
-            <header class="post__header">
-                {{ with .Params.image }}
-                <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="post__featured-image">
-                {{ end }}
-
-                <h1 class="post__title">{{ .Title }}</h1>
-
-                <div class="post__meta">
-                    <span>📅 {{ .Date.Format "January 02, 2006" }}</span>
-                    {{ with .Params.author }}
-                    <span>👤 {{ . }}</span>
-                    {{ end }}
-                    <span>⏱️ {{ .ReadingTime }} min read</span>
-                </div>
-
-                <div class="post__categories-tags">
-                    <!-- Categories -->
-                    {{ if .Params.categories }}
-                    {{ $validCategories := slice }}
-                    {{ range .Params.categories }}
-                    {{ if ne . "" }}
-                    {{ $validCategories = $validCategories | append . }}
-                    {{ end }}
-                    {{ end }}
-                    {{ if gt (len $validCategories) 0 }}
-                    <span class="post__categories">
-                        Categories:
-                        {{ range $index, $cat := $validCategories }}
-                        {{ if $index }}, {{ end }}
-                        <a href="{{ " /categories/" | relLangURL }}{{ $cat | urlize }}">{{ $cat }}</a>
-                        {{ end }}
-                    </span>
-                    {{ end }}
-                    {{ end }}
-
-                    <!-- Tags -->
-                    {{ if .Params.tags }}
-                    {{ $validTags := slice }}
-                    {{ range .Params.tags }}
-                    {{ if ne . "" }}
-                    {{ $validTags = $validTags | append . }}
-                    {{ end }}
-                    {{ end }}
-                    {{ if gt (len $validTags) 0 }}
-                    <span class="post__tags">
-                        Tags:
-                        {{ range $index, $tag := $validTags }}
-                        {{ if $index }}, {{ end }}
-                        <a href="{{ " /tags/" | relLangURL }}{{ $tag | urlize }}">{{ $tag }}</a>
-                        {{ end }}
-                    </span>
-                    {{ end }}
-                    {{ end }}
-                </div>
-
-            </header>
-
-            <div class="post__body">
-                {{ .Content }}
-            </div>
-
-            {{ with .Params.tags }}
-            <div class="post__tags">
-                <strong>{{ i18n "tags" }}:</strong>
-                {{ range . }}
-                <a href="{{ " tags" | relLangURL }}/{{ . | urlize }}" class="tag">{{ . }}</a>
-                {{ end }}
-            </div>
+    <article class="newspaper">
+        <!-- Masthead: Full width above columns -->
+        <header class="newspaper__masthead">
+            {{ with .Params.image }}
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="newspaper__hero">
             {{ end }}
 
-            <nav class="post__navigation">
+            <h1 class="newspaper__headline">{{ .Title }}</h1>
+
+            <div class="newspaper__byline">
+                <time>📅 {{ .Date.Format "January 02, 2006" }}</time>
+                
+                {{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
+                {{ $author := index .Site.Data.authors $authorSlug }}
+                {{ with $author }}
+                    <span>By {{ .name }}</span>
+                {{ else }}
+                    {{ with $.Params.author }}
+                        <span>By {{ . }}</span>
+                    {{ end }}
+                {{ end }}
+                
+                <span>{{ .ReadingTime }} min read</span>
+            </div>
+
+            <!-- Categories and Tags -->
+            {{ if or .Params.categories .Params.tags }}
+                <div class="newspaper__taxonomy">
+                    {{ with .Params.categories }}
+                        {{ $validCategories := slice }}
+                        {{ range . }}
+                            {{ if ne . "" }}
+                                {{ $validCategories = $validCategories | append . }}
+                            {{ end }}
+                        {{ end }}
+                        {{ if gt (len $validCategories) 0 }}
+                            <span class="newspaper__section">
+                                {{ range $index, $cat := $validCategories }}
+                                    {{ if $index }} • {{ end }}
+                                    <a href="{{ "/categories/" | relLangURL }}{{ $cat | urlize }}">{{ $cat | upper }}</a>
+                                {{ end }}
+                            </span>
+                        {{ end }}
+                    {{ end }}
+
+                    {{ with .Params.tags }}
+                        {{ $validTags := slice }}
+                        {{ range . }}
+                            {{ if ne . "" }}
+                                {{ $validTags = $validTags | append . }}
+                            {{ end }}
+                        {{ end }}
+                        {{ if gt (len $validTags) 0 }}
+                            <span class="newspaper__tags">
+                                {{ range $index, $tag := $validTags }}
+                                    {{ if $index }}, {{ end }}
+                                    <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
+                                {{ end }}
+                            </span>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            {{ end }}
+        </header>
+
+        <!-- Two-column content with floating images -->
+        <div class="newspaper__content">
+            {{ .Content }}
+        </div>
+
+        <!-- Footer: Full width below columns -->
+        <footer class="newspaper__footer">
+            <!-- Post Navigation -->
+            <nav class="newspaper__navigation">
                 {{ with .PrevInSection }}
-                <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--prev">← {{ .Title }}</a>
+                    <a href="{{ .RelPermalink }}" class="newspaper__nav-link newspaper__nav-link--prev">
+                        ← {{ .Title }}
+                    </a>
                 {{ end }}
 
                 {{ with .NextInSection }}
-                <a href="{{ .RelPermalink }}" class="post__nav-link post__nav-link--next">{{ .Title }} →</a>
+                    <a href="{{ .RelPermalink }}" class="newspaper__nav-link newspaper__nav-link--next">
+                        {{ .Title }} →
+                    </a>
                 {{ end }}
             </nav>
 
-            <!-- Enhanced Author Bio -->
+            <!-- Author Bio -->
             {{ partial "author-bio.html" . }}
-        </article>
 
-        {{ partial "sidebar.html" . }}
-    </div>
-
-    <div class="post__meta">
-        <span>📅 {{ .Date.Format "January 02, 2006" }}</span>
-
-        {{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
-        {{ $author := index .Site.Data.authors $authorSlug }}
-        {{ with $author }}
-        <span>👤 {{ .name }}</span>
-        {{ end }}
-
-        <span>⏱️ {{ .ReadingTime }} min read</span>
-    </div>
-
-    <!-- Comments Section -->
-    {{ partial "comments-cusdis.html" . }}
+            <!-- Comments -->
+            {{ partial "comments-cusdis.html" . }}
+        </footer>
+    </article>
 </div>
 {{ end }}

@@ -1,25 +1,35 @@
-<h3 class="widget-title">{{ i18n "newsletter" }}</h3>
-<p class="widget-message">{{ i18n "newsletterDescription" }}</p>
+<h3 class="widget__title">{{ i18n "newsletter" }}</h3>
+<p class="widget__message">{{ i18n "newsletterDescription" }}</p>
 
-<form class="newsletter-form" action="{{ .Site.Params.newsletterAction }}" method="POST">
-    <div class="newsletter-sections">
-        <label class="newsletter-checkbox">
-            <input type="checkbox" name="sections[]" value="blog" 
-                   {{ if eq .Section "blog" }}checked{{ end }}>
+<form id="newsletterForm" 
+      class="newsletter__form" 
+      action="{{ .Site.Params.newsletterAction }}" 
+      method="POST"
+      data-error-email-required="{{ i18n "errorEmailRequired" }}"
+      data-error-email-invalid="{{ i18n "errorEmailInvalid" }}"
+      data-error-sections-required="{{ i18n "errorSectionsRequired" }}">
+    <div class="newsletter__sections">
+        <label class="newsletter__checkbox">
+            <input type="checkbox" name="sections[]" value="blog" class="newsletter__section-checkbox" {{ if eq .Section "blog" }}checked{{ end }}>
             <span>Blog</span>
         </label>
-        <label class="newsletter-checkbox">
-            <input type="checkbox" name="sections[]" value="cycling" 
-                   {{ if eq .Section "cycling" }}checked{{ end }}>
+        <label class="newsletter__checkbox">
+            <input type="checkbox" name="sections[]" value="cycling" class="newsletter__section-checkbox" {{ if eq .Section "cycling" }}checked{{ end }}>
             <span>Cycling</span>
         </label>
-        <label class="newsletter-checkbox">
-            <input  type="checkbox" name="sections[]" value="tech" 
-                   {{ if eq .Section "tech" }}checked{{ end }}>
+        <label class="newsletter__checkbox">
+            <input type="checkbox" name="sections[]" value="tech" class="newsletter__section-checkbox" {{ if eq .Section "tech" }}checked{{ end }}>
             <span>Tech</span>
         </label>
     </div>
     
-    <input type="email"class="form-input" name="email" placeholder="{{ i18n "emailPlaceholder" }}" required>
-    <button type="submit">{{ i18n "subscribe" }}</button>
+    <!-- Error message for checkboxes -->
+    <span id="newsletter-sections-error" class="newsletter__error"></span>
+
+    <input id="newsletter-email" type="email" class="newsletter__input" name="email" placeholder="{{ i18n "emailPlaceholder" }}" required>
+    
+    <!-- Error message for email -->
+    <span id="newsletter-error" class="newsletter__error"></span>
+    
+    <button id="newsletter-submit" type="submit" disabled>{{ i18n "subscribe" }}</button>
 </form>

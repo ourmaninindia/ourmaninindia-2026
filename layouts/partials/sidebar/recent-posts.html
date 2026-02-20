@@ -1,20 +1,5 @@
 <h3 class="widget__title">{{ i18n "recentPosts" }}</h3>
-
-{{ $posts := slice }}
-{{ range site.Pages }}
-    {{ if eq .Kind "page" }}
-        {{/* Check section filter - only filter if we're on a content section page */}}
-        {{ $include := true }}
-        {{ if and $.Section (in (slice "blog" "cycling" "tech") $.Section) }}
-            {{ $include = eq .Section $.Section }}
-        {{ end }}
-        
-        {{ if $include }}
-            {{ $posts = $posts | append . }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-
+{{ $posts := where .Site.RegularPages "Section" .Section }}
 {{ range first 5 $posts }}
     <a href="{{ .RelPermalink }}" class="widget__recent-post">
         <div class="widget__recent-thumb">
@@ -27,7 +12,7 @@
         </div>
         <div class="widget__recent-info">
             <h4>{{ .Title }}</h4>
-            <span class="widget__recent-date">{{ .Date.Format "Jan 02, 2006" }}</span>
+            <div class="widget__recent-date">{{ .Date.Format "Jan 02, 2006" }}</div>
         </div>
     </a>
 {{ end }}

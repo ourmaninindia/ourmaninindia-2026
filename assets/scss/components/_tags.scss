@@ -19,10 +19,10 @@
         background: var(--color-primary);
         color: var(--color-white);
     }
-}
 
-.tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    &__cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
 }

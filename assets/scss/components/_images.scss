@@ -35,3 +35,35 @@ figcaption {
     font-style: italic;
     font-size: small;
 }
+
+figure.post-image {
+  display: table;
+  max-width: 45%;
+
+  &.left {
+    float: left;
+    margin: 0 1.5rem 1rem 0;
+  }
+
+  &.right {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  picture {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    font-style: italic;
+    font-size: small;
+  }
+}

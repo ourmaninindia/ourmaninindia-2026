@@ -1,0 +1,16 @@
+{{/* Usage: {{ partial "image.html" . }} */}}
+
+{{ $image := "" }}
+
+{{ with .Resources.GetMatch .Params.featured_image }}
+    {{ $image = .RelPermalink }}
+{{ end }}
+
+{{ if $image }}
+    <figure class="image-with-text">
+    <img src="{{ $image }}" alt="{{ .Params.caption }}"/>
+    <figcaption>
+      {{ .Params.caption }}
+    </figcaption>
+  </figure>
+{{ end }}

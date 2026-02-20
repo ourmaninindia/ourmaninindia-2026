@@ -1,8 +1,8 @@
 {{/* Only show archive on section pages, not on taxonomy pages */}}
 {{ if .Section }}
 
-<h3 class="widget-title">{{ i18n "archive" }}</h3>
-<div class="widget-content">
+<h3 class="widget__title">{{ i18n "archive" }}</h3>
+<div class="widget__content">
     {{/* Get posts from current section */}}
     {{ $sectionPosts := where .Site.RegularPages "Section" .Section }}
     

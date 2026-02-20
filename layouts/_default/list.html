@@ -3,23 +3,33 @@
 <div class="display-template hidden">
     _default/list.html
 </div>
+
+{{ $posts := where .Site.RegularPages "Section" .Section }}
+{{ $paginator := .Paginate $posts }}
+            
 <div class="container">
     <h1>{{ .Title }}</h1>
+
+ {{ if and .Content (eq $paginator.PageNumber 1) }}
+  <div class="section-intro">
+      {{ .Content }}
+  </div>
+{{ end }}
+
     <div class="list__grid">
         <div class="list__posts">
-            {{ $posts := where .Site.RegularPages "Section" .Section }}
-            {{ $matchedPosts := slice }}
-            {{ range $posts }}
-                {{ if not (in .RelPermalink "/archive/") }}
-                    {{ $matchedPosts = $matchedPosts | append . }}
-                {{ end }}
-            {{ end }}
-            {{ $paginator := .Paginate $matchedPosts }}
-            {{ range $paginator.Pages }}
+            {{ range $index, $post := $paginator.Pages }}
                 {{ if and .Date (ne (.Date.Format "2006") "0001") }}
-                <article class="list__post" data-post-date="{{ .Date.Format "2006-01" }}">
-                    {{ partial "post-image.html" . }}
-                    <div class="list__post-content">
+                    {{/* Alternate image position: even = left, odd = right */}}
+                    {{ $imagePosition := "left" }}
+                    {{ if modBool $index 2 }}
+                        {{ $imagePosition = "right" }}
+                    {{ end }}
+                    
+                    <article class="list__post list__post--image-{{ $imagePosition }}" data-post-date="{{ .Date.Format "2006-01" }}">
+                        {{/* Image floats and text wraps around it */}}
+                        {{ partial "post-image.html" . }}
+                        
                         <div class="list__post-title">
                             <h2>
                                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -27,10 +37,11 @@
                             <div class="list__post-meta">
                                 <time>📅 {{ .Date.Format "Jan 02, 2006" }}</time>
                                 {{ with .Params.author }}
-                                <span>👤 {{ . }}</span>
+                                    <span>👤 {{ . }}</span>
                                 {{ end }}
                             </div>
                         </div>
+                        
                         <p class="list__post-excerpt">
                             {{ with .Summary }}
                                 {{ . | plainify | truncate 300 }}
@@ -38,15 +49,17 @@
                                 {{ .Content | plainify | truncate 300 }}
                             {{ end }}
                         </p>
+                        
                         <a href="{{ .RelPermalink }}" class="list__read-more">
                             {{ i18n "readMore" }}
                         </a>
-                    </div>
-                </article>
+                    </article>
                 {{ end }}
             {{ end }}
+            
             {{ partial "pagination.html" $paginator }}
         </div>
+        
         {{ partial "sidebar.html" . }}
     </div>
 </div>

@@ -24,6 +24,7 @@ other = "Archive"
 other = "Search"
 [searchPlaceholder]
 other = "Search posts..."
+
 [newsletter]
 other = "Newsletter"
 [newsletterDescription]
@@ -36,3 +37,11 @@ other = "Subscribe"
 other = "results found"
 [selectCategory]
 other = "Select a topic"
+
+# widget newsletter
+[errorEmailRequired]
+other = "Please enter your email address"
+[errorEmailInvalid]
+other = 'Please enter a valid email address'
+[errorSectionsRequired]
+other = 'Please select at least one topic'

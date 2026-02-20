@@ -1,16 +1,7 @@
-<h3 class="widget-title">{{ i18n "archive" }}</h3>
-<div class="widget-content">
-    {{/* Get only blog posts, not archive pages */}}
-    {{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
-    
-    {{/* Filter out archive pages */}}
-    {{ $filteredPosts := slice }}
-    {{ range $blogPosts }}
-        {{ if not (in .RelPermalink "/archive/") }}
-            {{ $filteredPosts = $filteredPosts | append . }}
-        {{ end }}
-    {{ end }}
- 
+<h3 class="widget__title">{{ i18n "archive" }}</h3>
+<div class="widget__content">
+    {{ $filteredPosts := where (.Site.Pages.ByDate.Reverse) "Section" "blog" }}
+
     <select class="archive__dropdown" id="archive-dropdown">
         <option value="">Select a month ({{ len $filteredPosts }} posts)</option>
         {{ range $filteredPosts.GroupByDate "2006-01" }}

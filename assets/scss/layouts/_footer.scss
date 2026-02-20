@@ -4,26 +4,21 @@
    FOOTER
    ========================================== */
 
-footer {
-    background: var(--footer-bg);
-    color: var(--footer-text);
-    padding: 2rem;
-    margin-top: 4rem;
-    border-top: 1px solid var(--footer-border);
-}
-
 .footer {
-    max-width: var(--max-width);
-    margin: 0 auto;
     padding: var(--spacing-xs) var(--spacing-xs);
+     margin: 0 auto;
+    border-top: 1px solid var(--footer-border);
 
-    // Main container - flexbox with wrapping
     &__container {
+        max-width: var(--max-width); 
         display: flex;
         flex-wrap: wrap;
         gap: var(--spacing-lg) var(--spacing-xl);
         align-items: flex-start;
         justify-content: space-between;
+        border-top: 1px solid var(--color-border-dark);
+        border-bottom: 1px solid var(--color-border-dark);
+        padding-top: 0.5rem;
 
         // Make sections size to content, no forced minimum
         >* {
@@ -56,8 +51,8 @@ footer {
         border-radius: var(--border-radius-md);
         border: 1px solid var(--color-border);
         font-size: 1rem;
-        background-color: var(--color-bg); // ADDED: Theme-aware background
-        color: var(--color-text); // ADDED: Theme-aware text
+      //  background-color: var(--color-bg); // ADDED: Theme-aware background
+      //  color: var(--color-text); // ADDED: Theme-aware text
 
         &:focus {
             outline: none;
@@ -75,7 +70,6 @@ footer {
 
     &__license-summary,
     &__help-text {
-        color: var(--footer-text-muted);
         margin-bottom: var(--spacing-xs);
         font-size: var(--font-size-sm);
     }
@@ -178,7 +172,6 @@ footer {
         h4 {
             font-size: 1.125rem;
             margin-bottom: var(--spacing-xs);
-            color: var(--footer-text);
             font-weight: 600;
         }
 
@@ -193,12 +186,12 @@ footer {
         }
 
         a {
-            color: var(--footer-text-muted);
+            color: var(--color-text);
             text-decoration: none;
             transition: color var(--transition-base);
 
             &:hover {
-                color: var(--footer-text);
+             //   color: var(--footer-text);
             }
         }
 

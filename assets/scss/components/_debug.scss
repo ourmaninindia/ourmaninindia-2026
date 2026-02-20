@@ -9,28 +9,10 @@
     font-family: 'Courier New', monospace;
     font-size: 0.8125rem;
     background-color: var(--color-debug-bg);
+    color: var(--color-black);
     margin: 0 auto;
     padding: 0.25rem var(--spacing-md);
     width: 100%;
     font-weight: bold;
-
-    &__toggle {
-        width: 48px;
-        height: 48px;
-        background: var(--color-code-bg);
-        color: var(--color-debug-text);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 1.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        transition: all var(--transition-base);
-        
-        &:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-        }
-    }
+    border-top: 1px solid var(--color-border-light);
 }

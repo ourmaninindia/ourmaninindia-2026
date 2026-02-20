@@ -5,19 +5,22 @@ echo "Generating archive pages..."
 # Array of sections
 sections=("blog" "cycling" "tech")
 
+# Create base archives directory
+mkdir -p "content/archives"
+
 for section in "${sections[@]}"; do
     echo "Processing section: $section"
 
-    # Create base archive directory for this section
-    mkdir -p "content/$section/archive"
+    # Create archive directory for this section in root archives
+    mkdir -p "content/archives/$section"
 
     # Declare associative array to collect posts per month
     declare -A archives
 
     # Process files in current shell
     while read file; do
-        # Skip archive files themselves
-        if [[ "$file" == *"/archive/"* ]]; then
+        # Skip archive files themselves (now checking for archives/ in path)
+        if [[ "$file" == *"/archives/"* ]]; then
             continue
         fi
 
@@ -50,7 +53,9 @@ for section in "${sections[@]}"; do
     for yearmonth in "${!archives[@]}"; do
         year=$(echo "$yearmonth" | cut -d'-' -f1)
         month=$(echo "$yearmonth" | cut -d'-' -f2)
-        archivedir="content/$section/archive/$yearmonth"
+        
+        # NEW: Archives now go in content/archives/$section/$yearmonth
+        archivedir="content/archives/$section/$yearmonth"
         mkdir -p "$archivedir"
 
         # Start YAML front matter
@@ -58,6 +63,7 @@ for section in "${sections[@]}"; do
 ---
 title: "${section^} Archive $yearmonth"
 layout: archive
+section: "$section"
 year: "$year"
 month: "$month"
 url: "/$section/archive/$yearmonth/"
@@ -82,3 +88,4 @@ EOF
 done
 
 echo "Archive generation complete!"
+echo "Archives created in: content/archives/{blog,cycling,tech}/"

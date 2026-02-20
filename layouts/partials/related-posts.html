@@ -1,5 +1,5 @@
-{{ $related := .Site.RegularPages.Related . | first 3 }}
-{{ if $related }}
+{{ $related := where (.Site.Pages.Related .) "Section" "!=" "archives" }}
+{{ range first 3 $related }}
 <section class="related-posts">
     <h3>Related Articles</h3>
     <div class="related-posts__grid">
