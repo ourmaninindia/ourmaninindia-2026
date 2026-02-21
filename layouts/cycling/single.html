@@ -1,0 +1,88 @@
+{{ define "main" }}
+  {{ $content := .Content }}
+
+  {{/* Split content into sections at each H3 */}}
+  {{ $sections := split $content "<h3" }}
+
+  <article class="cycling-post">
+
+    {{/* Masthead */}}
+    <header class="cycling-post__masthead">
+      <h1 class="cycling-post__headline">{{ .Title }}</h1>
+      <div class="cycling-post__byline">
+        <time>{{ .Date.Format "January 2, 2006" }}</time>
+      </div>
+    </header>
+
+    {{/* Intro section — everything before first H3, newspaper two-column */}}
+    {{ $intro := index $sections 0 }}
+    {{ if $intro }}
+      <div class="cycling-post__intro">
+        {{ $intro | safeHTML }}
+      </div>
+    {{ end }}
+
+    {{/* Day sections — each starts with H3 */}}
+    {{ range $i, $section := $sections }}
+      {{ if gt $i 0 }}
+        {{/* Restore the H3 tag that was removed by split */}}
+        {{ $fullSection := printf "<h3%s" $section }}
+
+        {{/* Extract all figures from this section */}}
+       {{/* Extract only standalone figures — not those inside .img-group */}}
+{{ $figures := findRE `<figure(?:[^>]*)>[\s\S]*?</figure>` $fullSection }}
+
+{{/* Extract img-groups to keep them together */}}
+{{ $imgGroups := findRE `<div class="img-group">[\s\S]*?</div>` $fullSection }}
+
+{{/* Remove standalone figures and img-groups from text */}}
+{{ $text := $fullSection }}
+{{ range $figures }}
+  {{ $text = replace $text . "" }}
+{{ end }}
+{{ range $imgGroups }}
+  {{ $text = replace $text . "" }}
+{{ end }}
+
+{{/* Extract only standalone figures — not those inside .img-group */}}
+{{ $allFigures := findRE `<figure(?:[^>]*)>[\s\S]*?</figure>` $fullSection }}
+
+{{/* Only keep figures that are not preceded by img-group div */}}
+{{ $standaloneFigures := slice }}
+{{ range $allFigures }}
+  {{ $fig := . }}
+  {{ $inGroup := false }}
+  {{ range findRE `<div class="img-group">[\s\S]*?</div>` $fullSection }}
+    {{ if in . $fig }}
+      {{ $inGroup = true }}
+    {{ end }}
+  {{ end }}
+  {{ if not $inGroup }}
+    {{ $standaloneFigures = $standaloneFigures | append $fig }}
+  {{ end }}
+{{ end }}
+
+{{/* Remove only standalone figures from text — img-groups stay */}}
+{{ $text := $fullSection }}
+{{ range $standaloneFigures }}
+  {{ $text = replace $text . "" }}
+{{ end }}
+
+<div class="cycling-day{{ if not $standaloneFigures }} cycling-day--no-images{{ end }}">
+  <div class="cycling-day__text">
+    {{ $text | safeHTML }}
+  </div>
+
+  {{ if $standaloneFigures }}
+    <div class="cycling-day__images">
+      {{ range $standaloneFigures }}
+        {{ . | safeHTML }}
+      {{ end }}
+    </div>
+  {{ end }}
+</div>
+      {{ end }}
+    {{ end }}
+
+  </article>
+{{ end }}

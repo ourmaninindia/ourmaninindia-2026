@@ -4,41 +4,46 @@
 /* ==========================================
    IMAGES
    ==========================================*/
-   
+
 .image-with-text .image {
-    max-width: 200px;  /* control size */
+  max-width: 200px;
 
-    & img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+  & img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-    &::after {
-        content: "";
-        display: block;
-        clear: both; /* prevents layout breaking */
-    }
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }
 
 .image-left {
-    float: left;
-    margin: 0 1.5rem 1rem 0;
+  float: left;
+  margin: 0 1.5rem 1rem 0;
 }
 
 .image-right {
-    float: right;
-    margin: 0 0 1rem 1.5rem;
+  float: right;
+  margin: 0 0 1rem 1.5rem;
 }
 
 figcaption {
-    font-style: italic;
-    font-size: small;
+  font-style: italic;
+  font-size: small;
 }
+
+// ==========================================
+// Single image — floats with text wrapping
+// ==========================================
 
 figure.post-image {
   display: table;
   max-width: 45%;
+  overflow: hidden;
 
   &.left {
     float: left;
@@ -58,6 +63,13 @@ figure.post-image {
     display: block;
     width: 100%;
     height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+    cursor: pointer;
   }
 
   figcaption {
@@ -65,5 +77,69 @@ figure.post-image {
     caption-side: bottom;
     font-style: italic;
     font-size: small;
+  }
+}
+
+// ==========================================
+// Image group — side by side with flex
+// ==========================================
+
+.img-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  figure.post-image {
+    flex: 1;
+    float: none;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 4px 0 0;  // small right margin to let shadow breathe
+    
+
+    picture {
+      display: block;
+      overflow: hidden; // clips the scaled image, not the shadow
+      margin: 0 4px 0 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: cover;
+      transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.04);
+        filter: brightness(1.08);
+        cursor: pointer;
+      }
+      
+      picture {
+      box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.12);    // overall lift
+      }
+    }
+
+    figcaption {
+      display: block;
+      font-style: italic;
+      font-size: small;
+      text-align: center;
+      padding: 0.25rem 0;
+    }
+  }
+
+  // Below mobile breakpoint: stack full width
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+
+    figure.post-image {
+      width: 100%;
+      flex: none;
+    }
   }
 }
