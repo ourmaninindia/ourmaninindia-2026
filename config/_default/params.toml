@@ -1,16 +1,16 @@
 description = "Building responsive, accessible websites"
 postsPerPage = 10
 defaultAuthor = "alfred"
-newsletterAction = "https://your-newsletter-service.com/subscribe"
-contactFormAction = "https://formspree.io/f/your-form-id"
+newsletterAction = "https://buttondown.com/api/emails/embed-subscribe/OurManInIndia"
+contactFormAction = "https://formspree.io/f/alfred@ourmaninindia.com"
 googleAnalytics = "G-XXXXXXXXXX"  # Your GA4 ID
 
 [dev]
     enableDebug = true
 
 [cusdis]
-  host = "https://my-blog-comments.vercel.app"
-  appId = "1234abcd-5678-efgh-9012-ijklmnopqrst"  # Replace with YOUR App ID
+  host = "https://cusdis.com"
+  appId = "a97f5053-8835-478b-b98b-05ee0c62fb47"
 
 [assets]
   js = ["js/main.js"]

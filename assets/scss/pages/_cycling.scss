@@ -51,7 +51,7 @@
     color: var(--color-text);
     text-align: justify;
     margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
+    // padding-bottom: var(--spacing-xl);
     border-bottom: 2px solid var(--color-border);
 
     @media (min-width: $breakpoint-tablet) {

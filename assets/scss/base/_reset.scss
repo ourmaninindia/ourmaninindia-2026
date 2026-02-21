@@ -29,7 +29,7 @@ body {
     overflow-x: hidden;
     hyphens: none;
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-desktop) {
       hyphens: auto;
     }
 }

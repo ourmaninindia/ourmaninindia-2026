@@ -1,4 +1,8 @@
 {{ define "main" }}
+<div class="display-template hidden">
+    cycling/single.html
+</div>
+
   {{ $content := .Content }}
 
   {{/* Split content into sections at each H3 */}}
@@ -84,5 +88,7 @@
       {{ end }}
     {{ end }}
 
+    <!-- Comments -->
+            {{ partial "comments-cusdis.html" . }}
   </article>
 {{ end }}
