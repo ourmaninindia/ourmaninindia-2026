@@ -10,7 +10,7 @@
     #cm,
     #s-cnt .pm {
         border-radius: var(--border-radius-xl) !important;
-        box-shadow: var(--shadow-md) !important;  // was lg
+        box-shadow: var(--shadow-md) !important; // was lg
         // font-family: $font-family !important;
     }
 
@@ -26,7 +26,7 @@
     #s-cnt.show {
         animation: cc-fade-in 0.3s ease-out !important;
     }
-    
+
     // Title styling
     .cm__title,
     .pm__title {
@@ -35,7 +35,7 @@
         margin-bottom: 1rem !important;
         color: var(--color-text) !important;
     }
-    
+
     // Description text
     .cm__desc,
     .section__desc {
@@ -44,7 +44,7 @@
         color: var(--color-text) !important;
         opacity: 0.9;
     }
-    
+
     // Buttons
     button {
         border-radius: 10px !important;
@@ -55,69 +55,69 @@
         border: none !important;
         font-family: inherit !important;
         cursor: pointer !important;
-        
+
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(var(--color-primary), 0.3) !important;
         }
-        
+
         &:active {
             transform: translateY(0);
         }
     }
-    
+
     // Primary button (Accept All)
     .cm__btn.cm__btn--primary,
     .pm__btn.pm__btn--primary {
         background: var(--color-primary) !important;
         color: var(--color-white) !important;
-        
+
         &:hover {
             background: var(--color-primary-hover) !important;
         }
     }
-    
+
     // Secondary button
     .cm__btn.cm__btn--secondary,
     .pm__btn.pm__btn--secondary {
         background: var(--color-bg-secondary) !important;
         color: var(--color-text) !important;
-        
+
         &:hover {
             background: var(--color-border) !important;
         }
     }
-    
+
     // Footer links
     .cm__footer {
         margin-top: 1.5rem !important;
         padding-top: 1rem !important;
         border-top: 1px solid var(--color-border) !important;
     }
-    
+
     .cm__link,
     .cc__link {
         color: var(--color-primary) !important;
         text-decoration: none !important;
         font-weight: 600 !important;
         transition: opacity var(--transition-base) !important;
-        
+
         &:hover {
             opacity: 0.8;
             text-decoration: underline !important;
         }
     }
-    
+
     // Preferences Modal
     #s-cnt {
         z-index: $z-modal !important;
     }
-    
+
     .pm {
         max-width: 700px !important;
         max-height: 90vh !important;
     }
-    
+
     // Section headers
     .section__title {
         font-size: clamp(1rem, 2.5vw, 1.125rem) !important;
@@ -125,7 +125,7 @@
         margin-bottom: 0.75rem !important;
         color: var(--color-text) !important;
     }
-    
+
     // Badge (Always Enabled)
     .pm__badge {
         background: var(--color-primary) !important;
@@ -136,7 +136,7 @@
         margin-left: 8px !important;
         font-weight: 600 !important;
     }
-    
+
     // Toggle switches
     .section__toggle {
         border-radius: 20px !important;
@@ -144,45 +144,45 @@
         height: 24px !important;
         transition: background var(--transition-base) !important;
     }
-    
+
     .toggle__icon {
         width: 20px !important;
         height: 20px !important;
         border-radius: 50% !important;
         transition: transform var(--transition-base) !important;
     }
-    
+
     .toggle-on {
         background: var(--color-primary) !important;
     }
-    
+
     .toggle-off {
         background: var(--color-gray-400) !important;
     }
-    
+
     .toggle-readonly {
         background: var(--color-gray-300) !important;
         cursor: not-allowed !important;
     }
-    
+
     // Category blocks
     .section {
         background: var(--color-bg-secondary) !important;
         border-radius: var(--border-radius-md) !important;
         margin-bottom: var(--spacing-sm) !important;
-        
+
         &:hover {
             background: var(--color-bg) !important;
         }
     }
-    
+
     // Cookie table
     .cookie-table {
         border: 1px solid var(--color-border) !important;
         border-radius: var(--border-radius-md) !important;
         overflow: hidden !important;
         margin-top: 1rem !important;
-        
+
         th {
             background: var(--color-bg-secondary) !important;
             font-weight: 600 !important;
@@ -190,7 +190,7 @@
             font-size: 0.875rem !important;
             color: var(--color-text) !important;
         }
-        
+
         td {
             padding: 12px !important;
             font-size: 0.875rem !important;
@@ -198,27 +198,27 @@
             color: var(--color-text) !important;
         }
     }
-    
+
     // Scrollbar for preferences modal
     .pm__body {
         &::-webkit-scrollbar {
             width: 8px !important;
         }
-        
+
         &::-webkit-scrollbar-track {
             background: var(--color-bg-secondary) !important;
         }
-        
+
         &::-webkit-scrollbar-thumb {
             background: var(--color-border) !important;
             border-radius: 4px !important;
-            
+
             &:hover {
                 background: var(--color-gray-400) !important;
             }
         }
     }
-    
+
     // Overlay
     #cm-ov,
     #s-ov {
@@ -240,8 +240,6 @@
     }
 }
 
-
-
 // Mobile responsiveness
 @media (max-width: $breakpoint-mobile) {
     #cc-main {
@@ -249,16 +247,16 @@
             margin: 1rem;
             max-width: calc(100% - 2rem);
         }
-        
+
         .cm__btns {
             flex-direction: column !important;
         }
-        
+
         .cm__btn {
             width: 100% !important;
             margin: 0.25rem 0 !important;
         }
-        
+
         .pm {
             max-width: 95% !important;
             margin: 1rem auto !important;

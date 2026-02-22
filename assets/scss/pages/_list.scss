@@ -22,6 +22,19 @@
     }
   }
 
+  &__content {
+   // drop cap the very first letter
+    p:first-of-type::first-letter {
+      font-size: 3.5em;
+      line-height: 0.9;
+      float: left;
+      margin: 0.1em 0.1em 0 0;
+      font-weight: 700;
+      color: var(--color-drop-cap);
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+  }
+
   &__posts {
     display: flex;
     flex-direction: column;
@@ -350,3 +363,10 @@
     }
   }
 }
+
+
+figure.right > figure.post-image.left {
+  width: 90px;
+  height: auto;
+  float: right;
+  }

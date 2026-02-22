@@ -60,6 +60,7 @@
       column-rule: 1px solid var(--color-border-light);
     }
 
+    // drop cap the very first letter
     p:first-of-type::first-letter {
       font-size: 3.5em;
       line-height: 0.9;

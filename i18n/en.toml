@@ -45,3 +45,20 @@ other = "Please enter your email address"
 other = 'Please enter a valid email address'
 [errorSectionsRequired]
 other = 'Please select at least one topic'
+
+[page-updated]
+other = "Last updated on"
+[page-created]
+other = "Page created on"
+
+[comments]
+other = "Feel free to leave your comments"
+[tech-comments]
+other = "Share your technical insights and questions!"
+[cycling-comments]
+other = "Share your cycling experiences and tips!"
+[general-comments]
+other = "Share your thoughts below!"
+
+[min-read]
+other = "min read"

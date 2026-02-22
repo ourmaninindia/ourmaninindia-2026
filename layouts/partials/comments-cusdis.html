@@ -1,14 +1,14 @@
 {{ if not .Params.disable_comments }}
 <section class="comments">
     <div class="comments__container">
-        <h3 class="comments__title">💬 Comments</h3>
+        <h3 class="comments__title">💬 {{ i18n "comments" }}</h3>
         <p class="comments__description">
             {{ if in .Params.categories "Tech" }}
-                Share your technical insights and questions!
+                {{ i18n "tech-comments"}}
             {{ else if in .Params.categories "Cycling" }}
-                Share your cycling experiences and tips!
+                {{ i18n "cycling-comments" }}
             {{ else }}
-                Share your thoughts below!
+                {{ i18n "general-comments" }}
             {{ end }}
         </p>
         

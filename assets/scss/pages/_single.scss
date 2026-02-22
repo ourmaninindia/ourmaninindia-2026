@@ -6,6 +6,8 @@
 
 .single {
   
+  
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -69,6 +71,59 @@
       gap: 0.5rem;
     }
   }
+
+  &__hero-bg {
+    width: 100%;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+  }
+/*
+  &__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-xl);
+  }
+
+  &__headline--hero {
+    color: var(--color-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    margin: 0;
+    font-size: clamp(1.75rem, 5vw, 3rem);
+  }
+*/
+
+&__hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-xl);
+   background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0) 60%
+    );
+}
+
+&__headline--hero {
+    color: var(--color-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    font-size: clamp(1.75rem, 5vw, 3rem);
+}
 
   // ============================================
   // Taxonomy (Categories & Tags)
@@ -144,7 +199,6 @@
     font-size: var(--font-size-lg);
     line-height: var(--line-height-relaxed);
     color: var(--color-text);
-    margin-bottom: var(--spacing-xl);
 
     // Typography
     h2, h3, h4, h5, h6 {
@@ -207,6 +261,17 @@
       }
     }
 
+    // drop cap the very first letter
+    p:first-of-type::first-letter {
+      font-size: 3.5em;
+      line-height: 0.9;
+      float: left;
+      margin: 0.1em 0.1em 0 0;
+      font-weight: 700;
+      color: var(--color-drop-cap);
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    
     // Images
     img {
       max-width: 100%;
@@ -323,4 +388,19 @@
       margin-left: auto;
     }
   }
+}
+
+.homepage {
+    float: left;
+    margin: 0 var(--spacing-lg) var(--spacing-md) 0;
+    shape-outside: circle(50%);
+    max-width: 150px;
+    width: 100%;
+
+    img {
+        border-radius: 50%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        width: 100%;
+    }
 }

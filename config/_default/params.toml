@@ -4,6 +4,7 @@ defaultAuthor = "alfred"
 newsletterAction = "https://buttondown.com/api/emails/embed-subscribe/OurManInIndia"
 contactFormAction = "https://formspree.io/f/alfred@ourmaninindia.com"
 googleAnalytics = "G-XXXXXXXXXX"  # Your GA4 ID
+date_format = "2 Jan 2006"
 
 [dev]
     enableDebug = true
@@ -14,3 +15,4 @@ googleAnalytics = "G-XXXXXXXXXX"  # Your GA4 ID
 
 [assets]
   js = ["js/main.js"]
+

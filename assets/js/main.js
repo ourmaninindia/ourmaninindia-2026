@@ -4,27 +4,27 @@
 // ==========================================
 
 // Import all modules
-import { initAccordions } from './modules/accordions.js';
-import { initArchive } from './modules/archive-dropdown.js';
-import { initCookie } from './modules/cookie-consent.js';
-import { initCodeTabs } from './modules/code-tabs.js';
-import { initCopyCode } from './modules/copy-code.js';
+import { initAccordions }     from './modules/accordions.js';
+import { initArchive }        from './modules/archive-dropdown.js';
+import { initCookie }         from './modules/cookie-consent.js';
+import { initCodeTabs }       from './modules/code-tabs.js';
+import { initCopyCode }       from './modules/copy-code.js';
 import { initCyclingGallery } from './modules/cycling-gallery.js';
-import { initDebug } from './modules/debug.js';
-import { initEscapeKey } from './modules/escape-key.js';
-import { initExternalLinks } from './modules/external-links.js';
-import { initImageGallery } from './modules/image-gallery.js';
-import { initLightbox } from './modules/lightbox.js';
-import { initMobileMenu } from './modules/mobile-menu.js';
-import { initModals } from './modules/modals.js';
+import { initDebug }          from './modules/debug.js';
+import { initEscapeKey }      from './modules/escape-key.js';
+import { initExternalLinks }  from './modules/external-links.js';
+import { initImageGallery }   from './modules/image-gallery.js';
+import { initLightbox }       from './modules/lightbox.js';
+import { initMobileMenu }     from './modules/mobile-menu.js';
+import { initModals }         from './modules/modals.js';
 import { initNewsletterForm } from './modules/newsletter.js';
-import { initProgressBar } from './modules/reading-progress.js';
-import { initPagination } from './modules/pagination.js';
-import { initSearch } from './modules/search.js';
-import { initSmartHeader } from './modules/smart-header.js';
-import { initSmoothScroll } from './modules/smooth-scroll.js';
-import { initThemeToggle } from './modules/darkmode.js';
-import { initTOC } from './modules/toc.js';
+import { initProgressBar }    from './modules/reading-progress.js';
+import { initPagination }     from './modules/pagination.js';
+import { initSearch }         from './modules/search.js';
+import { initSmartHeader }    from './modules/smart-header.js';
+import { initSmoothScroll }   from './modules/smooth-scroll.js';
+import { initThemeToggle }    from './modules/darkmode.js';
+import { initTOC }            from './modules/toc.js';
 
 
 

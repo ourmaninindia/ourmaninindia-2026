@@ -1,51 +1,43 @@
 {{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-<div class="about-page">
-    <!-- Existing about content -->
-    
-    <section class="about-timeline">
-        <h2>My Journey</h2>
-        
-        <div class="accordion-list">
-            <!-- 2024 -->
-            <div class="accordion">
-                <button class="accordion__toggle" aria-expanded="false">
-                    <span class="accordion__title">2024 - Full-Stack Developer & Blogger</span>
-                    <span class="accordion__icon">+</span>
-                </button>
-                <div class="accordion__content">
-                    <p>Launched this blog to share my experiences in web development and cycling. Completed a 2,000km cycling tour through the Alps. Started working as a freelance full-stack developer specializing in Hugo, React, and Node.js.</p>
-                    <ul>
-                        <li>Built 15+ Hugo sites for clients</li>
-                        <li>Cycled across 5 countries</li>
-                        <li>Published 50+ blog posts</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- 2023 -->
-            <div class="accordion">
-                <button class="accordion__toggle" aria-expanded="false">
-                    <span class="accordion__title">2023 - Career Transition</span>
-                    <span class="accordion__icon">+</span>
-                </button>
-                <div class="accordion__content">
-                    <p>Made the leap from finance to web development. Completed an intensive coding bootcamp and started freelancing while traveling through Europe by bicycle.</p>
-                </div>
-            </div>
-            
-            <!-- 2020-2022 -->
-            <div class="accordion">
-                <button class="accordion__toggle" aria-expanded="false">
-                    <span class="accordion__title">2020-2022 - Finance Controller</span>
-                    <span class="accordion__icon">+</span>
-                </button>
-                <div class="accordion__content">
-                    <p>Worked as Finance Controller across Europe, India, and Australia. Started cycling as a weekend hobby which eventually became a passion and primary mode of travel.</p>
-                </div>
-            </div>
+<div class="display-template hidden">
+    _default/about.html
+</div>
+
+{{ $img := .Resources.Get .Params.featured_image }}
+{{ if $img }}
+<div class="about__hero-bg">
+    <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="single__hero-img">
+</div>
+{{ end }}
+
+<div class="container">
+    <article class="single">
+        <header>
+            <h1 class="single__headline">{{ .Title }}</h1>
+            <div class="about__byline">{{ .ReadingTime }} min read</div>
+        </header>
+
+        <div class="single__content">
+            {{ .Content }}
         </div>
-    </section>
+        
+        <!-- Date created or modified -->
+        {{ partial "date.html" . }}
+
+        <!-- Footer: Full width -->
+        <div class="single__footer">
+           
+            <nav class="about__links">
+    <a href="{{ "/about/" | relURL }}">About</a>
+    <a href="{{ "/about/cv/" | relURL }}">CV</a>
+    <a href="{{ "/about/education/" | relURL }}">Education</a>
+</nav>
+
+            <!-- Comments -->
+            {{ partial "comments-cusdis.html" . }}
+        </div>
+    </article>
 </div>
 {{ end }}

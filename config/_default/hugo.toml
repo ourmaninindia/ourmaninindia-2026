@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Our Man in India"
 timeout = 60000 # was 25000
 # No theme line needed!
+enableGitInfo = true              # essential for Lastmod to work
 
 [markup]
   [markup.highlight]
@@ -44,6 +45,9 @@ timeout = 60000 # was 25000
 
 [pagination]
   pagerSize = 4
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
 
 [menus]
   [[menus.main]]

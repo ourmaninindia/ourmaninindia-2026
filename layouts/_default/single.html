@@ -5,20 +5,26 @@
     _default/single.html
 </div>
 
+{{ $img := .Resources.Get .Params.featured_image }}
+{{ if $img }}
+    <div class="single__hero-bg" style="background-image: url('{{ $img.RelPermalink }}')">
+        <div class="single__hero-overlay">
+            <h1 class="single__headline single__headline--hero">{{ .Title }}</h1>
+        </div>
+    </div>
+{{ end }}
+
 <div class="container">
-    <article class="newspaper">
-        <!-- Masthead: Full width above columns -->
-        <header class="newspaper__masthead">
-            {{ with .Params.image }}
-                <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="newspaper__hero">
+    <article class="single">
+        <header class="single__masthead">
+            {{ if not $img }}
+                <h1 class="single__headline">{{ .Title }}</h1>
             {{ end }}
 
-            <h1 class="newspaper__headline">{{ .Title }}</h1>
-
-            <div class="newspaper__byline">
+            <div class="single__byline">
                 <time>📅 {{ .Date.Format "January 02, 2006" }}</time>
                 
-                {{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
+                {{ $authorSlug := .Params.author | urlize }}
                 {{ $author := index .Site.Data.authors $authorSlug }}
                 {{ with $author }}
                     <span>By {{ .name }}</span>
@@ -33,7 +39,7 @@
 
             <!-- Categories and Tags -->
             {{ if or .Params.categories .Params.tags }}
-                <div class="newspaper__taxonomy">
+                <div class="single__taxonomy">
                     {{ with .Params.categories }}
                         {{ $validCategories := slice }}
                         {{ range . }}
@@ -42,7 +48,7 @@
                             {{ end }}
                         {{ end }}
                         {{ if gt (len $validCategories) 0 }}
-                            <span class="newspaper__section">
+                            <span class="single__section">
                                 {{ range $index, $cat := $validCategories }}
                                     {{ if $index }} • {{ end }}
                                     <a href="{{ "/categories/" | relLangURL }}{{ $cat | urlize }}">{{ $cat | upper }}</a>
@@ -59,7 +65,7 @@
                             {{ end }}
                         {{ end }}
                         {{ if gt (len $validTags) 0 }}
-                            <span class="newspaper__tags">
+                            <span class="single__tags">
                                 {{ range $index, $tag := $validTags }}
                                     {{ if $index }}, {{ end }}
                                     <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
@@ -72,29 +78,29 @@
         </header>
 
         <!-- Two-column content with floating images -->
-        <div class="newspaper__content">
+        <div class="single__content">
             {{ .Content }}
         </div>
 
         <!-- Footer: Full width below columns -->
-        <footer class="newspaper__footer">
+        <footer class="single__footer">
             <!-- Post Navigation -->
-            <nav class="newspaper__navigation">
+            <nav class="single__navigation">
                 {{ with .PrevInSection }}
-                    <a href="{{ .RelPermalink }}" class="newspaper__nav-link newspaper__nav-link--prev">
+                    <a href="{{ .RelPermalink }}" class="single__nav-link single__nav-link--prev">
                         ← {{ .Title }}
                     </a>
                 {{ end }}
 
                 {{ with .NextInSection }}
-                    <a href="{{ .RelPermalink }}" class="newspaper__nav-link newspaper__nav-link--next">
+                    <a href="{{ .RelPermalink }}" class="single__nav-link single__nav-link--next">
                         {{ .Title }} →
                     </a>
                 {{ end }}
             </nav>
 
             <!-- Author Bio -->
-            {{ partial "author-bio.html" . }}
+            <!--  partial "author-bio.html" . -->
 
             <!-- Comments -->
             {{ partial "comments-cusdis.html" . }}

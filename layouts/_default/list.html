@@ -6,60 +6,60 @@
 
 {{ $posts := where .Site.RegularPages "Section" .Section }}
 {{ $paginator := .Paginate $posts }}
-            
-<div class="container">
+
+<div class="container list">
     <h1>{{ .Title }}</h1>
 
- {{ if and .Content (eq $paginator.PageNumber 1) }}
-  <div class="section-intro">
-      {{ .Content }}
-  </div>
-{{ end }}
+    {{ if and .Content (eq $paginator.PageNumber 1) }}
+    <div class="section-intro list__content">
+        {{ .Content }}
+    </div>
+    {{ end }}
 
     <div class="list__grid">
         <div class="list__posts">
             {{ range $index, $post := $paginator.Pages }}
-                {{ if and .Date (ne (.Date.Format "2006") "0001") }}
-                    {{/* Alternate image position: even = left, odd = right */}}
-                    {{ $imagePosition := "left" }}
-                    {{ if modBool $index 2 }}
-                        {{ $imagePosition = "right" }}
-                    {{ end }}
-                    
-                    <article class="list__post list__post--image-{{ $imagePosition }}" data-post-date="{{ .Date.Format "2006-01" }}">
-                        {{/* Image floats and text wraps around it */}}
-                        {{ partial "post-image.html" . }}
-                        
-                        <div class="list__post-title">
-                            <h2>
-                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                            </h2>
-                            <div class="list__post-meta">
-                                <time>📅 {{ .Date.Format "Jan 02, 2006" }}</time>
-                                {{ with .Params.author }}
-                                    <span>👤 {{ . }}</span>
-                                {{ end }}
-                            </div>
-                        </div>
-                        
-                        <p class="list__post-excerpt">
-                            {{ with .Summary }}
-                                {{ . | plainify | truncate 300 }}
-                            {{ else }}
-                                {{ .Content | plainify | truncate 300 }}
-                            {{ end }}
-                        </p>
-                        
-                        <a href="{{ .RelPermalink }}" class="list__read-more">
-                            {{ i18n "readMore" }}
-                        </a>
-                    </article>
-                {{ end }}
+            {{ if and .Date (ne (.Date.Format "2006") "0001") }}
+            {{/* Alternate image position: even = left, odd = right */}}
+            {{ $imagePosition := "left" }}
+            {{ if modBool $index 2 }}
+            {{ $imagePosition = "right" }}
             {{ end }}
-            
+
+            <article class="list__post list__post--image-{{ $imagePosition }}" data-post-date="{{ .Date.Format "2006-01" }}">
+                {{/* Image floats and text wraps around it */}}
+                {{ partial "post-image.html" . }}
+
+                <div class="list__post-title">
+                    <h2>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h2>
+                    <div class="list__post-meta">
+                        <time>📅 {{ .Date.Format "Jan 02, 2006" }}</time>
+                        {{ with .Params.author }}
+                        <span>👤 {{ . }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <p class="list__post-excerpt">
+                    {{ with .Summary }}
+                    {{ . | plainify | truncate 300 }}
+                    {{ else }}
+                    {{ .Content | plainify | truncate 300 }}
+                    {{ end }}
+                </p>
+
+                <a href="{{ .RelPermalink }}" class="list__read-more">
+                    {{ i18n "readMore" }}
+                </a>
+            </article>
+            {{ end }}
+            {{ end }}
+
             {{ partial "pagination.html" $paginator }}
         </div>
-        
+
         {{ partial "sidebar.html" . }}
     </div>
 </div>
