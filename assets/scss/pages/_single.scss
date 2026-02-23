@@ -200,6 +200,10 @@
     line-height: var(--line-height-relaxed);
     color: var(--color-text);
 
+    figcaption p::first-letter {
+        all: unset;
+    }
+    
     // Typography
     h2, h3, h4, h5, h6 {
       color: var(--color-text-dark);
@@ -262,7 +266,7 @@
     }
 
     // drop cap the very first letter
-    p:first-of-type::first-letter {
+    p:first-of-type:not(figcaption p)::first-letter {
       font-size: 3.5em;
       line-height: 0.9;
       float: left;

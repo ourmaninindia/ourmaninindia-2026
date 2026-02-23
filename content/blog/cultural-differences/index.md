@@ -12,9 +12,7 @@ title : "Cultural Differences"
 cover : "cover-cultural-differences.jpg"
 ---
 
-{{< figure figcaption="Cultural differences " class="left" >}}
-	{{< img src= "cultural-differences.jpg"  alt="Cultural differences " >}}
-{{< /figure >}}
+{{< figure src="cultural-differences.jpg" alt="Cultural differences " caption="Cultural differences " class="left" >}}
 
 
 Geert Hofstede once said 

@@ -11,9 +11,7 @@ tags:
   - algorithms
 ---
 
-{{< figure figcaption="Arun Sehrawat" class="left" >}}
-	{{< img src= "think2013.jpg"  alt="Arun Sehrawat" >}}
-{{< /figure >}}
+{{< figure src="think2013.jpg" alt="Arun Sehrawat" caption="Arun Sehrawat" class="left" >}}
 #split#
 
 I have scraped data and created algorithms for our family travel website. It was therefore with more than an average interest that I listened to William Uricchio of MIT talk at THINK 2013 about algorithms and their effect on social conversion.

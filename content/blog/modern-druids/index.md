@@ -10,9 +10,7 @@ tags:
   - energy
 ---
 
-{{< figure figcaption="Steven Cowley" class="left" >}}
-	{{< img src= "steven-cowley.jpeg"  alt="Steven Cowley" >}}
-{{< /figure >}}
+{{< figure src="steven-cowley.jpeg" alt="Steven Cowley" caption="Steven Cowley" class="left" >}}
 
 #split#
 

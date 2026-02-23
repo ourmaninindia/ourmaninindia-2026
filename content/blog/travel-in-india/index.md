@@ -30,9 +30,7 @@ Let us know if you would like to sign on for this superb Goan experience! You ca
 
 ### Summertime Villa
 ###### Unique award winning villa
-{{< figure figcaption="Summertime, the best luxury holiday rental villa in Goa " class="left" >}}
-	{{< img src= "summertime.jpg"  alt="Summertime, the best luxury holiday rental villa in Goa " >}}
-{{< /figure >}}
+{{< figure src="summertime.jpg" alt="Summertime, the best luxury holiday rental villa in Goa " caption="Summertime, the best luxury holiday rental villa in Goa " class="left" >}}
 
 The perfect spot for a peaceful holiday in Goa, Summertime is a luxury rental villa that sits on a nearly two-acre property on the gentle slope of a quiet hill outside Calangute. After only a year of operation it has already won the prestigious World Boutique Hotel Award!
 

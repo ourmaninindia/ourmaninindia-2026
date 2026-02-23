@@ -14,9 +14,7 @@ tags:
   - software
 ---
 
-{{< figure figcaption="Centos" class="left" >}}
-	{{< img src= "centos.jpeg"  alt="Centos" >}}
-{{< /figure >}}
+{{< figure src="centos.jpeg" alt="Centos" caption="Centos" class="left" >}}
 
 *Published in [Dare magazine](http://www.dare.co.in/), August 2010*
 

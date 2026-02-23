@@ -18,9 +18,7 @@ tags:
 Fascinating. Absolutely fascinating. There is no other word to describe how the world is scrambling to deal with the WikiLeaks information and in particular with its founder Julian Assange. There is no cohesive response as everybody is shooting from the hip, often totally ignorant about the legal issues at stake.  
 The latter is even unclear to the legal community due to the novelty and the international character of the case. No surprise therefore that legal human rights heavy weight lawyer Geoffrey Robertson QC is going to defend Mr Assange.Before we jump to conclusions this is indeed a superb management case study in progress. Just consider this for a moment:
 
-{{< figure figcaption="Wiki Leaks " class="left" >}}
-	{{< img src="wikileaks.jpg"   alt="Wiki Leaks " >}}
-{{< /figure >}}
+{{< figure src="wikileaks.jpg" alt="Wiki Leaks " caption="Wiki Leaks " class="left" >}}
 
 - *What if the culprit was your own staff?*
 - *What would you do if you, as CEO, were requested to close down Mr Assange’s business relationship with your company?*

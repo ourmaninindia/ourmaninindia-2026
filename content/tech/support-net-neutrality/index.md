@@ -18,9 +18,7 @@ tags:
 
 Internet neutrality is a big deal. It enables you, or anyone else, to complete at a true level playing field with large corporations.
 
-{{< figure figcaption="Support Net neutrality" class="left" >}}
-	{{< img src="net-neutrality.png"   alt="Support Net neutrality " >}}
-{{< /figure >}}
+{{< figure src="net-neutrality.png" alt="Support Net neutrality " caption="Support Net neutrality" class="left" >}}
 
 Early last year Mark Zuckerberg had pushed to break net neutrality in India. It failed! Read here more about Facebook's biggest setback in [the Guardian](https://www.theguardian.com/technology/2016/may/12/facebook-free-basics-india-zuckerberg).
 

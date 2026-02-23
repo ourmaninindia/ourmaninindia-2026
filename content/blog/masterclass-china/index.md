@@ -16,9 +16,7 @@ tags:
 
 Earlier in the day Bob Geldof had stated that China has uplifted hundreds of millions of people out of poverty. Can this be sustained or not? Jonathan Fenby, founding partner of Trusted Sources, the emerging markets research and consultancy firm, spoke on this topic at [THiNK 2012](http://thinkworks.in/ "THiNK 2012").
 
-{{< figure figcaption="Jonathan Fenby (Photo courtesy Thinkworks Pvt Ltd)" class="left" >}}
-	{{< img src= "fenby.jpg"  alt="Jonathan Fenby " >}}
-{{< /figure >}}
+{{< figure src="fenby.jpg" alt="Jonathan Fenby " caption="Jonathan Fenby (Photo courtesy Thinkworks Pvt Ltd)" class="left" >}}
 
 
 Fenby started with saying that there is a large shift to domestic consumption but “water levels are dropping at catastrophic rates” and China has to make its agriculture work. Land grap is an issue in China but judges work for the Communist Party so the people on the land won’t get their right. Fenby joked that a gathering of more than eight people already constitutes a protest. The way workers are being treated has improved quite a lot he conceded. The people in the Apple factories do work long hours but he said “the conditions in the  country side were they come from is far worse”.

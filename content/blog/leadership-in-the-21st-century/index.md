@@ -11,9 +11,7 @@ cover : "cover-ilian_mihov.jpg"
 read_more_copy : "Read more about this session"
 ---
 
-{{< figure figcaption="Prof. Ilian Mihov " class="left" >}}
-	{{< img src="ilian_mihov.jpg"   alt="Prof. Ilian Mihov " >}}
-{{< /figure >}}
+{{< figure src="ilian_mihov.jpg" alt="Prof. Ilian Mihov " caption="Prof. Ilian Mihov " class="left" >}}
 #split#
 
 Pff isn’t it annoying if you cannot find a particular article or email? I just searched all over the place for a reference to the YouTube clip I had watched yesterday but to no avail. At least until eventually I stumbled upon the story. 

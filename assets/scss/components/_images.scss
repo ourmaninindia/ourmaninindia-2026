@@ -5,6 +5,46 @@
    IMAGES
    ==========================================*/
 
+   // drop cap the very first letter
+
+figure {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    margin: 0.5rem 0 0 0;
+  }
+
+  &.left {
+    float: left;
+    margin: 0 var(--spacing-lg) 0 0;
+    //shape-outside: margin-box;
+  }
+
+  &.right {
+    float: right;
+    margin: 0 0 0 var(--spacing-lg);
+    shape-outside: margin-box;
+  }
+
+  &.small {
+    width: 40%;
+  }
+
+  figcaption {
+    // font-size: 0.875rem;
+    color: var(--color-text-light);
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+
+    & p {
+      margin: 0;
+    }
+  }
+}
+
+
 .image-with-text .image {
   max-width: 200px;
 
@@ -29,11 +69,6 @@
 .image-right {
   float: right;
   margin: 0 0 1rem 1.5rem;
-}
-
-figcaption {
-  font-style: italic;
-  font-size: small;
 }
 
 // ==========================================
@@ -63,7 +98,9 @@ figure.post-image {
     display: block;
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
   }
 
   &:hover img {
@@ -95,8 +132,7 @@ figure.post-image {
     max-width: none;
     display: flex;
     flex-direction: column;
-    margin: 0 4px 0 0;  // small right margin to let shadow breathe
-    
+    margin: 0 4px 0 0; // small right margin to let shadow breathe
 
     picture {
       display: block;
@@ -109,7 +145,10 @@ figure.post-image {
       height: auto;
       max-height: none;
       object-fit: cover;
-      transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+      transition:
+        transform 0.3s ease,
+        filter 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
     &:hover {
@@ -118,9 +157,9 @@ figure.post-image {
         filter: brightness(1.08);
         cursor: pointer;
       }
-      
+
       picture {
-      box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.12);    // overall lift
+        box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.12); // overall lift
       }
     }
 

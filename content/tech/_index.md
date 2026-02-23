@@ -10,9 +10,7 @@ title : "Open Source"
 disable_comments : 
 ---
 
-{{< figure figcaptionX="Enjoy and do spread the word of Linux." class="right" >}}
-	{{< img src="linux100.webp" alt="Linux" >}}
-{{< /figure >}}
+{{< figure src="linux100.webp" alt="Linux" class="right" >}}
 
 The agility that Open Source produces is tremendous but only as effective as the skills of your top IT person. The learning curve is steep but tremendously rewarding.
 

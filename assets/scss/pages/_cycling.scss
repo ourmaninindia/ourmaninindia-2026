@@ -10,13 +10,17 @@
     font-weight: 600;
   }
 
+  & time {
+    text-align: center;
+  }
+
   // ============================================
   // Masthead
   // ============================================
 
   &__masthead {
-    margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    // padding-bottom: var(--spacing-md);
     border-bottom: 3px double var(--color-border);
     text-align: center;
   }
@@ -28,7 +32,7 @@
     color: var(--color-text-dark);
     font-family: Georgia, 'Times New Roman', serif;
     letter-spacing: -0.02em;
-    margin: 0 0 var(--spacing-md) 0;
+    margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
   }
 
   &__byline {
@@ -61,7 +65,7 @@
     }
 
     // drop cap the very first letter
-    p:first-of-type::first-letter {
+   p:first-of-type:not(figcaption p)::first-letter {
       font-size: 3.5em;
       line-height: 0.9;
       float: left;
@@ -76,6 +80,10 @@
 // ============================================
 // Day entry — 60/40 grid
 // ============================================
+
+.day-entry {
+  margin-bottom: 1.5rem;
+}
 
 .cycling-day {
   display: grid;

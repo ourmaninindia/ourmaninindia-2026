@@ -22,9 +22,7 @@ I just boarded the flight to Goa and thought about the comments of Prof Yves Doz
   
 How true. We carry so much tacit knowledge but are often unable to link it to a particular point in time. How much is lost in time I don’t know. Probably a lot. If you don’t note down your most important lessons learned you may forget about it and run the change of making the same mistakes others would. An alliance value creation logic either gains competitive power through co-option, leverages co-specialised resources, or adds value through competence learning. It’s an interesting vehicle to create value. After all, mergers are not always an option nor desirable.
 
-{{< figure figcaption="Prof Yves Doz" class="left" >}}
-	{{< img src="doz.jpeg"   alt="Prof Yves Doz" >}}
-{{< /figure >}}
+{{< figure src="doz.jpeg" alt="Prof Yves Doz" caption="Prof Yves Doz" class="left" >}}
 
 
 One of the most important concepts that stuck with me is the one of **social capital**. You may have the number of staff to run an alliance of some sort but do they have the required skills to deal with it? HR capital therefore does not equate to social capital. Make therefore a conscience choice of the selection of social skills required. There is no such thing as Best Practices when running an alliance. One interesting comment shown was where Eli Hurvitz, chairman of TEVA, gave one clear message: “*I want to make absolutely sure WR Grace makes as much money as possible from this deal*“. In a true partnership, if one is doing well the other will also do well. I wonder how a Marwari would look at this…

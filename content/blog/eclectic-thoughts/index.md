@@ -10,9 +10,7 @@ title : "Eclectic thoughts"
 cover : "cover-havanna.jpg"
 ---
 
-{{< figure figcaption="Our Man in Havanna " class="left" >}}
-	{{< img src= "havanna.jpeg"  alt="Our Man in Havanna " >}}
-{{< /figure >}}
+{{< figure src="havanna.jpeg" alt="Our Man in Havanna " caption="Our Man in Havanna " class="left" >}}
 
 #split#
 

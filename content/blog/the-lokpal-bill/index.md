@@ -14,9 +14,7 @@ read_more_copy : "Read more about this news"
 
 The OECD is advocating to fight corruption. See [this link](http://www.oecd.org/document/32/0,3746,en_21571361_44315115_47726560_1_1_1_1,00.html) for more. Also the people of India are sick of corruption. Anna Hazare’s Jantar Mantar fast, which got overwhelming public support, has not gone in vain. The latest government version of the proposed Lokpal Bill is certainly an improvement over the anaemic bill drafted by the law ministry in December 2010, but the government is still not ready to go the whole hog. It wants to retain certain controls. This, unfortunately, may provide escape routes to the corrupt.  
   
-{{< figure figcaption="Jan Lokpal " class="left" >}}
-	{{< img src="lokpal.jpeg"   alt="Jan Lokpal " >}}
-{{< /figure >}}
+{{< figure src="lokpal.jpeg" alt="Jan Lokpal " caption="Jan Lokpal " class="left" >}}
 
  TIMES CAMPAIGN: ACT AGAINST CORRUPTION
 

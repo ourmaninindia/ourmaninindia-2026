@@ -13,9 +13,7 @@ featured_image : "cover-ports.jpg"
 read_more_copy : "Read more about this interview"
 ---
 
-{{< figure figcaption="Ports & Infrastructure " class="left" >}}
-	{{< img src=  "ports.jpg" alt="Ports & Infrastructure" >}}
-{{< /figure >}}
+{{< figure src="ports.jpg" alt="Ports & Infrastructure" caption="Ports & Infrastructure " class="left" >}}
 
 #split#
 
