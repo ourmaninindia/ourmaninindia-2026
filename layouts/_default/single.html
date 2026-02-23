@@ -7,22 +7,18 @@
 
 {{ $img := .Resources.Get .Params.featured_image }}
 {{ if $img }}
-    <div class="single__hero-bg" style="background-image: url('{{ $img.RelPermalink }}')">
-        <div class="single__hero-overlay">
-            <h1 class="single__headline single__headline--hero">{{ .Title }}</h1>
-        </div>
-    </div>
+    <img class="single__hero-bg" src="{{ $img.RelPermalink }}">
 {{ end }}
 
 <div class="container">
-    <article class="single">
-        <header class="single__masthead">
-            {{ if not $img }}
-                <h1 class="single__headline">{{ .Title }}</h1>
-            {{ end }}
+<article class="single">
+    <header class="single__masthead">
+        
+            <h1 class="single__headline">{{ .Title }}</h1>
+       
 
             <div class="single__byline">
-                <time>📅 {{ .Date.Format "January 02, 2006" }}</time>
+                {{ partial "date-modified" . }}
                 
                 {{ $authorSlug := .Params.author | urlize }}
                 {{ $author := index .Site.Data.authors $authorSlug }}
@@ -34,29 +30,12 @@
                     {{ end }}
                 {{ end }}
                 
-                <span>{{ .ReadingTime }} min read</span>
+                <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
             </div>
 
-            <!-- Categories and Tags -->
-            {{ if or .Params.categories .Params.tags }}
-                <div class="single__taxonomy">
-                    {{ with .Params.categories }}
-                        {{ $validCategories := slice }}
-                        {{ range . }}
-                            {{ if ne . "" }}
-                                {{ $validCategories = $validCategories | append . }}
-                            {{ end }}
-                        {{ end }}
-                        {{ if gt (len $validCategories) 0 }}
-                            <span class="single__section">
-                                {{ range $index, $cat := $validCategories }}
-                                    {{ if $index }} • {{ end }}
-                                    <a href="{{ "/categories/" | relLangURL }}{{ $cat | urlize }}">{{ $cat | upper }}</a>
-                                {{ end }}
-                            </span>
-                        {{ end }}
-                    {{ end }}
-
+            <!-- Tags -->
+            {{ if .Params.tags }}
+                <div class="single__taxonomy">{{ i18n "tags" }}:
                     {{ with .Params.tags }}
                         {{ $validTags := slice }}
                         {{ range . }}
@@ -85,26 +64,29 @@
         <!-- Footer: Full width below columns -->
         <footer class="single__footer">
             <!-- Post Navigation -->
+            <div>
+                {{ if or .PrevInSection .NextInSection }}
+                <h4 class="single__navigation-label">Continue reading</h4>
+                {{ end }}
+            </div>
             <nav class="single__navigation">
+               
                 {{ with .PrevInSection }}
                     <a href="{{ .RelPermalink }}" class="single__nav-link single__nav-link--prev">
                         ← {{ .Title }}
                     </a>
                 {{ end }}
-
+ 
                 {{ with .NextInSection }}
                     <a href="{{ .RelPermalink }}" class="single__nav-link single__nav-link--next">
                         {{ .Title }} →
                     </a>
                 {{ end }}
             </nav>
-
-            <!-- Author Bio -->
-            <!--  partial "author-bio.html" . -->
-
+        
+        </footer>
             <!-- Comments -->
             {{ partial "comments-cusdis.html" . }}
-        </footer>
     </article>
 </div>
 {{ end }}

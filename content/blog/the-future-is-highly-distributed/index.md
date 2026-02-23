@@ -24,7 +24,7 @@ This so-called headless architecture (also called “decoupled”) is part of a 
 
 Rather than building content at runtime for each request, content is pre-built and optimized during a build setup using a site generator and other build tools. A Jamstack deployment doesn’t run on a traditional setup of origin servers. Instead, automated deployments are used to push sites directly to your content delivery network (_CDN_). These are very fast.
 
-{{< figure src="bottle.jpg" alt="Feeling relaxed using JAMstack" caption="Feeling relaxed using JAMstack" class="right" >}}
+{{< figure src="bottle.jpg" alt="Feeling relaxed using JAMstack" caption="Feeling relaxed using JAMstack" class="small right" >}}
 
 The virtual conference was, as promised, a dynamic day of keynotes, interactive sessions, live Q&A and 1:1 networking. Or should I say evening as, due to time zones, it was from 6 to midnight for me.
 

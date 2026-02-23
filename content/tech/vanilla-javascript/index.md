@@ -1,5 +1,4 @@
 ---
-
 date : 2023-07-30T15:00:00Z
 title: "Vanilla JavaScript, extremely good reasons you should use this to create a lean web!"
 featured : true

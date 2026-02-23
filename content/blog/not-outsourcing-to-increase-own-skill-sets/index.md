@@ -17,8 +17,7 @@ cover : "cover-negombo.jpg"
 read_more_copy : "Read more about my journey"
 ---
 
-{{< figure src="negombo.jpg" alt="Outside Negombo " caption="Outside Negombo " class="left" >}}
-#split#
+{{< figure src="cover-negombo.jpg" alt="Outside Negombo " caption="Outside Negombo " class="small left" >}}
 
 South of Negombo, Sri Lanka. I found myself walking in the rain along a totally unknown path along a small river which I hoped, and half expected, would lead me to the beach. The rain had been a bit of a light drizzle when I first set off but slowly it gathered the look and feel of a monsoon shower. Even my umbrella started to feel inadequate to deal with the steady moisture descending from the grey clouds above. It was a pathetic piece of equipment just bought in despair the day before. A few villagers looked puzzled as to why I would go for a stroll at the time when they were seeking shelter in what was had to pass as a house. I hardly paid attention to them thought let alone to the pigs scurrying around.
 

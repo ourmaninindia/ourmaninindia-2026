@@ -55,6 +55,12 @@
  * 4. ESC key (handled by initEscapeKey)
  */
 export function initLightbox() {
+    document.querySelectorAll('figure img').forEach(img => {
+        img.classList.add('lightbox-trigger');
+        img.loading = 'lazy';
+        img.decoding = 'async';
+    });
+
     const triggers = document.querySelectorAll('.lightbox-trigger');
     if (triggers.length === 0) return;
 
@@ -77,14 +83,14 @@ export function initLightbox() {
      * Loads clicked image into lightbox and shows overlay
      */
     triggers.forEach(function (trigger) {
-        // Visual indicator that image is clickable
-        trigger.style.cursor = 'pointer';
-        
+        // Visual indicator that image is clickable is set in SCSS
+        // trigger.style.cursor = 'pointer'; 
+
         trigger.addEventListener('click', function () {
             // Load clicked image into lightbox
             lightboxImg.src = this.src;
             lightboxImg.alt = this.alt;
-            
+
             // Show lightbox and prevent body scroll
             lightbox.classList.add('lightbox--open');
             document.body.style.overflow = 'hidden';

@@ -28,6 +28,6 @@ The action, or rather inaction or inability as the case may be, of the superviso
 
 You can guess with whom I don’t want to fly next as I now associate the blue KLM logo with bright orange flags whose purpose is to warn fellow travellers. With that thought I tried to sleep for the last hour.
 
-{{< figure src="klm2.jpg" alt="cycle flag" caption="The 250g flag" class="left" >}}
+{{< figure src="cover-klm2.jpg" alt="cycle flag" caption="The 250g flag" class="small left" >}}
 
 P.S. KLM Customer Care responded very professionally to my complaint. They stressed that the rules were being followed properly by their staff but admitted freely that the amount charged was in no relationship to the little flags. As an one time exception they offered to refund the full amount which I accepted graciously. If only their supervisor or her system had allowed some level of discretion this blog would not have been written. Even though I say it myself, I like the blog so perhaps it wasn’t so bad. I now will be flying with KLM to the States next month dreaming of our wonderful cycle rides.

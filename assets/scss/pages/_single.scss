@@ -4,9 +4,9 @@
 // Single Post Layout
 // ============================================
 
+
 .single {
-  
-  
+  background-color: var(--color-white);
 
   &__grid {
     display: grid;
@@ -38,6 +38,14 @@
     margin-bottom: var(--spacing-xl);
   }
 
+  & h1 {
+    margin: 0
+  }
+
+  &__masthead {
+    background-color: var(--color-bg);
+  }
+
   &__featured-image {
     width: 100%;
     height: auto;
@@ -45,6 +53,10 @@
     border-radius: var(--border-radius-lg);
     margin-bottom: var(--spacing-lg);
     box-shadow: var(--shadow-md);
+  }
+
+  &__headline {
+    font-family: Arapey;
   }
 
   &__title {
@@ -65,7 +77,8 @@
     padding-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--color-border);
 
-    span, time {
+    span,
+    time {
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -74,56 +87,30 @@
 
   &__hero-bg {
     width: 100%;
-    min-height: 400px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    margin-bottom: var(--spacing-lg);
-  }
-/*
+    height: auto;
+    max-height: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto var(--spacing-lg);
+}
+
   &__hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.65) 100%
-    );
-    display: flex;
-    align-items: flex-end;
-    padding: var(--spacing-xl);
-  }
-
-  &__headline--hero {
-    color: var(--color-white);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    margin: 0;
-    font-size: clamp(1.75rem, 5vw, 3rem);
-  }
-*/
-
-&__hero-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: var(--spacing-xl);
-   background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0) 60%
-    );
-}
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+  }
 
-&__headline--hero {
+  &__headline--hero {
     color: var(--color-white);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     margin: 0;
     font-size: clamp(1.75rem, 5vw, 3rem);
-}
+  }
 
   // ============================================
   // Taxonomy (Categories & Tags)
@@ -133,11 +120,14 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
-    padding: var(--spacing-md);
     background: var(--color-bg-secondary);
     border-radius: var(--border-radius-md);
     border: 1px solid var(--color-border);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+
+    a {
+      text-decoration: none;
+    }
 
     @media (min-width: $breakpoint-tablet) {
       flex-direction: row;
@@ -199,13 +189,20 @@
     font-size: var(--font-size-lg);
     line-height: var(--line-height-relaxed);
     color: var(--color-text);
+    text-align: justify;
+    background-color: var(--color-bg);
+    padding-top: .5rem;
 
     figcaption p::first-letter {
-        all: unset;
+      all: unset;
     }
-    
+
     // Typography
-    h2, h3, h4, h5, h6 {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       color: var(--color-text-dark);
       margin-top: 2em;
       margin-bottom: 1em;
@@ -242,7 +239,8 @@
     }
 
     // Lists
-    ul, ol {
+    ul,
+    ol {
       margin-bottom: var(--spacing-md);
       padding-left: 2rem;
 
@@ -273,15 +271,15 @@
       margin: 0.1em 0.1em 0 0;
       font-weight: 700;
       color: var(--color-drop-cap);
-      font-family: Georgia, 'Times New Roman', serif;
+      //font-family: Georgia, 'Times New Roman', serif;
     }
-    
+
     // Images
     img {
       max-width: 100%;
-      width: auto;
+      //width: auto;
       border-radius: var(--border-radius-md);
-      margin: var(--spacing-lg) 0;
+      //margin: var(--spacing-lg) 0;
     }
 
     // Code blocks
@@ -316,7 +314,8 @@
       border-collapse: collapse;
       margin-bottom: var(--spacing-md);
 
-      th, td {
+      th,
+      td {
         padding: 0.75rem;
         border: 1px solid var(--color-border);
         text-align: left;
@@ -344,13 +343,22 @@
   // Navigation (Prev/Next)
   // ============================================
 
+  &__footer {
+    border-top: 2px solid var(--color-border);
+    padding: 1rem;
+    background-color: var(--color-bg);
+  }
+
+  &__navigation-label {
+    margin-bottom: 0;
+  }
+
   &__navigation {
     display: flex;
     justify-content: space-between;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
     padding-top: var(--spacing-lg);
-    border-top: 2px solid var(--color-border);
 
     @media (max-width: $breakpoint-mobile) {
       flex-direction: column;
@@ -360,15 +368,9 @@
   &__nav-link {
     display: inline-flex;
     align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-md);
-    color: var(--color-text-dark);
+    // padding: var(--spacing-sm) var(--spacing-md);
     text-decoration: none;
     font-weight: 500;
-    transition: all var(--transition-base);
-    box-shadow: var(--shadow-sm);
     max-width: 48%;
 
     @media (max-width: $breakpoint-mobile) {
@@ -376,11 +378,7 @@
     }
 
     &:hover {
-      background: var(--color-primary);
-      border-color: var(--color-primary);
-      color: var(--color-white);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
+      color: var(--color-primary-dark);
     }
 
     &--prev {
@@ -395,16 +393,20 @@
 }
 
 .homepage {
-    float: left;
-    margin: 0 var(--spacing-lg) var(--spacing-md) 0;
-    shape-outside: circle(50%);
-    max-width: 150px;
-    width: 100%;
+  float: left;
+  margin: 0 var(--spacing-lg) var(--spacing-md) 0;
+  shape-outside: circle(50%);
+  max-width: 150px;
+  width: 100%;
+  
+  & img:hover {
+    cursor:inherit;
+  }
 
-    img {
-        border-radius: 50%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        width: 100%;
-    }
+  img {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: 100%;
+  }
 }

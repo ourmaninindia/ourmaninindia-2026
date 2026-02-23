@@ -2,13 +2,6 @@
 {{ define "main" }}
 <div class="display-template hidden">_default/taxonomy.html</div>
 
-<div style="background: yellow; padding: 10px;">
-    DEBUG: Page Kind: {{ .Kind }}<br>
-    Title: {{ .Title }}<br>
-    Page count: {{ len .Pages }}<br>
-    Paginator count: {{ len .Paginator.Pages }}
-</div>
-
 <div class="container">
     <div class="list__taxonomy-description">{{ i18n "postsTagged" }}</div>
     <h1>{{ .Title }}</h1>

@@ -1,15 +1,18 @@
-<h3 class="widget__title">{{ i18n "archive" }}</h3>
-<div class="widget__content">
-    {{ $filteredPosts := where (.Site.Pages.ByDate.Reverse) "Section" "blog" }}
+<!-- archive widget -->
+ {{ $filteredPosts := where (.Site.Pages.ByDate.Reverse) "Section" "blog" }}
 
-    <select class="archive__dropdown" id="archive-dropdown">
-        <option value="">Select a month ({{ len $filteredPosts }} posts)</option>
-        {{ range $filteredPosts.GroupByDate "2006-01" }}
+<div class="widget">
+    <h3 class="widget__title">{{ i18n "archive" }}</h3>
+    <div class="widget__content">
+        <select class="archive__dropdown" id="archive-dropdown">
+            <option value="">Select a month ({{ len $filteredPosts }} posts)</option>
+            {{ range $filteredPosts.GroupByDate "2006-01" }}
             {{ $firstPost := index .Pages 0 }}
             {{ $archiveKey := $firstPost.Date.Format "2006-01" }}
             <option value="/blog/archive/{{ $archiveKey }}/">
                 {{ $firstPost.Date.Format "January 2006" }} ({{ len .Pages }})
             </option>
-        {{ end }}
-    </select>
+            {{ end }}
+        </select>
+    </div>
 </div>

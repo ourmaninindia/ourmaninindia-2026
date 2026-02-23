@@ -14,13 +14,16 @@
     text-align: center;
   }
 
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
   // ============================================
   // Masthead
   // ============================================
 
   &__masthead {
     margin-bottom: var(--spacing-md);
-    // padding-bottom: var(--spacing-md);
     border-bottom: 3px double var(--color-border);
     text-align: center;
   }
@@ -33,6 +36,7 @@
     font-family: Georgia, 'Times New Roman', serif;
     letter-spacing: -0.02em;
     margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
+    width: 100vw;
   }
 
   &__byline {
@@ -41,7 +45,6 @@
     font-style: italic;
     display: flex;
     justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
   }
 
@@ -112,13 +115,12 @@
 
     h3 {
       font-size: 1.5rem;
-      font-family: Georgia, 'Times New Roman', serif;
       font-weight: 700;
       color: var(--color-text-dark);
       border-bottom: 1px solid var(--color-border-light);
       padding-bottom: 0.25rem;
       margin: 0 0 0.75em 0;
-      clear: both;
+      text-align: left;
     }
 
     p:first-of-type::first-letter {
@@ -188,29 +190,7 @@
       }
     }
 
-    // Single image fills column width
-    figure.post-image {
-      float: none;
-      max-width: 100%;
-      display: block;
-      margin: 0;
-
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: var(--border-radius-sm);
-        border: 1px solid var(--color-border-light);
-      }
-
-      figcaption {
-        display: block;
-        font-style: italic;
-        font-size: small;
-        text-align: center;
-        padding: 0.25rem 0;
-        color: var(--color-text-light);
-      }
-    }
+    
 
     // On tablet and below, images go below text
     @media (max-width: $breakpoint-tablet) {

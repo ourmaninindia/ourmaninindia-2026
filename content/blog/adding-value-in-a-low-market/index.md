@@ -15,7 +15,7 @@ If one can borrow, why build or buy? More than ever, in today’s climate where 
   
 These words of wisdom from INSEAD applied to the ING bank where I worked (increase the throughput in Change Management by means of outsourcing). It also applies to the shipbuilding industry, my current field of endeavour. Typically all shipyards have to invest heavily to gain a competitive edge which in turn demands a higher turnover to maintain their ROI. The high investment in capital machinery also required the skilled man power able to manage that.
 
-{{< figure src="insead.jpg" alt="INSEAD" caption=" " class="left" >}}
+{{< figure src="cover-insead.jpg" alt="INSEAD" caption="INSEAD " class="small left" >}}
 
 At the moment, and considering the economic climate, the Indian market is not mature enough to be wiling to pay a premium for quality. Sad but true. Classification agencies go soft as their bills need to be paid. Often you will see people opting for a typical low quality product made by some small time contractor with the use of unskilled labour. This is not such a huge problem for a shipyard with a low infrastructure. For example in Gujarat I visited a shipyard where they build complete ships on the beach without too much of a problem.
 

@@ -10,6 +10,11 @@ time {
   text-align: right;
   width: 100%;
   display: block;
-  margin-bottom: 1rem;
   font-style: italic;
+}
+
+.reading-time {
+  text-align: right;
+  font-style: italic;
+  font-size: var(--font-size-sm);
 }

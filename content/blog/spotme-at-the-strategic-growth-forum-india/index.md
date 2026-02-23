@@ -11,14 +11,13 @@ featured_image : "chawla.jpg"
 read_more_copy : "Read more about this event"
 ---
 
-{{< figure src="hawla.jpg" alt="Ms Chawla of Luxury Works" caption="Ms Chawla (Photo courtesy Luxury Works)" class="left" >}}
-#split#
+{{< figure src="chawla.jpg" alt="Ms Chawla of Luxury Works" caption="Ms Chawla (Photo courtesy Luxury Works)" class="small left" >}}
 
 It was an event for CEOs and by invitation only. That is more often said than done but EY, as in [Ernst & Young](http://www.ey.com/GL/en/Services/Strategic-Growth-Markets/Strategic-Growth-Forum-events "Ernst & Young"), were true to their slogan *‘Quality in Everything We Do’*and had send me a polite invite to attend their Strategic Growth Forum India 2012 without irritating follow up phone calls. It was a very well organised three day action packed event. Action packed because, apart from the actual sessions and panel discussions, it had many breaks to network with high calibre delegates.
 
 I am normally slow to start the day but the first day woke me fully when the very beautiful Pushpanjali Chawla joined me for breakfast. Her company Luxury Works Gifting Services aims at the super rich thereby excluding me as a potential client. Not that my Calvinistic upbringing would agree for me to become one. She got all my attention as she explained how she has to deal with expectation levels. “You may have a Maserati” she explained “but you cannot expect the same customer support as an ordinary car dealer”. As I am waiting for my BMW parts to come from Germany I could relate to that.
 
-{{< figure src="spotme.png" alt="Spot Me" caption="Spot Me" class="left" >}}
+{{< figure src="cover-spotme.png" alt="Spot Me" caption="Spot Me" class="small right" >}}
 
 Interestingly, EY utilised a SpotMe device for the event. This is an electronic gadget that looks like a hybrid between the old Palm and a mobile. As I chatted with the SpotMe Product Manager, the Swiss Patrice Müller, I discovered that it has a lot of high tech stuff behind it. It was a novel experience for most of us. The gadget had the day’s program as well as a listing of all the delegates complete with their pictures and profiles. The main feature, as you may have guessed, is the feature to spot delegates. You have to select the person you are keen to meet, click the tiny SpotMe button, and the gadget vibrates as soon as he or she is within earshot. So no more squinting your eyes to try and read the name on a badge and risking leaving female delegates disturbed wondering what you are really looking at. If you are very keen to meet a particular person fast it even has a radar feature. So yes, it is an absolutely brilliant device and I hope to come across it more often.
 

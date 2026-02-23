@@ -20,12 +20,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 1.2em;
   line-height: 1.2;
+  text-wrap: balance;
+  width: fit-content;
+  text-align: left;
 }
 
 h1 {
   font-weight: 200;
   font-size: clamp(2rem, 5vw, 2.5rem); // ~32px–40px
   font-family: halimun, georgia, serif;
+   text-align: center;
 }
 
 // H2 – Section headings
@@ -89,6 +93,7 @@ hr {
 
 p {
   margin-bottom: var(--spacing-md);
+  text-wrap:pretty;
 }
 
 code {

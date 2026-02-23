@@ -14,7 +14,7 @@ read_more_copy : "Read more about this news"
 
 
 
-{{< figure src="world-economic-forum.jpg" alt="World Economic Forum" caption=" " class="left" >}}
+{{< figure src="cover-world-economic-forum.jpg" alt="World Economic Forum" caption=" " class="small left" >}}
 
 For those of us dealing with risk management, and who doesn’t these days, here is a link to the [2013 World Economic Forum Report on Global Risks](http://reports.weforum.org/global-risks-2013/ "2013 World Economic Forum Report on Global Risks").
 

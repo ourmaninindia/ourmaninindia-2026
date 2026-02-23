@@ -13,10 +13,7 @@ featured_image : "cover-ports.jpg"
 read_more_copy : "Read more about this interview"
 ---
 
-{{< figure src="ports.jpg" alt="Ports & Infrastructure" caption="Ports & Infrastructure " class="left" >}}
-
-#split#
-
+{{< figure src="cover-ports.jpg" alt="Ports & Infrastructure" caption="Ports & Infrastructure " class="small left" >}}
 
 Sonali Chatterjee of the *Indian Ports & Infrastructure* magazine did a Q&A with me some time back which appeared in their February issue. I have created a pdf of the relevant article for you to [read](https://images.ourmaninindia.com/Ports-Infrastructure.pdf).
 

@@ -12,8 +12,7 @@ title : "Cultural Differences"
 cover : "cover-cultural-differences.jpg"
 ---
 
-{{< figure src="cultural-differences.jpg" alt="Cultural differences " caption="Cultural differences " class="left" >}}
-
+{{< figure src="cover-cultural-differences.jpg" alt="Cultural differences " caption="Cultural differences " class="small left" >}}
 
 Geert Hofstede once said 
 > Cultural differences are a nuisance at best and often a disaster.

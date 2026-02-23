@@ -32,7 +32,7 @@ For our journey we had two support buses each with three drivers. I had promised
 
 I parked my cycle in the bus, drove to a friend’s place to collect our luggage, and found my way to the starting point. This was a small farm where we had to load all the cycles, luggage, and food for along the way: a lot of energy drinks and energy bars. The owner of the property, a fellow cyclist who unfortunately could not join this year, offered us a great home cooked lasagna. With a most satisfied stomach the three of us said goodbye and drove towards the south changing drivers a few times.  
 
-{{< img src="20230830_food_bus.jpg" alt="Our food bus" caption="The food bus getting ready" >}}
+{{< img src="20230830_food_bus.jpg" alt="Our food bus"  caption="The food bus getting ready" >}}
 
 ### Aug 31 Geneva to Les Carroz d’Araches (56km, 1,230 metres)
 After driving overnight to <em>Geneva</em> we sat down for a light breakfast not far from the station and waited for the rest of the gang who had either travelled by bus or train. 

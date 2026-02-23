@@ -1,28 +1,31 @@
+<!-- tags widget -->>
 {{ $sectionTags := slice }}
 
 {{ if .Section }}
-    {{/* Section page - show tags from current section */}}
-    {{ $sectionTags = partial "get-section-tags" .Section }}
+{{/* Section page - show tags from current section */}}
+{{ $sectionTags = partial "get-section-tags" .Section }}
 {{ else }}
-    {{/* Taxonomy/other pages - show all tags */}}
-    {{ $sectionTags = .Site.Taxonomies.tags.ByCount }}
+{{/* Taxonomy/other pages - show all tags */}}
+{{ $sectionTags = .Site.Taxonomies.tags.ByCount }}
 {{ end }}
 
 {{ if gt (len $sectionTags) 0 }}
-<h3 class="widget__title">{{ i18n "popularTags" }}</h3>
-<div class="widget__content">
-    <div class="tag__cloud">
-        {{ if $.Section }}
+<div class="widget">
+    <h3 class="widget__title">{{ i18n "popularTags" }}</h3>
+    <div class="widget__content">
+        <div class="tag__cloud">
+            {{ if $.Section }}
             {{/* Section page - $sectionTags items have .name */}}
             {{ range first 15 $sectionTags }}
-                <a href="{{ "tags" | relLangURL }}/{{ .name | urlize }}" class="tag">{{ .name }}</a>
+            <a href="{{ " tags" | relLangURL }}/{{ .name | urlize }}" class="tag">{{ .name }}</a>
             {{ end }}
-        {{ else }}
+            {{ else }}
             {{/* Taxonomy page - $sectionTags items have .Name and .Page */}}
             {{ range first 15 $sectionTags }}
-                <a href="{{ .Page.RelPermalink }}" class="tag">{{ .Name }}</a>
+            <a href="{{ .Page.RelPermalink }}" class="tag">{{ .Name }}</a>
             {{ end }}
-        {{ end }}
+            {{ end }}
+        </div>
     </div>
 </div>
 {{ end }}

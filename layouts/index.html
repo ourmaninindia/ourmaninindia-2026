@@ -1,14 +1,12 @@
 {{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
 
 {{- define "main" }}
-<div class="hidden">
+<div class="display-template hidden">
   index.html
 </div>
 
  <div class="container">
-  <div>
-      <time>⏱️ {{ .ReadingTime }} {{ i18n "min-read"}}</time>
-  </div>
+   {{ partial "date" . }}
 
   <div class="content-header">
       <div></div>

@@ -18,16 +18,16 @@ tags:
 Fascinating. Absolutely fascinating. There is no other word to describe how the world is scrambling to deal with the WikiLeaks information and in particular with its founder Julian Assange. There is no cohesive response as everybody is shooting from the hip, often totally ignorant about the legal issues at stake.  
 The latter is even unclear to the legal community due to the novelty and the international character of the case. No surprise therefore that legal human rights heavy weight lawyer Geoffrey Robertson QC is going to defend Mr Assange.Before we jump to conclusions this is indeed a superb management case study in progress. Just consider this for a moment:
 
-{{< figure src="wikileaks.jpg" alt="Wiki Leaks " caption="Wiki Leaks " class="left" >}}
 
 - *What if the culprit was your own staff?*
 - *What would you do if you, as CEO, were requested to close down Mr Assange’s business relationship with your company?*
-- *Would your action be different if it came from the Attorney General**or a foreign national body.*
-- *How would you present your decision to the world at large?  
-*
-- *How would you deal with a sudden popular public outcry against your actions?  
-*
+- *Would your action be different if it came from the Attorney General or a foreign national body?*
+- *How would you present your decision to the world at large?*
+- *How would you deal with a sudden popular public outcry against your actions?*
 
+
+
+{{< figure src="cover-wikileaks.jpg" alt="Wiki Leaks " caption="Wiki Leaks " class="small right" >}}
 There is a tremendous amount of hypocrisy involved here. In a bid to attract attention  
  Sarah Palin’s reaction on her Facebook is most extreme: “Why was he not pursued with the same urgency we pursue al Qaeda and Taliban leaders?” she writes. I guess she can be forgiven for being somewhat biased as her own mail box was hacked in 2008 and information was displayed on [WikiLeaks](http://www.wikileaks.ch/ "Wikileaks") just at the time of the presidential election campaign.
 
