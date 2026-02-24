@@ -9,6 +9,13 @@
   margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-md);
   width: 100%;
+  padding-bottom: 1rem;
+
+}
+
+// In case of a feature image before a container
+figure + .container {
+  padding-top: 0 ;
 }
 
 // Blog grid layout with grid template areas
@@ -56,5 +63,20 @@
     grid-template-areas:
       "article"
       "sidebar";
+  }
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: .5rem;
+  border-top: 1px solid var(--color-border-dark);
+  padding-top: 1.5rem;
+
+  & a:hover {
+    box-shadow: 0 10px 20px -2px #10182824,inset 0 -1px #10182829;
+    transition: box-shadow .25s ease;
+        border: 2px solid darkgray;
+    border-radius: 15px;
   }
 }

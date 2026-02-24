@@ -62,3 +62,23 @@ other = "Share your thoughts below!"
 
 [min-read]
 other = "min read"
+
+# Footer
+[ft-about]
+other = "About"
+[ft-contact]
+other = "Contact"
+[ft-policies]
+other = "policies"
+[ft-original]
+other = "All original content licensed under"
+[ft-free]
+other = "Free to share & adapt<br>with attribution"
+[ft-cookies]
+other = "Cookie Settings"
+[ft-preferences]
+other = "Control cookie preferences"
+[ft-rights]
+other = "All rights reserved."
+[ft-license]
+other = "Content License"

@@ -2,9 +2,9 @@
 date : 2025-07-13T15:00:00Z
 title: "Remember Srebrenice"
 featured : true
-featured_image : "witness.jpg"
-caption: "Witness"
-featured_contain : true
+featured_image : "20250613-121037.jpg"
+image_caption: "The former battery factory where people sought refuge"
+featured_contain : 
 read_more_copy : "Read more about Srebrenica"
 categories:
   - cycling

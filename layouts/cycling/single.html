@@ -8,14 +8,24 @@
   {{/* Split content into sections at each H3 */}}
   {{ $sections := split $content "<h3" }}
 
+  
+{{ $img := .Resources.Get .Params.featured_image }}
+{{ if $img }}
+    <figure>
+    <img class="single__hero-bg" src="{{ $img.RelPermalink }}">
+    <figcaption class="single__hero-caption">{{ .Params.image_caption }}</figcaption>
+    </figure>
+{{ end }}
+
+<div class="container">
   <article class="cycling-post">
 
     {{/* Masthead */}}
     <header class="cycling-post__masthead">
       <h1 class="cycling-post__headline">{{ .Title }}</h1>
       <div class="cycling-post__byline">
-        <time>{{ .Date.Format "January 2, 2006" }}</time>
-        <div class="reading-time">{{ .ReadingTime }} min read</div>
+         {{ partial "published.html" . }}
+         {{ partial "reading-time.html" . }}
       </div>
     </header>
 
@@ -89,7 +99,9 @@
       {{ end }}
     {{ end }}
 
+    {{ partial "continue-reading.html" . }}
     <!-- Comments -->
-            {{ partial "comments-cusdis.html" . }}
+    {{ partial "comments-cusdis.html" . }}
   </article>
+  </div>
 {{ end }}

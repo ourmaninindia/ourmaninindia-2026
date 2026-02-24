@@ -5,6 +5,7 @@ featured : true
 cover : "cover-route-map.png"
 title : "A solo cycle ride in Portugal"
 featured_image : "vila-pouca-de-aguiar.jpg"
+image_caption: "Climbing towards Vila Pouca de Aguiar" 
 toc : true
 read_more_copy : "Read more about this fabulous ride"
 categories:
@@ -39,7 +40,7 @@ At the _Santa Apolónia_ railway station, I looked at the large display and deci
 
 As the name implies, Guarda, has its origins as a fortress town guarding the frontier of Portugal from approach from Spain's Castille region. It is also the highest city in continental Portugal. On arrival in Guarda I cycled the 5km odd distance to the old centre located at an elevation of 1056 metre. A bit sweaty and out of breath I reached the well located Hotel Santos.
 
-{{< figure src="guarda.jpg" alt="The Se in Guarda" caption="The Se in Guarda" class="small right" >}}
+{{< figure src="guarda.jpg" alt="The Se in Guarda" caption="The Se in Guarda" >}}
 
 Guarda is a lovely old town. My hotel was just around the corder from the _Sé da Guarda_, the city's cathedral. I walked around the _Judaria_, the old Jewish quarter located within the city walls and next to the _Porta D’El Rei_.
 
@@ -69,7 +70,7 @@ After what turned out to be a daily standard breakfast of bread buns with ham or
 
 At Valpaços I had made up my mind. By going west instead of north I played it safe. Porto was sunny. I changed the direction of my steering wheel and headed towards Cabeceiras de Basto. After a while it became sunny as I had ascended above the clouds. The area was dotted with pine forest and the scenery was stunning. Luckily the sun had made itself felt and it was a beautiful uneventful ride. By 4pm I descended 200m over 4km into Vila Pouca de Aguiar. I had climbed a total of 1,445m and it was getting cold again. To continue meant climbing a similar distance from the other side of the valley.
 
-{{< figure src="vila-pouca-de-aguiar.jpg" caption="Keep on climbing towards Vila Pouca de Aguiar" alt="Keep on climbing towards Vila Pouca de Aguiar" class="left" >}}
+{{< figure src="vila-pouca-de-aguiar.jpg" caption="Keep on climbing towards Vila Pouca de Aguiar" alt="Keep on climbing towards Vila Pouca de Aguiar" class="small left" >}}
 
 With the knowledge of what I had gone through the day prior I thought it wise to call it a day, albeit after only 74km. It jeopardized though my change of reaching Porto for the New Years Eve celebrations. Using Booking.com, I booked a room in the _Hotel Europe_, located the place, and had a hot well deserved shower.
 

@@ -14,9 +14,10 @@
 
 <div class="container">
     <article class="single">
-        <header>
-            <h1 class="single__headline">{{ .Title }}</h1>
-            <div class="about__byline">{{ .ReadingTime }} min read</div>
+        <header class="single__header">
+           <h1>{{ .Title }}</h1>
+           {{ partial "published.html" . }}
+           {{ partial "reading-time.html" . }}
         </header>
 
         <div class="single__content">

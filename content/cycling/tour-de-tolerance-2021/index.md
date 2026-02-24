@@ -7,6 +7,7 @@ tags:
   - Dolomites
   - Italy
 featured_image : "sella-route.png"
+image_caption: "The route near the Sella"
 date : 2021-09-19T22:00:00Z
 featured : true
 cover : "cover-pordoi.jpg"
@@ -42,4 +43,4 @@ Last Saturday, a week after the Tour, I once again cycled the Liege Bastogne Lie
 
 Give me the Dolomites any time though. You show up because it is hard.
 
-{{< figure src="giro.jpg" alt="the team of Tour de Tolerance" >}}
+{{< figure src="giro.jpg" caption="the team in front of the Giro monument" alt="the team of Tour de Tolerance" >}}

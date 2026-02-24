@@ -6,7 +6,9 @@
 
 
 .single {
-  background-color: var(--color-white);
+  // background-color: var(--color-white);
+  max-width: 680px;
+  margin: 0 auto;
 
   &__grid {
     display: grid;
@@ -35,7 +37,8 @@
   // ============================================
 
   &__header {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl); 
+    text-align: center; 
   }
 
   & h1 {
@@ -53,10 +56,6 @@
     border-radius: var(--border-radius-lg);
     margin-bottom: var(--spacing-lg);
     box-shadow: var(--shadow-md);
-  }
-
-  &__headline {
-    font-family: Arapey;
   }
 
   &__title {
@@ -93,8 +92,15 @@
     object-fit: cover;
     object-position: center;
     display: block;
-    margin: 0 auto var(--spacing-lg);
-}
+    margin: 0 auto;
+  }
+
+  &__hero-caption {
+    font-style: italic;
+    font-size: small;
+    width: 100%;
+    text-align: center;
+  }
 
   &__hero-overlay {
     position: absolute;
@@ -192,6 +198,9 @@
     text-align: justify;
     background-color: var(--color-bg);
     padding-top: .5rem;
+
+    
+
 
     figcaption p::first-letter {
       all: unset;
@@ -345,6 +354,7 @@
 
   &__footer {
     border-top: 2px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border);
     padding: 1rem;
     background-color: var(--color-bg);
   }
@@ -357,8 +367,9 @@
     display: flex;
     justify-content: space-between;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    padding-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+   
 
     @media (max-width: $breakpoint-mobile) {
       flex-direction: column;

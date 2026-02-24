@@ -12,11 +12,9 @@
 
 <div class="container">
 <article class="single">
-    <header class="single__masthead">
-        
+    <header class="single__masthead">    
             <h1 class="single__headline">{{ .Title }}</h1>
-       
-
+    
             <div class="single__byline">
                 {{ partial "date-modified" . }}
                 
@@ -30,7 +28,7 @@
                     {{ end }}
                 {{ end }}
                 
-                <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
+                  {{ partial "reading-time.html" . }}
             </div>
 
             <!-- Tags -->
@@ -61,32 +59,10 @@
             {{ .Content }}
         </div>
 
-        <!-- Footer: Full width below columns -->
-        <footer class="single__footer">
-            <!-- Post Navigation -->
-            <div>
-                {{ if or .PrevInSection .NextInSection }}
-                <h4 class="single__navigation-label">Continue reading</h4>
-                {{ end }}
-            </div>
-            <nav class="single__navigation">
-               
-                {{ with .PrevInSection }}
-                    <a href="{{ .RelPermalink }}" class="single__nav-link single__nav-link--prev">
-                        ← {{ .Title }}
-                    </a>
-                {{ end }}
- 
-                {{ with .NextInSection }}
-                    <a href="{{ .RelPermalink }}" class="single__nav-link single__nav-link--next">
-                        {{ .Title }} →
-                    </a>
-                {{ end }}
-            </nav>
         
-        </footer>
-            <!-- Comments -->
-            {{ partial "comments-cusdis.html" . }}
+        {{ partial "continue-reading.html" . }}
+        <!-- Comments -->
+        {{ partial "comments-cusdis.html" . }}
     </article>
 </div>
 {{ end }}

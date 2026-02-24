@@ -1,5 +1,6 @@
 ---
 featured_image : "stelvio1.jpg"
+image_caption: "The Stelvio"
 date : 2020-09-08T22:00:00Z
 title : "Tour de Tolerance 2020"
 read_more_copy : "Read more about this wonderful ride"

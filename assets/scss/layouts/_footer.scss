@@ -9,6 +9,8 @@
      margin: 0 auto;
     border-top: 1px solid var(--footer-border);
 
+       
+
     &__container {
         max-width: var(--max-width); 
         display: flex;
@@ -174,6 +176,8 @@
             font-size: 1.125rem;
             margin-bottom: var(--spacing-xs);
             font-weight: 600;
+            text-align: center;
+            width: auto;
         }
 
         ul {
