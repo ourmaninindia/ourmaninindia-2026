@@ -58,7 +58,7 @@ function initTOCToggle() {
     
     toggleBtn.addEventListener('click', () => {
         isExpanded = !isExpanded;
-        tocNav.style.display = isExpanded ? 'block' : 'none';
+        tocNav.classList.toggle('active');  // ✅ CSS controls display
         toggleIcon.textContent = isExpanded ? '−' : '+';
     });
 }

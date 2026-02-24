@@ -1,7 +1,0 @@
-<time>
-{{ if .Params.modified }}
-    📅 {{ i18n "page-updated" }} {{ .Params.modified.Format .Site.Params.date_format }}
-{{- else -}}
-    📅 {{ .Date.Format .Site.Params.date_format }}
-{{- end -}}
-</time>

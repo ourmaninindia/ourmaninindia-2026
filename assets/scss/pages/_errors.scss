@@ -6,28 +6,34 @@
 
 .error-page {
     text-align: center;
-    padding: var(--spacing-xl) 0;
+    padding: 0 var(--spacing-xl);
     max-width: 700px;
-    margin: 0 auto;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+     margin: 0 auto;
+
     &__code {
         font-size: clamp(4rem, 15vw, 8rem);
         color: var(--color-primary);
-        margin: 0;
-        line-height: 1;
         font-weight: 700;
+        width: auto;
+        margin: 0 auto;
     }
     
     &__title {
         font-size: clamp(1.5rem, 4vw, 2.5rem);
-        margin: var(--spacing-md) 0;
         color: var(--color-text);
+        margin: 0 auto;
     }
     
     &__description {
         color: var(--color-text-light);
-        margin-bottom: var(--spacing-xl);
+        // margin-bottom: var(--spacing-lg);
         font-size: clamp(1rem, 2vw, 1.125rem);
+        margin: 0 auto;
         
         code {
             background: var(--color-bg-secondary);
@@ -66,7 +72,7 @@
     &__links,
     &__actions {
         display: flex;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xl);
         justify-content: center;
         flex-wrap: wrap;
     }

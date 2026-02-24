@@ -1,0 +1,6 @@
+{{ $img := .Page.Resources.Get (.Get "src") }}
+{{ with $img }}
+    <div class="parallax" style="background-image: url('{{ .RelPermalink }}')"></div>
+{{ end }}
+
+{{/*  use as follows  parallax src="my-landscape.jpg"  */}}

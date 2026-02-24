@@ -1,7 +1,4 @@
+{{/* Date created */}}
 <time>
-{{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
-    📅 {{ i18n "page-updated" }} {{ .Lastmod.Format .Site.Params.date_format }}
-{{- else -}}
     📅 {{ i18n "page-created" }} {{ .Date.Format .Site.Params.date_format }}
-{{- end -}}
 </time>

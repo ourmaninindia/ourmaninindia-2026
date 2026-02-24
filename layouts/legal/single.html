@@ -1,30 +1,36 @@
 {{ define "main" }}
 <div class="display-template hidden">
-  legal/single.html
+    legal/single.html
 </div>
 
 <div class="legal-page">
     <div class="legal-page__container">
+        <aside class="toc">
+            <button class="toc__toggle">
+                <span class="toc__toggle-icon">−</span> Contents
+            </button>
+            <nav id="tocNav">
+                {{ .TableOfContents }}
+            </nav>
+        </aside>
+
         <article class="legal-content">
             <header class="legal-content__header">
                 <h1>{{ .Title }}</h1>
-                
+
                 {{ with .Params.description }}
                 <p class="legal-content__description">{{ . }}</p>
                 {{ end }}
-                
+
                 <div class="legal-content__meta">
-                    <p><strong>Effective Date:</strong> {{ .Date.Format "January 2, 2006" }}</p>
-                    {{ with .Params.lastmod }}
-                    <p><strong>Last Updated:</strong> {{ .Format "January 2, 2006" }}</p>
-                    {{ end }}
+                    {{ partial "date-modified" . }}
                 </div>
             </header>
-            
-            <div class="legal-content__body">
+
+            <div class="legal-content__body post__body">
                 {{ .Content }}
             </div>
-            
+
             <footer class="legal-content__footer">
                 <p>If you have questions about this policy, please <a href="/contact">contact us</a>.</p>
             </footer>

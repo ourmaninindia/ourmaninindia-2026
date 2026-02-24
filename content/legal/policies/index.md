@@ -8,7 +8,7 @@ featured_image: "about-us_1200.jpg"
 disable_comments: true
 disableToc: false
 noindex: true
-type: "policies"
+type: "legal"
 categories:
 tags:
   - complance
@@ -19,7 +19,7 @@ tags:
   - Google Analytics
 ---
 
-{{< table-of-contents >}}
+
 
 ## Introduction
 The difference between a privacy policy and terms and conditions is that a privacy policy protects my users' rights, while terms and conditions protect this website or app's rights. Privacy policies outline how I interact with user data, and terms and conditions outline the rules for using this site.
@@ -100,9 +100,8 @@ All comments require approval to prevent spam.
 
 ## Copyright
 
-{{< image-with-text width="127" height="127" alt="This is Free Cultural Works as defined by Create Commons" class="fcw" img="/images/seal.png" >}}
+{{< figure caption="This is Free Cultural Works as defined by Create Commons" alt="This is Free Cultural Works as defined by Create Commons" class="small left" src="seal-80x15.png" >}}
 I am a strong supporter of transparency and sharing of information. This website is therefore licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-{{< /image-with-text >}}
 
 This allows for adaptations of my work to be shared as long as others share alike. This includes commercial uses of my work.  
 

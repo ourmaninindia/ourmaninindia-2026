@@ -90,31 +90,12 @@ hr {
   border-color: var(--color-border);
 }
 
-
 p {
   margin-bottom: var(--spacing-md);
   text-wrap:pretty;
 }
 
-code {
-  background-color: var(--color-code-bg);
-  color: var(--color-code-text);
-  padding: 2px 6px;
-  border-radius: var(--border-radius-sm);
-  font-size: 0.9em;
-  font-family: 'Courier New', monospace;
+article {
+  text-align: justify;
 }
 
-pre {
-  background-color: var(--color-code-bg);
-  color: var(--color-code-text);
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius-md);
-  overflow-x: auto;
-  margin-bottom: var(--spacing-md);
-  
-  code {
-    background: none;
-    padding: 0;
-  }
-}

@@ -1,0 +1,144 @@
+@use "../abstracts" as *;
+
+.legal-page {
+    min-height: 100vh;
+    background: var(--color-bg);
+
+    &__container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: var(--spacing-lg);
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: var(--spacing-xl);
+        align-items: start;
+
+        @media (max-width: $breakpoint-desktop) {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+    }
+}
+
+// ============================================
+// Legal Content
+// ============================================
+
+.legal-content {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: var(--spacing-md);
+  }
+
+  &__header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--color-border);
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      color: var(--color-text-dark);
+      margin: 0 0 var(--spacing-sm) 0;
+    }
+  }
+
+  &__description {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  &__meta {
+    display: flex;
+    gap: var(--spacing-sm);
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    strong {
+      color: var(--color-text-dark);
+    }
+  }
+
+  &__body {
+    // Reuse post body styles
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text);
+
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 2em;
+      margin-bottom: 1em;
+      color: var(--color-text-dark);
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 1.5em;
+      margin-bottom: 0.75em;
+      color: var(--color-text-dark);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      margin-top: 1.25em;
+      margin-bottom: 0.5em;
+      color: var(--color-text-dark);
+    }
+
+    p {
+      margin-bottom: var(--spacing-md);
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--color-primary-dark);
+      }
+    }
+
+    ul, ol {
+      margin-bottom: var(--spacing-md);
+      padding-left: 2rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+
+#tocNav {
+    @media (min-width: 900px) {
+        display: block !important;
+    }
+
+    @media (max-width: 899px) {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+
+

@@ -21,7 +21,6 @@
     margin-bottom: 0.5rem;
   }
 
- 
   // ============================================
   // Masthead
   // ============================================
@@ -40,7 +39,7 @@
     font-family: Georgia, 'Times New Roman', serif;
     letter-spacing: -0.02em;
     margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
-    width: 100vw;
+    width: 100%;
   }
 
   &__byline {
@@ -79,8 +78,13 @@
       color: var(--color-drop-cap);
       font-family: Georgia, 'Times New Roman', serif;
     }
+  } 
+
+  // stack the columns
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
   }
-}
+} // end .cycling-post
 
 // ============================================
 // Day entry — 60/40 grid
@@ -101,11 +105,6 @@
 
   // No images — text spans full width
   &--no-images {
-    grid-template-columns: 1fr;
-  }
-
-  // Tablet — stack columns
-  @media (max-width: $breakpoint-tablet) {
     grid-template-columns: 1fr;
   }
 
@@ -192,11 +191,9 @@
       }
     }
 
-    
-
     // On tablet and below, images go below text
     @media (max-width: $breakpoint-tablet) {
-      position: static;
+      // position: static;
     }
   }  // end &__images
-}
+} // end .cycling-day

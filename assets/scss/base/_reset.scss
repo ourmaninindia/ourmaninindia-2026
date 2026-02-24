@@ -16,19 +16,13 @@
 }
 */
 
-html {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 body {
     width: 100%;
     max-width: 100%;
     line-height: var(--line-height-base);
-    overflow-x: hidden;
     hyphens: none;
-
+  
     @media (max-width: $breakpoint-desktop) {
       hyphens: auto;
     }

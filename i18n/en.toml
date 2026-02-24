@@ -46,10 +46,20 @@ other = 'Please enter a valid email address'
 [errorSectionsRequired]
 other = 'Please select at least one topic'
 
+# Error page
+[ep-error]
+other = "Page Not Found"
+[ep-error-description]
+other = "Sorry, the page you're looking for doesn't exist or has been moved."
+[home]
+other = "Home"
+[ep-browse]
+other = "Browse"
+
 [page-updated]
-other = "Last updated on"
+other = "Updated on"
 [page-created]
-other = "Page created on"
+other = "Created on"
 
 [comments]
 other = "Feel free to leave your comments"
@@ -69,7 +79,7 @@ other = "About"
 [ft-contact]
 other = "Contact"
 [ft-policies]
-other = "policies"
+other = "Policies"
 [ft-original]
 other = "All original content licensed under"
 [ft-free]
@@ -82,3 +92,5 @@ other = "Control cookie preferences"
 other = "All rights reserved."
 [ft-license]
 other = "Content License"
+[ft-privacy]
+other = "Privacy (GDPR)"

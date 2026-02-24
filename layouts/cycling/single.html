@@ -8,13 +8,12 @@
   {{/* Split content into sections at each H3 */}}
   {{ $sections := split $content "<h3" }}
 
-  
-{{ $img := .Resources.Get .Params.featured_image }}
-{{ if $img }}
-    <figure>
-    <img class="single__hero-bg" src="{{ $img.RelPermalink }}">
-    <figcaption class="single__hero-caption">{{ .Params.image_caption }}</figcaption>
-    </figure>
+
+{{ with .Params.featured_image }}
+    {{ $parallax := $.Resources.Get . }}
+    {{ with $parallax }}
+        <div class="parallax" style="background-image: url('{{ .RelPermalink }}')"></div>
+    {{ end }}
 {{ end }}
 
 <div class="container">
@@ -39,7 +38,7 @@
 
     {{/* Day sections — each starts with H3 */}}
     {{ range $i, $section := $sections }}
-      {{ if gt $i 0 }}
+      {{ if gt $i 0 }} 
         {{/* Restore the H3 tag that was removed by split */}}
         {{ $fullSection := printf "<h3%s" $section }}
 

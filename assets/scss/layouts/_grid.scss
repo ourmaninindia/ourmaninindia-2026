@@ -80,3 +80,29 @@ figure + .container {
     border-radius: 15px;
   }
 }
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+    
+    &--tall {
+        height: 600px;
+    }
+}
+
+@media (max-width: 530px) {
+    figure.left,
+    figure.right {
+        float: none;
+        width: 100%;
+        margin: 0 0 var(--spacing-md) 0;
+    }
+
+    figure.small {
+        width: 100%;
+    }
+}
