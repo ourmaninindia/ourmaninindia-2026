@@ -6,27 +6,50 @@
 </div>
 
 <div class="container">
-     <article class="single">
+    <article class="single">
 
         <!-- Newsletter Section -->
         <div class="contact__subscribe-wrapper">
             <section class="contact__subscribe">
-                <h2 class="contact__subscribe-title">📬 Subscribe to my newsletter</h2>
-                <p class="contact__subscribe-description">Get new articles in your mail box.</p>
+                <h2 class="contact__subscribe-title">📬 Subscribe to my
+                    newsletter</h2>
+                <p class="contact__subscribe-description">Get new articles in
+                    your mail box.</p>
 
-                <form action="{{ .Site.Params.newsletterAction }}" method="post" class="embeddable-buttondown-form"
-                    referrerpolicy="unsafe-url">
-                    <label for="bd-email">Enter your email</label>
-                    <input type="email" name="email" id="bd-email" placeholder="your@email.com" required
-                        class="contact__subscribe-input" />
-                    <input type="submit" class="contact__subscribe-button" value="Subscribe" />
+                <form
+                    class="newsletter-form"
+                    data-endpoint="{{ .Site.Params.newsletterAction }}"
+                    data-success-message="You're subscribed! Check your inbox to confirm."
+                    data-error-message="Something went wrong. Please try again.">
+
+                    <div class="form-group">
+                        <label for="name"
+                            class="form-label visually-hidden">Your Name</label>
+                        <input type="text" id="name" name="name"
+                            autocomplete="name" placeholder="Your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bd-email"
+                            class="form-label required visually-hidden">Your
+                            email</label>
+                        <input type="email" id="bd-email" name="email"
+                            autocomplete="email" placeholder="your@email.com"
+                            required
+                            data-error="newsletter-email-error">
+                        <span id="newsletter-email-error"></span>
+                    </div>
+
+                    <button type="submit"
+                        data-loading-text="Subscribing...">Subscribe</button>
                 </form>
-
-                <p class="contact__subscribe-note">No spam ever. Unsubscribe with one click.</p>
+                <p class="contact__subscribe-note">No spam ever. Unsubscribe
+                    with one click.</p>
             </section>
 
             <div class="contact__qr-code">
-                <img src="/images/qr-code.png" alt="Scan to subscribe" class="contact__qr-image">
+                <img src="/images/qr-code.png" alt="Scan to subscribe"
+                    class="contact__qr-image">
                 <p class="contact__qr-label">Scan to subscribe</p>
             </div>
         </div>
@@ -39,47 +62,62 @@
         <!-- Contact Form Section -->
         <section class="contact__section">
             <div class="contact__form-wrapper">
-                <h2 class="contact__form-title">✉️ Send a direct email message</h2>
-                <p class="contact__form-description">Have a question or just want to say hi? I'll get back to you as
+                <h2 class="contact__form-title">✉️ Send a direct email
+                    message</h2>
+                <p class="contact__form-description">Have a question or just
+                    want to say hi? I'll get back to you as
                     soon as I can.</p>
 
-                <form class="contact__form" action="{{ .Site.Params.contactFormAction }}" method="post">
+                <form class="contact__form"
+                    action="{{ .Site.Params.contactFormAction }}" method="post">
                     <div class="form-group">
-                        <label for="name" class="form-label">Name *</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                        <label for="name"
+                            class="form__label required">Name</label>
+                        <input type="text" id="name" name="name"
+                            autocomplete="name" class="form-input" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email" class="form-label">Email *</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
+                        <label for="email"
+                            class="form__label required">Email</label>
+                        <input type="email" id="email" name="email"
+                            autocomplete="email" class="form-input" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input"
+                        <label for="subject"
+                            class="form__label required">Subject</label>
+                        <input type="text" id="subject" name="subject"
+                            class="form-input" required
                             placeholder="What's this about?">
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="form-label">Message *</label>
-                        <textarea id="message" name="message" class="form-textarea" required
+                        <label for="message"
+                            class="form__label required">Message</label>
+                        <textarea id="message" name="message"
+                            class="form-textarea" required
                             placeholder="Your message..."></textarea>
                     </div>
 
-                    <button type="submit" class="button button--full-width">Send Message</button>
+                    <button type="submit" class="button button--full-width">Send
+                        Message</button>
                 </form>
             </div>
 
             <div class="contact__info">
                 <h2 class="contact__info-title">🌐 Other ways to reach me</h2>
-                <p class="contact__info-description">Find me on any of these platforms.</p>
+                <p class="contact__info-description">Find me on any of these
+                    platforms.</p>
 
                 <div class="contact__methods">
                     <div class="contact__method">
                         <span class="contact__method-icon">📧</span>
                         <div>
                             <h4 class="contact__method-label">Email</h4>
-                            <a href="mailto:{{ .Site.Data.authors.alfred.email }}" class="contact__method-link">
+                            <a
+                                href="mailto:{{ .Site.Data.authors.alfred.email }}"
+                                class="contact__method-link">
                                 {{ .Site.Data.authors.alfred.email }}
                             </a>
                         </div>
@@ -89,8 +127,11 @@
                         <span class="contact__method-icon">💼</span>
                         <div>
                             <h4 class="contact__method-label">LinkedIn</h4>
-                            <a href="https://linkedin.com/in/{{ .Site.Data.authors.alfred.linkedin }}" target="_blank"
-                                class="contact__method-link">{{ .Site.Data.authors.alfred.linkedin }}</a>
+                            <a
+                                href="https://linkedin.com/in/{{ .Site.Data.authors.alfred.linkedin }}"
+                                target="_blank"
+                                class="contact__method-link">{{
+                                .Site.Data.authors.alfred.linkedin }}</a>
                         </div>
                     </div>
 
@@ -98,8 +139,11 @@
                         <span class="contact__method-icon">📘</span>
                         <div>
                             <h4 class="contact__method-label">Facebook</h4>
-                            <a href="https://facebook.com/{{ .Site.Data.authors.alfred.facebook }}" target="_blank"
-                                class="contact__method-link">{{ .Site.Data.authors.alfred.facebook }}</a>
+                            <a
+                                href="https://facebook.com/{{ .Site.Data.authors.alfred.facebook }}"
+                                target="_blank"
+                                class="contact__method-link">{{
+                                .Site.Data.authors.alfred.facebook }}</a>
                         </div>
                     </div>
 
@@ -107,8 +151,11 @@
                         <span class="contact__method-icon">📸</span>
                         <div>
                             <h4 class="contact__method-label">Instagram</h4>
-                            <a href="https://instagram.com/{{ .Site.Data.authors.alfred.instagram }}" target="_blank"
-                                class="contact__method-link">@{{ .Site.Data.authors.alfred.instagram }}</a>
+                            <a
+                                href="https://instagram.com/{{ .Site.Data.authors.alfred.instagram }}"
+                                target="_blank"
+                                class="contact__method-link">@{{
+                                .Site.Data.authors.alfred.instagram }}</a>
                         </div>
                     </div>
 
@@ -116,16 +163,17 @@
                         <span class="contact__method-icon">🚴</span>
                         <div>
                             <h4 class="contact__method-label">Strava</h4>
-                            <a href="https://strava.com/athletes/{{ .Site.Data.authors.alfred.strava }}" target="_blank"
-                                class="contact__method-link">{{ .Site.Data.authors.alfred.strava }}</a>
+                            <a
+                                href="https://strava.com/athletes/{{ .Site.Data.authors.alfred.strava }}"
+                                target="_blank"
+                                class="contact__method-link">{{
+                                .Site.Data.authors.alfred.strava }}</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        {{ partial "social-icons.html" . }}
-        
-     </article>
+    </article>
 </div>
 {{ end }}

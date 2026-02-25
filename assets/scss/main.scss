@@ -3,9 +3,6 @@
    Hugo Blog - Modular Sass Architecture
    ========================================== */
 
-// 1. Fonts (load first)
-@use 'fonts';
-
 // 2. Configuration
 @use "./abstracts" as *;
 
@@ -28,5 +25,4 @@
 @use './utilities';
 
 // 9. Vendor specific
-// @use "./vendor/cookieconsent"; stored in statid
-@use "./vendor/cookieconsent-overrides";
+@use "./vendor";

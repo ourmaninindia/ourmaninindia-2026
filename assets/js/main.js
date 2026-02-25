@@ -13,6 +13,7 @@ import { initCyclingGallery } from './modules/cycling-gallery.js';
 import { initDebug }          from './modules/debug.js';
 import { initEscapeKey }      from './modules/escape-key.js';
 import { initExternalLinks }  from './modules/external-links.js';
+import { initForms }          from './modules/forms.js';
 import { initImageGallery }   from './modules/image-gallery.js';
 import { initLightbox }       from './modules/lightbox.js';
 import { initMobileMenu }     from './modules/mobile-menu.js';
@@ -44,6 +45,7 @@ function init() {
     initDebug();
     initEscapeKey();
     initExternalLinks();
+    initForms();
     initImageGallery();
     initLightbox();
     initMobileMenu();

@@ -7,27 +7,7 @@
  */
 
 :root {
-    /* Toggle colors */
-    --cc-toggle-on-bg: #22c55e; /* green when accepted */
-    --cc-toggle-off-bg: #ef4444; /* red when rejected */
-    --cc-toggle-on-knob-bg: #fff;
-    --cc-toggle-off-knob-bg: #fff;
-
-    --cc-btn-primary-bg: var(--color-primary);
-    --cc-btn-primary-color: var(--color-white);
-    --cc-btn-primary-border-color: var(--color-primary);
-    --cc-btn-primary-hover-bg: var(--color-primary-dark);
-    --cc-btn-primary-hover-color: var(--color-white);
-    --cc-btn-primary-hover-border-color: var(--color-primary-dark);
-    
-    --cc-btn-secondary-bg: transparent;
-    --cc-btn-secondary-color: var(--color-primary);
-    --cc-btn-secondary-border-color: var(--color-primary);
-    --cc-btn-secondary-hover-bg: var(--color-primary);
-    --cc-btn-secondary-hover-color: var(--color-white);
-    --cc-btn-secondary-hover-border-color: var(--color-primary);
-
-    /* Fix layout */
+     /* Fix layout */
     --cc-pm-toggle-border-radius: 4rem;
 }
 
@@ -49,14 +29,15 @@
     margin-right: 4rem;
 }
 
+#cc-main .cm__btn,
 #cc-main .pm__btn {
-    background-color: green;
+    background-color: var(--color-success) !important;
 
     &:hover {
-        background-color: darkgreen;
+        background-color: var(--color-success-dark) !important;
     }
 }
-
+#cc-main .cm__btn--secondary,
 #cc-main .pm__btn.pm__btn--secondary {
     background: var(--color-bg-secondary) !important;
     border: 1px solid var(--color-gray-300) !important;
@@ -65,6 +46,14 @@
       background: var(--color-gray-400) !important;
       border: 1px solid var(--color-gray-400) !important;
     }
+}
+
+#cc-main .toggle__icon {
+    background-color: var(--color-error) !important;
+} 
+
+#cc-main .section__toggle:checked~.toggle__icon {
+    background-color: var(--color-success) !important;
 }
 
 #cc-main .pm__close-btn {
