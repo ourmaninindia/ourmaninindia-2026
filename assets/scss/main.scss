@@ -26,3 +26,7 @@
 
 // 8. Utilities (global classes)
 @use './utilities';
+
+// 9. Vendor specific
+// @use "./vendor/cookieconsent"; stored in statid
+@use "./vendor/cookieconsent-overrides";

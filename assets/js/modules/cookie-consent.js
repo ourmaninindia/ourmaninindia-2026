@@ -1,9 +1,9 @@
 export function initCookie() {
     document.addEventListener("DOMContentLoaded", function () {
-        const cookieLink = document.getElementById("cookie-settings-link");
+        const cookieBtn = document.getElementById("cookie-settings-btn");
 
-        if (cookieLink) {
-            cookieLink.addEventListener("click", function (e) {
+        if (cookieBtn) {
+            cookieBtn.addEventListener("click", function (e) {
                 e.preventDefault();
 
                 if (window.cookieconsent && window.cookieconsent.showPreferences) {

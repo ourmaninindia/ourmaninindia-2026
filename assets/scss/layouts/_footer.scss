@@ -9,8 +9,6 @@
      margin: 0 auto;
     border-top: 1px solid var(--footer-border);
 
-       
-
     &__container {
         max-width: var(--max-width); 
         display: flex;
@@ -99,19 +97,6 @@
         }
     }
 
-    /*
-    &__license-badge:hover {
- box-shadow: 
-    0 0 6px rgba(255, 255, 255, 0.5),
-    0 0 14px rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px); 
-}
-
-
-&__license-badge:hover .cc-icon {
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
-}
-*/
     & .container {
         width: 100%;
         text-align: center;

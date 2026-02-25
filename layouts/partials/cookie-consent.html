@@ -1,14 +1,8 @@
-<!-- Vanilla Cookie Consent CSS 
- https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css -->
-
-<link rel="stylesheet" href="{{ "css/cookieconsent.css" | relURL }}">
-
-<!-- Custom Cookie Consent Styling 
-<link rel="stylesheet" href="{{ "css/cookie-consent-custom.css" | relURL }}"> -->
-
 <!-- Vanilla Cookie Consent Script -->
+
 <script type="module">
-import * as CookieConsent from 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js';
+
+import * as CookieConsent from '/js/cookieconsent.esm.js';
 
 CookieConsent.run({
     guiOptions: {
@@ -54,7 +48,8 @@ CookieConsent.run({
                     }
                 }
             }
-        },
+        }
+        /*,
         marketing: {
             autoClear: {
                 cookies: [
@@ -63,6 +58,7 @@ CookieConsent.run({
                 ]
             }
         }
+        */
     },
 
     language: {
@@ -72,12 +68,12 @@ CookieConsent.run({
         translations: {
             en: {
                 consentModal: {
-                    title: "🍪 We value your privacy",
-                    description: "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking 'Accept All', you consent to our use of cookies. You can customize your preferences at any time.",
+                    title: "🍪 I value your privacy",
+                    description: "I don't use cookies for marketing! I use cookies to enhance your browsing experience, serve personalized content, and analyze traffic. By clicking 'Accept All', you consent to my use of cookies. You can customize your preferences at any time.",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     showPreferencesBtn: "Manage preferences",
-                    footer: '<a href="/privacy">Privacy Policy</a>\n<a href="/terms">Terms of Service</a>'
+                    footer: 'See our &nbsp; <a href="/legal/policies">policies</a>'
                 },
                 preferencesModal: {
                     title: "Cookie Preferences Center",
@@ -89,7 +85,7 @@ CookieConsent.run({
                     sections: [
                         {
                             title: "Cookie Usage 📢",
-                            description: "We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href=\"/privacy\" class=\"cc__link\">privacy policy</a>."
+                            description: "I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href=\"/legal/policies\" class=\"cc__link\">Policies</a>."
                         },
                         {
                             title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
@@ -98,7 +94,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. We use this data to improve our content and user experience.",
+                            description: "These cookies help me understand how visitors interact with my website by collecting and reporting information anonymously. I use this data to improve my content and user experience.",
                             linkedCategory: "analytics",
                             cookieTable: {
                                 headers: {
@@ -129,14 +125,16 @@ CookieConsent.run({
                                 ]
                             }
                         },
+                        /*
                         {
-                            title: "Marketing Cookies",
+                            title: "Marketing Cookies<span class=\"pm__badge\">I do not use these </span>",
                             description: "These cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user.",
                             linkedCategory: "marketing"
                         },
+                        */
                         {
                             title: "More information",
-                            description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc__link" href="/contact">contact us</a>.'
+                            description: 'For any queries in relation to my policy on cookies and your choices, please <a class="cc__link" href="/contact">contact me</a>.'
                         }
                     ]
                 }

@@ -25,5 +25,6 @@ Thumbs.db
 # Hugo
 public/
 resources/
+.env
 
 

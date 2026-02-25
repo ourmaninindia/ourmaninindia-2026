@@ -47,13 +47,13 @@ The General Data Protection Regulation ([GDPR](https://en.wikipedia.org/wiki/Gen
 
 **Your Rights Under GDPR:**
 
-- ✅ **Right to Access** - Request what data we hold about you
+- ✅ **Right to Access** - Request what data I hold about you
 - ✅ **Right to Rectification** - Correct inaccurate data
 - ✅ **Right to Erasure** - Request deletion of your data
 - ✅ **Right to Data Portability** - Receive your data in a portable format
 - ✅ **Right to Object** - Object to processing of your data
 
-**To exercise these rights,** please [contact us](/contact).
+**To exercise these rights,** please [contact me](/contact).
 
 
 ### The Privacy Settings Explained
@@ -61,7 +61,7 @@ Below are all privacy settings and their value .
 
 ### Cookie Consent
 
-We use a cookie consent banner to give you control over non-essential cookies. You can:
+I use a cookie consent banner to give you control over non-essential cookies. You can:
 
 - Accept all cookies
 - Reject non-essential cookies
@@ -71,14 +71,21 @@ You can change your cookie preferences at any time by clicking "Cookie Settings"
 
 ### Google Analytics
 
-#### _anonymizeIP_
-Enabled so the users’ IP addresses are anonymized within Google Analytics.
+I use Google Analytics 4 to understand how visitors interact with our website.
 
-#### _respectDoNotTrack_
-Enabled to make the GA templates respect the “Do Not Track” HTTP header.
+All scripts used on this website, including the cookie consent manager, are served locally from my own server. No third-party CDN requests are made without your consent, ensuring your visit remains private until you choose to interact with external services.
 
-#### _useSessionStorage_
-Enabled to disable the use of Cookies and use Session Storage to Store the GA Client ID.
+#### IP Anonymization
+GA4 automatically anonymizes all IP addresses by default. No full IP addresses are 
+ever stored or processed.
+
+#### Cookie Consent
+Google Analytics only loads after you explicitly accept analytics cookies. 
+If you reject or withdraw consent, GA is not loaded and no data is collected.
+
+#### Session Storage
+GA4 uses cookies to store the client ID. I have configured these cookies to use 
+the `SameSite=None;Secure` flag for improved security.
 
 ### YouTube
 
@@ -88,7 +95,7 @@ Privacy-enhanced mode is turned on as a result of which YouTube won’t store in
 
 ### Comments
 
-We use Cusdis for comments, a lightweight, privacy-focused commenting system. When you leave a comment, we collect:
+I use Cusdis for comments, a lightweight, privacy-focused commenting system. When you leave a comment, I collect:
 
 - Your name (required)
 - Email address (required, never publicly displayed)
@@ -101,7 +108,7 @@ All comments require approval to prevent spam.
 ## Copyright
 
 {{< figure caption="This is Free Cultural Works as defined by Create Commons" alt="This is Free Cultural Works as defined by Create Commons" class="small left" src="seal-80x15.png" >}}
-I am a strong supporter of transparency and sharing of information. This website is therefore licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+I strong supporter of transparency and sharing of information. This website is therefore licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 This allows for adaptations of my work to be shared as long as others share alike. This includes commercial uses of my work.  
 
@@ -119,4 +126,4 @@ While I have made every attempt to ensure that the information contained on the 
 
 ## E-mail Disclaimer
 
-The information in e-mail (and any attachments) is intended exclusively for the addressee(s). Any use by a party other than the addressee(s) is prohibited. The information may be confidential in nature and fall under a duty of non disclosure. If you are not the addressee, please notify the sender and delete this e-mail. *Our Man in India* cannot guarantee that e-mail communications are secure and error-free and does not accept any liability for damages resulting from use of e-mail.
+The information in e-mail (and any attachments) is intended exclusively for the addressee(s). Any use by a party other than the addressee(s) is prohibited. The information may be confidential in nature and fall under a duty of non disclosure. If you are not the addressee, please notify the sender and delete this e-mail. *Our Man in India* cannot guarantee that e-mail communications are secure and error-free and does not accept any liability for damages resulting from the use of e-mail.

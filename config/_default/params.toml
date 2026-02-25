@@ -3,7 +3,7 @@ postsPerPage = 10
 defaultAuthor = "alfred"
 newsletterAction = "https://buttondown.com/api/emails/embed-subscribe/OurManInIndia"
 contactFormAction = "https://formspree.io/f/alfred@ourmaninindia.com"
-googleAnalytics = "G-XXXXXXXXXX"  # Your GA4 ID
+googleAnalytics = "G-9DYQ9R1F2M"  # Your GA4 ID
 date_format = "2 Jan 2006"
 
 [dev]
