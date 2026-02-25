@@ -6,53 +6,9 @@
 </div>
 
 <div class="container">
-    <article class="single">
+    <article class="single"> 
 
-        <!-- Newsletter Section -->
-        <div class="contact__subscribe-wrapper">
-            <section class="contact__subscribe">
-                <h2 class="contact__subscribe-title">📬 Subscribe to my
-                    newsletter</h2>
-                <p class="contact__subscribe-description">Get new articles in
-                    your mail box.</p>
-
-                <form
-                    class="newsletter-form"
-                    data-endpoint="{{ .Site.Params.newsletterAction }}"
-                    data-success-message="You're subscribed! Check your inbox to confirm."
-                    data-error-message="Something went wrong. Please try again.">
-
-                    <div class="form-group">
-                        <label for="name"
-                            class="form-label visually-hidden">Your Name</label>
-                        <input type="text" id="name" name="name"
-                            autocomplete="name" placeholder="Your name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bd-email"
-                            class="form-label required visually-hidden">Your
-                            email</label>
-                        <input type="email" id="bd-email" name="email"
-                            autocomplete="email" placeholder="your@email.com"
-                            required
-                            data-error="newsletter-email-error">
-                        <span id="newsletter-email-error"></span>
-                    </div>
-
-                    <button type="submit"
-                        data-loading-text="Subscribing...">Subscribe</button>
-                </form>
-                <p class="contact__subscribe-note">No spam ever. Unsubscribe
-                    with one click.</p>
-            </section>
-
-            <div class="contact__qr-code">
-                <img src="/images/qr-code.png" alt="Scan to subscribe"
-                    class="contact__qr-image">
-                <p class="contact__qr-label">Scan to subscribe</p>
-            </div>
-        </div>
+        {{ partial "sidebar/newsletter.html" . }}
 
         <!-- Divider -->
         <div class="section-divider">

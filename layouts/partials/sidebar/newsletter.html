@@ -3,32 +3,54 @@
     <h3 class="widget__title">{{ i18n "newsletter" }}</h3>
     <p class="widget__message">{{ i18n "newsletterDescription" }}</p>
 
-    <form id="newsletterForm" class="newsletter__form" action="{{ .Site.Params.newsletterAction }}" method="POST"
-        data-error-email-required="{{ i18n " errorEmailRequired" }}" data-error-email-invalid="{{ i18n "errorEmailInvalid" }}" data-error-sections-required="{{ i18n " errorSectionsRequired" }}">
-        <div class="newsletter__sections">
-            <label class="newsletter__checkbox">
-                <input type="checkbox" name="sections[]" value="blog" class="newsletter__section-checkbox" {{ if eq
-                    .Section "blog" }}checked{{ end }}>
-                <span>Blog</span>
-            </label>
-            <label class="newsletter__checkbox">
-                <input type="checkbox" name="sections[]" value="cycling" class="newsletter__section-checkbox" {{ if eq
-                    .Section "cycling" }}checked{{ end }}>
-                <span>Cycling</span>
-            </label>
-            <label class="newsletter__checkbox">
-                <input type="checkbox" name="sections[]" value="tech" class="newsletter__section-checkbox" {{ if eq
-                    .Section "tech" }}checked{{ end }}>
-                <span>Tech</span>
-            </label>
+    <form class="newsletter-form"
+        data-endpoint="{{ .Site.Params.newsletterAction }}"
+        data-checkbox-group="newsletter__section-checkbox"
+        data-checkbox-error="newsletter-sections-error"
+        data-success-message="{{ i18n "data-success-subscribed" }}"
+        data-error-message="{{ i18n "data-error-message" }}">
+
+        <div class="form__checkboxes">
+            <div class="form__group">
+                <label for="section-blog" class="form__label">Blog</label>
+                <input type="checkbox" id="section-blog" name="sections[]" value="blog"
+                    class="newsletter__section-checkbox"
+                    {{ if eq .Section "blog" }}checked{{ end }}>
+            </div>
+            <div class="form__group">
+                <label for="section-cycling" class="form__label">Cycling</label>
+                <input type="checkbox" id="section-cycling" name="sections[]" value="cycling"
+                    class="newsletter__section-checkbox"
+                    {{ if eq .Section "cycling" }}checked{{ end }}>
+            </div>
+            <div class="form__group">
+                <label for="section-tech" class="form__label">Tech</label>
+                <input type="checkbox" id="section-tech" name="sections[]" value="tech"
+                    class="newsletter__section-checkbox"
+                    {{ if eq .Section "tech" }}checked{{ end }}>
+            </div>
         </div>
 
-        <!-- Error message for checkboxes -->
-        <span id="newsletter-sections-error" class="newsletter__error"></span>
-        <input id="newsletter-email" type="email" class="newsletter__input" name="email" placeholder="{{ i18n "emailPlaceholder" }}" required>
+        <span id="newsletter-sections-error"></span>
 
-        <!-- Error message for email -->
-        <span id="newsletter-error" class="newsletter__error"></span>
-        <button id="newsletter-submit" type="submit" disabled>{{ i18n "subscribe" }}</button>
+        <div class="form__group">
+            <label for="name" class="form__label">Your Name</label>
+            <input type="text" id="name" name="name"
+                autocomplete="name" placeholder="Your name">
+        </div>
+
+        <div class="form__group">
+            <label for="bd-email" class="form__label required">Your email</label>
+            <input type="email" id="bd-email" name="email"
+                autocomplete="email"
+                placeholder="your@email.com"
+                required
+                data-msg-invalid="{{ i18n "errorEmailInvalid" }}"
+                data-error="newsletter-email-error">
+            <span id="newsletter-email-error"></span>
+        </div>
+
+        <button type="submit"
+            data-loading-text="{{ i18n "subscribing" }}">{{ i18n "subscribe" }}</button>
     </form>
 </div>

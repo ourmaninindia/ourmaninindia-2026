@@ -87,17 +87,19 @@ select {
     }
 }
 
-.form-group {
-    margin-bottom: var(--spacing-md);
 
-    &:last-child {
-        margin-bottom: 0;
-    }
-}
 
 .form {
     &__error--visible {
         color: var(--color-error-dark);
+    }
+
+    &__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-light);
     }
 
     &__label.required::after {
@@ -105,5 +107,19 @@ select {
         content: " *";
         color: var(--color-error);
         margin-left: 4px;
+    }
+
+    &__group {
+    margin-bottom: var(--spacing-md);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__checkboxes {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
     }
 }

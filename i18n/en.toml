@@ -33,6 +33,8 @@ other = "Subscribe to get my latest article delivered to your inbox."
 other = "Your email..."
 [subscribe]
 other = "Subscribe"
+[subscribing]
+other = "Subscribing ..."
 [searchResultsCount]
 other = "results found"
 [selectCategory]
@@ -45,6 +47,12 @@ other = "Please enter your email address"
 other = 'Please enter a valid email address'
 [errorSectionsRequired]
 other = 'Please select at least one topic'
+
+[data-success-subscribed]
+other = "You're subscribed! Check your inbox to confirm."
+[data-error-message]
+other = "Something went wrong. Please try again."
+
 
 # Error page
 [ep-error]
