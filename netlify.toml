@@ -1,11 +1,10 @@
 [build]
   publish = "public"
-  command = "hugo --gc --minify"
+  command = "npm install && hugo --gc --minify"
 
 [build.environment]
   HUGO_VERSION = "0.154.5"
   HUGO_ENV = "production"
-  HUGO_DARTSASS_VERSION = "1.97.3"
   HUGO_EXTENDED = "true"
 
 [context.production.environment]
