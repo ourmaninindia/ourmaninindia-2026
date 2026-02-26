@@ -6,7 +6,7 @@ timeout = 60000 # was 25000
 enableGitInfo = true              # essential for Lastmod to work
 
 [markup]
-  [markup.highlight]
+  [markup.highlight] 
     style = "monokai"
     lineNos = true
     lineNumbersInTable = true

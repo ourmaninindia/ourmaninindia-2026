@@ -24,6 +24,7 @@ import { initPagination }     from './modules/pagination.js';
 import { initSearch }         from './modules/search.js';
 import { initSmartHeader }    from './modules/smart-header.js';
 import { initSmoothScroll }   from './modules/smooth-scroll.js';
+import { initUnsubscribe }    from './modules/unsubscribe.js';
 import { initThemeToggle }    from './modules/darkmode.js';
 import { initTOC }            from './modules/toc.js';
 
@@ -56,6 +57,7 @@ function init() {
     initSearch()
     initSmartHeader();
     initSmoothScroll();
+    initUnsubscribe();
     initThemeToggle();
     initTOC();
 }
