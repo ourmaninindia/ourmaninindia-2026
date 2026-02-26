@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "npm install && hugo --gc --minify"
+  command = "npm install && ln -s $PWD/node_modules/.bin/sass /usr/local/bin/sass && hugo --gc --minify"
 
 [build.environment]
   HUGO_VERSION = "0.154.5"
