@@ -1,6 +1,7 @@
 [build]
   publish = "public"
- command = "npm install && mkdir -p $HOME/bin && ln -s $PWD/node_modules/.bin/sass $HOME/bin/sass && export PATH=$HOME/bin:$PATH && hugo --gc --minify"
+  command = "bash build.sh"
+
 [build.environment]
   HUGO_VERSION = "0.154.5"
   HUGO_ENV = "production"
