@@ -5,6 +5,9 @@ timeout = 60000 # was 25000
 # No theme line needed!
 enableGitInfo = true              # essential for Lastmod to work
 
+[dartsass]
+  binaryPath = "./node_modules/.bin/sass"
+  
 [markup]
   [markup.highlight] 
     style = "monokai"
