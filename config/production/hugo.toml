@@ -5,7 +5,7 @@ environment = "production"
 
 # Optional: minify assets in production
 [minify]
-  disableXML = false
+  disableXML = false 
 
 [sitemap]
   changefreq = "weekly"
