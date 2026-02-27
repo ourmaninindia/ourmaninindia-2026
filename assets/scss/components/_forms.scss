@@ -87,19 +87,25 @@ select {
     }
 }
 
-
-
 .form {
-    &__error--visible {
+    &__error {
+        display: block;
         color: var(--color-error-dark);
+        font-size: var(--font-size-sm);
+        margin-top: var(--spacing-xs);
+        min-height: 1.1em; // prevents layout jump when error appears
+
+        &--visible {
+            color: var(--color-error-dark);
+        }
     }
 
     &__label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-light);
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: var(--spacing-xs);
+        color: var(--color-text-light);
     }
 
     &__label.required::after {

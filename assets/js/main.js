@@ -18,7 +18,6 @@ import { initImageGallery }   from './modules/image-gallery.js';
 import { initLightbox }       from './modules/lightbox.js';
 import { initMobileMenu }     from './modules/mobile-menu.js';
 import { initModals }         from './modules/modals.js';
-import { initNewsletterForm } from './modules/newsletter.js';
 import { initProgressBar }    from './modules/reading-progress.js';
 import { initPagination }     from './modules/pagination.js';
 import { initSearch }         from './modules/search.js';
@@ -51,7 +50,6 @@ function init() {
     initLightbox();
     initMobileMenu();
     initModals();
-    initNewsletterForm();
     initPagination();
     initProgressBar();
     initSearch()

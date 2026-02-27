@@ -5,8 +5,13 @@
     _default/contact.html
 </div>
 
-<div class="container">
+<div class="contents__container">
     <article class="single"> 
+
+<header class="contents__header">
+             <h1 class="contents__title">Contact me</h1>
+                <p class="contents__description">See the various options</p>
+        </header>
 
         {{ partial "sidebar/newsletter.html" . }}
 
@@ -30,21 +35,21 @@
                         <label for="name"
                             class="form__label required">Name</label>
                         <input type="text" id="name" name="name"
-                            autocomplete="name" class="form-input" required>
+                            autocomplete="name"  required>
                     </div>
 
                     <div class="form-group">
                         <label for="email"
                             class="form__label required">Email</label>
                         <input type="email" id="email" name="email"
-                            autocomplete="email" class="form-input" required>
+                            autocomplete="email" required>
                     </div>
 
                     <div class="form-group">
                         <label for="subject"
                             class="form__label required">Subject</label>
                         <input type="text" id="subject" name="subject"
-                            class="form-input" required
+                            required
                             placeholder="What's this about?">
                     </div>
 

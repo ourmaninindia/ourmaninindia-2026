@@ -25,34 +25,56 @@ other = "Search"
 [searchPlaceholder]
 other = "Search posts..."
 
-[newsletter]
+[nl-newsletter]
 other = "Newsletter"
-[newsletterDescription]
+[nl-newsletterDescription]
 other = "Subscribe to get my latest article delivered to your inbox."
 [emailPlaceholder]
 other = "Your email..."
-[subscribe]
+[nl-subscribe]
 other = "Subscribe"
-[subscribing]
+[nl-subscribing]
 other = "Subscribing ..."
 [searchResultsCount]
 other = "results found"
 [selectCategory]
 other = "Select a topic"
+[nl-unsubscribe]
+other = "Unsubscribe"
+[nl-sorry]
+other = "I am sorry to see you go. Please confirm your email address below and I'll remove you from our mailing list."
 
-# widget newsletter
+# forms
+[form-email]
+other = "Email address"
 [errorEmailRequired]
 other = "Please enter your email address"
-[errorEmailInvalid]
+[form-errorEmailInvalid]
 other = 'Please enter a valid email address'
-[errorSectionsRequired]
+[form-errorSectionsRequired]
 other = 'Please select at least one topic'
-
-[data-success-subscribed]
+[form-success-subscribed]
 other = "You're subscribed! Check your inbox to confirm."
-[data-error-message]
+[form-error-message]
 other = "Something went wrong. Please try again."
+[form-unsubscribe]
+other = "Confirm Unsubscribe"
 
+[unsubscribeSuccess]
+other =  "You've been unsubscribed"
+[unsubscribeSuccessDetail]
+other = "The address "
+[unsubscribeSuccessDetail2]
+other = " has been removed from the list. You won't receive any further emails from me."
+
+[unsubscribeError]
+other = "Something went wrong"
+[tryAgain]
+other = "Try again"
+[unsubscribeErrorDetail]
+other = "Your request could not be processed. Please try again or"
+[contactUs]
+other = "contact us"
 
 # Error page
 [ep-error]
@@ -95,7 +117,7 @@ other = "Free to share & adapt<br>with attribution"
 [ft-cookies]
 other = "Cookie Settings"
 [ft-preferences]
-other = "Control cookie preferences"
+other = "Cookie preferences"
 [ft-rights]
 other = "All rights reserved."
 [ft-license]

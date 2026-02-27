@@ -7,7 +7,7 @@
 {{ $posts := where .Site.RegularPages "Section" .Section }}
 {{ $paginator := .Paginate $posts }}
 
-<div class="container list">
+<div class="contents__container list">
     <h1>{{ .Title }}</h1>
 
     {{ if and .Content (eq $paginator.PageNumber 1) }}

@@ -16,14 +16,14 @@
             </ul>
         </div>
 
-        <div class="footer__section footer__section--copyright">
-            <h4>{{ i18n "license"}}</h4>
-            <div class="footer__copyright-content">
+        <div class="footer__section">
+            <h4>{{ i18n "ft-license"}}</h4>
+            <div class="footer__copyright">
                 <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
                     rel="license noopener noreferrer" class="footer__license-badge">
-                    <img src="/images/cc.svg" alt="CC" class="cc-icon">
-                    <img src="/images/by.svg" alt="BY" class="cc-icon">
-                    <img src="/images/sa.svg" alt="SA" class="cc-icon">
+                    <img src="/images/cc.svg" alt="CC" class="footer__cc-icon">
+                    <img src="/images/by.svg" alt="BY" class="footer__cc-icon">
+                    <img src="/images/sa.svg" alt="SA" class="footer__cc-icon">
                 </a>
                 <p class="footer__license-text">
                     {{ i18n "ft-original"}}
@@ -32,7 +32,7 @@
                     </a>
                 </p>
                 <p class="footer__license-summary">
-                    {{ i18n "ft-free"}}
+                    {{ i18n "ft-free" | safeHTML }}
                 </p>
             </div>
         </div>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="footer__container">
         <p>© 2005-{{ now.Year }} <strong>{{ .Site.Title }}</strong>. {{ i18n "ft-rights"}} </p>
     </div>
 </footer>

@@ -6,6 +6,55 @@
  * Form-specific behaviour is configured via data attributes on the <form> element.
  *
  * @module forms
+ *
+ * @description
+ * Data attributes on <form>:
+ *   data-endpoint              — required. POST URL (Netlify Function or any API)
+ *   data-checkbox-group        — CSS class of checkbox group (e.g. "newsletter__section-checkbox")
+ *   data-checkbox-error        — ID of element to show checkbox group error in
+ *   data-msg-checkbox-required — override default checkbox error message
+ *   data-success-modal         — ID of modal to open on success (alternative to inline message)
+ *   data-error-modal           — ID of modal to open on error (alternative to inline message)
+ *   data-error-modal-msg       — ID of element inside error modal to inject error text into
+ *   data-confirmed-email       — ID of element inside success modal to inject submitted email into
+ *   data-success-message       — inline success message (used when no data-success-modal)
+ *   data-error-message         — fallback error message
+ *   data-loading-text          — override submit button text during submission
+ *
+ * Data attributes on <input> / <textarea> / <select>:
+ *   data-error                 — ID of element to show field error in
+ *   data-msg-required          — override "field required" message
+ *   data-msg-invalid           — override "invalid value" message
+ *   data-msg-too-short         — override "too short" message
+ *   data-msg-too-long          — override "too long" message
+ *
+ * @example Newsletter form
+ *   <form
+ *     data-endpoint="/.netlify/functions/subscribe"
+ *     data-checkbox-group="newsletter__section-checkbox"
+ *     data-checkbox-error="newsletter-sections-error"
+ *     data-success-modal="successModal"
+ *     data-error-modal="errorModal"
+ *     data-error-modal-msg="error-message"
+ *     data-confirmed-email="confirmed-email"
+ *   >
+ *     <input type="email" id="newsletter-email" data-error="newsletter-email-error" required />
+ *     <span id="newsletter-email-error"></span>
+ *     <input type="checkbox" class="newsletter__section-checkbox" value="blog" />
+ *     <span id="newsletter-sections-error"></span>
+ *     <button type="submit">Subscribe</button>
+ *   </form>
+ *
+ * @example Contact form (inline feedback, no modal)
+ *   <form data-endpoint="/.netlify/functions/contact" data-success-message="Message sent!">
+ *     <input type="text" name="name" data-error="name-error" required />
+ *     <span id="name-error"></span>
+ *     <input type="email" name="email" data-error="email-error" required />
+ *     <span id="email-error"></span>
+ *     <textarea name="message" data-error="message-error" required></textarea>
+ *     <span id="message-error"></span>
+ *     <button type="submit">Send</button>
+ *   </form>
  */
 
 export function initForms() {
@@ -26,7 +75,7 @@ function initForm(form) {
     const checkboxCls = form.dataset.checkboxGroup;
     const checkboxes  = checkboxCls ? Array.from(form.querySelectorAll(`.${checkboxCls}`)) : [];
 
-    // Debug warnings
+    // ── Debug warnings ──────────────────────────────────────────────
     if (checkboxCls && checkboxes.length === 0) {
         console.warn(`[forms.js] data-checkbox-group="${checkboxCls}" declared but no matching elements found`);
     }
@@ -41,19 +90,30 @@ function initForm(form) {
         console.warn(`[forms.js] Checkbox error element #${form.dataset.checkboxError} not found`);
     }
 
-    // Real-time validation
+    // ── Real-time field validation ───────────────────────────────────
     fields.forEach(field => {
+        // Validate on blur if field has content
         field.addEventListener('blur', () => {
             if (field.value) validateField(field);
             updateSubmitButton(form, submitBtn, checkboxes);
         });
 
+        // Re-validate on input only if already marked invalid
         field.addEventListener('input', () => {
             if (field.classList.contains('is-invalid')) validateField(field);
             updateSubmitButton(form, submitBtn, checkboxes);
         });
+
+        // On focusing an email field, immediately validate checkbox group
+        // so user sees the "please select a topic" hint before typing
+        if (field.type === 'email' && checkboxes.length) {
+            field.addEventListener('focusin', () => {
+                validateCheckboxGroup(form, checkboxes);
+            });
+        }
     });
 
+    // ── Checkbox group validation ────────────────────────────────────
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             validateCheckboxGroup(form, checkboxes);
@@ -61,7 +121,7 @@ function initForm(form) {
         });
     });
 
-    // Submit
+    // ── Submit ───────────────────────────────────────────────────────
     form.addEventListener('submit', e => {
         e.preventDefault();
 
@@ -81,6 +141,8 @@ function initForm(form) {
 
     updateSubmitButton(form, submitBtn, checkboxes);
 }
+
+// ── Validation helpers ───────────────────────────────────────────────
 
 function validateField(field) {
     if (field.type === 'checkbox' || field.type === 'radio') return true;
@@ -128,6 +190,7 @@ function validateCheckboxGroup(form, checkboxes) {
     const errorEl = form.dataset.checkboxError
         ? document.getElementById(form.dataset.checkboxError)
         : null;
+
     const hasCheck = checkboxes.some(cb => cb.checked);
 
     if (!hasCheck) {
@@ -154,19 +217,24 @@ function updateSubmitButton(form, submitBtn, checkboxes) {
     submitBtn.disabled = !(fieldsOk && checkboxOk);
 }
 
+// ── Submission ───────────────────────────────────────────────────────
+
 function submitForm(form, submitBtn, checkboxes) {
     const endpoint     = form.dataset.endpoint;
     const originalText = submitBtn.textContent;
 
+    // Loading state
     submitBtn.textContent = submitBtn.dataset.loadingText || 'Sending...';
     submitBtn.disabled    = true;
     form.querySelectorAll('input, textarea, select').forEach(f => f.disabled = true);
 
+    // Build payload from FormData
     const payload = {};
     new FormData(form).forEach((value, key) => {
         payload[key] = value;
     });
 
+    // Replace individual checkbox values with array under group name
     if (checkboxes.length) {
         const groupName = checkboxes[0].name || 'sections';
         payload[groupName] = checkboxes
@@ -183,23 +251,62 @@ function submitForm(form, submitBtn, checkboxes) {
         .then(response => response.json().then(data => ({ status: response.status, data })))
         .then(result => {
             if (result.status === 200 || result.status === 201) {
-                const msg = form.dataset.successMessage || 'Thank you! Your message has been sent.';
-                showInlineMessage(form, msg, 'success');
+                handleSuccess(form, submitBtn, payload);
             } else {
                 const msg = result.data?.error
                     || form.dataset.errorMessage
                     || 'Something went wrong. Please try again.';
-                showInlineMessage(form, msg, 'error');
-                restoreForm(form, submitBtn, originalText, checkboxes);
+                handleError(form, submitBtn, originalText, checkboxes, msg);
             }
         })
         .catch(err => {
             console.error('[forms.js] Submission error:', err);
-            const msg = form.dataset.errorMessage || 'Network error. Please check your connection and try again.';
-            showInlineMessage(form, msg, 'error');
-            restoreForm(form, submitBtn, originalText, checkboxes);
+            const msg = form.dataset.errorMessage
+                || 'Network error. Please check your connection and try again.';
+            handleError(form, submitBtn, originalText, checkboxes, msg);
         });
 }
+
+function handleSuccess(form, submitBtn, payload) {
+    const successModal = form.dataset.successModal;
+
+    if (successModal && typeof openModal === 'function') {
+        // Inject confirmed email into modal if element id provided
+        const confirmedEmailEl = form.dataset.confirmedEmail
+            ? document.getElementById(form.dataset.confirmedEmail)
+            : null;
+        if (confirmedEmailEl && payload.email) {
+            confirmedEmailEl.textContent = payload.email;
+        }
+
+        form.reset();
+        updateSubmitButton(form, form.querySelector('button[type="submit"], input[type="submit"]'), []);
+        openModal(successModal);
+    } else {
+        const msg = form.dataset.successMessage || 'Thank you! Your message has been sent.';
+        showInlineMessage(form, msg, 'success');
+    }
+}
+
+function handleError(form, submitBtn, originalText, checkboxes, message) {
+    const errorModal = form.dataset.errorModal;
+
+    if (errorModal && typeof openModal === 'function') {
+        // Inject error message into modal if element id provided
+        const errorMsgEl = form.dataset.errorModalMsg
+            ? document.getElementById(form.dataset.errorModalMsg)
+            : null;
+        if (errorMsgEl) errorMsgEl.textContent = message;
+
+        restoreForm(form, submitBtn, originalText, checkboxes);
+        openModal(errorModal);
+    } else {
+        showInlineMessage(form, message, 'error');
+        restoreForm(form, submitBtn, originalText, checkboxes);
+    }
+}
+
+// ── UI helpers ───────────────────────────────────────────────────────
 
 function showInlineMessage(form, message, type) {
     const icon = type === 'success' ? '✅' : '❌';
