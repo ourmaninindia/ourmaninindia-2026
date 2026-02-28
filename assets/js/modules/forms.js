@@ -323,7 +323,6 @@ function showInlineMessage(form, message, type) {
 
     form.innerHTML = `
         <div class="form__feedback form__feedback--${type}" role="alert">
-            <span class="form__feedback-icon">${icon}</span>
                 <p class="form__feedback-message">
                     <span class="form__feedback-icon">${icon}&nbsp;</span>
                     ${message}
