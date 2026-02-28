@@ -1,8 +1,7 @@
 description = "Building responsive, accessible websites"
 postsPerPage = 10
 defaultAuthor = "alfred"
-# newsletterAction = "https://buttondown.com/api/emails/embed-subscribe/OurManInIndia"
-# contactFormAction = "https://formspree.io/f/alfred@ourmaninindia.com"
+newsletterAction = "/.netlify/functions/subscribe"
 googleAnalytics = "G-9DYQ9R1F2M"  # Your GA4 ID
 date_format = "2 Jan 2006"
 
@@ -12,7 +11,3 @@ date_format = "2 Jan 2006"
 [cusdis]
   host = "https://cusdis.com"
   appId = "a97f5053-8835-478b-b98b-05ee0c62fb47"
-
-[assets]
-  js = ["js/main.js"]
-

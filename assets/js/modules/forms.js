@@ -64,18 +64,14 @@ export function initForms() {
 }
  
 function initForm(form) {
-    console.log('initForm called for', form.className);
     const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
-    console.log('submitBtn:', submitBtn);
 
     if (!submitBtn) {
-        console.log('past submitBtn check');
         console.warn(`[forms.js] No submit button found in form`, form);
         return;
     }
 
     const fields      = Array.from(form.querySelectorAll('input, textarea, select'));
-    console.log('fields:', fields.length)
     const checkboxCls = form.dataset.checkboxGroup;
     const checkboxes  = checkboxCls ? Array.from(form.querySelectorAll(`.${checkboxCls}`)) : [];
 
@@ -127,7 +123,6 @@ function initForm(form) {
 
     // ── Submit ───────────────────────────────────────────────────────
     form.addEventListener('submit', e => {
-        console.log('submit listener fired');
         e.preventDefault();
 
         const fieldsValid = fields
@@ -144,7 +139,6 @@ function initForm(form) {
         submitForm(form, submitBtn, checkboxes);
     });
 
-    console.log('about to call submitForm, endpoint:', form.dataset.endpoint)
     updateSubmitButton(form, submitBtn, checkboxes);
 }
 
@@ -323,12 +317,26 @@ function handleError(form, submitBtn, originalText, checkboxes, message) {
 
 function showInlineMessage(form, message, type) {
     const icon = type === 'success' ? '✅' : '❌';
+    const extra = type === 'error'
+        ? `<button type="button" class="button button--ghost button--small" data-reload>Try again</button>`
+        : '';
+
     form.innerHTML = `
         <div class="form__feedback form__feedback--${type}" role="alert">
             <span class="form__feedback-icon">${icon}</span>
-            <p class="form__feedback-message">${message}</p>
+                <p class="form__feedback-message">
+                    <span class="form__feedback-icon">${icon}&nbsp;</span>
+                    ${message}
+                </p>
+            ${extra}
         </div>
     `;
+
+    if (type === 'error') {
+        form.querySelector('[data-reload]').addEventListener('click', () => {
+            location.reload();
+        });
+    }
 }
 
 function restoreForm(form, submitBtn, originalText, checkboxes) {

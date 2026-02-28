@@ -35,8 +35,8 @@
         <span id="newsletter-sections-error" class="form__error"></span>
 
         <div class="form__group">
-            <label for="name" class="form__label">Your Name</label>
-            <input type="text" id="name" name="name"
+            <label for="newsletter-name" class="form__label">Your Name</label>
+            <input type="text" id="newsletter-name" name="name"
                 autocomplete="name" placeholder="Your name">
         </div>
 
@@ -51,7 +51,9 @@
             <span id="newsletter-email-error" class="form__error"></span>
         </div>
 
-        <button type="submit"
-            data-loading-text="{{ i18n "nl-subscribing" }}">{{ i18n "nl-subscribe" }}</button>
+        <button type="submit" disabled
+            data-loading-text="{{ i18n "nl-subscribing" }}">
+            {{ i18n "nl-subscribe" }}
+        </button>
     </form>
 </div>

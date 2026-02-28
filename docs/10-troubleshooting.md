@@ -23,19 +23,16 @@ ls config/_default/config.toml
 
 **Cause:** Using `@use` syntax without Dart Sass
 
-**Solution 1 - Install Dart Sass:**
-````bash
-# Ubuntu
-wget https://github.com/sass/dart-sass-embedded/releases/download/1.69.5/sass_embedded-1.69.5-linux-x64.tar.gz
-tar -xzf sass_embedded-1.69.5-linux-x64.tar.gz
-sudo mv sass_embedded /usr/local/bin/
-````
+**Solution - Install Dart Sass:**
 
-**Solution 2 - Use @import instead:**
-
-Change all `@use 'file';` to `@import 'file';` in Sass files.
+Add sass to the package.json e.g. "sass": "^1.97.3", 
 
 ---
+**Error:** unable to locate which file triggers something
+Use grep -r and search for a string in a folder or several folders like here
+````bash
+grep -r "console.log('Google Analytics" assets/ layouts/
+````
 
 **Error:** `TOCSS: failed to transform "scss/style.scss"`
 

@@ -69,15 +69,15 @@
                         </label>
                         <label class="form__radio">
                             <input type="radio" name="reason" value="never-signed-up">
-                            {{ i18n "unsubscribeReason2" | default "I never signed up for this mailing list" }}
-                        </label>
+                            {{ i18n "unsubscribeReason2" | default "The emails are too frequent" }}
+                        </label> 
                         <label class="form__radio">
                             <input type="radio" name="reason" value="inappropriate">
-                            {{ i18n "unsubscribeReason3" | default "The emails are inappropriate" }}
+                            {{ i18n "unsubscribeReason3" | default "The content is no longer relevant to me" }}
                         </label>
                         <label class="form__radio">
                             <input type="radio" name="reason" value="spam">
-                            {{ i18n "unsubscribeReason4" | default "The emails are spam and should be reported" }}
+                            {{ i18n "unsubscribeReason4" | default "I have too many emails in general" }}
                         </label>
                         <label class="form__radio">
                             <input type="radio" name="reason" value="other">

@@ -81,6 +81,16 @@ other = "Your reason…"
 other =  "Please tell us more"
 [unsubscribeSurveyThanks]
 other = "Thank you for your feedback."
+[unsubscribeReason1]
+other = "I no longer want to receive these emails"
+[unsubscribeReason2]
+other = "The emails are too frequent"
+[unsubscribeReason3]
+other = "The content is no longer relevant to me"
+[unsubscribeReason4]
+other = "I have too many emails in general"
+[unsubscribeReason5]
+other = "Other"
 
 [tryAgain]
 other = "Try again"
