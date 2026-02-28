@@ -62,16 +62,20 @@ export function initForms() {
         initForm(form);
     });
 }
-
+ 
 function initForm(form) {
+    console.log('initForm called for', form.className);
     const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+    console.log('submitBtn:', submitBtn);
 
     if (!submitBtn) {
+        console.log('past submitBtn check');
         console.warn(`[forms.js] No submit button found in form`, form);
         return;
     }
 
     const fields      = Array.from(form.querySelectorAll('input, textarea, select'));
+    console.log('fields:', fields.length)
     const checkboxCls = form.dataset.checkboxGroup;
     const checkboxes  = checkboxCls ? Array.from(form.querySelectorAll(`.${checkboxCls}`)) : [];
 
@@ -123,6 +127,7 @@ function initForm(form) {
 
     // ── Submit ───────────────────────────────────────────────────────
     form.addEventListener('submit', e => {
+        console.log('submit listener fired');
         e.preventDefault();
 
         const fieldsValid = fields
@@ -139,6 +144,7 @@ function initForm(form) {
         submitForm(form, submitBtn, checkboxes);
     });
 
+    console.log('about to call submitForm, endpoint:', form.dataset.endpoint)
     updateSubmitButton(form, submitBtn, checkboxes);
 }
 
@@ -209,6 +215,13 @@ function validateCheckboxGroup(form, checkboxes) {
 }
 
 function updateSubmitButton(form, submitBtn, checkboxes) {
+    // Only auto-disable if form has checkbox group requirement
+    // For regular forms, let submit handle validation
+    if (!checkboxes.length) {
+        submitBtn.disabled = false;
+        return;
+    }
+    
     const fieldsOk   = form.checkValidity();
     const checkboxOk = checkboxes.length
         ? checkboxes.some(cb => cb.checked)
