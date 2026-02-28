@@ -34,7 +34,9 @@ exports.handler = async function (event) {
         };
     }
 
-    const { name, email, message } = body;
+    const { name, email, message, subject } = body;
+
+    
 
     // Validate inputs
     if (!name || !email || !message) {
@@ -67,6 +69,7 @@ exports.handler = async function (event) {
                 }],
                 from:    { email: process.env.CONTACT_FROM_EMAIL },
                 reply_to: { email, name },
+                subject: subject || `New contact form message from ${name}`,
                 content: [{
                     type:  'text/plain',
                     value: `Name:    ${name}\nEmail:   ${email}\n\nMessage:\n${message}`,
