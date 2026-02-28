@@ -1,6 +1,3 @@
-
-Copy
-
 /**
  * Netlify Function: subscribe
  *
