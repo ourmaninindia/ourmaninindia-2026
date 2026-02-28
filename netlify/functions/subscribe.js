@@ -49,10 +49,8 @@ exports.handler = async function (event) {
         const payload = {
             api_secret:    process.env.CONVERTKIT_API_KEY,
             email:      email,
-            first_name: name || '',
-            fields: {
-                sections: sections ? sections.join(', ') : '',
-            },
+            first_name: name || ''
+            // fields: { sections: sections ? sections.join(', ') : '', },
         };
 
         const response = await fetch(
