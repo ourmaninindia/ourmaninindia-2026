@@ -1,15 +1,18 @@
+
+Copy
+
 /**
  * Netlify Function: subscribe
  *
- * Handles newsletter subscription via ConvertKit API.
+ * Handles newsletter subscription via Brevo (formerly Sendinblue) API.
  * Receives email, optional name, and sections array from the frontend form.
  *
  * Endpoint: POST /.netlify/functions/subscribe
  * Body: { email: string, name?: string, sections?: string[] }
  *
  * Required environment variables (set in Netlify dashboard):
- *   CONVERTKIT_API_KEY
- *   CONVERTKIT_FORM_ID
+ *   BREVO_API_KEY        — your Brevo API key
+ *   BREVO_LIST_ID        — numeric ID of your Brevo contact list
  */
 
 exports.handler = async function (event) {
@@ -18,6 +21,7 @@ exports.handler = async function (event) {
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ error: 'Method not allowed' }),
         };
     }
@@ -28,6 +32,7 @@ exports.handler = async function (event) {
     } catch {
         return {
             statusCode: 400,
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ error: 'Invalid JSON' }),
         };
     }
@@ -38,34 +43,34 @@ exports.handler = async function (event) {
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         return {
             statusCode: 400,
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ error: 'A valid email address is required' }),
         };
     }
 
     try {
-        // Build ConvertKit payload
-        // sections are stored as a custom field — adjust field name to match
-        // your ConvertKit custom fields if needed
-        const payload = {
-            api_secret:    process.env.CONVERTKIT_API_KEY,
-            email:      email,
-            first_name: name || ''
-            // fields: { sections: sections ? sections.join(', ') : '', },
-        };
+        // Brevo: create or update contact
+        const response = await fetch('https://api.brevo.com/v3/contacts', {
+            method:  'POST',
+            headers: {
+                'api-key':      process.env.BREVO_API_KEY,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                attributes: {
+                    FIRSTNAME: name || '',
+                    SECTIONS:  sections ? sections.join(', ') : '',
+                },
+                listIds:        [Number(process.env.BREVO_LIST_ID)],
+                updateEnabled:  true, // update contact if already exists
+            }),
+        });
 
-        const response = await fetch(
-            `https://api.convertkit.com/v3/forms/${process.env.CONVERTKIT_FORM_ID}/subscribe`,
-            {
-                method:  'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body:    JSON.stringify(payload),
-            }
-        );
-
-        const data = await response.json();
-console.log('[subscribe] ConvertKit response:', JSON.stringify(data));
-        if (!response.ok) {
-            throw new Error(data.message || 'ConvertKit subscription failed');
+        // Brevo returns 201 on create, 204 on update
+        if (!response.ok && response.status !== 204) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.message || `Brevo error: ${response.status}`);
         }
 
         return {
