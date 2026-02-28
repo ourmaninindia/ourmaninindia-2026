@@ -13,4 +13,9 @@
   HUGO_EXTENDED = "true"
   HUGO_ENV = "production"
   DART_SASS_VERSION = "1.97.3"
+  
+[environment]
+  CONTACT_FROM_EMAIL = "alfred@ourmaninindia.com"
+  SENDGRID_API_KEY = ""
+  CONTACT_EMAIL = "alfred@ourmaninindia.com"
 

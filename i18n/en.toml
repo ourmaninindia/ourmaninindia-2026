@@ -60,19 +60,30 @@ other = "Something went wrong. Please try again."
 [form-unsubscribe]
 other = "Confirm Unsubscribe"
 
+# unsubscribe
 [unsubscribeSuccess]
-other =  "You've been unsubscribed"
+other =  "Unsubscribed"
 [unsubscribeSuccessDetail]
 other = "The address "
 [unsubscribeSuccessDetail2]
 other = " has been removed from the list. You won't receive any further emails from me."
-
+[unsubscribeSendReason]
+other =  "Send feedback" 
+[unsubscribeSkip]
+other = "Skip"
 [unsubscribeError]
 other = "Something went wrong"
-[tryAgain]
-other = "Try again"
 [unsubscribeErrorDetail]
 other = "Your request could not be processed. Please try again or"
+[unsubscribeOtherPlaceholder]
+other = "Your reason…"
+[unsubscribeOtherReason]
+other =  "Please tell us more"
+[unsubscribeSurveyThanks]
+other = "Thank you for your feedback."
+
+[tryAgain]
+other = "Try again"
 [contactUs]
 other = "contact us"
 

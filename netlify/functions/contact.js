@@ -1,69 +1,97 @@
-// ==========================================
-// Contact Form Function
-// Sends email via SendGrid or similar
-// ==========================================
+/**
+ * Netlify Function: contact
+ *
+ * Handles contact form submissions via SendGrid.
+ *
+ * Endpoint: POST /.netlify/functions/contact
+ * Body: { name: string, email: string, message: string }
+ *
+ * Required environment variables (set in Netlify dashboard):
+ *   SENDGRID_API_KEY
+ *   CONTACT_EMAIL       — recipient address (your inbox)
+ *   CONTACT_FROM_EMAIL  — verified sender address in SendGrid
+ */
 
-const fetch = require('node-fetch');
+exports.handler = async function (event) {
 
-exports.handler = async function(event, context) {
+    // Only allow POST
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
-            body: JSON.stringify({ error: 'Method not allowed' })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ error: 'Method not allowed' }),
         };
     }
-    
+
+    let body;
     try {
-        const { name, email, message } = JSON.parse(event.body);
-        
-        // Validate inputs
-        if (!name || !email || !message) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'All fields are required' })
-            };
-        }
-        
-        // Send via SendGrid (example)
+        body = JSON.parse(event.body);
+    } catch {
+        return {
+            statusCode: 400,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ error: 'Invalid JSON' }),
+        };
+    }
+
+    const { name, email, message } = body;
+
+    // Validate inputs
+    if (!name || !email || !message) {
+        return {
+            statusCode: 400,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ error: 'All fields are required' }),
+        };
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return {
+            statusCode: 400,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ error: 'A valid email address is required' }),
+        };
+    }
+
+    try {
         const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
-            method: 'POST',
+            method:  'POST',
             headers: {
                 'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
-                'Content-Type': 'application/json'
+                'Content-Type':  'application/json',
             },
             body: JSON.stringify({
                 personalizations: [{
-                    to: [{ email: process.env.CONTACT_EMAIL }],
-                    subject: 'New Contact Form Submission'
+                    to:      [{ email: process.env.CONTACT_EMAIL }],
+                    subject: `New contact form message from ${name}`,
                 }],
-                from: { email: 'noreply@yourdomain.com' },
+                from:    { email: process.env.CONTACT_FROM_EMAIL },
+                reply_to: { email, name },
                 content: [{
-                    type: 'text/plain',
-                    value: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-                }]
-            })
+                    type:  'text/plain',
+                    value: `Name:    ${name}\nEmail:   ${email}\n\nMessage:\n${message}`,
+                }],
+            }),
         });
-        
+
         if (!response.ok) {
-            throw new Error('Email send failed');
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.errors?.[0]?.message || 'SendGrid request failed');
         }
-        
+
         return {
             statusCode: 200,
-            body: JSON.stringify({
-                success: true,
-                message: 'Message sent successfully!'
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ success: true }),
         };
-        
+
     } catch (error) {
-        console.error('Contact form error:', error);
-        
+        console.error('[contact] Error:', error.message);
+
         return {
             statusCode: 500,
-            body: JSON.stringify({
-                error: 'Failed to send message. Please try again.'
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ error: 'Failed to send message. Please try again.' }),
         };
     }
 };

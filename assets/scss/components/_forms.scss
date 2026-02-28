@@ -128,4 +128,33 @@ select {
         justify-content: space-around;
         gap: 1rem;
     }
+
+    &__reason-form {
+        color: inherit;
+    }
+
+    &__survey {
+        color: inherit;
+    }
+
+    &__radios {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    &__radio {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        cursor: pointer;
+
+        input[type="radio"] {
+            width: auto; // override the 100% width from your base input rule
+            flex-shrink: 0; // prevent radio from being squished
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+    }
 }
