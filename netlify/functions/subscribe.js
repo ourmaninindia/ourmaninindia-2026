@@ -47,7 +47,7 @@ exports.handler = async function (event) {
         // sections are stored as a custom field — adjust field name to match
         // your ConvertKit custom fields if needed
         const payload = {
-            api_key:    process.env.CONVERTKIT_API_KEY,
+            api_secret:    process.env.CONVERTKIT_API_KEY,
             email:      email,
             first_name: name || '',
             fields: {
@@ -65,7 +65,7 @@ exports.handler = async function (event) {
         );
 
         const data = await response.json();
-
+console.log('[subscribe] ConvertKit response:', JSON.stringify(data));
         if (!response.ok) {
             throw new Error(data.message || 'ConvertKit subscription failed');
         }
