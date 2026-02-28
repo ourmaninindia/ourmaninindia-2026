@@ -221,7 +221,7 @@ function updateSubmitButton(form, submitBtn, checkboxes) {
         submitBtn.disabled = false;
         return;
     }
-    
+
     const fieldsOk   = form.checkValidity();
     const checkboxOk = checkboxes.length
         ? checkboxes.some(cb => cb.checked)
@@ -236,18 +236,13 @@ function submitForm(form, submitBtn, checkboxes) {
     const endpoint     = form.dataset.endpoint;
     const originalText = submitBtn.textContent;
 
-    // Loading state
-    submitBtn.textContent = submitBtn.dataset.loadingText || 'Sending...';
-    submitBtn.disabled    = true;
-    form.querySelectorAll('input, textarea, select').forEach(f => f.disabled = true);
-
-    // Build payload from FormData
+    // Build payload BEFORE disabling fields
     const payload = {};
     new FormData(form).forEach((value, key) => {
         payload[key] = value;
     });
 
-    // Replace individual checkbox values with array under group name
+    // Replace checkbox values with array
     if (checkboxes.length) {
         const groupName = checkboxes[0].name || 'sections';
         payload[groupName] = checkboxes
@@ -255,6 +250,11 @@ function submitForm(form, submitBtn, checkboxes) {
             .map(cb => cb.value);
         delete payload[groupName + '[]'];
     }
+
+    // Loading state AFTER payload is captured
+    submitBtn.textContent = submitBtn.dataset.loadingText || 'Sending...';
+    submitBtn.disabled    = true;
+    form.querySelectorAll('input, textarea, select').forEach(f => f.disabled = true);
 
     fetch(endpoint, {
         method:  'POST',
