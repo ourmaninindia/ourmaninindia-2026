@@ -1,10 +1,10 @@
 /**
- * Netlify Function: subscribe
+ * Netlify Function: unsubscribe
  *
- * Handles newsletter subscription via Brevo API.
+ * Removes a contact from Brevo mailing list.
  *
- * Endpoint: POST /.netlify/functions/subscribe
- * Body: { email: string, firstname?: string, lastname?: string, sections?: string[] }
+ * Endpoint: POST /.netlify/functions/unsubscribe
+ * Body: { email: string }
  *
  * Required environment variables:
  *   BREVO_API_KEY
@@ -30,7 +30,7 @@ export default async function handler(req) {
         });
     }
 
-    const { email, firstname, lastname, sections } = body;
+    const { email } = body;
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         return new Response(JSON.stringify({ error: 'A valid email address is required' }), {
@@ -40,31 +40,23 @@ export default async function handler(req) {
     }
 
     try {
-        const payload = {
-            email,
-            attributes: {
-                FIRSTNAME: firstname || '',
-                LASTNAME:  lastname  || '',
-                SECTIONS:  sections ? sections.join(', ') : '',
-            },
-            listIds:       [Number(process.env.BREVO_LIST_ID)],
-            updateEnabled: true,
-        };
-        console.log('[subscribe] Sending to Brevo:', JSON.stringify(payload));
-
-        const response = await fetch('https://api.brevo.com/v3/contacts', {
-            method:  'POST',
-            headers: {
-                'api-key':      process.env.BREVO_API_KEY,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload),
-        });
+        const response = await fetch(
+            `https://api.brevo.com/v3/contacts/lists/${process.env.BREVO_LIST_ID}/contacts/remove`,
+            {
+                method:  'POST',
+                headers: {
+                    'api-key':      process.env.BREVO_API_KEY,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ emails: [email] }),
+            }
+        );
 
         const data = await response.json().catch(() => ({}));
-        console.log('[subscribe] Brevo response:', response.status, JSON.stringify(data));
+        console.log('[unsubscribe] Brevo response:', response.status, JSON.stringify(data));
 
-        if (!response.ok && response.status !== 204) {
+        // 404 means contact not found — treat as success
+        if (!response.ok && response.status !== 404) {
             throw new Error(data.message || `Brevo error: ${response.status}`);
         }
 
@@ -74,8 +66,8 @@ export default async function handler(req) {
         });
 
     } catch (error) {
-        console.error('[subscribe] Error:', error.message);
-        return new Response(JSON.stringify({ error: 'Subscription failed. Please try again.' }), {
+        console.error('[unsubscribe] Error:', error.message);
+        return new Response(JSON.stringify({ error: 'Unsubscribe failed. Please try again.' }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
         });

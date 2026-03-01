@@ -2,18 +2,14 @@
  * Netlify Function: unsubscribe-reason
  *
  * Receives optional feedback after a user unsubscribes.
- * Logs the reason and optionally forwards it to your email or analytics.
+ * Best-effort — non-critical.
  *
- * Endpoint: POST /api/unsubscribe-reason
+ * Endpoint: POST /.netlify/functions/unsubscribe-reason
  * Body: { email: string, reason: string, other?: string }
- *
- * This is a best-effort endpoint — the unsubscribe has already succeeded
- * before this is called, so failures here are non-critical.
  */
 
-export default async function handler(req, context) {
+export default async function handler(req) {
 
-    // Only accept POST
     if (req.method !== 'POST') {
         return new Response(JSON.stringify({ error: 'Method not allowed' }), {
             status: 405,
@@ -40,24 +36,12 @@ export default async function handler(req, context) {
         });
     }
 
-    // Log for Netlify function logs (visible in Netlify dashboard)
-    console.log('Unsubscribe reason received:', {
+    console.log('[unsubscribe-reason] Received:', {
         email,
         reason,
         other: other || null,
         timestamp: new Date().toISOString(),
     });
-
-    // ── Optional: forward to your email provider ─────────────────────
-    // If you use Mailchimp, ConvertKit, etc. you could store the reason
-    // as a subscriber note or tag here. Example placeholder:
-    //
-    // await fetch('https://your-email-provider/api/notes', {
-    //     method: 'POST',
-    //     headers: { 'Authorization': `Bearer ${process.env.EMAIL_API_KEY}` },
-    //     body: JSON.stringify({ email, note: reason }),
-    // });
-    // ─────────────────────────────────────────────────────────────────
 
     return new Response(JSON.stringify({ status: 'ok' }), {
         status: 200,

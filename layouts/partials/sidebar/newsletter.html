@@ -14,19 +14,22 @@
         <div class="form__checkboxes">
             <div class="form__group">
                 <label for="section-blog" class="form__label">Blog</label>
-                <input type="checkbox" id="section-blog" name="sections[]" value="blog"
+                <input type="checkbox" id="section-blog" name="sections[]"
+                    value="blog"
                     class="newsletter__section-checkbox"
                     {{ if eq .Section "blog" }}checked{{ end }}>
             </div>
             <div class="form__group">
                 <label for="section-cycling" class="form__label">Cycling</label>
-                <input type="checkbox" id="section-cycling" name="sections[]" value="cycling"
+                <input type="checkbox" id="section-cycling" name="sections[]"
+                    value="cycling"
                     class="newsletter__section-checkbox"
                     {{ if eq .Section "cycling" }}checked{{ end }}>
             </div>
             <div class="form__group">
                 <label for="section-tech" class="form__label">Tech</label>
-                <input type="checkbox" id="section-tech" name="sections[]" value="tech"
+                <input type="checkbox" id="section-tech" name="sections[]"
+                    value="tech"
                     class="newsletter__section-checkbox"
                     {{ if eq .Section "tech" }}checked{{ end }}>
             </div>
@@ -34,26 +37,36 @@
 
         <span id="newsletter-sections-error" class="form__error"></span>
 
-        <div class="form__group">
-            <label for="newsletter-firstname" class="form__label">Your First Name</label>
+        <!-- First and last name side by side -->
+<div class="form__group--inline">
+        <div class="form__group form__group--float">
             <input type="text" id="newsletter-firstname" name="firstname"
-                autocomplete="name" placeholder="Your first name">
+                autocomplete="given-name" placeholder=" ">
+            <label for="newsletter-firstname"
+                class="form__label form__label--float">First name</label>
+                <span class="form__error"></span>
         </div>
 
-        <div class="form__group">
-            <label for="newsletter-lastname" class="form__label">Your Last Name</label>
+        <div class="form__group form__group--float">
             <input type="text" id="newsletter-lastname" name="lastname"
-                autocomplete="name" placeholder="Your last name">
+                autocomplete="family-name"
+                placeholder="  ">
+            <label for="newsletter-lastname"
+                class="form__label form__label--float required">Last name</label>
+                <span class="form__error"></span>
         </div>
+</div>
 
-        <div class="form__group">
-            <label for="newsletter-email" class="form__label required">Your email</label>
+        <!-- Email -->
+        <div class="form__group form__group--float">
             <input type="email" id="newsletter-email" name="email"
                 autocomplete="email"
-                placeholder="your@email.com"
+                placeholder=" "
                 required
                 data-msg-invalid="{{ i18n "form-errorEmailInvalid" }}"
                 data-error="newsletter-email-error">
+            <label for="newsletter-email"
+                class="form__label form__label--float required">Email</label>
             <span id="newsletter-email-error" class="form__error"></span>
         </div>
 

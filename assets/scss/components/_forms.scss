@@ -22,13 +22,11 @@ select {
     &:focus {
         border: 1px solid var(--color-primary-dark);
         outline: none;
-        //box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
     &:hover {
         border: 1px solid var(--color-primary);
         outline: none;
-        //box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
     &::placeholder {
@@ -56,7 +54,9 @@ select {
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
     }
+}
 
+.form {
     &__feedback {
         padding: var(--spacing-lg);
         border-radius: var(--border-radius-md);
@@ -85,9 +85,7 @@ select {
         background-color: var(--color-primary-hover);
         cursor: pointer;
     }
-}
 
-.form {
     &__error {
         display: block;
         color: var(--color-error-dark);
@@ -109,7 +107,7 @@ select {
     }
 
     &__label.required::after {
-        display: inline-block; // or width: fit-content
+        display: inline-block;
         content: " *";
         color: var(--color-error);
         margin-left: 4px;
@@ -120,6 +118,78 @@ select {
 
         &:last-child {
             margin-bottom: 0;
+        }
+    }
+
+    &__group--inline {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+
+        .form__group,
+        .form__group--float {
+            flex: 1 1 30ch;
+            min-width: 30ch;
+            margin-bottom: 0;
+        }
+    }
+
+    &__group--float {
+        position: relative;
+        margin-bottom: var(--spacing-md);
+
+        input,
+        textarea {
+            padding-top: 1.25rem;
+            padding-bottom: 0.25rem;
+
+            &::placeholder {
+                color: transparent; // hide placeholder — label acts as placeholder
+            }
+
+            &:focus,
+            &:not(:placeholder-shown) {
+                ~ .form__label--float {
+                    top: 0;
+                    background-color: var(--color-bg);
+                    padding: 0 var(--spacing-xs);
+                    font-size: 0.85rem;
+                    color: var(--color-primary);
+                }
+            }
+
+            &.is-invalid ~ .form__label--float {
+                color: var(--color-error);
+            }
+        }
+
+        .form__label--float {
+            position: absolute;
+            top: calc(var(--spacing-sm) + 0.5rem);
+            left: var(--spacing-md);
+            transform: translateY(-50%);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            pointer-events: none;
+            transition:
+                top 0.2s ease,
+                font-size 0.2s ease,
+                color 0.2s ease;
+            margin-bottom: 0;
+        }
+
+        // Textarea: label sits at top, not vertically centered
+        textarea ~ .form__label--float {
+            top: 1rem;
+            transform: none;
+        }
+
+        textarea:focus,
+        textarea:not(:placeholder-shown) {
+            ~ .form__label--float {
+                top: 0.35rem;
+            }
         }
     }
 
@@ -151,8 +221,8 @@ select {
         cursor: pointer;
 
         input[type="radio"] {
-            width: auto; // override the 100% width from your base input rule
-            flex-shrink: 0; // prevent radio from being squished
+            width: auto;
+            flex-shrink: 0;
             accent-color: var(--color-primary);
             cursor: pointer;
         }

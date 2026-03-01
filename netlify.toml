@@ -19,3 +19,5 @@
   CONTACT_FROM_EMAIL = "alfred@ourmaninindia.com"
   CONTACT_EMAIL = "alfred@ourmaninindia.com"
 
+[functions]
+  node_bundler = "esbuild"

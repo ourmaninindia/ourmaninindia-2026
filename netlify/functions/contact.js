@@ -4,55 +4,47 @@
  * Handles contact form submissions via SendGrid.
  *
  * Endpoint: POST /.netlify/functions/contact
- * Body: { name: string, email: string, message: string }
+ * Body: { name: string, email: string, subject: string, message: string }
  *
- * Required environment variables (set in Netlify dashboard):
+ * Required environment variables:
  *   SENDGRID_API_KEY
  *   CONTACT_EMAIL       — recipient address (your inbox)
  *   CONTACT_FROM_EMAIL  — verified sender address in SendGrid
  */
 
-exports.handler = async function (event) {
+export default async function handler(req) {
 
-    // Only allow POST
-    if (event.httpMethod !== 'POST') {
-        return {
-            statusCode: 405,
+    if (req.method !== 'POST') {
+        return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+            status: 405,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ error: 'Method not allowed' }),
-        };
+        });
     }
 
     let body;
     try {
-        body = JSON.parse(event.body);
+        body = await req.json();
     } catch {
-        return {
-            statusCode: 400,
+        return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
+            status: 400,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ error: 'Invalid JSON' }),
-        };
+        });
     }
 
-    const { name, email, message, subject } = body;
+    const { name, email, subject, message } = body;
 
-    
-
-    // Validate inputs
-    if (!name || !email || !message) {
-        return {
-            statusCode: 400,
+    if (!name || !email || !subject || !message) {
+        return new Response(JSON.stringify({ error: 'All fields are required' }), {
+            status: 400,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ error: 'All fields are required' }),
-        };
+        });
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return {
-            statusCode: 400,
+        return new Response(JSON.stringify({ error: 'A valid email address is required' }), {
+            status: 400,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ error: 'A valid email address is required' }),
-        };
+        });
     }
 
     try {
@@ -65,14 +57,13 @@ exports.handler = async function (event) {
             body: JSON.stringify({
                 personalizations: [{
                     to:      [{ email: process.env.CONTACT_EMAIL }],
-                    subject: `New contact form message from ${name}`,
+                    subject: subject,
                 }],
-                from:    { email: process.env.CONTACT_FROM_EMAIL },
+                from:     { email: process.env.CONTACT_FROM_EMAIL },
                 reply_to: { email, name },
-                subject: subject || `New contact form message from ${name}`,
-                content: [{
+                content:  [{
                     type:  'text/plain',
-                    value: `Name:    ${name}\nEmail:   ${email}\n\nMessage:\n${message}`,
+                    value: `Name:    ${name}\nEmail:   ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
                 }],
             }),
         });
@@ -82,19 +73,16 @@ exports.handler = async function (event) {
             throw new Error(data.errors?.[0]?.message || 'SendGrid request failed');
         }
 
-        return {
-            statusCode: 200,
+        return new Response(JSON.stringify({ success: true }), {
+            status: 200,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ success: true }),
-        };
+        });
 
     } catch (error) {
         console.error('[contact] Error:', error.message);
-
-        return {
-            statusCode: 500,
+        return new Response(JSON.stringify({ error: 'Failed to send message. Please try again.' }), {
+            status: 500,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ error: 'Failed to send message. Please try again.' }),
-        };
+        });
     }
-};
+}
