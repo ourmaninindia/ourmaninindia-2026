@@ -46,6 +46,18 @@ exports.handler = async function (event) {
     }
 
     try {
+        // Log payload before sending
+        const payload = {
+            email,
+            attributes: {
+                FIRSTNAME: name || '',
+                SECTIONS:  sections ? sections.join(', ') : '',
+            },
+            listIds:       [Number(process.env.BREVO_LIST_ID)],
+            updateEnabled: true,
+        };
+        console.log('[subscribe] Sending to Brevo:', JSON.stringify(payload));
+
         // Brevo: create or update contact
         const response = await fetch('https://api.brevo.com/v3/contacts', {
             method:  'POST',
@@ -53,20 +65,15 @@ exports.handler = async function (event) {
                 'api-key':      process.env.BREVO_API_KEY,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                email,
-                attributes: {
-                    FIRSTNAME: name || '',
-                    SECTIONS:  sections ? sections.join(', ') : '',
-                },
-                listIds:        [Number(process.env.BREVO_LIST_ID)],
-                updateEnabled:  true, // update contact if already exists
-            }),
+            body: JSON.stringify(payload),
         });
+
+        // Always log the response
+        const data = await response.json().catch(() => ({}));
+        console.log('[subscribe] Brevo response:', response.status, JSON.stringify(data));
 
         // Brevo returns 201 on create, 204 on update
         if (!response.ok && response.status !== 204) {
-            const data = await response.json().catch(() => ({}));
             throw new Error(data.message || `Brevo error: ${response.status}`);
         }
 
