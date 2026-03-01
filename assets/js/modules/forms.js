@@ -62,7 +62,7 @@ export function initForms() {
         initForm(form);
     });
 }
- 
+
 function initForm(form) {
     const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
 
@@ -71,9 +71,9 @@ function initForm(form) {
         return;
     }
 
-    const fields      = Array.from(form.querySelectorAll('input, textarea, select'));
+    const fields = Array.from(form.querySelectorAll('input, textarea, select'));
     const checkboxCls = form.dataset.checkboxGroup;
-    const checkboxes  = checkboxCls ? Array.from(form.querySelectorAll(`.${checkboxCls}`)) : [];
+    const checkboxes = checkboxCls ? Array.from(form.querySelectorAll(`.${checkboxCls}`)) : [];
 
     // ── Debug warnings ──────────────────────────────────────────────
     if (checkboxCls && checkboxes.length === 0) {
@@ -216,7 +216,7 @@ function updateSubmitButton(form, submitBtn, checkboxes) {
         return;
     }
 
-    const fieldsOk   = form.checkValidity();
+    const fieldsOk = form.checkValidity();
     const checkboxOk = checkboxes.length
         ? checkboxes.some(cb => cb.checked)
         : true;
@@ -227,7 +227,7 @@ function updateSubmitButton(form, submitBtn, checkboxes) {
 // ── Submission ───────────────────────────────────────────────────────
 
 function submitForm(form, submitBtn, checkboxes) {
-    const endpoint     = form.dataset.endpoint;
+    const endpoint = form.dataset.endpoint;
     const originalText = submitBtn.textContent;
 
     // Build payload BEFORE disabling fields
@@ -238,22 +238,23 @@ function submitForm(form, submitBtn, checkboxes) {
 
     // Replace checkbox values with array
     if (checkboxes.length) {
-        const groupName = checkboxes[0].name || 'sections';
+        const rawName = checkboxes[0].name || 'sections[]';
+        const groupName = rawName.replace('[]', '');
         payload[groupName] = checkboxes
             .filter(cb => cb.checked)
             .map(cb => cb.value);
-        delete payload[groupName + '[]'];
+        delete payload[rawName]; // remove the brackets version
     }
 
     // Loading state AFTER payload is captured
     submitBtn.textContent = submitBtn.dataset.loadingText || 'Sending...';
-    submitBtn.disabled    = true;
+    submitBtn.disabled = true;
     form.querySelectorAll('input, textarea, select').forEach(f => f.disabled = true);
 
     fetch(endpoint, {
-        method:  'POST',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload)
+        body: JSON.stringify(payload)
     })
         .then(response => response.json().then(data => ({ status: response.status, data })))
         .then(result => {
