@@ -10,6 +10,11 @@
     margin-bottom: var(--spacing-xl);
   }
 
+  // no standard margin for background images
+  &__background {
+    margin:0;
+  }
+
   &__title {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: var(--spacing-sm);

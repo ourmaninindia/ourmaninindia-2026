@@ -1,5 +1,4 @@
 # Production overrides
-baseURL = "https://www.your-live-site.com/"
 languageCode = "en"
 environment = "production"
 

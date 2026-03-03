@@ -6,8 +6,9 @@
 </div>
 
 {{ $img := .Resources.Get .Params.featured_image }}
+{{ $alt := .Resources.Get .Params.featured_alt }}
 {{ if $img }}
-    <img class="single__hero-bg" src="{{ $img.RelPermalink }}">
+    <img class="single__hero-bg" alt="{{ $alt }}" src="{{ $img.RelPermalink }}">
 {{ end }}
 
 <div class="contents__container">

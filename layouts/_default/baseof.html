@@ -1,37 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-     <!-- Preload critical font -->
-    <link rel="preload" 
-          href="/fonts/halimun/halimun.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossorigin>
-    {{ partial "site-style.html" . }}
-    {{ partial "seo.html" . }}
-</head>
+    <head>
+        {{ partial "head.html" . }}
+    </head>
 
-<body>
-    {{ partial "header.html" . }}
+    <body>
+        {{ partial "header.html" . }}
 
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
 
-    {{ partial "social-icons.html" . }}
-    {{ partial "footer.html" . }}
-    {{ partial "site-script.html" . }}
-    {{ partial "cookie-consent.html" . }}
+        {{ partial "social-icons.html" . }}
+        {{ partial "footer.html" . }}
 
-    {{ if eq hugo.Environment "development" }}
-    <div class="debug-panel">
-        Template: <span id="template-name">-</span>
-    </div>
-    {{ end }}
-</body>
+        {{ partial "site-script.html" . }}
+        {{ partial "cookie-consent.html" . }}
+        {{ partial "debug.html" . }}
+    </body>
 
 </html>

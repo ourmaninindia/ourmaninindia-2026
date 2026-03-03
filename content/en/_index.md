@@ -9,7 +9,7 @@ tags:
   - website
 date: 2015-09-29T13:35:55Z
 description: "Life is like riding a bicycle. To keep your balance you have to keep moving."
-title: "Home"
+title: "Welcome"
 disable_comments: true
 books: "These are some of the authors I have met and whose books I have enjoyed."
 ---

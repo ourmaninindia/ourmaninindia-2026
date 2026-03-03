@@ -6,23 +6,29 @@
 {{/* Get main.scss */}}
 {{ $mainScss := resources.Get "scss/main.scss" }}
 {{ if not $mainScss }}
-  {{ errorf "main.scss not found in assets/scss/" }}
+{{ errorf "main.scss not found in assets/scss/" }}
 {{ end }}
 
 {{/* Compile with Dart Sass */}}
-{{ $options := dict 
-    "transpiler" "dartsass"
-    "targetPath" "css/main.css"
-    "outputStyle" "expanded"
+{{ $options := dict
+"transpiler" "dartsass"
+"targetPath" "css/main.css"
+"outputStyle" "expanded"
 }}
 
 {{ $style := $mainScss | css.Sass $options }}
 
 {{/* Minify and fingerprint in production */}}
 {{ if hugo.IsProduction }}
-    {{ $style = $style | minify | fingerprint }}
+{{ $style = $style | minify | fingerprint }}
 {{ end }}
 
 <link rel="stylesheet" href="{{ $style.RelPermalink }}"
-{{- with $style.Data.Integrity }} integrity="{{ . }}"{{ end }} >
+    {{- with $style.Data.Integrity }} integrity="{{ . }}" {{ end }}>
 
+<!-- Preload critical font -->
+<link rel="preload"
+    href="/fonts/halimun/halimun.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin>

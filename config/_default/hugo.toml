@@ -1,5 +1,7 @@
 baseURL = "https://www.ourmaninindia.com/"
 languageCode = "en-us"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 title = "Our Man in India"
 timeout = 60000 # was 25000
 # No theme line needed!
@@ -38,9 +40,9 @@ enableGitInfo = true              # essential for Lastmod to work
     enable = true
 
 [permalinks]
-  blog = "/blog/:slug/"
-  cycling = "cycling/:slug"
-  tech = "tech/:slug"
+  blog = "/blog/:filename/"
+  cycling = "/cycling/:filename/"
+  tech = "/tech/:filename/"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

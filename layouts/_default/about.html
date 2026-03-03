@@ -5,36 +5,31 @@
     _default/about.html
 </div>
 
-{{ $img := .Resources.Get .Params.featured_image }}
-{{ if $img }}
-<div class="about__hero-bg">
-    <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="single__hero-img">
-</div>
-{{ end }}
+{{ partial "background.html" . }}
 
 <div class="contents__container">
     <article class="single">
         <header class="single__header">
-           <h1>{{ .Title }}</h1>
-           {{ partial "published.html" . }}
-           {{ partial "reading-time.html" . }}
+            <h1>{{ .Title }}</h1>
+            {{ partial "published.html" . }}
+            {{ partial "reading-time.html" . }}
         </header>
 
         <div class="single__content">
             {{ .Content }}
         </div>
-        
+
         <!-- Date created or modified -->
         {{ partial "date.html" . }}
 
         <!-- Footer: Full width -->
         <div class="single__footer">
-           
+
             <nav class="about__links">
-    <a href="{{ "/about/" | relURL }}">About</a>
-    <a href="{{ "/about/cv/" | relURL }}">CV</a>
-    <a href="{{ "/about/education/" | relURL }}">Education</a>
-</nav>
+                <a href="{{ "/about/" | relURL }}">About</a>
+                <a href="{{ "/about/cv/" | relURL }}">CV</a>
+                <a href="{{ "/about/education/" | relURL }}">Education</a>
+            </nav>
 
             <!-- Comments -->
             {{ partial "comments-cusdis.html" . }}

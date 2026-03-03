@@ -1,0 +1,150 @@
+[readMore]
+other = "Lees meer →"
+[previous]
+other = "Vorige"
+[next]
+other = "Volgende"
+[page]
+other = "Pagina"
+[of]
+other = "van"
+[recentPosts]
+other = "Recente berichten"
+[postsTagged]
+other = "Berichten getagd met"
+[categories]
+other = "Categorieën"
+[popularTags]
+other = "Populaire tags"
+[tags]
+other = "Tags"
+[archive]
+other = "Archief"
+[search]
+other = "Zoeken"
+[searchPlaceholder]
+other = "Berichten zoeken..."
+
+[nl-newsletter]
+other = "Nieuwsbrief"
+[nl-newsletterDescription]
+other = "Schrijf je in om mijn laatste artikel in je inbox te ontvangen."
+[emailPlaceholder]
+other = "Jouw e-mailadres..."
+[nl-subscribe]
+other = "Inschrijven"
+[nl-subscribing]
+other = "Bezig met inschrijven..."
+[searchResultsCount]
+other = "resultaten gevonden"
+[selectCategory]
+other = "Kies een onderwerp"
+[nl-unsubscribe]
+other = "Uitschrijven"
+[nl-sorry]
+other = "Jammer dat je vertrekt. Bevestig hieronder je e-mailadres en ik verwijder je van de mailinglijst."
+
+# forms
+[form-email]
+other = "E-mailadres"
+[errorEmailRequired]
+other = "Vul je e-mailadres in"
+[form-errorEmailInvalid]
+other = "Vul een geldig e-mailadres in"
+[form-errorSectionsRequired]
+other = "Selecteer minimaal één onderwerp"
+[form-success-subscribed]
+other = "Je bent ingeschreven! Controleer je inbox ter bevestiging."
+[form-error-message]
+other = "Er is iets misgegaan. Probeer het opnieuw."
+[form-unsubscribe]
+other = "Uitschrijving bevestigen"
+
+# unsubscribe
+[unsubscribeSuccess]
+other = "Uitgeschreven"
+[unsubscribeSuccessDetail]
+other = "Het adres "
+[unsubscribeSuccessDetail2]
+other = " is van de lijst verwijderd. Je ontvangt geen e-mails meer van mij."
+[unsubscribeSendReason]
+other = "Feedback sturen"
+[unsubscribeSkip]
+other = "Overslaan"
+[unsubscribeError]
+other = "Er is iets misgegaan"
+[unsubscribeErrorDetail]
+other = "Je verzoek kon niet worden verwerkt. Probeer het opnieuw of"
+[unsubscribeOtherPlaceholder]
+other = "Jouw reden…"
+[unsubscribeOtherReason]
+other = "Vertel ons meer"
+[unsubscribeSurveyThanks]
+other = "Bedankt voor je feedback."
+[unsubscribeReason1]
+other = "Ik wil deze e-mails niet langer ontvangen"
+[unsubscribeReason2]
+other = "De e-mails komen te vaak"
+[unsubscribeReason3]
+other = "De inhoud is niet meer relevant voor mij"
+[unsubscribeReason4]
+other = "Ik ontvang in het algemeen te veel e-mails"
+[unsubscribeReason5]
+other = "Anders"
+
+[tryAgain]
+other = "Opnieuw proberen"
+[contactUs]
+other = "neem contact op"
+
+# Error page
+[ep-error]
+other = "Pagina niet gevonden"
+[ep-error-description]
+other = "Sorry, de pagina die je zoekt bestaat niet of is verplaatst."
+[home]
+other = "Home"
+[ep-browse]
+other = "Bladeren"
+
+[page-updated]
+other = "Bijgewerkt op"
+[page-created]
+other = "Aangemaakt op"
+
+[comments]
+other = "Laat gerust je reactie achter"
+[tech-comments]
+other = "Deel je technische inzichten en vragen!"
+[cycling-comments]
+other = "Deel je wielrenervaringen en tips!"
+[general-comments]
+other = "Deel je gedachten hieronder!"
+
+[min-read]
+other = "min lezen"
+
+[readMoreAbout]
+other = "lees meer over {{ .Title }}"
+
+# Footer
+[ft-about]
+other = "Over"
+[ft-contact]
+other = "Contact"
+[ft-policies]
+other = "Beleid"
+[ft-original]
+other = "Alle originele inhoud gelicenseerd"
+[ft-free]
+other = "Vrij te delen en aan te passen<br>met bronvermelding"
+[ft-cookies]
+other = "Cookie-instellingen"
+[ft-preferences]
+other = "Cookievoorkeuren"
+[ft-rights]
+other = "Alle rechten voorbehouden."
+[ft-license]
+other = "Inhoudslicentie"
+[ft-privacy]
+other = "Privacy (AVG)"

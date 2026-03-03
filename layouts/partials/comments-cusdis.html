@@ -1,7 +1,7 @@
 {{ if not .Params.disable_comments }}
 <section class="comments">
     <div class="comments__container">
-        <h3 class="comments__title">💬 {{ i18n "comments" }}</h3>
+        <h2 class="comments__title">💬 {{ i18n "comments" }}</h2>
         <p class="comments__description">
             {{ if in .Params.categories "Tech" }}
                 {{ i18n "tech-comments"}}
@@ -18,11 +18,11 @@
              data-page-id="{{ .RelPermalink }}"
              data-page-url="{{ .Permalink }}"
              data-page-title="{{ .Title }}"
-             data-theme="auto">
+             data-theme="light">
         </div>
     </div>
 </section>
 
-<script async defer src="{{ .Site.Params.cusdis.host }}/js/cusdis.es.js"></script>
+<script src="{{ .Site.Params.cusdis.host }}/js/cusdis.es.js"></script>
 
 {{ end }}

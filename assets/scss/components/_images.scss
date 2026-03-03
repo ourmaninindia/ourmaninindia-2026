@@ -14,7 +14,7 @@ figure {
     margin: 0.5rem 0 0 0;
     transition: transform 0.3s ease, filter 0.3s ease;
 
-    &:hover {
+    &:not(.contents__background):hover {
       transform: scale(1.04);
       filter: brightness(1.08);
       cursor: pointer;

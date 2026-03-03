@@ -5,54 +5,58 @@
   index.html
 </div>
 
- <div class="container">
-   {{ partial "date" . }}
+<div class="contents__container">
+  <article class="single">
+    <header class="single__header">
+      <h1>{{ .Title }}</h1>
+      {{ partial "published.html" . }}
+      {{ partial "reading-time.html" . }}
+    </header>
 
-  <div class="content-header">
-      <div></div>
-      <div class="single__content">
+    <div class="single__content">
       {{ .Content }}
-      </div>
-      {{ partial "date.html" . }} 
-  </div>
+    </div>
+    {{ partial "date.html" . }}
 
-  {{- $mainSections := (slice "post") }}
-  {{- $section := where .Site.RegularPages ".Params.featured" true }}
-  {{/* this was $section := where .Site.RegularPages "Section" "in" $mainSections */}}
-  {{- $section_count := len $section -}}
+    {{- $mainSections := (slice "post") }}
+    {{- $section := where .Site.RegularPages ".Params.featured" true }}
+    {{/* this was $section := where .Site.RegularPages "Section" "in"
+    $mainSections */}}
+    {{- $section_count := len $section -}}
 
-  {{- if ge $section_count 1 }}
+    {{- if ge $section_count 1 }}
     {{- $section_name := "post" -}}
 
     <div class="article">
       {{- with .Site.GetPage "section" $section_name }}
-        <div class="recent-articles">
+      <div class="recent-articles">
         {{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}
-        </div>
+      </div>
       {{- end }}
 
       {{- $posts := $.Param "recent_posts_number" | default 3 }}
       <section>
         {{- range (first $posts $section) }}
-          <div>
-            {{ .Render "summary-with-image" }}
-          </div>
+        <div>
+          {{ .Render "summary-with-image" }}
+        </div>
         {{- end }}
       </section>
     </div>
 
     {{- if ge $section_count (add $posts 1) }}
-      {{- with .Site.GetPage "section" $section_name }}
-      <div>
-        <a 
-          class="posted"
-          href="{{ .RelPermalink }}">
-          {{ i18n "allTitle" . }}
-        </a>
-      </div>
-      {{- end }}
+    {{- with .Site.GetPage "section" $section_name }}
+    <div>
+      <a
+        class="posted"
+        href="{{ .RelPermalink }}">
+        {{ i18n "allTitle" . }}
+      </a>
+    </div>
+    {{- end }}
     {{- end }}
 
-  {{- end }}
-  </div>
+    {{- end }}
+  </article>
+</div>
 {{- end }}

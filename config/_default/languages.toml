@@ -1,11 +1,14 @@
-  [en]
-    languageName = "English"
-    weight = 1
-    [en.params]
-      description = "A modern tech blog"
-  
-  [nl]
-    languageName = "Dutch"
-    weight = 2
-    [nl.params]
-      description = "Nederlandstalig"
+[en]
+  languageName = "English"
+  weight = 1
+  contentDir = "content/en"
+  [en.params]
+    description = "English"
+
+[nl]
+  languageName = "Dutch"
+  weight = 2
+  contentDir = "content/nl"
+  [nl.params]
+    description = "Nederlandstalig"
+

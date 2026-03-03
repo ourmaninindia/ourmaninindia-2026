@@ -124,6 +124,9 @@ other = "Share your thoughts below!"
 [min-read]
 other = "min read"
 
+[readMoreAbout]
+other = "read more about {{ .Title }}"
+
 # Footer
 [ft-about]
 other = "About"
@@ -132,7 +135,7 @@ other = "Contact"
 [ft-policies]
 other = "Policies"
 [ft-original]
-other = "All original content licensed under"
+other = "All original content licensed"
 [ft-free]
 other = "Free to share & adapt<br>with attribution"
 [ft-cookies]
