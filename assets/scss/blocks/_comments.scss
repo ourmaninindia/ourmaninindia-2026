@@ -33,10 +33,19 @@
     }
 }
 
+#root {
+    background: red;
+
+}
+
 // Cusdis customization
-#cusdis-thread {
-    margin-top: var(--spacing-lg);
-    
+#cusdis_thread {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: 10px;
+
     iframe {
         width: 100%;
         border: 1px solid var(--color-border);
