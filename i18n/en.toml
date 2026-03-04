@@ -112,14 +112,6 @@ other = "Updated on"
 [page-created]
 other = "Created on"
 
-[comments]
-other = "Feel free to leave your comments"
-[tech-comments]
-other = "Share your technical insights and questions!"
-[cycling-comments]
-other = "Share your cycling experiences and tips!"
-[general-comments]
-other = "Share your thoughts below!"
 
 [min-read]
 other = "min read"
@@ -148,3 +140,27 @@ other = "All rights reserved."
 other = "Content License"
 [ft-privacy]
 other = "Privacy (GDPR)"
+
+# comments Cusdis
+[comments]
+other = "Feel free to leave your comments"
+[tech-comments]
+other = "Share your technical insights and questions!"
+[cycling-comments]
+other = "Share your cycling experiences and tips!"
+[general-comments]
+other = "Share your thoughts below!"
+
+# Comments Netlify
+[comments-leave]
+other = "Leave a comment"
+[comments-replying]
+other = "Replying to"
+[comments-submit]
+other = "Post comment"
+[comments-success]
+other = "Thank you! Your comment will appear shortly."
+[form-name]
+other = "Name"
+[form-message]
+other = "Message"

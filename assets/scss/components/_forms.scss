@@ -124,19 +124,19 @@ select {
     &__group--inline {
         display: flex;
         gap: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
+        // margin-bottom: var(--spacing-sm);
 
         .form__group,
         .form__group--float {
             flex: 1 1 30ch;
             min-width: 30ch;
-            margin-bottom: 0;
+            // margin-bottom: 0;
         }
     }
 
     &__group--float {
         position: relative;
-        margin-bottom: var(--spacing-md);
+        margin-bottom: 0; 
 
         input,
         textarea {
@@ -151,6 +151,7 @@ select {
             &:not(:placeholder-shown) {
                 ~ .form__label--float {
                     top: 0;
+                    transform: translateY(-50%);
                     background-color: var(--color-bg);
                     padding: 0 var(--spacing-xs);
                     font-size: 0.85rem;
@@ -163,11 +164,21 @@ select {
             }
         }
 
+        // Input label: vertically centered in field
+        input ~ .form__label--float {
+            top: calc(var(--spacing-sm) + 0.5rem);
+            transform: translateY(-50%);
+        }
+
+        // Textarea label: anchored to top of field
+        textarea ~ .form__label--float {
+            top: 1rem;
+            transform: none;
+        }
+
         .form__label--float {
             position: absolute;
-            top: calc(var(--spacing-sm) + 0.5rem);
             left: var(--spacing-md);
-            transform: translateY(-50%);
             font-size: 1rem;
             font-weight: 600;
             color: var(--color-text-light);
@@ -177,19 +188,6 @@ select {
                 font-size 0.2s ease,
                 color 0.2s ease;
             margin-bottom: 0;
-        }
-
-        // Textarea: label sits at top, not vertically centered
-        textarea ~ .form__label--float {
-            top: 1rem;
-            transform: none;
-        }
-
-        textarea:focus,
-        textarea:not(:placeholder-shown) {
-            ~ .form__label--float {
-                top: 0.35rem;
-            }
         }
     }
 
@@ -227,4 +225,5 @@ select {
             cursor: pointer;
         }
     }
+    
 }

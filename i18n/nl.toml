@@ -112,14 +112,6 @@ other = "Bijgewerkt op"
 [page-created]
 other = "Aangemaakt op"
 
-[comments]
-other = "Laat gerust je reactie achter"
-[tech-comments]
-other = "Deel je technische inzichten en vragen!"
-[cycling-comments]
-other = "Deel je wielrenervaringen en tips!"
-[general-comments]
-other = "Deel je gedachten hieronder!"
 
 [min-read]
 other = "min lezen"
@@ -148,3 +140,27 @@ other = "Alle rechten voorbehouden."
 other = "Inhoudslicentie"
 [ft-privacy]
 other = "Privacy (AVG)"
+
+# comments Cusdis
+[comments]
+other = "Laat gerust je reactie achter"
+[tech-comments]
+other = "Deel je technische inzichten en vragen!"
+[cycling-comments]
+other = "Deel je wielrenervaringen en tips!"
+[general-comments]
+other = "Deel je gedachten hieronder!"
+
+# Comments Netlify
+[comments-leave]
+other = "Leave a comment"
+[comments-replying]
+other = "Replying to"
+[comments-submit]
+other = "Post comment"
+[comments-success]
+other = "Thank you! Your comment will appear shortly."
+[form-name]
+other = "Name"
+[form-message]
+other = "Message"

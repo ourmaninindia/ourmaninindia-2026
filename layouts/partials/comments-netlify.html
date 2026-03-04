@@ -1,0 +1,88 @@
+{{ if not .Params.disable_comments }}
+<section class="comments">
+    <div class="comments__container">
+        <h2 class="comments__title">💬 {{ i18n "comments" }}</h2>
+        <p class="comments__description">
+            {{ if in .Params.categories "Tech" }}
+                {{ i18n "tech-comments" }}
+            {{ else if in .Params.categories "Cycling" }}
+                {{ i18n "cycling-comments" }}
+            {{ else }}
+                {{ i18n "general-comments" }}
+            {{ end }}
+        </p>
+
+        <!-- Comments display -->
+        <div id="comments-list" data-page-id="{{ .RelPermalink }}">
+            <p class="comments__loading">Loading comments...</p>
+        </div>
+
+        <!-- Comment form -->
+        <div class="comments__form-wrapper">
+            <form id="comment-form"
+                name="comments"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                novalidate>
+
+                <input type="hidden" name="form-name" value="comments">
+                <input type="hidden" name="page_id" value="{{ .RelPermalink }}">
+                <input type="hidden" name="parent_id" value="" id="parent-id">
+                <p class="hidden">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
+
+                <div id="reply-indicator" class="comments__reply-indicator hidden">
+                    {{ i18n "comments-replying" }} <span id="reply-name"></span>
+                    <button type="button" id="cancel-reply">✕</button>
+                </div>
+
+                <div class="form__group--inline">
+                    <div class="form__group form__group--float">
+                        <input type="text"
+                               id="comment-name"
+                               name="name"
+                               placeholder="Name"
+                               autocomplete="name"
+                               data-error="contact-name-error"
+                               required>
+                        <label class="form__label form__label--float required" for="comment-name">
+                            {{ i18n "form-name" }}
+                        </label>
+                        <span id="contact-name-error" class="form__error"></span>
+                    </div>
+
+                    <div class="form__group form__group--float">
+                        <input type="email"
+                               id="comment-email"
+                               name="email"
+                               placeholder="Email"
+                               autocomplete="email">
+                        <label class="form__label form__label--float" for="comment-email">
+                            {{ i18n "form-email" }}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form__group form__group--float">
+<textarea id="comment-message" name="message" placeholder="Message" rows="4" data-error="comment-message-error" required></textarea>
+                    <label class="form__label form__label--float required" for="comment-message">
+                        {{ i18n "form-message" }}
+                    </label>
+                    <span id="comment-message-error" class="form__error"></span>
+                </div>
+
+                <button type="submit" class="form__button">{{ i18n "comments-submit" }}</button>
+
+                <div id="comment-success" class="form__success hidden">
+                    {{ i18n "comments-success" }}
+                </div>
+                <div id="comment-error" class="form__error hidden">
+                    {{ i18n "form-error-message" }}
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -8,6 +8,7 @@ import { initAccordions }     from './modules/accordions.js';
 import { initArchive }        from './modules/archive-dropdown.js';
 import { initCookie }         from './modules/cookie-consent.js';
 import { initCodeTabs }       from './modules/code-tabs.js';
+import { initComments }       from './modules/comments.js';
 import { initCopyCode }       from './modules/copy-code.js';
 import { initCyclingGallery } from './modules/cycling-gallery.js';
 import { initDebug }          from './modules/debug.js';
@@ -28,7 +29,6 @@ import { initThemeToggle }    from './modules/darkmode.js';
 import { initTOC }            from './modules/toc.js';
 
 
-
 // Firefox fix
 if (document.documentElement.hasAttribute('style')) {
     document.documentElement.removeAttribute('style');
@@ -40,6 +40,7 @@ function init() {
     initArchive();
     initCookie();
     initCodeTabs();
+    initComments();
     initCopyCode();
     initCyclingGallery();
     initDebug();
