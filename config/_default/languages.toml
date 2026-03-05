@@ -1,14 +1,14 @@
 [en]
   languageName = "English"
   weight = 1
-  contentDir = "content/en"
   [en.params]
     description = "English"
+    flag = "🇬🇧"
 
 [nl]
   languageName = "Dutch"
   weight = 2
-  contentDir = "content/nl"
   [nl.params]
     description = "Nederlandstalig"
+    flag = "🇳🇱"
 

@@ -16,16 +16,20 @@
                 </li>
                 {{ end }}
 
-                <!-- Language Switcher (if multilingual) -->
+                 <!-- Language Switcher -->
                 {{ if .IsTranslated }}
                 <li class="nav__item nav__item--lang">
                     {{ range .Translations }}
-                    <a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" class="nav__link">
-                        {{ .Language.LanguageName }}
+                    <a href="{{ .RelPermalink }}"
+                       lang="{{ .Language.Lang }}"
+                       class="nav__link nav__link--flag"
+                       aria-label="{{ .Language.LanguageName }}">
+                        {{ .Language.Params.flag }}
                     </a>
                     {{ end }}
                 </li>
                 {{ end }}
+                
                 <li class="nav__item">
                     <span class="tooltip__wrapper">
                         <button id="theme-toggle" aria-label="Toggle dark/light theme" class="nav__theme">

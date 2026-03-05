@@ -39,7 +39,7 @@ CookieConsent.run({
                     onAccept: () => {
                         // Load Google Analytics
                         {{ if .Site.Params.googleAnalytics }}
-                        console.log('Analytics cookies accepted - Loading Google Analytics');
+                        // console.log('Analytics cookies accepted - Loading Google Analytics');
                         loadGoogleAnalytics();
                         {{ end }}
                     },
