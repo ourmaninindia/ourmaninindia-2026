@@ -18,7 +18,8 @@ export default async function handler(req, context) {
     try {
         // Fetch all submissions for the comments form
         const response = await fetch(
-    `https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/forms/comments/submissions?per_page=100`,
+    // `https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/forms/comments/submissions?per_page=100`,
+    'https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/submissions?form_name=comments&per_page=100`,
     {
         headers: {
             'Authorization': `Bearer ${NETLIFY_ACCESS_TOKEN}`
