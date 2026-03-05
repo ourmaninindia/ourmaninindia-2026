@@ -1,6 +1,3 @@
-
-
-
 const NETLIFY_ACCESS_TOKEN = process.env.NETLIFY_ACCESS_TOKEN;
 const NETLIFY_SITE_ID = process.env.NETLIFY_SITE_ID;
 
@@ -16,28 +13,20 @@ export default async function handler(req, context) {
     }
 
     try {
-        // Fetch all submissions for the comments form
         const response = await fetch(
-    // `https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/forms/comments/submissions?per_page=100`,
-    'https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/submissions?form_name=comments&per_page=100`,
-    {
-        headers: {
-            'Authorization': `Bearer ${NETLIFY_ACCESS_TOKEN}`
-        }
-    }
-);
+            `https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/submissions?form_name=comments&per_page=100`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${NETLIFY_ACCESS_TOKEN}`
+                }
+            }
+        );
 
-console.log('Netlify API status:', response.status);
-console.log('SITE_ID:', NETLIFY_SITE_ID ? 'set' : 'missing');
-console.log('TOKEN:', NETLIFY_ACCESS_TOKEN ? 'set' : 'missing');
-
-if (!response.ok) {
-    const text = await response.text();
-    console.log('Netlify API error body:', text);
-    throw new Error(`Netlify API error: ${response.status}`);
-}
+        console.log('Netlify API status:', response.status);
 
         if (!response.ok) {
+            const text = await response.text();
+            console.log('Netlify API error body:', text);
             throw new Error(`Netlify API error: ${response.status}`);
         }
 
@@ -66,7 +55,7 @@ if (!response.ok) {
             headers: { 'Content-Type': 'application/json' }
         });
     }
-};
+}
 
 export const config = {
     path: '/api/comments'
