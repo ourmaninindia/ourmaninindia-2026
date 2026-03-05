@@ -52,10 +52,10 @@ $z-tooltip: 1050;
   // Colors - Background
   --color-bg:           hsl(214, 42%, 97%);  // #F6F9FC stripe equivalent
   --color-bg-secondary: hsl(240, 100%, 99%); // #F8F8FF ghostwhite
+  --color-comments:     hsl(34, 78%, 91%);   // antiquewhite
   --color-white:        hsl(0, 0%, 100%);    // #ffffff
   --color-black:        hsl(0, 0%, 0%);      // #000000
-  --color-comments:     hsl(34, 78%, 91%);   // antiquewhite
-
+  
   // Colors - UI States
   --color-border:       hsl(220,  13%, 91%); // #e5e7eb gray-200
   --color-border-light: hsl(  0,   0%, 87%); // #dddddd light gray
@@ -169,7 +169,7 @@ $z-tooltip: 1050;
     // Colors - Background (body content only)
     --color-bg:           hsl( 36,  16%, 10%); // #1e1a15 dark warm brown
     --color-bg-secondary: hsl( 36,  16%, 14%); // #2a241d slightly lighter
-    --color-comments:     hsl(210, 13%, 50%);  // slategray
+    --color-comments:     hsl(210, 13%, 20%);  // slategray
 
     // Colors - UI States
     --color-border:       hsl(  0,   0%, 23%); // #3a3a3a dark gray

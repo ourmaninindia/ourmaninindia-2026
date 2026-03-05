@@ -40,9 +40,9 @@ enableGitInfo = true              # essential for Lastmod to work
     enable = true
 
 [permalinks]
-  blog = "/blog/:filename/"
-  cycling = "/cycling/:filename/"
-  tech = "/tech/:filename/"
+  blog = "/blog/:contentbasename/"
+  cycling = "/cycling/:contentbasename/"
+  tech = "/tech/:contentbasename/"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
