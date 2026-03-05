@@ -5,9 +5,11 @@
    ========================================== */
 
 .comments {
-    margin-top: var(--spacing-xl);
+    // margin-top: var(--spacing-xl);
     border-top: 2px solid var(--color-border);
-    padding-top: var(--spacing-xl);
+    // padding-top: var(--spacing-xl);
+    background-color: antiquewhite;
+    padding: var(--spacing-xs);
 
     &__container {
         max-width: 800px;
@@ -22,7 +24,7 @@
 
     &__description {
         color: var(--color-text-light);
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: 0; // var(--spacing-lg);
         font-size: clamp(0.875rem, 2vw, 1rem);
         line-height: var(--line-height-relaxed);
     }
@@ -36,12 +38,12 @@
 
     &__error {
         color: var(--color-error);
-        padding: var(--spacing-md) 0;
+        // padding: var(--spacing-md) 0;
     }
 
     &__form-wrapper {
-        margin-top: var(--spacing-xl);
-        padding-top: var(--spacing-lg);
+        // margin-top: var(--spacing-xl);
+        // padding-top: var(--spacing-lg);
         border-top: 1px solid var(--color-border);
     }
 
@@ -77,11 +79,11 @@
 // ── Individual comments ───────────────────────────────────────────────
 
 .comment {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-lg);
     background: var(--color-bg-secondary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
     transition: border-color var(--transition-base);
 
     &:hover {
@@ -92,7 +94,7 @@
         display: flex;
         align-items: center;
         gap: var(--spacing-sm);
-        margin-bottom: var(--spacing-sm);
+        // margin-bottom: var(--spacing-sm);
         flex-wrap: wrap;
     }
 

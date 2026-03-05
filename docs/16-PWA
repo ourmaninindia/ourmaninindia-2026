@@ -1,0 +1,59 @@
+## PWA — Progressive Web App
+
+The site is configured as a PWA, enabling:
+
+- **Offline support** — previously visited pages are served from cache when offline
+- **Home screen installation** — visitors can install the site as an app on Android/iOS
+- **Performance** — static assets (CSS, JS, fonts, images) are served from cache on repeat visits
+- **Branded browser chrome** — address bar matches the site's brand purple on mobile
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `static/sw.js` | Service worker — caching strategies and offline fallback |
+| `static/manifest.json` | PWA manifest — name, icons, colours, display mode |
+| `static/offline/index.html` | Offline fallback page shown when no connection |
+| `static/images/icon-192.png` | PWA home screen icon (192×192) |
+| `static/images/icon-512.png` | PWA home screen icon (512×512) |
+
+### Caching strategy
+
+| Asset type | Strategy | Notes |
+|------------|----------|-------|
+| HTML pages | Network-first | Always tries network, falls back to cached version |
+| CSS / JS / fonts | Cache-first | Served from cache, updated in background |
+| Images | Cache-first | Cached on first visit |
+| Netlify Functions | Bypassed | Never cached — always live |
+
+### Registration
+
+The service worker is registered in the site `<head>`:
+
+```html
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#20123a">
+```
+
+And in the site scripts:
+```javascript
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+}
+```
+
+### Updating the cache
+
+Increment `VERSION` in `sw.js` when deploying significant changes — this busts all caches and forces fresh downloads:
+
+```javascript
+const VERSION = 'v2'; // ← bump this
+```
+
+### Icons
+
+Generated from `eliphant.tif` (white background, dark gray elephant). To regenerate:
+
+```bash
+python3 scripts/generate-icons.py
+```

@@ -1,0 +1,95 @@
+@use "../abstracts" as *;
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+// ── Skip to main content link ─────────────────────────────────────────────────
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: var(--spacing-sm);
+    z-index: 9999;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    transition: top 0.2s ease;
+
+    &:focus {
+        top: var(--spacing-sm);
+        outline: 3px solid var(--color-white);
+        outline-offset: 2px;
+    }
+}
+
+// ── Focus visible — keyboard navigation ──────────────────────────────────────
+// Only show focus ring for keyboard users, not mouse clicks
+
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: var(--border-radius-sm);
+}
+
+// Remove default outline only when focus-visible is supported
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+// Enhanced focus for interactive elements
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 0 0 6px hsl(217, 91%, 53%, 0.15);
+}
+
+// Dark mode — brighter outline for contrast
+[data-theme="dark"] {
+    :focus-visible,
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+        outline-color: var(--color-primary);
+        box-shadow: 0 0 0 6px hsl(217, 91%, 60%, 0.25);
+    }
+}
+
+// ── Screen reader only utility ────────────────────────────────────────────────
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// ── Reduced motion ────────────────────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 
-    <head>
-        {{ partial "head.html" . }}
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    {{ partial "head.html" . }}
+</head>
 
-    <body>
-        {{ partial "header.html" . }}
+<body>
+    <!-- Skip to main content — keyboard accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-        <main>
-            {{ block "main" . }}{{ end }}
-        </main>
+    {{ partial "header.html" . }}
 
-        {{ partial "social-icons.html" . }}
-        {{ partial "footer.html" . }}
+    <main id="main-content">
+        {{ block "main" . }}{{ end }}
+    </main>
 
-        {{ partial "site-script.html" . }}
-        {{ partial "cookie-consent.html" . }}
-        {{ partial "debug.html" . }}
-    </body>
+    {{ partial "social-icons.html" . }}
+    {{ partial "footer.html" . }}
+    {{ partial "site-script.html" . }}
+    {{ partial "cookie-consent.html" . }}
+
+    {{ if eq hugo.Environment "development" }}
+    <div class="debug-panel">
+        Template: <span id="template-name">-</span>
+    </div>
+    {{ end }}
+</body>
 
 </html>

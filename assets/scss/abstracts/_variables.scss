@@ -40,7 +40,7 @@ $z-tooltip: 1050;
   --spacing-xl: clamp(32px, 6vw, 48px);
 
   // Colors - Primary
-  --color-primary:       hsl(217, 91%, 53%);  // #2563eb blue-600
+  --color-primary:       hsl(217, 91%, 49%);  // #2563eb blue-600
   --color-primary-hover: hsl(217, 91%, 46%);  // #1d4ed8 blue-700
 
   // Colors - Text
@@ -59,7 +59,7 @@ $z-tooltip: 1050;
   --color-border:       hsl(220,  13%, 91%); // #e5e7eb gray-200
   --color-border-light: hsl(  0,   0%, 87%); // #dddddd light gray
   --color-border-dark:  hsl(216,  12%, 84%); // #d1d5db gray-300
-  --color-error:        hsl(  0,  72%, 51%); // #dc2626 red-600
+  --color-error:        hsl(  0,  72%, 46%); // #dc2626 red-600
   --color-error-bg:     hsl(  0,  86%, 97%); // #fef2f2 red tint
   --color-success:      hsl(161,  94%, 30%); // #059669 emerald-600
   --color-success-bg:   hsl(138,  76%, 97%); // #f0fdf4 green tint
@@ -157,7 +157,7 @@ $z-tooltip: 1050;
      ========================================== */
   &[data-theme="dark"] {
     // Colors - Primary
-    --color-primary:       hsl(217, 91%, 60%); // #3b82f6 blue-500
+    --color-primary:       hsl(217, 91%, 65%); // #3b82f6 blue-500
     --color-primary-hover: hsl(217, 91%, 53%); // #2563eb blue-600
 
     // Colors - Text
