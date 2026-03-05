@@ -27,35 +27,12 @@
 [[headers]]
   for = "/*"
   [headers.values]
-
-    # Prevent clickjacking — disallow embedding in iframes on other domains
     X-Frame-Options = "SAMEORIGIN"
-
-    # Prevent MIME type sniffing
     X-Content-Type-Options = "nosniff"
-
-    # Enable XSS protection in older browsers
     X-XSS-Protection = "1; mode=block"
-
-    # Control referrer information sent to other sites
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-    # Restrict browser features
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
-
-    # Content Security Policy
-    Content-Security-Policy = """
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
-      style-src 'self' 'unsafe-inline';
-      font-src 'self';
-      img-src 'self' data: https://www.google-analytics.com;
-      connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://api.brevo.com https://api.sendgrid.com;
-      frame-src 'none';
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self';
-    """
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://api.brevo.com https://api.sendgrid.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';"
 
 # ── Cache static assets ───────────────────────────────────────────────────────
 
