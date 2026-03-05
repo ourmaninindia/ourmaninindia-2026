@@ -116,11 +116,12 @@ select {
         display: flex;
         gap: var(--spacing-md);
         // margin-bottom: var(--spacing-sm);
+        flex-wrap: wrap;
 
         .form__group,
         .form__group--float {
-            flex: 1 1 30ch;
-            min-width: 30ch;
+           flex: 1 1 20ch;   // ← reduce from 30ch
+            min-width: 20ch;  // ← reduce from 30ch
             // margin-bottom: 0;
         }
     }
