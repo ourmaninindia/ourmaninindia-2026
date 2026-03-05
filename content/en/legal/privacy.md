@@ -1,44 +1,43 @@
 ---
 title: "Privacy Policy"
-date: 2026-01-30
+date: 2026-03-05
 description: "How we collect, use, and protect your personal information"
-tags:
-draft: true
+disable_comments: true
+noindex: true
+type: "legal"
+draft: false
 ---
 
-Your privacy matters to us. This policy explains what information we collect, how we use it, and your rights.
+Your privacy matters. This policy explains what information is collected, how it is used, and your rights under GDPR and similar regulations.
+
+**Last Updated:** March 5, 2026
 
 ## 1. Introduction
 
-Welcome to **Our Man in India**! This is a personal, non-commercial blog about finance, IT, and cycling adventures. We collect minimal information and are committed to protecting your privacy.
+**Our Man in India** is a personal, non-commercial blog about travel, cycling and technology. Minimal information is collected and your privacy is respected.
 
-## 2. Information We Collect
+## 2. Information Collected
 
-### Automatically Collected Information
+### Automatically Collected
 
-When you visit our website, we automatically collect:
+When you visit this website:
 
-- **IP address** - To understand geographic distribution of visitors
-- **Browser type and version** - To optimize site compatibility
-- **Device information** - To ensure mobile responsiveness
-- **Pages visited** - To understand what content interests you
-- **Time and date of visit** - To analyze traffic patterns
-- **Referring website** - To understand how people find us
-
-This information is collected automatically by our web server and analytics tools.
+- **IP address** — to understand geographic distribution of visitors (anonymised by Google Analytics)
+- **Browser and device information** — to optimise site compatibility
+- **Pages visited, time and date** — to understand what content is useful
+- **Referring website** — to understand how people find this site
 
 ### Information You Provide
 
 **Comments** (if you leave one):
 - Name (required)
 - Email address (required, never publicly displayed)
-- Website URL (optional)
 - Comment content
-- IP address (for spam prevention)
 
 **Newsletter** (if you subscribe):
-- Email address
+- Email address (required)
 - Name (optional)
+- Topic preferences
 - Subscription date
 
 **Contact Form**:
@@ -46,209 +45,112 @@ This information is collected automatically by our web server and analytics tool
 - Email address
 - Message content
 
-### Analytics
-
-We use **Google Analytics** to understand how visitors use our site. This service collects:
-
-- Page views and session duration
-- Bounce rate and navigation paths
-- Geographic location (country/city level only)
-- Device and browser information
-- Traffic sources
-
-**Note:** Google Analytics data is anonymous and aggregated. You can opt-out using [Google's opt-out tool](https://tools.google.com/dlpage/gaoptout).
-
 ## 3. Cookies
 
-### What Are Cookies?
+### Essential Cookies
 
-Cookies are small text files stored on your device that help websites function properly and provide analytics.
+Required for the website to function:
 
-### Types of Cookies We Use
+- **Cookie consent preferences** — remember your cookie choices
+- **Security** — protect against spam and abuse
 
-#### Essential Cookies (Necessary)
+These cannot be disabled as the site will not work properly without them.
 
-These cookies are required for the website to function:
+### Analytics Cookies (Optional)
 
-- **Cookie consent preferences** - Remember your cookie choices
-- **Session management** - Maintain your browsing session
-- **Security** - Protect against spam and abuse
+- **Google Analytics (_ga, _gid)** — understand site usage, identify popular content
 
-**These cookies cannot be disabled** as the site won't work properly without them.
-
-#### Analytics Cookies (Optional)
-
-These cookies help us improve the website:
-
-- **Google Analytics (_ga, _gid)** - Understand site usage
-- **Traffic analysis** - Identify popular content
-- **Performance monitoring** - Ensure fast loading times
-
-**You can disable these cookies** through our cookie banner or browser settings.
+These are only loaded after you explicitly accept analytics cookies. If you reject or withdraw consent, Google Analytics is not loaded and no data is collected.
 
 ### Managing Cookies
 
-You can control cookies in several ways:
+- **Cookie Banner** — click "Cookie Settings" in the footer at any time
+- **Browser Settings** — most browsers allow you to block or delete cookies
+- **Google opt-out** — [Google Analytics opt-out tool](https://tools.google.com/dlpage/gaoptout)
 
-1. **Cookie Banner** - Click "Cookie Settings" link in the footer
-2. **Browser Settings** - Most browsers let you block or delete cookies
-3. **Opt-out Tools** - Use Google's analytics opt-out browser add-on
+## 4. How Your Information Is Used
 
-**Note:** Blocking essential cookies may prevent the site from working properly.
+✅ Improve the website and create useful content  
+✅ Prevent spam in comments  
+✅ Send newsletters — only if you have subscribed (unsubscribe anytime)  
+✅ Respond to contact form enquiries  
+✅ Comply with legal obligations  
 
-## 4. How We Use Your Information
-
-We use collected information to:
-
-✅ **Improve the website** - Identify which content is most helpful  
-✅ **Optimize performance** - Ensure fast loading times  
-✅ **Understand our audience** - Create content you'll enjoy  
-✅ **Prevent spam** - Keep the comments section clean  
-✅ **Send newsletters** - Only if you've subscribed (unsubscribe anytime)  
-✅ **Respond to inquiries** - When you contact us  
-✅ **Comply with law** - If legally required  
-
-**We will never:**
+**Never:**
 
 ❌ Sell your personal information  
 ❌ Share your email with third parties for marketing  
-❌ Use your data beyond what's described here  
+❌ Show advertising of any kind  
 ❌ Track you across other websites  
-❌ Show personalized advertising (we don't use ads)  
 
 ## 5. Data Retention
 
-How long we keep your information:
-
-| Data Type | Retention Period | Reason |
-|-----------|------------------|--------|
-| Analytics data | 26 months | Google Analytics default setting |
-| Cookie consent | 12 months | Then you'll be asked again |
-| Server logs | 90 days | Security and troubleshooting |
+| Data | Retention | Reason |
+|------|-----------|--------|
+| Analytics data | 26 months | Google Analytics default |
+| Cookie consent | 12 months | Then you will be asked again |
 | Newsletter subscriptions | Until you unsubscribe | Required to send emails |
 | Comments | Indefinitely | Part of public discussion |
 | Contact form messages | Up to 2 years | To respond and reference |
 
-You can request deletion of your data at any time by [contacting us](/contact).
+You can request deletion of your data at any time by [contacting me](/contact).
 
 ## 6. Third-Party Services
 
-We use these external services, each with their own privacy policies:
+| Service | Purpose | Privacy Policy |
+|---------|---------|----------------|
+| **Google Analytics** | Website analytics | [View](https://policies.google.com/privacy) |
+| **Netlify** | Web hosting and forms | [View](https://www.netlify.com/privacy/) |
+| **Brevo** | Email newsletter | [View](https://www.brevo.com/legal/privacypolicy/) |
+| **SendGrid** | Transactional email | [View](https://www.twilio.com/en-us/legal/privacy) |
 
-### Services We Use
+All scripts used on this website are served locally. No third-party CDN requests are made without your consent.
 
-| Service | Purpose | Privacy Policy | Data Stored |
-|---------|---------|----------------|-------------|
-| **Google Analytics** | Website analytics | [View Policy](https://policies.google.com/privacy) | Anonymous usage data |
-| **Netlify** | Web hosting | [View Policy](https://www.netlify.com/privacy/) | Server logs, IP addresses |
-| **ConvertKit** | Email newsletter (optional) | [View Policy](https://convertkit.com/privacy) | Email, name |
-| **Cusdis** | Comments system (if enabled) | [View Policy](https://cusdis.com/doc#/privacy) | Name, email, comment |
-
-**Note:** We have no control over these third-party services. Please review their privacy policies to understand how they handle your data.
-
-### No Advertising Networks
-
-We **do not** use:
-- ❌ Third-party advertising
-- ❌ Social media tracking pixels
-- ❌ Affiliate tracking cookies
+**Not used:**
+- ❌ Advertising networks or tracking pixels
+- ❌ Social media tracking
 - ❌ Data brokers or analytics aggregators
+- ❌ ConvertKit or Cusdis (previously used, no longer active)
 
-## 7. Your Rights
+## 7. Your Rights Under GDPR
 
-Under data protection laws (including GDPR and similar regulations), you have these rights:
+- **Right to Access** — request a copy of data held about you
+- **Right to Rectification** — correct inaccurate data
+- **Right to Erasure** — request deletion of your data
+- **Right to Portability** — receive your data in a portable format
+- **Right to Object** — object to processing of your data
+- **Right to Withdraw Consent** — withdraw analytics consent at any time via Cookie Settings
 
-### Right to Access
-Request a copy of the personal data we hold about you.
-
-### Right to Correction
-Request correction of inaccurate or incomplete data.
-
-### Right to Deletion
-Request deletion of your personal data (also called "right to be forgotten").
-
-### Right to Portability
-Receive your data in a machine-readable format.
-
-### Right to Object
-Object to processing of your personal data.
-
-### Right to Restrict Processing
-Request that we limit how we use your data.
-
-### Right to Withdraw Consent
-Withdraw consent for analytics tracking at any time.
-
-**To exercise any of these rights:**
-- Email us (contact details below)
-- Use our [contact form](/contact)
-- Click "Cookie Settings" in the footer
+To exercise any of these rights, use the [contact form](/contact) or email [alfred@ourmaninindia.com](mailto:alfred@ourmaninindia.com). A response will be provided within 7 business days.
 
 ## 8. Data Security
 
-We take reasonable measures to protect your information:
+- 🔒 All pages use HTTPS encryption
+- 🔒 Hosted on Netlify's secure infrastructure
+- 🔒 No payment data is collected or stored
+- 🔒 Access to submitted data is limited to the site owner
 
-🔒 **HTTPS encryption** - All pages use secure HTTPS  
-🔒 **Secure hosting** - Netlify's enterprise-grade infrastructure  
-🔒 **Regular updates** - We keep software up to date  
-🔒 **Limited access** - Only necessary personnel can access data  
-🔒 **No payment data** - We don't collect or store payment information  
-
-**However:** No method of internet transmission is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.
+No method of internet transmission is 100% secure. While every effort is made to protect your data, absolute security cannot be guaranteed.
 
 ## 9. Children's Privacy
 
-This website is not directed at children under 13 years of age. We do not knowingly collect personal information from children.
+This website is not directed at children under 13. If you believe a child has provided personal information, please [contact me](/contact) and it will be deleted promptly.
 
-If you're a parent and believe your child has provided us with personal information, please [contact us](/contact) and we'll delete it promptly.
+## 10. Legal Basis for Processing
 
-## 10. International Data Transfers
+| Processing activity | Legal basis |
+|--------------------|-------------|
+| Analytics cookies | Consent (withdrawable at any time) |
+| Operating the website | Legitimate interests |
+| Newsletter | Contractual necessity (you subscribed) |
+| Contact form | Legitimate interests |
+| Legal compliance | Legal obligation |
 
-This website is hosted on servers that may be located in various countries. By using our site, you consent to the transfer of your information to these locations.
+## 11. Changes to This Policy
 
-**Note:** We choose hosting providers with strong security practices and data protection standards.
+This policy may be updated occasionally. The "Last Updated" date at the top reflects the most recent revision. Continued use of the site after changes constitutes acceptance of the updated policy.
 
-## 11. Do Not Track Signals
-
-Some browsers have "Do Not Track" (DNT) features. Currently, there's no universal standard for how websites should respond to DNT signals.
-
-We honor your cookie preferences set through our cookie banner, regardless of DNT settings.
-
-## 12. Changes to This Policy
-
-We may update this privacy policy occasionally to reflect:
-
-- Changes in our practices
-- New legal requirements
-- Feedback from users
-- Addition or removal of services
-
-**When we make changes:**
-- We'll update the "Last Updated" date at the top
-- For significant changes, we'll provide notice on the website
-- Your continued use of the site means you accept the updated policy
-
-**Last Updated:** January 30, 2026
-
-## 13. Legal Basis for Processing
-
-We process your personal data under these legal bases:
-
-- **Consent** - For analytics cookies (you can withdraw anytime)
-- **Legitimate interests** - To operate and improve the website
-- **Contractual necessity** - To provide services you've requested (newsletter, comments)
-- **Legal obligations** - To comply with applicable laws
-
-## 14. Contact Information
-
-Questions about this privacy policy? Want to exercise your rights? Contact us:
+## 12. Contact
 
 **Email:** [alfred@ourmaninindia.com](mailto:alfred@ourmaninindia.com)  
-**Contact Form:** [/contact](/contact)  
-**Response Time:** We'll respond within 7 business days
-
----
-
-**We value your trust and are committed to protecting your privacy.** 🔒
-
-*This policy applies only to Our Man in India. Other websites we link to have their own privacy policies.*
+**Contact Form:** [/contact](/contact)

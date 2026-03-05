@@ -1,189 +1,186 @@
 [readMore]
-other = "Read more →"
+other = "Lees meer →"
 [previous]
-other = "Previous"
+other = "Vorige"
 [next]
-other = "Next"
+other = "Volgende"
 [page]
-other = "Page"
+other = "Pagina"
 [of]
-other = "of"
+other = "van"
 [recentPosts]
-other = "Recent Posts"
+other = "Recente artikelen"
 [postsTagged]
-other = "Posts tagged with"
+other = "Artikelen getagd met"
 [categories]
-other = "Categories"
+other = "Categorieën"
 [popularTags]
-other = "Popular Tags"
+other = "Populaire tags"
 [tags]
 other = "Tags"
 [archive]
-other = "Archive"
+other = "Archief"
 [search]
-other = "Search"
+other = "Zoeken"
 [searchPlaceholder]
-other = "Search posts..."
+other = "Zoek artikelen..."
 
 [nl-newsletter]
-other = "Newsletter"
+other = "Nieuwsbrief"
 [nl-newsletterDescription]
-other = "Subscribe to get my latest article delivered to your inbox."
+other = "Schrijf je in om mijn laatste artikel in je inbox te ontvangen."
 [emailPlaceholder]
-other = "Your email..."
+other = "Jouw e-mailadres..."
 [nl-subscribe]
-other = "Subscribe"
+other = "Inschrijven"
 [nl-subscribing]
-other = "Subscribing ..."
+other = "Inschrijven ..."
 [searchResultsCount]
-other = "results found"
+other = "resultaten gevonden"
 [selectCategory]
-other = "Select a topic"
+other = "Kies een onderwerp"
 [nl-unsubscribe]
-other = "Unsubscribe"
+other = "Uitschrijven"
 [nl-sorry]
-other = "I am sorry to see you go. Please confirm your email address below and I'll remove you from our mailing list."
+other = "Jammer dat je vertrekt. Bevestig je e-mailadres hieronder en ik verwijder je van de mailinglijst."
 
 # forms
 [form-email]
-other = "Email address"
+other = "E-mailadres"
 [errorEmailRequired]
-other = "Please enter your email address"
+other = "Vul je e-mailadres in"
 [form-errorEmailInvalid]
-other = "Please enter a valid email address"
+other = "Vul een geldig e-mailadres in"
 [form-errorSectionsRequired]
-other = "Please select at least one topic"
+other = "Selecteer minimaal één onderwerp"
 [form-success-subscribed]
-other = "You're subscribed! Check your inbox to confirm."
+other = "Je bent ingeschreven! Controleer je inbox ter bevestiging."
 [form-error-message]
-other = "Something went wrong. Please try again."
+other = "Er is iets misgegaan. Probeer het opnieuw."
 [form-unsubscribe]
-other = "Confirm Unsubscribe"
+other = "Uitschrijving bevestigen"
 
 # unsubscribe
 [unsubscribeSuccess]
-other =  "Unsubscribed"
+other = "Uitgeschreven"
 [unsubscribeSuccessDetail]
-other = "The address "
+other = "Het adres "
 [unsubscribeSuccessDetail2]
-other = " has been removed from the list. You won't receive any further emails from me."
+other = " is van de lijst verwijderd. Je ontvangt geen e-mails meer van mij."
 [unsubscribeSendReason]
-other =  "Send feedback" 
+other = "Feedback sturen"
 [unsubscribeSkip]
-other = "Skip"
+other = "Overslaan"
 [unsubscribeError]
-other = "Something went wrong"
+other = "Er is iets misgegaan"
 [unsubscribeErrorDetail]
-other = "Your request could not be processed. Please try again or"
+other = "Je verzoek kon niet worden verwerkt. Probeer het opnieuw of"
 [unsubscribeOtherPlaceholder]
-other = "Your reason…"
+other = "Jouw reden…"
 [unsubscribeOtherReason]
-other =  "Please tell us more"
+other = "Vertel ons meer"
 [unsubscribeSurveyThanks]
-other = "Thank you for your feedback."
+other = "Bedankt voor je feedback."
 [unsubscribeReason1]
-other = "I no longer want to receive these emails"
+other = "Ik wil deze e-mails niet meer ontvangen"
 [unsubscribeReason2]
-other = "The emails are too frequent"
+other = "De e-mails komen te vaak"
 [unsubscribeReason3]
-other = "The content is no longer relevant to me"
+other = "De inhoud is niet meer relevant voor mij"
 [unsubscribeReason4]
-other = "I have too many emails in general"
+other = "Ik ontvang te veel e-mails in het algemeen"
 [unsubscribeReason5]
-other = "Other"
+other = "Anders"
 
 # Contact form
 [contactThankYou]
-other = "Thank you! I'll get back to you as soon as I can."
+other = "Bedankt! Ik neem zo snel mogelijk contact met je op."
 [contactFailed]
-other = "Failed to send message. Please try again."
+other = "Bericht versturen mislukt. Probeer het opnieuw."
 [contactQuestions]
-other = "Have a question or just want to say hi? I'll get back to you as soon as I can."
+other = "Heb je een vraag of wil je gewoon hallo zeggen? Ik neem zo snel mogelijk contact met je op."
 [contactSendMessage]
-other = "Send a direct email message"
+other = "Stuur een e-mailbericht"
 
 [firstName]
-other = "First Name"
+other = "Voornaam"
 [lastName]
-other = "Last Name"
+other = "Achternaam"
 [email]
-other = "Email"
+other = "E-mail"
 [message]
-other = "message"
+other = "Bericht"
 [subject]
-other = "Subject"
-
-
+other = "Onderwerp"
 
 [tryAgain]
-other = "Try again"
+other = "Opnieuw proberen"
 [contactUs]
-other = "contact us"
+other = "neem contact op"
 
 # Error page
 [ep-error]
-other = "Page Not Found"
+other = "Pagina niet gevonden"
 [ep-error-description]
-other = "Sorry, the page you're looking for doesn't exist or has been moved."
+other = "Sorry, de pagina die je zoekt bestaat niet of is verplaatst."
 [home]
 other = "Home"
 [ep-browse]
-other = "Browse"
+other = "Bladeren"
 
 [page-updated]
-other = "Updated on"
+other = "Bijgewerkt op"
 [page-created]
-other = "Created on"
-
+other = "Aangemaakt op"
 
 [min-read]
-other = "min read"
+other = "min lezen"
 
 [readMoreAbout]
-other = "read more about {{ .Title }}"
+other = "lees meer over {{ .Title }}"
 
 # Footer
 [ft-about]
-other = "About"
+other = "Over"
 [ft-contact]
 other = "Contact"
 [ft-policies]
-other = "Policies"
+other = "Beleid"
 [ft-original]
-other = "All original content licensed"
+other = "Alle originele inhoud gelicenseerd"
 [ft-free]
-other = "Free to share & adapt<br>with attribution"
+other = "Vrij te delen en aan te passen<br>met naamsvermelding"
 [ft-cookies]
-other = "Cookie Settings"
+other = "Cookie-instellingen"
 [ft-preferences]
-other = "Cookie preferences"
+other = "Cookie-voorkeuren"
 [ft-rights]
-other = "All rights reserved."
+other = "Alle rechten voorbehouden."
 [ft-license]
-other = "Content License"
+other = "Inhoudslicentie"
 [ft-privacy]
-other = "Privacy (GDPR)"
+other = "Privacy (AVG)"
 
 # comments Cusdis
 [comments]
-other = "Feel free to leave your comments"
+other = "Laat gerust een reactie achter"
 [tech-comments]
-other = "Share your technical insights and questions!"
+other = "Deel je technische inzichten en vragen!"
 [cycling-comments]
-other = "Share your cycling experiences and tips!"
+other = "Deel je fietservaringen en tips!"
 [general-comments]
-other = "Share your thoughts below!"
+other = "Deel je gedachten hieronder!"
 
 # Comments Netlify
 [comments-leave]
-other = "Leave a comment"
+other = "Laat een reactie achter"
 [comments-replying]
-other = "Replying to"
+other = "Reactie op"
 [comments-submit]
-other = "Post comment"
+other = "Reactie plaatsen"
 [comments-success]
-other = "Thank you! Your comment will appear shortly."
+other = "Bedankt! Je reactie verschijnt binnenkort."
 [form-name]
-other = "Name"
+other = "Naam"
 [form-message]
-other = "Message"
+other = "Bericht"

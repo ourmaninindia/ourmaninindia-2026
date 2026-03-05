@@ -1,11 +1,12 @@
 {
     "name": "Our Man in India",
     "short_name": "OMII",
-    "description": "Stories from India — management, cycling and tech",
+    "description": "Stories from India — management, cycling and information technology",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#F6F9FC",
     "theme_color": "#20123a",
+    "categories": ["management","travel", "sports", "technology"],
     "icons": [
         {
             "src": "/images/icon-192.png",

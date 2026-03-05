@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>You're offline — Our Man in India</title>
+    <style>
+        :root {
+            --color-bg:      hsl(214, 42%, 97%);
+            --color-text:    hsl(213, 72%, 15%);
+            --color-muted:   hsl(220,  9%, 46%);
+            --color-primary: hsl(217, 91%, 53%);
+            --color-brand:   hsl(258, 54%, 15%);
+            --color-white:   hsl(0, 0%, 100%);
+            --radius:        6px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg:    hsl(36, 16%, 10%);
+                --color-text:  hsl(0, 0%, 96%);
+                --color-muted: hsl(0, 0%, 63%);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Georgia, serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            color: var(--color-brand);
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            h1 { color: var(--color-text); }
+        }
+
+        p {
+            color: var(--color-muted);
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            max-width: 480px;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .button:hover { opacity: 0.9; }
+
+        .site-link {
+            display: block;
+            margin-top: 1.5rem;
+            color: var(--color-muted);
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        .site-link:hover { color: var(--color-primary); }
+    </style>
+</head>
+<body>
+    <div class="icon">✈️</div>
+    <h1>You're offline</h1>
+    <p>
+        It looks like you've lost your connection.
+        Pages you've recently visited are still available —
+        try going back, or reconnect and try again.
+    </p>
+    <button class="button" onclick="location.reload()">Try again</button>
+    <a class="site-link" href="/">← Back to Our Man in India</a>
+</body>
+</html>
