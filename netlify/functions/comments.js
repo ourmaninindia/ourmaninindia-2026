@@ -31,6 +31,11 @@ export default async function handler(req, context) {
         }
 
         const submissions = await response.json();
+        console.log('Total submissions:', submissions.length);
+        console.log('pageId filter:', pageId);
+        if (submissions.length > 0) {
+            console.log('First submission data:', JSON.stringify(submissions[0].data));
+        }
 
         // Filter by pageId and shape the data
         const comments = submissions
@@ -43,6 +48,8 @@ export default async function handler(req, context) {
                 created_at: s.created_at
             }))
             .sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+
+        console.log('Filtered comments:', comments.length);
 
         return new Response(JSON.stringify(comments), {
             status: 200,
