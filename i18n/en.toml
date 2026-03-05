@@ -92,6 +92,29 @@ other = "I have too many emails in general"
 [unsubscribeReason5]
 other = "Other"
 
+# Contact form
+[contactThankYou]
+other = "Thank you! I'll get back to you as soon as I can."
+[contactFailed]
+other = "Failed to send message. Please try again."
+[contactQuestions]
+other = "Have a question or just want to say hi? I'll get back to you as soon as I can."
+[contactSendMessage]
+other = "Send a direct email message"
+
+[firstName]
+other = "First Name"
+[lastName]
+other = "Last Name"
+[email]
+other = "Email"
+[message]
+other = "message"
+[subject]
+other = "Subject"
+
+
+
 [tryAgain]
 other = "Try again"
 [contactUs]

@@ -40,177 +40,178 @@ $z-tooltip: 1050;
   --spacing-xl: clamp(32px, 6vw, 48px);
 
   // Colors - Primary
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-hover: #1d4ed8;
+  --color-primary:       hsl(217, 91%, 53%);  // #2563eb blue-600
+  --color-primary-hover: hsl(217, 91%, 46%);  // #1d4ed8 blue-700
 
   // Colors - Text
-  --color-text: #0A2540; //#1f2937;
-  --color-text-light: #6b7280;
-  --color-text-dark: #333333;
-  --color-drop-cap: #8B0000;
+  --color-text:       hsl(213, 72%, 15%);  // #0A2540 deep navy
+  --color-text-light: hsl(220,  9%, 46%);  // #6b7280 gray-500
+  --color-text-dark:  hsl(  0,  0%, 20%);  // #333333 dark gray
+  --color-drop-cap:   hsl(  0, 100%, 27%); // #8B0000 dark red
 
   // Colors - Background
-  --color-bg: #F6F9FC ; // stripe equivalent
-  --color-bg-secondary: #F8F8FF; // ghostwhite
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-bg:           hsl(214, 42%, 97%);  // #F6F9FC stripe equivalent
+  --color-bg-secondary: hsl(240, 100%, 99%); // #F8F8FF ghostwhite
+  --color-white:        hsl(0, 0%, 100%);    // #ffffff
+  --color-black:        hsl(0, 0%, 0%);      // #000000
 
   // Colors - UI States
-  --color-border: #e5e7eb;
-  --color-border-light: #dddddd;
-  --color-border-dark: #d1d5db;
-  --color-error: #ef4444; 
-  --color-error-dark: #dc2626;
-  --color-success: #22c55e;
-  --color-success-dark: #059669;
-  --color-warning: #f59e0b;
-  --color-info: #007BFF;
+  --color-border:       hsl(220,  13%, 91%); // #e5e7eb gray-200
+  --color-border-light: hsl(  0,   0%, 87%); // #dddddd light gray
+  --color-border-dark:  hsl(216,  12%, 84%); // #d1d5db gray-300
+  --color-error:        hsl(  0,  72%, 51%); // #dc2626 red-600
+  --color-error-bg:     hsl(  0,  86%, 97%); // #fef2f2 red tint
+  --color-success:      hsl(161,  94%, 30%); // #059669 emerald-600
+  --color-success-bg:   hsl(138,  76%, 97%); // #f0fdf4 green tint
+  --color-warning:      hsl( 38,  92%, 50%); // #f59e0b amber-400
+  --color-info:         hsl(211, 100%, 50%); // #007BFF blue
 
   // Colors - Gray Scale
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
+  --color-gray-300: hsl(216, 12%, 84%); // #d1d5db
+  --color-gray-400: hsl(218,  9%, 65%); // #9ca3af
 
   // Colors - Additional
-  --color-lightblue: #add8e6;
-  --color-navajowhite: #ffdead;
+  --color-lightblue:    hsl(195, 53%, 79%); // #add8e6 light blue
+  --color-navajowhite:  hsl( 36, 100%, 84%); // #ffdead navajo white
 
   // Colors - Code Blocks
-  --color-code-bg: #1e1e1e;
-  --color-code-text: #d4d4d4;
-  --color-code-bg-alt: #272822;
-  --color-code-text-alt: #f8f8f2;
+  --color-code-bg:      hsl(  0,   0%, 12%); // #1e1e1e VS Code dark
+  --color-code-text:    hsl(  0,   0%, 83%); // #d4d4d4 light gray
+  --color-code-bg-alt:  hsl( 70,  15%, 15%); // #272822 Monokai dark
+  --color-code-text-alt:hsl( 60,  30%, 96%); // #f8f8f2 Monokai light
 
   // Colors - Brand/Header
-  --color-brand-purple: #20123a;
-  --color-brand-orange: #e65321;
+  --color-brand-purple: hsl(258, 56%, 15%); // #20123a deep purple
+  --color-brand-orange: hsl( 16, 78%, 50%); // #e65321 burnt orange
 
   // Header/Footer (stays dark in both themes)
-  --header-bg: var(--color-brand-purple);
-  --header-text: #ffffff;
-  --header-border: rgba(255, 255, 255, 0.1);
-  --footer-bg: #2a2a2a;
-  --footer-text: #ffffff;
-  --footer-text-muted: #a0a0a0;
-  --footer-border: rgba(255, 255, 255, 0.1);
+  --header-bg:          var(--color-brand-purple);
+  --header-text:        hsl(0, 0%, 100%);               // #ffffff
+  --header-border:      hsl(0, 0%, 100%, 0.1);          // white 10% opacity
+  --footer-bg:          hsl(0, 0%, 16%);                // #2a2a2a
+  --footer-text:        hsl(0, 0%, 100%);               // #ffffff
+  --footer-text-muted:  hsl(0, 0%, 63%);                // #a0a0a0
+  --footer-border:      hsl(0, 0%, 100%, 0.1);          // white 10% opacity
 
   // Colors - Debug (Development Only)
-  --color-debug-bg: antiquewhite;
-  --color-debug-text: #00ff00;
+  --color-debug-bg:   hsl(34, 78%, 91%, 0.3); // antiquewhite 30% opacity
+  --color-debug-text: hsl(120, 100%, 50%);    // #00ff00 lime green
 
   // Typography - Line Heights
-  --line-height-base: 1.6;
-  --line-height-tight: 1.3;
+  --line-height-base:    1.6;
+  --line-height-tight:   1.3;
   --line-height-relaxed: 1.8;
 
   // Typography - Font Sizes (fluid with clamp)
-  --font-size-xs: clamp(0.6875rem, 1.5vw, 0.75rem);
-  --font-size-sm: clamp(0.75rem, 2vw, 0.875rem);
-  --font-size-base: clamp(0.875rem, 2vw, 1rem);
-  --font-size-md: clamp(0.9375rem, 2vw, 1rem);
-  --font-size-lg: clamp(1rem, 2.5vw, 1.125rem);
-  --font-size-xl: clamp(1.25rem, 3vw, 1.5rem);
-  --font-size-2xl: clamp(1.75rem, 4vw, 2.5rem);
-  --font-size-3xl: clamp(2rem, 5vw, 3rem);
+  --font-size-xs:  clamp(0.6875rem, 1.5vw, 0.75rem);
+  --font-size-sm:  clamp(0.75rem,   2vw,   0.875rem);
+  --font-size-base:clamp(0.875rem,  2vw,   1rem);
+  --font-size-md:  clamp(0.9375rem, 2vw,   1rem);
+  --font-size-lg:  clamp(1rem,      2.5vw, 1.125rem);
+  --font-size-xl:  clamp(1.25rem,   3vw,   1.5rem);
+  --font-size-2xl: clamp(1.75rem,   4vw,   2.5rem);
+  --font-size-3xl: clamp(2rem,      5vw,   3rem);
 
   // Borders
-  --border-radius-sm: 4px;
-  --border-radius-md: 6px;
-  --border-radius-lg: 8px;
-  --border-radius-xl: 12px;
+  --border-radius-sm:   4px;
+  --border-radius-md:   6px;
+  --border-radius-lg:   8px;
+  --border-radius-xl:   12px;
   --border-radius-full: 16px;
 
   // Shadows
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 1px  3px hsl(0, 0%, 0%, 0.10);
+  --shadow-md: 0 4px 12px hsl(0, 0%, 0%, 0.15);
 
   // Transitions
   --transition-base: 0.2s ease-in-out;
-  --transition-all: all 0.2s ease-in-out;
+  --transition-all:  all 0.2s ease-in-out;
   --transition-slow: 0.35s ease-in-out;
 
   // Gradients
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-primary: linear-gradient(135deg, hsl(234, 75%, 66%) 0%, hsl(277, 49%, 47%) 100%); // #667eea → #764ba2
 
   // Pagination
-  --pagination-bg: rgba(0, 0, 0, 0.05);
-  --pagination-bg-hover: rgba(0, 0, 0, 0.08);
-  --pagination-bg-active: rgba(0, 0, 0, 0.12);
-  --pagination-text: #333;
-  --pagination-text-active: #000;
-  --pagination-shadow-hover: 0 0 6px rgba(0, 0, 0, 0.15);
+  --pagination-bg:           hsl(0, 0%, 0%, 0.05);
+  --pagination-bg-hover:     hsl(0, 0%, 0%, 0.08);
+  --pagination-bg-active:    hsl(0, 0%, 0%, 0.12);
+  --pagination-text:         hsl(0, 0%, 20%);  // #333
+  --pagination-text-active:  hsl(0, 0%, 0%);   // #000
+  --pagination-shadow-hover: 0 0 6px hsl(0, 0%, 0%, 0.15);
 
   // Tooltip
-  --tooltip-bg: #333;
-  --tooltip-color: #fff;
-  --tooltip-radius: 6px;
-  --tooltip-padding-y: 8px;
-  --tooltip-padding-x: 12px;
-  --tooltip-font-size: 14px;
-  --tooltip-z-index: 9999;
+  --tooltip-bg:         hsl(0, 0%, 20%);        // #333
+  --tooltip-color:      hsl(0, 0%, 100%);       // #fff
+  --tooltip-radius:     6px;
+  --tooltip-padding-y:  8px;
+  --tooltip-padding-x:  12px;
+  --tooltip-font-size:  14px;
+  --tooltip-z-index:    9999;
   --tooltip-transition: opacity 0.3s ease-in-out;
   --tooltip-arrow-size: 5px;
-  --tooltip-offset: 10px;
-  --tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --tooltip-offset:     10px;
+  --tooltip-shadow:     0 2px 8px hsl(0, 0%, 0%, 0.15);
 
   /* ==========================================
      DARK THEME OVERRIDES
      ========================================== */
   &[data-theme="dark"] {
     // Colors - Primary
-    --color-primary: #3b82f6;
-    --color-primary-dark: #2563eb;
-    --color-primary-hover: #2563eb;
+    --color-primary:       hsl(217, 91%, 60%); // #3b82f6 blue-500
+    --color-primary-hover: hsl(217, 91%, 53%); // #2563eb blue-600
 
     // Colors - Text
-    --color-text: #f5f5f5;
-    --color-text-light: #a0a0a0;
-    --color-text-dark: #e5e5e5;
+    --color-text:       hsl(  0,   0%, 96%); // #f5f5f5 near white
+    --color-text-light: hsl(  0,   0%, 63%); // #a0a0a0 medium gray
+    --color-text-dark:  hsl(  0,   0%, 90%); // #e5e5e5 light gray
 
     // Colors - Background (body content only)
-    --color-bg: #1e1a15; // Dark warm brown
-    --color-bg-secondary: #2a241d; // Slightly lighter for secondary surfaces
+    --color-bg:           hsl( 36,  16%, 10%); // #1e1a15 dark warm brown
+    --color-bg-secondary: hsl( 36,  16%, 14%); // #2a241d slightly lighter
 
     // Colors - UI States
-    --color-border: #3a3a3a;
-    --color-border-light: #333333;
-    --color-border-dark: #444444;
-    --color-error: #f87171;
-    --color-error-dark: #ef4444;
-    --color-success: #34d399;
-    --color-success-dark: #10b981;
-    --color-warning: #fbbf24;
-    --color-info: #60a5fa;
+    --color-border:       hsl(  0,   0%, 23%); // #3a3a3a dark gray
+    --color-border-light: hsl(  0,   0%, 20%); // #333333
+    --color-border-dark:  hsl(  0,   0%, 27%); // #444444
+    --color-error:        hsl(  0,  91%, 71%); // #f87171 red-400
+    --color-error-bg:     hsl(  0,  86%, 18%); // dark red tint
+    --color-success:      hsl(158,  64%, 52%); // #34d399 emerald-400
+    --color-success-bg:   hsl(138,  76%, 12%); // dark green tint
+    --color-warning:      hsl( 43,  96%, 56%); // #fbbf24 amber-400
+    --color-info:         hsl(213,  94%, 68%); // #60a5fa blue-400
+
+    // Colors - Debug (Development Only)
+    --color-debug-bg: hsl(34, 78%, 91%, 0.06); // antiquewhite 6% opacity
 
     // Colors - Gray Scale
-    --color-gray-300: #4b5563;
-    --color-gray-400: #6b7280;
+    --color-gray-300: hsl(215,  14%, 34%); // #4b5563
+    --color-gray-400: hsl(220,   9%, 46%); // #6b7280
 
     // Colors - Code Blocks (lighter in dark mode)
-    --color-code-bg: #2d2d2d;
-    --color-code-text: #e0e0e0;
-    --color-code-bg-alt: #3a3a3a;
-    --color-code-text-alt: #ffffff;
+    --color-code-bg:       hsl(  0,   0%, 18%); // #2d2d2d
+    --color-code-text:     hsl(  0,   0%, 88%); // #e0e0e0
+    --color-code-bg-alt:   hsl(  0,   0%, 23%); // #3a3a3a
+    --color-code-text-alt: hsl(  0,   0%, 100%);// #ffffff
 
-    // Shadows (lighter, more subtle in dark mode)
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    // Shadows (stronger in dark mode)
+    --shadow-sm: 0 1px  3px hsl(0, 0%, 0%, 0.30);
+    --shadow-md: 0 4px 12px hsl(0, 0%, 0%, 0.40);
 
     // Gradients (adjusted for dark mode)
-    --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(263, 70%, 57%) 0%, hsl(292, 91%, 66%) 100%); // #7c3aed → #a855f7
 
     // Pagination
-    --pagination-bg: rgba(255, 255, 255, 0.05);
-    --pagination-bg-hover: rgba(255, 255, 255, 0.09);
-    --pagination-bg-active: rgba(255, 255, 255, 0.14);
-    --pagination-text: #ccc;
-    --pagination-text-active: #fff;
-    --pagination-shadow-hover: 0 0 6px rgba(255, 255, 255, 0.25);
+    --pagination-bg:           hsl(0, 0%, 100%, 0.05);
+    --pagination-bg-hover:     hsl(0, 0%, 100%, 0.09);
+    --pagination-bg-active:    hsl(0, 0%, 100%, 0.14);
+    --pagination-text:         hsl(0, 0%, 80%);  // #ccc
+    --pagination-text-active:  hsl(0, 0%, 100%); // #fff
+    --pagination-shadow-hover: 0 0 6px hsl(0, 0%, 100%, 0.25);
 
     // Tooltip
-    --tooltip-bg: #f8f9fa;
-    --tooltip-color: #1a1a1a;
-    --tooltip-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    --tooltip-bg:     hsl(210, 17%, 98%); // #f8f9fa near white
+    --tooltip-color:  hsl(  0,  0%, 10%); // #1a1a1a near black
+    --tooltip-shadow: 0 2px 8px hsl(0, 0%, 100%, 0.10);
 
     // NOTE: header-* and footer-* variables are NOT overridden
     // They stay dark in both light and dark themes

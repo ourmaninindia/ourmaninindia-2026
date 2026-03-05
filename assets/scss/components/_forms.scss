@@ -77,15 +77,6 @@ select {
         }
     }
 
-    &__button:disabled {
-        cursor: not-allowed;
-    }
-
-    &__button:not(:disabled):hover {
-        background-color: var(--color-primary-hover);
-        cursor: pointer;
-    }
-
     &__error {
         display: block;
         color: var(--color-error-dark);

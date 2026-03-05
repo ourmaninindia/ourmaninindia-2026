@@ -20,6 +20,8 @@
  *   data-success-message       — inline success message (used when no data-success-modal)
  *   data-error-message         — fallback error message
  *   data-loading-text          — override submit button text during submission
+ *   data-name-fields           — comma-separated IDs of firstname/lastname fields to combine
+ *                                e.g. data-name-fields="newsletter-firstname,newsletter-lastname"
  *
  * Data attributes on <input> / <textarea> / <select>:
  *   data-error                 — ID of element to show field error in
@@ -37,7 +39,10 @@
  *     data-error-modal="errorModal"
  *     data-error-modal-msg="error-message"
  *     data-confirmed-email="confirmed-email"
+ *     data-name-fields="newsletter-firstname,newsletter-lastname"
  *   >
+ *     <input type="text" id="newsletter-firstname" name="firstname" />
+ *     <input type="text" id="newsletter-lastname" name="lastname" />
  *     <input type="email" id="newsletter-email" data-error="newsletter-email-error" required />
  *     <span id="newsletter-email-error"></span>
  *     <input type="checkbox" class="newsletter__section-checkbox" value="blog" />
@@ -46,9 +51,13 @@
  *   </form>
  *
  * @example Contact form (inline feedback, no modal)
- *   <form data-endpoint="/.netlify/functions/contact" data-success-message="Message sent!">
- *     <input type="text" name="name" data-error="name-error" required />
- *     <span id="name-error"></span>
+ *   <form
+ *     data-endpoint="/.netlify/functions/contact"
+ *     data-success-message="Message sent!"
+ *     data-name-fields="contact-firstname,contact-lastname"
+ *   >
+ *     <input type="text" id="contact-firstname" name="firstname" />
+ *     <input type="text" id="contact-lastname" name="lastname" />
  *     <input type="email" name="email" data-error="email-error" required />
  *     <span id="email-error"></span>
  *     <textarea name="message" data-error="message-error" required></textarea>
@@ -147,6 +156,9 @@ function initForm(form) {
 function validateField(field) {
     if (field.type === 'checkbox' || field.type === 'radio') return true;
 
+    // Skip optional fields with no value — only validate if filled in
+    if (!field.required && !field.value.trim()) return true;
+
     const errorEl = field.dataset.error
         ? document.getElementById(field.dataset.error)
         : null;
@@ -209,19 +221,19 @@ function validateCheckboxGroup(form, checkboxes) {
 }
 
 function updateSubmitButton(form, submitBtn, checkboxes) {
-    // Only auto-disable if form has checkbox group requirement
-    // For regular forms, let submit handle validation
-    if (!checkboxes.length) {
-        submitBtn.disabled = false;
-        return;
-    }
-
     const fieldsOk = form.checkValidity();
     const checkboxOk = checkboxes.length
         ? checkboxes.some(cb => cb.checked)
         : true;
 
-    submitBtn.disabled = !(fieldsOk && checkboxOk);
+    // Toggle is-ready class — CSS uses this to activate hover effect
+    submitBtn.classList.toggle('is-ready', fieldsOk && checkboxOk);
+
+    // Only actually disable for forms with checkbox groups (newsletter)
+    // Contact form stays enabled — validation fires on submit
+    if (checkboxes.length) {
+        submitBtn.disabled = !(fieldsOk && checkboxOk);
+    }
 }
 
 // ── Submission ───────────────────────────────────────────────────────
@@ -233,7 +245,36 @@ function submitForm(form, submitBtn, checkboxes) {
     // Build payload BEFORE disabling fields
     const payload = {};
     new FormData(form).forEach((value, key) => {
-        payload[key] = value;
+        const trimmed = typeof value === 'string' ? value.trim() : value;
+
+        // Lowercase email
+        if (key === 'email') {
+            payload[key] = trimmed.toLowerCase();
+            return;
+        }
+
+        // Initcap name fields (firstname, lastname, name)
+        // Particles like van, de, der, den, het stay lowercase (Dutch tussenvoegsel)
+        if (['firstname', 'lastname', 'name'].includes(key) && trimmed) {
+            const particleList = form.dataset.nameParticles
+                ? form.dataset.nameParticles.split(',')
+                : [];
+            const particles = new Set(particleList);
+            payload[key] = trimmed
+                .split(' ')
+                .map((word, index) => {
+                    const lower = word.toLowerCase();
+                    // Always capitalise first word, leave particles lowercase elsewhere
+                    if (index === 0 || !particles.has(lower)) {
+                        return lower.charAt(0).toUpperCase() + lower.slice(1);
+                    }
+                    return lower;
+                })
+                .join(' ');
+            return;
+        }
+
+        payload[key] = trimmed;
     });
 
     // Replace checkbox values with array
@@ -249,6 +290,7 @@ function submitForm(form, submitBtn, checkboxes) {
     // Loading state AFTER payload is captured
     submitBtn.textContent = submitBtn.dataset.loadingText || 'Sending...';
     submitBtn.disabled = true;
+    submitBtn.classList.remove('is-ready');
     form.querySelectorAll('input, textarea, select').forEach(f => f.disabled = true);
 
     fetch(endpoint, {
@@ -324,10 +366,10 @@ function showInlineMessage(form, message, type) {
 
     form.innerHTML = `
         <div class="form__feedback form__feedback--${type}" role="alert">
-                <p class="form__feedback-message">
-                    <span class="form__feedback-icon">${icon}&nbsp;</span>
-                    ${message}
-                </p>
+            <p class="form__feedback-message">
+                <span class="form__feedback-icon">${icon}&nbsp;</span>
+                ${message}
+            </p>
             ${extra}
         </div>
     `;

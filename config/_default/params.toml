@@ -2,8 +2,10 @@ description = "Building responsive, accessible websites"
 postsPerPage = 10
 defaultAuthor = "alfred"
 newsletterAction = "/.netlify/functions/subscribe"
+contactAction = "/.netlify/functions/contact"
 googleAnalytics = "G-9DYQ9R1F2M"  # Your GA4 ID
 date_format = "2 Jan 2006"
+nameParticles = ["van", "de", "der", "den", "het", "ter", "te", "ten", "op", "in", "aan", "'t"]
 
 [dev]
     enableDebug = true

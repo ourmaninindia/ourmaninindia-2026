@@ -23,38 +23,40 @@
         <!-- Contact Form Section -->
         <section class="contact__section">
             <div class="contact__form-wrapper">
-                <h2 class="contact__form-title">✉️ Send a direct email
-                    message</h2>
-                <p class="contact__form-description">Have a question or just
-                    want to say hi? I'll get back to you as soon as I can.</p>
+                <h2 class="contact__form-title">✉️ "{{ i18n "contactSendMessage" }}"</h2>
+                <p class="contact__form-description">"{{ i18n "contactQuestions" }}"</p>
 
                 <form class="contact__form"
-                    data-endpoint="/.netlify/functions/contact"
-                    data-success-message="Thank you! I'll get back to you as soon as I can."
-                    data-error-message="Failed to send message. Please try again."
+                    data-endpoint="{{ .Site.Params.contactAction }}" 
+                    data-success-message="{{ i18n "contactThankYou" }}"
+                    data-error-message="{{ i18n "contactFailed" }}"
+                    data-name-particles="{{ delimit .Site.Params.nameParticles "," }}"
                     novalidate>
 
                     <!-- First and last name side by side -->
                     <div class="form__group--inline">
                         <div class="form__group form__group--float">
-                            <input type="text" id="newsletter-firstname"
+                            <input type="text" id="contact-firstname"
                                 name="firstname"
                                 autocomplete="given-name"
                                 placeholder="First name">
-                            <label for="newsletter-firstname"
-                                class="form__label form__label--float">First
-                                name</label>
+                            <label for="contact-firstname"
+                                class="form__label form__label--float">
+                                "{{ i18n "firstName" }}"
+                            </label>
+                            <span id="contact-firstname-error" class="form__error"></span>
                         </div>
 
                         <div class="form__group form__group--float">
-                            <input type="text" id="newsletter-lastname"
+                            <input type="text" id="contact-lastname"
                                 name="lastname"
                                 autocomplete="family-name"
                                 placeholder="Last name">
-                            <label for="newsletter-lastname"
+                            <label for="contact-lastname"
                                 class="form__label form__label--float">
-                                Last name
+                                "{{ i18n "lastName" }}"
                             </label>
+                            <span id="contact-lastname-error" class="form__error"></span>
                         </div>
                     </div>
 
@@ -66,7 +68,7 @@
                             data-error="contact-email-error">
                         <label for="contact-email"
                             class="form__label form__label--float required">
-                            Email
+                                "{{ i18n "email" }}"
                         </label>
                         <span id="contact-email-error"
                             class="form__error">
@@ -79,7 +81,9 @@
                             placeholder="Subject"
                             data-error="contact-subject-error">
                         <label for="contact-subject"
-                            class="form__label form__label--float required">Subject</label>
+                            class="form__label form__label--float required">
+                                "{{ i18n "subject" }}"
+                        </label>
                         <span id="contact-subject-error"
                             class="form__error">
                         </span>
@@ -91,13 +95,17 @@
                             placeholder="Message"
                             data-error="contact-message-error"></textarea>
                         <label for="contact-message"
-                            class="form__label form__label--float required">Message</label>
+                            class="form__label form__label--float required">
+                                "{{ i18n "message" }}"
+                        </label>
                         <span id="contact-message-error"
                             class="form__error"></span>
                     </div>
 
-                    <button type="submit" class="button button--full">Send
-                        Message</button>
+                    <button type="submit" class="button button--full">
+                        <span class="button__text--full">Send Message</span>
+                        <span class="button__text--short">Send</span>
+                    </button>
                 </form>
             </div>
 

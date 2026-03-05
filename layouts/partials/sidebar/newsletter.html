@@ -9,7 +9,8 @@
         data-checkbox-error="newsletter-sections-error"
         data-msg-checkbox-required="{{ i18n "form-errorSectionsRequired" }}"
         data-success-message="{{ i18n "form-success-subscribed" }}"
-        data-error-message="{{ i18n "form-error-message" }}">
+        data-error-message="{{ i18n "form-error-message" }}"
+        data-name-particles="{{ delimit .Site.Params.nameParticles "," }}" >
 
         <div class="form__checkboxes">
             <div class="form__group">
@@ -70,7 +71,7 @@
             <span id="newsletter-email-error" class="form__error"></span>
         </div>
 
-        <button type="submit" disabled
+        <button type="submit" disabled class="button"
             data-loading-text="{{ i18n "nl-subscribing" }}">
             {{ i18n "nl-subscribe" }}
         </button>
