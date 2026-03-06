@@ -31,6 +31,13 @@ export function initThemeToggle(toggleButtonId = "theme-toggle") {
     setTheme(prefersDark ? "dark" : "light");
   }
   
+  // Listen for OS theme changes — only apply if user hasn't set a preference
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
   // Toggle on button click
   themeToggleBtn.addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
