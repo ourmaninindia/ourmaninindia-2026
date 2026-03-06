@@ -54,6 +54,7 @@ select {
         }
     }
 }
+
 // Chrome specific issue
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -174,6 +175,8 @@ input:-webkit-autofill:active {
         input ~ .form__label--float {
             top: calc(var(--spacing-sm) + 0.5rem);
             transform: translateY(-50%);
+            background-color: var(--color-bg);
+            border-radius: var(--border-radius-md);
         }
 
         // Textarea label: anchored to top of field

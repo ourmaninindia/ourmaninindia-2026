@@ -7,21 +7,21 @@
    ========================================== */
 
 // Breakpoints (MUST be SCSS vars - can't use CSS vars in @media)
-$breakpoint-mobile: 480px; // sm
-$breakpoint-tablet: 768px; // md
-$breakpoint-desktop: 1024px; // lg
-$breakpoint-wide: 1200px; // xl
+$breakpoint-mobile:      480px; // sm
+$breakpoint-tablet:      768px; // md
+$breakpoint-desktop:    1024px; // lg
+$breakpoint-wide:       1200px; // xl
 
 // Font Stacks (no benefit to CSS vars)
 $font-family: arapey, georgia, serif;
 $font-family-mono: "Fira Code", "Courier New", Courier, monospace;
 
 // Z-index Scale (compile-time constants)
-$z-dropdown: 1000;
-$z-sticky: 1020;
-$z-modal: 1030;
-$z-popover: 1040;
-$z-tooltip: 1050;
+$z-dropdown:   1000;
+$z-sticky:     1020;
+$z-modal:      1030;
+$z-popover:    1040;
+$z-tooltip:    1050;
 
 /* ==========================================
    CSS CUSTOM PROPERTIES (Runtime)
@@ -68,8 +68,8 @@ $z-tooltip: 1050;
   --color-info:         hsl(211, 100%, 50%); // #007BFF blue
 
   // Colors - Gray Scale
-  --color-gray-300: hsl(216, 12%, 84%); // #d1d5db
-  --color-gray-400: hsl(218,  9%, 65%); // #9ca3af
+  --color-gray-300:     hsl(216, 12%, 84%); // #d1d5db
+  --color-gray-400:     hsl(218,  9%, 65%); // #9ca3af
 
   // Colors - Additional
   --color-lightblue:    hsl(195, 53%, 79%); // #add8e6 light blue
@@ -180,9 +180,6 @@ $z-tooltip: 1050;
     --color-success-hover:   hsl(120,  100%, 25%); 
     --color-warning:      hsl( 43,  96%, 56%); // #fbbf24 amber-400
     --color-info:         hsl(213,  94%, 68%); // #60a5fa blue-400
-
-    // Colors - Debug (Development Only)
-    --color-debug-bg: hsl(34, 78%, 91%, 0.06); // antiquewhite 6% opacity
 
     // Colors - Gray Scale
     --color-gray-300: hsl(215,  14%, 34%); // #4b5563
