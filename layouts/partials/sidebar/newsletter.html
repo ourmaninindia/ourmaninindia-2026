@@ -44,7 +44,7 @@
             <input type="text" id="newsletter-firstname" name="firstname"
                 autocomplete="given-name" placeholder=" ">
             <label for="newsletter-firstname"
-                class="form__label form__label--float">First name</label>
+                class="form__label form__label--float"> {{ i18n "firstName" }}</label>
                 <span class="form__error"></span>
         </div>
 
@@ -53,8 +53,8 @@
                 autocomplete="family-name"
                 placeholder="  ">
             <label for="newsletter-lastname"
-                class="form__label form__label--float required">Last name</label>
-                <span class="form__error"></span>
+                class="form__label form__label--float required"> {{ i18n "lastName" }}</label>
+                <span class="form__error"></span> 
         </div>
 </div>
 
@@ -67,7 +67,7 @@
                 data-msg-invalid="{{ i18n "form-errorEmailInvalid" }}"
                 data-error="newsletter-email-error">
             <label for="newsletter-email"
-                class="form__label form__label--float required">Email</label>
+                class="form__label form__label--float required"> {{ i18n "email" }}</label>
             <span id="newsletter-email-error" class="form__error"></span>
         </div>
 

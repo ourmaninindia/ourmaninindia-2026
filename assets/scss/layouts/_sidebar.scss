@@ -27,6 +27,9 @@
       "archive"
       "newsletter";
   }
+  .widget {
+    background-color: var(--color-comments);
+  }
 }
 
 .widget-search   { grid-area: search; }

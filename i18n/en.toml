@@ -109,7 +109,7 @@ other = "Last Name"
 [email]
 other = "Email"
 [message]
-other = "message"
+other = "Message"
 [subject]
 other = "Subject"
 

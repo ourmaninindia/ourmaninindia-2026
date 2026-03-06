@@ -9,6 +9,8 @@
 :root {
      /* Fix layout */
     --cc-pm-toggle-border-radius: 4rem;
+    --cc-btn-secondary-color:  var(--color-text);
+    --cc-btn-secondary-hover-color: var(--color-text);
 }
 
 /* Fix the overlap issue */
@@ -34,17 +36,18 @@
     background-color: var(--color-success) !important;
 
     &:hover {
-        background-color: var(--color-success-dark) !important;
+        background-color: var(--color-success-hover) !important;
     }
 }
 #cc-main .cm__btn--secondary,
-#cc-main .pm__btn.pm__btn--secondary {
-    background: var(--color-bg-secondary) !important;
-    border: 1px solid var(--color-gray-300) !important;
+#cc-main .pm__btn.pm__btn--secondary,
+#cc-main .pm__close-btn {
+    background: var(--color-gray-300) !important;
+    border: 1px solid var(--color-gray-400) !important;
     
     &:hover {
-      background: var(--color-gray-400) !important;
-      border: 1px solid var(--color-gray-400) !important;
+      background: var(--color-bg-secondary) !important;
+      border: 1px solid var(--color-gray-300) !important;
     }
 }
 
@@ -59,13 +62,6 @@
 #cc-main .pm__close-btn {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--color-gray-300) !important;
-    padding: 0 !important;
-    background: var(--color-bg-secondary) !important;
-    
-    &:hover {
-        background: var(--color-gray-400) !important;
-    }
 }
 
 #cc-main .cm__link-group {

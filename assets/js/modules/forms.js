@@ -122,6 +122,30 @@ function initForm(form) {
         }
     });
 
+    // ── Initcap name fields on blur ─────────────────────────────────
+    const particles = new Set(
+        (form.dataset.nameParticles || '')
+            .split(',')
+            .map(p => p.trim())
+            .filter(Boolean)
+    );
+
+    fields.forEach(field => {
+        if (['firstname', 'lastname', 'name'].includes(field.name)) {
+            field.addEventListener('blur', () => {
+                if (!field.value.trim()) return;
+                field.value = field.value.trim()
+                    .split(' ')
+                    .map(word => {
+                        const lower = word.toLowerCase();
+                        if (particles.has(lower)) return lower;
+                        return lower.charAt(0).toUpperCase() + lower.slice(1);
+                    })
+                    .join(' ');
+            });
+        }
+    });
+
     // ── Checkbox group validation ────────────────────────────────────
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {

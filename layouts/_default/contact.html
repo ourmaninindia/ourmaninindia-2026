@@ -23,8 +23,8 @@
         <!-- Contact Form Section -->
         <section class="contact__section">
             <div class="contact__form-wrapper">
-                <h2 class="contact__form-title">✉️ "{{ i18n "contactSendMessage" }}"</h2>
-                <p class="contact__form-description">"{{ i18n "contactQuestions" }}"</p>
+                <h2 class="contact__form-title">✉️ {{ i18n "contactSendMessage" }}</h2>
+                <p class="contact__form-description">{{ i18n "contactQuestions" }}</p>
 
                 <form class="contact__form"
                     data-endpoint="{{ .Site.Params.contactAction }}" 
@@ -42,7 +42,7 @@
                                 placeholder="First name">
                             <label for="contact-firstname"
                                 class="form__label form__label--float">
-                                "{{ i18n "firstName" }}"
+                                {{ i18n "firstName" }}
                             </label>
                             <span id="contact-firstname-error" class="form__error"></span>
                         </div>
@@ -54,7 +54,7 @@
                                 placeholder="Last name">
                             <label for="contact-lastname"
                                 class="form__label form__label--float">
-                                "{{ i18n "lastName" }}"
+                                {{ i18n "lastName" }}
                             </label>
                             <span id="contact-lastname-error" class="form__error"></span>
                         </div>
@@ -68,7 +68,7 @@
                             data-error="contact-email-error">
                         <label for="contact-email"
                             class="form__label form__label--float required">
-                                "{{ i18n "email" }}"
+                                {{ i18n "email" }}
                         </label>
                         <span id="contact-email-error"
                             class="form__error">
@@ -82,7 +82,7 @@
                             data-error="contact-subject-error">
                         <label for="contact-subject"
                             class="form__label form__label--float required">
-                                "{{ i18n "subject" }}"
+                                {{ i18n "subject" }}
                         </label>
                         <span id="contact-subject-error"
                             class="form__error">
@@ -94,9 +94,9 @@
                             required
                             placeholder="Message"
                             data-error="contact-message-error"></textarea>
-                        <label for="contact-message"
+                        <label for="contact-message" 
                             class="form__label form__label--float required">
-                                "{{ i18n "message" }}"
+                                {{ i18n "message" }}
                         </label>
                         <span id="contact-message-error"
                             class="form__error"></span>
