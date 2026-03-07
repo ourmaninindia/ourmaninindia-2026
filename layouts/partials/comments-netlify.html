@@ -1,8 +1,8 @@
 {{ if not .Params.disable_comments }}
-<section class="comments">
-    <div class="comments__container">
-        <h2 class="comments__title">💬 {{ i18n "comments" }}</h2>
-        <p class="comments__description">
+<section class="form">
+    <div class="form__container">
+        <h2 class="form__title">💬 {{ i18n "comments" }}</h2>
+        <p class="form__description">
             {{ if in .Params.categories "Tech" }}
                 {{ i18n "tech-comments" }}
             {{ else if in .Params.categories "Cycling" }}
@@ -14,12 +14,12 @@
 
         <!-- Comments display -->
         <div id="comments-list" data-page-id="{{ .RelPermalink }}">
-            <p class="comments__loading">Loading comments...</p>
-        </div>
+            <p class="form__loading">Loading comments...</p>
+        </div> 
 
         <!-- Comment form -->
-        <div class="comments__form-wrapper">
-            <form id="comment-form"
+        <div class="form__wrapper">
+            <form id="comments-form"
                 name="comments"
                 method="POST"
                 data-netlify="true"
@@ -41,44 +41,47 @@
                 <div class="form__group--inline">
                     <div class="form__group form__group--float">
                         <input type="text"
-                               id="comment-name"
+                               id="comments-name"
                                name="name"
                                placeholder="Name"
                                autocomplete="name"
-                               data-error="contact-name-error"
+                               data-error="comments-name-error"
                                required>
-                        <label class="form__label form__label--float required" for="comment-name">
+                        <label class="form__label form__label--float required" for="comments-name">
                             {{ i18n "form-name" }}
                         </label>
-                        <span id="contact-name-error" class="form__error"></span>
+                        <span id="comments-name-error" class="form__error"></span>
                     </div>
 
                     <div class="form__group form__group--float">
                         <input type="email"
-                               id="comment-email"
+                               id="comments-email"
                                name="email"
                                placeholder="Email"
-                               autocomplete="email">
-                        <label class="form__label form__label--float" for="comment-email">
+                               autocomplete="email"
+                               data-error="comments-email-error"
+                               required>
+                        <label class="form__label form__label--float" for="comments-email">
                             {{ i18n "form-email" }}
                         </label>
+                        <span id="comments-email-error" class="form__error"></span>
                     </div>
                 </div>
 
                 <div class="form__group form__group--float">
-<textarea id="comment-message" name="message" placeholder="Message" rows="4" data-error="comment-message-error" required></textarea>
-                    <label class="form__label form__label--float required" for="comment-message">
+<textarea id="comments-message" name="message" placeholder="Message" rows="4" data-error="comments-message-error" required></textarea>
+                    <label class="form__label form__label--float required" for="comments-message">
                         {{ i18n "form-message" }}
                     </label>
-                    <span id="comment-message-error" class="form__error"></span>
+                    <span id="comments-message-error" class="form__error"></span>
                 </div>
 
                 <button type="submit" class="button">{{ i18n "comments-submit" }}</button>
 
-                <div id="comment-success" class="form__success hidden">
+                <div id="comments-success" class="form__success hidden">
                     {{ i18n "comments-success" }}
                 </div>
-                <div id="comment-error" class="form__error hidden">
+                <div id="comments-error" class="form__error hidden">
                     {{ i18n "form-error-message" }}
                 </div>
             </form>

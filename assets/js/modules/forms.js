@@ -232,14 +232,14 @@ function validateCheckboxGroup(form, checkboxes) {
     if (!hasCheck) {
         if (errorEl) {
             errorEl.textContent = form.dataset.msgCheckboxRequired || 'Please select at least one option';
-            errorEl.classList.add('form__error--visible');
+            errorEl.classList.add('visible');
         }
         return false;
     }
 
     if (errorEl) {
         errorEl.textContent = '';
-        errorEl.classList.remove('form__error--visible');
+        errorEl.classList.remove('visible');
     }
     return true;
 }
@@ -252,12 +252,7 @@ function updateSubmitButton(form, submitBtn, checkboxes) {
 
     // Toggle is-ready class — CSS uses this to activate hover effect
     submitBtn.classList.toggle('is-ready', fieldsOk && checkboxOk);
-
-    // Only actually disable for forms with checkbox groups (newsletter)
-    // Contact form stays enabled — validation fires on submit
-    if (checkboxes.length) {
-        submitBtn.disabled = !(fieldsOk && checkboxOk);
-    }
+    // never disable — submit handler validates everything
 }
 
 // ── Submission ───────────────────────────────────────────────────────
@@ -415,7 +410,7 @@ function showError(field, errorEl, message) {
     field.classList.add('is-invalid');
     if (errorEl) {
         errorEl.textContent = message;
-        errorEl.classList.add('form__error--visible');
+        errorEl.classList.add('visible');
     }
 }
 
@@ -423,6 +418,6 @@ function clearError(field, errorEl) {
     field.classList.remove('is-invalid');
     if (errorEl) {
         errorEl.textContent = '';
-        errorEl.classList.remove('form__error--visible');
+        errorEl.classList.remove('visible');
     }
 }

@@ -1,5 +1,5 @@
 <!-- newsletter widget -->
-<div class="widget">
+<div class="widget form">
     <h3 class="widget__title">{{ i18n "nl-newsletter" }}</h3>
     <p class="widget__message">{{ i18n "nl-newsletterDescription" }}</p>
 
@@ -10,7 +10,8 @@
         data-msg-checkbox-required="{{ i18n "form-errorSectionsRequired" }}"
         data-success-message="{{ i18n "form-success-subscribed" }}"
         data-error-message="{{ i18n "form-error-message" }}"
-        data-name-particles="{{ delimit .Site.Params.nameParticles "," }}">
+        data-name-particles="{{ delimit .Site.Params.nameParticles "," }}"
+        novalidate >
 
         <div class="form__checkboxes">
             <div class="form__group">
@@ -41,24 +42,35 @@
         <!-- First and last name side by side -->
         <div class="form__group--inline">
             <div class="form__group form__group--float">
-                <input type="text" id="newsletter-firstname" name="firstname"
-                    autocomplete="given-name" placeholder=" ">
-    <label for="newsletter-firstname" class="form__label form__label--float"> {{ i18n "firstName"}}</label>
-                <span class="form__error"></span>
+                <input type="text" 
+                    id="newsletter-firstname" 
+                    name="firstname"
+                    autocomplete="given-name" 
+                    required placeholder=" "
+                    data-msg-invalid="{{ i18n "form-errorEmailInvalid" }}"
+                    data-error="newsletter-firstname-error">
+    <label for="newsletter-firstname" class="form__label form__label--float required"> {{ i18n "firstName"}}</label>
+                <span id="newsletter-firstname-error" class="form__error"></span>
             </div>
 
             <div class="form__group form__group--float">
-                <input type="text" id="newsletter-lastname" name="lastname"
-                    autocomplete="family-name"
-                    placeholder="  ">
+                <input type="text" 
+                    id="newsletter-lastname" 
+                    name="lastname"
+                    autocomplete="family-name" required
+                    placeholder="  "
+                    data-msg-invalid="{{ i18n "form-errorEmailInvalid" }}"
+                    data-error="newsletter-lastname-error">
     <label for="newsletter-lastname" class="form__label form__label--float required"> {{ i18n "lastName" }}</label>
-                <span class="form__error"></span>
+                <span id="newsletter-lastname-error" class="form__error"></span>
             </div>
         </div>
 
         <!-- Email -->
         <div class="form__group form__group--float">
-            <input type="email" id="newsletter-email" name="email"
+            <input type="email" 
+                id="newsletter-email" 
+                name="email"
                 autocomplete="email"
                 placeholder=" "
                 required
@@ -70,7 +82,7 @@
 
         <div class="button__buttons">
             <button type="submit"
-                disabled class="button"
+                class="button"
                 data-loading-text="{{ i18n "nl-subscribing" }}">
                 {{ i18n "nl-subscribe" }}
             </button>

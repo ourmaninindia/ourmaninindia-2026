@@ -34,7 +34,7 @@ function renderComment(comment, replies) {
 
 function renderComments(commentsList, comments) {
     if (!comments.length) {
-        commentsList.innerHTML = '<p class="comments__empty">No comments yet. Be the first!</p>';
+        commentsList.innerHTML = '<p class="form__empty">No comments yet. Be the first!</p>';
         return;
     }
     const topLevel = comments.filter(c => !c.parent_id);
@@ -49,7 +49,7 @@ async function loadComments(commentsList, pageId) {
         const comments = await res.json();
         renderComments(commentsList, comments);
     } catch {
-        commentsList.innerHTML = '<p class="comments__error">Could not load comments.</p>';
+        commentsList.innerHTML = '<p class="form__loading">Could not load comments.</p>';
     }
 }
 
@@ -59,26 +59,50 @@ function validateForm(form) {
     let valid = true;
 
     // Name
-    const nameInput = form.querySelector('#comment-name');
-    const nameError = form.querySelector('#contact-name-error');
+    const nameInput = form.querySelector('#comments-name');
+    const nameError = form.querySelector('#comments-name-error');
     if (nameInput && !nameInput.value.trim()) {
         nameInput.classList.add('is-invalid');
-        if (nameError) nameError.textContent = 'Please enter your name';
+        if (nameError) {
+            nameError.textContent = 'Please enter your name';
+            nameError.classList.add('visible');
+        }
         valid = false;
     } else if (nameInput) {
         nameInput.classList.remove('is-invalid');
+        nameError.classList.remove('visible');
         if (nameError) nameError.textContent = '';
     }
 
+    // Email
+    const emailInput = form.querySelector('#comments-email');
+    const emailError = form.querySelector('#comments-email-error');
+    if (emailInput && !emailInput.value.trim()) {
+        emailInput.classList.add('is-invalid');
+        if (emailError) {
+            emailError.textContent = 'Please enter your email';
+            emailError.classList.add('visible');
+        }
+        valid = false;
+    } else if (emailInput) {
+        emailInput.classList.remove('is-invalid');
+        emailError.classList.remove('visible');
+        if (emailError) emailError.textContent = '';
+    }
+
     // Message
-    const messageInput = form.querySelector('#comment-message');
-    const messageError = form.querySelector('#comment-message-error');
+    const messageInput = form.querySelector('#comments-message');
+    const messageError = form.querySelector('#comments-message-error');
     if (messageInput && !messageInput.value.trim()) {
         messageInput.classList.add('is-invalid');
-        if (messageError) messageError.textContent = 'Please enter a message';
+        if (messageError) {
+            messageError.textContent = 'Please enter a message';
+            messageError.classList.add('visible');
+        }
         valid = false;
     } else if (messageInput) {
         messageInput.classList.remove('is-invalid');
+        messageError.classList.remove('visible');
         if (messageError) messageError.textContent = '';
     }
 
@@ -100,13 +124,13 @@ export function initComments() {
     const cancelReply = document.getElementById('cancel-reply');
 
     document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('comment__reply-btn')) {
+        if (e.target.classList.contains('comments__reply-btn')) {
             const { id, name } = e.target.dataset;
             parentIdInput.value = id;
             replyName.textContent = name;
             replyIndicator.classList.remove('hidden');
-            document.getElementById('comment-form').scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('comment-name').focus();
+            document.getElementById('comments-form').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('comments-name').focus();
         }
     });
 
@@ -116,9 +140,9 @@ export function initComments() {
     });
 
     // ── Form submission ───────────────────────────────────────────────────────
-    const form = document.getElementById('comment-form');
-    const successMsg = document.getElementById('comment-success');
-    const errorMsg = document.getElementById('comment-error');
+    const form = document.getElementById('comments-form');
+    const successMsg = document.getElementById('comments-success');
+    const errorMsg = document.getElementById('comments-error');
     const submitBtn = form?.querySelector('[type="submit"]');
 
     form?.addEventListener('submit', async (e) => {

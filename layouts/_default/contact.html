@@ -1,121 +1,106 @@
 {{ define "title" }}Contact | {{ .Site.Title }}{{ end }}
-
 {{ define "main" }}
-<div class="display-template hidden">
-    _default/contact.html
-</div>
-
+<div class="display-template hidden">_default/contact.html</div>
 <div class="contents__container">
     <article class="single">
-
         <header class="contents__header">
             <h1 class="contents__title">Contact me</h1>
             <p class="contents__description">See the various options below</p>
         </header>
-
         {{ partial "sidebar/newsletter.html" . }}
-
         <!-- Divider -->
         <div class="section-divider">
             <span>OR</span>
         </div>
-
         <!-- Contact Form Section -->
         <section class="contact__section">
-            <div class="contact__form-wrapper">
-                <h2 class="contact__form-title">✉️ {{ i18n "contactSendMessage" }}</h2>
-                <p class="contact__form-description">{{ i18n "contactQuestions" }}</p>
-
+            <div class="form">
+                <h2 class="form__title">✉️ {{ i18n "contactSendMessage" }}</h2>
+                <p class="form__description">{{ i18n "contactQuestions" }}</p>
                 <form class="contact__form"
-                    data-endpoint="{{ .Site.Params.contactAction }}" 
+                    data-endpoint="{{ .Site.Params.contactAction }}"
                     data-success-message="{{ i18n "contactThankYou" }}"
                     data-error-message="{{ i18n "contactFailed" }}"
-                    data-name-particles="{{ delimit .Site.Params.nameParticles "," }}"
+                    data-name-particles="{{ delimit .Site.Params.nameParticles ","
+                    }}"
                     novalidate>
-
                     <!-- First and last name side by side -->
                     <div class="form__group--inline">
                         <div class="form__group form__group--float">
-                            <input type="text" id="contact-firstname"
+                            <input type="text"
+                                id="contact-firstname"
                                 name="firstname"
                                 autocomplete="given-name"
                                 placeholder="First name">
                             <label for="contact-firstname"
-                                class="form__label form__label--float">
-                                {{ i18n "firstName" }}
-                            </label>
-                            <span id="contact-firstname-error" class="form__error"></span>
+                                class="form__label form__label--float">{{ i18n
+                                "firstName" }}</label>
+                            <span id="contact-firstname-error"
+                                class="form__error"></span>
                         </div>
-
                         <div class="form__group form__group--float">
-                            <input type="text" id="contact-lastname"
+                            <input type="text"
+                                id="contact-lastname"
                                 name="lastname"
                                 autocomplete="family-name"
                                 placeholder="Last name">
                             <label for="contact-lastname"
-                                class="form__label form__label--float">
-                                {{ i18n "lastName" }}
-                            </label>
-                            <span id="contact-lastname-error" class="form__error"></span>
+                                class="form__label form__label--float">{{ i18n
+                                "lastName" }}</label>
+                            <span id="contact-lastname-error"
+                                class="form__error"></span>
                         </div>
                     </div>
-
                     <div class="form__group form__group--float">
-                        <input type="email" id="contact-email" name="email"
+                        <input type="email"
+                            id="contact-email"
+                            name="email"
                             autocomplete="email"
                             required
                             placeholder="Email"
                             data-error="contact-email-error">
                         <label for="contact-email"
-                            class="form__label form__label--float required">
-                                {{ i18n "email" }}
-                        </label>
+                            class="form__label form__label--float required">{{
+                            i18n "email" }}</label>
                         <span id="contact-email-error"
-                            class="form__error">
-                        </span>
+                            class="form__error"></span>
                     </div>
-
                     <div class="form__group form__group--float">
-                        <input type="text" id="contact-subject" name="subject"
+                        <input type="text"
+                            id="contact-subject"
+                            name="subject"
                             required
                             placeholder="Subject"
                             data-error="contact-subject-error">
                         <label for="contact-subject"
-                            class="form__label form__label--float required">
-                                {{ i18n "subject" }}
-                        </label>
+                            class="form__label form__label--float required">{{
+                            i18n "subject" }}</label>
                         <span id="contact-subject-error"
-                            class="form__error">
-                        </span>
+                            class="form__error"></span>
                     </div>
-
                     <div class="form__group form__group--float">
-                        <textarea id="contact-message" name="message"
-                            required
-                            placeholder="Message"
-                            data-error="contact-message-error"></textarea>
-                        <label for="contact-message" 
-                            class="form__label form__label--float required">
-                                {{ i18n "message" }}
-                        </label>
+                        <!-- no whitespace in the textarea -->
+                        <textarea id="contact-message" name="message" required placeholder="Message" data-error="contact-message-error"></textarea>
+                        <label for="contact-message"
+                            class="form__label form__label--float required">{{
+                            i18n "message" }}</label>
                         <span id="contact-message-error"
                             class="form__error"></span>
                     </div>
-
                     <div class="button__buttons">
-                    <button type="submit" class="button button--full">
-                        <span class="button__text--full">Send Message</span>
-                        <span class="button__text--short">Send</span>
-                    </button>
+                        <button type="submit" class="button button--full">
+                            <span class="button__text--full">Send Message</span>
+                            <span class="button__text--short">Send</span>
+                        </button>
                     </div>
                 </form>
             </div>
-
             <div class="contact__info">
                 <h2 class="contact__info-title">🌐 Other ways to reach me</h2>
-                <p class="contact__info-description">Find me on any of these
-                    platforms.</p>
-
+                <p class="contact__info-description">
+                    Find me on any of these
+                    platforms.
+                </p>
                 <div class="contact__methods">
                     <div class="contact__method">
                         <span class="contact__method-icon">📧</span>
@@ -123,12 +108,10 @@
                             <h4 class="contact__method-label">Email</h4>
                             <a
                                 href="mailto:{{ .Site.Data.authors.alfred.email }}"
-                                class="contact__method-link">
-                                {{ .Site.Data.authors.alfred.email }}
-                            </a>
+                                class="contact__method-link">{{
+                                .Site.Data.authors.alfred.email }}</a>
                         </div>
                     </div>
-
                     <div class="contact__method">
                         <span class="contact__method-icon">💼</span>
                         <div>
@@ -136,12 +119,10 @@
                             <a
                                 href="https://linkedin.com/in/{{ .Site.Data.authors.alfred.linkedin }}"
                                 target="_blank"
-                                class="contact__method-link">
-                                {{ .Site.Data.authors.alfred.linkedin }}
-                            </a>
+                                class="contact__method-link">{{
+                                .Site.Data.authors.alfred.linkedin }}</a>
                         </div>
                     </div>
-
                     <div class="contact__method">
                         <span class="contact__method-icon">📘</span>
                         <div>
@@ -149,12 +130,10 @@
                             <a
                                 href="https://facebook.com/{{ .Site.Data.authors.alfred.facebook }}"
                                 target="_blank"
-                                class="contact__method-link">
-                                {{ .Site.Data.authors.alfred.facebook }}
-                            </a>
+                                class="contact__method-link">{{
+                                .Site.Data.authors.alfred.facebook }}</a>
                         </div>
                     </div>
-
                     <div class="contact__method">
                         <span class="contact__method-icon">📸</span>
                         <div>
@@ -162,12 +141,10 @@
                             <a
                                 href="https://instagram.com/{{ .Site.Data.authors.alfred.instagram }}"
                                 target="_blank"
-                                class="contact__method-link">
-                                @{{ .Site.Data.authors.alfred.instagram }}
-                            </a>
+                                class="contact__method-link">@{{
+                                .Site.Data.authors.alfred.instagram }}</a>
                         </div>
                     </div>
-
                     <div class="contact__method">
                         <span class="contact__method-icon">🚴</span>
                         <div>
@@ -175,15 +152,13 @@
                             <a
                                 href="https://strava.com/athletes/{{ .Site.Data.authors.alfred.strava }}"
                                 target="_blank"
-                                class="contact__method-link">
-                                {{ .Site.Data.authors.alfred.strava }}
-                            </a>
+                                class="contact__method-link">{{
+                                .Site.Data.authors.alfred.strava }}</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </article>
 </div>
 {{ end }}

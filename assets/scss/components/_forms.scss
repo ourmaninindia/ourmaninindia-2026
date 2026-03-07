@@ -5,6 +5,20 @@
    FORM COMPONENTS
    ==========================================*/
 
+
+// Chrome specific issue
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-bg) inset !important;
+    -webkit-text-fill-color: var(--color-text) !important;
+    caret-color: var(--color-text);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.form {
+    
 input,
 textarea,
 select {
@@ -34,13 +48,16 @@ select {
 
     &:disabled {
         background: var(--color-bg-secondary);
-        cursor: not-allowed;
+        // cursor: not-allowed;
         opacity: 0.6;
     }
 
+    /*
     &.error {
         border-color: var(--color-error);
+        visibility: hidden;
 
+       
         &:focus {
             box-shadow: 0 0 0 3px var(--color-error-bg);
         }
@@ -53,20 +70,10 @@ select {
             box-shadow: 0 0 0 3px var(--color-success-bg);
         }
     }
+        */
 }
 
-// Chrome specific issue
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px var(--color-bg) inset !important;
-    -webkit-text-fill-color: var(--color-text) !important;
-    caret-color: var(--color-text);
-    transition: background-color 5000s ease-in-out 0s;
-}
-
-.form {
+/*
     &__feedback {
         padding: var(--spacing-lg);
         border-radius: var(--border-radius-md);
@@ -86,15 +93,17 @@ input:-webkit-autofill:active {
             border: 1px solid var(--color-error);
         }
     }
-
+*/
     &__error {
         display: block;
         font-size: var(--font-size-md);
         margin-bottom: var(--spacing-sm);
         min-height: 1.1em; // prevents layout jump when error appears
+        visibility: hidden;
 
-        &--visible {
+        &.visible {
             color: var(--color-error);
+            visibility: visible;
 
             [data-theme="dark"] & {
                 background-color: var(--color-white);
@@ -147,8 +156,6 @@ input:-webkit-autofill:active {
 
         input,
         textarea {
-            padding-top: 1.25rem;
-            padding-bottom: 0.25rem;
 
             &::placeholder {
                 color: transparent; // hide placeholder — label acts as placeholder
@@ -159,7 +166,7 @@ input:-webkit-autofill:active {
                 ~ .form__label--float {
                     top: 0;
                     transform: translateY(-50%);
-                    // background-color: var(--color-bg);
+                    background-color: var(--color-bg);
                     padding: 0 var(--spacing-xs);
                     font-size: 0.85rem;
                     color: var(--color-text);

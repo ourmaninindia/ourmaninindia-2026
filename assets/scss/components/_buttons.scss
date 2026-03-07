@@ -58,7 +58,7 @@
 
         // Not ready — form invalid, suppress hover feedback
         &:not(.is-ready):hover {
-            cursor: not-allowed;
+            // cursor: not-allowed;
             transform: none;
             // background-color: var(--color-bg-secondary);
             box-shadow:

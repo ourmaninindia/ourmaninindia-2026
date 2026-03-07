@@ -1,0 +1,43 @@
+ 
+/* ==========================================
+   FORM related classes for elements outside the actual form component
+   ========================================== */
+
+ .form {
+        
+    transition: all var(--transition-base);
+    
+        background: var(--color-bg-secondary);
+        padding: var(--spacing-lg);
+        flex: 2;
+        order: 1;
+        border-radius: var(--border-radius-lg);
+        border: 1px solid var(--color-border);
+        box-shadow: var(--shadow-sm);
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-primary);
+        }
+   
+
+    &__container {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    &__title {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text);
+    }
+
+    &__description {
+        color: var(--color-text-light);
+        margin-bottom: 0; // var(--spacing-lg);
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        line-height: var(--line-height-relaxed);
+    }
+    
+}
