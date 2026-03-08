@@ -191,7 +191,7 @@ export function initSearch() {
 
     // Display result count and search time
     if (searchStats) {
-      searchStats.innerHTML = `Found <span>${results.length}</span> result${results.length !== 1 ? 's' : ''} in ${searchTime}s`;
+      searchStats.innerHTML = `Found <span>${results.length}</span> result${results.length !== 1 ? 's' : ''} `;
     }
 
     // Build results HTML
