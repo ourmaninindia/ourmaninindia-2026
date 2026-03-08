@@ -1,13 +1,23 @@
 {{/* Usage: {{ partial "post-image.html" . }} */}}
 
-{{ $image := "" }}
-
 {{ with .Resources.GetMatch .Params.featured_image }}
-    {{ $image = .RelPermalink }}
-{{ end }}
+  {{ $img400 := .Resize "400x webp q85" }}
+  {{ $img800 := .Resize "800x webp q85" }}
 
-{{ if $image }}
-    <div class="list__post-image">
-        <figure><img src="{{ $image }}" alt="{{ .Title }}"></figure>
-    </div>
+  <div class="list__post-image">
+    <figure>
+      <picture>
+        <source type="image/webp"
+                srcset="{{ $img400.RelPermalink }} 400w,
+                        {{ $img800.RelPermalink }} 800w"
+                sizes="(max-width: 480px) 100vw, 400px">
+        <img src="{{ $img400.RelPermalink }}"
+             alt="{{ $.Title }}"
+             loading="lazy"
+             decoding="async"
+             width="{{ $img400.Width }}"
+             height="{{ $img400.Height }}">
+      </picture>
+    </figure>
+  </div>
 {{ end }}
