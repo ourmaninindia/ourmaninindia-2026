@@ -26,7 +26,11 @@ $z-tooltip:    1050;
 /* ==========================================
    CSS CUSTOM PROPERTIES (Runtime)
    Define once, use everywhere, can be modified with JS/theming
-   ========================================== */
+   ========================================== 
+   px —> spacing, borders, shadows, min-width/height, anything that shouldn't scale
+   rem —> font sizes, and spacing that should scale if the user changes their browser font size
+   */
+
 
 :root {
   // Layout
@@ -34,7 +38,7 @@ $z-tooltip:    1050;
 
   // Spacing (fluid with clamp)
   --spacing-xs: 8px;
-  --spacing-sm: 16px;
+  --spacing-sm: 16px; 
   --spacing-md: clamp(16px, 3vw, 24px);
   --spacing-lg: clamp(24px, 4vw, 32px);
   --spacing-xl: clamp(32px, 6vw, 48px);
@@ -52,6 +56,8 @@ $z-tooltip:    1050;
   // Colors - Background
   --color-bg:           hsl(214, 42%, 97%);  // #F6F9FC stripe equivalent
   --color-bg-secondary: hsl(240, 100%, 99%); // #F8F8FF ghostwhite
+  --color-bg-byline:    hsl(0, 0%, 90%);
+
   --color-comments:     hsl(34, 78%, 91%);   // antiquewhite
   --color-white:        hsl(0, 0%, 100%);    // #ffffff
   --color-black:        hsl(0, 0%, 0%);      // #000000
@@ -120,9 +126,9 @@ $z-tooltip:    1050;
   --border-radius-xl:   12px;
   --border-radius-full: 16px;
 
-  // Shadows
-  --shadow-sm: 0 1px  3px hsl(0, 0%, 0%, 0.10);
-  --shadow-md: 0 4px 12px hsl(0, 0%, 0%, 0.15);
+  // Shadows - syntax is offset-x | offset-y | blur | color 
+  --shadow-sm: 2px 2px  4px hsl(0, 0%, 0%, 0.15);
+  --shadow-md: 2px 4px 8px hsl(0, 0%, 0%, 0.25);
 
   // Transitions
   --transition-base: 0.2s ease-in-out;
@@ -169,6 +175,7 @@ $z-tooltip:    1050;
     // Colors - Background (body content only)
     --color-bg:           hsl( 36,  16%, 10%); // #1e1a15 dark warm brown
     --color-bg-secondary: hsl(210, 13%, 40%);  // slategray
+    --color-bg-byline:    hsl(210, 13%, 20%);
 
     // Colors - UI States
     --color-border:       hsl(  0,   0%, 23%); // #3a3a3a dark gray

@@ -4,13 +4,11 @@
 // Single Post Layout
 // ============================================
 
-
 .single {
   // background-color: var(--color-white);
   max-width: 680px;
   margin: 0 auto;
 
-  
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -38,12 +36,8 @@
   // ============================================
 
   &__header {
-    margin-bottom: var(--spacing-xl); 
-    text-align: center; 
-  }
-
-  & h1 {
-    margin: 0
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
   }
 
   &__masthead {
@@ -85,39 +79,47 @@
     }
   }
 
-  &__hero-bg {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    margin: 0 auto;
+  // ============================================
+  // Hero
+  // ============================================
+  &__hero {
+    position: relative;
     overflow: hidden;
-  }
 
-  &__hero-caption {
-    font-style: italic;
-    font-size: small;
-    width: 100%;
-    text-align: center;
-  }
+    &:hover {
+      opacity: 1;
+    }
 
-  &__hero-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: var(--spacing-xl);
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
-  }
+    &-bg {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      margin: 0 auto;
+      overflow: hidden;
+    }
 
-  &__headline--hero {
-    color: var(--color-white);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    margin: 0;
-    font-size: clamp(1.75rem, 5vw, 3rem);
+    &-caption {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 0.85rem;
+      padding: 0.75rem 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover &-caption {
+      opacity: 1;
+      transition: opacity 0.45s ease;
+    }
   }
 
   // ============================================
@@ -127,11 +129,11 @@
   &__taxonomy {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-byline);
     border-radius: var(--border-radius-md);
     border: 1px solid var(--color-border);
-    margin-bottom: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    padding: 0 var(--spacing-xs);
 
     a {
       text-decoration: none;
@@ -148,6 +150,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     gap: 0.5rem;
     font-size: 0.875rem;
   }
@@ -199,10 +202,7 @@
     color: var(--color-text);
     text-align: justify;
     background-color: var(--color-bg);
-    padding-top: .5rem;
-
-    
-
+    padding-top: 0.5rem;
 
     figcaption p::first-letter {
       all: unset;
@@ -371,7 +371,6 @@
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
     padding-top: var(--spacing-sm);
-   
 
     @media (max-width: $breakpoint-mobile) {
       flex-direction: column;
@@ -411,9 +410,9 @@
   shape-outside: circle(50%);
   max-width: 150px;
   width: 100%;
-  
+
   & img:hover {
-    cursor:inherit;
+    cursor: inherit;
   }
 
   img {

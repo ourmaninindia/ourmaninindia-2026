@@ -5,12 +5,36 @@
     _default/single.html
 </div>
 
-{{ $img := .Resources.Get .Params.featured_image }}
-{{ $alt := .Resources.Get .Params.featured_alt }}
-{{ if $img }}
-    <img class="single__hero-bg" alt="{{ $alt }}" src="{{ $img.RelPermalink }}">
+<!-- hero image -->
+{{ with .Resources.GetMatch .Params.featured_image }}
+  {{ $img400  := .Resize "400x webp q85" }}
+  {{ $img800  := .Resize "800x webp q85" }}
+  {{ $img1200 := .Resize "1200x webp q85" }}
+
+  <div class="single__hero">
+    <picture>
+      <source type="image/webp"
+              srcset="{{ $img400.RelPermalink }} 400w,
+                      {{ $img800.RelPermalink }} 800w,
+                      {{ $img1200.RelPermalink }} 1200w"
+              sizes="(max-width: 480px) 100vw,
+                     (max-width: 768px) 50vw,
+                     800px">
+      <img class="single__hero-bg"
+           src="{{ $img800.RelPermalink }}"
+           alt="{{ $.Params.featured_alt | default $.Params.caption }}"
+           loading="eager"
+           decoding="async"
+           width="{{ $img800.Width }}"
+           height="{{ $img800.Height }}">
+    </picture>
+    {{ with $.Params.caption }}
+      <span class="single__hero-caption">{{ . }}</span>
+    {{ end }}
+  </div>
 {{ end }}
 
+<!-- start the contents -->
 <div class="contents__container">
 <article class="single">
     <header class="single__masthead">    
@@ -45,7 +69,7 @@
                         {{ if gt (len $validTags) 0 }}
                             <span class="single__tags">
                                 {{ range $index, $tag := $validTags }}
-                                    {{ if $index }}, {{ end }}
+                                    {{ if $index }} {{ end }}
                                     <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
                                 {{ end }}
                             </span>

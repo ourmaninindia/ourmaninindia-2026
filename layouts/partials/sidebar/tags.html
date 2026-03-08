@@ -1,12 +1,13 @@
 <!-- tags widget -->>
+
 {{ $sectionTags := slice }}
 
 {{ if .Section }}
-{{/* Section page - show tags from current section */}}
-{{ $sectionTags = partial "get-section-tags" .Section }}
+    {{/* Section page - show tags from current section */}}
+    {{ $sectionTags = partial "get-section-tags" .Section }}
 {{ else }}
-{{/* Taxonomy/other pages - show all tags */}}
-{{ $sectionTags = .Site.Taxonomies.tags.ByCount }}
+    {{/* Taxonomy/other pages - show all tags */}}
+    {{ $sectionTags = .Site.Taxonomies.tags.ByCount }}
 {{ end }}
 
 {{ if gt (len $sectionTags) 0 }}

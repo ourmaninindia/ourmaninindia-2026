@@ -18,7 +18,9 @@ input:-webkit-autofill:active {
 }
 
 .form {
-    
+    max-width: 500px;
+    margin: auto;
+
 input,
 textarea,
 select {

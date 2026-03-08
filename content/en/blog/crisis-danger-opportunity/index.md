@@ -9,6 +9,8 @@ tags:
   - circular economy
   - sustainable goals
 featured_image : "sustainable-development-goals.png"
+featured_alt: "17 icons to reflect the sustainable development goals"
+caption: "Sustainable development goals"
 date : 2020-06-16T22:00:00Z
 cover : "cover-circular-economy.png"
 title : "Crisis : Danger + Opportunity!"
