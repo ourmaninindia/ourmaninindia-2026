@@ -103,7 +103,7 @@ function initForm(form) {
     fields.forEach(field => {
         // Validate on blur if field has content
         field.addEventListener('blur', () => {
-            if (field.value) validateField(field);
+            if (field.required || field.value) validateField(field);
             updateSubmitButton(form, submitBtn, checkboxes);
         });
 
@@ -115,7 +115,7 @@ function initForm(form) {
 
         // On focusing an email field, immediately validate checkbox group
         // so user sees the "please select a topic" hint before typing
-        if (field.type === 'email' && checkboxes.length) {
+        if ((field.type === 'email' || field.name === 'firstname') && checkboxes.length) {
             field.addEventListener('focusin', () => {
                 validateCheckboxGroup(form, checkboxes);
             });

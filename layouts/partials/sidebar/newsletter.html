@@ -3,7 +3,7 @@
     <h3 class="widget__title">{{ i18n "nl-newsletter" }}</h3>
     <p class="widget__message">{{ i18n "nl-newsletterDescription" }}</p>
 
-    <form class="newsletter-form"
+    <form 
         data-endpoint="{{ .Site.Params.newsletterAction }}"
         data-checkbox-group="newsletter__section-checkbox"
         data-checkbox-error="newsletter-sections-error"
@@ -18,6 +18,7 @@
                 <label for="section-blog" class="form__label">Blog</label>
                 <input type="checkbox" id="section-blog" name="sections[]"
                     value="blog"
+                    aria-label="Blog"
                     class="newsletter__section-checkbox"
                     {{ if eq .Section "blog" }}checked{{ end }}>
             </div>
@@ -25,6 +26,7 @@
                 <label for="section-cycling" class="form__label">Cycling</label>
                 <input type="checkbox" id="section-cycling" name="sections[]"
                     value="cycling"
+                    aria-label="Cycling"
                     class="newsletter__section-checkbox"
                     {{ if eq .Section "cycling" }}checked{{ end }}>
             </div>
@@ -32,6 +34,7 @@
                 <label for="section-tech" class="form__label">Tech</label>
                 <input type="checkbox" id="section-tech" name="sections[]"
                     value="tech"
+                    aria-label="Technology"
                     class="newsletter__section-checkbox"
                     {{ if eq .Section "tech" }}checked{{ end }}>
             </div>
@@ -47,6 +50,7 @@
                     name="firstname"
                     autocomplete="given-name" 
                     required placeholder=" "
+                    aria-label="First name"
                     data-msg-invalid="{{ i18n "form-errorEmailInvalid" }}"
                     data-error="newsletter-firstname-error">
     <label for="newsletter-firstname" class="form__label form__label--float required"> {{ i18n "firstName"}}</label>
@@ -59,6 +63,7 @@
                     name="lastname"
                     autocomplete="family-name" required
                     placeholder="  "
+                    aria-label="Surname"
                     data-msg-invalid="{{ i18n "form-errorEmailInvalid" }}"
                     data-error="newsletter-lastname-error">
     <label for="newsletter-lastname" class="form__label form__label--float required"> {{ i18n "lastName" }}</label>
@@ -73,6 +78,7 @@
                 name="email"
                 autocomplete="email"
                 placeholder=" "
+                aria-label="Email"
                 required
                 data-msg-invalid="{{ i18n "form-errorEmailInvalid" }}"
                 data-error="newsletter-email-error">

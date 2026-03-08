@@ -24,6 +24,8 @@ other = "Archief"
 other = "Zoeken"
 [searchPlaceholder]
 other = "Zoek artikelen..."
+[search-input]
+other = "Zoek naar artikelen..."
 
 [nl-newsletter]
 other = "Nieuwsbrief"
@@ -91,6 +93,7 @@ other = "De inhoud is niet meer relevant voor mij"
 other = "Ik ontvang te veel e-mails in het algemeen"
 [unsubscribeReason5]
 other = "Anders"
+
 
 # Contact form
 [contactThankYou]

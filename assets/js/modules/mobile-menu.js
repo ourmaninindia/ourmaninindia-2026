@@ -63,9 +63,10 @@ export function initMobileMenu() {
      * Toggle menu on hamburger click
      * Toggles --open class and aria-expanded attribute
      */
+
     menuToggle.addEventListener('click', function () {
         menuItems.classList.toggle('nav__menu--open');
-        
+
         // Update aria-expanded for accessibility
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         menuToggle.setAttribute('aria-expanded', !isExpanded);
@@ -75,9 +76,10 @@ export function initMobileMenu() {
      * Close menu when clicking outside
      * Detects clicks outside both toggle button and menu
      */
+
     document.addEventListener('click', function (event) {
-        const isClickInside = menuToggle.contains(event.target) || 
-                             menuItems.contains(event.target);
+        const isClickInside = menuToggle.contains(event.target) ||
+            menuItems.contains(event.target);
 
         // If click is outside menu and menu is open, close it
         if (!isClickInside && menuItems.classList.contains('nav__menu--open')) {
@@ -93,10 +95,20 @@ export function initMobileMenu() {
      * Note: Duplicates escape-key module functionality.
      * Consider using only the global handler instead.
      */
+
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape' && menuItems.classList.contains('nav__menu--open')) {
             menuItems.classList.remove('nav__menu--open');
             menuToggle.setAttribute('aria-expanded', 'false');
         }
     });
+
+    // Close the menu when the theme toggle is clicked
+    const themeToggle = document.getElementById('theme-toggle'); 
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            menuItems.classList.remove('nav__menu--open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    }
 }

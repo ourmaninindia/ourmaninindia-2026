@@ -26,6 +26,7 @@
     &:hover {
         border: 1px solid var(--color-primary-hover);
         transform: translateY(-1px);
+        vertical-align: middle; // or top
         box-shadow:
             0 7px 14px hsl(0, 0%, 0%, 0.15),
             0 3px 6px hsl(0, 0%, 0%, 0.1),
@@ -46,6 +47,61 @@
         justify-content: space-around;
     }
 
+    // a clear button for within an input
+    &__clear {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--color-bg-secondary);
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--color-text-light);
+        // transition: all var(--transition-base);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            display: block; // removes inline baseline gap
+            stroke: #fff;
+            width: 12px;
+            height: 12px;
+            min-width: 12px; // prevents flex shrinking
+            flex-shrink: 0;
+            overflow: visible;
+        }
+
+        &:hover svg {
+            stroke: var(--color-text); // darker on hover
+        }
+
+        &::after {
+            content: "Clear";
+            position: absolute;
+            bottom: -1.4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.65rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+            color: var(--color-text-light);
+        }
+
+        &:hover {
+            transform: translateY(calc(-50% - 1px));
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+
     // Modifiers
     &--full-width {
         display: block;
@@ -59,7 +115,7 @@
         // Not ready — form invalid, suppress hover feedback
         &:not(.is-ready):hover {
             // cursor: not-allowed;
-            transform: none;
+            // transform: none; this has a problem with a button in an input
             // background-color: var(--color-bg-secondary);
             box-shadow:
                 0 1px 3px hsl(0, 0%, 0%, 0.12),
@@ -164,6 +220,7 @@
 }
 
 // Icon Button
+/*
 .icon-button {
     display: inline-flex;
     align-items: center;
@@ -209,3 +266,4 @@
         color: var(--color-primary-hover);
     }
 }
+    */

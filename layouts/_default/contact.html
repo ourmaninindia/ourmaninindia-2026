@@ -17,7 +17,7 @@
             <div class="form">
                 <h2 class="form__title">✉️ {{ i18n "contactSendMessage" }}</h2>
                 <p class="form__description">{{ i18n "contactQuestions" }}</p>
-                <form class="contact__form"
+                <form 
                     data-endpoint="{{ .Site.Params.contactAction }}"
                     data-success-message="{{ i18n "contactThankYou" }}"
                     data-error-message="{{ i18n "contactFailed" }}"
@@ -31,6 +31,7 @@
                                 id="contact-firstname"
                                 name="firstname"
                                 autocomplete="given-name"
+                                aria-label="Given name"
                                 placeholder="First name">
                             <label for="contact-firstname"
                                 class="form__label form__label--float">{{ i18n
@@ -43,6 +44,7 @@
                                 id="contact-lastname"
                                 name="lastname"
                                 autocomplete="family-name"
+                                aria-label="Surname"
                                 placeholder="Last name">
                             <label for="contact-lastname"
                                 class="form__label form__label--float">{{ i18n
@@ -58,6 +60,7 @@
                             autocomplete="email"
                             required
                             placeholder="Email"
+                            aria-label="Email"
                             data-error="contact-email-error">
                         <label for="contact-email"
                             class="form__label form__label--float required">{{
@@ -66,11 +69,12 @@
                             class="form__error"></span>
                     </div>
                     <div class="form__group form__group--float">
-                        <input type="text"
+                        <input type="text" 
                             id="contact-subject"
                             name="subject"
                             required
                             placeholder="Subject"
+                            aria-label="Subject"
                             data-error="contact-subject-error">
                         <label for="contact-subject"
                             class="form__label form__label--float required">{{

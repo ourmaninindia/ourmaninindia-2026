@@ -6,30 +6,42 @@
 <div class="contents__container">
     <article class="single">
         <header class="contents__header">
-             <h1 class="contents__title">Search</h1>
-                <p class="contents__description">Search through all posts</p>
+            <h1 class="contents__title">Search</h1>
+            <p class="contents__description">Search through all posts</p>
         </header>
-        
-        <div class="search-box">
-            <input 
-                type="text" 
-                id="search-input" 
-                class="search-box__input" 
-                placeholder="Search articles..."
-                autocomplete="off"
-                aria-label="Search">
-            <button id="search-clear" class="search-box__clear" aria-label="Clear search">×</button>
+
+        <div class="form">
+            <div class="form__group form__group--float">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search articles..."
+                    autocomplete="off"
+                    aria-label="Search">
+                <label for="search-input"
+                    class="form__label form__label--float">
+                    {{ i18n "search-input" }}
+                </label>
+                <button type="submit" id="search-clear"
+                    class="button button__clear search__clear" aria-label="Clear search">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        aria-hidden="true">
+                        <path d="M1 1L9 9M9 1L1 9" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div> 
         </div>
-        
-        <div id="search-stats" class="search-stats"></div>
-        <div id="search-results" class="search-results"></div>
+
+        <div id="search-stats" class="search__stats"></div>
+        <div id="search-results" class="search__results"></div>
     </article>
 </div>
 
 {{/* Load Fuse.js */}}
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" 
-        integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I=" 
-        crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"
+    integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I="
+    crossorigin="anonymous">
 </script>
 
 {{ end }}

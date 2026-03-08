@@ -24,6 +24,8 @@ other = "Archive"
 other = "Search"
 [searchPlaceholder]
 other = "Search posts..."
+[search-input]
+other = "Search articles..."
 
 [nl-newsletter]
 other = "Newsletter"
@@ -91,6 +93,7 @@ other = "The content is no longer relevant to me"
 other = "I have too many emails in general"
 [unsubscribeReason5]
 other = "Other"
+
 
 # Contact form
 [contactThankYou]
