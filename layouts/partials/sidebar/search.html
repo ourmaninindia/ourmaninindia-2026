@@ -1,8 +1,20 @@
 <!-- search widget -->
-<div class="widget">
-<h3 class="widget__title">{{ i18n "search" }}</h3>
-<form class="widget__search" action="{{ " search" | relLangURL }}" method="get">
-    <input type="text" name="q" class="form-input" placeholder="{{ i18n "searchPlaceholder" }}">
-    <button type="submit" class="button">🔍</button>
-</form>
+<div class="widget form">
+    <h3 class="form__title">{{ i18n "search" }}</h3>
+    <form action="{{ "search" | relLangURL }}" method="get">
+        <div class="form__group form__group--float">
+            <input 
+                type="text" 
+                name="q" 
+                placeholder="{{ i18n "searchPlaceholder"}}" 
+                autocomplete="off"
+                aria-label="Search">
+            <label for="name" class="form__label form__label--float">
+                Search articles...
+            </label>
+            <button type="submit" id="search-clear"
+                class="button button__clear search__clear"
+                aria-label="Search for an article">🔍</button>
+        </div>
+    </form>
 </div>

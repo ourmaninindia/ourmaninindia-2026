@@ -143,6 +143,7 @@ select {
         gap: var(--spacing-md);
         // margin-bottom: var(--spacing-sm);
         flex-wrap: wrap;
+        row-gap: 0; 
 
         .form__group,
         .form__group--float {

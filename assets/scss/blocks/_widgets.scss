@@ -5,25 +5,7 @@
    ========================================== */
 
 .widget {
-    background: var(--color-bg-secondary);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-sm);
-    box-shadow: var(--shadow-sm);
-    max-width: 500px;
-    margin: auto;
-
-    &:hover {
-        box-shadow: var(--shadow-md);
-    }
-
-    &__title {
-        font-size: clamp(1rem, 2.5vw, 1.125rem);
-        font-weight: 600;
-        margin-bottom: var(--spacing-sm);
-        padding-bottom: var(--spacing-sm);
-        border-bottom: 2px solid var(--color-primary);
-        color: var(--color-text);
-    }
+    @include form-base;
 
     &__search {
         display: grid;

@@ -7,18 +7,35 @@
 .sidebar {
   position: static;                    // ← no sticky on mobile
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  grid-template-columns: 1fr; // repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: var(--spacing-sm);
+row-gap: 0;
   margin-bottom: var(--spacing-sm); 
   align-items: start; // important to overide defaults
   align-content: start;
   
-  @media (min-width: $breakpoint-desktop) {
-    grid-area: sidebar;  // ← only assign when parent grid is active
+ @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
+    display: block;
+    column-count: 2;
+    column-gap: var(--spacing-sm);
+
+    .widget {
+      break-inside: avoid;             // prevents a widget splitting across columns
+      margin-bottom: var(--spacing-sm);
+      width: auto; // ← override any 100% width
+    }
+  }
+
+@media (min-width: $breakpoint-desktop) {
+    display: grid;
+    grid-area: sidebar;                // ← only assign when parent grid is active
     position: sticky;
     top: 80px;
     grid-template-columns: 1fr;
-    grid-auto-rows: min-content; // avoid default stretch!
+    grid-auto-rows: min-content;       // avoid default stretch!
+    gap: var(--spacing-sm);
+    align-items: start;
+    align-content: start;
     grid-template-areas:
       "search"
       "recent"
@@ -26,9 +43,6 @@
       "tags"
       "archive"
       "newsletter";
-  }
-  .widget {
-    background-color: var(--color-comments);
   }
 }
 

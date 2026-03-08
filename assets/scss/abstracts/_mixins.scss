@@ -110,3 +110,41 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* ==========================================
+   FORM base mixin — shared by .form and .widget
+   ========================================== */
+
+@mixin form-base {
+    transition: all var(--transition-base);
+    background: var(--color-bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--color-primary);
+    }
+
+    &__container {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    &__title {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text);
+    }
+
+    &__description {
+        color: var(--color-text-light);
+        margin-bottom: 0;
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        line-height: var(--line-height-relaxed);
+    }
+}
