@@ -1,7 +1,7 @@
 ---
-title: "Search"
+title: "Search my articles"
 layout: "search"
 categories:
 tags:
-  - search
+  - "search"
 ---

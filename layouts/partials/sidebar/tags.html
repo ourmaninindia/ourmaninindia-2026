@@ -18,7 +18,9 @@
             {{ if $.Section }}
             {{/* Section page - $sectionTags items have .name */}}
             {{ range first 15 $sectionTags }}
-            <a href="{{ " tags" | relLangURL }}/{{ .name | urlize }}" class="tag">{{ .name }}</a>
+            <a href="{{ (site.GetPage (printf "/tags/%s" (.name | urlize))).RelPermalink }}" class="tag">
+                {{ .name }}
+            </a>
             {{ end }}
             {{ else }}
             {{/* Taxonomy page - $sectionTags items have .Name and .Page */}}

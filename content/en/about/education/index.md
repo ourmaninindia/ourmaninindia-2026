@@ -1,12 +1,17 @@
 ---
-date : 2020-04-12T19:56:20Z
-tags : ["Directorship","Leadership","Independent director"]
-description : "An educational background in Zoology, Finance, IT, and Service Management."
-title : "Education"
-featured_image : 
-cover : 
-clearReading : true
-disable_comments : 
+date: 2020-04-12T19:56:20Z
+categories:
+tags:
+  - "Directorship"
+  - "Leadership"
+  - "Independent director"
+description: "An educational background in Zoology, Finance, IT, and Service Management."
+title: "Education"
+featured_image:
+featured_alt:
+caption:
+clearReading: true
+disable_comments:
 layout: about
 ---
 

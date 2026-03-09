@@ -8,9 +8,9 @@ followers: 1200  # Optional - can remove if you don't want to show
 
 # Social Icons
 github: ourmaninindia
-linkedin: ourmaninindia
-instagram: alfred_tuinman  # Optional - good for cycling content
-strava: alfred_tuinman # id is 7648787  
-facebook: alfred_tuinman
-whatsapp: +919923752407
+linkedin: https://www.linkedin.com/in/ourmaninindia
+instagram: https://www.instagram.com/alfred_tuinman 
+strava: https://www.strava.com/athletes/7648787
+facebook: https://www.facebook.com/alfred_tuinman
+whatsapp: https://api.whatsapp.com/send/?phone=+919923752407
 

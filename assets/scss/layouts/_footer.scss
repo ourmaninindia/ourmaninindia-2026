@@ -75,7 +75,7 @@
 
     button {
         padding: 0;
-        box-shadow: var(--shadow-sm); // FIXED: Use theme-aware shadow
+        // box-shadow: var(--shadow-sm); // FIXED: Use theme-aware shadow
         transition: all var(--transition-base);
         background-color: transparent;
         border: none;

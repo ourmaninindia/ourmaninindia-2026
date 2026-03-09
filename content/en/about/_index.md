@@ -13,9 +13,9 @@ carousel: false
 layout: about
 categories:
 tags:
-  - Directorship
-  - Leadership
-  - Independent director
+  - "Directorship"
+  - "Leadership"
+  - "Independent director"
 ---
 
 

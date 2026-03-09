@@ -4,7 +4,7 @@ featured_alt : "Our man in India himself"
 caption: "Our Man in India"
 featured_contain: true
 featured: "contain"
-categories: tech
+categories: "tech"
 tags:
   - "issues"
   - "events"

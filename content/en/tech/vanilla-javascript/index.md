@@ -1,6 +1,6 @@
 ---
 date : 2023-07-30T15:00:00Z
-title: "Vanilla JavaScript, extremely good reasons you should use this!"
+title: "Vanilla JavaScript, extremely good reasons to use this"
 featured : true
 featured_image : "js-tax.png"
 read_more_copy : "Read more about Vanilla JS"

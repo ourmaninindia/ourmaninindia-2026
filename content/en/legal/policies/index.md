@@ -11,12 +11,12 @@ noindex: true
 type: "legal"
 categories:
 tags:
-  - complance
-  - conditions
-  - privacy
-  - cookies
-  - code of conduct
-  - Google Analytics
+  - "complance"
+  - "conditions"
+  - "privacy"
+  - "cookies"
+  - "code of conduct"
+  - "Google Analytics"
 ---
 
 

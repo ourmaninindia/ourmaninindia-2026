@@ -1,12 +1,15 @@
 ---
 date : 2020-04-12T19:56:20Z
-tags : ["Directorship","Leadership","Independent director"]
+tags :
+  - "Directorship"
+  - "Leadership"
+  - "Independent director"
+categories:
 description : "A colourful CV"
 title : "CV"
-featured_image : 
-cover : 
+featured_image :
 clearReading : true
-disable_comments : 
+disable_comments :
 layout: about
 ---
 

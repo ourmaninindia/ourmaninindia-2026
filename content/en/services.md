@@ -16,8 +16,8 @@ Custom Hugo sites built for speed and SEO. Includes:
 - Netlify deployment
 {{< /feature >}}
 
-{{< feature title="React Applications" icon="⚛️" >}}
-Modern web applications using React and Next.js:
+{{< feature title="Non Static Applications" icon="⚛️" >}}
+Modern web applications using vanilla Javascript:
 - Single-page applications
 - E-commerce platforms
 - Interactive dashboards

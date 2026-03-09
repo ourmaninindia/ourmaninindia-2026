@@ -59,29 +59,35 @@ def process_front_matter(content: str) -> tuple[str, bool]:
         stripped = line.rstrip()
 
         # Check if this line starts a target key
-        key_match = re.match(r'^(\s*)(tags|categories)\s*:\s*(.*)', stripped, re.IGNORECASE)
+        key_match = re.match(r'^(\s*)(tags|categories)(\s*):\s*(.*)', stripped, re.IGNORECASE)
         if key_match:
             indent = key_match.group(1)
             key = key_match.group(2)
-            rest = key_match.group(3).strip()
+            space_before_colon = key_match.group(3)
+            rest = key_match.group(4).strip()
 
             if rest.startswith('['):
                 # Inline array style: tags: [hugo, modules]
-                # Could span multiple lines — collect until ]
                 full = rest
                 while ']' not in full and i + 1 < len(lines):
                     i += 1
                     full += lines[i].strip()
                 quoted_array = process_inline_array(full)
-                new_lines.append(f'{indent}{key}: {quoted_array}')
+                new_lines.append(f'{indent}{key}{space_before_colon}: {quoted_array}')
                 in_target_block = False
-            elif rest == '' or rest is None:
-                # List style on following lines
-                new_lines.append(stripped)
-                in_target_block = True
+            elif rest == '':
+                # Peek ahead — list items follow or truly empty
+                next_i = i + 1
+                if next_i < len(lines) and re.match(r'^\s*-\s+', lines[next_i]):
+                    new_lines.append(stripped)
+                    in_target_block = True
+                else:
+                    # Truly empty e.g. "tags:" with nothing — leave as-is
+                    new_lines.append(stripped)
+                    in_target_block = False
             else:
                 # Single inline value: tags: hugo
-                new_lines.append(f'{indent}{key}: {quote_value(rest)}')
+                new_lines.append(f'{indent}{key}{space_before_colon}: {quote_value(rest)}')
                 in_target_block = False
         elif in_target_block:
             # Check if this is a list item (starts with - )
