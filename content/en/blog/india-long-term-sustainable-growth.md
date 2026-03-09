@@ -1,9 +1,9 @@
 ---
 categories:
-  - mangement
+  - "mangement"
 tags:
-  - India
-  - Strategy
+  - "India"
+  - "Strategy"
 date : 2005-10-24T00:07:53Z
 title : "India, long-term sustainable growth?"
 ---

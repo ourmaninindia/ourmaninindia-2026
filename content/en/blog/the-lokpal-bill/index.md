@@ -1,10 +1,10 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - lokpal
-  - India
-  - Economy
+  - "lokpal"
+  - "India"
+  - "Economy"
 date : 2011-07-11T16:56:54Z
 slug : "the-lokpal-bill"
 title : "The Lokpal bill"

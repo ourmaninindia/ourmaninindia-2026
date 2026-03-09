@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - apache
-  - server
+  - "open source"
+  - "apache"
+  - "server"
 date : 2012-08-08T17:36:21Z
 title : "HTTP not working"
 ---

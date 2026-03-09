@@ -1,13 +1,13 @@
 ---
 categories:
-  - Sustainability
+  - "Sustainability"
 tags:
-  - circular economy
-  - covid-19
-  - opportunity
-  - sustainable goals
-  - circular economy
-  - sustainable goals
+  - "circular economy"
+  - "covid-19"
+  - "opportunity"
+  - "sustainable goals"
+  - "circular economy"
+  - "sustainable goals"
 featured_image : "sustainable-development-goals.png"
 featured_alt: "17 icons to reflect the sustainable development goals"
 caption: "Sustainable development goals"

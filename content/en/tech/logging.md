@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - vim
-  - logging
-  - rsyslog
+  - "open source"
+  - "vim"
+  - "logging"
+  - "rsyslog"
 date : 2012-08-08T13:07:26Z
 title : "Logging"
 ---

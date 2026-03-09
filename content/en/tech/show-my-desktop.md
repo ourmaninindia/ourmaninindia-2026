@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - desktop
-  - file manager
+  - "open source"
+  - "desktop"
+  - "file manager"
 date : 2012-08-07T10:52:53Z
 title : "Show my desktop"
 ---

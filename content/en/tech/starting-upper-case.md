@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - find files
-  - bash  script
+  - "open source"
+  - "find files"
+  - "bash  script"
 date : 2012-08-07T10:22:25Z
 title : "List all files starting with upper case"
 ---

@@ -4,17 +4,17 @@ title: "Remember Srebrenice"
 featured : true
 featured_image : "20250613-121037.jpg"
 image_caption: "The former battery factory where people sought refuge"
-featured_contain : 
+featured_contain :
 read_more_copy : "Read more about Srebrenica"
 categories:
-  - cycling
+  - "cycling"
 tags:
-  - Travel
-  - srebrenica
-  - montegengro
-  - bosnia
-  - croatia
-  - Potočari
+  - "Travel"
+  - "srebrenica"
+  - "montegengro"
+  - "bosnia"
+  - "croatia"
+  - "Potočari"
 ---
 
 Today, July 13, marks exactly one month since I cycled in <em>Srebrenica</em> — a small village in the southeast of Bosnia & Herzegovina, near the Drina River that forms the border with Serbia.

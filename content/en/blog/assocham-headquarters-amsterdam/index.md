@@ -1,10 +1,10 @@
 ---
 categories:
- - blog
+ - "blog"
 tags:
-  - Management
-  - india
-  - Business
+  - "Management"
+  - "india"
+  - "Business"
 date : 2015-12-02T08:47:09Z
 title : "Assocham sets up European headquarters in Amsterdam"
 cover : "cover-assocham.png"

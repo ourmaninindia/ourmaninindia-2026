@@ -5,10 +5,10 @@ title : "Algorithms and our world picture"
 featured : false
 cover : "cover-think2013.jpg"
 read_more_copy : "Read more about this session"
-categories : 
-  - management
+categories :
+  - "management"
 tags:
-  - algorithms
+  - "algorithms"
 ---
 
 {{< figure src="cover-think2013.jpg" alt="Arun Sehrawat" caption="Arun Sehrawat" class="small left" >}}

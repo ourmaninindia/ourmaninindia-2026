@@ -1,9 +1,9 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - Management
-  - Business
+  - "Management"
+  - "Business"
 date : 2012-11-03T10:26:40Z
 description : "Profit and Prejudice. Heavy industry minister Praful Patel, Rajan Mittal of Bharti Airtel fame, and Sajjan Jindal of JSW, spoke at the THiNK 2012 in Goa."
 title : "Profit and Prejudice"

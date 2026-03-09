@@ -1,9 +1,9 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - Management
-  - Business
+  - "Management"
+  - "Business"
 date : 2012-09-16T14:57:04Z
 title : "SpotMe™ at the Strategic Growth Forum™ India"
 cover : "spotme.png"

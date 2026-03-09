@@ -1,10 +1,10 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - Management
-  - india
-  - gdp
+  - "Management"
+  - "india"
+  - "gdp"
 date : 2015-12-05T09:51:36Z
 slug : "india-gdp-accelerates-in-fy16"
 title : "India's GDP accelerates to 7.4% in Q2 FY16"

@@ -8,12 +8,12 @@ title : "Anatomy of a Pandemic"
 featured_image : "cover-lipkin.jpg"
 read_more_copy : "Read more about this session"
 categories:
-  - blog
-  - management
+  - "blog"
+  - "management"
 tags:
-  - Covid
-  - Pandemic
-  - Management
+  - "Covid"
+  - "Pandemic"
+  - "Management"
 ---
 
 {{< figure src="lipkin.jpg" alt="Dr Ian Lipkin" class="left" caption="Dr Ian Lipkin" >}}

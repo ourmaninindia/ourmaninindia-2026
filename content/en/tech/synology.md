@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - synology
+  - "open source"
+  - "synology"
 date : 2012-08-07T10:54:49Z
 title : "Synology"
 ---

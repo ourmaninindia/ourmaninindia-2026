@@ -1,9 +1,9 @@
 ---
 draft: true
-title: pricing example in Hugo
-tags: 
-  - accordion
-  - hugo
+title: "pricing example in Hugo"
+tags:
+  - "accordion"
+  - "hugo"
 ---
 
 <div class="pricing-section">

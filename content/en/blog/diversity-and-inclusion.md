@@ -1,9 +1,9 @@
 ---
 categories:
-  - Management
+  - "Management"
 tags:
-  - Diversity & Inclusion
-  - HR
+  - "Diversity & Inclusion"
+  - "HR"
 date : 2007-08-26T14:29:07Z
 title : "Diversity & Inclusion"
 ---

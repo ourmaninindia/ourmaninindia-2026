@@ -4,10 +4,10 @@ date: 2020-10-06T22:00:00Z
 cover: "https://s3-us-west-2.amazonaws.com/images.ourmaninindia.com/./jamstack.png"
 title: "The future is highly distributed"
 categories:
-  - blog
+  - "blog"
 tags:
-  - Information Technology
-  - Jamstack
+  - "Information Technology"
+  - "Jamstack"
 ---
 
 In any business environment these days you almost invariably have all your data in different systems. A single ERP may be the driving force behind your organisation but having a monolithic system also limits you.

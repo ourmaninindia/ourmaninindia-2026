@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - business
-  - gmail
-  - hacking
-  - mail server
-  - isync
+  - "business"
+  - "gmail"
+  - "hacking"
+  - "mail server"
+  - "isync"
 date : 2013-09-29T22:13:18Z
 title : "Moving mail to Google Apps"
 ---

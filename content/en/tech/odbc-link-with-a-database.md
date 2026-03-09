@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - odbc
-  - plack
-  - mssql server
-  - database
+  - "open source"
+  - "odbc"
+  - "plack"
+  - "mssql server"
+  - "database"
 date: 2015-06-10T14:26:44Z
 title: "ODBC link with a database"
 ---

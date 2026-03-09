@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open-source
-  - fedora
-  - ubuntu
+  - "open-source"
+  - "fedora"
+  - "ubuntu"
 date : 2012-08-07T08:12:17Z
 title : "Change to Fedora 17"
 ---

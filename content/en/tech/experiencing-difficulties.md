@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - wiki
-  - mysql
+  - "wiki"
+  - "mysql"
 date : 2012-08-07T21:22:59Z
 title : "Sorry! This site is experiencing technical difficulties."
 ---

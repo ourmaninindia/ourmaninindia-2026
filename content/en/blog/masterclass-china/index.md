@@ -1,6 +1,6 @@
 ---
-categories : 
-  - management
+categories :
+  - "management"
 date : 2012-11-04T15:37:57Z
 description : "Bob Geldof and Jonathan Fenby speaking at Think in Goa"
 slug : "masterclass-china"
@@ -8,9 +8,9 @@ title : "Bob Geldof and Jonathan Fenby"
 cover : "cover-fenby.jpg"
 read_more_copy : "Read more about this session"
 tags:
-  - china
-  - industrialisation
-  - consumption
+  - "china"
+  - "industrialisation"
+  - "consumption"
 ---
 
 

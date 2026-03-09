@@ -4,10 +4,10 @@ draft : false
 slug : "32-or-64-bit-machine"
 title : "Is it a 32 or 64 bit machine?"
 categories:
-  - tech
+  - "tech"
 tags:
   - "open-source"
-  - ubuntu
+  - "ubuntu"
 ---
 
 

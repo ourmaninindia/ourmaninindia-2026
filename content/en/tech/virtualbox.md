@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - virtualbox
+  - "open source"
+  - "virtualbox"
 date : 2012-08-08T13:10:04Z
 title : "Virtualbox"
 ---

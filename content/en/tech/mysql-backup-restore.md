@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - mysql
-  - database
-  - backup
-  - restore
+  - "open source"
+  - "mysql"
+  - "database"
+  - "backup"
+  - "restore"
 date: 2012-08-07T10:23:36Z
 title: "MySQL backup and restore"
 ---

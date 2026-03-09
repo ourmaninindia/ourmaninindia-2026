@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open-source
-  - cron
-  - cron job
+  - "open-source"
+  - "cron"
+  - "cron job"
 date : 2016-04-05T11:59:17Z
 title : "cron errors only"
 ---

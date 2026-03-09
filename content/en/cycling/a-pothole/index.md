@@ -6,10 +6,10 @@ cover : "cover-einstein-thumb.jpg"
 title : "A pothole"
 featured_image : "einstein.jpg"
 categories:
-  - Cycling
+  - "Cycling"
 tags:
-  - India
-  - Travel
+  - "India"
+  - "Travel"
 ---
 
 “May I make a phone call first?” I asked the doctor as he had just explained that I would need surgery. I had participated in the “Kankavli magic”, a 200km Brevets Randonneurs Mondiaux (BRM) ride. The short rest at the 100km control point had done me good. I realised on my way back that I had a pleasant tail wind. No wonder I had been pushing hard thus far. I did over 30km per hour when I hit a deep pothole. The image of it was somewhat hidden between the shadows on the roads. It was more like a crater. I saw it too late.

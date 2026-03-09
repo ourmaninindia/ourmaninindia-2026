@@ -1,10 +1,10 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - Education
-  - Big History
-  - Management
+  - "Education"
+  - "Big History"
+  - "Management"
 date : 2012-11-03T09:25:42Z
 description : "Big History"
 title : "Big History"

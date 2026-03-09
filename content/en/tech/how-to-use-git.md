@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - git
-  - ssh
-  - secure shell
-  - github
+  - "open source"
+  - "git"
+  - "ssh"
+  - "secure shell"
+  - "github"
 date : 2013-04-11T10:57:41Z
 title : "How to use GIT"
 ---

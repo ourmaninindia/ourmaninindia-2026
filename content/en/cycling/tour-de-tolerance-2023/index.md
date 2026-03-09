@@ -7,20 +7,20 @@ read_more_copy : "Read more about this ride in the Alps"
 layout: "single-tdt"
 featured: true
 categories:
-  - Cycling
+  - "Cycling"
 tags:
-  - Cycling
-  - Italy
-  - Travel
-  - turino
+  - "Cycling"
+  - "Italy"
+  - "Travel"
+  - "turino"
   - "col de l'iseran"
-  - col du galibier
+  - "col du galibier"
   - "Col du Grand Saint-Bernard"
-  - Col de Bassachaux
-  - Col du Petit-Saint-Bernard
-  - Col du Télégraphe
-  - Col de Montgenevre
-  - Colle Braida
+  - "Col de Bassachaux"
+  - "Col du Petit-Saint-Bernard"
+  - "Col du Télégraphe"
+  - "Col de Montgenevre"
+  - "Colle Braida"
 ---
 
 After two years cycling in the Dolomites, I missed last years’ tour in the Pyrenees due to a bad fall in Goa. That had caused my family a lot of stress and me a lot of frustration of not being allowed to cycle by my doctor. The reason of my fall became never clear. I am still alive due to quick action by my friend Sylvano as normally I always cycled into town on my own…

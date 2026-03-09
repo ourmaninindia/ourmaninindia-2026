@@ -6,10 +6,10 @@ title : "Endurance"
 featured_image : "elevation_profile.jpg"
 cover : "cover-thumbnail.jpg"
 categories:
-  - Cycling
+  - "Cycling"
 tags:
-  - India
-  - endurance
+  - "India"
+  - "endurance"
 ---
 
 

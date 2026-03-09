@@ -1,10 +1,10 @@
 ---
 categories:
-  - cycling
+  - "cycling"
 date : 2026-02-12T11:45:48Z
 title : "Articles Posted"
 disable_comments : true
-featured_image: 
+featured_image:
 ---
 I am Dutch, so I have cycled all my life. As a child it was the way to explore, to seek adventure.There are ample reasons why a bike can stay in the garage: too busy, too dangerous, too hot, too cold.
 

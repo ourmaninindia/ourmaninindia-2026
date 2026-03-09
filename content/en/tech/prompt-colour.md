@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - prompt colour
-  - server
-  - terminal
+  - "open source"
+  - "prompt colour"
+  - "server"
+  - "terminal"
 date : 2013-03-16T19:22:00Z
 title : "prompt colour"
 ---

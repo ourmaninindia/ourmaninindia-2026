@@ -1,11 +1,11 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - inovation
-  - large scale integrator
-  - maritime industry
-  - shipyard
+  - "inovation"
+  - "large scale integrator"
+  - "maritime industry"
+  - "shipyard"
 date : 2011-09-16T18:56:31Z
 description : "Move to the role of a large scale integrator"
 title : "Move to the role of a large scale integrator"

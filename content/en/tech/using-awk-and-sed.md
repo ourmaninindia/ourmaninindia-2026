@@ -1,14 +1,14 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - awk
-  - sed
-  - prepend
-  - append
-  - htaccess
-  - dos2unix
+  - "open source"
+  - "awk"
+  - "sed"
+  - "prepend"
+  - "append"
+  - "htaccess"
+  - "dos2unix"
 date : 2015-08-28T13:19:48Z
 title : "Prepend and append example of a redirect file using awk and sed"
 ---

@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - chmod
-  - change permissions
+  - "open source"
+  - "chmod"
+  - "change permissions"
 date : 2012-08-07T10:22:57Z
 title : "Change permissions on files only"
 ---

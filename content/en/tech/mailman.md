@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - mailman
+  - "open source"
+  - "mailman"
 date : 2013-02-26T23:23:07Z
 title : "Mailman"
 ---

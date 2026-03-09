@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - backup
-  - rsync
+  - "open source"
+  - "backup"
+  - "rsync"
 date : 2012-08-08T13:54:19Z
 draft : false
 title : "Backup script"

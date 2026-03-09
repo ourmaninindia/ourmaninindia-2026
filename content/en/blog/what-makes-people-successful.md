@@ -1,9 +1,9 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - hr
-  - Management
+  - "hr"
+  - "Management"
 date : 2014-08-31T12:58:31Z
 title : "What makes people successful"
 ---

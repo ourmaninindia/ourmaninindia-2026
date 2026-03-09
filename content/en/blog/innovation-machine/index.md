@@ -1,8 +1,8 @@
 ---
 categories:
-  - Management
+  - "Management"
 tags:
-  - Management
+  - "Management"
 date : 2009-10-07T00:26:46Z
 title : "Is the U.S. Killing Its Innovation Machine?"
 featured : false

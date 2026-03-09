@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open-source
-  - postfix
-  - amavisd
+  - "open-source"
+  - "postfix"
+  - "amavisd"
 date : 2013-08-28T13:50:57Z
 draft : false
 slug : "amavisd-connection-refused"

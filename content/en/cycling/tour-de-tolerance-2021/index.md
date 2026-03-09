@@ -1,11 +1,11 @@
 ---
 categories:
-  - Cycling
-  - Travel
+  - "Cycling"
+  - "Travel"
 tags:
-  - Cycling
-  - Dolomites
-  - Italy
+  - "Cycling"
+  - "Dolomites"
+  - "Italy"
 featured_image : "sella-route.png"
 image_caption: "The route near the Sella"
 date : 2021-09-19T22:00:00Z

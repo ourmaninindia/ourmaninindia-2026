@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
+  - "open source"
   - "@eaDir"
-  - synalogy
-  - delete folders
+  - "synalogy"
+  - "delete folders"
 date : 2018-04-23T14:25:12Z
 description : "Delete @eaDIR folders on your Synology NAS"
 title : "Delete @eaDIR folders"

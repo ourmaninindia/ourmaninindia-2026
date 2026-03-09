@@ -5,10 +5,10 @@ title : "Travel in style in India, relax in luxury in Goa"
 featured_image : "luxury-cruise-charter-in-goa.jpg"
 read_more_copy : "Read more about this cruise"
 categories:
-  - blog
+  - "blog"
 tags:
-  - India
-  - Tourism
+  - "India"
+  - "Tourism"
 ---
 
 

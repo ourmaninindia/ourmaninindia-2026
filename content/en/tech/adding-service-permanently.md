@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - services
-  - symlink
-  - samba
+  - "open source"
+  - "services"
+  - "symlink"
+  - "samba"
 date : 2012-11-15T11:03:03Z
 draft : false
 title : "Adding a service permanently"

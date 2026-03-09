@@ -6,13 +6,13 @@ cover : "cover-net-neutrality.png"
 title : "Support Net Neutrality"
 read_more_copy : "Read more about my concern"
 categories:
-  - tech
-  - Management
+  - "tech"
+  - "Management"
 tags:
-  - Management
-  - Open Source
-  - Internet
-  - neutrality
+  - "Management"
+  - "Open Source"
+  - "Internet"
+  - "neutrality"
 ---
 
 

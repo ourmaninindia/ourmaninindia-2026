@@ -5,15 +5,15 @@ featured : true
 cover : "cover-route-map.png"
 title : "A solo cycle ride in Portugal"
 featured_image : "vila-pouca-de-aguiar.jpg"
-image_caption: "Climbing towards Vila Pouca de Aguiar" 
+image_caption: "Climbing towards Vila Pouca de Aguiar"
 toc : true
 read_more_copy : "Read more about this fabulous ride"
 categories:
-  - Cycling
+  - "Cycling"
 tags:
-  - Cycling
-  - Portugal
-  - Travel
+  - "Cycling"
+  - "Portugal"
+  - "Travel"
 ---
 
 Like so often it seemed like a good idea at the time.

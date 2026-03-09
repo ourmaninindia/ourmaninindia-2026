@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - adobe flash
-  - Firefox 14
+  - "open source"
+  - "adobe flash"
+  - "Firefox 14"
 date : 2012-08-07T10:53:26Z
 title : "Flash in Firefox 14"
 ---

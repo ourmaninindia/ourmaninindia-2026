@@ -1,9 +1,9 @@
 ---
 categories:
-  - Management
+  - "Management"
 tags:
-  - Management
-  - Leadership
+  - "Management"
+  - "Leadership"
 date : 2010-12-22T19:13:55Z
 
 title : "Leadership in the 21st Century"

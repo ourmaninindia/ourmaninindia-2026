@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - google speed
-  - hugo
-  - seo
-  - static web site
-  - static webpages
+  - "google speed"
+  - "hugo"
+  - "seo"
+  - "static web site"
+  - "static webpages"
 date : 2020-06-16T22:00:00Z
 title : "Static site generators"
 ---

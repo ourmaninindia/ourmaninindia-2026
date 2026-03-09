@@ -5,11 +5,11 @@ featured : true
 featured_image : "js-tax.png"
 read_more_copy : "Read more about Vanilla JS"
 categories:
-  - tech
+  - "tech"
 tags:
-  - JavaScript
-  - Open Source
-  - Vanilla JavaScript
+  - "JavaScript"
+  - "Open Source"
+  - "Vanilla JavaScript"
 ---
 
 Let me start with a bold statement: knowing HTML and CSS helps write much better JavaScript! Why you may ask.  Well, you need to grasp the whole medium to appreciate the best approach. The what, where, how, issues etc. Vanilla JavaScript may appear daunting but it is not. Instead it is faster, more secure, and more manageable. 

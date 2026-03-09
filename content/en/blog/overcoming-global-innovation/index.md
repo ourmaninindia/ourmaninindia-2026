@@ -1,9 +1,9 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - Innovation
-  - Strategy
+  - "Innovation"
+  - "Strategy"
 date : 2013-01-20T16:57:28Z
 description : "Overcoming the Global Innovation Trade-Off"
 title : "Overcoming the Global Innovation Trade-Off"

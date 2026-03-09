@@ -1,10 +1,10 @@
 ---
 categories:
-  - HRmanagement
+  - "HRmanagement"
 tags:
-  - culture
-  - india
-  - hr
+  - "culture"
+  - "india"
+  - "hr"
 date : 2015-11-17T00:28:16Z
 description : "Cultural Differences"
 slug : "cultural-differences"

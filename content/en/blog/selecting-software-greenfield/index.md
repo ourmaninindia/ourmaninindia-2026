@@ -5,13 +5,13 @@ title : "Selecting software for a greenfield"
 cover : "cover-centos.jpg"
 read_more_copy : "Read more about my article"
 categories:
-  - tech
+  - "tech"
 tags:
-  - Management
-  - Strategy
-  - open-source
-  - Information Technology
-  - software
+  - "Management"
+  - "Strategy"
+  - "open-source"
+  - "Information Technology"
+  - "software"
 ---
 
 {{< figure src="cover-centos.jpeg" alt="Centos" caption="Centos" class="small left" >}}

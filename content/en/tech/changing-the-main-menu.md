@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - mediawiki
-  - sidebar
+  - "mediawiki"
+  - "sidebar"
 date : 2012-08-07T21:23:34Z
 title : "Changing the main menu (sidebar)"
 ---

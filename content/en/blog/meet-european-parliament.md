@@ -1,9 +1,9 @@
 ---
 categories:
-  - Management
+  - "Management"
 tags:
-  - Management
-  - strategy
+  - "Management"
+  - "strategy"
 date : 2007-11-19T15:18:35Z
 description : "High Level Meet at the European Parliament"
 title : "High Level Meet at the European Parliament"

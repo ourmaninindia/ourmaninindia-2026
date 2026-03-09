@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - server
-  - uneadable
-  - sectors
-  - fedora
+  - "open source"
+  - "server"
+  - "uneadable"
+  - "sectors"
+  - "fedora"
 date : 2013-03-17T11:43:28Z
 title : "Currently unreadable (pending) sectors"
 ---

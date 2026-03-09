@@ -1,8 +1,8 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
+  - "open source"
 date : 2012-08-08T13:10:55Z
 description : "Adding a GUI to your Ubuntu server"
 title : "Adding a GUI to your Ubuntu server"

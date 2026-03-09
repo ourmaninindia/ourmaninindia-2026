@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - postfix
-  - endmail
-  - mailbox
-  - telnet
+  - "open source"
+  - "postfix"
+  - "endmail"
+  - "mailbox"
+  - "telnet"
 date : 2012-09-24T20:06:13Z
 title : "Postfix problems"
 ---

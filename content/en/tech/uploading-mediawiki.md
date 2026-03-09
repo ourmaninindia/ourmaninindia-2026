@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - mediawiki
-  - uploading
-  - server
+  - "open source"
+  - "mediawiki"
+  - "uploading"
+  - "server"
 date : 2012-09-18T07:55:18Z
 title : "Uploading a file in Mediawiki"
 ---

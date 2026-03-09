@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - fedora
-  - handbrake
+  - "fedora"
+  - "handbrake"
 date : 2012-10-14T21:26:00Z
 title : "HandBrake"
 ---

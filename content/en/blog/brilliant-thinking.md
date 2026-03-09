@@ -1,9 +1,9 @@
 ---
 categories:
-  - Management
+  - "Management"
 tags:
-  - Management
-  - india
+  - "Management"
+  - "india"
 date : 2014-07-30T10:14:05Z
 title : "Brilliant Out of the Box Thinking"
 featured : false

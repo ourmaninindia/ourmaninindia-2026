@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open-source
-  - cron
-  - cronjob
+  - "open-source"
+  - "cron"
+  - "cronjob"
 date : 2012-08-08T13:08:05Z
 title : "Cron working but not executing?"
 ---

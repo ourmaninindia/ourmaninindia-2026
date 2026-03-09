@@ -1,12 +1,12 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - public key
-  - keygen
-  - key generating
-  - ssh
+  - "open source"
+  - "public key"
+  - "keygen"
+  - "key generating"
+  - "ssh"
 date : 2013-09-29T09:50:40Z
 title : "Public key without a password as a non root user"
 ---

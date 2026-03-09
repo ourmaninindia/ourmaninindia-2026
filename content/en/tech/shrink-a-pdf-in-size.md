@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - pdf
-  - reduce size
-  - pdf2ps
+  - "pdf"
+  - "reduce size"
+  - "pdf2ps"
 date : 2015-09-09T15:46:39Z
 title : "Reduce the size of a pdf"
 ---

@@ -1,14 +1,14 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - Management
-  - Alliances
-  - Maritime
+  - "Management"
+  - "Alliances"
+  - "Maritime"
 date : 2010-07-23T17:12:35Z
 description : "Adding value in a low value market: If one can borrow, why build or buy? More than ever, in today’s climate where cash is king and credit is tight, alliances are a smarter, swifter, more reactive and economical way to pursue strategic opportunities and gain competitive advantages."
 title : "Adding value in a low value market"
-cover : "cover-insead.jpg" 
+cover : "cover-insead.jpg"
 ---
 
 If one can borrow, why build or buy? More than ever, in today’s climate where cash is king and credit is tight, alliances are a smarter, swifter, more reactive and economical way to pursue strategic opportunities and gain competitive advantages.  

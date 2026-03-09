@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
+  - "open source"
   - "ubuntu 14.04"
-  - wireless
+  - "wireless"
 date : 2014-10-07T06:59:16Z
 description : "Wireless not working in Ubuntu 14.04"
 title : "Wireless not working in Ubuntu 14.04"

@@ -1,9 +1,9 @@
 ---
 categories:
-  - management
+  - "management"
 tags:
-  - Infrastructure
-  - Ports
+  - "Infrastructure"
+  - "Ports"
 date : 2012-03-19T15:06:39Z
 description : "Face to Face with Alfred Tuinman, an interview with Indian Ports & Infrastructure magazine"
 slug : "face-to-face"

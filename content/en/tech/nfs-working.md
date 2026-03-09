@@ -1,13 +1,13 @@
 ---
 categories:
-  - open-source
+  - "open-source"
 tags:
-  - open source
-  - nfs
-  - portmap
-  - nas 
-  - synology
-  - mounting
+  - "open source"
+  - "nfs"
+  - "portmap"
+  - "nas"
+  - "synology"
+  - "mounting"
 date : 2017-10-07T11:45:30Z
 title : "Is your nfs working"
 ---

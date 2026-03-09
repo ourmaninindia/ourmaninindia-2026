@@ -1,11 +1,11 @@
 ---
 categories:
-  - blog
+  - "blog"
 tags:
-  - travel
-  - Customer Service
-  - alitalia
-  - lost luggage
+  - "travel"
+  - "Customer Service"
+  - "alitalia"
+  - "lost luggage"
 date : 2013-07-23T00:48:30Z
 description : "Alitalia Customer Service: an oxymoron or tautology?"
 cover : "cover-alitalia.jpg"

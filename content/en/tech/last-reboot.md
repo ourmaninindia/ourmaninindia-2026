@@ -1,10 +1,10 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - reboot
-  - fedora
+  - "open source"
+  - "reboot"
+  - "fedora"
 date : 2013-03-16T19:30:49Z
 title : "Last reboot"
 ---

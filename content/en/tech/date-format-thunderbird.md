@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - date format
-  - thunderbird
-  - bash
+  - "open source"
+  - "date format"
+  - "thunderbird"
+  - "bash"
 date : 2012-08-15T16:52:38Z
 title : "Changing date format in Thunderbird"
 ---

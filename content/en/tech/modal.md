@@ -2,10 +2,10 @@
 title: "Use of Modals"
 draft: true
 categories:
-  - tech
+  - "tech"
 tags:
-  - modal
-  - coding
+  - "modal"
+  - "coding"
 ---
 
 <!-- Create the modal -->

@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - fedora
-  - time
-  - date
-  - clock
+  - "fedora"
+  - "time"
+  - "date"
+  - "clock"
 date : 2012-08-07T10:52:09Z
 title : "Show the date in the clock"
 ---

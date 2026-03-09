@@ -1,8 +1,8 @@
 ---
 categories:
-  - Management
+  - "Management"
 tags:
-  - Management
+  - "Management"
 date : 2012-03-07T09:48:42Z
 description : "Eclectic thoughts"
 slug : "eclectic-thoughts"

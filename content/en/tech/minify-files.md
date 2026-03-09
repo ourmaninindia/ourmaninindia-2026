@@ -1,11 +1,11 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - minify
-  - yui
-  - ubuntu
+  - "open source"
+  - "minify"
+  - "yui"
+  - "ubuntu"
 date : 2015-10-04T17:21:27Z
 title : "Minify files"
 ---

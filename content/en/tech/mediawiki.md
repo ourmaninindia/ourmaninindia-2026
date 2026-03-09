@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - open source
-  - mediawiki
+  - "open source"
+  - "mediawiki"
 date : 2012-08-07T08:27:09Z
 title : "Update a Mediawiki"
 ---

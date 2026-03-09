@@ -1,14 +1,14 @@
 ---
 autoThumbnailImage : false
 categories:
-  - blog
+  - "blog"
 tags:
-  - Information Technology
-  - open-source
-  - hugo
-  - jamstack
-  - static website generators
-featured_image : "jamstack-v1.png" 
+  - "Information Technology"
+  - "open-source"
+  - "hugo"
+  - "jamstack"
+  - "static website generators"
+featured_image : "jamstack-v1.png"
 date : 2020-10-06T22:00:00Z
 cover : "cover-jamstack.png"
 title : "The future is highly distributed"

@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - html
-  - perl
+  - "html"
+  - "perl"
 date : 2012-04-22T14:13:00Z
 title : "Strip HTML code"
 ---

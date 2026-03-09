@@ -1,9 +1,9 @@
 ---
 categories:
-  - tech
+  - "tech"
 tags:
-  - Vanilla Javascript
-  - javascript
+  - "Vanilla Javascript"
+  - "javascript"
 date : 2023-03-21T13:10:55Z
 description : "Highlight JavaScript"
 title : "Using Vanilla JavaScript"
