@@ -14,7 +14,7 @@ cover : "cover-kamal-nath.jpg"
 read_more_copy : "Read more about this session"
 ---
 
-{{< figure src="cover-kamal-nath.jpeg" alt="Kamal Nath " caption="Kamal Nath " class="small left" >}}
+{{< img src="cover-kamal-nath.jpeg" alt="Kamal Nath " caption="Kamal Nath " class="small left" >}}
 
 Last week I attended the high level meeting organized by the Europe-India Chamber of Commerce. Held at the European Parliament in Brussels, it was an interesting conference. The thing that struck me most was the high calibre speeches made by the representatives of the Government of India.
 

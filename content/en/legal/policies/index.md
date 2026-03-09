@@ -107,7 +107,7 @@ All comments require approval to prevent spam.
 
 ## Copyright
 
-{{< figure caption="This is Free Cultural Works as defined by Create Commons" alt="This is Free Cultural Works as defined by Create Commons" class="small left" src="seal-80x15.png" >}}
+{{< img caption="This is Free Cultural Works as defined by Create Commons" alt="This is Free Cultural Works as defined by Create Commons" class="small left" src="seal-80x15.png" >}}
 I strong supporter of transparency and sharing of information. This website is therefore licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 This allows for adaptations of my work to be shared as long as others share alike. This includes commercial uses of my work.  

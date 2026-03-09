@@ -11,7 +11,7 @@ cover : "cover-sherry-turkle.jpg"
 read_more_copy : "Read more about this session"
 ---
 
-{{< figure src="cover-sherry-turkle.jpg" alt="Sherry Turkle " caption="Sherry Turkle" class="small left" >}}
+{{< img src="cover-sherry-turkle.jpg" alt="Sherry Turkle " caption="Sherry Turkle" class="small left" >}}
 #split#
 
 At [THiNK 2012](http://thinkworks.in "THiNK 2012") being held in Goa this weekend, Sherry Turkle spoke on the social network: why are robots are becoming human and men machines. As a psychologist, over the years she became more concerned with the change to a virtual reality in that we become social robots. I agree as one only has to see this happening at dinners and parties where often our friends are staring at their mobile rather than engaging in a more real social activity.

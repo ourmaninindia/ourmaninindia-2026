@@ -11,7 +11,7 @@ cover : "cover-yerwada-central-jail-pune.jpg"
 read_more_copy : "Read more about my resignation"
 ---
 
-{{< figure src="yerwada-central-jail-pune.jpg" alt="Yerwada central jail " caption="Yerwada central jail (courtesy www.walkthroughindia.com)" class="small left" >}}
+{{< img src="yerwada-central-jail-pune.jpg" alt="Yerwada central jail " caption="Yerwada central jail (courtesy www.walkthroughindia.com)" class="small left" >}}
 
 My company driver had collected me from the airport. It was a hot sunny afternoon and the air conditioner of the Toyota was blowing softly. I was on my way to my office and we were driving along the busy Airport Road. Suddenly my driver felt the need for some commentary as if pretending he was a tourist guide. “On the right you can see the jail which houses our Managing Director” he informed me with somewhat of a smile on his face. I could not really share his joy and suspected it was his sweet revenge for the time that he was waiting for his salary to be paid.
 

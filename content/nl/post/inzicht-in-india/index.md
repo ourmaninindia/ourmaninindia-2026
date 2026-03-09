@@ -9,7 +9,7 @@ cover =  "inzicht-in-india.jpg"
 featured_image = ""
 +++
 
-{{< figure caption="inzicht-in-india" class="left" src= "inzicht-in-india.jpg" alt="inzicht-in-india" >}}
+{{< img caption="inzicht-in-india" class="left" src= "inzicht-in-india.jpg" alt="inzicht-in-india" >}}
 
 
 Everything you wanted to know about doing business with India but were afraid to ask…?

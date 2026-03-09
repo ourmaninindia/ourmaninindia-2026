@@ -10,7 +10,7 @@ title : "Eclectic thoughts"
 cover : "cover-havanna.jpg"
 ---
 
-{{< figure src="cover-havanna.jpeg" alt="Our Man in Havanna " caption="Our Man in Havanna " class="small left" >}}
+{{< img src="cover-havanna.jpeg" alt="Our Man in Havanna " caption="Our Man in Havanna " class="small left" >}}
 
 In the old days it was common for an anchor man to be referred to as ‘**Our man in..**‘. It became even more common with Graham Greene’s 1958 novel “Our man in Havana”. Longman’s dictionary also refers to the term as “*a man who is the representative of a country or organization in a particular place*.”
 

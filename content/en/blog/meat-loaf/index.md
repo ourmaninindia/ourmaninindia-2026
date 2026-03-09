@@ -2,7 +2,8 @@
 title : "Meat Loaf RIP"
 date : 2022-01-21T22:00:00Z
 featured_image : "cover-meat-loaf.jpg"
-cover : "cover-meat-loaf.jpg"
+featured_alt : "The singer Meat Loaf"
+caption: "Meat Loaf, photo courtesy of the BBC"
 featured : false
 categories:
   - "blog"
@@ -20,5 +21,5 @@ Anyway, poor Meat Loaf RIP is now gone and I am as good as back again enjoying t
 
 To keep listening to Meat Loaf's music is the best way we can honour his memory.
 
-{{< figure src="meat-loaf.jpg" alt="Meat Loaf passed away" caption="The geat musician" >}} Photo courtesy of the BBC
+{{< img src="cover-meat-loaf.jpg" alt="Meat Loaf passed away" caption="The geat musician" >}} 
 

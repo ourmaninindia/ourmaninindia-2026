@@ -16,7 +16,7 @@ Leaders in India was the name of the business forum conference I attended in Mum
   
 In my humble opinion there were too many foreign speakers/panellists in the conference. There are so many excellent Leaders in India that I failed to understand why they had to be flown in from abroad. There is often a dose of self opinionated arrogance of which, according to me, one has to be extremely cautious.
 
-{{< figure src="cover-leaders.jpg" alt="Leaders in India" caption="Leaders in India" class="small left" >}}
+{{< img src="cover-leaders.jpg" alt="Leaders in India" caption="Leaders in India" class="small left" >}}
 
 
 Steve Forbes, of Forbes magazine, who I had a chat with after the conference gave a very good talk on India, obviously well researched by his staff in India. Donald Trump Jr also spoke well but speakers like Shivkumar, MD of Nokia, proofed that we have excellent talent present in India and the information he presented then came across much more credible.

@@ -22,6 +22,8 @@
   }
 
   &__content {
+    display: flex;
+  
     // drop cap the very first letter
     p:first-of-type::first-letter {
       font-size: 3.5em;

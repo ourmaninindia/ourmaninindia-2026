@@ -16,7 +16,7 @@ tags:
   - "Management"
 ---
 
-{{< figure src="lipkin.jpg" alt="Dr Ian Lipkin" class="left" caption="Dr Ian Lipkin" >}}
+{{< img src="lipkin.jpg" alt="Dr Ian Lipkin" class="left" caption="Dr Ian Lipkin" >}}
 
 As a CEO one has to be prepared for any wild card event, an event which rarely happens but one which could affect your business in a major way. Prof. Ian Lipkin of Colombia University started day 3 of the [THiNK 2012](http://thinkworks.in/guest-blog-the-risk-of-a-viral-pandemic-is-real-and-increasing/ "THiNK 2012") talking about just this.
 

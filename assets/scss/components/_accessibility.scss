@@ -7,24 +7,13 @@
 // ── Skip to main content link ─────────────────────────────────────────────────
 
 .skip-link {
-    position: absolute;
-    top: -100%;
-    left: var(--spacing-sm);
-    z-index: 9999;
-    padding: var(--spacing-xs) var(--spacing-md);
-    background: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 600;
-    font-size: var(--font-size-sm);
-    border-radius: var(--border-radius-md);
-    text-decoration: none;
-    transition: top 0.2s ease;
+  position: absolute;
+  left: 0;
+  top: -100%;  /* hide above viewport instead */
+}
 
-    &:focus {
-        top: var(--spacing-sm);
-        outline: 3px solid var(--color-white);
-        outline-offset: 2px;
-    }
+.skip-link:focus {
+  top: 0;  /* shows when tabbed to */
 }
 
 // ── Focus visible — keyboard navigation ──────────────────────────────────────

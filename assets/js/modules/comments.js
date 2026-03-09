@@ -112,8 +112,14 @@ function validateForm(form) {
 // ── Main export ───────────────────────────────────────────────────────────────
 
 export function initComments() {
+
+    // skip if the page does not use comments
     const commentsList = document.getElementById('comments-list');
     if (!commentsList) return;
+
+    // skip when in development
+    const isDev = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+    if (isDev) return;
 
     const pageId = commentsList.dataset.pageId;
 

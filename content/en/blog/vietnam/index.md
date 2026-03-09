@@ -18,7 +18,7 @@ Bon Apetite in Vietnam
 
 My thigh muscles were aching for days afterwards. I had been crawling for some 100 metres through the Viet Kong tunnels at Củ Chi, north of Saigon. These escape routes from the American soldiers during the Vietnam war had been a bit widened and heightened for the tourists. Even though I still had to come across the first tall or fat Vietnamese, it was difficult to comprehend any human being able to manoeuvre himself through these.  
   
-{{< figure src="cover-vietnam.jpg" alt="Bon Apetite in Vietnam" caption="Bon Apetite in Vietnam" class="small left" >}}
+{{< img src="cover-vietnam.jpg" alt="Bon Apetite in Vietnam" caption="Bon Apetite in Vietnam" class="small left" >}}
 
 
 I was on a business trip to Vietnam and Saigon had surprised me by its very commercial appearance, not to mention the millions of scooters. It was more Western in outlook than Mumbai. The gate to the former south Vietnamese presidential palace, once crashed by a north Vietnamese army tank and famously captured on film, had been restored to its former glory. I doubted that comrade Ho Chi Minh, whose bust is to be seen in almost every government building, would have approved of the nightclubs like “Apocalypse Now” or “Angelina”, or the shampoo saloons overcrowded with skimpily dressed girls suggesting that one may receive more than just a hair cut.

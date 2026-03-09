@@ -27,7 +27,7 @@ The latter is even unclear to the legal community due to the novelty and the int
 
 
 
-{{< figure src="cover-wikileaks.jpg" alt="Wiki Leaks " caption="Wiki Leaks " class="small right" >}}
+{{< img src="cover-wikileaks.jpg" alt="Wiki Leaks " caption="Wiki Leaks " class="small right" >}}
 There is a tremendous amount of hypocrisy involved here. In a bid to attract attention  
  Sarah Palin’s reaction on her Facebook is most extreme: “Why was he not pursued with the same urgency we pursue al Qaeda and Taliban leaders?” she writes. I guess she can be forgiven for being somewhat biased as her own mail box was hacked in 2008 and information was displayed on [WikiLeaks](http://www.wikileaks.ch/ "Wikileaks") just at the time of the presidential election campaign.
 

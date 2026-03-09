@@ -17,7 +17,7 @@ Shipyards should move to the role of a large integrator and partner with innovat
   
  Short production series, customisation as a general principle, and global competition force shipyards to permanently search for innovative solutions with regard to design and production technologies. Due to the complexity of the product, shipyards now depend on a large number of suppliers for components, sub-systems and knowledge-based services, including those provided by specialists in the financial sector.
 
-{{< figure src="cover-large-scale-integrator.jpg" alt="Alfred Tuinman " caption="Alfred Tuinman " class="small left" >}}
+{{< img src="cover-large-scale-integrator.jpg" alt="Alfred Tuinman " caption="Alfred Tuinman " class="small left" >}}
 
 Today’s shipyards therefore have to be seen as large scale integrators within a high technology industry whose key players are often highly specialised SMEs like CS India Steel, El-Tec, van de Velden etc. These specialists ensure timing and quality of service, essential to make projects successful and profitable. Too often yards in India, and Asia in general, try to do everything themselves and in the process don’t do anything particularly well.
 

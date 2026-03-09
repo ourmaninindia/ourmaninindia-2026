@@ -4,13 +4,13 @@ categories:
 tags:
   - "repository"
 date : 2016-11-02T02:30:24Z
-featured_image: "linux100.webp"
+featured_image: "linux100.jpg"
 description : "The agility that Open Source produces is tremendous and only as effective as the skills of your top IT person. The learning curve is steep but tremendously rewarding."
 title : "Open Source"
 disable_comments :
 ---
 
-{{< figure src="linux100.webp" alt="Linux" class="right" >}}
+{{< img src="linux100.jpg" alt="Linux" class="right" >}}
 
 The agility that Open Source produces is tremendous but only as effective as the skills of your top IT person. The learning curve is steep but tremendously rewarding.
 

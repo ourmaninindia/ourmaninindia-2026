@@ -10,12 +10,8 @@
     box-sizing: border-box;
 }
 
-/*
-* {
-  outline: 1px solid var(--color-error);  // Remove this when done debugging
-}
-*/
-
+// Comment this line out for debugging
+// * { outline: 1px solid var(--color-error) !important;  }
 
 body {
     width: 100%;
@@ -34,3 +30,4 @@ body {
   @include visually-hidden;
   // Add !important ONLY to the utility classes if needed
 }
+
