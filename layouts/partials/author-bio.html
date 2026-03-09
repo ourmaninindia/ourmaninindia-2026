@@ -4,7 +4,7 @@ Uses author from front matter, falls back to site default
 */}}
 
 {{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
-{{ $author := index .Site.Data.authors $authorSlug }}
+{{ $author := index hugo.Data.authors $authorSlug }}
 
 {{ with $author }}
 {{ $authorPosts := where $.Site.RegularPages "Params.author" ($.Params.author | default $.Site.Params.defaultAuthor) }}

@@ -45,7 +45,7 @@
                 {{ partial "date-modified" . }}
                 
                 {{ $authorSlug := .Params.author | urlize }}
-                {{ $author := index .Site.Data.authors $authorSlug }}
+                {{ $author := index hugo.Data.authors $authorSlug }}
                 {{ with $author }}
                     <span>By {{ .name }}</span>
                 {{ else }}
