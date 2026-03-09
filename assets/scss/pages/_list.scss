@@ -4,6 +4,21 @@
 // List Layout
 // ============================================
 
+.section-intro {
+  margin-bottom: 1rem;
+
+  .post-image {
+    width: 200px;
+  }
+}
+
+.section-intro::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
 .list {
   &__grid {
     display: grid;
@@ -22,8 +37,7 @@
   }
 
   &__content {
-    display: flex;
-  
+    
     // drop cap the very first letter
     p:first-of-type::first-letter {
       font-size: 3.5em;

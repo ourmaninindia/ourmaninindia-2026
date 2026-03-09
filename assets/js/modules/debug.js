@@ -45,7 +45,9 @@
  * - Toggle panel visibility on click
  * - Helps developers identify which template is rendering
  */
+
 export function initDebug() {
+   
     // Only run in development environment
     const isDev = window.location.hostname === 'localhost' ||
         window.location.hostname === '127.0.0.1' ||

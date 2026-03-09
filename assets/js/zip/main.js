@@ -10,7 +10,6 @@ import { initEscapeKey }     from './modules/escape-key.js';
 import { initExternalLinks } from './modules/external-links.js';
 import { initCookie }        from './modules/cookie-consent.js';
 import { initSmoothScroll }  from './modules/smooth-scroll.js';
-import { initDebug }         from './modules/debug.js';
 
 // Firefox flash-of-style fix
 if (document.documentElement.hasAttribute('style')) {
@@ -25,7 +24,6 @@ function init() {
     initExternalLinks();
     initCookie();
     initSmoothScroll();
-    initDebug();
 }
 
 if (document.readyState === 'loading') {
