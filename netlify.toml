@@ -51,6 +51,7 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Images — 1 year but not immutable (you might replace an image at same path)
 [[headers]]
   for = "/images/*"
   [headers.values]
