@@ -10,16 +10,16 @@ tags:
   - "events"
   - "website"
 date: 2015-09-29T13:35:55Z
-description: "Life is like riding a bicycle. To keep your balance you have to keep moving."
+description: "Where leadership, technology, and roads meet."
 title: "Welcome"
 disable_comments: true
 books: "These are some of the authors I have met and whose books I have enjoyed."
 ---
 
-Over the years I have written about issues, commented on events, or simply shared stories which I hope are worth sharing.
+These posts sit at the intersection of three things I keep returning to: leadership, technology, and the open road. Over a career that took me from boardrooms to development environments — across oil & gas, banking, insurance, and beyond — I have come to believe that the same qualities that make a great director make a great cyclist: judgment, endurance, and knowing when to push.
 
 {{< img class="image homepage" src="alfred.jpg" eager="true" alt="Alfred, our Man in India" >}}
 
-For example, while rebuilding this website, I came across a story of a seminar I attended at THiNK in 2012. The topic of the lecture was *__The anatomy of a pandemic__* by Prof. Ian Lipkin! My last line in my blog about that was prophetic: _"I cannot help but think we will hear of Dr Lipkin again…"._  Amazing when you read that blog again after our experience with Covid.
+The name? I moved from Australia to India, married an Indian girl, and never quite left — in spirit at least. As a Dutch national with an OCI card and a life rooted between continents, *"Our Man in India"* was less a title I chose and more one that chose me.
 
-My background is Finance & IT. The blogs are about general topics. I have always been an a great fan of Open Source software but these days that has been incorporated to such an extend that it is better for me to phrase it as Tech. As a typical Dutchman I have always cycled but restarted that again as a form of meditation while working for the ING bank. I have not stopped since :)
+Now that I have more time to reflect than to act, these are the things still worth writing about.

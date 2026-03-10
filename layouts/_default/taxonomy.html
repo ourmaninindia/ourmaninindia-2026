@@ -1,15 +1,18 @@
-{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
+
 {{ define "main" }}
 <div class="display-template hidden">_default/taxonomy.html</div>
 
 <div class="contents__container">
-    <div class="list__taxonomy-description">{{ i18n "postsTagged" }}</div>
-    <h1>{{ .Title }}</h1>
-    
+    <header class="contents__header">
+        <p class="contents__description">{{ i18n "postsTagged" }}</p>
+        <h1 class="contents__title">{{ .Title }}</h1>
+    </header>
+
     <div class="list__grid">
         <div class="list__posts">
             {{ $paginator := .Paginate .Pages }}
-            
+
             {{ range $paginator.Pages }}
                 <article class="list__post" data-post-date="{{ .Date.Format "2006-01" }}">
                     {{ partial "post-image.html" . }}
@@ -38,10 +41,10 @@
                     </div>
                 </article>
             {{ end }}
-            
+
             {{ partial "pagination.html" $paginator }}
         </div>
-        
+
         {{ partial "sidebar.html" . }}
     </div>
 </div>

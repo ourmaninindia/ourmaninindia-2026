@@ -1,4 +1,5 @@
-{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
+
 {{ define "main" }}
 <div class="display-template hidden">_default/archive.html</div>
 
@@ -6,30 +7,31 @@
     {{ $year := .Params.year }}
     {{ $month := .Params.month }}
     {{ $archiveDate := printf "%s-%s-01" $year $month }}
-    
-    <h1 class="archive-title">
-        Archive <span class='date'>: {{ time $archiveDate | time.Format "January 2006" }}</span>
-    </h1>
-    
+
+    <header class="contents__header">
+        <h1 class="contents__title">
+            Archive <span class="date">: {{ time $archiveDate | time.Format "January 2006" }}</span>
+        </h1>
+    </header>
+
     <div class="list__grid">
         <div class="list__posts">
             {{ $targetDate := printf "%s-%s" $year $month }}
-            
+
             {{ $posts := where (where site.Pages "Kind" "page") "Section" .Section }}
             {{ $matchedPosts := slice }}
-            
+
             {{ range $posts }}
-                {{/* Exclude archive pages and posts with invalid dates */}}
                 {{ if and .Date (eq (.Date.Format "2006-01") $targetDate) (not (in .RelPermalink "/archive/")) }}
                     {{ $matchedPosts = $matchedPosts | append . }}
                 {{ end }}
             {{ end }}
-            
+
             {{ if gt (len $matchedPosts) 0 }}
                 {{ range $matchedPosts }}
                     <article class="list__post">
                         {{ partial "post-image.html" . }}
-                        
+
                         <div class="list__post-content">
                             <div class="list__post-title">
                                 <h2>
@@ -50,7 +52,7 @@
                                     {{ .Content | plainify | truncate 300 }}
                                 {{ end }}
                             </p>
-                            
+
                             <a href="{{ .RelPermalink }}" class="list__read-more">
                                 {{ i18n "readMore" }}
                             </a>

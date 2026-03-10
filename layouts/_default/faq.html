@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="display-template hidden">
@@ -6,11 +6,16 @@
 </div>
 
 <div class="contents__container">
-    <h1>{{ .Title }}</h1>
+    <header class="contents__header">
+        <h1 class="contents__title">{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="contents__description">{{ . }}</p>
+        {{ end }}
+    </header>
+
     {{ .Content }}
 
     <div class="accordion-list">
-        <!-- Question 1 -->
         <div class="accordion">
             <button class="accordion__toggle" aria-expanded="false">
                 <span class="accordion__title">What is this blog about?</span>
@@ -24,11 +29,9 @@
             </div>
         </div>
 
-        <!-- Question 2 -->
         <div class="accordion">
             <button class="accordion__toggle" aria-expanded="false">
-                <span class="accordion__title">How often do you publish new
-                    posts?</span>
+                <span class="accordion__title">How often do you publish new posts?</span>
                 <span class="accordion__icon">+</span>
             </button>
             <div class="accordion__content">
@@ -38,11 +41,9 @@
             </div>
         </div>
 
-        <!-- Question 3 -->
         <div class="accordion">
             <button class="accordion__toggle" aria-expanded="false">
-                <span class="accordion__title">Can I contribute guest
-                    posts?</span>
+                <span class="accordion__title">Can I contribute guest posts?</span>
                 <span class="accordion__icon">+</span>
             </button>
             <div class="accordion__content">
@@ -53,11 +54,9 @@
             </div>
         </div>
 
-        <!-- Question 4 -->
         <div class="accordion">
             <button class="accordion__toggle" aria-expanded="false">
-                <span class="accordion__title">How do I subscribe to the
-                    newsletter?</span>
+                <span class="accordion__title">How do I subscribe to the newsletter?</span>
                 <span class="accordion__icon">+</span>
             </button>
             <div class="accordion__content">
@@ -67,11 +66,9 @@
             </div>
         </div>
 
-        <!-- Question 5 -->
         <div class="accordion">
             <button class="accordion__toggle" aria-expanded="false">
-                <span class="accordion__title">Do you offer consulting or
-                    coaching?</span>
+                <span class="accordion__title">Do you offer consulting or coaching?</span>
                 <span class="accordion__icon">+</span>
             </button>
             <div class="accordion__content">

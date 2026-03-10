@@ -5,20 +5,16 @@ tags:
   - "repository"
 date : 2016-11-02T02:30:24Z
 featured_image: "linux100.jpg"
-description : "The agility that Open Source produces is tremendous and only as effective as the skills of your top IT person. The learning curve is steep but tremendously rewarding."
+description : "The Times They Are a-Changin"
 title : "Open Source"
-disable_comments :
+disable_comments : true
 ---
 
 {{< img src="linux100.jpg" alt="the Linux penguin" class="right" >}}
 
-Did you know that Open VMS (originally from DEC) was built in the 1980s–1990s and a large share of the world’s financial transactions still involve COBOL code somewhere in the stack. Yet their customer-facing interfaces run on modern languages.  
+I came to technology through the back door — as a finance person who quickly learned that access to clean, secure data is everything. That led me deeper: into information security, global systems, and eventually customer-facing technology at an international level. The question I keep asking is simple: does this give a company the agility to innovate and improve its bottom line?
 
-The agility that Open Source produces is tremendous but the implementation of it is only as effective as the skills of your top IT person. The learning curve is steep but deeply rewarding.
+It is worth remembering that OpenVMS dates from the 1980s and COBOL still underpins a large share of the world's financial transactions — yet their customer-facing interfaces run on modern languages. Legacy and innovation coexist whether we like it or not.
 
-These days there are many aspects to be considered but I think that foremost on the mind of a CIO would be cost, speed, and security as immediate concerns and longevity, stability, and adaptability as strategic ones.
-
-In technical terms we look at Planning (Agile/Scrum) → Building (Git) → Testing → Security & Compliance (GDPR, ISO 27001) → Deployment (Docker/Kubernetes) → and Maintenance (bugs & updates).
-
-Keeping across all these dimensions is why strong IT leadership matters more than ever.
-
+Open source produces tremendous agility, but its implementation is only as effective as the people behind it. And for a CIO today the considerations are layered: cost, speed, and security as immediate concerns — longevity, stability, and adaptability as strategic ones. In practice that means navigating a full pipeline from planning and building through testing, compliance, deployment, and maintenance.
+Keeping abreast of all of that is why strong IT leadership matters more than ever. These posts explore that question — sometimes technically, sometimes not.

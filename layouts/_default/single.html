@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="display-template hidden">
@@ -8,15 +8,14 @@
 {{/* hero */}}
 {{ partial "image.html" (dict "page" . "hero" true) }}
 
-<!-- start the contents -->
 <div class="contents__container">
-<article class="single">
-    <header class="single__masthead">    
+    <article class="single">
+        <header class="single__masthead">
             <h1 class="single__headline">{{ .Title }}</h1>
-    
+
             <div class="single__byline">
                 {{ partial "date-modified" . }}
-                
+
                 {{ $authorSlug := .Params.author | urlize }}
                 {{ $author := index hugo.Data.authors $authorSlug }}
                 {{ with $author }}
@@ -26,11 +25,10 @@
                         <span>By {{ . }}</span>
                     {{ end }}
                 {{ end }}
-                
-                  {{ partial "reading-time.html" . }}
+
+                {{ partial "reading-time.html" . }}
             </div>
 
-            <!-- Tags -->
             {{ if .Params.tags }}
                 <div class="single__taxonomy">{{ i18n "tags" }}:
                     {{ with .Params.tags }}
@@ -53,14 +51,11 @@
             {{ end }}
         </header>
 
-        <!-- Two-column content with floating images -->
         <div class="single__content">
             {{ .Content }}
         </div>
 
-        
         {{ partial "continue-reading.html" . }}
-        <!-- Comments -->
         {{ partial "comments-netlify.html" . }}
     </article>
 </div>

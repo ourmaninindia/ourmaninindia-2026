@@ -1,32 +1,32 @@
-{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
+
 {{ define "main" }}
-<div class="display-template hidden"> _default/authors.html</div>
+<div class="display-template hidden">_default/authors.html</div>
 
 <div class="contents__container">
-    <div class="authors-page">
-        <h1>Our Authors</h1>
-        <p>Meet the people behind the articles.</p>
+    <header class="contents__header">
+        <h1 class="contents__title">Our Authors</h1>
+        <p class="contents__description">Meet the people behind the articles.</p>
+    </header>
 
-        <div class="authors-grid">
-            {{ range $slug, $author := hugo.Data.authors }}
-            {{ $authorPosts := where $.Site.RegularPages "Params.author" $slug }}
-            {{ $isDefault := eq $slug $.Site.Params.defaultAuthor }}
+    <div class="authors-grid">
+        {{ range $slug, $author := hugo.Data.authors }}
+        {{ $authorPosts := where site.RegularPages "Params.author" $slug }}
+        {{ $isDefault := eq $slug site.Params.defaultAuthor }}
 
-            <div class="author-card">
-                <img src="{{ $author.avatar }}" alt="{{ $author.name }}" class="author-card__avatar">
-                <h3>{{ $author.name }}</h3>
-                {{ with $author.role }}
-                <span class="author-card__role">{{ . }}</span>
-                {{ end }}
-                <p>{{ $author.bio | truncate 120 }}</p>
-                <div class="author-card__stats">
-                    <span>{{ len (where $.Site.RegularPages "Params.author" $slug) }} articles</span>
-                </div>
-                <a href="/authors/{{ $slug }}" class="button button--small">View Articles</a>
-            </div>
+        <div class="author-card">
+            <img src="{{ $author.avatar }}" alt="{{ $author.name }}" class="author-card__avatar">
+            <h3>{{ $author.name }}</h3>
+            {{ with $author.role }}
+            <span class="author-card__role">{{ . }}</span>
             {{ end }}
+            <p>{{ $author.bio | truncate 120 }}</p>
+            <div class="author-card__stats">
+                <span>{{ len (where site.RegularPages "Params.author" $slug) }} articles</span>
+            </div>
+            <a href="/authors/{{ $slug }}" class="button button--small">View Articles</a>
         </div>
+        {{ end }}
     </div>
 </div>
-
 {{ end }}

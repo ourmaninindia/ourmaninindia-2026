@@ -1,33 +1,59 @@
+{{/* ============================================
+     Compute stylesheets first — used for both
+     preload hints and actual link tags below
+     ============================================ */}}
+
+{{/* Main CSS */}}
+{{ $mainScss := resources.Get "scss/main.scss" }}
+{{ if not $mainScss }}{{ errorf "main.scss not found in assets/scss/" }}{{ end }}
+{{ $mainOptions := dict "transpiler" "dartsass" "targetPath" "css/main.css" "outputStyle" "expanded" }}
+{{ $main := $mainScss | css.Sass $mainOptions }}
+{{ if hugo.IsProduction }}{{ $main = $main | minify | fingerprint }}{{ end }}
+
+{{/* Deferred CSS */}}
+{{ $deferredScss := resources.Get "scss/deferred.scss" }}
+{{ if not $deferredScss }}{{ errorf "deferred.scss not found in assets/scss/" }}{{ end }}
+{{ $deferredOptions := dict "transpiler" "dartsass" "targetPath" "css/deferred.css" "outputStyle" "expanded" }}
+{{ $deferred := $deferredScss | css.Sass $deferredOptions }}
+{{ if hugo.IsProduction }}{{ $deferred = $deferred | minify | fingerprint }}{{ end }}
+
+{{/* Store for use in baseof.html */}}
+{{ $.Scratch.Set "deferred" $deferred }}
+
+{{/* ============================================
+     HTML starts here
+     ============================================ */}}
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#20123a">
 
-<!-- Preconnect for external domains -->
+<!-- Preconnect first — TCP handshake as early as possible -->
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://www.google-analytics.com">
 <link rel="preconnect" href="https://api.brevo.com" crossorigin>
 
+<!-- Preloads — fetch early in background -->
 <link rel="modulepreload" href="/js/cookieconsent.esm.js">
-
-<!-- Preload critical fonts -->
 <link rel="preload" href="/fonts/arapey/Arapey-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/halimun/halimun.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ $deferred.RelPermalink }}" as="style">
 
-<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+<title>{{ block "title" . }}{{ site.Title }}{{ end }}</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="{{ .Description | default .Site.Params.description }}">
+<meta name="description" content="{{ .Description | default site.Params.description }}">
 <meta name="keywords" content="{{ delimit .Keywords `,` }}">
-<meta name="author" content="{{ .Params.author | default .Site.Params.author }}">
+<meta name="author" content="{{ .Params.author | default site.Params.author }}">
 
 <!-- Open Graph -->
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
-<meta property="og:description" content="{{ .Description | default .Site.Params.description }}">
-<meta property="og:locale" content="{{ .Site.Language.Lang }}">
-<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ .Title }} | {{ site.Title }}">
+<meta property="og:description" content="{{ .Description | default site.Params.description }}">
+<meta property="og:locale" content="{{ site.Language.Lang }}">
+<meta property="og:site_name" content="{{ site.Title }}">
 {{ $ogImage := .Params.image | default .Params.featured_image }}
 {{ with $ogImage }}
 <meta property="og:image" content="{{ . | absURL }}">
@@ -42,8 +68,8 @@
 <!-- Social sharing (Twitter Cards — also used by LinkedIn, Slack, Discord) -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ .Permalink }}">
-<meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
-<meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}">
+<meta name="twitter:title" content="{{ .Title }} | {{ site.Title }}">
+<meta name="twitter:description" content="{{ .Description | default site.Params.description }}">
 {{ with $ogImage }}
 <meta name="twitter:image" content="{{ . | absURL }}">
 <meta name="twitter:image:alt" content="{{ $.Title }}">
@@ -57,7 +83,7 @@
 {{ range .Translations }}
 <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}">
 {{ end }}
-<link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}">
+<link rel="alternate" hreflang="{{ site.Language.Lang }}" href="{{ .Permalink }}">
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
 
 <!-- Schema.org — BlogPosting / WebSite -->
@@ -66,22 +92,22 @@
   "@context": "https://schema.org",
   "@type": "{{ if .IsPage }}BlogPosting{{ else }}WebSite{{ end }}",
   "headline": "{{ .Title }}",
-  "description": "{{ .Description | default .Site.Params.description }}",
+  "description": "{{ .Description | default site.Params.description }}",
   "url": "{{ .Permalink }}"
   {{ if .IsPage }},
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
   "author": {
     "@type": "Person",
-    "name": "{{ .Params.author | default .Site.Params.author }}"
+    "name": "{{ .Params.author | default site.Params.author }}"
   }
   {{ end }},
   "publisher": {
     "@type": "Organization",
-    "name": "{{ .Site.Title }}",
+    "name": "{{ site.Title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ .Site.Params.logo | absURL }}"
+      "url": "{{ site.Params.logo | absURL }}"
     }
   }
 }
@@ -98,7 +124,7 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "{{ .Site.BaseURL }}"
+      "item": "{{ site.BaseURL }}"
     }
     {{ with .CurrentSection }},
     {
@@ -119,4 +145,6 @@
 </script>
 {{ end }}
 
-{{ partial "site-style.html" . }}
+<!-- Main CSS last in <head> — blocking render intentionally -->
+<link rel="stylesheet" href="{{ $main.RelPermalink }}"
+    {{- with $main.Data.Integrity }} integrity="{{ . }}"{{ end }}>

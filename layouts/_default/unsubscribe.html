@@ -1,7 +1,8 @@
+{{ define "title" }}{{ i18n "nl-unsubscribe" | default "Unsubscribe" }} | {{ site.Title }}{{ end }}
 
 {{ define "main" }}
 <div class="display-template hidden">
-    _default/unsubcribe.html
+    _default/unsubscribe.html
 </div>
 
 <div class="contents__container">
@@ -10,10 +11,8 @@
         <!-- Step 1: Confirm form -->
         <div id="step-confirm">
             <header class="contents__header">
-                <h1 class="contents__title">{{ i18n "nl-unsubscribe" | default
-                    "Unsubscribe" }}</h1>
-                <p class="contents__description">{{ i18n "nl-sorry" | default
-                    "We are sorry"}}</p>
+                <h1 class="contents__title">{{ i18n "nl-unsubscribe" | default "Unsubscribe" }}</h1>
+                <p class="contents__description">{{ i18n "nl-sorry" | default "We are sorry" }}</p>
             </header>
 
             <form id="unsubscribe-form" novalidate>
@@ -27,15 +26,14 @@
                         placeholder="you@example.com"
                         autocomplete="email"
                         required />
-                    <span class="form__error" id="unsubscribe-email-error"
-                        role="alert"></span>
+                    <span class="form__error" id="unsubscribe-email-error" role="alert"></span>
                 </div>
 
                 <button type="submit" id="submit-btn" disabled
                     class="button button--danger button--full">
                     <span id="btn-label">
                         {{ i18n "confirm-unsubscribe" | default "Confirm Unsubscribe" }}</span>
-                    <span id="btn-spinner" hidden aria-hidden="true">⏳ 
+                    <span id="btn-spinner" hidden aria-hidden="true">⏳
                         {{ i18n "processing" | default "Processing…" }}</span>
                 </button>
             </form>
@@ -43,25 +41,23 @@
 
         <!-- Step 2: Success + optional reason survey -->
         <div id="step-success" hidden>
-
- <header class="contents__header">
-            <h1>
-                <span class="unsubscribe__status-icon">✅</span>
-                {{ i18n "unsubscribeSuccess" | default "Unsubscribe Successful"}}
-            </h1>
-            <p>
-                {{ i18n "unsubscribeSuccessDetail" }} 
-            {{ i18n "unsubscribeSuccessDetail2" }}
-            </p>
-</header>
+            <header class="contents__header">
+                <h1 class="contents__title">
+                    <span class="unsubscribe__status-icon">✅</span>
+                    {{ i18n "unsubscribeSuccess" | default "Unsubscribe Successful" }}
+                </h1>
+                <p class="contents__description">
+                    {{ i18n "unsubscribeSuccessDetail" }}
+                    {{ i18n "unsubscribeSuccessDetail2" }}
+                </p>
+            </header>
 
             <div class="unsubscribe__survey">
                 <p class="unsubscribe__survey-prompt">
                     {{ i18n "unsubscribeSurveyPrompt" | default "If you have a moment, please let us know why you unsubscribed:" }}
                 </p>
 
-                <form id="unsubscribe-reason-form"
-                    class="form__reason-form">
+                <form id="unsubscribe-reason-form" class="form__reason-form">
                     <div class="form__radios">
                         <label class="form__radio">
                             <input type="radio" name="reason" value="no-longer-want">
@@ -70,7 +66,7 @@
                         <label class="form__radio">
                             <input type="radio" name="reason" value="never-signed-up">
                             {{ i18n "unsubscribeReason2" | default "The emails are too frequent" }}
-                        </label> 
+                        </label>
                         <label class="form__radio">
                             <input type="radio" name="reason" value="inappropriate">
                             {{ i18n "unsubscribeReason3" | default "The content is no longer relevant to me" }}
@@ -90,45 +86,34 @@
                             {{ i18n "unsubscribeOtherReason" | default "Please tell us more" }}
                         </label>
                         <textarea id="other-reason" name="other-reason" rows="3"
-                            placeholder="
-                            {{ i18n "unsubscribeOtherPlaceholder" |default "Your reason…" }}
-                            "></textarea>
+                            placeholder="{{ i18n "unsubscribeOtherPlaceholder" | default "Your reason…" }}"></textarea>
                     </div>
 
-                    <button type="submit" id="reason-submit-btn"
-                        class="button button--secondary">
+                    <button type="submit" id="reason-submit-btn" class="button button--secondary">
                         {{ i18n "unsubscribeSendReason" | default "Send feedback" }}
                     </button>
-                    <button type="button" id="reason-skip-btn"
-                        class="button button--ghost">
+                    <button type="button" id="reason-skip-btn" class="button button--ghost">
                         {{ i18n "unsubscribeSkip" | default "Skip" }}
                     </button>
                 </form>
 
                 <div id="survey-done" hidden>
-                    <p>
-                        {{ i18n "unsubscribeSurveyThanks" | default "Thank you for your feedback." }}
-                    </p>
+                    <p>{{ i18n "unsubscribeSurveyThanks" | default "Thank you for your feedback." }}</p>
                 </div>
             </div>
-
-            
         </div>
 
         <!-- Step 3: Error message -->
         <div id="step-error" hidden>
-
-             <header class="contents__header">
-            <h1>
-                <span class="unsubscribe__status-icon">❌</span>
-                {{ i18n "unsubscribeError" | default "Something went wrong" }}
-            </h1>
-            <p id="error-message">
-                {{ i18n "unsubscribeErrorDetail" | default "We couldn't process your request. Please try again or" }} 
-                <a href="/contact">
-                    {{ i18n "contactUs" | default "contact us"}}
-                </a>.
-            </p>
+            <header class="contents__header">
+                <h1 class="contents__title">
+                    <span class="unsubscribe__status-icon">❌</span>
+                    {{ i18n "unsubscribeError" | default "Something went wrong" }}
+                </h1>
+                <p class="contents__description" id="error-message">
+                    {{ i18n "unsubscribeErrorDetail" | default "We couldn't process your request. Please try again or" }}
+                    <a href="/contact">{{ i18n "contactUs" | default "contact us" }}</a>.
+                </p>
             </header>
 
             <button id="retry-btn" class="button button--danger button--full">
@@ -138,5 +123,4 @@
 
     </article>
 </div>
-
 {{ end }}

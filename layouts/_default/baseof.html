@@ -2,9 +2,6 @@
 <html lang="{{ .Lang }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ block "title" . }}{{ end }}</title>
     {{ partial "head.html" . }}
 </head>
 
@@ -21,14 +18,17 @@
     {{ partial "social-icons.html" . }}
     {{ partial "footer.html" . }}
     {{ partial "site-script.html" . }}
-    {{ partial "cookie-consent.html" . }}
 
     {{ if eq hugo.Environment "development" }}
     <div class="debug-panel">
         Template: <span id="template-name">-</span>
     </div>
     {{ end }}
-    {{ partial "site-style-deferred.html" . }}
+    <!-- Deferred CSS applied here — already preloaded in <head> -->
+    {{ $deferred := $.Scratch.Get "deferred" }}
+    <link rel="stylesheet" href="{{ $deferred.RelPermalink }}"
+      {{- with $deferred.Data.Integrity }} integrity="{{ . }}"{{ end }}>
+    {{ partial "cookie-consent.html" . }}
 </body>
 
 </html>

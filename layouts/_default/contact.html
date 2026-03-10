@@ -1,4 +1,5 @@
-{{ define "title" }}Contact | {{ .Site.Title }}{{ end }}
+{{ define "title" }}Contact | {{ site.Title }}{{ end }}
+
 {{ define "main" }}
 <div class="display-template hidden">_default/contact.html</div>
 
@@ -8,24 +9,24 @@
             <h1 class="contents__title">Contact me</h1>
             <p class="contents__description">See the various options below</p>
         </header>
+
         {{ partial "sidebar/newsletter.html" . }}
-        <!-- Divider -->
+
         <div class="section-divider">
             <span>OR</span>
         </div>
-        <!-- Contact Form Section -->
+
         <section class="contact__section">
             <div class="form">
                 <h2 class="form__title">✉️ {{ i18n "contactSendMessage" }}</h2>
                 <p class="form__description">{{ i18n "contactQuestions" }}</p>
-                <form 
-                    data-endpoint="{{ .Site.Params.contactAction }}"
+                <form
+                    data-endpoint="{{ site.Params.contactAction }}"
                     data-success-message="{{ i18n "contactThankYou" }}"
                     data-error-message="{{ i18n "contactFailed" }}"
-                    data-name-particles="{{ delimit .Site.Params.nameParticles ","
-                    }}"
+                    data-name-particles="{{ delimit site.Params.nameParticles "," }}"
                     novalidate>
-                    <!-- First and last name side by side -->
+
                     <div class="form__group--inline">
                         <div class="form__group form__group--float">
                             <input type="text"
@@ -35,10 +36,8 @@
                                 aria-label="Given name"
                                 placeholder="First name">
                             <label for="contact-firstname"
-                                class="form__label form__label--float">{{ i18n
-                                "firstName" }}</label>
-                            <span id="contact-firstname-error"
-                                class="form__error"></span>
+                                class="form__label form__label--float">{{ i18n "firstName" }}</label>
+                            <span id="contact-firstname-error" class="form__error"></span>
                         </div>
                         <div class="form__group form__group--float">
                             <input type="text"
@@ -48,12 +47,11 @@
                                 aria-label="Surname"
                                 placeholder="Last name">
                             <label for="contact-lastname"
-                                class="form__label form__label--float">{{ i18n
-                                "lastName" }}</label>
-                            <span id="contact-lastname-error"
-                                class="form__error"></span>
+                                class="form__label form__label--float">{{ i18n "lastName" }}</label>
+                            <span id="contact-lastname-error" class="form__error"></span>
                         </div>
                     </div>
+
                     <div class="form__group form__group--float">
                         <input type="email"
                             id="contact-email"
@@ -64,13 +62,12 @@
                             aria-label="Email"
                             data-error="contact-email-error">
                         <label for="contact-email"
-                            class="form__label form__label--float required">{{
-                            i18n "email" }}</label>
-                        <span id="contact-email-error"
-                            class="form__error"></span>
+                            class="form__label form__label--float required">{{ i18n "email" }}</label>
+                        <span id="contact-email-error" class="form__error"></span>
                     </div>
+
                     <div class="form__group form__group--float">
-                        <input type="text" 
+                        <input type="text"
                             id="contact-subject"
                             name="subject"
                             required
@@ -78,20 +75,17 @@
                             aria-label="Subject"
                             data-error="contact-subject-error">
                         <label for="contact-subject"
-                            class="form__label form__label--float required">{{
-                            i18n "subject" }}</label>
-                        <span id="contact-subject-error"
-                            class="form__error"></span>
+                            class="form__label form__label--float required">{{ i18n "subject" }}</label>
+                        <span id="contact-subject-error" class="form__error"></span>
                     </div>
+
                     <div class="form__group form__group--float">
-                        <!-- no whitespace in the textarea -->
                         <textarea id="contact-message" name="message" required placeholder="Message" data-error="contact-message-error"></textarea>
                         <label for="contact-message"
-                            class="form__label form__label--float required">{{
-                            i18n "message" }}</label>
-                        <span id="contact-message-error"
-                            class="form__error"></span>
+                            class="form__label form__label--float required">{{ i18n "message" }}</label>
+                        <span id="contact-message-error" class="form__error"></span>
                     </div>
+
                     <div class="button__buttons">
                         <button type="submit" class="button button--full">
                             <span class="button__text--full">Send Message</span>
@@ -100,65 +94,53 @@
                     </div>
                 </form>
             </div>
+
             <div class="contact__info">
                 <h2 class="contact__info-title">🌐 Other ways to reach me</h2>
-                <p class="contact__info-description">
-                    Find me on any of these
-                    platforms.
-                </p>
+                <p class="contact__info-description">Find me on any of these platforms.</p>
                 <div class="contact__methods">
                     <div class="contact__method">
                         <span class="contact__method-icon">📧</span>
                         <div>
-                            <h4 class="contact__method-label">Email</h4>
-                            <a
-                                href="mailto:{{ hugo.Data.authors.alfred.email }}"
-                                class="contact__method-link">{{
-                                hugo.Data.authors.alfred.email }}</a>
+                            <h3 class="contact__method-label">Email</h3>
+                            <a href="mailto:{{ hugo.Data.authors.alfred.email }}"
+                                class="contact__method-link">{{ hugo.Data.authors.alfred.email }}</a>
                         </div>
                     </div>
                     <div class="contact__method">
                         <span class="contact__method-icon">💼</span>
                         <div>
-                            <h4 class="contact__method-label">LinkedIn</h4>
-                            <a
-                                href="https://linkedin.com/in/{{ hugo.Data.authors.alfred.linkedin }}"
+                            <h3 class="contact__method-label">LinkedIn</h3>
+                            <a href="https://linkedin.com/in/{{ hugo.Data.authors.alfred.linkedin }}"
                                 target="_blank"
-                                class="contact__method-link">{{
-                                hugo.Data.authors.alfred.linkedin }}</a>
+                                class="contact__method-link">{{ hugo.Data.authors.alfred.linkedin }}</a>
                         </div>
                     </div>
                     <div class="contact__method">
                         <span class="contact__method-icon">📘</span>
                         <div>
-                            <h4 class="contact__method-label">Facebook</h4>
-                            <a
-                                href="https://facebook.com/{{ hugo.Data.authors.alfred.facebook }}"
+                            <h3 class="contact__method-label">Facebook</h3>
+                            <a href="https://facebook.com/{{ hugo.Data.authors.alfred.facebook }}"
                                 target="_blank"
-                                class="contact__method-link">{{
-                                hugo.Data.authors.alfred.facebook }}</a>
+                                class="contact__method-link">{{ hugo.Data.authors.alfred.facebook }}</a>
                         </div>
                     </div>
                     <div class="contact__method">
                         <span class="contact__method-icon">📸</span>
                         <div>
-                            <h4 class="contact__method-label">Instagram</h4>
-                            <a
-                                href="https://instagram.com/{{ hugo.Data.authors.alfred.instagram }}"
+                            <h3 class="contact__method-label">Instagram</h3>
+                            <a href="https://instagram.com/{{ hugo.Data.authors.alfred.instagram }}"
                                 target="_blank"
-                                class="contact__method-link">@{{
-                                hugo.Data.authors.alfred.instagram }}</a>
+                                class="contact__method-link">@{{ hugo.Data.authors.alfred.instagram }}</a>
                         </div>
                     </div>
                     <div class="contact__method">
                         <span class="contact__method-icon">🚴</span>
                         <div>
-                            <h4 class="contact__method-label">Strava</h4>
-                            <a
-                                href="https://strava.com/athletes/{{ hugo.Data.authors.alfred.strava }}"
+                            <h3 class="contact__method-label">Strava</h3>
+                            <a href="https://strava.com/athletes/{{ hugo.Data.authors.alfred.strava }}"
                                 target="_blank"
-                                class="contact__method-link">{{
-                                hugo.Data.authors.alfred.strava }}</a>
+                                class="contact__method-link">{{ hugo.Data.authors.alfred.strava }}</a>
                         </div>
                     </div>
                 </div>

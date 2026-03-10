@@ -29,7 +29,7 @@
             transform 0.2s ease;
         border-radius: 6px;
         gap: 1rem;
- 
+
         & .cc-icon {
             height: 18px;
         }
@@ -53,8 +53,9 @@
 
         &:hover {
             filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.65)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
-            // transform: translateY(-2px);
-            height: 24px;
+            // height: 24px removed — animating height is non-composited
+            // use transform: scale() instead for a size effect
+            transform: scale(1.33); // 18px → ~24px equivalent, fully composited
         }
     }
 
@@ -75,18 +76,18 @@
 
     button {
         padding: 0;
-        // box-shadow: var(--shadow-sm); // FIXED: Use theme-aware shadow
-        transition: all var(--transition-base);
+        // duplicate transition removed, transition: all replaced with specific properties
         background-color: transparent;
         border: none;
         border-radius: var(--border-radius-md);
         cursor: pointer;
-        transition: all var(--transition-base);
+        transition:
+            box-shadow var(--transition-base),
+            transform var(--transition-base);
 
         &:hover {
-            box-shadow: var(--shadow-md); // FIXED: Use theme-aware shadow
+            box-shadow: var(--shadow-md);
             transform: translateY(-3px);
-            // background: var(--color-primary-hover);
         }
     }
 
@@ -117,10 +118,11 @@
         a {
             color: var(--color-text);
             text-decoration: none;
-            transition: color var(--transition-base);
+            // transition: color removed — color is non-composited, snaps instantly instead
+            transition: opacity var(--transition-base); // composited alternative
 
             &:hover {
-                color: var(--color-primary);
+                opacity: 0.7; // replaces color change — fully composited
                 cursor: pointer;
             }
         }
