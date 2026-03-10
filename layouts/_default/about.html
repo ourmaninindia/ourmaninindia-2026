@@ -5,7 +5,8 @@
     _default/about.html
 </div>
 
-{{ partial "background.html" . }}
+{{/* hero */}}
+{{ partial "image.html" (dict "page" . "hero" true) }}
 
 <div class="contents__container">
     <article class="single">

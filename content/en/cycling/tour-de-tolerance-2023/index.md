@@ -31,7 +31,7 @@ I had trained quite a lot to join this years’ tour which covered the route fro
 ## Aug 30 Delft to Amsterdam (71km)
 For our journey we had two support buses each with three drivers. I had promised to collect one of the two buses today so in the morning I cycled from *Delft* to *Amsterdam*. I got a bit of a drizzle after *Schiphol Airport* but reached the rental company in time and was more or less dried up by then due to the wind. 
 
-{{< img src="20230830_food_bus.jpg" class="right" alt="Our food bus is getting ready"  caption="The food bus getting ready" >}}
+{{< img src="20230830_food_bus.jpg" class="right" size="small" eager="true" alt="Our food bus is getting ready" caption="The food bus getting ready" >}}
 
 I parked my cycle in the bus, drove to a friend’s place to collect our luggage, and found my way to the starting point. This was a small farm where we had to load all the cycles, luggage, and food for along the way: a lot of energy drinks and energy bars. The owner of the property, a fellow cyclist who unfortunately could not join this year, offered us a great home cooked lasagna. With a most satisfied stomach the three of us said goodbye and drove towards the south changing drivers a few times.  
 

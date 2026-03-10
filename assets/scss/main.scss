@@ -1,21 +1,34 @@
+// ============================================================
+// main.scss — critical styles only
+// Loaded in <head>, blocks render intentionally
+// ============================================================
 
-// 2. Configuration
-@use "./abstracts" as *;
+// Abstracts — variables & mixins, compile to nothing
+@use './abstracts';
 
-// 3. Base styles
+// Base — always critical
 @use './base';
 
-// 4. Components (button, cards, forms, etc.)
-@use './components';
+// Layout — structural, always critical
+@use './layout/header';
+@use './layout/breadcrumbs';
+@use './layout/contents';
+@use './layout/sidebar';
 
-// 5. Layouts (header, sidebar, footer)
-@use './layouts';
+// Blocks — above the fold
+@use './blocks/form';      // remove if no form above fold
 
-// 6. Content Blocks (blog, post, galleries, etc.)
-@use './blocks';
+// Components — visible above fold
+@use './components/accessibility';
+@use './components/buttons';
+@use './components/cards';
+@use './components/images';
+@use './components/section-divider';
+@use './components/tags';
 
-// 7. Pages
-@use './pages';
+// Pages — primary templates
+@use './pages/list';
+@use './pages/single';
 
 // 8. Utilities (global classes)
 @use './utilities';

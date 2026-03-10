@@ -1,16 +1,16 @@
-{{/* cookieconsent Styles - Using Dart Sass */}}
-{{ $ccScss := resources.Get "scss/cookieconsent.scss" }}
-{{ if not $ccScss }}
-{{ errorf "cookieconsent.scss not found in assets/scss/" }}
+{{/* deferred Styles - Using Dart Sass */}}
+{{ $deferredScss := resources.Get "scss/deferred.scss" }}
+{{ if not $deferredScss }}
+{{ errorf "deferred.scss not found in assets/scss/" }}
 {{ end }}
 
 {{ $options := dict
 "transpiler" "dartsass"
-"targetPath" "css/cookieconsent.css"
+"targetPath" "css/deferred.css"
 "outputStyle" "expanded"
 }}
 
-{{ $style := $ccScss | css.Sass $options }}
+{{ $style := $deferredScss | css.Sass $options }}
 
 {{ if hugo.IsProduction }}
 {{ $style = $style | minify | fingerprint }}

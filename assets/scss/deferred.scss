@@ -1,0 +1,40 @@
+// ============================================================
+// deferred.scss — non-critical styles
+// Loaded before </body>, never blocks render
+// ============================================================
+
+// Abstracts — variables & mixins, compile to nothing
+@use './abstracts';
+
+// Layout — below the fold
+@use './layout/footer';
+
+// Blocks — never above fold
+@use './blocks/comments';
+@use './blocks/contact';
+@use './blocks/cycling-stories';
+@use './blocks/galleries';
+@use './blocks/legal';
+@use './blocks/search';
+@use './blocks/toc';
+@use './blocks/widgets';
+
+// Components — never above fold
+@use './components/accordion';
+@use './components/badges';
+@use './components/code';
+@use './components/debug';
+@use './components/forms';
+@use './components/lightbox';
+@use './components/modals';
+@use './components/parallax';
+@use './components/tooltips';
+
+// Pages — secondary/rare pages
+@use './pages/errors';
+@use './pages/cycling';
+@use './pages/about';
+@use './pages/policies';
+
+// 9. Vendor specific
+@use "./vendor";

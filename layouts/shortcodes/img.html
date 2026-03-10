@@ -7,10 +7,54 @@
 {{ $class   := .Get "class" | default "left" }}
 {{ $inner   := .Get "inner" }}  {{/* set to "true" when inside {{< imgs >}} */}}
 {{ $eager   := .Get "eager" }}  {{/* set to "true" for above-the-fold images */}}
+{{ $size    := .Get "size" | default "medium" }}  {{/* small | medium | large | full */}}
 
 {{ $image := $.Page.Resources.GetMatch $src }}
 
 {{ if $image }}
+
+  {{/* ======================================================
+       Named size → srcset + sizes mapping
+       small  : portrait/thumbnail ~400px wide
+       medium : inline post image ~800px wide (default)
+       large  : wide post image ~1200px wide
+       full   : full-width hero/banner
+       ====================================================== */}}
+
+  {{ $srcset    := "" }}
+  {{ $sizesAttr := "" }}
+
+  {{ if eq $size "small" }}
+    {{ $img400 := $image.Resize "400x webp q85" }}
+    {{ $srcset    = printf "%s 400w" $img400.RelPermalink }}
+    {{ $sizesAttr = "(max-width: 480px) 100vw, 400px" }}
+
+  {{ else if eq $size "large" }}
+    {{ $img400  := $image.Resize "400x webp q85" }}
+    {{ $img800  := $image.Resize "800x webp q85" }}
+    {{ $img1200 := $image.Resize "1200x webp q85" }}
+    {{ $srcset    = printf "%s 400w, %s 800w, %s 1200w" $img400.RelPermalink $img800.RelPermalink $img1200.RelPermalink }}
+    {{ $sizesAttr = "(max-width: 480px) 100vw, (max-width: 768px) 80vw, 1200px" }}
+
+  {{ else if eq $size "full" }}
+    {{ $img400  := $image.Resize "400x webp q85" }}
+    {{ $img800  := $image.Resize "800x webp q85" }}
+    {{ $img1200 := $image.Resize "1200x webp q85" }}
+    {{ $srcset    = printf "%s 400w, %s 800w, %s 1200w" $img400.RelPermalink $img800.RelPermalink $img1200.RelPermalink }}
+    {{ $sizesAttr = "100vw" }}
+
+  {{ else }}
+    {{/* medium — default */}}
+    {{ $img400 := $image.Resize "400x webp q85" }}
+    {{ $img800 := $image.Resize "800x webp q85" }}
+    {{ $srcset    = printf "%s 400w, %s 800w" $img400.RelPermalink $img800.RelPermalink }}
+    {{ $sizesAttr = "(max-width: 480px) 100vw, (max-width: 768px) 50vw, 800px" }}
+  {{ end }}
+
+  {{/* Use the smallest variant as the fallback src */}}
+  {{ $fallback := $image.Resize "400x webp q85" }}
+
+  {{/* Width classes */}}
   {{ $widthClass := "post-image" }}
   {{ if eq $wide "true" }}
     {{ $widthClass = "post-image post-image--wide" }}
@@ -18,26 +62,18 @@
     {{ $widthClass = printf "%s %s" $widthClass $class }}
   {{ end }}
 
-  {{ $img400  := $image.Resize "400x webp q85" }}
-  {{ $img800  := $image.Resize "800x webp q85" }}
-  {{ $img1200 := $image.Resize "1200x webp q85" }}
-
   <figure class="{{ $widthClass }}">
     <picture>
       <source type="image/webp"
-              srcset="{{ $img400.RelPermalink }} 400w,
-                      {{ $img800.RelPermalink }} 800w,
-                      {{ $img1200.RelPermalink }} 1200w"
-              sizes="(max-width: 480px) 100vw,
-                     (max-width: 768px) 50vw,
-                     800px">
-      <img src="{{ $img800.RelPermalink }}"
+              srcset="{{ $srcset }}"
+              sizes="{{ $sizesAttr }}">
+      <img src="{{ $fallback.RelPermalink }}"
            alt="{{ $alt }}"
            class="lightbox-trigger"
-           loading="{{ if eq $eager `true` }}eager{{ else }}lazy{{ end }}"
+           loading="{{ if in (slice `true` `1`) $eager }}eager{{ else }}lazy{{ end }}"
            decoding="async"
-           width="{{ $img800.Width }}"
-           height="{{ $img800.Height }}">
+           width="{{ $fallback.Width }}"
+           height="{{ $fallback.Height }}">
     </picture>
 
     {{ with $caption }}
