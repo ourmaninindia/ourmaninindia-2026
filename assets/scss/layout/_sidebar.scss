@@ -46,6 +46,15 @@ row-gap: 0;
   }
 }
 
+// hide sidebar on homepage at mobile
+.home .sidebar {
+    display: none;
+
+    @media (min-width: $breakpoint-desktop) {
+        display: block;
+    }
+}
+
 .widget-search   { grid-area: search; }
 .widget-recent   { grid-area: recent; }
 .widget-categories { grid-area: categories; }

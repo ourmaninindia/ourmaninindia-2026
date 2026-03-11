@@ -23,8 +23,8 @@
     <header class="cycling-post__masthead">
       <h1 class="cycling-post__headline">{{ .Title }}</h1>
       <div class="cycling-post__byline">
-         {{ partial "published.html" . }}
-         {{ partial "reading-time.html" . }}
+         <time>{{ .Date.Format site.Params.date_format }}</time>
+         <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
       </div>
     </header>
 

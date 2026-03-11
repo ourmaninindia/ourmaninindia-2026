@@ -7,7 +7,7 @@
     {{ $sectionTags = partial "get-section-tags" .Section }}
 {{ else }}
     {{/* Taxonomy/other pages - show all tags */}}
-    {{ $sectionTags = .Site.Taxonomies.tags.ByCount }}
+    {{ $sectionTags = site.Taxonomies.tags.ByCount }}
 {{ end }}
 
 {{ if gt (len $sectionTags) 0 }}

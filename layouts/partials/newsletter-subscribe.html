@@ -1,7 +1,7 @@
 <div class="newsletter">
-    <h3 class="newsletter__title">{{ .Site.Params.newsletter.title | default "📧 Newsletter" }}</h3>
+    <h3 class="newsletter__title">{{ site.Params.newsletter.title | default "📧 Newsletter" }}</h3>
     <p class="newsletter__description">
-        {{ .Site.Params.newsletter.description | default "Get weekly updates delivered to your inbox." }}
+        {{ site.Params.newsletter.description | default "Get weekly updates delivered to your inbox." }}
     </p>
     
     <form id="newsletterForm" class="newsletter-form">

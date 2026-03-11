@@ -1,0 +1,47 @@
+{{/* ============================================================
+     layouts/partials/post-card.html
+     Usage:
+       From list:   {{ partial "post-card.html" (dict "post" $post "index" $index) }}
+       From render: {{ partial "post-card.html" (dict "post" . "index" 0) }}
+     ============================================================ */}}
+
+{{ $post  := .post  | default . }}
+{{ $index := .index | default 0 }}
+
+{{ $imagePosition := "left" }}
+{{ if modBool $index 2 }}{{ $imagePosition = "right" }}{{ end }}
+
+<article class="list__post list__post--image-{{ $imagePosition }}"
+         data-post-date="{{ $post.Date.Format "2006-01" }}">
+
+    <header class="list__post-title">
+        <h2><a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a></h2>
+        <div class="list__post-meta">
+            <time>📅 {{ $post.Date.Format (site.Params.date_format | default "Jan 02, 2006") }}</time>
+            {{ with $post.Params.author }}
+            <span>👤 {{ . }}</span>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="list__post-body">
+        {{/* Image must come before text in the DOM for float to work correctly */}}
+        {{ partial "post-image.html" $post }}
+
+        <p class="list__post-excerpt">
+            {{ $summary_splits := split $post.Summary "<!--endtoc-->" }}
+            {{ if eq (len $summary_splits) 2 }}
+                {{ index $summary_splits 1 | safeHTML }}
+            {{ else }}
+                {{ $post.Summary | plainify | truncate 300 }}
+            {{ end }}
+        </p>
+
+        <a href="{{ $post.RelPermalink }}"
+            class="list__read-more"
+            aria-label="{{ i18n "readMoreAbout" $post }}">
+            {{ i18n "readMore" }}
+        </a>
+    </div>
+
+</article>

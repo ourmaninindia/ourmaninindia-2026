@@ -4,13 +4,13 @@
     <p class="widget__message">{{ i18n "nl-newsletterDescription" }}</p>
 
     <form 
-        data-endpoint="{{ .Site.Params.newsletterAction }}"
+        data-endpoint="{{ site.Params.newsletterAction }}"
         data-checkbox-group="newsletter__section-checkbox"
         data-checkbox-error="newsletter-sections-error"
         data-msg-checkbox-required="{{ i18n "form-errorSectionsRequired" }}"
         data-success-message="{{ i18n "form-success-subscribed" }}"
         data-error-message="{{ i18n "form-error-message" }}"
-        data-name-particles="{{ delimit .Site.Params.nameParticles "," }}"
+        data-name-particles="{{ delimit site.Params.nameParticles "," }}"
         novalidate >
 
         <div class="form__checkboxes">

@@ -13,14 +13,14 @@
         </p>
         
         <div id="cusdis_thread" class="cusdis"
-             data-host="{{ .Site.Params.cusdis.host }}"
-             data-app-id="{{ .Site.Params.cusdis.appId }}" 
+             data-host="{{ site.Params.cusdis.host }}"
+             data-app-id="{{ site.Params.cusdis.appId }}" 
              data-page-id="{{ .RelPermalink }}"
              data-page-url="{{ .Permalink }}"
              data-page-title="{{ .Title }}"
              data-theme="light">
         </div>
-        <script async defer src="{{ .Site.Params.cusdis.host }}/js/cusdis.es.js"></script>
+        <script async defer src="{{ site.Params.cusdis.host }}/js/cusdis.es.js"></script>
     </div>
 </section>
 

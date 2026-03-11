@@ -2,13 +2,13 @@
     <div class="nav__container">
         <!-- Logo -->
         <div class="nav__logo">
-            {{ .Site.Title }}
+            {{ site.Title }}
         </div>
 
         <!-- Navigation Menu -->
         <nav class="nav__menu" id="navMenu" aria-label="Main navigation">
             <ul class="nav__list">
-                {{ range .Site.Menus.main }}
+                {{ range site.Menus.main }}
                 <li class="nav__item">
                     <a href="{{ .URL }}" class="nav__link{{ if $.IsMenuCurrent " main" . }} nav__link--active{{ end }}">
                         {{ .Name }}

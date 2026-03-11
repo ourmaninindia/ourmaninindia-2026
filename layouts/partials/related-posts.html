@@ -1,4 +1,4 @@
-{{ $related := where (.Site.Pages.Related .) "Section" "!=" "archives" }}
+{{ $related := where (site.Pages.Related .) "Section" "!=" "archives" }}
 {{ range first 3 $related }}
 <section class="related-posts">
     <h3>Related Articles</h3>

@@ -5,31 +5,13 @@
 // ============================================
 
 .single {
-  // background-color: var(--color-white);
-  max-width: 680px;
-  margin: 0 auto;
+  // max-width and margin removed — list__grid column constrains width instead
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
-
-    @media (min-width: $breakpoint-desktop) {
-      grid-template-columns: 320px 1fr;
-      grid-template-areas: "sidebar post ";
-    }
-
-    @media (min-width: $breakpoint-wide) {
-      grid-template-columns: 380px 1fr;
-      grid-template-areas: "sidebar post ";
-    }
+  @media (min-width: $breakpoint-desktop) {
+    grid-area: posts; // matches list__grid: "posts sidebar"
   }
 
-  &__post {
-    @media (min-width: $breakpoint-desktop) {
-      grid-area: post;
-    }
-  }
+  // single__grid removed — use list__grid consistently across all templates
 
   // ============================================
   // Header
@@ -408,8 +390,16 @@
   float: left;
   margin: 0 var(--spacing-lg) var(--spacing-md) 0;
   shape-outside: circle(50%);
-  max-width: 150px;
-  width: 100%;
+  width: 150px;
+  flex-shrink: 0;
+
+  picture,
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 
   & img:hover {
     cursor: inherit;

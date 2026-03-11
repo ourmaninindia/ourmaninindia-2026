@@ -1,6 +1,40 @@
+{{/* ============================================================
+     layouts/partials/sidebar.html
+     Usage:
+       Homepage:   {{ partial "sidebar.html" (dict "page" . "context" "home") }}
+       List pages: {{ partial "sidebar.html" (dict "page" . "context" "list") }}
+       Others:     {{ partial "sidebar.html" . }}
+     ============================================================ */}}
+
+     {{/* Handle both dict and direct page context */}}
+{{ $page    := . }}
+{{ $context := "list" }}
+
+{{ if reflect.IsMap . }}
+    {{ $page    = .page    | default . }}
+    {{ $context = .context | default "list" }}
+{{ end }}
+
 <aside class="sidebar">
-    {{ partial "sidebar/search.html" . }}
-    {{ partial "sidebar/tags.html" . }}
-    {{ partial "sidebar/archive.html" . }}
-    {{ partial "sidebar/newsletter.html" . }}
+    {{ if eq $context "home" }}
+        {{/* ── Homepage sidebar — conversion focused ──────────── */}}
+        {{ partial "sidebar/about-me.html"  $page }}
+        {{ partial "sidebar/newsletter.html" $page }}
+        {{ partial "sidebar/tags.html"       $page }}
+
+    {{ else if eq $context "list" }}
+        {{/* ── List/section sidebar — discovery focused ───────── */}}
+        {{ partial "sidebar/search.html"      $page }}
+        {{ partial "sidebar/newsletter.html"  $page }}
+        {{ partial "sidebar/recent-posts.html" $page }}
+        {{ partial "sidebar/tags.html"         $page }}
+        {{ partial "sidebar/archive.html"      $page }}
+
+    {{ else }}
+        {{/* ── Default fallback (taxonomy, single etc) ─────────── */}}
+        {{ partial "sidebar/search.html"      $page }}
+        {{ partial "sidebar/newsletter.html"  $page }}
+        {{ partial "sidebar/tags.html"         $page }}
+
+    {{ end }}
 </aside>

@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+<html lang="{{ site.Language.Lang }}">
 
 <head>
     {{ partial "head.html" . }}
 </head>
 
-<body>
+{{ $bodyClass := "page" }}
+{{ if .IsHome }}
+    {{ $bodyClass = "home" }}
+{{ else if .IsSection }}
+    {{ $bodyClass = printf "section-%s" .Section }} 
+{{ else if .IsPage }}
+    {{ $bodyClass = printf "page-%s" .Section }}
+{{ else if eq .Kind "taxonomy" }}
+    {{ $bodyClass = "taxonomy" }}
+{{ else if eq .Kind "term" }}
+    {{ $bodyClass = "term" }}
+{{ end }}
+
+<body class="{{ $bodyClass }}">
+
     <!-- Skip to main content — keyboard accessibility -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -17,6 +31,15 @@
 
     {{ partial "social-icons.html" . }}
     {{ partial "footer.html" . }}
+    
+    <!-- Deferred CSS applied here — already preloaded in <head> -->
+    {{ $deferred := $.Scratch.Get "deferred" }}
+    <link rel="stylesheet" href="{{ $deferred.RelPermalink }}"
+      {{- with $deferred.Data.Integrity }} integrity="{{ . }}"{{ end }}>
+    
+    {{ partial "cookie-consent.html" . }}
+
+    {{/* Scripts last — after CSS is applied */}}
     {{ partial "site-script.html" . }}
 
     {{ if eq hugo.Environment "development" }}
@@ -24,11 +47,7 @@
         Template: <span id="template-name">-</span>
     </div>
     {{ end }}
-    <!-- Deferred CSS applied here — already preloaded in <head> -->
-    {{ $deferred := $.Scratch.Get "deferred" }}
-    <link rel="stylesheet" href="{{ $deferred.RelPermalink }}"
-      {{- with $deferred.Data.Integrity }} integrity="{{ . }}"{{ end }}>
-    {{ partial "cookie-consent.html" . }}
+    
 </body>
 
 </html>

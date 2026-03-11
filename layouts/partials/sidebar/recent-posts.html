@@ -1,5 +1,5 @@
 <h3 class="widget__title">{{ i18n "recentPosts" }}</h3>
-{{ $posts := where .Site.RegularPages "Section" .Section }}
+{{ $posts := where site.RegularPages "Section" .Section }}
 {{ range first 5 $posts }}
     <a href="{{ .RelPermalink }}" class="widget__recent-post">
         <div class="widget__recent-thumb">

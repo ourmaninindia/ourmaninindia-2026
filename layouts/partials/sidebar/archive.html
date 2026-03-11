@@ -1,5 +1,5 @@
 <!-- archive widget -->
- {{ $filteredPosts := where (.Site.Pages.ByDate.Reverse) "Section" "blog" }}
+ {{ $filteredPosts := where (site.Pages.ByDate.Reverse) "Section" "blog" }}
 
 <div class="widget">
     <h3 class="widget__title">{{ i18n "archive" }}</h3>

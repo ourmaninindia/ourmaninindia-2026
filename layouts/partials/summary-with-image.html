@@ -1,13 +1,14 @@
-{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
 {{ define "main" }}
 <div class="display-template hidden">
     _default/list.html
 </div>
+
 <div class="container">
     <h1>{{ .Title }}</h1>
     <div class="list__grid">
         <div class="list__posts">
-            {{ $posts := where .Site.RegularPages "Section" .Section }}
+            {{ $posts := where site.RegularPages "Section" .Section }}
             {{ $paginator := .Paginate $posts }}
             
             {{ range $index, $post := $paginator.Pages }}

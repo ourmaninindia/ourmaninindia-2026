@@ -1,0 +1,61 @@
+{{/* ============================================================
+     layouts/partials/sidebar/about-me.html
+     Homepage sidebar widget — short author intro with photo
+     ============================================================ */}}
+
+{{ $author := index hugo.Data.authors "alfred" }}
+{{ with $author }}
+<div class="widget widget--about">
+    <h2 class="widget__title">{{ i18n "aboutMe" | default "About Me" }}</h2>
+    <div class="widget__content widget__content--about">
+
+        {{/* Author photo from assets */}}
+        {{ $photo := resources.Get "images/alfred.jpg" }}
+        {{ with $photo }}
+            {{ $photo = $photo | fingerprint }}
+            <img src="{{ .RelPermalink }}"
+                 alt="{{ $author.name }}"
+                 class="widget__avatar"
+                 width="120"
+                 height="120"
+                 loading="lazy">
+        {{ end }}
+
+        <div class="widget__about-text">
+            <p class="widget__about-name">{{ $author.name }}</p>
+
+            {{ with $author.role }}
+            <p class="widget__about-role hidden">{{ . }}</p>
+            {{ end }}
+
+            {{ with $author.bio }}
+            <p class="widget__about-bio">{{ . | truncate 220 }}</p>
+            {{ end }}
+        </div>
+
+        {{/* Social links */}}
+        <div class="widget__about-social">
+            {{ with $author.linkedin }}
+            <a href="https://linkedin.com/in/{{ . }}" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn">💼</a>
+            {{ end }}
+            {{ with $author.facebook }}
+            <a href="https://facebook.com/{{ . }}" target="_blank"
+                rel="noopener noreferrer" aria-label="Facebook">📘</a>
+            {{ end }}
+            {{ with $author.instagram }}
+            <a href="https://instagram.com/{{ . }}" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram">📸</a>
+            {{ end }}
+            {{ with $author.strava }}
+            <a href="https://strava.com/athletes/{{ . }}" target="_blank"
+                rel="noopener noreferrer" aria-label="Strava">🚴</a>
+            {{ end }}
+        </div>
+
+        <a href="{{ "/about/" | relURL }}" class="list__read-more" aria-label="read more about Our Man in India">          
+            {{ i18n "readMore" | default "Read more" }}
+        </a>
+    </div>
+</div>
+{{ end }}

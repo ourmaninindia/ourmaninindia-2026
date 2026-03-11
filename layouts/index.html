@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
 
 {{- define "main" }}
 <div class="display-template hidden">
@@ -6,57 +6,55 @@
 </div>
 
 <div class="contents__container">
+
+  {{/* ── Homepage intro content ─────────────────────────────── */}}
   <article class="single">
     <header class="single__header">
       <h1>{{ .Title }}</h1>
-      {{ partial "published.html" . }}
-      {{ partial "reading-time.html" . }}
+      <time>{{ .Date.Format site.Params.date_format }}</time>
+      <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read" }}</div>
     </header>
 
     <div class="single__content">
       {{ .Content }}
     </div>
-    {{ partial "date.html" . }}
 
-    {{- $mainSections := (slice "post") }}
-    {{- $section := where .Site.RegularPages ".Params.featured" true }}
-    {{/* this was $section := where .Site.RegularPages "Section" "in"
-    $mainSections */}}
-    {{- $section_count := len $section -}}
+    <time>
+      📅 {{ i18n "page-created" }} {{ .Date.Format site.Params.date_format }}
+    </time>
+  </article>
 
-    {{- if ge $section_count 1 }}
-    {{- $section_name := "post" -}}
+  {{/* ── Featured posts — separate from the article ─────────── */}}
+  {{- $section := where site.RegularPages ".Params.featured" true }}
+  {{- $section_count := len $section }}
 
-    <div class="article">
-      {{- with .Site.GetPage "section" $section_name }}
-      <div class="recent-articles">
-        {{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}
-      </div>
-      {{- end }}
+  {{- if ge $section_count 1 }}
+  {{- $section_name := "post" }}
+  {{- $posts := $.Param "recent_posts_number" | default 3 }}
 
-      {{- $posts := $.Param "recent_posts_number" | default 3 }}
-      <section>
-        {{- range (first $posts $section) }}
-        <div>
-          {{ .Render "summary-with-image" }}
-        </div>
-        {{- end }}
-      </section>
+  <section class="homepage__featured">
+
+    <div class="contents__title">{{ i18n "recentPosts" . }}</div>
+
+    <div class="list__grid">
+        <section class="list__posts">
+            {{- range $index, $post := (first $posts $section) }}
+                {{ partial "post-card.html" (dict "post" $post "index" $index) }}
+            {{- end }}
+        </section>
+        {{ partial "sidebar.html" (dict "page" . "context" "home") }}
     </div>
 
     {{- if ge $section_count (add $posts 1) }}
-    {{- with .Site.GetPage "section" $section_name }}
-    <div>
-      <a
-        class="posted"
-        href="{{ .RelPermalink }}">
-        {{ i18n "allTitle" . }}
-      </a>
+    <div class="homepage__view-all">
+        <a class="posted" href="{{ .RelPermalink }}">
+            {{ i18n "allTitle" . }}
+        </a>
     </div>
     {{- end }}
-    {{- end }}
 
-    {{- end }}
-  </article>
+</section>
+  {{- end }}
+
 </div>
 {{- end }}

@@ -12,8 +12,8 @@
     <article class="single">
         <header class="single__header">
             <h1 class="single__headline">{{ .Title }}</h1>
-            {{ partial "published.html" . }}
-            {{ partial "reading-time.html" . }}
+            <time>{{ .Date.Format site.Params.date_format }}</time>
+            <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
         </header>
 
         <div class="single__content">

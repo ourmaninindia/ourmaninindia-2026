@@ -9,6 +9,8 @@
 {{ partial "image.html" (dict "page" . "hero" true) }}
 
 <div class="contents__container">
+    <div class="list__grid">
+
     <article class="single">
         <header class="single__masthead">
             <h1 class="single__headline">{{ .Title }}</h1>
@@ -26,7 +28,7 @@
                     {{ end }}
                 {{ end }}
 
-                {{ partial "reading-time.html" . }}
+                <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
             </div>
 
             {{ if .Params.tags }}
@@ -58,5 +60,9 @@
         {{ partial "continue-reading.html" . }}
         {{ partial "comments-netlify.html" . }}
     </article>
+
+    {{ partial "sidebar.html" . }}
+
+    </div>
 </div>
 {{ end }}

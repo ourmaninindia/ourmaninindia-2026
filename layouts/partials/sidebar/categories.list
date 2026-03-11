@@ -1,4 +1,4 @@
-{{ $categories := .Site.Taxonomies.categories }}
+{{ $categories := site.Taxonomies.categories }}
 {{ if $categories }}
 <h3 class="widget__title">{{ i18n "categories" }}</h3>
 <div class="widget__content">

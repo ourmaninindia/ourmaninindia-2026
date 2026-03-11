@@ -3,11 +3,11 @@ Author Bio - Enhanced Version
 Uses author from front matter, falls back to site default
 */}}
 
-{{ $authorSlug := .Params.author | default .Site.Params.defaultAuthor | urlize }}
+{{ $authorSlug := .Params.author | default site.Params.defaultAuthor | urlize }}
 {{ $author := index hugo.Data.authors $authorSlug }}
 
 {{ with $author }}
-{{ $authorPosts := where $.Site.RegularPages "Params.author" ($.Params.author | default $.Site.Params.defaultAuthor) }}
+{{ $authorPosts := where site.RegularPages "Params.author" ($.Params.author | default site.Params.defaultAuthor) }}
 <aside class="author-bio">
     <div class="author-bio__card">
         <div class="author-bio__avatar">

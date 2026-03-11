@@ -13,17 +13,17 @@
 }
 
 .section-intro::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
+  content: "";
+  display: table;
+  clear: both;
+}
 
 .list {
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
+    clear: both;
 
     @media (min-width: $breakpoint-desktop) {
       grid-template-columns: 1fr 320px;
@@ -37,7 +37,6 @@
   }
 
   &__content {
-    
     // drop cap the very first letter
     p:first-of-type::first-letter {
       font-size: 3.5em;
@@ -51,17 +50,21 @@
   }
 
   &__posts {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
+    // NOT flex — floats need normal block flow to work
+    display: block;
 
     @media (min-width: $breakpoint-desktop) {
       grid-area: posts;
     }
   }
 
+  // spacing between cards — replaces flex gap
+  &__post + &__post {
+    margin-top: var(--spacing-xl);
+  }
+
   // ============================================
-  // Post Card - Text Wrapping Around Image
+  // Post Card
   // ============================================
 
   &__post {
@@ -69,9 +72,14 @@
     border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 1.5rem;
-    transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
-    overflow: auto; // Clearfix for floats
+
+    // clearfix — essential for float children
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
     @media (min-width: $breakpoint-tablet) {
       padding: 2rem;
@@ -80,67 +88,66 @@
     &:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-4px);
-    }
-
-    // Clear floats after the article
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
+      // transition only on composited properties
+      transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
     }
   }
 
   // ============================================
-  // Post Image - Floating with Text Wrap
+  // Post Body — wraps image + excerpt + read more
+  // ============================================
+
+  &__post-body {
+    // block formatting context — text wraps alongside float
+    overflow: hidden;
+  }
+
+  // ============================================
+  // Post Image — floated for text wrapping
   // ============================================
 
   &__post-image {
-    width: 300px;
-    max-width: 45%;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--color-bg-secondary);
+    // default: centered, full width, text below (mobile)
+    display: block;
+    width: 100%;
+    margin: 0 0 var(--spacing-sm) 0;
 
-    // Default: Float left
-    float: left;
-    margin-right: 1.5rem;
-
-    @media (max-width: $breakpoint-mobile) {
-      width: 100%;
-      max-width: 100%;
-      float: none;
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-
+    figure,
+    picture,
     img {
       width: 100%;
       height: auto;
-      object-fit: contain;
       display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .list__post:hover & img {
-      transform: scale(1.05);
+      border-radius: 8px;
     }
   }
+}
 
-  // Alternate: Float right
-  &__post--image-right &__post-image {
+// float only when viewport is wide enough for meaningful text alongside
+// written outside .list {} to avoid @media inside BEM & issues in SCSS
+@media (min-width: 600px) {
+  .list__post-image {
+    width: 400px; // fixed width — float needs this to reserve space
+    max-width: 45%; // prevents image dominating on mid-size screens
+  }
+
+  .list__post--image-left .list__post-image {
+    float: left;
+    margin: 0 var(--spacing-md) var(--spacing-sm) 0;
+  }
+
+  .list__post--image-right .list__post-image {
     float: right;
-    margin-right: 0;
-    margin-left: 1.5rem;
-
-    @media (max-width: $breakpoint-mobile) {
-      float: none;
-      margin-left: 0;
-    }
+    margin: 0 0 var(--spacing-sm) var(--spacing-md);
   }
+}
 
+// resume .list {} block for remaining rules
+.list {
   // ============================================
-  // Post Content - Wraps Around Image
+  // Post Content
   // ============================================
 
   &__post-title {
@@ -160,7 +167,6 @@
     a {
       color: var(--color-text-dark);
       text-decoration: none;
-      transition: color 0.2s ease;
 
       &:hover {
         color: var(--color-primary-hover);
@@ -199,8 +205,11 @@
     font-weight: 600;
     text-decoration: none;
     font-size: 0.9375rem;
-    transition: all 0.2s ease;
-    clear: both; // Ensure it appears below floated image
+    clear: both; // always appears below floated image
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
 
     &::after {
       content: "→";
@@ -250,7 +259,7 @@
 
   &:is(button) {
     cursor: default;
-    font: inherit; // buttons don't inherit font by default
+    font: inherit;
   }
 
   &__info {
@@ -274,8 +283,12 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9375rem;
-    transition: all 0.2s ease;
     box-shadow: var(--shadow-sm);
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
 
     &:hover {
       background: var(--color-primary-hover);
@@ -296,9 +309,7 @@
     align-items: center;
     flex-wrap: nowrap;
     justify-content: center;
-    // overflow-x: auto;
     padding: 4px;
-    // -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -308,7 +319,7 @@
 
   &__number,
   &__ellipsis {
-    min-width: 44px; // Recommended minimum as per Apple and WCAG 2.5.5 (AAA). Google's Material Design suggests 48×48px.
+    min-width: 44px;
     height: 44px;
     font-size: var(--font-size-md);
   }
@@ -323,8 +334,12 @@
     background: var(--color-bg);
     color: var(--color-text-dark);
     text-decoration: none;
-    transition: all 0.2s ease;
     box-shadow: var(--shadow-sm);
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
 
     &:hover {
       background: var(--color-bg-secondary);
@@ -341,7 +356,6 @@
       background: var(--color-primary);
       color: var(--color-white);
       border-color: var(--color-primary);
-      // box-shadow: var(--shadow-md);
       cursor: default;
       pointer-events: none;
     }
@@ -355,10 +369,6 @@
     font-weight: 500;
     user-select: none;
   }
-
-  // ============================================
-  // Responsive
-  // ============================================
 
   @media (max-width: $breakpoint-mobile - 1) {
     gap: 0.5rem;
@@ -381,10 +391,4 @@
       font-size: 0.875rem;
     }
   }
-}
-
-figure.right > figure.post-image.left {
-  width: 90px;
-  height: auto;
-  float: right;
 }

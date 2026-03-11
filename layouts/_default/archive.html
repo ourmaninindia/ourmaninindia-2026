@@ -64,7 +64,7 @@
             {{ end }}
         </div>
 
-        {{ partial "sidebar.html" . }}
+        {{ partial "sidebar.html" (dict "page" . "context" "list") }}
     </div>
 </div>
 {{ end }}
