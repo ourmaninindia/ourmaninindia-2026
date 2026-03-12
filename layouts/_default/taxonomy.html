@@ -10,40 +10,15 @@
     </header>
 
     <div class="list__grid">
-        <div class="list__posts">
+        <section class="list__posts">
             {{ $paginator := .Paginate .Pages }}
 
-            {{ range $paginator.Pages }}
-                <article class="list__post" data-post-date="{{ .Date.Format "2006-01" }}">
-                    {{ partial "post-image.html" . }}
-                    <div class="list__post-content">
-                        <div class="list__post-title">
-                            <h2>
-                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                            </h2>
-                            <div class="list__post-meta">
-                                <time>📅 {{ .Date.Format "Jan 02, 2006" }}</time>
-                                {{ with .Params.author }}
-                                <span>👤 {{ . }}</span>
-                                {{ end }}
-                            </div>
-                        </div>
-                        <p class="list__post-excerpt">
-                            {{ with .Summary }}
-                                {{ . | plainify | truncate 300 }}
-                            {{ else }}
-                                {{ .Content | plainify | truncate 300 }}
-                            {{ end }}
-                        </p>
-                        <a href="{{ .RelPermalink }}" class="list__read-more">
-                            {{ i18n "readMore" }}
-                        </a>
-                    </div>
-                </article>
+            {{ range $index, $post := $paginator.Pages }}
+                {{ partial "post-card.html" (dict "post" $post "index" $index) }}
             {{ end }}
 
             {{ partial "pagination.html" $paginator }}
-        </div>
+        </section>
 
        {{ partial "sidebar.html" (dict "page" . "context" "list") }}
     </div>

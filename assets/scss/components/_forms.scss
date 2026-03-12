@@ -19,7 +19,8 @@ input:-webkit-autofill:active {
 
 .form {
     max-width: 500px;
-    margin: auto;
+    min-width: 300px;
+    margin: 0 auto;
 
 input,
 textarea,

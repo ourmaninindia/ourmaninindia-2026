@@ -4,7 +4,7 @@
 <div class="display-template hidden">_default/contact.html</div>
 
 <div class="contents__container">
-    <article class="single">
+    <div class="contact">
         <header class="contents__header">
             <h1 class="contents__title">Contact me</h1>
             <p class="contents__description">See the various options below</p>
@@ -16,8 +16,9 @@
             <span>OR</span>
         </div>
 
-        <section class="contact__section">
-            <div class="form">
+        <div class="contact__section">
+
+            <section class="form">
                 <h2 class="form__title">✉️ {{ i18n "contactSendMessage" }}</h2>
                 <p class="form__description">{{ i18n "contactQuestions" }}</p>
                 <form
@@ -93,59 +94,70 @@
                         </button>
                     </div>
                 </form>
-            </div>
+            </section>
 
-            <div class="contact__info">
+            <aside class="contact__info">
                 <h2 class="contact__info-title">🌐 Other ways to reach me</h2>
                 <p class="contact__info-description">Find me on any of these platforms.</p>
                 <div class="contact__methods">
+
                     <div class="contact__method">
-                        <span class="contact__method-icon">📧</span>
+                        <span class="contact__method-icon" aria-hidden="true">📧</span>
                         <div>
                             <h3 class="contact__method-label">Email</h3>
                             <a href="mailto:{{ hugo.Data.authors.alfred.email }}"
-                                class="contact__method-link">{{ hugo.Data.authors.alfred.email }}</a>
+                                class="contact__method-link">Connect by mail</a>
                         </div>
                     </div>
+
                     <div class="contact__method">
-                        <span class="contact__method-icon">💼</span>
+                        <span class="contact__method-icon" aria-hidden="true">💼</span>
                         <div>
                             <h3 class="contact__method-label">LinkedIn</h3>
                             <a href="https://linkedin.com/in/{{ hugo.Data.authors.alfred.linkedin }}"
                                 target="_blank"
-                                class="contact__method-link">{{ hugo.Data.authors.alfred.linkedin }}</a>
+                                rel="noopener noreferrer"
+                                class="contact__method-link">Connect on LinkedIn</a>
                         </div>
                     </div>
+
                     <div class="contact__method">
-                        <span class="contact__method-icon">📘</span>
+                        <span class="contact__method-icon" aria-hidden="true">📘</span>
                         <div>
                             <h3 class="contact__method-label">Facebook</h3>
                             <a href="https://facebook.com/{{ hugo.Data.authors.alfred.facebook }}"
                                 target="_blank"
-                                class="contact__method-link">{{ hugo.Data.authors.alfred.facebook }}</a>
+                                rel="noopener noreferrer"
+                                class="contact__method-link">Follow on Facebook</a>
                         </div>
                     </div>
+
                     <div class="contact__method">
-                        <span class="contact__method-icon">📸</span>
+                        <span class="contact__method-icon" aria-hidden="true">📸</span>
                         <div>
                             <h3 class="contact__method-label">Instagram</h3>
                             <a href="https://instagram.com/{{ hugo.Data.authors.alfred.instagram }}"
                                 target="_blank"
-                                class="contact__method-link">@{{ hugo.Data.authors.alfred.instagram }}</a>
+                                rel="noopener noreferrer"
+                                class="contact__method-link">Follow on Instagram</a>
                         </div>
                     </div>
+
                     <div class="contact__method">
-                        <span class="contact__method-icon">🚴</span>
+                        <span class="contact__method-icon" aria-hidden="true">🚴</span>
                         <div>
                             <h3 class="contact__method-label">Strava</h3>
                             <a href="https://strava.com/athletes/{{ hugo.Data.authors.alfred.strava }}"
                                 target="_blank"
-                                class="contact__method-link">{{ hugo.Data.authors.alfred.strava }}</a>
+                                rel="noopener noreferrer"
+                                class="contact__method-link">Follow on Strava</a>
                         </div>
                     </div>
+
                 </div>
-            </div>
-        </section>
-    </article>
+            </aside>
+
+        </div>
+    </div>
 </div>
 {{ end }}
