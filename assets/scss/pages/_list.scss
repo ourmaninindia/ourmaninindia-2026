@@ -5,7 +5,7 @@
 // ============================================
 
 .section-intro {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
 
   .post-image {
     width: 200px;
@@ -22,8 +22,14 @@
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     clear: both;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr 280px;
+      grid-template-areas: "posts sidebar";
+      gap: var(--spacing-md);
+    }
 
     @media (min-width: $breakpoint-desktop) {
       grid-template-columns: 1fr 320px;
@@ -33,13 +39,14 @@
     @media (min-width: $breakpoint-wide) {
       grid-template-columns: 1fr 380px;
       grid-template-areas: "posts sidebar";
+      gap: var(--spacing-xl);
     }
   }
 
   &__content {
     // drop cap the very first letter
     p:first-of-type::first-letter {
-      font-size: 3.5em;
+      font-size: var(--font-size-3xl);
       line-height: 0.9;
       float: left;
       margin: 0.1em 0.1em 0 0;
@@ -68,10 +75,10 @@
   // ============================================
 
   &__post {
-    background: var(--color-bg);
+    background: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: var(--spacing-xs);
+    padding: var(--spacing-md);
     box-shadow: var(--shadow-sm);
 
     // clearfix — essential for float children
@@ -82,7 +89,7 @@
     }
 
     @media (min-width: $breakpoint-tablet) {
-      padding: 2rem;
+      padding: var(--spacing-lg);
     }
 
     &:hover {
@@ -120,7 +127,7 @@
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 8px;
+      border-radius: var(--spacing-xs);
     }
   }
 }
@@ -151,16 +158,16 @@
   // ============================================
 
   &__post-title {
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--spacing-sm);
 
     h2 {
-      font-size: 1.5rem;
+      font-size: var(font-size-xl);
       font-weight: 700;
       line-height: 1.3;
       margin: 0 0 0.5rem 0;
 
       @media (min-width: $breakpoint-tablet) {
-        font-size: 1.75rem;
+        font-size: var(--font-size-2xl);
       }
     }
 
@@ -177,30 +184,30 @@
   &__post-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--spacing-sm);
     font-size: 0.875rem;
     color: var(--color-text-light);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
 
     span,
     time {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: var(--spacing-xs);
     }
   }
 
   &__post-excerpt {
     color: var(--color-text);
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     line-height: 1.6;
-    margin: 0 0 1rem 0;
+    margin: 0 0 var(--spacing-sm) 0;
   }
 
   &__read-more {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--spacing-xs);
     color: var(--color-primary);
     font-weight: 600;
     text-decoration: none;
@@ -232,15 +239,15 @@
   &__posts > p {
     text-align: center;
     color: var(--color-text-light);
-    font-size: 1.125rem;
-    padding: 3rem;
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-xl);
     background: var(--color-bg);
     border-radius: 12px;
     border: 1px dashed var(--color-border);
   }
 
   &__taxonomy-description {
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--spacing-sm);
   }
 }
 
@@ -252,8 +259,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
-  margin-top: 1.5rem;
+  padding: var(--spacing-lg) 0;
+  margin-top: var(--spacing-md);
   border-top: 1px solid var(--color-border);
   flex-wrap: wrap;
 
@@ -278,11 +285,11 @@
     padding: 0.625rem 1.25rem;
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: var(--spacing-xs);
     color: var(--color-text-dark);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9375rem;
+    font-size: var(--font-size-md);
     box-shadow: var(--shadow-sm);
     transition:
       background 0.2s ease,
@@ -328,7 +335,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
+    border-radius: var(--spacing-xs);
     font-weight: 500;
     border: 1px solid var(--color-primary-hover);
     background: var(--color-bg);
@@ -371,24 +378,24 @@
   }
 
   @media (max-width: $breakpoint-mobile - 1) {
-    gap: 0.5rem;
-    padding: 1.5rem 0;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md) 0;
 
     &__prev,
     &__next {
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      font-size: var(--font-size-base);
     }
 
     &__numbers {
-      gap: 0.25rem;
+      gap: var(--spacing-xs);
     }
 
     &__number,
     &__ellipsis {
-      min-width: 2.25rem;
-      height: 2.25rem;
-      font-size: 0.875rem;
+      min-width: var(--spacing-xl);
+      height: var(--spacing-xl);
+      font-size: var(--font-size-base);
     }
   }
 }

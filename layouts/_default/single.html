@@ -9,59 +9,69 @@
 {{ partial "image.html" (dict "page" . "hero" true) }}
 
 <div class="contents__container">
-    <div class="list__grid">
 
-    <article class="single">
-        <header class="single__masthead">
-            <h1 class="single__headline">{{ .Title }}</h1>
+   
 
-            <div class="single__byline">
-                {{ partial "date-modified" . }}
-
-                {{ $authorSlug := .Params.author | urlize }}
-                {{ $author := index hugo.Data.authors $authorSlug }}
-                {{ with $author }}
-                    <span>By {{ .name }}</span>
-                {{ else }}
-                    {{ with $.Params.author }}
-                        <span>By {{ . }}</span>
-                    {{ end }}
+        <article class="single">
+            <header class="contents__header">
+                <h1 class="contents__title">{{ .Title }}</h1>
+                {{ with .Description }}
+                <p class="contents__description">{{ . }}</p>
                 {{ end }}
 
-                <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
-            </div>
+                <div class="single__byline">
+                    {{ partial "date-modified" . }}
 
-            {{ if .Params.tags }}
+                    {{ $authorSlug := .Params.author | urlize }}
+                    {{ $author := index hugo.Data.authors $authorSlug }}
+                    {{ with $author }}
+                    <span>By {{ .name }}</span>
+                    {{ else }}
+                    {{ with $.Params.author }}
+                    <span>By {{ . }}</span>
+                    {{ end }}
+                    {{ end }}
+
+                    <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
+                </div>
+
+                {{ if .Params.tags }}
                 <div class="single__taxonomy">{{ i18n "tags" }}:
                     {{ with .Params.tags }}
-                        {{ $validTags := slice }}
-                        {{ range . }}
-                            {{ if ne . "" }}
-                                {{ $validTags = $validTags | append . }}
-                            {{ end }}
+                    {{ $validTags := slice }}
+                    {{ range . }}
+                    {{ if ne . "" }}
+                    {{ $validTags = $validTags | append . }}
+                    {{ end }}
+                    {{ end }}
+                    {{ if gt (len $validTags) 0 }}
+                    <span class="single__tags">
+                        {{ range $index, $tag := $validTags }}
+                        {{ if $index }} {{ end }}
+                        <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
+                            }}">#{{ $tag }}</a>
                         {{ end }}
-                        {{ if gt (len $validTags) 0 }}
-                            <span class="single__tags">
-                                {{ range $index, $tag := $validTags }}
-                                    {{ if $index }} {{ end }}
-                                    <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
-                                {{ end }}
-                            </span>
-                        {{ end }}
+                    </span>
+                    {{ end }}
                     {{ end }}
                 </div>
-            {{ end }}
-        </header>
+                {{ end }}
+            </header>
 
-        <div class="single__content">
-            {{ .Content }}
+            <div class="list__grid">
+            <div class="single__content">
+                {{ .Content }}
+                {{ partial "continue-reading.html" . }}
+             </div>
+            {{ partial "sidebar.html" (dict "page" . "context" "single") }}
+           
+        </article>
+
+        <div class="section-divider">
+            <span>Share your thoughts</span>
         </div>
-
-        {{ partial "continue-reading.html" . }}
         {{ partial "comments-netlify.html" . }}
-    </article>
-
-    {{ partial "sidebar.html" . }}
+ 
 
     </div>
 </div>

@@ -17,14 +17,13 @@
         right: 0;
         top: 50%;
         height: 1px;
-        background: var(--color-border);
+        background: var(--color-border-dark); 
     }
     
     span {
-        background: var(--color-bg-secondary);
+        background: var(--color-bg);
         padding: 0 var(--spacing-md);
         position: relative;
         color: var(--color-text-light);
-        font-weight: 600;
     }
 }

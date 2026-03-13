@@ -3,38 +3,54 @@
     legal/single.html
 </div>
 
-<div class="legal-page">
-    <div class="legal-page__container">
-        <aside class="toc">
-            <button class="toc__toggle">
-                <span class="toc__toggle-icon">−</span> Contents
-            </button>
-            <nav id="tocNav">
-                {{ .TableOfContents }}
-            </nav>
-        </aside>
+<div class="legal">
+    <div class="contents__container">
 
-        <article class="legal-content">
-            <header class="legal-content__header">
-                <h1>{{ .Title }}</h1>
+        {{/* Full width header — outside grid, spans both columns */}}
+        <header class="contents__header">
+            <h1 class="contents__title">{{ .Title }}</h1>
+            {{ with .Params.description }}
+            <p class="contents__description">{{ . }}</p>
+            {{ end }}
+            {{ partial "date-modified" . }}
+            <div class="reading-time">{{ .ReadingTime }} 
+                {{ i18n "min-read"}}
+            </div>
+        </header>
 
-                {{ with .Params.description }}
-                <p class="legal-content__description">{{ . }}</p>
-                {{ end }}
+        {{/* Two column grid — content left, ToC sidebar right */}}
+        <div class="list__grid">
 
-                <div class="legal-content__meta">
-                    {{ partial "date-modified" . }}
-                </div>
-            </header>
-
-            <div class="legal-content__body post__body">
-                {{ .Content }}
+            {{/* Mobile ToC — shown below desktop breakpoint, toggleable */}}
+            <div class="toc legal--inline">
+                <button class="button toc__toggle" aria-expanded="true"
+                    aria-controls="tocNav-inline">
+                    <span class="toc__toggle-icon">−</span> Contents
+                </button>
+                <nav id="tocNav-inline">
+                    {{ .TableOfContents }}
+                </nav>
             </div>
 
-            <footer class="legal-content__footer">
-                <p>If you have questions about this policy, please <a href="/contact">contact us</a>.</p>
-            </footer>
-        </article>
+            <article class="legal-content">
+                <div class="legal-content__body post__body">
+                    {{ .Content }}
+                </div>
+
+                <footer class="legal-content__footer">
+                    <p>If you have questions about this policy, please 
+                        <a href="/contact">contact us</a>.
+                    </p>
+                </footer>
+            </article>
+
+            {{/* ToC sidebar shown at tablet breakpoint only */}}
+            <aside class="widget sidebar toc legal--sidebar">
+                <h3 class="widget__title">{{ i18n "toc" }}</h3>
+                {{ .TableOfContents }}
+            </aside>
+
+        </div>
     </div>
 </div>
 {{ end }}

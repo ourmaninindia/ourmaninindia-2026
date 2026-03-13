@@ -26,6 +26,8 @@ other = "Search"
 other = "Search posts..."
 [search-input]
 other = "Search articles..."
+[toc]
+other = "Table of Contents"
 
 [nl-newsletter]
 other = "Newsletter"

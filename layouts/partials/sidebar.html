@@ -26,7 +26,14 @@
         {{/* ── List/section sidebar — discovery focused ───────── */}}
         {{ partial "sidebar/search.html"      $page }}
         {{ partial "sidebar/newsletter.html"  $page }}
+        {{ partial "sidebar/tags.html"         $page }}
+        {{ partial "sidebar/archive.html"      $page }}
+
+    {{ else if eq $context "single" }}
+        {{/* ── List/section sidebar — discovery focused ───────── */}}
         {{ partial "sidebar/recent-posts.html" $page }}
+        {{ partial "sidebar/search.html"      $page }}
+        {{ partial "sidebar/newsletter.html"  $page }}
         {{ partial "sidebar/tags.html"         $page }}
         {{ partial "sidebar/archive.html"      $page }}
 

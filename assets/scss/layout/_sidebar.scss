@@ -5,34 +5,34 @@
    ========================================== */
 
 .sidebar {
-  position: static;                    // ← no sticky on mobile
+  position: static; // ← no sticky on mobile
   display: grid;
   grid-template-columns: 1fr; // repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: var(--spacing-sm);
-row-gap: 0;
-  margin-bottom: var(--spacing-sm); 
+  row-gap: 0;
+  margin-bottom: var(--spacing-sm);
   align-items: start; // important to overide defaults
   align-content: start;
-  
- @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
-    display: block;
+
+  @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
+    display: grid;
     column-count: 2;
     column-gap: var(--spacing-sm);
 
     .widget {
-      break-inside: avoid;             // prevents a widget splitting across columns
+      break-inside: avoid; // prevents a widget splitting across columns
       margin-bottom: var(--spacing-sm);
       width: auto; // ← override any 100% width
     }
   }
 
-@media (min-width: $breakpoint-desktop) {
+  @media (min-width: $breakpoint-desktop) {
     display: grid;
-    grid-area: sidebar;                // ← only assign when parent grid is active
+    grid-area: sidebar; // ← only assign when parent grid is active
     position: sticky;
     top: 80px;
     grid-template-columns: 1fr;
-    grid-auto-rows: min-content;       // avoid default stretch!
+    grid-auto-rows: min-content; // avoid default stretch!
     gap: var(--spacing-sm);
     align-items: start;
     align-content: start;
@@ -48,16 +48,28 @@ row-gap: 0;
 
 // hide sidebar on homepage at mobile
 .home .sidebar {
-    display: none;
+  display: none;
 
-    @media (min-width: $breakpoint-desktop) {
-        display: block;
-    }
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+  }
 }
 
-.widget-search   { grid-area: search; }
-.widget-recent   { grid-area: recent; }
-.widget-categories { grid-area: categories; }
-.widget-tags     { grid-area: tags; }
-.widget-archive  { grid-area: archive; }
-.widget-newsletter { grid-area: newsletter; }
+.widget-search {
+  grid-area: search;
+}
+.widget-recent {
+  grid-area: recent;
+}
+.widget-categories {
+  grid-area: categories;
+}
+.widget-tags {
+  grid-area: tags;
+}
+.widget-archive {
+  grid-area: archive;
+}
+.widget-newsletter {
+  grid-area: newsletter;
+}

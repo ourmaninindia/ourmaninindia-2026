@@ -26,6 +26,8 @@ other = "Zoeken"
 other = "Zoek artikelen..."
 [search-input]
 other = "Zoek naar artikelen..."
+[toc]
+other = "Inhoudsopgave"
 
 [nl-newsletter]
 other = "Nieuwsbrief"

@@ -1,6 +1,6 @@
 ---
 date : 2020-04-12T19:56:20Z
-description : "A Dutch national with a Finance, IT, and Business Development background looking for a new leadership position."
+description : "The Dutch Happy Warrior"
 title : "About"
 featured_image : "header-alfred.jpg"
 featured_alt: "Alfred behind his desk in his office"

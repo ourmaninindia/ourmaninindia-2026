@@ -52,7 +52,7 @@ figure {
   }
 
   figcaption {
-    // font-size: 0.875rem;
+    // font-size: var(--font-size-sm);
     color: var(--color-text-light);
     text-align: center;
     font-style: italic;
@@ -82,12 +82,12 @@ figure {
 
 .image-left {
   float: left;
-  margin: 0 1.5rem 1rem 0;
+  margin: 0 var(--spacing-md) var(--spacing-sm) 0;
 }
 
 .image-right {
   float: right;
-  margin: 0 0 1rem 1.5rem;
+  margin: 0 0 var(--spacing-sm) var(--spacing-md);
 }
 
 // ==========================================
@@ -101,12 +101,12 @@ figure.post-image {
 
   &.left {
     float: left;
-    margin: 0 1.5rem 1rem 0;
+    margin:  0 var(--spacing-md) var(--spacing-sm) 0;
   }
 
   &.right {
     float: right;
-    margin: 0 0 1rem 1.5rem;
+    margin: 0 0 var(--spacing-sm) var(--spacing-md);
   }
 
   picture {
@@ -142,8 +142,8 @@ figure.post-image {
 
 .img-group {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 
   figure.post-image {
     flex: 1;
@@ -188,7 +188,7 @@ figure.post-image {
       font-style: italic;
       font-size: small;
       text-align: center;
-      padding: 0.25rem 0;
+      padding: var(--spacing-xs) 0;
     }
   }
 

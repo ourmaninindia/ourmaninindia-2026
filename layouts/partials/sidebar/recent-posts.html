@@ -1,15 +1,14 @@
 <h3 class="widget__title">{{ i18n "recentPosts" }}</h3>
+
 {{ $posts := where site.RegularPages "Section" .Section }}
-{{ range first 5 $posts }}
-    <a href="{{ .RelPermalink }}" class="widget__recent-post">
+{{ range first 5 (where $posts "RelPermalink" "ne" .RelPermalink) }}
+    {{ $image := .Resources.GetMatch (.Params.featured_image | default "featured*") }}
+    <a href="{{ .RelPermalink }}" class="widget__recent-post{{ if not $image }} widget__recent-post--text-only{{ end }}">
+        {{ if $image }}
         <div class="widget__recent-thumb">
-            {{ $image := .Resources.GetMatch (.Params.featured_image | default "featured*") }}
-            {{ if $image }}
-                <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
-            {{ else }}
-                <div class="widget__recent-post--no-image"></div>
-            {{ end }}
+            <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
         </div>
+        {{ end }}
         <div class="widget__recent-info">
             <h4>{{ .Title }}</h4>
             <div class="widget__recent-date">{{ .Date.Format "Jan 02, 2006" }}</div>

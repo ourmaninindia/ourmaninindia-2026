@@ -3,21 +3,21 @@
 {{ define "main" }}
 <div class="display-template hidden">_default/archive.html</div>
 
-<div class="contents__container">
-    {{ $year := .Params.year }}
-    {{ $month := .Params.month }}
-    {{ $archiveDate := printf "%s-%s-01" $year $month }}
+{{ $year := .Params.year }}
+{{ $month := .Params.month }}
+{{ $archiveDate := printf "%s-%s-01" $year $month }}
 
+<div class="contents__container">
     <header class="contents__header">
         <h1 class="contents__title">
-            Archive <span class="date">: {{ time $archiveDate | time.Format "January 2006" }}</span>
+            {{ i18n "archive" | default "Archive" }}
+            <span class="contents__date">: {{ time $archiveDate | time.Format "January 2006" }}</span>
         </h1>
     </header>
 
     <div class="list__grid">
         <section class="list__posts">
             {{ $targetDate := printf "%s-%s" $year $month }}
-
             {{ $posts := where (where site.Pages "Kind" "page") "Section" .Section }}
             {{ $matchedPosts := slice }}
 
@@ -32,7 +32,7 @@
                     {{ partial "post-card.html" (dict "post" $post "index" $index) }}
                 {{ end }}
             {{ else }}
-                <p class="archive__no-posts">No posts found for this period.</p>
+                <p class="archive__no-posts">{{ i18n "noPostsFound" | default "No posts found for this period." }}</p>
             {{ end }}
         </section>
 

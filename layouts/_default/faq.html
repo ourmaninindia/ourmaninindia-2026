@@ -11,9 +11,13 @@
         {{ with .Description }}
         <p class="contents__description">{{ . }}</p>
         {{ end }}
+        {{ partial "date-modified" . }}
+        <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read" }}</div>
     </header>
 
-    {{ .Content }}
+    {{ with .Content }}
+    <div class="single__content">{{ . }}</div>
+    {{ end }}
 
     <div class="accordion-list">
         <div class="accordion">

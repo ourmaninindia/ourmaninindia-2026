@@ -5,8 +5,8 @@
 
 <div class="contents__container">
     <header class="contents__header">
-        <h1 class="contents__title">Our Authors</h1>
-        <p class="contents__description">Meet the people behind the articles.</p>
+        <h1 class="contents__title">{{ i18n "ourAuthors" | default "Our Authors" }}</h1>
+        <p class="contents__description">{{ i18n "authorsDescription" | default "Meet the people behind the articles." }}</p>
     </header>
 
     <div class="authors-grid">
@@ -22,9 +22,9 @@
             {{ end }}
             <p>{{ $author.bio | truncate 120 }}</p>
             <div class="author-card__stats">
-                <span>{{ len (where site.RegularPages "Params.author" $slug) }} articles</span>
+                <span>{{ len $authorPosts }} {{ i18n "articles" | default "articles" }}</span>
             </div>
-            <a href="/authors/{{ $slug }}" class="button button--small">View Articles</a>
+            <a href="/authors/{{ $slug }}" class="button button--small">{{ i18n "viewArticles" | default "View Articles" }}</a>
         </div>
         {{ end }}
     </div>

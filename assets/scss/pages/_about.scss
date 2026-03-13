@@ -10,7 +10,7 @@
         text-align: right;
         width: 100%;
         font-style: italic;
-        margin-bottom: 1rem;
+        margin-bottom: var(--spacing-sm);
     }
 
     &__links {
@@ -20,7 +20,12 @@
     border: 1px solid var(--color-border);
     margin-bottom: var(--spacing-xl);
     }
-    
+
+    &__content {
+        p, li, blockquote {
+            max-width: 65ch;
+        }
+    }
 }
 
    

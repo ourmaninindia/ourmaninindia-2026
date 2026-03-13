@@ -4,12 +4,12 @@
 <div class="display-template hidden">_default/search.html</div>
 
 <div class="contents__container">
-    <div class="search single">
-        <header class="contents__header">
-            <h1 class="contents__title">Search</h1>
-            <p class="contents__description">Search through all posts</p>
-        </header>
+    <header class="contents__header">
+        <h1 class="contents__title">{{ i18n "search" | default "Search" }}</h1>
+        <p class="contents__description">{{ i18n "searchDescription" | default "Search through all posts" }}</p>
+    </header>
 
+    <div class="search">
         <div class="form">
             <div class="form__group form__group--float">
                 <input

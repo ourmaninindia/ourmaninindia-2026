@@ -112,7 +112,7 @@
     &__link {
         color: var(--header-text);
         text-decoration: none;
-        font-size: clamp(0.9375rem, 2vw, 1rem);
+        font-size: var(--font-size-md);
         transition: color var(--transition-base);
         display: block;
         padding: var(--spacing-xs) 0;
@@ -152,7 +152,7 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 5px;
-        background-color: var(--color-brand-orange); // FIXED: Changed from darkorange
+        background-color: var(--color-brand-orange); 
         border: none;
         cursor: pointer;
         padding: var(--spacing-xs);
@@ -212,7 +212,7 @@
         justify-content: center;
 
         @media (max-width: $breakpoint-tablet) {
-            color: var(--color-text); // Use text color on mobile
+            color: var(--color-text); 
         }
 
         &:hover {

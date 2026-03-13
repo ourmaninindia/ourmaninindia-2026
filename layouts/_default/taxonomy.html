@@ -5,8 +5,8 @@
 
 <div class="contents__container">
     <header class="contents__header">
-        <p class="contents__description">{{ i18n "postsTagged" }}</p>
         <h1 class="contents__title">{{ .Title }}</h1>
+        <p class="contents__description">{{ i18n "postsTagged" }}</p>
     </header>
 
     <div class="list__grid">
@@ -20,7 +20,7 @@
             {{ partial "pagination.html" $paginator }}
         </section>
 
-       {{ partial "sidebar.html" (dict "page" . "context" "list") }}
+        {{ partial "sidebar.html" (dict "page" . "context" "list") }}
     </div>
 </div>
 {{ end }}

@@ -96,6 +96,7 @@ $z-tooltip:    1050;
   --header-bg:          var(--color-brand-purple);
   --header-text:        hsl(0, 0%, 100%);               // #ffffff
   --header-border:      hsl(0, 0%, 100%, 0.1);          // white 10% opacity
+  --header-height:      14px;
   --footer-bg:          hsl(0, 0%, 16%);                // #2a2a2a
   --footer-text:        hsl(0, 0%, 100%);               // #ffffff
   --footer-text-muted:  hsl(0, 0%, 63%);                // #a0a0a0
@@ -104,6 +105,7 @@ $z-tooltip:    1050;
   // Colors - Debug (Development Only)
   --color-debug-bg:   hsl(34, 78%, 91%, 0.3); // antiquewhite 30% opacity
   --color-debug-text: hsl(120, 100%, 50%);    // #00ff00 lime green
+  --color-bg-icons:        hsl(120, 61%, 34%);  // forest green
 
   // Typography - Line Heights
   --line-height-base:    1.6;

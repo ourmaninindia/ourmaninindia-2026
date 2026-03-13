@@ -48,18 +48,19 @@ export function initTOC() {
  */
 
 function initTOCToggle() {
-    const tocNav = document.getElementById('tocNav');
+    const tocNav = document.getElementById('TableOfContents');
     const toggleBtn = document.querySelector('.toc__toggle');
     const toggleIcon = document.querySelector('.toc__toggle-icon');
     
     if (!toggleBtn || !tocNav) return;
     
     let isExpanded = true;
-    
+
     toggleBtn.addEventListener('click', () => {
         isExpanded = !isExpanded;
-        tocNav.classList.toggle('active');  // ✅ CSS controls display
+        tocNav.classList.toggle('hidden');
         toggleIcon.textContent = isExpanded ? '−' : '+';
+        toggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     });
 }
 

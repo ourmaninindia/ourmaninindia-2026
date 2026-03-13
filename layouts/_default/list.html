@@ -40,12 +40,12 @@
     </div>
     {{ end }}
 
-    <div class="contents__title">{{ i18n "recentPosts" . }}</div>
+    <h2 class="contents__title">{{ i18n "recentPosts" . }}</h2>
 
     <div class="list__grid">
         <section class="list__posts">
             {{ range $index, $post := $paginator.Pages }}
-            {{ if and .Date (ne (.Date.Format "2006") "0001") }} 
+            {{ if and .Date (ne (.Date.Format "2006") "0001") }}
             {{ partial "post-card.html" (dict "post" $post "index" $index) }}
             {{ end }}
             {{ end }}
@@ -53,7 +53,7 @@
             {{ partial "pagination.html" $paginator }}
         </section>
 
-       {{ partial "sidebar.html" (dict "page" . "context" "list") }}
+        {{ partial "sidebar.html" (dict "page" . "context" "list") }}
     </div>
 </div>
 {{ end }}

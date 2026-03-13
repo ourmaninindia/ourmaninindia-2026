@@ -1,102 +1,112 @@
 @use "../abstracts" as *;
 
 /* ==========================================
-   Typography and text STYLES
+   TYPOGRAPHY AND TEXT STYLES
    ========================================== */
-   
+
 $base-font-size: 16px;
 
 body {
-  font-family: Arapey, georgia, serif;
-  background-color: var(--color-bg) !important;
-  color: var(--color-text) !important;
-  transition: background-color var(--transition-base), color var(--transition-base);
+    font-family: Arapey, georgia, serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color var(--transition-base), color var(--transition-base);
 }
 
+// ============================================
 // Headings
+// ============================================
+
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-text-dark);
-  font-family: Arapey, sans-serif; // Replace with your preferred font
-  margin-top: 0;
-  margin-bottom: 1.2em;
-  line-height: 1.2;
-  text-wrap: balance;
-  width: fit-content;
-  text-align: left;
-  clear: both;
+    color: var(--color-text-dark);
+    font-family: Arapey, georgia, serif;
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    line-height: 1.2;
+    text-wrap: balance;
+    text-align: left;
+    clear: both;
 }
 
 h1 {
-  font-weight: 200;
-  font-size: clamp(2rem, 5vw, 2.5rem); // ~32px–40px
-  font-family: halimun, georgia, serif;
-   text-align: center;
+    font-weight: 200;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-family: halimun, georgia, serif;
+    text-align: center;
 }
 
-// H2 – Section headings
+// H2 — Section headings
 h2 {
-  font-weight: 100;
-  font-size: clamp(1.5rem, 4vw, 2rem); // ~24px–32px
-  line-height: 1.25;
-  font-family: Arapey, georgia, serif;
+    font-weight: 100;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.25;
+    font-family: Arapey, georgia, serif;
 }
 
-// H3 – Subsection headings
+// H3 — Subsection headings
 h3 {
-  font-weight: 500;
-  font-size: clamp(1.25rem, 3vw, 1.5rem); // ~20px–24px
-  line-height: 1.3;
+    font-weight: 500;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    line-height: 1.3;
 }
 
-// H4 – Minor headings
+// H4 — Minor headings
 h4 {
-  font-weight: 500;
-  font-size: clamp(1.125rem, 2.5vw, 1.25rem); // ~18px–20px
-  line-height: 1.35;
+    font-weight: 500;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    line-height: 1.35;
 }
 
-// H5 – Small headings
+// H5 — Small headings
 h5 {
-  font-weight: 500;
-  font-size: clamp(1rem, 2vw, 1.125rem); // ~16px–18px
-  line-height: 1.4;
+    font-weight: 500;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.4;
 }
 
-// H6 – Tiny headings
+// H6 — Tiny headings
 h6 {
-  font-weight: 500;
-  font-size: clamp(0.875rem, 1.5vw, 1rem); // ~14px–16px
-  line-height: 1.4;
+    font-weight: 500;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.4;
 }
 
-// Optional: adjust margin on smaller screens
-@media (max-width: 768px) {
-  h1, h2, h3 {
-    margin-bottom: 1em;
-  }
+@media (max-width: $breakpoint-mobile) {
+    h1, h2, h3 {
+        margin-bottom: 1em;
+    }
 }
 
-// Links
-a {
-  color: var(--color-primary);
-  transition: color var(--transition-base);
-
-  &:hover {
-    color: var(--color-primary-hover);
-  }
-}
-
-// Borders
-hr {
-  border-color: var(--color-border);
-}
+// ============================================
+// Body text
+// ============================================
 
 p {
-  margin-bottom: var(--spacing-md);
-  text-wrap:pretty;
+    margin-bottom: var(--spacing-md);
+    text-wrap: pretty;
 }
 
 article {
-  text-align: justify;
+    text-align: justify;
 }
 
+// ============================================
+// Links
+// ============================================
+
+a {
+    color: var(--color-primary);
+    transition: color var(--transition-base);
+
+    &:hover {
+        color: var(--color-primary-hover);
+    }
+}
+
+// ============================================
+// Miscellaneous
+// ============================================
+
+hr {
+    border-color: var(--color-border);
+}

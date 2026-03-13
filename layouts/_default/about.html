@@ -9,28 +9,27 @@
 {{ partial "image.html" (dict "page" . "hero" true) }}
 
 <div class="contents__container">
-    <article class="single">
-        <header class="single__header">
-            <h1 class="single__headline">{{ .Title }}</h1>
-            <time>{{ .Date.Format site.Params.date_format }}</time>
-            <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
-        </header>
+    <header class="contents__header">
+        <h1 class="contents__title">{{ .Title }}</h1>
+        {{ with .Params.description }}
+        <p class="contents__description">{{ . }}</p>
+        {{ end }}
+        {{ partial "date-modified" . }}
+        <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read" }}</div>
+    </header>
 
-        <div class="single__content">
-            {{ .Content }}
-        </div>
-
-        {{ partial "date.html" . }}
-
-        <div class="single__footer">
-            <nav class="about__links">
-                <a href="{{ "/about/" | relURL }}">About</a>
-                <a href="{{ "/about/cv/" | relURL }}">CV</a>
-                <a href="{{ "/about/education/" | relURL }}">Education</a>
-            </nav>
-
-            {{ partial "comments-netlify.html" . }}
-        </div>
+    <article class="single__content">
+        {{ .Content }}
     </article>
+
+    {{ partial "date.html" . }}
+
+    <nav class="about__links">
+        <a href="{{ "/about/" | relURL }}">About</a>
+        <a href="{{ "/about/cv/" | relURL }}">CV</a>
+        <a href="{{ "/about/education/" | relURL }}">Education</a>
+    </nav>
+
+    {{ partial "comments-netlify.html" . }}
 </div>
 {{ end }}

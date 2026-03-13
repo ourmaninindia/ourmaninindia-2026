@@ -71,11 +71,13 @@
 export function initProgressBar() {
   'use strict';
     
-  const progressBar = document.querySelector('.reading-progress__bar');
+  const longReadingPages = ['page-blog', 'page-cycling', 'page-tech', 'section-about', 'page-legal'];
   
-  // Early exit if progress bar element doesn't exist
+  if (!longReadingPages.some(cls => document.body.classList.contains(cls))) return;
+
+  const progressBar = document.querySelector('.reading-progress__bar');
   if (!progressBar) return;
-    
+
   /**
    * Calculates and updates progress bar width
    * 
