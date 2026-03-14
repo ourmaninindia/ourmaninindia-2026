@@ -2,7 +2,7 @@
 
 {{ define "main" }}
 <div class="display-template hidden">
-    _default/single.html
+  _default/single.html
 </div>
 
 {{/* hero */}}
@@ -10,71 +10,73 @@
 
 <div class="contents__container">
 
-        <article class="single">
-            <header class="contents__header">
-                <details class="share-menu">
-                    <summary class="share-menu__toggle" aria-label="{{ i18n "shareThisArticle" }}">⋮ share</summary>
-                    {{ partial "share-buttons.html" . }}
-                </details>
-                <h1 class="contents__title">{{ .Title }}</h1>
-                {{ with .Description }}
-                <p class="contents__description">{{ . }}</p>
-                {{ end }}
+  <article class="single">
+    <header class="contents__header">
+      <h1 class="contents__title">{{ .Title }}</h1>
+      {{ with .Description }}
+      <p class="contents__description">{{ . }}</p>
+      {{ end }}
 
-                <div class="single__byline">
-                    {{ partial "date-modified" . }}
+      <div class="single__byline">
+        {{ partial "date-modified" . }}
 
-                    {{ $authorSlug := .Params.author | urlize }}
-                    {{ $author := index hugo.Data.authors $authorSlug }}
-                    {{ with $author }}
-                    <span>By {{ .name }}</span>
-                    {{ else }}
-                    {{ with $.Params.author }}
-                    <span>By {{ . }}</span>
-                    {{ end }}
-                    {{ end }}
+        {{ $authorSlug := .Params.author | urlize }}
+        {{ $author := index hugo.Data.authors $authorSlug }}
+        {{ with $author }}
+        <span>By {{ .name }}</span>
+        {{ else }}
+        {{ with $.Params.author }}
+        <span>By {{ . }}</span>
+        {{ end }}
+        {{ end }}
 
-                    <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
-                </div>
+        <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
+      </div>
+      <details class="share-menu">
+        <summary class="share-menu__toggle"
+          aria-label="{{ i18n "shareThisArticle" }}">
+          {{ i18n "shareThisArticle" }} <span class="no-italic">⋮ </span>
+        </summary>
+        {{ partial "share-buttons.html" . }}
+      </details>
 
-                {{ if .Params.tags }}
-                <div class="single__taxonomy">{{ i18n "tags" }}:
-                    {{ with .Params.tags }}
-                    {{ $validTags := slice }}
-                    {{ range . }}
-                    {{ if ne . "" }}
-                    {{ $validTags = $validTags | append . }}
-                    {{ end }}
-                    {{ end }}
-                    {{ if gt (len $validTags) 0 }}
-                    <span class="single__tags">
-                        {{ range $index, $tag := $validTags }}
-                        {{ if $index }} {{ end }}
-                        <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
-                            }}">#{{ $tag }}</a>
-                        {{ end }}
-                    </span>
-                    {{ end }}
-                    {{ end }}
-                </div>
-                {{ end }}
-            </header>
+      {{ if .Params.tags }}
+      <div class="single__taxonomy">{{ i18n "tags" }}:
+        {{ with .Params.tags }}
+        {{ $validTags := slice }}
+        {{ range . }}
+        {{ if ne . "" }}
+        {{ $validTags = $validTags | append . }}
+        {{ end }}
+        {{ end }}
+        {{ if gt (len $validTags) 0 }}
+        <span class="single__tags">
+          {{ range $index, $tag := $validTags }}
+          {{ if $index }} {{ end }}
+          <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
+            }}">#{{ $tag }}</a>
+          {{ end }}
+        </span>
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </header>
 
-            <div class="list__grid">
-            <div class="single__content prose">
-                {{ .Content }}
-                {{ partial "continue-reading.html" . }}
-             </div>
-            {{ partial "sidebar.html" (dict "page" . "context" "single") }}
-           
-        </article>
-
-        <div class="section-divider">
-            <span>Share your thoughts</span>
-        </div>
-        {{ partial "comments-netlify.html" . }}
- 
-
+    <div class="list__grid">
+      <div class="single__content prose">
+        {{ .Content }}
+        {{ partial "continue-reading.html" . }}
+      </div>
+      {{ partial "sidebar.html" (dict "page" . "context" "single") }}
     </div>
+
+  </article>
+
+  <div class="section-divider">
+    <span>Share your thoughts</span>
+  </div>
+  {{ partial "comments-netlify.html" . }}
+
 </div>
 {{ end }}

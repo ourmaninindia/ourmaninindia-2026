@@ -6,8 +6,8 @@
 <div class="contents__container">
     <div class="contact">
         <header class="contents__header">
-            <h1 class="contents__title">Contact me</h1>
-            <p class="contents__description">See the various options below</p>
+            <h1 class="contents__title">{{ i18n "contactMe" | default "Contact me" }}</h1>
+            <p class="contents__description">{{ i18n "variousOptions" | default "See the various options below" }}</p>
         </header>
 
         {{ partial "sidebar/newsletter.html" . }}
@@ -97,8 +97,8 @@
             </section>
 
             <aside class="contact__info">
-                <h2 class="contact__info-title">🌐 Other ways to reach me</h2>
-                <p class="contact__info-description">Find me on any of these platforms.</p>
+                <h2 class="contact__info-title">🌐 {{ i18n "reachMe" | default "Other ways to reach me" }}</h2>
+                <p class="contact__info-description">{{ i18n "findMe" | default "Find me on any of these platforms." }}</p>
                 <div class="contact__methods">
 
                     <div class="contact__method">

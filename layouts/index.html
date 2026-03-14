@@ -29,8 +29,6 @@
   {{- $section_count := len $section }}
 
   {{- if ge $section_count 1 }}
-  {{- $section_name := "post" }}
-  {{- $posts := $.Param "recent_posts_number" | default 3 }}
 
   <section class="homepage__featured">
 
@@ -38,20 +36,12 @@
 
     <div class="list__grid">
         <section class="list__posts">
-            {{- range $index, $post := (first $posts $section) }}
+            {{- range $index, $post := $section }}
                 {{ partial "post-card.html" (dict "post" $post "index" $index) }}
             {{- end }}
         </section>
         {{ partial "sidebar.html" (dict "page" . "context" "home") }}
     </div>
-
-    {{- if ge $section_count (add $posts 1) }}
-    <div class="homepage__view-all">
-        <a class="posted" href="{{ .RelPermalink }}">
-            {{ i18n "allTitle" . }}
-        </a>
-    </div>
-    {{- end }}
 
 </section>
   {{- end }}

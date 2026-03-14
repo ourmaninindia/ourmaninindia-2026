@@ -38,8 +38,44 @@ other = "Table of Contents"
 other = "Related Articles"
 [shareThisArticle]
 other = "Share this article"
-[shareearchArticles]
+[shareSearchArticles]
 other = "Search articles"
+[searchArticles]
+other = "Search articles"
+
+[confirm-unsubscribe]
+other = "Confirm Unsubscribe"
+[processing]
+other = "Processing…"
+[unsubscribeSurveyPrompt]
+other = "If you have a moment, please let us know why you unsubscribed:"
+
+[ourAuthors]
+other = "Our Authors"
+[authorsDescription]
+other = "Meet the people behind the articles."
+[viewArticles]
+other = "View Articles"
+[noPostsFound]
+other = "No posts found for this period."
+[aboutMe]
+other = "About Me"
+
+[contactMe]
+other = "Contact me"
+[variousOptions]
+other = "See the various options below" 
+[reachMe]
+other = "Other ways to reach me" 
+[findMe]
+other = "Find me on any of these platforms."
+
+[about]
+other = "About"
+[cv]
+other = "CV"
+[education]
+other = "Education"
 
 [nl-newsletter]
 other = "Newsletter"

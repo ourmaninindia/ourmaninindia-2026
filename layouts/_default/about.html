@@ -25,9 +25,9 @@
    <time>📅 {{ i18n "page-created" }} {{ .Date.Format site.Params.date_format }}</time>
 
     <nav class="about__links">
-        <a href="{{ "/about/" | relURL }}">About</a>
-        <a href="{{ "/about/cv/" | relURL }}">CV</a>
-        <a href="{{ "/about/education/" | relURL }}">Education</a>
+        <a href="{{ "/about/" | relURL }}">{{ i18n "about" | default "About" }}</a>
+        <a href="{{ "/about/cv/" | relURL }}">{{ i18n "cv" | default "CV" }}</a>
+        <a href="{{ "/about/education/" | relURL }}">{{ i18n "education" | default "Education" }}</a>
     </nav>
 
     {{ partial "comments-netlify.html" . }}

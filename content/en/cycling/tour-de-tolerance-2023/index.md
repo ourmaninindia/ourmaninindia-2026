@@ -28,15 +28,15 @@ After two years cycling in the Dolomites, I missed last years’ tour in the Pyr
 I had trained quite a lot to join this years’ tour which covered the route from Geneva to Turin. Training for the mountains though is really difficult unless you are actually in the mountains. 
 
 
-## Aug 30 Delft to Amsterdam (71km)
+{{< cycling-day title="Day 0 — Delft to Amsterdam (71km)" >}}
 For our journey we had two support buses each with three drivers. I had promised to collect one of the two buses today so in the morning I cycled from *Delft* to *Amsterdam*. I got a bit of a drizzle after *Schiphol Airport* but reached the rental company in time and was more or less dried up by then due to the wind. 
 
 {{< img src="20230830_food_bus.jpg" class="right" size="small" eager="true" alt="Our food bus is getting ready" caption="The food bus getting ready" >}}
 
 I parked my cycle in the bus, drove to a friend’s place to collect our luggage, and found my way to the starting point. This was a small farm where we had to load all the cycles, luggage, and food for along the way: a lot of energy drinks and energy bars. The owner of the property, a fellow cyclist who unfortunately could not join this year, offered us a great home cooked lasagna. With a most satisfied stomach the three of us said goodbye and drove towards the south changing drivers a few times.  
-
-
-## Day 1 - Aug 31 Geneva to Les Carroz d’Araches (56km, 1,230m)
+{{< /cycling-day >}}
+ 
+{{< cycling-day title="Day 1 - Aug 31 Geneva to Les Carroz d’Araches (56km, 1,230m)">}}
 {{< img src="20230831_day-1_elevation.jpg" alt="the Elevations on Day 1" caption="Elevations Day 1" >}}
 
 After driving overnight to <em>Geneva</em> we sat down for a light breakfast not far from the station and waited for the rest of the gang who had either travelled by bus or train. 
@@ -48,8 +48,9 @@ I volunteered to drive one of our buses on the first day keen to cycle the most 
 {{< img src="20230831_Savoi_wine.jpg" alt="Enjoy the Nice Savoi wine" caption="Enjoy the Savoi wine" >}}
 
 On top of it, my bus did not have a navigation system nor a USB charging point so I had to rely on my mobile which ran out of battery at some stage. We stayed at the <em>Village de Vacances les Flocons</em> with dinner at the local <em>Grizzly pub</em> where I enjoyed their Swiss cheese fondue.
+{{< /cycling-day >}}
 
-## Day 2 - Sept 1 Les Carroz d’Araches to Orsières (105km, 2,510m)
+{{< cycling-day title="Day 2 - Sept 1 Les Carroz d’Araches to Orsières (105km, 2,510m)" >}} 
 {{< img src="Day-2_elevation.jpg" alt="the Elevations on  Day 2" caption="Elevations Day 2">}}
 
 Today we cycled 105km to the foot of the *Col du Grand Saint-Bernard (2469m)* across the French-Swiss border. The first 10km was all down hill to the A40. Then slowly we cycled towards the *Col de Bassachaux (1792m)*. 
@@ -66,8 +67,9 @@ From there we cycled downhill and crossed the Swiss border at a small non descri
 {{< img src="20230901_173826.jpg" alt="The last few miles to the hotel" caption="The last few miles to our hotel">}}
 {{< img src="20230901_accommodation.jpg" alt="It took a lot of effort to reach this village of a few inhabitants" caption="It was fabulous." >}}
 {{< /imgs >}}
+{{< /cycling-day >}}
 
-## Day 3 - Sept 2 Osières to Aosta (61km, 2,450m) 
+{{< cycling-day title="Day 3 - Sept 2 Osières to Aosta (61km, 2,450m)" >}} 
 {{< img src="Day-3_elevation.jpg" alt="Elevations on Day 3" caption="Elevations Day 3" >}} 
 
 Nearby *Osières* towards *Aosta* was a single 40 odd kilometers long, for an elevation gain of 1,983 meters, climb to the *Col du Grand Saint Bernard* on the Italian border. Being the first major climb of our tour it was a pretty tough ride. 
@@ -84,8 +86,9 @@ The way down was a long beautiful descent, most of it following a river, with gr
 {{< img src="20230902_111205.jpg" caption="After the tunnel before Saint Bernard" alt="After the tunnel before Saint Bernard" >}}
 {{< img src="saint_bernard.jpg" alt="Saint Bernard" caption="Col du Grand Saint Bernard" >}}
 {{< /imgs >}}
+{{< /cycling-day >}}
 
-## Day 4 - Sept 3 Aosta to Séez (78km, 2,070m) 
+{{< cycling-day title="Day 4 - Sept 3 Aosta to Séez (78km, 2,070m) " >}} 
 
 {{< img src="Day-4_elevation.jpg" caption="Elevatons on Day 4" alt="Elevatons on Day 4" >}} 
 
@@ -99,8 +102,10 @@ It did not take long to come across the first 8 hairpin bends. After *La Thuile*
 {{< img src="20230903-on_the_border.jpg" alt="The French-Italian border crossing" caption="On the Italian border">}}
 {{< img src="20230903_130350.jpg" alt="The statue of the St Bernard dog" caption="The St Bernard dog" >}}
 {{< /imgs >}}
+{{< /cycling-day >}}
 
-## Day 5 - Sept 4 Séez to Orelle (110km, 2,750m) 
+ 
+{{< cycling-day title="Day 5 - Sept 4 Séez to Orelle (110km, 2,750m)" >}} 
 {{< img src="Day-5_elevation.jpg" caption="Elevations on Day 5" alt="Elevations Day 5" >}} 
 
 *Col de l'Iseran* with an elevation of 2,764 metres is the highest paved pass in the Alps. It is near the border with Italy and a frequent climb in the Tour de France.
@@ -117,15 +122,18 @@ The way down to our accommodation in *Résidence Orelle* was some 68km down the 
 {{< img src="20230904_134856.jpg" alt="The snow line on Col de L'Iseran" caption="A bit of snow on top" >}}
 {{< img src="col-de-l'iseran.jpg" alt="Col de L'Iseran" >}}
 {{< /imgs >}}
+{{< /cycling-day >}}
 
-## Day 6 - Sept 5 Rest day
+{{< cycling-day title="Day 6 - Sept 5 Rest day" >}} 
 This was a day of rest. With my sleepy head I had forgotten that my bike was on the bus which was to be used for the guys who were going to get food for dinner. 
 
 {{< img src="20230905_view_from_our_room.jpg" alt="What a view" caption="View from our room">}}
 
 By the time I realised it the bus was gone so my legs enjoyed their well deserved rest. 
+{{< /cycling-day >}}
 
-## Day 7 - Sept 6 Orelle to Saint-Chaffrey (71km, 2,220m)
+
+{{< cycling-day title="Day 7 - Sept 6 Orelle to Saint-Chaffrey (71km, 2,220m)" >}} 
 {{< img src="Day-7_elevation.jpg" alt="Elevations on Day 7" caption="Elevations on Day 7" >}} 
 
 We had a short 7km descent before the 12km climb to the *Col du Télégraphe (1566m)* started. This route is often used during the ascent to *Col du Galibier (2642m)* in the Tour de France. 
@@ -140,8 +148,11 @@ After a great lunch at the summit we descended 30km to hotel *Terressens-Cristal
 {{< img src="20230906_104013.jpg" alt="The Col du Télégraphe" caption="The Col du Télégraphe" >}}
 {{< img src="20230906_galibier.jpg"  caption="The Col du Galibier" alt="The Col du Galibier" >}}
 {{< /imgs >}}
+{{< /cycling-day >}}
 
-## Day 8 - Sept 7 Saint-Chaffrey (Briancon) to Fenestrelle (63km, 1,940m)
+
+{{< cycling-day title="Day 8 - Sept 7 Saint-Chaffrey (Briancon) to Fenestrelle (63km, 1,940m)" >}} 
+
 {{< img src="Day-8_elevation.jpg" alt="Elevations on Day 8" caption="Elevations on Day 8" >}}
 
 We covered two cols and a final climb today. The first to *Col de Montgenevre (1,860m)*, a small but pretty ski resort on the French-Italian border, was manageable and I was happy to stop there for our coffee break.
@@ -158,8 +169,10 @@ Lunch did me a lot of good though. We had a great lunch at *LaVazza*. The 22km d
 {{< img src="20230907_144801.jpg" alt="The Olympic village" caption="Moving on after lunch" >}}
 {{< img src="20230907_view_from_our_hotel.jpg" alt="What a view" caption="View from our room. What a climb we made!" >}}
 {{< /imgs >}}
+{{< /cycling-day >}}
 
-## Day 9 - Sept 8 Final stretch to Turin (109km, 1,110m)
+{{< cycling-day title="Day 9 - Sept 8 Final stretch to Turin (109km, 1,110m)" >}} 
+
 {{< img src="Day-9_elevation.jpg" caption="Elevations on Day 9" alt="Elevations on Day 9" >}}
 
 This day comprised of two short cols. First we descended some 40km from our hotel and had some coffee at a restaurant in the park opposite the railway station in *Pinerolo*.
@@ -176,13 +189,15 @@ Even though the climb was nothing out of the ordinary, you could feel the muscle
 {{< img src="20230908_140803.jpg" alt="Waiting for all cyclists to pass" caption="Anyone cold water?" >}}
 {{< img src="20230908_142023.jpg" alt="the Colle Braida" caption="The last col" >}}
 {{< /imgs >}}
+{{< /cycling-day >}}
 
-## Sept 9 Homeward bound
+{{< cycling-day title="Sept 9 Homeward bound" >}} 
 After breakfast I drove to Geneva airport to drop of two of the guys and we continued all the way back to the Netherlands with initially me horizontally on the back seats. In Switzerland I woke up and enjoyed the stunning views of the mountains and witnessed the very long tunnels we passed through. The latter cost us 50 euro at the border. 
 
 {{< img src="IMG_20230909_switzerland.jpg" alt="What a view crossing Switzerland" caption="The Swiss Alps" >}}
 
 As we passed Montreaux on the Lake Geneva shoreline I played the song Smoke on the Water from Deep Purle. It was no longer 1971 so we drove fast only stopping a few times for fuel, a pee, or a snack, and reached home around 22:30. 
+{{< /cycling-day >}}
 
 <hr>
 

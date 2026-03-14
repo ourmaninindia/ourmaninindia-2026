@@ -8,6 +8,9 @@
     position: static; // no sticky on mobile
     display: grid;
     grid-template-columns: 1fr;
+    min-width: 0; // prevent grid blowout from widget min-content
+
+    .widget { min-width: 0; }
     gap: var(--spacing-sm);
     row-gap: 0;
     margin-bottom: var(--spacing-sm);
@@ -16,7 +19,7 @@
 
     // Tablet — two column widget grid
     @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
-        grid-template-columns: repeat(2, 1fr); // fixed: was column-count (multi-col, not grid)
+        grid-template-columns: 1fr; // fixed: was column-count (multi-col, not grid)
 
         .widget {
             break-inside: avoid;
@@ -48,7 +51,7 @@
 .home .sidebar {
     display: none;
 
-    @media (min-width: $breakpoint-desktop) {
+    @media (min-width: $breakpoint-tablet) {
         display: grid;
     }
 }
