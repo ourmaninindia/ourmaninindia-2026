@@ -1,11 +1,10 @@
-@use "sass:color";
 @use "../abstracts" as *;
 
 /* ==========================================
    FORM COMPONENTS
-   ==========================================*/
+   ========================================== */
 
-// Chrome specific issue
+// Chrome autofill override
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -31,8 +30,10 @@ input:-webkit-autofill:active {
         width: 100%;
         padding: var(--spacing-sm) var(--spacing-md);
         font-family: inherit;
-        font-size: var(--spacing-md);
-        transition: all var(--transition-base);
+        font-size: var(--font-size-md); // fixed: was var(--spacing-md)
+        transition:
+            border-color var(--transition-base),
+            outline var(--transition-base);
 
         &:focus {
             border: 1px solid var(--color-primary-hover);
@@ -50,7 +51,6 @@ input:-webkit-autofill:active {
 
         &:disabled {
             background: var(--color-bg-secondary);
-            // cursor: not-allowed;
             opacity: 0.6;
         }
     }
@@ -59,7 +59,7 @@ input:-webkit-autofill:active {
         display: block;
         font-size: var(--font-size-md);
         margin-bottom: var(--spacing-sm);
-        min-height: 1.1em; // prevents layout jump when error appears
+        min-height: 1.1em;
         visibility: hidden;
 
         &.visible {
@@ -86,15 +86,13 @@ input:-webkit-autofill:active {
         display: inline-block;
         content: " *";
         color: var(--color-error);
-        margin-left: 4px;
+        margin-left: var(--spacing-xs);
     }
 
     &__group {
         margin-bottom: var(--spacing-md);
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+        &:last-child { margin-bottom: 0; }
     }
 
     &__group--inline {
@@ -106,7 +104,7 @@ input:-webkit-autofill:active {
         .form__group,
         .form__group--float {
             flex: 1 1 20ch;
-            min-width: 20ch; // ← reduce from 30ch
+            min-width: 20ch;
         }
     }
 
@@ -117,7 +115,7 @@ input:-webkit-autofill:active {
         input,
         textarea {
             &::placeholder {
-                color: transparent; // hide placeholder — label acts as placeholder
+                color: transparent; // label acts as placeholder
             }
 
             &:focus,
@@ -137,7 +135,6 @@ input:-webkit-autofill:active {
             }
         }
 
-        // Input label: vertically centered in field
         input ~ .form__label--float {
             top: calc(var(--spacing-sm) + 0.5rem);
             transform: translateY(-50%);
@@ -145,7 +142,6 @@ input:-webkit-autofill:active {
             border-radius: var(--border-radius-md);
         }
 
-        // Textarea label: anchored to top of field
         textarea ~ .form__label--float {
             top: var(--spacing-md);
             transform: none;
@@ -172,10 +168,7 @@ input:-webkit-autofill:active {
         gap: var(--spacing-md);
     }
 
-    &__reason-form {
-        color: inherit;
-    }
-
+    &__reason-form,
     &__survey {
         color: inherit;
     }

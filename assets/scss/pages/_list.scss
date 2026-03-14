@@ -5,397 +5,248 @@
 // ============================================
 
 .section-intro {
-  margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
 
-  .post-image {
-    width: 200px;
-  }
+    .post-image {
+        width: 200px;
+    }
 }
 
 .section-intro::after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .list {
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    clear: both;
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        clear: both;
 
-    @media (min-width: $breakpoint-tablet) {
-      grid-template-columns: 1fr 280px;
-      grid-template-areas: "posts sidebar";
-      gap: var(--spacing-md);
+        @media (min-width: $breakpoint-tablet) {
+            grid-template-columns: 1fr 280px;
+            grid-template-areas: "posts sidebar";
+            gap: var(--spacing-md);
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+            grid-template-columns: 1fr 320px;
+            grid-template-areas: "posts sidebar";
+        }
+
+        @media (min-width: $breakpoint-wide) {
+            grid-template-columns: 1fr 380px;
+            grid-template-areas: "posts sidebar";
+            gap: var(--spacing-xl);
+        }
     }
 
-    @media (min-width: $breakpoint-desktop) {
-      grid-template-columns: 1fr 320px;
-      grid-template-areas: "posts sidebar";
+    &__content {
+        // Drop cap — list section intro only
+        // (single posts use .prose drop cap in _typography.scss)
+        p:first-of-type::first-letter {
+            font-size: var(--font-size-3xl);
+            line-height: 0.9;
+            float: left;
+            margin: 0.1em 0.1em 0 0;
+            font-weight: 700;
+            color: var(--color-drop-cap);
+            font-family: Georgia, "Times New Roman", serif;
+        }
     }
 
-    @media (min-width: $breakpoint-wide) {
-      grid-template-columns: 1fr 380px;
-      grid-template-areas: "posts sidebar";
-      gap: var(--spacing-xl);
-    }
-  }
+    &__posts {
+        // NOT flex — floats need normal block flow to work
+        display: block;
 
-  &__content {
-    // drop cap the very first letter
-    p:first-of-type::first-letter {
-      font-size: var(--font-size-3xl);
-      line-height: 0.9;
-      float: left;
-      margin: 0.1em 0.1em 0 0;
-      font-weight: 700;
-      color: var(--color-drop-cap);
-      font-family: Georgia, "Times New Roman", serif;
-    }
-  }
-
-  &__posts {
-    // NOT flex — floats need normal block flow to work
-    display: block;
-
-    @media (min-width: $breakpoint-desktop) {
-      grid-area: posts;
-    }
-  }
-
-  // spacing between cards — replaces flex gap
-  &__post + &__post {
-    margin-top: var(--spacing-xl);
-  }
-
-  // ============================================
-  // Post Card
-  // ============================================
-
-  &__post {
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--spacing-xs);
-    padding: var(--spacing-md);
-    box-shadow: var(--shadow-sm);
-
-    // clearfix — essential for float children
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
+        @media (min-width: $breakpoint-desktop) {
+            grid-area: posts;
+        }
     }
 
-    @media (min-width: $breakpoint-tablet) {
-      padding: var(--spacing-lg);
+    // spacing between cards — replaces flex gap
+    &__post + &__post {
+        margin-top: var(--spacing-xl);
     }
 
-    &:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-      // transition only on composited properties
-      transition:
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
+    // ============================================
+    // Post Card
+    // ============================================
+
+    &__post {
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: var(--spacing-xs);
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-sm);
+
+        // clearfix — essential for float children
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media (min-width: $breakpoint-tablet) {
+            padding: var(--spacing-lg);
+        }
+
+        &:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+            transition:
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
+        }
     }
-  }
 
-  // ============================================
-  // Post Body — wraps image + excerpt + read more
-  // ============================================
+    // ============================================
+    // Post Body — wraps image + excerpt + read more
+    // ============================================
 
-  &__post-body {
-    // block formatting context — text wraps alongside float
-    overflow: hidden;
-  }
-
-  // ============================================
-  // Post Image — floated for text wrapping
-  // ============================================
-
-  &__post-image {
-    // default: centered, full width, text below (mobile)
-    display: block;
-    width: 100%;
-    margin: 0 0 var(--spacing-sm) 0;
-
-    figure,
-    picture,
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: var(--spacing-xs);
+    &__post-body {
+        // block formatting context — text wraps alongside float
+        overflow: hidden;
     }
-  }
+
+    // ============================================
+    // Post Image — floated for text wrapping
+    // ============================================
+
+    &__post-image {
+        // default: full width, text below (mobile)
+        display: block;
+        width: 100%;
+        margin: 0 0 var(--spacing-sm) 0;
+
+        figure,
+        picture,
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--spacing-xs);
+        }
+    }
 }
 
 // float only when viewport is wide enough for meaningful text alongside
 // written outside .list {} to avoid @media inside BEM & issues in SCSS
 @media (min-width: 600px) {
-  .list__post-image {
-    width: 400px; // fixed width — float needs this to reserve space
-    max-width: 45%; // prevents image dominating on mid-size screens
-  }
+    .list__post-image {
+        width: 400px; // fixed width — float needs this to reserve space
+        max-width: 45%; // prevents image dominating on mid-size screens
+    }
 
-  .list__post--image-left .list__post-image {
-    float: left;
-    margin: 0 var(--spacing-md) var(--spacing-sm) 0;
-  }
+    .list__post--image-left .list__post-image {
+        float: left;
+        margin: 0 var(--spacing-md) var(--spacing-sm) 0;
+    }
 
-  .list__post--image-right .list__post-image {
-    float: right;
-    margin: 0 0 var(--spacing-sm) var(--spacing-md);
-  }
+    .list__post--image-right .list__post-image {
+        float: right;
+        margin: 0 0 var(--spacing-sm) var(--spacing-md);
+    }
 }
 
 // resume .list {} block for remaining rules
 .list {
-  // ============================================
-  // Post Content
-  // ============================================
+    // ============================================
+    // Post Content
+    // ============================================
 
-  &__post-title {
-    margin-bottom: var(--spacing-sm);
+    &__post-title {
+        margin-bottom: var(--spacing-sm);
 
-    h2 {
-      font-size: var(font-size-xl);
-      font-weight: 700;
-      line-height: 1.3;
-      margin: 0 0 0.5rem 0;
+        h2 {
+            font-size: var(--font-size-xl); // fixed: was var(font-size-xl) — missing --
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 0 0 0.5rem 0;
 
-      @media (min-width: $breakpoint-tablet) {
-        font-size: var(--font-size-2xl);
-      }
+            @media (min-width: $breakpoint-tablet) {
+                font-size: var(--font-size-2xl);
+            }
+        }
+
+        a {
+            color: var(--color-text-dark);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--color-primary-hover);
+            }
+        }
     }
 
-    a {
-      color: var(--color-text-dark);
-      text-decoration: none;
+    &__post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+        color: var(--color-text-light);
+        margin-bottom: var(--spacing-xs);
 
-      &:hover {
-        color: var(--color-primary-hover);
-      }
-    }
-  }
-
-  &__post-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    font-size: 0.875rem;
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-xs);
-
-    span,
-    time {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-xs);
-    }
-  }
-
-  &__post-excerpt {
-    color: var(--color-text);
-    font-size: var(--font-size-md);
-    line-height: 1.6;
-    margin: 0 0 var(--spacing-sm) 0;
-  }
-
-  &__read-more {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    color: var(--color-primary);
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.9375rem;
-    clear: both; // always appears below floated image
-
-    transition:
-      color 0.2s ease,
-      transform 0.2s ease;
-
-    &::after {
-      content: "→";
-      transition: transform 0.2s ease;
+        span,
+        time {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
     }
 
-    &:hover {
-      color: var(--color-primary-hover);
-
-      &::after {
-        transform: translateX(4px);
-      }
-    }
-  }
-
-  // ============================================
-  // Empty State
-  // ============================================
-
-  &__posts > p {
-    text-align: center;
-    color: var(--color-text-light);
-    font-size: var(--font-size-xl);
-    padding: var(--spacing-xl);
-    background: var(--color-bg);
-    border-radius: 12px;
-    border: 1px dashed var(--color-border);
-  }
-
-  &__taxonomy-description {
-    margin-bottom: var(--spacing-sm);
-  }
-}
-
-/* ============================================
-   Pagination
-   ============================================ */
-
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-lg) 0;
-  margin-top: var(--spacing-md);
-  border-top: 1px solid var(--color-border);
-  flex-wrap: wrap;
-
-  &:is(button) {
-    cursor: default;
-    font: inherit;
-  }
-
-  &__info {
-    width: 100%;
-    text-align: center;
-    font-size: var(--font-size-md);
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-xs);
-  }
-
-  &__prev,
-  &__next {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.625rem 1.25rem;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--spacing-xs);
-    color: var(--color-text-dark);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: var(--font-size-md);
-    box-shadow: var(--shadow-sm);
-    transition:
-      background 0.2s ease,
-      color 0.2s ease,
-      box-shadow 0.2s ease,
-      transform 0.2s ease;
-
-    &:hover {
-      background: var(--color-primary-hover);
-      color: var(--color-white);
-      border-color: var(--color-primary);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
+    &__post-excerpt {
+        color: var(--color-text);
+        font-size: var(--font-size-md);
+        line-height: 1.6;
+        margin: 0 0 var(--spacing-sm) 0;
     }
 
-    &:active {
-      transform: translateY(0);
-    }
-  }
+    &__read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        color: var(--color-primary);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: var(--font-size-md);
+        clear: both; // always appears below floated image
 
-  &__numbers {
-    display: flex;
-    gap: var(--spacing-xs);
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: center;
-    padding: 4px;
-    scrollbar-width: none;
+        transition:
+            color 0.2s ease,
+            transform 0.2s ease;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
+        &::after {
+            content: "→";
+            transition: transform 0.2s ease;
+        }
 
-  &__number,
-  &__ellipsis {
-    min-width: 44px;
-    height: 44px;
-    font-size: var(--font-size-md);
-  }
+        &:hover {
+            color: var(--color-primary-hover);
 
-  &__number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--spacing-xs);
-    font-weight: 500;
-    border: 1px solid var(--color-primary-hover);
-    background: var(--color-bg);
-    color: var(--color-text-dark);
-    text-decoration: none;
-    box-shadow: var(--shadow-sm);
-    transition:
-      background 0.2s ease,
-      color 0.2s ease,
-      box-shadow 0.2s ease,
-      transform 0.2s ease;
-
-    &:hover {
-      background: var(--color-bg-secondary);
-      color: var(--color-primary-hover);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-1px);
+            &::after {
+                transform: translateX(4px);
+            }
+        }
     }
 
-    &:active {
-      transform: translateY(0);
+    // ============================================
+    // Empty State
+    // ============================================
+
+    &__posts > p {
+        text-align: center;
+        color: var(--color-text-light);
+        font-size: var(--font-size-xl);
+        padding: var(--spacing-xl);
+        background: var(--color-bg);
+        border-radius: 12px;
+        border: 1px dashed var(--color-border);
     }
 
-    &.active {
-      background: var(--color-primary);
-      color: var(--color-white);
-      border-color: var(--color-primary);
-      cursor: default;
-      pointer-events: none;
+    &__taxonomy-description {
+        margin-bottom: var(--spacing-sm);
     }
-  }
-
-  &__ellipsis {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-light);
-    font-weight: 500;
-    user-select: none;
-  }
-
-  @media (max-width: $breakpoint-mobile - 1) {
-    gap: var(--spacing-xs);
-    padding: var(--spacing-md) 0;
-
-    &__prev,
-    &__next {
-      padding: var(--spacing-xs) var(--spacing-sm);
-      font-size: var(--font-size-base);
-    }
-
-    &__numbers {
-      gap: var(--spacing-xs);
-    }
-
-    &__number,
-    &__ellipsis {
-      min-width: var(--spacing-xl);
-      height: var(--spacing-xl);
-      font-size: var(--font-size-base);
-    }
-  }
 }

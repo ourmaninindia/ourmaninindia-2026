@@ -1,16 +1,12 @@
-@use "sass:color";
 @use "../abstracts" as *;
 
 /* ==========================================
    MODAL COMPONENT
-   ==========================================*/
+   ========================================== */
 
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(4px);
     z-index: 9998;
@@ -20,12 +16,12 @@
     padding: var(--spacing-lg);
     opacity: 0;
     transition: opacity 0.3s ease;
-    
+
     &--open {
         display: flex;
         opacity: 1;
     }
-    
+
     &__dialog {
         background: var(--color-bg);
         border-radius: var(--border-radius-lg);
@@ -36,12 +32,12 @@
         overflow-y: auto;
         position: relative;
         animation: modalSlideIn 0.3s ease;
-        
+
         @media (max-width: $breakpoint-mobile) {
             max-width: 95vw;
         }
     }
-    
+
     &__header {
         padding: var(--spacing-lg);
         border-bottom: 1px solid var(--color-border);
@@ -53,14 +49,14 @@
         background: var(--color-bg);
         z-index: 1;
     }
-    
+
     &__title {
         margin: 0;
-        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        font-size: var(--font-size-xl);
         font-weight: 700;
         color: var(--color-text);
     }
-    
+
     &__close {
         width: 32px;
         height: 32px;
@@ -68,36 +64,38 @@
         border: 1px solid var(--color-border);
         border-radius: var(--border-radius-md);
         color: var(--color-text);
-        font-size: 1.5rem;
+        font-size: var(--font-size-2xl);
         line-height: 1;
         cursor: pointer;
-        transition: all var(--transition-base);
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
         margin-left: var(--spacing-md);
-        
+        transition:
+            background var(--transition-base),
+            color var(--transition-base),
+            border-color var(--transition-base),
+            transform var(--transition-base);
+
         &:hover {
             background: var(--color-primary);
             color: var(--color-white);
             border-color: var(--color-primary);
             transform: rotate(90deg);
         }
-        
+
         &:active {
             transform: rotate(90deg) scale(0.9);
         }
     }
-    
+
     &__body {
         padding: var(--spacing-lg);
-        
-        p:last-child {
-            margin-bottom: 0;
-        }
+
+        p:last-child { margin-bottom: 0; }
     }
-    
+
     &__footer {
         padding: var(--spacing-lg);
         border-top: 1px solid var(--color-border);
@@ -107,49 +105,25 @@
         position: sticky;
         bottom: 0;
         background: var(--color-bg);
-        
+
         @media (max-width: $breakpoint-mobile) {
             flex-direction: column;
-            
-            .button {
-                width: 100%;
-            }
+
+            .button { width: 100%; }
         }
     }
-    
-    // Modal Sizes
-    &--small {
-        .modal__dialog {
-            max-width: 400px;
-        }
-    }
-    
-    &--large {
-        .modal__dialog {
-            max-width: 800px;
-        }
-    }
-    
-    &--full {
-        .modal__dialog {
-            max-width: 95vw;
-            max-height: 95vh;
-        }
-    }
+
+    // ── Size modifiers ────────────────────────────────────────────────────────
+
+    &--small .modal__dialog { max-width: 400px; }
+    &--large .modal__dialog { max-width: 800px; }
+    &--full  .modal__dialog { max-width: 95vw; max-height: 95vh; }
 }
 
 @keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    from { opacity: 0; transform: translateY(-50px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-// Prevent body scroll when modal is open
-body.modal-open {
-    // overflow: hidden;
-}
+// Prevent body scroll when modal open — enable when modal JS is wired up
+// body.modal-open { overflow: hidden; }

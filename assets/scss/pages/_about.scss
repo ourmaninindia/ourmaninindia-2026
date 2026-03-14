@@ -14,18 +14,12 @@
     }
 
     &__links {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-lg);
-    border: 1px solid var(--color-border);
-    margin-bottom: var(--spacing-xl);
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-lg);
+        border: 1px solid var(--color-border);
+        margin-bottom: var(--spacing-xl);
     }
 
-    &__content {
-        p, li, blockquote {
-            max-width: 65ch;
-        }
-    }
+    // __content max-width handled by .prose on the template element
 }
-
-   

@@ -1,5 +1,11 @@
 [readMore]
 other = "Read more →"
+[continueReading]
+other = "Continue reading"
+[newer]
+other = "Newer"
+[older]
+other = "Older"
 [previous]
 other = "Previous"
 [next]
@@ -28,6 +34,12 @@ other = "Search posts..."
 other = "Search articles..."
 [toc]
 other = "Table of Contents"
+[relatedArticles]
+other = "Related Articles"
+[shareThisArticle]
+other = "Share this article"
+[shareearchArticles]
+other = "Search articles"
 
 [nl-newsletter]
 other = "Newsletter"
@@ -134,6 +146,14 @@ other = "Sorry, the page you're looking for doesn't exist or has been moved."
 other = "Home"
 [ep-browse]
 other = "Browse"
+[ep-search-heading]
+other = "Search for something"
+[ep-search-placeholder] 
+other = "Search articles…"
+[ep-recent-heading]
+other = "Recent posts"
+[ep-suggestions-heading]
+other = "Explore sections"
 
 [page-updated]
 other = "Updated on"

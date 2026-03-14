@@ -10,7 +10,7 @@
 
     <div>
         {{ if $paginator.HasPrev }}
-            <a class="pagination__prev" href="{{ $paginator.Prev.URL }}">← Newer</a>
+            <a class="pagination__prev" href="{{ $paginator.Prev.URL }}">← {{ i18n "newer" }}</a>
         {{ end }}
 
         <div class="pagination__numbers">
@@ -26,7 +26,7 @@
         </div>
 
         {{ if $paginator.HasNext }}
-            <a class="pagination__next" href="{{ $paginator.Next.URL }}">Older →</a>
+            <a class="pagination__next" href="{{ $paginator.Next.URL }}">{{ i18n "older" }} →</a>
         {{ end }}
     </div>
 </nav>

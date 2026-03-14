@@ -5,34 +5,38 @@
    ========================================== */
 
 .breadcrumb {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-  width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
 
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  font-size: 0.9rem;
+    li::after {
+        content: "›";
+        margin-left: var(--spacing-xs);
+        color: var(--color-text-light);
+    }
 
-  & li::after {
-    content: ">";
-    margin-left: 0.5em;
-  }
+    li:last-child::after {
+        content: "";
+        margin: 0;
+    }
 
-  & li:last-child::after {
-    content: "";
-    margin: 0;
-  }
+    li a {
+        text-decoration: none;
+        color: var(--color-info);
 
-  & li a {
-    text-decoration: none;
-    color: var(--color-info);
-  }
+        &:hover {
+            color: var(--color-primary-hover);
+        }
+    }
 
-  & li[aria-current="page"] {
-    font-weight: bold;
-    color: var(--color-text-dark);
-  }
+    li[aria-current="page"] {
+        font-weight: 600;
+        color: var(--color-text-dark);
+    }
 }

@@ -1,122 +1,29 @@
 @use "variables" as *;
 
-/* ========================================== 
-   Reusable mixins and functions
-   ========================================== */
-
-// Media query mixin
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == mobile {
-    @media (max-width: $breakpoint-mobile) {
-      @content;
-    }
-  } @else if $breakpoint == tablet {
-    @media (max-width: $breakpoint-tablet) {
-      @content;
-    }
-  } @else if $breakpoint == desktop {
-    @media (max-width: $breakpoint-desktop) {
-      @content;
-    }
-  } @else if $breakpoint == wide {
-    @media (min-width: $breakpoint-wide) {
-      @content;
-    }
-  }
-}
-
-// Container query mixin (with fallback)
-@mixin container-query($max-width) {
-  @container (max-width: #{$max-width}) {
-    @content;
-  }
-}
-
-// Container query fallback
-@mixin container-query-fallback($max-width) {
-  @supports not (container-type: inline-size) {
-    @media (max-width: $max-width) {
-      @content;
-    }
-  }
-}
-
-// Flexbox center mixin
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// Grid center mixin
-@mixin grid-center {
-  display: grid;
-  place-items: center;
-}
-
-// Transition mixin
-// $properties... → variadic argument (can take 1 or many properties)
-// var(--transition-base) → duration + timing function
-@mixin transition($properties...) {
-  transition: var(--transition-base);
-  transition-property: $properties;
-}
-
-// Hover state mixin (with reduced motion support)
-@mixin hover-state {
-  @media (hover: hover) {
-    &:hover {
-      @content;
-    }
-  }
-}
-
-// Truncate text
-@mixin truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-// Multi-line truncate
-@mixin line-clamp($lines) {
-  display: -webkit-box;
-  -webkit-line-clamp: $lines;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-// Aspect ratio box
-@mixin aspect-ratio($width, $height) {
-  position: relative;
-  
-  &::before {
-    content: '';
-    display: block;
-    padding-top: calc(($height / $width) * 100%);
-  }
-}
-
-// Visually hidden (accessible but not visible)
-@mixin visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0 0 0 0) !important;
-  clip-path: inset(50%) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
 /* ==========================================
-   FORM base mixin — shared by .form and .widget
+   MIXINS
    ========================================== */
+
+// ── Visually hidden — accessible but not visible ──────────────────────────────
+// Used by: _reset.scss (.sr-only, .visually-hidden)
+
+@mixin visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+// ── Form base — shared card shell for .form, .widget, .contact ───────────────
+// Used by: _widgets.scss, _contact.scss
 
 @mixin form-base {
-    transition: all var(--transition-base);
     background: var(--color-bg-secondary);
     padding: var(--spacing-md);
     border-radius: var(--border-radius-lg);
@@ -124,6 +31,10 @@
     box-shadow: var(--shadow-sm);
     width: 100%;
     margin-bottom: var(--spacing-md);
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
 
     &:hover {
         transform: translateY(-2px);
@@ -137,7 +48,7 @@
     }
 
     &__title {
-        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-size: var(--font-size-2xl);
         margin-bottom: var(--spacing-sm);
         color: var(--color-text);
     }
@@ -145,7 +56,25 @@
     &__description {
         color: var(--color-text-light);
         margin-bottom: 0;
-        font-size: clamp(0.875rem, 2vw, 1rem);
+        font-size: var(--font-size-base);
         line-height: var(--line-height-relaxed);
     }
+}
+
+// ── Text utilities ─────────────────────────────────────────────────────────────
+// Not currently used but genuinely useful — keeping for future templates/widgets
+
+// Single-line truncation with ellipsis
+@mixin truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Multi-line clamp (native CSS, well-supported)
+@mixin line-clamp($lines) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

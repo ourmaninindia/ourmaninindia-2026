@@ -2,14 +2,15 @@
 
 /* ==========================================
    COMMENTS — Netlify Forms
+   NOTE: Only one of _comments.scss or _comments-cusdis.scss
+   should be active at a time. Comment out the unused one in
+   blocks/_index.scss.
    ========================================== */
 
 .comments {
-    // margin-top: var(--spacing-xl);
     border-top: 2px solid var(--color-border);
-    // padding-top: var(--spacing-xl);
-    background-color: var(--color-comments); 
-    padding: var(--spacing-xs); 
+    background-color: var(--color-comments);
+    padding: var(--spacing-xs);
 
     &__reply-indicator {
         display: flex;
@@ -29,7 +30,7 @@
             border: none;
             cursor: pointer;
             color: var(--color-text-light);
-            font-size: 1rem;
+            font-size: var(--font-size-base);
             padding: 0 var(--spacing-xs);
             line-height: 1;
 
@@ -40,7 +41,7 @@
     }
 }
 
-// ── Individual comments ───────────────────────────────────────────────
+// ── Individual comments ───────────────────────────────────────────────────────
 
 .comment {
     padding: var(--spacing-sm);
@@ -58,7 +59,6 @@
         display: flex;
         align-items: center;
         gap: var(--spacing-sm);
-        // margin-bottom: var(--spacing-sm);
         flex-wrap: wrap;
     }
 
@@ -78,11 +78,13 @@
         background: none;
         border: 1px solid var(--color-border);
         border-radius: var(--border-radius-sm);
-        padding: 2px var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
         font-size: var(--font-size-sm);
         color: var(--color-text-light);
         cursor: pointer;
-        transition: all var(--transition-base);
+        transition:
+            border-color var(--transition-base),
+            color var(--transition-base);
 
         &:hover {
             border-color: var(--color-primary);
@@ -96,7 +98,8 @@
         font-size: var(--font-size-md);
     }
 
-    // ── Threaded replies ──────────────────────────────────────────────
+    // ── Threaded replies ──────────────────────────────────────────────────────
+
     &__replies {
         margin-top: var(--spacing-md);
         padding-left: var(--spacing-lg);
@@ -109,7 +112,7 @@
     }
 }
 
-// ── Responsive ────────────────────────────────────────────────────────
+// ── Responsive ────────────────────────────────────────────────────────────────
 
 @media (max-width: $breakpoint-mobile) {
     .comments {
@@ -117,9 +120,7 @@
         padding-top: var(--spacing-lg);
     }
 
-    .comment {
-        &__replies {
-            padding-left: var(--spacing-md);
-        }
+    .comment__replies {
+        padding-left: var(--spacing-md);
     }
 }

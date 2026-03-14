@@ -10,10 +10,12 @@
 
 <div class="contents__container">
 
-   
-
         <article class="single">
             <header class="contents__header">
+                <details class="share-menu">
+                    <summary class="share-menu__toggle" aria-label="{{ i18n "shareThisArticle" }}">⋮ share</summary>
+                    {{ partial "share-buttons.html" . }}
+                </details>
                 <h1 class="contents__title">{{ .Title }}</h1>
                 {{ with .Description }}
                 <p class="contents__description">{{ . }}</p>
@@ -59,7 +61,7 @@
             </header>
 
             <div class="list__grid">
-            <div class="single__content">
+            <div class="single__content prose">
                 {{ .Content }}
                 {{ partial "continue-reading.html" . }}
              </div>

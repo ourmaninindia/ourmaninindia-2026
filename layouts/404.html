@@ -1,22 +1,70 @@
-{{ define "title" }}{{ .Title }} | {{ site.Title }}{{ end }}
+{{ define "title" }}{{ i18n "ep-error" | default "Page Not Found" }} | {{ site.Title }}{{ end }}
 
 {{ define "main" }}
-<div class="display-template hidden">
-  404.html
-</div>
+<div class="display-template hidden">404.html</div>
 
-<div class="container">
+<div class="contents__container">
     <div class="error-page">
-        <h1 class="error-page__code">404</h1>
-        <h2 class="error-page__title">{{ i18n "ep-error" }}</h2>
+
+        {{/* ── Code + message ───────────────────────────────── */}}
+        <h1 class="error-page__code" aria-label="Error 404">404</h1>
+        <h2 class="error-page__title">{{ i18n "ep-error" | default "Page Not Found" }}</h2>
         <p class="error-page__description">
-            {{ i18n "ep-error-description" }}
+            {{ i18n "ep-error-description" | default "The page you were looking for doesn't exist or has been moved." }}
         </p>
+
+        {{/* ── Primary actions ──────────────────────────────── */}}
         <div class="error-page__actions">
-            <a href="/" class="button">{{ i18n "home" }}</a>
-            <a href="/search" class="button button--secondary">{{ i18n "ep-browse" }}</a>
+            <a href="/" class="button">{{ i18n "home" | default "Home" }}</a>
+            <a href="/search" class="button button--secondary">{{ i18n "ep-browse" | default "Browse all posts" }}</a>
+        </div>
+
+        {{/* ── Search ───────────────────────────────────────── */}}
+        <div class="error-page__search">
+            <h3>{{ i18n "ep-search-heading" | default "Search for something" }}</h3>
+            <form class="error-page__search-form" role="search" action="/search">
+                <input
+                    class="error-page__search-input"
+                    type="search"
+                    name="q"
+                    placeholder="{{ i18n "ep-search-placeholder" | default "Search articles…" }}"
+                    aria-label="{{ i18n "ep-search-placeholder" | default "Search articles" }}"
+                    autocomplete="off">
+                <button type="submit" class="button">
+                    {{ i18n "search" | default "Search" }}
+                </button>
+            </form>
+        </div>
+
+        {{/* ── Recent posts ──────────────────────────────────── */}}
+        {{ $recent := first 5 (where site.RegularPages "Kind" "page") }}
+        {{ if $recent }}
+        <div class="error-page__recent">
+            <h3>{{ i18n "ep-recent-heading" | default "Recent posts" }}</h3>
+            {{ range $recent }}
+            <div class="error-page__mini-post">
+                <h4>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h4>
+                <p class="error-page__mini-post__date">
+                    📅 {{ .Date.Format (site.Params.date_format | default "Jan 02, 2006") }}
+                    {{ with .Params.author }}· {{ . }}{{ end }}
+                </p>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* ── Suggestions — sections to explore ───────────── */}}
+        <div class="error-page__suggestions">
+            <h3>{{ i18n "ep-suggestions-heading" | default "Explore sections" }}</h3>
+            {{ range site.Sections }}
+            <a href="{{ .RelPermalink }}" class="error-page__suggestion-item">
+                <h4>{{ .Title }}</h4>
+                <p>{{ len .Pages }} {{ i18n "articles" | default "articles" }}</p>
+            </a>
+            {{ end }}
         </div>
     </div>
-</div>  
-
+</div>
 {{ end }}

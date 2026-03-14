@@ -15,9 +15,6 @@
 @use './layout/contents';
 @use './layout/sidebar';
 
-// Blocks — above the fold
-@use './blocks/form';      // remove if no form above fold
-
 // Components — visible above fold
 @use './components/accessibility';
 @use './components/buttons';

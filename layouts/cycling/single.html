@@ -1,106 +1,114 @@
 {{ define "main" }}
 <div class="display-template hidden">
-    cycling/single.html
+  cycling/single.html
 </div>
 
-  {{ $content := .Content }}
+{{ $content := .Content }}
 
-  {{/* Split content into sections at each H3 */}}
-  {{ $sections := split $content "<h3" }}
-
-
-{{ with .Params.featured_image }}
-    {{ $parallax := $.Resources.Get . }}
-    {{ with $parallax }}
-        <div class="parallax" style="background-image: url('{{ .RelPermalink }}')"></div>
-    {{ end }}
+{{/* Split content into sections at each H3 */}}
+{{ $sections := split $content "<h3" }}
+  {{ with .Params.featured_image }}
+  {{ $parallax :=$.Resources.Get . }}
+  {{ with $parallax }}
+  <div class="parallax"
+  style="background-image: url('{{ .RelPermalink }}')"></div>
+{{ end }}
 {{ end }}
 
 <div class="contents__container">
-  <article class="cycling-post">
+  <article class="single cycling-post">
 
     {{/* Masthead */}}
     <header class="cycling-post__masthead">
       <h1 class="cycling-post__headline">{{ .Title }}</h1>
       <div class="cycling-post__byline">
-         <time>{{ .Date.Format site.Params.date_format }}</time>
-         <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
+        <time>{{ .Date.Format site.Params.date_format }}</time>
+        <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
+        <details class="share-menu">
+          <summary class="share-menu__toggle"
+            aria-label="{{ i18n "shareThisArticle" }}">
+            {{ i18n "shareThisArticle" }} <span class="no-italic">⋮ </span>
+          </summary>
+          {{ partial "share-buttons.html" . }}
+        </details>
       </div>
     </header>
 
     {{/* Intro section — everything before first H3, newspaper two-column */}}
     {{ $intro := index $sections 0 }}
     {{ if $intro }}
-      <div class="cycling-post__intro">
-        {{ $intro | safeHTML }}
-      </div>
+    <div class="cycling-post__intro">
+      {{ $intro | safeHTML }}
+    </div>
     {{ end }}
 
     {{/* Day sections — each starts with H3 */}}
     {{ range $i, $section := $sections }}
-      {{ if gt $i 0 }} 
-        {{/* Restore the H3 tag that was removed by split */}}
-        {{ $fullSection := printf "<h3%s" $section }}
+    {{ if gt $i 0 }}
+    {{/* Restore the H3 tag that was removed by split */}}
+    {{ $fullSection := printf "<h3%s" $section }}
+      {{/* Extract all figures from this section */}}
+      {{/* Extract only standalone figures — not those inside .img-group */}}
+      {{ $figures :=findRE `<figure(?:[^>]*)>[\s\S]*?</figure>` $fullSection }}
 
-        {{/* Extract all figures from this section */}}
-       {{/* Extract only standalone figures — not those inside .img-group */}}
-{{ $figures := findRE `<figure(?:[^>]*)>[\s\S]*?</figure>` $fullSection }}
+    {{/* Extract img-groups to keep them together */}}
+    {{ $imgGroups := findRE `<div class="img-group">[\s\S]*?</div>` $fullSection
+    }}
 
-{{/* Extract img-groups to keep them together */}}
-{{ $imgGroups := findRE `<div class="img-group">[\s\S]*?</div>` $fullSection }}
-
-{{/* Remove standalone figures and img-groups from text */}}
-{{ $text := $fullSection }}
-{{ range $figures }}
-  {{ $text = replace $text . "" }}
-{{ end }}
-{{ range $imgGroups }}
-  {{ $text = replace $text . "" }}
-{{ end }}
-
-{{/* Extract only standalone figures — not those inside .img-group */}}
-{{ $allFigures := findRE `<figure(?:[^>]*)>[\s\S]*?</figure>` $fullSection }}
-
-{{/* Only keep figures that are not preceded by img-group div */}}
-{{ $standaloneFigures := slice }}
-{{ range $allFigures }}
-  {{ $fig := . }}
-  {{ $inGroup := false }}
-  {{ range findRE `<div class="img-group">[\s\S]*?</div>` $fullSection }}
-    {{ if in . $fig }}
-      {{ $inGroup = true }}
+    {{/* Remove standalone figures and img-groups from text */}}
+    {{ $text := $fullSection }}
+    {{ range $figures }}
+    {{ $text = replace $text . "" }}
     {{ end }}
-  {{ end }}
-  {{ if not $inGroup }}
+    {{ range $imgGroups }}
+    {{ $text = replace $text . "" }}
+    {{ end }}
+
+    {{/* Extract only standalone figures — not those inside .img-group */}}
+    {{ $allFigures := findRE `<figure(?:[^>]*)>[\s\S]*?</figure>` $fullSection
+    }}
+
+    {{/* Only keep figures that are not preceded by img-group div */}}
+    {{ $standaloneFigures := slice }}
+    {{ range $allFigures }}
+    {{ $fig := . }}
+    {{ $inGroup := false }}
+    {{ range findRE `<div class="img-group">[\s\S]*?</div>` $fullSection }}
+    {{ if in . $fig }}
+    {{ $inGroup = true }}
+    {{ end }}
+    {{ end }}
+    {{ if not $inGroup }}
     {{ $standaloneFigures = $standaloneFigures | append $fig }}
-  {{ end }}
-{{ end }}
+    {{ end }}
+    {{ end }}
 
-{{/* Remove only standalone figures from text — img-groups stay */}}
-{{ $text := $fullSection }}
-{{ range $standaloneFigures }}
-  {{ $text = replace $text . "" }}
-{{ end }}
+    {{/* Remove only standalone figures from text — img-groups stay */}}
+    {{ $text := $fullSection }}
+    {{ range $standaloneFigures }}
+    {{ $text = replace $text . "" }}
+    {{ end }}
 
-<div class="cycling-day{{ if not $standaloneFigures }} cycling-day--no-images{{ end }}">
-  <div class="cycling-day__text">
-    {{ $text | safeHTML }}
-  </div>
+    <div
+      class="cycling-day{{ if not $standaloneFigures }} cycling-day--no-images{{ end }}">
+      <div class="cycling-day__text">
+        {{ $text | safeHTML }}
+      </div>
 
-  {{ if $standaloneFigures }}
-    <div class="cycling-day__images">
-      {{ range $standaloneFigures }}
+      {{ if $standaloneFigures }}
+      <div class="cycling-day__images">
+        {{ range $standaloneFigures }}
         {{ . | safeHTML }}
+        {{ end }}
+      </div>
       {{ end }}
     </div>
-  {{ end }}
-</div>
-      {{ end }}
+    {{ end }}
     {{ end }}
 
     {{ partial "continue-reading.html" . }}
     <!-- Comments -->
     {{ partial "comments-netlify.html" . }}
   </article>
-  </div>
+</div>
 {{ end }}

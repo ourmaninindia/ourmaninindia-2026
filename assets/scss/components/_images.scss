@@ -1,204 +1,184 @@
-@use "sass:color";
 @use "../abstracts" as *;
 
 /* ==========================================
    IMAGES
-   ==========================================*/
+   ========================================== */
 
 figure {
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius-md);
-    margin: 0.5rem 0 0 0;
-    transition:
-      transform 0.3s ease,
-      filter 0.3s ease;
-
-    &:not(.contents__background):hover {
-      transform: scale(1.04);
-      filter: brightness(1.08);
-      cursor: pointer;
-    }
-  }
-
-  &.image-hero {
     img {
-      margin: 0;
-      border-radius: 0%;
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius-md);
+        margin: var(--spacing-xs) 0 0;
+        transition:
+            transform 0.3s ease,
+            filter 0.3s ease;
 
-      &:hover {
-        transform: none;
-        filter: none;
-        cursor: initial;
-      }
+        &:not(.contents__background):hover {
+            transform: scale(1.04);
+            filter: brightness(1.08);
+            cursor: pointer;
+        }
     }
-  }
 
-  &.left {
-    float: left;
-    margin-right: var(--spacing-sm);
-    //shape-outside: margin-box;
-  }
+    &.image-hero {
+        img {
+            margin: 0;
+            border-radius: 0;
 
-  &.right {
-    float: right;
-    margin-left: var(--spacing-sm);
-    shape-outside: margin-box;
-  }
-
-  &.small {
-    width: 40%;
-  }
-
-  figcaption {
-    // font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    text-align: center;
-    font-style: italic;
-    font-size: small;
-
-    & p {
-      margin: 0;
+            &:hover {
+                transform: none;
+                filter: none;
+                cursor: initial;
+            }
+        }
     }
-  }
+
+    &.left {
+        float: left;
+        margin-right: var(--spacing-sm);
+        // shape-outside: margin-box — disabled pending design decision
+    }
+
+    &.right {
+        float: right;
+        margin-left: var(--spacing-sm);
+        shape-outside: margin-box;
+    }
+
+    &.small { width: 40%; }
+
+    figcaption {
+        color: var(--color-text-light);
+        text-align: center;
+        font-style: italic;
+        font-size: var(--font-size-sm);
+
+        p { margin: 0; }
+    }
 }
 
 .image-with-text .image {
-  max-width: 200px;
+    max-width: 200px;
 
-  & img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
 }
 
 .image-left {
-  float: left;
-  margin: 0 var(--spacing-md) var(--spacing-sm) 0;
+    float: left;
+    margin: 0 var(--spacing-md) var(--spacing-sm) 0;
 }
 
 .image-right {
-  float: right;
-  margin: 0 0 var(--spacing-sm) var(--spacing-md);
-}
-
-// ==========================================
-// Single image — floats with text wrapping
-// ==========================================
-
-figure.post-image {
-  display: table;
-  max-width: 45%;
-  overflow: hidden;
-
-  &.left {
-    float: left;
-    margin:  0 var(--spacing-md) var(--spacing-sm) 0;
-  }
-
-  &.right {
     float: right;
     margin: 0 0 var(--spacing-sm) var(--spacing-md);
-  }
-
-  picture {
-    display: block;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition:
-      transform 0.3s ease,
-      filter 0.3s ease;
-  }
-
-  &:hover img {
-    transform: scale(1.04);
-    filter: brightness(1.08);
-    cursor: pointer;
-  }
-
-  figcaption {
-    display: table-caption;
-    caption-side: bottom;
-    font-style: italic;
-    font-size: small;
-  }
 }
 
-// ==========================================
-// Image group — side by side with flex
-// ==========================================
+// ── Single post image — floats with text wrapping ─────────────────────────────
 
-.img-group {
-  display: flex;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+figure.post-image {
+    display: table;
+    max-width: 45%;
+    overflow: hidden;
 
-  figure.post-image {
-    flex: 1;
-    float: none;
-    max-width: none;
-    display: flex;
-    flex-direction: column;
-    margin: 0 4px 0 0; // small right margin to let shadow breathe
+    &.left  { float: left;  margin: 0 var(--spacing-md) var(--spacing-sm) 0; }
+    &.right { float: right; margin: 0 0 var(--spacing-sm) var(--spacing-md); }
 
-    picture {
-      display: block;
-      overflow: hidden; // clips the scaled image, not the shadow
-      margin: 0 4px 0 0;
-    }
+    picture { display: block; }
 
     img {
-      width: 100%;
-      height: auto;
-      max-height: none;
-      object-fit: cover;
-      aspect-ratio: 1;
-      transition:
-        transform 0.3s ease,
-        filter 0.3s ease,
-        box-shadow 0.3s ease;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition:
+            transform 0.3s ease,
+            filter 0.3s ease;
     }
 
-    &:hover {
-      img {
+    &:hover img {
         transform: scale(1.04);
         filter: brightness(1.08);
         cursor: pointer;
-      }
-
-      picture {
-        box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.12); // overall lift
-      }
     }
 
     figcaption {
-      display: block;
-      font-style: italic;
-      font-size: small;
-      text-align: center;
-      padding: var(--spacing-xs) 0;
+        display: table-caption;
+        caption-side: bottom;
+        font-style: italic;
+        font-size: var(--font-size-sm);
     }
-  }
+}
 
-  // Below mobile breakpoint: stack full width
-  @media (max-width: $breakpoint-mobile) {
-    flex-direction: column;
+// ── Image group — side by side with flex ──────────────────────────────────────
+
+.img-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
 
     figure.post-image {
-      width: 100%;
-      flex: none;
+        flex: 1;
+        float: none;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0 var(--spacing-xs) 0 0;
+
+        picture {
+            display: block;
+            overflow: hidden;
+            margin: 0 var(--spacing-xs) 0 0;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: cover;
+            aspect-ratio: 1;
+            transition:
+                transform 0.3s ease,
+                filter 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.04);
+                filter: brightness(1.08);
+                cursor: pointer;
+            }
+
+            picture {
+                box-shadow: var(--shadow-sm);
+            }
+        }
+
+        figcaption {
+            display: block;
+            font-style: italic;
+            font-size: var(--font-size-sm);
+            text-align: center;
+            padding: var(--spacing-xs) 0;
+        }
     }
-  }
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+
+        figure.post-image {
+            width: 100%;
+            flex: none;
+        }
+    }
 }

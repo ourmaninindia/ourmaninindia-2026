@@ -1,4 +1,3 @@
-@use "sass:color";
 @use "../abstracts" as *;
 
 /* ==========================================
@@ -8,24 +7,24 @@
 .button {
     display: inline-block;
     padding: var(--spacing-xs) clamp(var(--spacing-sm), 3vw, var(--spacing-lg));
-    // color: var(--color-text-light);
     text-decoration: none;
     border-radius: var(--border-radius-md);
-    // font-weight: 600;
     background-color: var(--color-bg);
     font-size: var(--font-size-base);
     border: 1px solid var(--color-gray-400);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition:
+        border-color var(--transition-base),
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
     text-align: center;
     font-family: inherit;
     line-height: 1.5;
     position: relative;
-   
+
     &:hover {
-        border: 1px solid var(--color-primary-hover);
+        border-color: var(--color-primary-hover);
         transform: translateY(-1px);
-        vertical-align: middle; // or top
         box-shadow:
             0 7px 14px hsl(0, 0%, 0%, 0.15),
             0 3px 6px hsl(0, 0%, 0%, 0.1),
@@ -33,7 +32,7 @@
     }
 
     &:active {
-        border: 1px solid var(--color-primary-hover);
+        border-color: var(--color-primary-hover);
         transform: translateY(-1px);
         box-shadow:
             0 3px 7px hsl(0, 0%, 0%, 0.15),
@@ -46,7 +45,7 @@
         justify-content: space-around;
     }
 
-    // a clear button for within an input
+    // Clear button — sits inside an input field
     &__clear {
         position: absolute;
         right: 12px;
@@ -63,20 +62,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0; // neutralise the inherited clamp padding
+        padding: 0;
 
         svg {
-            display: block; // removes inline baseline gap
-            stroke: #fff;
+            display: block;
+            stroke: var(--color-white);
             width: 12px;
             height: 12px;
-            min-width: 12px; // prevents flex shrinking
+            min-width: 12px;
             flex-shrink: 0;
             overflow: visible;
         }
 
         &:hover svg {
-            stroke: var(--color-text); // darker on hover
+            stroke: var(--color-text);
         }
 
         &::after {
@@ -85,7 +84,7 @@
             bottom: -1.4rem;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.65rem;
+            font-size: var(--font-size-xs);
             opacity: 0;
             transition: opacity 0.2s;
             white-space: nowrap;
@@ -101,7 +100,8 @@
         }
     }
 
-    // Modifiers
+    // ── Modifiers ─────────────────────────────────────────────────────────────
+
     &--full-width {
         display: block;
         width: 100%;
@@ -111,17 +111,14 @@
         color: var(--color-bg);
         background-color: var(--color-primary);
 
-        // Not ready — form invalid, suppress hover feedback
+        // Form invalid — suppress strong hover feedback
         &:not(.is-ready):hover {
-            // cursor: not-allowed;
-            // transform: none; this has a problem with a button in an input
-            // background-color: var(--color-bg-secondary);
             box-shadow:
                 0 1px 3px hsl(0, 0%, 0%, 0.12),
                 0 1px 2px hsl(0, 0%, 0%, 0.24);
         }
 
-        // Ready — form valid, full hover effect
+        // Form valid — full hover effect
         &.is-ready:hover {
             font-weight: 600;
             background-color: var(--color-primary-hover);
@@ -184,36 +181,25 @@
         }
     }
 
-    // Responsive text — short on mobile, full on desktop
-    &__text--short {
-        display: inline;
-    }
+    // ── Responsive label ──────────────────────────────────────────────────────
+    // Short label on mobile, full label on wider screens
 
-    &__text--full {
-        display: none;
-    }
+    &__text--short { display: inline; }
+    &__text--full  { display: none; }
 
-    @media (min-width: #{$breakpoint-mobile}) {
-        &__text--short {
-            display: none;
-        }
-        &__text--full {
-            display: inline;
-        }
+    @media (min-width: $breakpoint-mobile) {
+        &__text--short { display: none; }
+        &__text--full  { display: inline; }
     }
 }
 
-// Button Group
+// ── Button group ──────────────────────────────────────────────────────────────
+
 .button-group {
     display: flex;
     gap: var(--spacing-sm);
     flex-wrap: wrap;
 
-    &--center {
-        justify-content: center;
-    }
-
-    &--end {
-        justify-content: flex-end;
-    }
+    &--center { justify-content: center; }
+    &--end    { justify-content: flex-end; }
 }

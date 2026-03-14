@@ -1,12 +1,16 @@
-.parallax {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
-  width: 100%;
+@use "../abstracts" as *;
 
-  &--tall {
-    height: 600px;
-  }
+/* ==========================================
+   PARALLAX
+   ========================================== */
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+
+    &--tall { height: 600px; }
 }

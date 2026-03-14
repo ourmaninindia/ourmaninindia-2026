@@ -1,199 +1,200 @@
 @use "../abstracts" as *;
 
+/* ==========================================
+   CYCLING POST
+   ========================================== */
+
 .cycling-post {
+    max-width: 1200px;
+    margin: 0 var(--spacing-xs);
+    background: var(--color-bg);
 
-  max-width: 1200px;
-  margin: 0 var(--spacing-xs);
-  background: var(--color-bg);
-
-  & em {
-    font-weight: 600;
-  }
-
-  & time {
-    text-align: center;
-  }
-
-  h1 {
-    font-family: Arepay, Georgia, 'Times New Roman', Times, serif;
-  }
-  h2 {
-    margin-bottom: var(--spacing-xs);
-  }
-
-  // ============================================
-  // Masthead
-  // ============================================
-
-  &__masthead {
-    margin-bottom: var(--spacing-md);
-    border-bottom: 3px double var(--color-border);
-    text-align: center;
-  }
-
-  &__headline {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--color-text-dark);
-    font-family: Georgia, 'Times New Roman', serif;
-    letter-spacing: -0.02em;
-    margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
-    width: 100%;
-  }
-
-  &__byline {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-dark);
-    font-style: italic;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  // ============================================
-  // Intro — newspaper two-column text flow
-  // ============================================
-
-  &__intro {
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: var(--color-text);
-    text-align: justify;
-    padding-bottom: var(--spacing-md);
-
-    @media (min-width: $breakpoint-tablet) {
-      column-count: 2;
-      column-gap: var(--spacing-xl);
-      column-rule: 1px solid var(--color-border-light);
+    em {
+        font-weight: 600;
     }
 
-    // drop cap the very first letter
-   p:first-of-type:not(figcaption p)::first-letter {
-      font-size: 3.5em;
-      line-height: 0.9;
-      float: left;
-      margin: 0.1em 0.1em 0 0;
-      font-weight: 700;
-      color: var(--color-drop-cap);
-      font-family: Georgia, 'Times New Roman', serif;
+    time {
+        text-align: center;
     }
-  } 
 
-  // stack the columns
-  @media (max-width: $breakpoint-mobile) {
-    grid-template-columns: 1fr;
-  }
-} // end .cycling-post
+    h1 {
+        font-family: Arapey, Georgia, 'Times New Roman', Times, serif; // fixed: was Arepay
+    }
+
+    h2 {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    // ============================================
+    // Masthead
+    // ============================================
+
+    &__masthead {
+        margin-bottom: var(--spacing-md);
+        border-bottom: 3px double var(--color-border);
+        text-align: center;
+    }
+
+    &__headline {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+        font-weight: 400;
+        line-height: 1.1;
+        color: var(--color-text-dark);
+        font-family: Georgia, 'Times New Roman', serif;
+        letter-spacing: -0.02em;
+        margin: var(--spacing-sm) 0;
+        width: 100%;
+    }
+
+    &__byline {
+        font-size: var(--font-size-xl);
+        color: var(--color-text-dark);
+        font-style: italic;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    // ============================================
+    // Intro — newspaper two-column text flow
+    // ============================================
+
+    &__intro {
+        font-size: var(--font-size-md);
+        line-height: 1.7;
+        color: var(--color-text);
+        text-align: justify;
+        padding-bottom: var(--spacing-md);
+
+        @media (min-width: $breakpoint-tablet) {
+            column-count: 2;
+            column-gap: var(--spacing-xl);
+            column-rule: 1px solid var(--color-border-light);
+        }
+
+        // Drop cap — cycling intro specific
+        p:first-of-type:not(figcaption p)::first-letter {
+            font-size: 3.5em;
+            line-height: 0.9;
+            float: left;
+            margin: 0.1em 0.1em 0 0;
+            font-weight: 700;
+            color: var(--color-drop-cap);
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    }
+}
 
 // ============================================
-// Day entry — 60/40 grid
+// Day entry
 // ============================================
 
 .day-entry {
-  margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
 }
 
 .cycling-day {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: var(--spacing-xl);
-  align-items: start;
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-xl);
-  border-bottom: 1px solid var(--color-border-light);
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border-light);
 
-  // No images — text spans full width
-  &--no-images {
-    grid-template-columns: 1fr;
-  }
-
-  &__text {
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: var(--color-text);
-    text-align: left;
-
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-text-dark);
-      border-bottom: 1px solid var(--color-border-light);
-      padding-bottom: 0.25rem;
-      margin: 0 0 0.75em 0;
-      text-align: left;
+    // No images — text spans full width
+    &--no-images {
+        grid-template-columns: 1fr;
     }
 
-     p:first-of-type:not(figcaption p)::first-letter {
-      font-size: 3.5em;
-      line-height: 0.9;
-      float: left;
-      margin: 0.1em 0.1em 0 0;
-      font-weight: 700;
-      color: var(--color-drop-cap);
-      font-family: Georgia, 'Times New Roman', serif;
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr;
     }
 
-    a {
-      color: var(--color-primary);
-      text-decoration: underline;
-      &:hover { color: var(--color-primary-dark); }
+    &__text {
+        font-size: var(--font-size-md);
+        line-height: 1.7;
+        color: var(--color-text);
+
+        h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-text-dark);
+            border-bottom: 1px solid var(--color-border-light);
+            padding-bottom: var(--spacing-xs);
+            margin: 0 0 0.75em 0;
+            text-align: left;
+        }
+
+        // Drop cap — day entry specific
+        p:first-of-type:not(figcaption p)::first-letter {
+            font-size: 3.5em;
+            line-height: 0.9;
+            float: left;
+            margin: 0.1em 0.1em 0 0;
+            font-weight: 700;
+            color: var(--color-drop-cap);
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--color-primary-hover); // fixed: was --color-primary-dark
+            }
+        }
+
+        figure.post-image {
+            margin: 0;
+
+            img {
+                object-fit: contain;
+                max-height: 250px;
+            }
+        }
     }
 
-    figure.post-image {
-      margin: 0;
-
-      img {
-        object-fit: contain;
-        max-height: 250px;
-      }
-    }
-  }  // end &__text
-
-  &__images {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-    position: sticky;
-    top: 2rem;
-
-    // img-group: side by side within the images column
-    .img-group {
-      display: flex;
-      gap: 0.5rem;
-
-      figure.post-image {
-        flex: 1;
-        float: none;
-        max-width: none;
+    &__images {
         display: flex;
         flex-direction: column;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-xl);
+        position: sticky;
+        top: var(--spacing-xl);
 
-        img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
+        // img-group: side by side within the images column
+        .img-group {
+            display: flex;
+            gap: var(--spacing-xs);
+
+            @media (max-width: $breakpoint-mobile) {
+                flex-direction: column;
+            }
+
+            figure.post-image {
+                flex: 1;
+                float: none;
+                max-width: none;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+
+                figcaption {
+                    display: block;
+                    font-style: italic;
+                    font-size: var(--font-size-sm); // fixed: was font-size: small
+                    text-align: center;
+                    padding: var(--spacing-xs) 0;
+                    color: var(--color-text-light);
+                }
+            }
         }
-
-        figcaption {
-          display: block;
-          font-style: italic;
-          font-size: small;
-          text-align: center;
-          padding: 0.25rem 0;
-          color: var(--color-text-light);
-        }
-      }
-
-      @media (max-width: $breakpoint-mobile) {
-        flex-direction: column;
-      }
     }
-
-    // On tablet and below, images go below text
-    @media (max-width: $breakpoint-tablet) {
-      // position: static;
-    }
-  }  // end &__images
-} // end .cycling-day
+}

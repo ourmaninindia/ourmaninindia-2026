@@ -1,15 +1,14 @@
-@use "sass:color";
 @use "../abstracts" as *;
 
 /* ==========================================
-   Section Divider
-   ==========================================*/
+   SECTION DIVIDER
+   ========================================== */
 
 .section-divider {
     text-align: center;
     position: relative;
     margin: var(--spacing-lg) 0;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -17,9 +16,9 @@
         right: 0;
         top: 50%;
         height: 1px;
-        background: var(--color-border-dark); 
+        background: var(--color-border-dark);
     }
-    
+
     span {
         background: var(--color-bg);
         padding: 0 var(--spacing-md);

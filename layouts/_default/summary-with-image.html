@@ -1,8 +1,0 @@
-{{/* ============================================================
-     layouts/_default/summary-with-image.html  (render template)
-     Called via: {{ .Render "summary-with-image" }}
-     Delegates to post-card partial — single source of truth
-     Index 0 means image always on left when used as render template
-     ============================================================ */}}
-
-{{ partial "post-card.html" (dict "post" . "index" 0) }}

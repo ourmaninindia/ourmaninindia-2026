@@ -22,7 +22,7 @@
         {{ .Content }}
     </article>
 
-    {{ partial "date.html" . }}
+   <time>📅 {{ i18n "page-created" }} {{ .Date.Format site.Params.date_format }}</time>
 
     <nav class="about__links">
         <a href="{{ "/about/" | relURL }}">About</a>

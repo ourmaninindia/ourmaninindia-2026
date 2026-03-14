@@ -6,11 +6,12 @@
             <input 
                 type="text" 
                 name="q" 
+                id="search-name"
                 placeholder="{{ i18n "searchPlaceholder"}}" 
                 autocomplete="off"
                 aria-label="Search">
-            <label for="name" class="form__label form__label--float">
-                Search articles...
+            <label for="search-name" class="form__label form__label--float">
+                {{ i18n "searchArticles" }}...
             </label>
             <button type="submit" id="search-clear"
                 class="button button__clear search__clear"

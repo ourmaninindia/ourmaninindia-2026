@@ -1,74 +1,67 @@
-@use "sass:color";
- @use "../abstracts" as *;
+@use "../abstracts" as *;
 
 /* ==========================================
    CARD COMPONENTS
-   ==========================================*/
+   ========================================== */
 
-// Base Card
-.card {
+// ── Base card mixin — avoids @extend output-order issues ──────────────────────
+
+@mixin card-base {
     background-color: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-sm);
-    transition: all var(--transition-base);
-    
-    // Modifiers
-    &--hover {
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-    }
-    
-    &--bordered {
-        border: 2px solid var(--color-border);
-    }
-    
-    &--elevated {
+}
+
+// ── Base card ─────────────────────────────────────────────────────────────────
+
+.card {
+    @include card-base;
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+
+    &--hover:hover {
+        transform: translateY(-4px);
         box-shadow: var(--shadow-md);
-        border: none;
     }
-    
-    &--flat {
-        box-shadow: none;
-        border: none;
-        background: transparent;
-    }
-    
+
+    &--bordered { border: 2px solid var(--color-border); }
+    &--elevated { box-shadow: var(--shadow-md); border: none; }
+    &--flat     { box-shadow: none; border: none; background: transparent; }
+
     &--primary {
         border-color: var(--color-primary);
         background: linear-gradient(
             135deg,
-            rgba(37, 99, 235, 0.05) 0%,
-            rgba(37, 99, 235, 0.02) 100%
+            hsl(217, 91%, 56%, 0.05) 0%,
+            hsl(217, 91%, 56%, 0.02) 100%
         );
     }
 }
 
-// Content Card (with header and body)
+// ── Content card ──────────────────────────────────────────────────────────────
+
 .content-card {
-    @extend .card;
+    @include card-base;
     padding: 0;
     overflow: hidden;
-    
+
     &__header {
         padding: var(--spacing-md) var(--spacing-lg);
         border-bottom: 1px solid var(--color-border);
         background: var(--color-bg-secondary);
     }
-    
+
     &__title {
         margin: 0;
         font-size: var(--font-size-lg);
         font-weight: 700;
     }
-    
-    &__body {
-        padding: var(--spacing-lg);
-    }
-    
+
+    &__body   { padding: var(--spacing-lg); }
+
     &__footer {
         padding: var(--spacing-md) var(--spacing-lg);
         border-top: 1px solid var(--color-border);
@@ -76,17 +69,18 @@
     }
 }
 
-// Image Card
+// ── Image card ────────────────────────────────────────────────────────────────
+
 .image-card {
-    @extend .card;
+    @include card-base;
     padding: 0;
     overflow: hidden;
-    
+
     &__image {
         width: 100%;
         aspect-ratio: 16/9;
         overflow: hidden;
-        
+
         img {
             width: 100%;
             height: 100%;
@@ -94,37 +88,31 @@
             transition: transform var(--transition-base);
         }
     }
-    
-    &__content {
-        padding: var(--spacing-lg);
-    }
-    
-    &:hover img {
-        transform: scale(1.05);
-    }
+
+    &__content { padding: var(--spacing-lg); }
+
+    &:hover img { transform: scale(1.05); }
 }
 
-// Stats Card (for ride stats, metrics, etc.)
+// ── Stats card ────────────────────────────────────────────────────────────────
+
 .stats-card {
-    background: var(--color-white);
+    background: var(--color-bg); // responds to dark mode
     padding: var(--spacing-md);
     border-radius: var(--border-radius-md);
     text-align: center;
-    transition: all var(--transition-base);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--color-border);
-    
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+
     &:hover {
         transform: translateY(-4px);
         box-shadow: var(--shadow-md);
     }
-    
-    &__icon {
-        font-size: var(--font-size-2xl);
-        margin-bottom: var(--spacing-xs);
-        display: block;
-    }
-    
+
+    &__icon  { font-size: var(--font-size-2xl); margin-bottom: var(--spacing-xs); display: block; }
     &__value {
         display: block;
         font-size: var(--font-size-xl);
@@ -133,14 +121,7 @@
         margin-bottom: var(--spacing-xs);
         line-height: 1.2;
     }
-    
-    &__unit {
-        font-size: var(--font-size-sm);
-        font-weight: 400;
-        color: var(--color-text-light);
-        margin-left: 2px;
-    }
-    
+    &__unit  { font-size: var(--font-size-sm); font-weight: 400; color: var(--color-text-light); margin-left: 2px; }
     &__label {
         display: block;
         font-size: var(--font-size-sm);
@@ -151,13 +132,14 @@
     }
 }
 
-// Author Card
+// ── Author card ───────────────────────────────────────────────────────────────
+
 .author-card {
-    @extend .card;
+    @include card-base;
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    
+
     &__avatar {
         width: 64px;
         height: 64px;
@@ -166,84 +148,45 @@
         object-fit: cover;
         border: 2px solid var(--color-border);
     }
-    
-    &__info {
-        flex: 1;
-    }
-    
-    &__name {
-        font-weight: 700;
-        margin: 0 0 var(--spacing-xs) 0;
-        font-size: var(--font-size-lg);
-    }
-    
-    &__role {
-        color: var(--color-text-light);
-        font-size: var(--font-size-sm);
-        margin: 0;
-    }
-    
-    &__bio {
-        color: var(--color-text-light);
-        font-size: var(--font-size-base);
-        margin: var(--spacing-xs) 0 0 0;
-        line-height: 1.5;
-    }
+
+    &__info  { flex: 1; }
+    &__name  { font-weight: 700; margin: 0 0 var(--spacing-xs); font-size: var(--font-size-lg); }
+    &__role  { color: var(--color-text-light); font-size: var(--font-size-sm); margin: 0; }
+    &__bio   { color: var(--color-text-light); font-size: var(--font-size-base); margin: var(--spacing-xs) 0 0; line-height: 1.5; }
 }
 
-// Info Card (for notices, tips, warnings)
+// ── Info card ─────────────────────────────────────────────────────────────────
+
 .info-card {
-    @extend .card;
+    @include card-base;
     border-left: 4px solid;
     padding: var(--spacing-md) var(--spacing-lg);
-    
-    &--info {
-        border-left-color: var(--color-primary);
-        background: rgba(37, 99, 235, 0.05);
-    }
-    
-    &--success {
-        border-left-color: var(--color-success);
-        background: rgba(16, 185, 129, 0.05);
-    }
-    
-    &--warning {
-        border-left-color: var(--color-warning);
-        background: rgba(245, 158, 11, 0.05);
-    }
-    
-    &--danger {
-        border-left-color: var(--color-error);
-        background: rgba(239, 68, 68, 0.05);
-    }
-    
+
+    // Tints use the existing semantic colour tokens at low opacity
+    &--info    { border-left-color: var(--color-info);    background: hsl(211, 100%, 50%, 0.05); }
+    &--success { border-left-color: var(--color-success); background: hsl(161,  94%, 30%, 0.05); }
+    &--warning { border-left-color: var(--color-warning); background: hsl( 38,  92%, 50%, 0.05); }
+    &--danger  { border-left-color: var(--color-error);   background: hsl(  0, 100%, 35%, 0.05); }
+
     &__title {
         font-weight: 700;
-        margin: 0 0 var(--spacing-sm) 0;
-        font-size: 1.125rem;
+        margin: 0 0 var(--spacing-sm);
+        font-size: var(--font-size-lg);
     }
-    
-    &__content {
-        p:last-child {
-            margin-bottom: 0;
-        }
-    }
+
+    &__content p:last-child { margin-bottom: 0; }
 }
 
-// Grid of Cards
+// ── Card grid ─────────────────────────────────────────────────────────────────
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-lg);
-    
-    &--2-col {
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    }
-    
-    &--3-col {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-    
+
+    &--2-col { grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
+    &--3-col { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+
     @media (max-width: $breakpoint-tablet) {
         grid-template-columns: 1fr;
     }

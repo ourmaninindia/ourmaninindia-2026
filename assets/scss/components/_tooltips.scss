@@ -1,132 +1,122 @@
-@use "sass:color";
 @use "../abstracts" as *;
 
 /* ==========================================
-   Tooltip
-   ==========================================*/
-   
-// _tooltip.scss
-// _tooltip.scss
+   TOOLTIP
+   ========================================== */
 
 .tooltip {
-  // Block - main container
-  &__wrapper {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-  }
 
-  // Element - the tooltip text box
-  &__text {
-    visibility: hidden;
-    position: absolute;
-    background-color: var(--tooltip-bg);
-    color: var(--tooltip-color);
-    text-align: center;
-    border-radius: var(--tooltip-radius);
-    padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
-    font-size: var(--tooltip-font-size);
-    white-space: nowrap;
-    z-index: var(--tooltip-z-index);
-    opacity: 0;
-    transition: var(--tooltip-transition);
-    pointer-events: none;
-     box-shadow: var(--tooltip-shadow);
-    
-    // Default position: bottom
-    top: calc(100% + var(--tooltip-offset));
-    left: 50%;
-    transform: translateX(-50%);
-
-    // Arrow
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      margin-left: calc(var(--tooltip-arrow-size) * -1);
-      border-width: var(--tooltip-arrow-size);
-      border-style: solid;
-      border-color: transparent transparent var(--tooltip-bg) transparent;
+    &__wrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
     }
-  }
 
-  // Show on hover
-  &__wrapper:hover &__text,
-  &__wrapper:focus &__text {
-    visibility: visible;
-    opacity: 1;
-  }
+    &__text {
+        visibility: hidden;
+        position: absolute;
+        background-color: var(--tooltip-bg);
+        color: var(--tooltip-color);
+        text-align: center;
+        border-radius: var(--tooltip-radius);
+        padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+        font-size: var(--tooltip-font-size);
+        white-space: nowrap;
+        z-index: var(--tooltip-z-index);
+        opacity: 0;
+        transition: var(--tooltip-transition);
+        pointer-events: none;
+        box-shadow: var(--tooltip-shadow);
 
-  // Modifier - position variants
-  &--top &__text {
-    top: auto;
-    bottom: calc(100% + var(--tooltip-offset));
-    
-    &::after {
-      bottom: auto;
-      top: 100%;
-      border-color: var(--tooltip-bg) transparent transparent transparent;
+        // Default position: bottom
+        top: calc(100% + var(--tooltip-offset));
+        left: 50%;
+        transform: translateX(-50%);
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: calc(var(--tooltip-arrow-size) * -1);
+            border-width: var(--tooltip-arrow-size);
+            border-style: solid;
+            border-color: transparent transparent var(--tooltip-bg) transparent;
+        }
     }
-  }
 
-  &--right &__text {
-    top: 50%;
-    left: calc(100% + var(--tooltip-offset));
-    transform: translateY(-50%);
-    
-    &::after {
-      top: 50%;
-      left: auto;
-      right: 100%;
-      margin-left: 0;
-      margin-top: calc(var(--tooltip-arrow-size) * -1);
-      border-color: transparent var(--tooltip-bg) transparent transparent;
+    &__wrapper:hover &__text,
+    &__wrapper:focus &__text {
+        visibility: visible;
+        opacity: 1;
     }
-  }
 
-  &--left &__text {
-    top: 50%;
-    left: auto;
-    right: calc(100% + var(--tooltip-offset));
-    transform: translateY(-50%);
-    
-    &::after {
-      top: 50%;
-      left: 100%;
-      right: auto;
-      margin-left: 0;
-      margin-top: calc(var(--tooltip-arrow-size) * -1);
-      border-color: transparent transparent transparent var(--tooltip-bg);
+    // ── Position variants ─────────────────────────────────────────────────────
+
+    &--top &__text {
+        top: auto;
+        bottom: calc(100% + var(--tooltip-offset));
+
+        &::after {
+            bottom: auto;
+            top: 100%;
+            border-color: var(--tooltip-bg) transparent transparent transparent;
+        }
     }
-  }
 
-  // Modifier - color variants
-  &--light &__text {
-    background-color: var(--tooltip-bg-light);
-    color: var(--tooltip-color-light);
-    box-shadow: var(--tooltip-shadow-light);
+    &--right &__text {
+        top: 50%;
+        left: calc(100% + var(--tooltip-offset));
+        transform: translateY(-50%);
 
-    &::after {
-      border-color: transparent transparent var(--tooltip-bg-light) transparent;
+        &::after {
+            top: 50%;
+            left: auto;
+            right: 100%;
+            margin-left: 0;
+            margin-top: calc(var(--tooltip-arrow-size) * -1);
+            border-color: transparent var(--tooltip-bg) transparent transparent;
+        }
     }
-  }
 
-  &--primary &__text {
-    background-color: var(--tooltip-bg-primary);
+    &--left &__text {
+        top: 50%;
+        left: auto;
+        right: calc(100% + var(--tooltip-offset));
+        transform: translateY(-50%);
 
-    &::after {
-      border-color: transparent transparent var(--tooltip-bg-primary) transparent;
+        &::after {
+            top: 50%;
+            left: 100%;
+            right: auto;
+            margin-left: 0;
+            margin-top: calc(var(--tooltip-arrow-size) * -1);
+            border-color: transparent transparent transparent var(--tooltip-bg);
+        }
     }
-  }
-}
 
-// Ensure parent containers don't clip tooltips
-.nav {
-  &__item,
-  &__list,
-  &__menu {
-    overflow: visible !important;
-  }
+    // ── Colour variants ───────────────────────────────────────────────────────
+    //   --tooltip-bg-light:    hsl(0, 0%, 98%);
+    //   --tooltip-color-light: hsl(0, 0%, 10%);
+    //   --tooltip-shadow-light: 0 2px 8px hsl(0, 0%, 0%, 0.1);
+    //   --tooltip-bg-primary:  var(--color-primary);
+
+    &--light &__text {
+        background-color: var(--tooltip-bg-light);
+        color: var(--tooltip-color-light);
+        box-shadow: var(--tooltip-shadow-light);
+
+        &::after {
+            border-color: transparent transparent var(--tooltip-bg-light) transparent;
+        }
+    }
+
+    &--primary &__text {
+        background-color: var(--tooltip-bg-primary);
+
+        &::after {
+            border-color: transparent transparent var(--tooltip-bg-primary) transparent;
+        }
+    }
 }

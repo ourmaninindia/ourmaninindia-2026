@@ -7,17 +7,16 @@
 // ── Skip to main content link ─────────────────────────────────────────────────
 
 .skip-link {
-  position: absolute;
-  left: 0;
-  top: -100%;  /* hide above viewport instead */
+    position: absolute;
+    left: 0;
+    top: -100%;
 }
 
 .skip-link:focus {
-  top: 0;  /* shows when tabbed to */
+    top: 0;
 }
 
 // ── Focus visible — keyboard navigation ──────────────────────────────────────
-// Only show focus ring for keyboard users, not mouse clicks
 
 :focus-visible {
     outline: 3px solid var(--color-primary);
@@ -25,12 +24,10 @@
     border-radius: var(--border-radius-sm);
 }
 
-// Remove default outline only when focus-visible is supported
 :focus:not(:focus-visible) {
     outline: none;
 }
 
-// Enhanced focus for interactive elements
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -40,10 +37,9 @@ select:focus-visible,
     outline: 3px solid var(--color-primary);
     outline-offset: 3px;
     border-radius: var(--border-radius-sm);
-    box-shadow: 0 0 0 6px hsl(217, 91%, 53%, 0.15);
+    box-shadow: 0 0 0 6px var(--color-primary-ring);
 }
 
-// Dark mode — brighter outline for contrast
 [data-theme="dark"] {
     :focus-visible,
     a:focus-visible,
@@ -52,11 +48,11 @@ select:focus-visible,
     textarea:focus-visible,
     select:focus-visible {
         outline-color: var(--color-primary);
-        box-shadow: 0 0 0 6px hsl(217, 91%, 60%, 0.25);
+        box-shadow: 0 0 0 6px var(--color-primary-ring);
     }
 }
 
-// ── Screen reader only utility ────────────────────────────────────────────────
+// ── Screen reader only ────────────────────────────────────────────────────────
 
 .sr-only {
     position: absolute;
