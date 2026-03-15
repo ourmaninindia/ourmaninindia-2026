@@ -134,7 +134,7 @@
 
 // float only when viewport is wide enough for meaningful text alongside
 // written outside .list {} to avoid @media inside BEM & issues in SCSS
-@media (min-width: 600px) {
+@media (width >= 600px) {
     .list__post-image {
         width: 400px; // fixed width — float needs this to reserve space
         max-width: 45%; // prevents image dominating on mid-size screens
@@ -152,6 +152,7 @@
 }
 
 // resume .list {} block for remaining rules
+/* stylelint-disable-next-line no-duplicate-selectors */
 .list {
     // ============================================
     // Post Content
@@ -164,7 +165,7 @@
             font-size: var(--font-size-xl); // fixed: was var(font-size-xl) — missing --
             font-weight: 700;
             line-height: 1.3;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.5rem;
 
             @media (min-width: $breakpoint-tablet) {
                 font-size: var(--font-size-2xl);
@@ -213,7 +214,6 @@
         text-decoration: none;
         font-size: var(--font-size-md);
         clear: both; // always appears below floated image
-
         transition:
             color 0.2s ease,
             transform 0.2s ease;

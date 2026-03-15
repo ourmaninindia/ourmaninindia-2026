@@ -21,7 +21,7 @@
     border-bottom: 1px solid var(--header-border);
     z-index: $z-sticky;
     transition: transform var(--transition-base);
-    font-family: 'The Seasons';
+    font-family: 'The Seasons', sans-serif;
     font-weight: 400;
 
     &--hidden {
@@ -42,7 +42,7 @@
     // ─── Logo ─────────────────────────────────────────────────────────────────
     &__logo {
         font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-        font-family: 'Halimun', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-family: Halimun, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         font-weight: 700;
         z-index: 2;
         color: var(--header-text);
@@ -125,7 +125,7 @@
         transition: color var(--transition-base);
         display: block;
         padding: var(--spacing-xs) 0;
-        font-family: 'The Seasons'; // consistent capitalisation
+        font-family: 'The Seasons', sans-serif; // consistent capitalisation
         font-weight: 400;
 
         @media (max-width: $breakpoint-tablet) {

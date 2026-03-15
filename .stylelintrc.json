@@ -9,6 +9,9 @@
     "color-hex-length": null,
     "value-keyword-case": null,
     "color-function-notation": null,
-    "alpha-value-notation": null
+    "alpha-value-notation": null,
+    "declaration-block-single-line-max-declarations": null,
+    "selector-id-pattern": null,
+    "keyframes-name-pattern": null
   }
 }
