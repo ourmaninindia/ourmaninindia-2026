@@ -2,6 +2,11 @@
 
 echo "Generating archive pages..."
 
+# Ensure dart-sass snapshot has execute permission
+if [ -f "/opt/dart-sass/src/sass.snapshot" ]; then
+    chmod a+rx /opt/dart-sass/src/sass.snapshot
+fi
+
 # Language → sections mapping
 declare -A lang_sections
 lang_sections["en"]="blog cycling tech"
