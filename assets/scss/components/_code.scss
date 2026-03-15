@@ -11,6 +11,7 @@ pre {
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-md);
     overflow-x: auto;
+    max-width: 100%;
     margin: var(--spacing-lg) 0;
 
     code {
@@ -52,7 +53,7 @@ code {
         transform var(--transition-base);
     opacity: 0;
     z-index: 1;
-    text-transform: uppercase;
+    text-transform: initial;
     letter-spacing: 0.5px;
 
     &:hover {
@@ -95,8 +96,15 @@ pre:hover .code-copy-btn { opacity: 0.7; }
 
 // ── Highlight wrapper ─────────────────────────────────────────────────────────
 
-.highlight {
-    position: relative;
 
-    pre { margin: 0; }
+.highlight-wrapper {
+    overflow-x: auto;
+    width: 100%;
 }
+
+.highlight-wrapper pre {
+    white-space: pre-wrap;
+    // word-break: break-all;
+    margin: 0;
+}
+

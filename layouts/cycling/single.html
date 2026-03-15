@@ -11,12 +11,13 @@
 {{ end }}
 
 <div class="contents__container">
-  <article class="single cycling-post">
+  <article class="single">
 
-    <header class="cycling-post__masthead">
-      <h1 class="cycling-post__headline">{{ .Title }}</h1>
-      <div class="cycling-post__byline">
-        <time>{{ .Date.Format site.Params.date_format }}</time>
+    <header class="contents__header">
+      <h1 class="contents__title">{{ .Title }}</h1>
+      <time class="contents__date">{{ .Date.Format site.Params.date_format }}</time>  
+       
+      <div class="contents__byline">
         <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read" }}</div>
         <details class="share-menu">
           <summary class="share-menu__toggle"

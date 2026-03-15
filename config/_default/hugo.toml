@@ -13,8 +13,8 @@ enableGitInfo = false             # slow locally; overridden to true in producti
 [markup]
   [markup.highlight] 
     style = "monokai"
-    lineNos = true
-    lineNumbersInTable = true
+    lineNos = false
+    lineNumbersInTable = false
     noClasses = false
 
   [markup.goldmark]

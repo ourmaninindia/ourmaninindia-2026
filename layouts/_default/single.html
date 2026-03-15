@@ -16,10 +16,9 @@
       {{ with .Description }}
       <p class="contents__description">{{ . }}</p>
       {{ end }}
-
-      <div class="single__byline">
-      <time>{{ .Date.Format site.Params.date_format }}</time>
-
+      <time class="contents__date">{{ .Date.Format site.Params.date_format }}</time>  
+       
+      <div class="contents__byline">
         {{ $authorSlug := .Params.author | urlize }}
         {{ $author := index hugo.Data.authors $authorSlug }}
         {{ with $author }}
@@ -68,7 +67,7 @@
       {{ end }}
    
  {{ partial "continue-reading.html" . }}
- 
+
       </div>
       {{ partial "sidebar.html" (dict "page" . "context" "single") }}
     </div>

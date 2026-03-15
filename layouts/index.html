@@ -11,6 +11,7 @@
   <article class="single">
     <header class="contents__header">
       <h1>{{ .Title }}</h1>
+      {{ partial "date-modified.html" . }}
       <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read" }}</div>
     </header>
 

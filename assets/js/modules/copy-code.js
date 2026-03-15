@@ -64,14 +64,14 @@ export function initCopyCode() {
             navigator.clipboard.writeText(codeBlock.textContent)
                 .then(function () {
                     // Success: Show "Copied!" feedback
-                    button.textContent = 'Copied!';
+                    button.textContent = '✔ Copied!';
                     button.classList.add('code-copy-btn--success');
 
-                    // Reset after 2 seconds
+                    // Reset after 3 seconds
                     setTimeout(function () {
                         button.textContent = 'Copy';
                         button.classList.remove('code-copy-btn--success');
-                    }, 2000);
+                    }, 3000);
                 })
                 .catch(function (err) {
                     // Error: Show error state and log

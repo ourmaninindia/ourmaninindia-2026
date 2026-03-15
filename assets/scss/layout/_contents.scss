@@ -12,6 +12,7 @@
         padding: var(--spacing-xl) var(--spacing-md) var(--spacing-sm);
         width: 100%;
         background-color: var(--color-bg);
+        overflow-x: clip; // prevent any wide child (code blocks, tables) from page-scrolling
     }
 
     // ─── Page header — used on all pages ──────────────────────────────────────
@@ -31,6 +32,12 @@
           font-size: var(--font-size-lg);
         }
     }
+
+   
+
+    &__date {
+          text-align: center;
+   }
 
    &__content {
         background-color: var(--color-bg);
@@ -65,6 +72,7 @@
         color: var(--color-text-light);
         text-align: center;
         font-style: italic;
+        margin: 0;
     }
 
     // ─── Background image variant ─────────────────────────────────────────────
@@ -115,4 +123,9 @@ figure + .container {
     figure.small {
         width: 100%;
     }
+}
+
+.page-tech h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
 }

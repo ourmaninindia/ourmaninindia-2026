@@ -26,36 +26,6 @@
     }
 
     // ============================================
-    // Masthead
-    // ============================================
-
-    &__masthead {
-        margin-bottom: var(--spacing-md);
-        border-bottom: 3px double var(--color-border);
-        text-align: center;
-    }
-
-    &__headline {
-        font-size: clamp(2.5rem, 6vw, 3.5rem);
-        font-weight: 400;
-        line-height: 1.1;
-        color: var(--color-text-dark);
-        font-family: Georgia, 'Times New Roman', serif;
-        letter-spacing: -0.02em;
-        margin: var(--spacing-sm) 0;
-        width: 100%;
-    }
-
-    &__byline {
-        font-size: var(--font-size-xl);
-        color: var(--color-text-dark);
-        font-style: italic;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    // ============================================
     // Intro — newspaper two-column text flow
     // ============================================
 

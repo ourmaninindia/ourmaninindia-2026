@@ -35,7 +35,7 @@
         {{ end }}
     </header>
 
-    <time>{{ .Date.Format site.Params.date_format }}</time>
+    {{ partial "date-modified.html" . }}
     <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
 
     {{ if and .Content (eq $paginator.PageNumber 1) }}

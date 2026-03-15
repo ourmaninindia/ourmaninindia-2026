@@ -198,9 +198,9 @@ other = "Recent posts"
 other = "Explore sections"
 
 [page-updated]
-other = "Updated on"
+other = "Updated"
 [page-created]
-other = "Created on"
+other = "Created"
 
 
 [min-read]

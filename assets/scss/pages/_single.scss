@@ -229,6 +229,7 @@
         padding-top: var(--spacing-sm);
         max-width: var(--max-width-text);
         margin-inline: auto;
+        min-width: 0; // prevent grid blowout from wide content (tables, code blocks)
 
         // Reset drop cap inside figcaptions
         figcaption p::first-letter {

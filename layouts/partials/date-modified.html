@@ -1,6 +1,6 @@
-{{/* Date created or modified */}}
+{{/* 📅 Date created or modified */}}
 {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
-<time>📅{{ i18n "page-updated" }}: {{ .Lastmod.Format site.Params.date_format }}</time>
+<time>{{ i18n "page-updated" }} {{ .Lastmod.Format site.Params.date_format }}</time>
 {{ else }}
-<time>📅{{ i18n "page-created" }}: {{ .Date.Format site.Params.date_format }}</time>
+<time>{{ i18n "page-created" }} {{ .Date.Format site.Params.date_format }}</time>
 {{ end }}
