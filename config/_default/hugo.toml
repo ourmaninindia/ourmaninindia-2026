@@ -49,7 +49,7 @@ enableGitInfo = true              # essential for Lastmod to work
   section = ["HTML", "RSS"]
 
 [pagination]
-  pagerSize = 4
+  pagerSize = 5
 
 [frontmatter]
   lastmod = ["lastmod", ":fileModTime", ":default"]
@@ -85,7 +85,7 @@ enableGitInfo = true              # essential for Lastmod to work
     url = "/contact/"
     weight = 4
 
-[[menus.main]]
+  [[menus.main]]
     name = "Search"
     url = "/search/"
     weight = 5

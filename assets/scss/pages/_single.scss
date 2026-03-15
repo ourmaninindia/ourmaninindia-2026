@@ -41,8 +41,9 @@
     .share-buttons {
         position: absolute;
         right: 0;
-        top: 1.3rem;
-        z-index: 10;
+        top: 100%;
+        margin-top: var(--spacing-xs);
+        z-index: 100;
         background: var(--color-bg);
         border: 1px solid var(--color-border-dark);
         border-radius: var(--border-radius-lg);

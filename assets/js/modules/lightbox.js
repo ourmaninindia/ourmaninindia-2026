@@ -55,7 +55,7 @@
  * 4. ESC key (handled by initEscapeKey)
  */
 export function initLightbox() {
-  document.querySelectorAll('figure img:not(.contents__background) img').forEach(img => {
+  document.querySelectorAll('figure img:not(.contents__background)').forEach(img => {
         img.classList.add('lightbox-trigger');
         img.loading = 'lazy';
         img.decoding = 'async';

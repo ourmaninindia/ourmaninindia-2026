@@ -2,10 +2,6 @@
 languageCode = "en"
 environment = "production"
 
-# Optional: minify assets in production
-[minify]
-  disableXML = false 
-
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
