@@ -5,7 +5,7 @@ defaultContentLanguageInSubdir = false
 title = "Our Man in India"
 timeout = 60000 # was 25000
 # No theme line needed!
-enableGitInfo = true              # essential for Lastmod to work
+enableGitInfo = false             # slow locally; overridden to true in production
 
 [dartsass]
   binaryPath = "./node_modules/.bin/sass"

@@ -1,4 +1,5 @@
 # Production overrides
+enableGitInfo = true              # essential for Lastmod to work
 languageCode = "en"
 environment = "production"
 
