@@ -3,10 +3,10 @@ title: "Blog Archive 2010-12"
 layout: archive
 year: "2010"
 month: "12"
-url: "/blog/archive/2010-12/"
+url: "/en/blog/archive/2010-12/"
 posts:
   - creating-alliances
-  - not-outsourcing-to-increase-own-skill-sets
+  - outsourcing-skill-sets
+  - leadership-21st-century
   - wikileaks
-  - leadership-in-the-21st-century
 ---
