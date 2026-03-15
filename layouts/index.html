@@ -9,19 +9,15 @@
 
   {{/* ── Homepage intro content ─────────────────────────────── */}}
   <article class="single">
-    <header class="single__header">
+    <header class="contents__header">
       <h1>{{ .Title }}</h1>
-      <time>{{ .Date.Format site.Params.date_format }}</time>
       <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read" }}</div>
     </header>
 
-    <div class="single__content">
+    <div class="contents__content">
       {{ .Content }}
     </div>
 
-    <time>
-      📅 {{ i18n "page-created" }} {{ .Date.Format site.Params.date_format }}
-    </time>
   </article>
 
   {{/* ── Featured posts — separate from the article ─────────── */}}
@@ -32,7 +28,7 @@
 
   <section class="homepage__featured">
 
-    <div class="contents__title">{{ i18n "recentPosts" . }}</div>
+    <div class="contents__title-h2">{{ i18n "recentPosts" . }}</div>
 
     <div class="list__grid">
         <section class="list__posts">

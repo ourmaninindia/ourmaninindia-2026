@@ -18,7 +18,7 @@
       {{ end }}
 
       <div class="single__byline">
-        {{ partial "date-modified" . }}
+      <time>{{ .Date.Format site.Params.date_format }}</time>
 
         {{ $authorSlug := .Params.author | urlize }}
         {{ $author := index hugo.Data.authors $authorSlug }}
@@ -39,8 +39,13 @@
         </summary>
         {{ partial "share-buttons.html" . }}
       </details>
+ </header>
 
-      {{ if .Params.tags }}
+    <div class="list__grid">
+      <div class="single__content prose">
+        {{ .Content }}
+
+         {{ if .Params.tags }}
       <div class="single__taxonomy">{{ i18n "tags" }}:
         {{ with .Params.tags }}
         {{ $validTags := slice }}
@@ -61,12 +66,9 @@
         {{ end }}
       </div>
       {{ end }}
-    </header>
-
-    <div class="list__grid">
-      <div class="single__content prose">
-        {{ .Content }}
-        {{ partial "continue-reading.html" . }}
+   
+ {{ partial "continue-reading.html" . }}
+ 
       </div>
       {{ partial "sidebar.html" (dict "page" . "context" "single") }}
     </div>

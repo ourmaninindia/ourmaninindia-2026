@@ -27,6 +27,7 @@
 {{ $paginator := .Paginate $posts }}
 
 <div class="contents__container list">
+  <article>
     <header class="contents__header">
         <h1 class="contents__title">{{ .Title }}</h1>
         {{ with .Description }}
@@ -34,13 +35,17 @@
         {{ end }}
     </header>
 
+    <time>{{ .Date.Format site.Params.date_format }}</time>
+    <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read"}}</div>
+
     {{ if and .Content (eq $paginator.PageNumber 1) }}
-    <div class="section-intro list__content">
+    <div class="contents__content">
         {{ .Content }}
     </div>
     {{ end }}
+</article>
 
-    <h2 class="contents__title">{{ i18n "recentPosts" . }}</h2>
+    <h2 class="contents__title-h2">{{ i18n "recentPosts" . }}:</h2>
 
     <div class="list__grid">
         <section class="list__posts">
