@@ -20,6 +20,7 @@
 
     // Tablet — two column widget grid
     @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
+        grid-area: sidebar;
         grid-template-columns: 1fr; // fixed: was column-count (multi-col, not grid)
 
         .widget {

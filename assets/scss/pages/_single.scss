@@ -227,7 +227,7 @@
     &__content {
         background-color: var(--color-bg);
         padding-top: var(--spacing-sm);
-        max-width: 65ch;
+        max-width: var(--max-width-text);
         margin-inline: auto;
 
         // Reset drop cap inside figcaptions

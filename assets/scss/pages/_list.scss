@@ -44,6 +44,8 @@
     }
 
     &__content {
+        max-width: var(--max-width-text);
+
         // Drop cap — list section intro only
         // (single posts use .prose drop cap in _typography.scss)
         p:first-of-type::first-letter {
@@ -60,8 +62,9 @@
     &__posts {
         // NOT flex — floats need normal block flow to work
         display: block;
+        min-width: 0; // prevent grid blowout from wide content
 
-        @media (min-width: $breakpoint-desktop) {
+        @media (min-width: $breakpoint-tablet) {
             grid-area: posts;
         }
     }
