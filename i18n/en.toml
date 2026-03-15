@@ -150,13 +150,29 @@ other = "First Name"
 [lastName]
 other = "Last Name"
 [email]
-other = "Email"
+other = "Email" 
 [message]
 other = "Message"
 [subject]
 other = "Subject"
+[connectBy]
+other = "Connect by"
+[connectOn]
+other = "Connect on"
+[followOn]
+other = "Follow on"
 
+[send]
+other = "Send"
 
+[linkedIn]
+other = "LinkedIn"
+[facebook]
+other = "Facebook"
+[instagram]
+other = "Instagram"
+[strava]
+other = "Strava"
 
 [tryAgain]
 other = "Try again"

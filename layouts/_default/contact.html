@@ -89,8 +89,8 @@
 
                     <div class="button__buttons">
                         <button type="submit" class="button button--full">
-                            <span class="button__text--full">Send Message</span>
-                            <span class="button__text--short">Send</span>
+                            <span class="button__text--full">{{ i18n "send" }} {{ i18n "message" }} </span>
+                            <span class="button__text--short">{{ i18n "send" }}</span>
                         </button>
                     </div>
                 </form>
@@ -104,53 +104,53 @@
                     <div class="contact__method">
                         <span class="contact__method-icon" aria-hidden="true">📧</span>
                         <div>
-                            <h3 class="contact__method-label">Email</h3>
+                            <h3 class="contact__method-label">{{ i18n "email" }}</h3>
                             <a href="mailto:{{ hugo.Data.authors.alfred.email }}"
-                                class="contact__method-link">Connect by mail</a>
+                                class="contact__method-link">{{ i18n "connectBy" }} {{ i18n "email" }}</a>
                         </div>
                     </div>
 
                     <div class="contact__method">
                         <span class="contact__method-icon" aria-hidden="true">💼</span>
                         <div>
-                            <h3 class="contact__method-label">LinkedIn</h3>
+                            <h3 class="contact__method-label">{{ i18n "linkedIn" }}</h3>
                             <a href="https://linkedin.com/in/{{ hugo.Data.authors.alfred.linkedin }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="contact__method-link">Connect on LinkedIn</a>
+                                class="contact__method-link">{{ i18n "connectOn" }} {{ i18n "linkedIn" }}</a>
                         </div>
                     </div>
 
                     <div class="contact__method">
                         <span class="contact__method-icon" aria-hidden="true">📘</span>
                         <div>
-                            <h3 class="contact__method-label">Facebook</h3>
+                            <h3 class="contact__method-label">{{ i18n "facebook" }}</h3>
                             <a href="https://facebook.com/{{ hugo.Data.authors.alfred.facebook }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="contact__method-link">Follow on Facebook</a>
+                                class="contact__method-link">{{ i18n "followOn" }} {{ i18n "facebook" }}</a>
                         </div>
                     </div>
 
                     <div class="contact__method">
                         <span class="contact__method-icon" aria-hidden="true">📸</span>
                         <div>
-                            <h3 class="contact__method-label">Instagram</h3>
+                            <h3 class="contact__method-label">{{ i18n "instagram" }}</h3>
                             <a href="https://instagram.com/{{ hugo.Data.authors.alfred.instagram }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="contact__method-link">Follow on Instagram</a>
+                                class="contact__method-link">{{ i18n "followOn" }} {{ i18n "instagram" }}</a>
                         </div>
                     </div>
 
                     <div class="contact__method">
                         <span class="contact__method-icon" aria-hidden="true">🚴</span>
                         <div>
-                            <h3 class="contact__method-label">Strava</h3>
+                            <h3 class="contact__method-label">{{ i18n "strava" }}</h3>
                             <a href="https://strava.com/athletes/{{ hugo.Data.authors.alfred.strava }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="contact__method-link">Follow on Strava</a>
+                                class="contact__method-link">{{ i18n "followOn" }} {{ i18n "strava" }}</a>
                         </div>
                     </div>
 
