@@ -11,6 +11,7 @@
     min-width: 0; // prevent grid blowout from widget min-content
 
     .widget { min-width: 0; }
+
     gap: var(--spacing-sm);
     row-gap: 0;
     margin-bottom: var(--spacing-sm);

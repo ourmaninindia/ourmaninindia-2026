@@ -7,21 +7,21 @@
    ========================================== */
 
 // Breakpoints — must be SCSS vars, CSS custom properties don't work in @media
-$breakpoint-mobile:   480px;
-$breakpoint-tablet:   768px;
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
-$breakpoint-wide:    1200px;
+$breakpoint-wide: 1200px;
 
 // Font stacks — no benefit to CSS custom properties
-$font-family:      arapey, georgia, serif;
+$font-family: arapey, georgia, serif;
 $font-family-mono: "Fira Code", "Courier New", Courier, monospace;
 
 // Z-index scale — compile-time constants
 $z-dropdown: 1000;
-$z-sticky:   1020;
-$z-modal:    1030;
-$z-popover:  1040;
-$z-tooltip:  1050;
+$z-sticky: 1020;
+$z-modal: 1030;
+$z-popover: 1040;
+$z-tooltip: 1050;
 
 /* ==========================================
    CSS CUSTOM PROPERTIES (Runtime)
@@ -31,7 +31,6 @@ $z-tooltip:  1050;
    ========================================== */
 
 :root {
-
     // ── Layout ────────────────────────────────────────────────────────────────
 
     --max-width: 1200px;
@@ -46,82 +45,78 @@ $z-tooltip:  1050;
 
     // ── Colours — Primary ─────────────────────────────────────────────────────
 
-    --color-primary:      hsl(217, 91%, 56%); // #2563eb blue-600
-    --color-primary-hover:hsl(217, 91%, 46%); // #1d4ed8 blue-700
-    --color-primary-ring: hsl(217, 91%, 56%, 0.1); // focus ring / selection tint
+    --color-primary:      hsl(217deg, 91%, 56%); // #2563eb blue-600
+    --color-primary-hover:hsl(217deg, 91%, 46%); // #1d4ed8 blue-700
+    --color-primary-ring: hsl(217deg, 91%, 56%, 0.1); // focus ring / selection tint
 
     // ── Colours — Text ────────────────────────────────────────────────────────
 
-    --color-text:       hsl(213, 72%, 15%); // #0A2540 deep navy
-    --color-text-light: hsl(220,  9%, 35%); // 7:1 contrast against --color-bg
-    --color-text-dark:  hsl(  0,  0%, 20%); // #333333 dark gray
-    --color-drop-cap:   hsl(  0,100%, 27%); // #8B0000 dark red
+    --color-text:       hsl(213deg, 72%, 15%); // #0A2540 deep navy
+    --color-text-light: hsl(220deg,  9%, 35%); // 7:1 contrast against --color-bg
+    --color-text-dark:  hsl(  0deg,  0%, 20%); // #333333 dark gray
+    --color-drop-cap:   hsl(  0deg,100%, 27%); // #8B0000 dark red
 
     // ── Colours — Backgrounds ─────────────────────────────────────────────────
 
-    --color-bg:           hsl(214, 42%, 97%); // #F6F9FC stripe-style light blue
-    --color-bg-secondary: hsl(240,100%, 99%); // #F8F8FF ghostwhite
-    --color-bg-byline:    hsl(  0,  0%, 90%); // light gray pill
-    --color-comments:     hsl( 34, 78%, 91%); // antiquewhite
-    --color-white:        hsl(  0,  0%,100%);
-    --color-black:        hsl(  0,  0%,  0%);
+    --color-bg:           hsl(214deg, 42%, 97%); // #F6F9FC stripe-style light blue
+    --color-bg-secondary: hsl(240deg,100%, 99%); // #F8F8FF ghostwhite
+    --color-bg-byline:    hsl(  0deg,  0%, 90%); // light gray pill
+    --color-comments:     hsl( 34deg, 78%, 91%); // antiquewhite
+    --color-white:        hsl(  0deg,  0%,100%);
+    --color-black:        hsl(  0deg,  0%,  0%);
 
     // ── Colours — UI States ───────────────────────────────────────────────────
 
-    --color-border:       hsl(220, 13%, 91%); // #e5e7eb gray-200
-    --color-border-light: hsl(  0,  0%, 87%); // #dddddd
-    --color-border-dark:  hsl(216, 12%, 84%); // #d1d5db gray-300
-
-    --color-error:        hsl(  0,100%, 35%); // #dc2626 red-600
-    --color-error-hover:  hsl(  0,100%, 25%); // darker red for danger button hover
-    --color-error-bg:     hsl(  0, 86%, 97%); // #fef2f2 red tint
-
-    --color-success:      hsl(161, 94%, 30%); // #059669 emerald-600
-    --color-success-hover:hsl(161, 94%, 20%);
-    --color-success-bg:   hsl(138, 76%, 97%); // #f0fdf4 green tint
-
-    --color-warning:      hsl( 38, 92%, 50%); // #f59e0b amber-400
-    --color-info:         hsl(211,100%, 50%); // #007BFF blue
+    --color-border:       hsl(220deg, 13%, 91%); // #e5e7eb gray-200
+    --color-border-light: hsl(  0deg,  0%, 87%); // #dddddd
+    --color-border-dark:  hsl(216deg, 12%, 84%); // #d1d5db gray-300
+    --color-error:        hsl(  0deg,100%, 35%); // #dc2626 red-600
+    --color-error-hover:  hsl(  0deg,100%, 25%); // darker red for danger button hover
+    --color-error-bg:     hsl(  0deg, 86%, 97%); // #fef2f2 red tint
+    --color-success:      hsl(161deg, 94%, 30%); // #059669 emerald-600
+    --color-success-hover:hsl(161deg, 94%, 20%);
+    --color-success-bg:   hsl(138deg, 76%, 97%); // #f0fdf4 green tint
+    --color-warning:      hsl( 38deg, 92%, 50%); // #f59e0b amber-400
+    --color-info:         hsl(211deg,100%, 50%); // #007BFF blue
 
     // ── Colours — Gray scale ──────────────────────────────────────────────────
 
-    --color-gray-300: hsl(216, 12%, 84%); // #d1d5db
-    --color-gray-400: hsl(218,  9%, 65%); // #9ca3af
+    --color-gray-300: hsl(216deg, 12%, 84%); // #d1d5db
+    --color-gray-400: hsl(218deg,  9%, 65%); // #9ca3af
 
     // ── Colours — Miscellaneous ───────────────────────────────────────────────
 
-    --color-lightblue:   hsl(195, 53%, 79%); // #add8e6
-    --color-navajowhite: hsl( 36,100%, 84%); // #ffdead
+    --color-lightblue:   hsl(195deg, 53%, 79%); // #add8e6
+    --color-navajowhite: hsl( 36deg,100%, 84%); // #ffdead
 
     // ── Colours — Code blocks ─────────────────────────────────────────────────
 
-    --color-code-bg:       hsl(  0,  0%, 12%); // #1e1e1e VS Code dark
-    --color-code-text:     hsl(  0,  0%, 83%); // #d4d4d4
-    --color-code-bg-alt:   hsl( 70, 15%, 15%); // #272822 Monokai
-    --color-code-text-alt: hsl( 60, 30%, 96%); // #f8f8f2 Monokai light
+    --color-code-bg:       hsl(  0deg,  0%, 12%); // #1e1e1e VS Code dark
+    --color-code-text:     hsl(  0deg,  0%, 83%); // #d4d4d4
+    --color-code-bg-alt:   hsl( 70deg, 15%, 15%); // #272822 Monokai
+    --color-code-text-alt: hsl( 60deg, 30%, 96%); // #f8f8f2 Monokai light
 
     // ── Colours — Brand / Header ──────────────────────────────────────────────
 
-    --color-brand-purple: hsl(258, 56%, 15%); // #20123a deep purple
-    --color-brand-orange: hsl( 16, 78%, 50%); // #e65321 burnt orange
+    --color-brand-purple: hsl(258deg, 56%, 15%); // #20123a deep purple
+    --color-brand-orange: hsl( 16deg, 78%, 50%); // #e65321 burnt orange
 
     // ── Header / Footer ───────────────────────────────────────────────────────
     // Intentionally NOT overridden in dark mode — stays dark in both themes
 
     --header-bg:     var(--color-brand-purple);
-    --header-text:   hsl(0, 0%, 100%);
-    --header-border: hsl(0, 0%, 100%, 0.1);
+    --header-text:   hsl(0deg, 0%, 100%);
+    --header-border: hsl(0deg, 0%, 100%, 0.1);
     --header-height: 64px; // matches nav min-height
-
-    --footer-bg:         hsl(  0,  0%, 16%); // #2a2a2a
-    --footer-text:       hsl(  0,  0%,100%);
-    --footer-text-muted: hsl(  0,  0%, 63%); // #a0a0a0
-    --footer-border:     hsl(  0,  0%,100%, 0.1);
+    --footer-bg:         hsl(  0deg,  0%, 16%); // #2a2a2a
+    --footer-text:       hsl(  0deg,  0%,100%);
+    --footer-text-muted: hsl(  0deg,  0%, 63%); // #a0a0a0
+    --footer-border:     hsl(  0deg,  0%,100%, 0.1);
 
     // ── Colours — Debug (development only) ───────────────────────────────────
 
-    --color-debug-bg:   hsl(34, 78%, 91%, 0.3); // antiquewhite 30%
-    --color-debug-text: hsl(120,100%, 50%);      // lime green
+    --color-debug-bg:   hsl(34deg, 78%, 91%, 0.3); // antiquewhite 30%
+    --color-debug-text: hsl(120deg,100%, 50%);      // lime green
 
     // ── Typography — Line heights ─────────────────────────────────────────────
 
@@ -151,9 +146,9 @@ $z-tooltip:  1050;
 
     // ── Shadows ───────────────────────────────────────────────────────────────
 
-    --shadow-sm: 2px 2px  4px hsl(0, 0%, 0%, 0.15);
-    --shadow-md: 2px 4px  8px hsl(0, 0%, 0%, 0.25);
-    --shadow-lg: 2px 8px 16px hsl(0, 0%, 0%, 0.30); // added — used by galleries hover
+    --shadow-sm: 2px 2px  4px hsl(0deg, 0%, 0%, 0.15);
+    --shadow-md: 2px 4px  8px hsl(0deg, 0%, 0%, 0.25);
+    --shadow-lg: 2px 8px 16px hsl(0deg, 0%, 0%, 0.30); // added — used by galleries hover
 
     // ── Transitions ───────────────────────────────────────────────────────────
     // --transition-all removed — encourages animating non-composited properties
@@ -164,26 +159,26 @@ $z-tooltip:  1050;
     // ── Gradients ─────────────────────────────────────────────────────────────
 
     --gradient-primary: linear-gradient(135deg,
-        hsl(234, 75%, 66%) 0%,
-        hsl(277, 49%, 47%) 100%
+        hsl(234deg, 75%, 66%) 0%,
+        hsl(277deg, 49%, 47%) 100%
     );
 
     // ── Pagination ────────────────────────────────────────────────────────────
 
-    --pagination-bg:           hsl(0, 0%, 0%, 0.05);
-    --pagination-bg-hover:     hsl(0, 0%, 0%, 0.08);
-    --pagination-bg-active:    hsl(0, 0%, 0%, 0.12);
-    --pagination-text:         hsl(0, 0%, 20%);
-    --pagination-text-active:  hsl(0, 0%, 0%);
-    --pagination-shadow-hover: 0 0 6px hsl(0, 0%, 0%, 0.15);
+    --pagination-bg:           hsl(0deg, 0%, 0%, 0.05);
+    --pagination-bg-hover:     hsl(0deg, 0%, 0%, 0.08);
+    --pagination-bg-active:    hsl(0deg, 0%, 0%, 0.12);
+    --pagination-text:         hsl(0deg, 0%, 20%);
+    --pagination-text-active:  hsl(0deg, 0%, 0%);
+    --pagination-shadow-hover: 0 0 6px hsl(0deg, 0%, 0%, 0.15);
 
     // ── Tooltips ──────────────────────────────────────────────────────────────
 
-    --tooltip-bg:           hsl(0, 0%, 20%);       // dark default
+    --tooltip-bg:           hsl(0deg, 0%, 20%);       // dark default
     --tooltip-bg-primary:   var(--color-primary);
-    --tooltip-bg-light:     hsl(0, 0%, 98%);
-    --tooltip-color:        hsl(0, 0%, 100%);
-    --tooltip-color-light:  hsl(0, 0%, 10%);       // added — used by --light variant
+    --tooltip-bg-light:     hsl(0deg, 0%, 98%);
+    --tooltip-color:        hsl(0deg, 0%, 100%);
+    --tooltip-color-light:  hsl(0deg, 0%, 10%);       // added — used by --light variant
     --tooltip-radius:       6px;
     --tooltip-padding-y:    8px;
     --tooltip-padding-x:    12px;
@@ -192,73 +187,71 @@ $z-tooltip:  1050;
     --tooltip-transition:   opacity 0.3s ease-in-out;
     --tooltip-arrow-size:   5px;
     --tooltip-offset:       10px;
-    --tooltip-shadow:       0 2px 8px hsl(0, 0%, 0%, 0.15);
-    --tooltip-shadow-light: 0 2px 8px hsl(0, 0%, 0%, 0.10);
+    --tooltip-shadow:       0 2px 8px hsl(0deg, 0%, 0%, 0.15);
+    --tooltip-shadow-light: 0 2px 8px hsl(0deg, 0%, 0%, 0.10);
 
     /* ==========================================
        DARK THEME OVERRIDES
        ========================================== */
 
     &[data-theme="dark"] {
-
         // Colours — Primary
-        --color-primary:       hsl(217, 91%, 83%); // blue-300 — lighter for dark bg
-        --color-primary-hover: hsl(217, 91%, 65%);
+        --color-primary:       hsl(217deg, 91%, 83%); // blue-300 — lighter for dark bg
+        --color-primary-hover: hsl(217deg, 91%, 65%);
 
         // Colours — Text
-        --color-text:       hsl(  0,  0%, 96%); // near white
-        --color-text-light: hsl(  0,  0%, 70%); // readable mid-gray
-        --color-text-dark:  hsl(  0,  0%, 90%);
+        --color-text:       hsl(  0deg,  0%, 96%); // near white
+        --color-text-light: hsl(  0deg,  0%, 70%); // readable mid-gray
+        --color-text-dark:  hsl(  0deg,  0%, 90%);
 
         // Colours — Backgrounds
-        --color-bg:           hsl( 36, 16%, 10%); // dark warm brown
-        --color-bg-secondary: hsl(210, 13%, 40%); // slategray
-        --color-bg-byline:    hsl(210, 13%, 20%);
+        --color-bg:           hsl( 36deg, 16%, 10%); // dark warm brown
+        --color-bg-secondary: hsl(210deg, 13%, 40%); // slategray
+        --color-bg-byline:    hsl(210deg, 13%, 20%);
 
         // Colours — UI States
-        --color-border:       hsl(  0,  0%, 23%);
-        --color-border-light: hsl(  0,  0%, 20%);
-        --color-border-dark:  hsl(  0,  0%, 27%);
-
-        --color-error:        hsl(  0, 91%, 71%); // red-400 — softer on dark bg
-        --color-success:      hsl(120,100%, 35%);
-        --color-success-hover:hsl(120,100%, 25%);
-        --color-warning:      hsl( 43, 96%, 56%); // amber-400
-        --color-info:         hsl(213, 94%, 68%); // blue-400
+        --color-border:       hsl(  0deg,  0%, 23%);
+        --color-border-light: hsl(  0deg,  0%, 20%);
+        --color-border-dark:  hsl(  0deg,  0%, 27%);
+        --color-error:        hsl(  0deg, 91%, 71%); // red-400 — softer on dark bg
+        --color-success:      hsl(120deg,100%, 35%);
+        --color-success-hover:hsl(120deg,100%, 25%);
+        --color-warning:      hsl( 43deg, 96%, 56%); // amber-400
+        --color-info:         hsl(213deg, 94%, 68%); // blue-400
 
         // Colours — Gray scale
-        --color-gray-300: hsl(215, 14%, 34%);
-        --color-gray-400: hsl(220,  9%, 46%);
+        --color-gray-300: hsl(215deg, 14%, 34%);
+        --color-gray-400: hsl(220deg,  9%, 46%);
 
         // Colours — Code blocks
-        --color-code-bg:       hsl(  0,  0%, 18%);
-        --color-code-text:     hsl(  0,  0%, 88%);
-        --color-code-bg-alt:   hsl(  0,  0%, 23%);
-        --color-code-text-alt: hsl(  0,  0%,100%);
+        --color-code-bg:       hsl(  0deg,  0%, 18%);
+        --color-code-text:     hsl(  0deg,  0%, 88%);
+        --color-code-bg-alt:   hsl(  0deg,  0%, 23%);
+        --color-code-text-alt: hsl(  0deg,  0%,100%);
 
         // Shadows — stronger contrast on dark backgrounds
-        --shadow-sm: 0 1px  3px hsl(0, 0%, 0%, 0.30);
-        --shadow-md: 0 4px 12px hsl(0, 0%, 0%, 0.40);
-        --shadow-lg: 0 6px 20px hsl(0, 0%, 0%, 0.50);
+        --shadow-sm: 0 1px  3px hsl(0deg, 0%, 0%, 0.30);
+        --shadow-md: 0 4px 12px hsl(0deg, 0%, 0%, 0.40);
+        --shadow-lg: 0 6px 20px hsl(0deg, 0%, 0%, 0.50);
 
         // Gradients
         --gradient-primary: linear-gradient(135deg,
-            hsl(263, 70%, 57%) 0%,
-            hsl(292, 91%, 66%) 100%
+            hsl(263deg, 70%, 57%) 0%,
+            hsl(292deg, 91%, 66%) 100%
         );
 
         // Pagination
-        --pagination-bg:           hsl(0, 0%, 100%, 0.05);
-        --pagination-bg-hover:     hsl(0, 0%, 100%, 0.09);
-        --pagination-bg-active:    hsl(0, 0%, 100%, 0.14);
-        --pagination-text:         hsl(0, 0%, 80%);
-        --pagination-text-active:  hsl(0, 0%, 100%);
-        --pagination-shadow-hover: 0 0 6px hsl(0, 0%, 100%, 0.25);
+        --pagination-bg:           hsl(0deg, 0%, 100%, 0.05);
+        --pagination-bg-hover:     hsl(0deg, 0%, 100%, 0.09);
+        --pagination-bg-active:    hsl(0deg, 0%, 100%, 0.14);
+        --pagination-text:         hsl(0deg, 0%, 80%);
+        --pagination-text-active:  hsl(0deg, 0%, 100%);
+        --pagination-shadow-hover: 0 0 6px hsl(0deg, 0%, 100%, 0.25);
 
         // Tooltips — inverted in dark mode
-        --tooltip-bg:    hsl(210, 17%, 98%); // near white
-        --tooltip-color: hsl(  0,  0%, 10%); // near black
-        --tooltip-shadow:0 2px 8px hsl(0, 0%, 100%, 0.10);
+        --tooltip-bg:    hsl(210deg, 17%, 98%); // near white
+        --tooltip-color: hsl(  0deg,  0%, 10%); // near black
+        --tooltip-shadow:0 2px 8px hsl(0deg, 0%, 100%, 0.10);
 
         // NOTE: --header-* and --footer-* are intentionally NOT overridden.
         // Both stay dark in light and dark themes.

@@ -5,7 +5,6 @@
    ========================================== */
 
 .search {
-
     &__clear {
         background-color: var(--color-primary);
 
@@ -112,7 +111,7 @@
 
         mark {
             // hsl tint — rgba(var()) does not work with CSS custom properties
-            background: hsl(217, 91%, 56%, 0.2);
+            background: hsl(217deg, 91%, 56%, 0.2);
             color: var(--color-primary);
             font-weight: 600;
             padding: var(--spacing-xs) var(--spacing-sm);
@@ -141,6 +140,7 @@
 
     h3 { font-size: var(--font-size-xl); margin-bottom: var(--spacing-sm); color: var(--color-text); }
     p  { color: var(--color-text-light); }
+
     a  {
         color: var(--color-primary);
         text-decoration: none;

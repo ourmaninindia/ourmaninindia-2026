@@ -5,7 +5,6 @@
    ========================================== */
 
 .contact {
-
     // ─── Subscribe section ────────────────────────────────────────────────────
 
     &__subscribe-wrapper {
@@ -93,6 +92,7 @@
     // inside the contact page wrapper
     .form {
         flex: 2;
+
         @include form-base;
     }
 

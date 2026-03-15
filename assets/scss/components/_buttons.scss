@@ -26,17 +26,17 @@
         border-color: var(--color-primary-hover);
         transform: translateY(-1px);
         box-shadow:
-            0 7px 14px hsl(0, 0%, 0%, 0.15),
-            0 3px 6px hsl(0, 0%, 0%, 0.1),
-            0 0 0 1px hsl(0, 0%, 100%, 0.1) inset;
+            0 7px 14px hsl(0deg, 0%, 0%, 0.15),
+            0 3px 6px hsl(0deg, 0%, 0%, 0.1),
+            0 0 0 1px hsl(0deg, 0%, 100%, 0.1) inset;
     }
 
     &:active {
         border-color: var(--color-primary-hover);
         transform: translateY(-1px);
         box-shadow:
-            0 3px 7px hsl(0, 0%, 0%, 0.15),
-            0 1px 3px hsl(0, 0%, 0%, 0.1);
+            0 3px 7px hsl(0deg, 0%, 0%, 0.15),
+            0 1px 3px hsl(0deg, 0%, 0%, 0.1);
     }
 
     &__buttons {
@@ -114,8 +114,8 @@
         // Form invalid — suppress strong hover feedback
         &:not(.is-ready):hover {
             box-shadow:
-                0 1px 3px hsl(0, 0%, 0%, 0.12),
-                0 1px 2px hsl(0, 0%, 0%, 0.24);
+                0 1px 3px hsl(0deg, 0%, 0%, 0.12),
+                0 1px 2px hsl(0deg, 0%, 0%, 0.24);
         }
 
         // Form valid — full hover effect

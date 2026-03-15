@@ -18,6 +18,7 @@
 
 .card {
     @include card-base;
+
     transition:
         transform var(--transition-base),
         box-shadow var(--transition-base);
@@ -35,8 +36,8 @@
         border-color: var(--color-primary);
         background: linear-gradient(
             135deg,
-            hsl(217, 91%, 56%, 0.05) 0%,
-            hsl(217, 91%, 56%, 0.02) 100%
+            hsl(217deg, 91%, 56%, 0.05) 0%,
+            hsl(217deg, 91%, 56%, 0.02) 100%
         );
     }
 }
@@ -45,6 +46,7 @@
 
 .content-card {
     @include card-base;
+
     padding: 0;
     overflow: hidden;
 
@@ -73,6 +75,7 @@
 
 .image-card {
     @include card-base;
+
     padding: 0;
     overflow: hidden;
 
@@ -113,6 +116,7 @@
     }
 
     &__icon  { font-size: var(--font-size-2xl); margin-bottom: var(--spacing-xs); display: block; }
+
     &__value {
         display: block;
         font-size: var(--font-size-xl);
@@ -122,6 +126,7 @@
         line-height: 1.2;
     }
     &__unit  { font-size: var(--font-size-sm); font-weight: 400; color: var(--color-text-light); margin-left: 2px; }
+
     &__label {
         display: block;
         font-size: var(--font-size-sm);
@@ -136,6 +141,7 @@
 
 .author-card {
     @include card-base;
+
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
@@ -159,14 +165,15 @@
 
 .info-card {
     @include card-base;
+
     border-left: 4px solid;
     padding: var(--spacing-md) var(--spacing-lg);
 
     // Tints use the existing semantic colour tokens at low opacity
-    &--info    { border-left-color: var(--color-info);    background: hsl(211, 100%, 50%, 0.05); }
-    &--success { border-left-color: var(--color-success); background: hsl(161,  94%, 30%, 0.05); }
-    &--warning { border-left-color: var(--color-warning); background: hsl( 38,  92%, 50%, 0.05); }
-    &--danger  { border-left-color: var(--color-error);   background: hsl(  0, 100%, 35%, 0.05); }
+    &--info    { border-left-color: var(--color-info);    background: hsl(211deg, 100%, 50%, 0.05); }
+    &--success { border-left-color: var(--color-success); background: hsl(161deg,  94%, 30%, 0.05); }
+    &--warning { border-left-color: var(--color-warning); background: hsl( 38deg,  92%, 50%, 0.05); }
+    &--danger  { border-left-color: var(--color-error);   background: hsl(  0deg, 100%, 35%, 0.05); }
 
     &__title {
         font-weight: 700;

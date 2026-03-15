@@ -37,6 +37,7 @@ figure {
     &.left {
         float: left;
         margin-right: var(--spacing-sm);
+
         // shape-outside: margin-box — disabled pending design decision
     }
 
