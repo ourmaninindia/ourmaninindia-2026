@@ -11,10 +11,13 @@
 {{ end }}
 
 <div class="contents__container">
-  <article class="single">
+  <article class="contents prose">
 
     <header class="contents__header">
       <h1 class="contents__title">{{ .Title }}</h1>
+      {{ with .Description }}
+        <p class="contents__description">{{ . }}</p>
+      {{ end }}
       <time class="contents__date">{{ .Date.Format site.Params.date_format }}</time>  
        
       <div class="contents__byline">

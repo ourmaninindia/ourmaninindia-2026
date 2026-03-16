@@ -163,20 +163,26 @@ p {
     // Nested lists
     ul ul, ol ol, ul ol, ol ul {
         margin-top: var(--spacing-sm);
-        margin-bottom: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm); 
     }
 
     // Blockquotes
     blockquote {
-        margin: var(--spacing-lg) 0;
-        padding: var(--spacing-md) var(--spacing-lg);
+        margin: var(--spacing-sm) 0;
+        padding: 0 var(--spacing-md);
         border-left: 4px solid var(--color-primary);
         background: var(--color-bg-secondary);
         font-style: italic;
         color: var(--color-text-light);
 
+        p {
+          margin: 0;
+        }
+
         p:last-child {
             margin-bottom: 0;
+            font-size: var(--font-size-sm);
+            text-align: right;
         }
     }
 

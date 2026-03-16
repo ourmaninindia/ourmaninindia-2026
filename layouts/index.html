@@ -10,7 +10,10 @@
   {{/* ── Homepage intro content ─────────────────────────────── */}}
   <article class="single">
     <header class="contents__header">
-      <h1>{{ .Title }}</h1>
+      <h1 class="contents__title">{{ .Title }}</h1>
+      {{ with .Description }}
+        <p class="contents__description">{{ . }}</p>
+      {{ end }}
       {{ partial "date-modified.html" . }}
       <div class="reading-time">{{ .ReadingTime }} {{ i18n "min-read" }}</div>
     </header>

@@ -22,7 +22,7 @@
 
     // ─── Title ────────────────────────────────────────────────────────────────
     &__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-3xl);
         margin-bottom: var(--spacing-sm);
         color: var(--color-text);
         text-align: center;
@@ -51,7 +51,7 @@
         }
 
         // Drop cap — single posts only
-        p:first-of-type:not(figcaption p)::first-letter {
+        p:first-of-type:not(figcaption p):not(blockquote p)::first-letter {
             font-size: var(--font-size-3xl);
             line-height: 0.9;
             float: left;

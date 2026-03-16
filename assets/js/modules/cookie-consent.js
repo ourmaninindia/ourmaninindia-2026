@@ -1,3 +1,5 @@
+// see the cookie-consent.html partial
+
 export function initCookie() {
     document.addEventListener("DOMContentLoaded", function () {
         const cookieBtn = document.getElementById("cookie-settings-btn");

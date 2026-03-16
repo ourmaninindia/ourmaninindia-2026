@@ -3,8 +3,8 @@ categories:
 tags:
 date: 2015-09-29T13:35:55Z
 modified: 2023-03-14T11:40:00Z
-description: "" # "Life is like riding a bicycle. To keep your balance you have to keep moving. "
-title: "Our Man in India"
+description: "Waar leiderschap, technologie en het parcours samenkomen."
+title: "Welkom"
 disable_comments: true
 books: "Dit zijn enkele auteurs die ik heb ontmoet en van wiens boek ik heb genoten."
 carousel:
@@ -29,4 +29,11 @@ carousel:
 ---
 
 
-Over de jaren heb ik over verschillende zaken geschreven, commentaar geleverd over evenementen, of gewoon verhalen gedeeld waarvan ik dacht dat ze de moeite waard waren om te delen. Bijvoorbeeld, tijdens de vernieuwing van dit website, kwam ik een verhaal van een THiNK seminar tegen die ik in 2012 had bijgewoond. De titel van de lecture door Prof. Ian Lipkin was *__The anatomy of an pandemic__*. Mijn laatste zin in mijn blog over dat was profetisch _"I cannot help but think we will hear of Dr Lipkin again…"._  Ongelovelijk als dat blog met de ervaring van Covid nu weer leest (deze is in het Engels).
+Deze artikelen bevinden zich op het snijvlak van drie dingen waar ik steeds op terugkom: leiderschap, technologie en de open weg. In een carrière die me van bestuurskamers naar ontwikkelomgevingen voerde — door olie & gas, bankwezen, de maritieme sector en verder — ben ik gaan inzien dat dezelfde kwaliteiten die een uitstekende bestuurder maken ook een uitstekende wielrenner maken: oordeelsvermogen, doorzettingsvermogen, en weten wanneer je moet doorzetten.
+
+Dit zijn dan ook onderwerpen die nog steeds de moeite waard zjn om over te schrijven.
+
+{{< img class="image homepage" src="alfred.jpg" eager="true" size="small" alt="Alfred, onze Man in India" >}}
+
+De naam? Ik verhuisde van Australië naar India, trouwde met een Indiase vrouw, en ben er nooit echt vertrokken — in ieder geval niet in gedachten. Als Nederlands staatsburger met een OCI-kaart en een leven geworteld tussen continenten, *"Our Man in India"* is niet zozeer een gekozen titel, maar meer een titel die mij uitkoos.
+

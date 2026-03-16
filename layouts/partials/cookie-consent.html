@@ -4,7 +4,33 @@
 
 import * as CookieConsent from '/js/cookieconsent.esm.js';
 
-// Define the config separately so it can be passed into requestIdleCallback
+// Load Google Analytics (defined first so it is available when initCookieConsent runs)
+{{ with site.Params.googleAnalytics }}
+function loadGoogleAnalytics() {
+    // Check if already loaded
+    if (window.gtag) return;
+
+    // Create and append Google Analytics script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id={{ . }}';
+    document.head.appendChild(script);
+
+    // Initialize Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', '{{ . }}', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+    });
+}
+
+// Make function available globally
+window.loadGoogleAnalytics = loadGoogleAnalytics;
+{{ end }}
+
 function initCookieConsent() {
     CookieConsent.run({
         guiOptions: {
@@ -39,9 +65,7 @@ function initCookieConsent() {
                     ga: {
                         label: 'Google Analytics',
                         onAccept: () => {
-                            // Load Google Analytics
-                            {{ if site.Params.googleAnalytics }}
-                            // console.log('Analytics cookies accepted - Loading Google Analytics');
+                            {{ with site.Params.googleAnalytics }}
                             loadGoogleAnalytics();
                             {{ end }}
                         },
@@ -217,7 +241,7 @@ function initCookieConsent() {
     });
 
     // Load analytics if already accepted (returning visitor)
-    {{ if site.Params.googleAnalytics }}
+    {{ with site.Params.googleAnalytics }}
     if (CookieConsent.acceptedCategory('analytics')) {
         loadGoogleAnalytics();
     }
@@ -231,38 +255,6 @@ if ('requestIdleCallback' in window) {
     // Safari fallback
     setTimeout(initCookieConsent, 200);
 }
-
-// Function to load Google Analytics
-{{ if site.Params.googleAnalytics }}
-function loadGoogleAnalytics() {
-    // Check if already loaded
-    if (window.gtag) {
-        // console.log('Google Analytics already loaded');
-        return;
-    }
-
-    // Create and append Google Analytics script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.Params.googleAnalytics }}';
-    document.head.appendChild(script);
-
-    // Initialize Google Analytics
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', '{{ site.Params.googleAnalytics }}', {
-        'anonymize_ip': true,
-        'cookie_flags': 'SameSite=None;Secure'
-    });
-
-    // console.log('Google Analytics loaded successfully');
-}
-{{ end }}
-
-// Make function available globally
-window.loadGoogleAnalytics = loadGoogleAnalytics;
 
 // Expose CookieConsent globally for footer link
 window.cookieconsent = CookieConsent;

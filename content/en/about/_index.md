@@ -23,9 +23,17 @@ tags:
 
 I was born in the sixties, so it's no surprise that I gravitated toward books like Kerouac's _On the Road_, Steinbeck's _Travels with Charley_, Michener's _The Drifters_, and most of Hemingway's works. The members of the Beat Generation became known as bohemian hedonists, celebrating non-conformity and spontaneous creativity. I relate to that spirit — though rather than a Dharma Bum, I see myself more as a Happy Warrior.
 
-<blockquote>Afoot and light-hearted I take to the open road,<br>
-Healthy, free, the world before me,<br>
-The long brown path before me leading wherever I choose.</blockquote>
+<blockquote>
+
+Afoot and light-hearted I take to the open road,
+
+Healthy, free, the world before me,
+
+The long brown path before me leading wherever I choose.
+
+"Song of the Open Road" by Walt Whitman
+</blockquote>
+
 
 As a teenager, hitchhiking across Europe and living on a kibbutz taught me that the road itself is a test of wisdom. Those early adventures shaped everything that followed — a career that took me from Sydney to Amsterdam to Singapore and beyond, and a life lived with curiosity as a compass.
 
