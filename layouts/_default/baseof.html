@@ -39,8 +39,7 @@
     <!-- Deferred CSS applied here — already preloaded in <head> -->
     {{ $deferred := $.Scratch.Get "deferred" }}
     <link rel="stylesheet" href="{{ $deferred.RelPermalink }}"
-      {{- with $deferred.Data.Integrity }} integrity="{{ . }}"{{ end }}>
-    
+      {{- with $deferred.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous" {{ end }}>
     {{ partial "cookie-consent.html" . }}
 
     {{/* Scripts last — after CSS is applied */}}

@@ -38,7 +38,7 @@
 <link rel="modulepreload" href="/js/cookieconsent.esm.js">
 <link rel="preload" href="/fonts/arapey/Arapey-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/halimun/halimun.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ $deferred.RelPermalink }}" as="style">
+<link rel="preload" href="{{ $deferred.RelPermalink }}" as="style" integrity=""{{ $deferred.Data.Integrity }} crossorigin="anonymous">
 
 <title>{{ block "title" . }}{{ site.Title }}{{ end }}</title>
 
@@ -147,4 +147,4 @@
 
 <!-- Main CSS last in <head> — blocking render intentionally -->
 <link rel="stylesheet" href="{{ $main.RelPermalink }}"
-    {{- with $main.Data.Integrity }} integrity="{{ . }}"{{ end }}>
+    {{- with $main.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous" {{ end }}>
