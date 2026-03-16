@@ -1,6 +1,6 @@
 {
   "name": "blog-scss-structure",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Professional SCSS architecture for blog theme",
   "main": "scss/main.scss",
   "type": "module",
