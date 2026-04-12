@@ -6,6 +6,7 @@ title = "Our Man in India"
 timeout = 60000 # was 25000
 # No theme line needed!
 enableGitInfo = false             # slow locally; overridden to true in production
+# printUnusedTemplates = true
 
 [dartsass]
   binaryPath = "./node_modules/.bin/sass"
