@@ -19,8 +19,16 @@
 // * { outline: 1px solid var(--color-error) !important; }
 
 // ── Body ──────────────────────────────────────────────────────────────────────
+html {
+  scrollbar-gutter: stable;
+  interpolate-size: allow-keywords;
+  color-scheme: light dark; 
+}
 
 body {
+    min-block-size: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     font-family: $font-family;
     line-height: var(--line-height-base);
     background-color: var(--color-bg);
@@ -38,6 +46,15 @@ body {
     @media (max-width: $breakpoint-desktop) {
         hyphens: auto;
     }
+}
+
+// reset
+input, 
+button,
+textarea, 
+select {
+  font: inherit;
+  line-height: var(--line-height-tight);
 }
 
 // ── Visually hidden utility ───────────────────────────────────────────────────

@@ -1,0 +1,10 @@
+@supports selector(::details-content) {
+  details::details-content {
+    block-size: 0;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: block-size 750ms, content-visibility 750ms;
+      transition-behavior: allow-discrete;
+    }
+  }
+}

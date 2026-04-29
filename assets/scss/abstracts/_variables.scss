@@ -31,6 +31,8 @@ $z-tooltip: 1050;
    ========================================== */
 
 :root {
+ 
+
     // ── Layout ────────────────────────────────────────────────────────────────
 
     --max-width: 1200px;
@@ -121,8 +123,8 @@ $z-tooltip: 1050;
 
     // ── Typography — Line heights ─────────────────────────────────────────────
 
-    --line-height-base:    1.6;
-    --line-height-tight:   1.3;
+    --line-height-base:    1.5;
+    --line-height-tight:   1.1;
     --line-height-relaxed: 1.8;
 
     // ── Typography — Font sizes (fluid) ───────────────────────────────────────

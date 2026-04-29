@@ -25,6 +25,11 @@
 # ── Security Headers ──────────────────────────────────────────────────────────
 
 [[headers]]
+  for = "/*.xml"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+    
+[[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
@@ -56,3 +61,15 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# ── Cache static assets ───────────────────────────────────────────────────────
+
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+
+[[redirects]]
+  from = "https://ourmaninindia.com/*"
+  to = "https://www.ourmaninindia.com/:splat"
+  status = 301
