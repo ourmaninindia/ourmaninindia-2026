@@ -26,11 +26,15 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ if or (eq .Kind "term") (eq .Kind "taxonomy") }}
-  <meta name="robots" content="noindex, follow">
-{{ else }}
+{{- $production := eq (getenv "HUGO_ENV") "production" | or (eq site.Params.env "production") }}
+{{- $public := not .Params.private }}
+{{- $indexable := not (in (slice "term" "taxonomy") .Kind) }}
+
+{{- if and $production $public $indexable }}
   <meta name="robots" content="index, follow">
-{{ end }}
+{{- else }}
+  <meta name="robots" content="noindex, nofollow">
+{{- end }}
 <meta name="theme-color" content="#20123a">
 
 <!-- Preconnect first — TCP handshake as early as possible -->
