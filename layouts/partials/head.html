@@ -26,7 +26,11 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
+{{ if or (eq .Kind "term") (eq .Kind "taxonomy") }}
+  <meta name="robots" content="noindex, follow">
+{{ else }}
+  <meta name="robots" content="index, follow">
+{{ end }}
 <meta name="theme-color" content="#20123a">
 
 <!-- Preconnect first — TCP handshake as early as possible -->
