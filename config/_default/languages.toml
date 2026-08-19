@@ -1,5 +1,5 @@
 [en]
-  languageName = "English"
+  label = "English"
   weight = 1
   contentDir = "content/en"
   [en.params]
@@ -7,7 +7,7 @@
     flag = "🇬🇧"
 
 [nl]
-  languageName = "Dutch"
+  label = "Dutch"
   weight = 2
   contentDir = "content/nl"
   [nl.params]

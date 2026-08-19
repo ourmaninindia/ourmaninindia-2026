@@ -1,5 +1,5 @@
 baseURL = "https://www.ourmaninindia.com/"
-languageCode = "en-us"
+locale = "en-gb"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 title = "Our Man in India"
