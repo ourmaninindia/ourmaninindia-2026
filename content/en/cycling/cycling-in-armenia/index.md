@@ -29,7 +29,7 @@ As public transport is somewhat limited for reaching the places we wanted to vis
 
 As we were staying not too far from Republic Square, we found the bike shop Your Bike on 67 Hanrapetutyan Street. It soon became clear that road bikes are in very short supply in Armenia, something I would also discover in other countries. Fortunately, he did have a few road bikes, although they were clearly older models. Still, it would have to do.
 
-He supplied a helmet and repair kit, and I asked for Shimano pedals so that I could use my own cycling shoes. The total cost for ten days was around €300 — not cheap, especially in a country with a relatively low cost of living.
+He supplied a helmet and repair kit, and I asked for Shimano pedals so that I could use my own cycling shoes. The total cost for ten days was around €300 - not cheap, especially in a country with a relatively low cost of living.
 
 {{< cycling-day title="Day 1 - Yeghegnadzor to Noravank Monastery 🚲" >}}
 We spent the night in a B&B in Yeghegnadzor. It was on the outskirts of town and the hosts were very nice, although we needed Google Translate to communicate.
@@ -43,6 +43,7 @@ It was only a 21 km ride to the turn-off for Noravank Monastery. The road takes 
 The peaceful atmosphere, stunning backdrop and detailed architecture made Noravank a great place to stop.
 
 After a great lunch, however, the weather turned. Thunder and rain arrived, so I opted to return with Mita in the car. 😘
+{{< /cycling-day >}}
 
 {{< cycling-day title="Day 2 - Smbataberd Castle 🚶" >}}
 We decided to take a 'rest day' and drove to Smbataberd, a castle dating from between the 5th and 14th centuries.
@@ -58,6 +59,7 @@ Eventually, we started the walk back down. I managed the initial section more or
 Less than halfway down, an old Lada stopped beside us. The driver gestured for us to get in. We were quite happy to continue walking, but he insisted, so we climbed in next to three young boys.
 
 At the bottom, we thanked him and transferred ourselves back into the comfort of our KIA SUV.
+{{< /cycling-day >}}
 
 {{< cycling-day title="Day 3 - Yeghegnadzor to Jermuk 🚲" >}}
 We said goodbye to our lovely hosts and drove to the main road towards Jermuk. The roads through Yeghegnadzor were pretty atrocious, so we used the main road, which was also the best option for avoiding potholes.
@@ -75,6 +77,7 @@ Mita insisted that I buy something warm, which turned out to be a very good idea
 I also visited the barber to make myself look a little more presentable.
 
 Dinner was good, although afterwards I still had to walk a kilometre through the rain to fetch the car and bring Majesty home.
+{{< /cycling-day >}}
 
 {{< cycling-day title="Day 4 - To Goris 🚲" >}}
 Today's ride included 1,726 metres of climbing. The highest point reached 2,330 metres, but the second climb felt every bit as challenging as the first.
@@ -86,6 +89,7 @@ It was quite cold at the top, so I regularly pulled on my yellow wind jacket.
 Having Mita following me with the support car made a huge difference. I could refill my bottles, grab some snacks and take a moment when necessary. It made what was otherwise a tough ride much more comfortable and enjoyable.
 
 Eventually, I arrived in Goris, tired but very pleased with the ride.
+{{< /cycling-day >}}
 
 {{< cycling-day title="Day 5 - A leisurely day in Goris 🥾" >}}
 We decided to take the famous cable car to Tatev. The Wings of Tatev is a 5.7 km aerial tramway spanning the deep Vorotan Gorge.
@@ -115,6 +119,7 @@ We walked through the village and saw quite a few of its cave dwellings, as well
 It was fascinating to learn that this now-uninhabited village was only abandoned in the 1960s, when the Soviet authorities ordered its inhabitants to move elsewhere.
 
 Standing inside the caves at times, it was hard to believe that people had lived here until so recently, especially when you consider the harsh winter conditions.
+{{< /cycling-day >}}
 
 {{< cycling-day title="Day 6 - Down the Vorotan Gorge and the climb to Tatev 🚲" >}}
 Depending on the weather, this was expected to become my last cycle ride in Armenia.
@@ -134,6 +139,7 @@ One final intake of electrolytes and off we went.
 The two videos speak for themselves. The twenty-odd hairpins were actually much appreciated, as each one provided a few seconds of respite before the next section of climbing.
 
 Just as I reached Tatev, it started to drizzle. We headed off for a hot chocolate and somewhere dry to wait until we could check into our hotel for the next two nights.
+{{< /cycling-day >}}
 
 {{< cycling-day title="Day 7 - Return to Yerevan 🚙" >}}
 We needed to return the car to Yerevan in time.
@@ -141,3 +147,4 @@ We needed to return the car to Yerevan in time.
 To our surprise, we did not need to return via Goris but could head straight north. The road was in beautiful condition and full of gentle descents, and I felt genuinely sad not to be cycling it.
 
 After all the climbing in southern Armenia, it would have been a rather nice way to finish the cycling.
+{{< /cycling-day >}}
