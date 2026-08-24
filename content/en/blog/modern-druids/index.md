@@ -10,7 +10,7 @@ tags:
   - "energy"
 ---
 
-{{< img src="cover-steven-cowley.jpeg" alt="Steven Cowley" caption="Steven Cowley" class="small left" >}}
+{{< img src="steven-cowley.jpg" alt="Steven Cowley" caption="Steven Cowley" class="small left" >}}
 
 Steven Cowley, CEO of the United Kingdom Atomic Energy Authority and professor at Imperial College, spoke at [THiNK 2012](http://thinkworks.in "THiNK 2012") about his area of expertise: fusion energy. This is a topic of immense economic interest as its success will have paramount repercussions.
 

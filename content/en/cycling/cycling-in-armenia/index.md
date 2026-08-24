@@ -24,7 +24,7 @@ Yerevan is the capital of Armenia. The first time I heard the name was when a jo
 Mita, my wife, and I had flown from Delhi via Baku to Tbilisi in Georgia, from where we reached Yerevan by bus. The bus took us to the border, where we had to walk across the bridge dividing Georgia and Armenia. On the other side, another minibus was waiting to take us to Yerevan, the starting point of our journey through Armenia.
 {{< imgs >}}
 {{< img src="20260507-Yerevan.jpg"  size="small" eager="true" alt="Yerevan" caption="Yerevan" >}}
-{{< img src="20260507-Yerevan-Alfred.jpg"  size="small" eager="true" alt="Yerevan" >}}
+{{< img src="20260506-Yerevan-Alfred.jpg"  size="small" eager="true" alt="Yerevan" >}}
 {{< /imgs >}}
 
 Unlike previous trips, I had decided not to take my Pinarello with me, as we would be travelling through Turkey and beyond. In Yerevan, we therefore first looked for a reliable bike shop where I could rent a road bike for about ten days to cycle in the south, where the mountains particularly appealed to me.
