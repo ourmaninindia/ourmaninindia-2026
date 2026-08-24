@@ -107,6 +107,7 @@ We decided to take the famous cable car to Tatev. The Wings of Tatev is a 5.7 km
 Not only would it give us spectacular views of the terrain, but it would also allow me to get a better idea of the landscape I would be cycling through the following day, weather permitting.
 
 Today the weather wasn't great, but the long ride on the cable car certainly was. We had booked tickets that allowed us to return after an hour and a half, which gave us enough time to explore the monastery.
+{{< img src="20260521-wings-of-tatev.jpg" size="small" eager="true" alt="The view from the aerial cable car to Tatev" caption="On the aerial cable car to Tatev" >}}
 
 It was quite amazing to think that, in the late Middle Ages, Tatev was home to one of the most important Armenian medieval universities, contributing to the advancement of science, religion and philosophy. Unfortunately, very little of that intellectual heritage is visible today.
 
