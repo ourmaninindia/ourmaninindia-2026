@@ -90,13 +90,15 @@ Dinner was good, although afterwards I still had to walk a kilometre through the
 
 {{< cycling-day title="Day 4 - To Goris 🚲" >}}
 Today's ride included 1,726 metres of climbing. The highest point reached 2,330 metres, but the second climb felt every bit as challenging as the first.
-{{< img src="20260520-the-Vorotan-Pass.jpg" size="small" eager="true" alt="I reached the Vorotan Pass" caption="on the Vorotan Pass" >}}
 
 The road became increasingly undulating, with sections of around 8%, and, as always, the finish seemed to keep moving further away the closer I got to it.
 
 It was quite cold at the top, so I regularly pulled on my yellow wind jacket.
 
+{{ imgs }}
+{{< img src="20260520-the-Vorotan-Pass.jpg" size="small" eager="true" alt="I reached the Vorotan Pass" caption="on the Vorotan Pass" >}}
 {{< img src="20260520-to-Goris.jpg" class="right" size="small" eager="true" alt="Jermuk to Goris" caption="Jermuk to Goris" >}}
+{{ /imgs }}
 
 Having Mita following me with the support car made a huge difference. I could refill my bottles, grab some snacks and take a moment when necessary. It made what was otherwise a tough ride much more comfortable and enjoyable.
 
