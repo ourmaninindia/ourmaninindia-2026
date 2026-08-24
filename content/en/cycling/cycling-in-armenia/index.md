@@ -1,8 +1,8 @@
 ---
-featured_image : "tatev.jpg"
+featured_image : "20260516-134827.jpg"
 image_caption: "From Yerevan to Tatev"
 date : 2026-05-25T22:00:00Z
-title : "Tour de Tolerance 2023"
+title : "Cycling in Armenia, from Yerevan to Tatev"
 read_more_copy : "Read more about this ride in Armenia"
 layout: "single-tdt"
 featured: true
@@ -19,13 +19,7 @@ tags:
   - "Tatev"
 ---
 
-# Cycling in Armenia
-
-## From Yerevan to Tatev
-
 Yerevan is the capital of Armenia. The first time I heard the name was when a journalist was reporting about the war involving Iran. Later, I realised that it made sense for Armenia to be so close to Iran, yet not actually be part of Iran. Armenia has four international borders, of which two are completely closed: Turkey to the west and Azerbaijan to the east. The borders with Georgia to the north and Iran to the south are open.
-
-Ironically, when we visited Yerevan, an EU summit was being held in the city. It was the first time such a summit had been held there and was seen as a clear middle finger to the government in Georgia. Georgia had made considerable efforts to join the EU, but its current government is leaning towards Russia, despite the many street protests in favour of European integration.
 
 Mita, my wife, and I had flown from Delhi via Baku to Tbilisi in Georgia, from where we reached Yerevan by bus. The bus took us to the border, where we had to walk across the bridge dividing Georgia and Armenia. On the other side, another minibus was waiting to take us to Yerevan, the starting point of our journey through Armenia.
 
@@ -37,8 +31,7 @@ As we were staying not too far from Republic Square, we found the bike shop Your
 
 He supplied a helmet and repair kit, and I asked for Shimano pedals so that I could use my own cycling shoes. The total cost for ten days was around €300 — not cheap, especially in a country with a relatively low cost of living.
 
-## Day 1 – Yeghegnadzor to Noravank Monastery 🚲
-
+{{< cycling-day title="Day 1 - Yeghegnadzor to Noravank Monastery 🚲" >}}
 We spent the night in a B&B in Yeghegnadzor. It was on the outskirts of town and the hosts were very nice, although we needed Google Translate to communicate.
 
 We gave Daniel, the Czech guest staying at the B&B, a lift to the main road, from where he planned to hitchhike north. I decided to use that location as my starting point, as the roads through town were extremely bad.
@@ -51,15 +44,14 @@ The peaceful atmosphere, stunning backdrop and detailed architecture made Norava
 
 After a great lunch, however, the weather turned. Thunder and rain arrived, so I opted to return with Mita in the car. 😘
 
-## Day 2 – Smbataberd Castle 🚶
-
+{{< cycling-day title="Day 2 - Smbataberd Castle 🚶" >}}
 We decided to take a 'rest day' and drove to Smbataberd, a castle dating from between the 5th and 14th centuries.
 
 Near the castle, some locals stopped us and told us that we could not drive any further and would have to take a taxi. We decided to walk instead. It was about 2.5 km to the fort, and the road was indeed barely a road anymore. It would have been a very challenging drive had we attempted it in our car.
 
 The surrounding mountains were stunning, and from the top we could see our car sitting a few hundred metres below us. We also noticed the thin air at altitude, which made us breathe surprisingly heavily.
 
-Eventually, the fort appeared in front of us. It sits on a narrow mountain ridge, with a canyon on three sides. Inside, the site is enormous — around six hectares — surrounded by walls that are at least two metres wide, wide enough for me to stand comfortably on top of them.
+Eventually, the fort appeared in front of us. It sits on a narrow mountain ridge, with a canyon on three sides. Inside, the site is enormous - around six hectares - surrounded by walls that are at least two metres wide, wide enough for me to stand comfortably on top of them.
 
 Eventually, we started the walk back down. I managed the initial section more or less on my backside, which was probably not the intended way to descend.
 
@@ -67,8 +59,7 @@ Less than halfway down, an old Lada stopped beside us. The driver gestured for u
 
 At the bottom, we thanked him and transferred ourselves back into the comfort of our KIA SUV.
 
-## Day 3 – Yeghegnadzor to Jermuk 🚲
-
+{{< cycling-day title="Day 3 - Yeghegnadzor to Jermuk 🚲" >}}
 We said goodbye to our lovely hosts and drove to the main road towards Jermuk. The roads through Yeghegnadzor were pretty atrocious, so we used the main road, which was also the best option for avoiding potholes.
 
 We came across some roadworks, but fortunately that section wasn't too long.
@@ -85,8 +76,7 @@ I also visited the barber to make myself look a little more presentable.
 
 Dinner was good, although afterwards I still had to walk a kilometre through the rain to fetch the car and bring Majesty home.
 
-## Day 4 – To Goris 🚲
-
+{{< cycling-day title="Day 4 - To Goris 🚲" >}}
 Today's ride included 1,726 metres of climbing. The highest point reached 2,330 metres, but the second climb felt every bit as challenging as the first.
 
 The road became increasingly undulating, with sections of around 8%, and, as always, the finish seemed to keep moving further away the closer I got to it.
@@ -97,8 +87,7 @@ Having Mita following me with the support car made a huge difference. I could re
 
 Eventually, I arrived in Goris, tired but very pleased with the ride.
 
-## Day 5 – A leisurely day in Goris 🥾
-
+{{< cycling-day title="Day 5 - A leisurely day in Goris 🥾" >}}
 We decided to take the famous cable car to Tatev. The Wings of Tatev is a 5.7 km aerial tramway spanning the deep Vorotan Gorge.
 
 Not only would it give us spectacular views of the terrain, but it would also allow me to get a better idea of the landscape I would be cycling through the following day, weather permitting.
@@ -127,15 +116,14 @@ It was fascinating to learn that this now-uninhabited village was only abandoned
 
 Standing inside the caves at times, it was hard to believe that people had lived here until so recently, especially when you consider the harsh winter conditions.
 
-## Day 6 – Down the Vorotan Gorge and the climb to Tatev 🚲
-
+{{< cycling-day title="Day 6 - Down the Vorotan Gorge and the climb to Tatev 🚲" >}}
 Depending on the weather, this was expected to become my last cycle ride in Armenia.
 
 Luckily, it was sunny.
 
 Mita dropped me off at the Goris Gate and the cycling began. It started with a climb of around 200 metres to reach the junction where we turned left towards Tatev.
 
-With my yellow windbreaker providing some extra visibility and protection against the cold — it was only 11°C — the descent was fast and enjoyable.
+With my yellow windbreaker providing some extra visibility and protection against the cold - it was only 11°C - the descent was fast and enjoyable.
 
 Riding down into the Vorotan Gorge was quite spectacular, although it required plenty of braking before each hairpin.
 
@@ -147,8 +135,7 @@ The two videos speak for themselves. The twenty-odd hairpins were actually much 
 
 Just as I reached Tatev, it started to drizzle. We headed off for a hot chocolate and somewhere dry to wait until we could check into our hotel for the next two nights.
 
-## Day 7 – Return to Yerevan 🚙
-
+{{< cycling-day title="Day 7 - Return to Yerevan 🚙" >}}
 We needed to return the car to Yerevan in time.
 
 To our surprise, we did not need to return via Goris but could head straight north. The road was in beautiful condition and full of gentle descents, and I felt genuinely sad not to be cycling it.
