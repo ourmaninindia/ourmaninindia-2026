@@ -161,4 +161,9 @@ We needed to return the car to Yerevan in time.
 To our surprise, we did not need to return via Goris but could head straight north. The road was in beautiful condition and full of gentle descents, and I felt genuinely sad not to be cycling it.
 
 After all the climbing in southern Armenia, it would have been a rather nice way to finish the cycling.
+{{< imgs >}}
+{{< img src="20260524-sheep-on-the-road" size="small" eager="true" alt="A sheep herd on the road to Yerevan" caption="On our return to Yerevan" >}}
+{{< img src="20260524-return-to-Yerevan" size="small" eager="true" alt="The road to Yerevan" caption="Our return to Yerevan" >}}
+{{< /imgs >}}
+
 {{< /cycling-day >}}
