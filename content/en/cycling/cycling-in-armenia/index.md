@@ -73,11 +73,11 @@ At the bottom, we thanked him and transferred ourselves back into the comfort of
 We said goodbye to our lovely hosts and drove to the main road towards Jermuk. The roads through Yeghegnadzor were pretty atrocious, so we used the main road, which was also the best option for avoiding potholes.
 
 We came across some roadworks, but fortunately that section wasn't too long.
+{{< img src="20260518-Jermuk.jpg" class="right" size="small" eager="true" alt="Yeghegnadzor to Jermuk" caption="Yeghegnadzor to Jermuk" >}}
 
 Mita drove the support vehicle, which made the ride much more relaxed. There was still plenty of climbing, though, from around 1,100 m to 2,100 m. The steepest sections were around 9%, while most of the climb ranged between 4 and 7%.
 
 As we gained altitude, the weather became colder and cloudier. Luckily, I only had to put the bike in the car about 400 metres from our apartment in Jermuk, just before the rain arrived. 🌧️
-{{< img src="20260518-Jermuk.jpg" class="right" size="small" eager="true" alt="Yeghegnadzor to Jermuk" caption="Yeghegnadzor to Jermuk" >}}
 
 Jermuk has the feel of an alpine resort, with patches of snow still lying along the pavements in various places.
 
@@ -162,8 +162,8 @@ To our surprise, we did not need to return via Goris but could head straight nor
 
 After all the climbing in southern Armenia, it would have been a rather nice way to finish the cycling.
 {{< imgs >}}
-{{< img src="20260524-sheep-on-the-road" size="small" eager="true" alt="A sheep herd on the road to Yerevan" caption="On our return to Yerevan" >}}
-{{< img src="20260524-return-to-Yerevan" size="small" eager="true" alt="The road to Yerevan" caption="Our return to Yerevan" >}}
+{{< img src="20260524-sheep-on-the-road.jpg" size="small" eager="true" alt="A sheep herd on the road to Yerevan" caption="On our return to Yerevan" >}}
+{{< img src="20260524-return-to-Yerevan.jpg" size="small" eager="true" alt="The road to Yerevan" caption="Our return to Yerevan" >}}
 {{< /imgs >}}
 
 {{< /cycling-day >}}
