@@ -96,7 +96,7 @@ The road became increasingly undulating, with sections of around 8%, and, as alw
 
 It was quite cold at the top, so I regularly pulled on my yellow wind jacket.
 
-{{< img src="20260520-to-Goris.jpg" size="small" eager="true" alt="Jermuk to Goris" caption="Jermuk to Goris" >}}
+{{< img src="20260520-to-Goris.jpg" class="right" size="small" eager="true" alt="Jermuk to Goris" caption="Jermuk to Goris" >}}
 
 Having Mita following me with the support car made a huge difference. I could refill my bottles, grab some snacks and take a moment when necessary. It made what was otherwise a tough ride much more comfortable and enjoyable.
 
@@ -169,5 +169,5 @@ After all the climbing in southern Armenia, it would have been a rather nice way
 {{< img src="20260524-return-to-Yerevan.jpg" size="small" eager="true" alt="The road to Yerevan" caption="Our return to Yerevan" >}}
 {{< /imgs >}}
 
-Once we reached Yerevan, we took the night train back to Tblisi. The Armenia–Turkey 300km long land border has been closed mainly because of Turkey's support for Azerbaijan during the Nagorno-Karabakh conflict in 1993. Turkey continued denial of the Ottoman genocide in 1915 does not help the border reconciliation issue.
+Once we reached Yerevan, we took the night train back to Tblisi to travel through Turkey. Sadly, the Armenia–Turkey 300km long land border has been closed mainly because of Turkey's support for Azerbaijan during the Nagorno-Karabakh conflict in 1993. Turkey continued denial of the Ottoman genocide in 1915 does not help the border reconciliation issue.
 {{< /cycling-day >}}
