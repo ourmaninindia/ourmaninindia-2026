@@ -38,6 +38,8 @@ We gave Daniel, the Czech guest staying at the B&B, a lift to the main road, fro
 
 The bike wasn't great, but I had to make do with it. The largest rear sprocket had 28 teeth instead of the 34 on my Pinarello, which alone would make climbing considerably harder. To make matters worse, the pedals turned out to be Look rather than Shimano, so my cycling shoes stayed in the car.
 
+{{< img src="20260516-Noravank.jpg" class="right" size="small" eager="true" alt="At the Noravank Monastery" caption="The Noravank Monastery" >}}
+
 It was only a 21 km ride to the turn-off for Noravank Monastery. The road takes you between dramatic red canyons, as if you have suddenly stepped into a postcard. Unforgettable were the three hairpin climbs, with gradients of up to 9%, needed to reach the monastery.
 
 The peaceful atmosphere, stunning backdrop and detailed architecture made Noravank a great place to stop.
@@ -53,6 +55,8 @@ Near the castle, some locals stopped us and told us that we could not drive any 
 The surrounding mountains were stunning, and from the top we could see our car sitting a few hundred metres below us. We also noticed the thin air at altitude, which made us breathe surprisingly heavily.
 
 Eventually, the fort appeared in front of us. It sits on a narrow mountain ridge, with a canyon on three sides. Inside, the site is enormous - around six hectares - surrounded by walls that are at least two metres wide, wide enough for me to stand comfortably on top of them.
+
+{{< img src="20260517-Smbataberd.jpg" size="small" eager="true" alt="At the Smbataberd Castle" caption="Smbataberd Castle" >}}
 
 Eventually, we started the walk back down. I managed the initial section more or less on my backside, which was probably not the intended way to descend.
 
@@ -70,6 +74,8 @@ Mita drove the support vehicle, which made the ride much more relaxed. There was
 
 As we gained altitude, the weather became colder and cloudier. Luckily, I only had to put the bike in the car about 400 metres from our apartment in Jermuk, just before the rain arrived. 🌧️
 
+{{< img src="20260518-Jermuk.jpg" size="small" eager="true" alt="Yeghegnadzor to Jermuk" caption="Yeghegnadzor to Jermuk" >}}
+
 Jermuk has the feel of an alpine resort, with patches of snow still lying along the pavements in various places.
 
 Mita insisted that I buy something warm, which turned out to be a very good idea considering I had brought only one long-sleeved shirt.
@@ -85,6 +91,8 @@ Today's ride included 1,726 metres of climbing. The highest point reached 2,330 
 The road became increasingly undulating, with sections of around 8%, and, as always, the finish seemed to keep moving further away the closer I got to it.
 
 It was quite cold at the top, so I regularly pulled on my yellow wind jacket.
+
+{{< img src="20260520-Goris.jpg" size="small" eager="true" alt="Jermuk to Goris" caption="Jermuk to Goris" >}}
 
 Having Mita following me with the support car made a huge difference. I could refill my bottles, grab some snacks and take a moment when necessary. It made what was otherwise a tough ride much more comfortable and enjoyable.
 
@@ -112,6 +120,8 @@ We became increasingly desperate not to slip.
 
 We carefully continued, trying to keep to the edges of the path where the mud was slightly less treacherous. Eventually, we reached a point where a man indicated the entrance to the bridge. He also pointed out that we could have simply walked down the long staircase behind him from the parking area...
 
+{{< img src="20260521-the-swinging-bridge.jpg" class="right" size="small" eager="true" alt="The swinging bridge at Khndzoresk" caption="The swinging bridge, Khndzoresk" >}}
+
 Crossing the swaying bridge provided sweeping views of the gorge. It hangs some 60 metres above the bottom and sways gently as you make your way across to the historic village on the other side.
 
 We walked through the village and saw quite a few of its cave dwellings, as well as the 17th-century Hripsime Church.
@@ -127,10 +137,12 @@ Depending on the weather, this was expected to become my last cycle ride in Arme
 Luckily, it was sunny.
 
 Mita dropped me off at the Goris Gate and the cycling began. It started with a climb of around 200 metres to reach the junction where we turned left towards Tatev.
+{{< img src="20260522-the-route.jpg" size="small" eager="true" alt="The climb to Tatev" caption="The climb to Tatev" >}}
 
 With my yellow windbreaker providing some extra visibility and protection against the cold - it was only 11°C - the descent was fast and enjoyable.
 
 Riding down into the Vorotan Gorge was quite spectacular, although it required plenty of braking before each hairpin.
+{{< img src="20260522-my-last-gel.jpg" size="small" eager="true" alt="My last gel" caption="My last gel" >}}
 
 At the bottom of the gorge, the transition from descending to climbing came quickly. There were only about 50 metres of relatively flat road before the climb started.
 
