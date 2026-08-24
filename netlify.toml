@@ -9,7 +9,7 @@
     """
 
 [build.environment]
-  HUGO_VERSION = "0.160.1"
+  HUGO_VERSION = "0.165.0"
   HUGO_EXTENDED = "true"
   HUGO_ENV = "production"
   DART_SASS_VERSION = "1.99.0"
