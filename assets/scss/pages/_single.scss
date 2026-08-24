@@ -263,8 +263,8 @@
         background-color: var(--color-bg);
     }
 
-    &__navigation-label {
-        margin-bottom: 0;
+    &__navigation-label.single__navigation-label {
+        margin-bottom: 0; 
     }
 
     &__navigation {

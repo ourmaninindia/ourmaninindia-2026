@@ -58,9 +58,9 @@ Near the castle, some locals stopped us and told us that we could not drive any 
 
 The surrounding mountains were stunning, and from the top we could see our car sitting a few hundred metres below us. We also noticed the thin air at altitude, which made us breathe surprisingly heavily.
 
-Eventually, the fort appeared in front of us. It sits on a narrow mountain ridge, with a canyon on three sides. Inside, the site is enormous - around six hectares - surrounded by walls that are at least two metres wide, wide enough for me to stand comfortably on top of them.
-
 {{< img src="20260517-Smbataberd.jpg" size="small" eager="true" alt="At the Smbataberd Castle" caption="Smbataberd Castle" >}}
+
+Eventually, the fort appeared in front of us. It sits on a narrow mountain ridge, with a canyon on three sides. Inside, the site is enormous - around six hectares - surrounded by walls that are at least two metres wide, wide enough for me to stand comfortably on top of them.
 
 Eventually, we started the walk back down. I managed the initial section more or less on my backside, which was probably not the intended way to descend.
 
