@@ -73,8 +73,7 @@ We came across some roadworks, but fortunately that section wasn't too long.
 Mita drove the support vehicle, which made the ride much more relaxed. There was still plenty of climbing, though, from around 1,100 m to 2,100 m. The steepest sections were around 9%, while most of the climb ranged between 4 and 7%.
 
 As we gained altitude, the weather became colder and cloudier. Luckily, I only had to put the bike in the car about 400 metres from our apartment in Jermuk, just before the rain arrived. 🌧️
-
-{{< img src="20260518-Jermuk.jpg" size="small" eager="true" alt="Yeghegnadzor to Jermuk" caption="Yeghegnadzor to Jermuk" >}}
+{{< img src="20260518-Jermuk.jpg" class="right" size="small" eager="true" alt="Yeghegnadzor to Jermuk" caption="Yeghegnadzor to Jermuk" >}}
 
 Jermuk has the feel of an alpine resort, with patches of snow still lying along the pavements in various places.
 
@@ -91,8 +90,7 @@ Today's ride included 1,726 metres of climbing. The highest point reached 2,330 
 The road became increasingly undulating, with sections of around 8%, and, as always, the finish seemed to keep moving further away the closer I got to it.
 
 It was quite cold at the top, so I regularly pulled on my yellow wind jacket.
-
-{{< img src="20260520-Goris.jpg" size="small" eager="true" alt="Jermuk to Goris" caption="Jermuk to Goris" >}}
+{{< img src="20260520-to-Goris.jpg" size="small" eager="true" alt="Jermuk to Goris" caption="Jermuk to Goris" >}}
 
 Having Mita following me with the support car made a huge difference. I could refill my bottles, grab some snacks and take a moment when necessary. It made what was otherwise a tough ride much more comfortable and enjoyable.
 
@@ -137,12 +135,12 @@ Depending on the weather, this was expected to become my last cycle ride in Arme
 Luckily, it was sunny.
 
 Mita dropped me off at the Goris Gate and the cycling began. It started with a climb of around 200 metres to reach the junction where we turned left towards Tatev.
-{{< img src="20260522-the-route.jpg" size="small" eager="true" alt="The climb to Tatev" caption="The climb to Tatev" >}}
+{{< img src="20260521-the-route.jpg" size="small" eager="true" alt="The climb to Tatev" caption="The climb to Tatev" >}}
 
 With my yellow windbreaker providing some extra visibility and protection against the cold - it was only 11°C - the descent was fast and enjoyable.
 
 Riding down into the Vorotan Gorge was quite spectacular, although it required plenty of braking before each hairpin.
-{{< img src="20260522-my-last-gel.jpg" size="small" eager="true" alt="My last gel" caption="My last gel" >}}
+{{< img src="20260522-my-last-gel.jpg" class="right" size="small" eager="true" alt="My last gel" caption="My last gel" >}}
 
 At the bottom of the gorge, the transition from descending to climbing came quickly. There were only about 50 metres of relatively flat road before the climb started.
 
