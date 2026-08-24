@@ -35,5 +35,8 @@
     "sass": "^1.97.3",
     "stylelint": "^16.2.1",
     "stylelint-config-standard-scss": "^13.0.0"
+  },
+  "dependencies": {
+    "fuse.js": "^7.5.0"
   }
 }

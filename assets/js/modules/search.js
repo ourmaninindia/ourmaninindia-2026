@@ -47,6 +47,9 @@
  * - Threshold: 0.35 (lower = stricter matching)
  * - Debounce: 300ms delay
  */
+
+import Fuse from 'fuse.js';
+
 export function initSearch() {
   'use strict';
 
