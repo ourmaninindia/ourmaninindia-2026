@@ -90,10 +90,12 @@ Dinner was good, although afterwards I still had to walk a kilometre through the
 
 {{< cycling-day title="Day 4 - To Goris 🚲" >}}
 Today's ride included 1,726 metres of climbing. The highest point reached 2,330 metres, but the second climb felt every bit as challenging as the first.
+{{< img src="20260520-the-Vorotan-Pass.jpg" size="small" eager="true" alt="I reached the Vorotan Pass" caption="on the Vorotan Pass" >}}
 
 The road became increasingly undulating, with sections of around 8%, and, as always, the finish seemed to keep moving further away the closer I got to it.
 
 It was quite cold at the top, so I regularly pulled on my yellow wind jacket.
+
 {{< img src="20260520-to-Goris.jpg" size="small" eager="true" alt="Jermuk to Goris" caption="Jermuk to Goris" >}}
 
 Having Mita following me with the support car made a huge difference. I could refill my bottles, grab some snacks and take a moment when necessary. It made what was otherwise a tough ride much more comfortable and enjoyable.
@@ -139,7 +141,7 @@ Depending on the weather, this was expected to become my last cycle ride in Arme
 
 Luckily, it was sunny.
 
-Mita dropped me off at the Goris Gate and the cycling began. It started with a climb of around 200 metres to reach the junction where we turned left towards Tatev.
+Mita dropped me off at the Goris Gate just out of town and the cycling began. It started with a climb of around 200 metres to reach the junction where we turned left towards Tatev.
 {{< img src="20260521-the-route.jpg" size="small" eager="true" alt="The climb to Tatev" caption="The climb to Tatev" >}}
 
 With my yellow windbreaker providing some extra visibility and protection against the cold - it was only 11°C - the descent was fast and enjoyable.
@@ -163,8 +165,9 @@ To our surprise, we did not need to return via Goris but could head straight nor
 
 After all the climbing in southern Armenia, it would have been a rather nice way to finish the cycling.
 {{< imgs >}}
-{{< img src="20260524-sheep-on-the-road.jpg" size="small" eager="true" alt="A sheep herd on the road to Yerevan" caption="On our return to Yerevan" >}}
+{{< img src="20260524-sheep-on-the-road.jpg" size="small" eager="true" alt="A sheep herd on the road to Yerevan" caption="Sheep on the road" >}}
 {{< img src="20260524-return-to-Yerevan.jpg" size="small" eager="true" alt="The road to Yerevan" caption="Our return to Yerevan" >}}
 {{< /imgs >}}
 
+Once we reached Yerevan, we took the night train back to Tblisi. The Armenia–Turkey 300km long land border has been closed mainly because of Turkey's support for Azerbaijan during the Nagorno-Karabakh conflict in 1993. Turkey continued denial of the Ottoman genocide in 1915 does not help the border reconciliation issue.
 {{< /cycling-day >}}
