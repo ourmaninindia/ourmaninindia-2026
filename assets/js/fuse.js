@@ -1,4 +1,6 @@
 /**
+ * No longer in use as package.json loads fuse
+ *  
  * Fuse.js v7.0.0 - Lightweight fuzzy-search (http://fusejs.io)
  *
  * Copyright (c) 2023 Kiro Risk (http://kiro.me)

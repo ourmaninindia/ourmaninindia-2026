@@ -6,7 +6,7 @@
  * Features debounced input, highlighted matches, and performance metrics.
  * 
  * @module search
- * @requires Fuse.js v7+ (loaded via CDN in search page template)
+ * @requires Fuse.js v7+ (loaded locally via NPM in search page template)
  * @requires /index.json - Hugo-generated search index
  * @requires #search-input - Search input field
  * @requires #search-results - Results container
